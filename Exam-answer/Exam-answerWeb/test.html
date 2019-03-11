@@ -1,0 +1,60 @@
+﻿<div class="container-fluid">
+    <div class="row-fluid grid-margins">
+        <div id="toolbarPane" class="span8">
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid grid-margins">
+        <div class="span12" style="background: rgb(214, 218, 222);">
+            <div id="MIO" class="col-xs-12" style="width: 100%; max-width: 960px;">
+             
+                <div id="questionSlide" class="fontSize_m">
+                    <div id="questionStemDiv">
+                        <div id="questionStem" class="stem" style="height: 15px;"><p id="stemText" class="stemFont"></p><p>Your company's Microsoft Azure infrastructure team asks you for help in designing a traffic control solution for their deployment.<br> <br> The deployment consists of a single virtual network (VNet) that has the following topology:<br> <br> * edge subnet: Linux-based network virtual appliance (NVA) running enterprise firewall software with IP forwarding enabled<br> * data1 subnet: 4 Windows Server virtual machines (VMs)<br> * data2 subnet: 4 Ubuntu Linux VMs<br> <br> You need to recommend a solution to the infrastructure team so that all outbound Azure VM traffic must pass through the NVA on the edge subnet.<br> <br> What two actions should you perform? Each correct answer presents part of the solution.</p><p></p></div>
+                        <div id="zoomDialog"></div>
+                        <div id="answerDialog" class="scrollable"></div>
+                        <!-- <div id="zoom" title="Click here to magnify the question stem" class="zoom"></div> -->
+                    </div>
+                 
+                    <div id="application" class="scrollable" style="width: 100%; max-width: 960px; height: 100%;">
+                        <div id="mainSlide" style="width: 100%; max-width: 960px; height: 600px;">
+                            <div id="backgroundWidget" class="widgets" style="width:100%;height:100%">
+
+                            </div><div class="dd-handle-SR widgets null col-xs-12 correctAnswer" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 2%;">
+                                <input id="checkbox2" tabindex="1" cid="c74" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option2" style="display:block;">
+                                <span id="span_checkbox2" style="position: relative !important;display: block;" class="spanSingleChoice">Bind the resource to each subnet.</span>
+                            </div><div class="dd-handle-SR widgets null col-xs-12" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
+                                <input id="checkbox3" tabindex="1" cid="c75" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option3" style="display:block;">
+                                <span id="span_checkbox3" style="position: relative !important;display: block;" class="spanSingleChoice">Bind the resource to each VM virtual network interface card (vNIC).</span>
+                            </div><div class="dd-handle-SR widgets null col-xs-12" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
+                                <input id="checkbox1" tabindex="1" cid="c73" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option1" style="display:block;">
+                                <span id="span_checkbox1" style="position: relative !important;display: block;" class="spanSingleChoice">Create a network security group (NSG) with an outbound rule.</span>
+                            </div><div class="dd-handle-SR widgets null col-xs-12" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
+                                <input id="checkbox4" tabindex="1" cid="c76" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option4" style="display:block;">
+                                <span id="span_checkbox4" style="position: relative !important;display: block;" class="spanSingleChoice">Deploy two internal load balancers between the three subnets.</span>
+                            </div><div class="dd-handle-SR widgets null col-xs-12 correctAnswer" tabindex="1" style="left: 20px; margin-top: 0px; width: 920px; height: auto;">
+                                <input id="checkbox0" tabindex="1" cid="c72" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option0" style="display:block;">
+                                <span id="span_checkbox0" style="position: relative !important;display: block;" class="spanSingleChoice">Create a route table with a next-hop IP address.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="explanationDiv" style="">
+                        <div id="explanationHeader">
+                            <div id="expandExplanation" class="collapseExplanation"></div>
+                            <p id="explanationHeaderText">Explanation</p>
+                        </div>
+                        <div id="explanationBody" class="scrollable">
+                            <p id="explanationBodyText"><p>You should create a route table with a next-hop IP address. The route table resource allows you to override the Azure-provided system routes that automatically route traffic into, within, and out of an Azure VNet. A route table contains a "next hop" default route that Azure uses when VMs within a subnet attempt to reach resources beyond that subnet. The available next hop types are:<br> <br> * Virtual appliance<br> * Internet<br> * Virtual network<br> * Virtual network gateway<br> <br> You should also bind the route table resource to each subnet. In this scenario, you would create a route table that defines a next hop to your NVA, and then bind the single route table to every subnet in the VNet.<br> <br> You should not create an NSG with an outbound rule. NSGs are software firewall resources used to selectively allow or block inbound and/or outbound traffic. You cannot define next hop routing with NSGs.<br> <br> You should not bind the resource to each VM vNIC. Route tables can be bound only to the subnet resource. By contrast, NSGs can be bound to subnet and/or vNIC resources.<br> <br> You should not deploy two internal load balancers between the three subnets. Load balancers are used to distribute user requests equitably among two or more back-end VMs and are not used to enforce next hop routing logic.<br><br><strong>References</strong><br><br><a href="https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal" target="_blank" rel="noopener" tabindex="190">Tutorial: Route network traffic with a route table using the Azure portal</a><br><br><a href="https://docs.microsoft.com/en-us/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn" target="_blank" rel="noopener" tabindex="190">Use network virtual appliances on a virtual network</a><br><br><a href="https://docs.microsoft.com/en-us/azure/virtual-network/security-overview" target="_blank" rel="noopener" tabindex="190">Security groups</a><br><br><a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview" target="_blank" rel="noopener" tabindex="190">What is Azure Load Balancer?</a><br><br><a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview" target="_blank" rel="noopener" tabindex="190">Virtual network traffic routing</a><br><br></p></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="console" class="hidden"></div>
+            </div>
+            <div id="hintDialog"></div>
+        </div>
+    </div>
+</div>
+<div id="growlMessage" class="growlMessage" style="display:none;"><span class="growlText">This functionality is not implemented for this question.</span></div>
+<div id="exhibitDialog"></div>
+<div id="checkAnswertDialog"></div>
