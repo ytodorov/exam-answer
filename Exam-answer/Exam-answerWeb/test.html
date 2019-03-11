@@ -1,60 +1,1160 @@
-﻿<div class="container-fluid">
-    <div class="row-fluid grid-margins">
-        <div id="toolbarPane" class="span8">
+﻿<html style="height: 100%; width: 100%;" class=" desktop landscape js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-cssscrollbar no-ie8compat svgfilters js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-cssscrollbar no-ie8compat svgfilters">
+<style type="text/css" id="night-mode-pro-style"></style>
+<link type="text/css" rel="stylesheet" id="night-mode-pro-link">
+<head>
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" src="https://bam.nr-data.net/1/78bf97a9ed?a=139866524&amp;v=1118.0c07c19&amp;to=YVFWZBQAX0VQAk1RXVgbYUIPTkZTU05pemEZeHljSQhfUlQZF0haRg%3D%3D&amp;rst=923&amp;ref=https://pts.measureup.com/web/PBS/LMS/index.php&amp;ap=128&amp;be=574&amp;fe=901&amp;dc=806&amp;af=err,xhr,stn,ins&amp;perf=%7B%22timing%22:%7B%22of%22:1552326498494,%22n%22:0,%22f%22:32,%22dn%22:32,%22dne%22:32,%22c%22:32,%22ce%22:32,%22rq%22:37,%22rp%22:530,%22rpe%22:531,%22dl%22:538,%22di%22:806,%22ds%22:807,%22de%22:810,%22dc%22:859,%22l%22:901,%22le%22:907%7D,%22navigation%22:%7B%7D%7D&amp;at=TRZVElwaTEs%3D&amp;jsonp=NREUM.setToken"></script>
+    <script src="https://js-agent.newrelic.com/nr-1118.min.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MNWR9FJ"></script>
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push(
+                    {'gtm.start': new Date().getTime(), event: 'gtm.js'}
+                );
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-MNWR9FJ');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgQEUFNUDxABV1haAQcCVFA="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+    <meta name="viewport" id="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="http-protocol" content="https://">
+    <meta name="APP_ENV" content="production">
+    <meta name="APP_DESKTOP_URL" content="https://www.measureup.com/download">
+    <meta name="PL_URL" content="www.practice-labs.com">
+    <meta name="PTS_PEARSON_VOUCHER_URL" content="https://mindhubpro.pearsonvue.com/Microsoft-MCP-Voucher-p/mvch-mi-mcp.html?utm_source=measureup&amp;utm_medium=website&amp;utm_campaign=certification">
+    <meta name="PL_PRESHARED" content="ANJORR995F192F2H">
+    <meta name="PL_ORGANIZATION_ID" content="CERT LOCKER USER 365">
+    <meta name="MUP_URL" content="https://www.measureup.com">
+    <meta name="DELIVERY_URL" content="https://pts.measureup.com/web">
+    <meta name="PTS_DOWNLOAD_URL" content="https://pts.measureup.com">
+    <meta name="APP_AVAILABLE_LANGUAGES" content="">
+    <!-- css files -->
+    <link rel="stylesheet" media="screen" href="assets/css/bootstrap.min.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/normalize.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/font-awesome.min.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/jquery-ui.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/smartadmin-production_unminified.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/smartadmin-skins.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/styles.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/engine.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/stylesLMSWIZARD.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/tutorial.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/ms-ignite.css?bust=20170418_2">
+    <link rel="stylesheet" media="screen" href="assets/css/accesibility.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/includewiz.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/responsive.css?bust=20170418">
+    <link rel="stylesheet" media="screen" href="assets/css/select2.css?bust=20170418">
+
+    <script type="text/javascript" src="../../js/plugin/devicejs/device.min.js"></script>
+    <script type="text/javascript" src="../../PBS/PBS/js/libs/modernizr.js"></script>
+
+    <script type="text/javascript" src="../PBS/js/libs/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../PBS/js/libs/lz-string.min.js"></script>
+    <script type="text/javascript" src="../PBS/js/libs/underscore-min.js"></script>
+    <script type="text/javascript" src="../PBS/js/libs/modernizr.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../PBS/js/libs/bootstrap-confirmation.js"></script>
+    <script type="text/javascript" src="../PBS/js/libs/bootstrap-dialog.min.js"></script>
+    <script type="text/javascript" src="../PBS/js/libs/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="config.js?bust=20170310_2"></script>
+    <script type="text/javascript" src="../PBS/js/libs/select2.js"></script>
+
+    <script src="../../js/partners/configMarketplace.js?v=20170418"></script>
+    <script>
+    showCartButton = false;
+    showDemoButton =  true;
+    showDistributor = false;
+    showHistory = true;
+    showRegisterKey = true;
+    showCreateAssessment = true;
+    showSupportButton = false;
+    showTour = true;
+    showTestDetails = false;
+    showTestScores = true;
+
+    // image shown on pdf reports
+    hasLogo = false;
+    </script>
+    <script>
+            role = 1;
+projectUrl = "../../instances/MUP/";nameUser = "Yordan";surnameUser = "Todorov";license = "1";tam = "718924";key = "4656108";wgu = 0;var colorBlind = false;var adaConfig = false;var fontsize = 'fontSize_m';fontsize = 'fontSize_m';var notFullScreenTest = 'n';notFullScreenTest = 'n';IPfrom = '77.70.29.69';
+countryfrom = 'BGR';
+regionfrom = '';
+instanceDelivery = "measureup";
+emailSupport = "support@measureup.com";
+            moodle = false;
+
+            function showPortraitScreen() {
+                $("#blockScreen").show();
+            }
+
+            function hidePortraitScreen() {
+                $("#blockScreen").hide();
+            }
+    </script>
+
+    <script>
+            document.onreadystatechange = function () {
+                if (document.readyState === 'complete') {
+                    var theOtherScript = PBSUrl + 'js/libs/jquery-ui.min.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/jquery.ui.touch-punch.min.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/jquery.simulate.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/bootstrap-tooltip.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/jquery.easypiechart.min.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/bootstrap-confirmation.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/SmartNotification.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/raphael.2.1.0.min.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/morris.min.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = 'engine.js?bust=20170310';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    var theOtherScript = PBSUrl + 'js/libs/json2.js';
+                    var el = document.createElement('script');
+                    el.async = false;
+                    el.src = theOtherScript;
+                    el.type = 'text/javascript';
+                    (document.getElementsByTagName('HEAD')[0] || document.body).appendChild(el);
+
+                    $("#customModeRequestExplanations").select2({
+                        minimumResultsForSearch: -1
+                    });
+                }
+            }
+            ;
+
+            function load() {
+                var all_checkbox_divs = document.getElementsByClassName("image-checkbox");
+                for (var i = 0; i < all_checkbox_divs.length; i++) {
+
+                    all_checkbox_divs[i].onclick = function (e) {
+                        var div_id = this.id;
+                        var checkbox_id = div_id.split("_")[0];
+                        var checkbox_element = document.getElementById(checkbox_id);
+                        if (checkbox_element.checked == true) {
+                            checkbox_element.checked = false;
+                            this.setAttribute("class", "image-checkbox");
+                        } else {
+                            checkbox_element.checked = true;
+                            this.setAttribute("class", "image-checkbox-checked");
+                        }
+                        $('#' + checkbox_id).trigger('change');
+                    };
+                }
+
+                var all_tr_checkbox = $(".image-checkbox").parents("tr");
+                for (var i = 0; i < all_tr_checkbox.length; i++) {
+                    $(all_tr_checkbox[i]).children("td").unbind("click").bind("click", function (event) {
+                        if ($(event.target).is("td") || $(event.target).is("span")) {
+                            if ($(event.target).closest("tr").children("td").children("div").attr("id") != undefined) {
+                                $("#" + $(event.target).closest("tr").children("td").children("div").attr("id").split("_")[0]).prop("checked", !$("#" + $(event.target).closest("tr").children("td").children("div").attr("id").split("_")[0]).prop("checked"));
+                                $("#" + $(event.target).closest("tr").children("td").children("div").attr("id").split("_")[0]).trigger('change');
+                            }
+
+                            $(event.target).closest("tr").children("td").children("div").toggleClass("image-checkbox-checked").toggleClass("image-checkbox");
+                        }
+                    });
+                }
+
+            }
+    </script>
+
+    <title>
+        PTS [LMS]
+    </title>
+
+    <!-- FAVICONS -->
+    <link href="../../images/measureup.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../../images/measureup.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+    <script src="../PBS/js/libs/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/jquery.simulate.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/bootstrap-tooltip.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/jquery.easypiechart.min.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/bootstrap-confirmation.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/SmartNotification.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/raphael.2.1.0.min.js" type="text/javascript"></script>
+    <script src="../PBS/js/libs/morris.min.js" type="text/javascript"></script>
+    <script src="engine.js?bust=20170310" type="text/javascript"></script>
+    <script src="../PBS/js/libs/json2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/plugin/devicejs/device.min.js"></script>
+    <script src="../../PBS/PBS/js/libs/require.js" type="text/javascript" id="requirescript" data-main="../../PBS/PBS/js/main"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="../../PBS/PBS/js/main.js?20160311"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="../../PBS/PBS/js/libs/jquery-1.10.2.min.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="application" src="../../PBS/PBS/js/application.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="config" src="../../PBS/PBS/js/config.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryUI" src="../../PBS/PBS/js/libs/jquery-ui.min.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryUITouch" src="../../PBS/PBS/js/libs/jquery.ui.touch-punch.min.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="simulate" src="../../PBS/PBS/js/libs/jquery.simulate.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vApp" src="../../PBS/PBS/js/views//vApp.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery.bootstrap" src="../../PBS/PBS/js/libs/bootstrap.min.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nestable" src="../../PBS/PBS/js/libs/jquery.nestable.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryLoader" src="../../PBS/PBS/js/libs/jquery.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cThirdPartyViewer" src="../../PBS/PBS/js/collections//cThirdPartyViewer.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cSlide" src="../../PBS/PBS/js/collections//cSlide.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cImage" src="../../PBS/PBS/js/collections//cImage.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cButton" src="../../PBS/PBS/js/collections//cButton.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cSelectPlace" src="../../PBS/PBS/js/collections//cSelectPlace.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cSelect" src="../../PBS/PBS/js/collections//cSelect.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cSplit" src="../../PBS/PBS/js/collections//cSplit.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cCaseStudy" src="../../PBS/PBS/js/collections//cCaseStudy.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cDropzone" src="../../PBS/PBS/js/collections//cDropzone.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cText" src="../../PBS/PBS/js/collections//cText.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cContentTable" src="../../PBS/PBS/js/collections//cContentTable.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cAudio" src="../../PBS/PBS/js/collections//cAudio.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cList" src="../../PBS/PBS/js/collections//cList.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cBuildList" src="../../PBS/PBS/js/collections//cBuildList.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cTree" src="../../PBS/PBS/js/collections//cTree.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cRadioButton" src="../../PBS/PBS/js/collections//cRadioButton.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cCheckbox" src="../../PBS/PBS/js/collections//cCheckbox.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cModels" src="../../PBS/PBS/js/collections//cModels.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="controllers/cCommands" src="../../PBS/PBS/js/controllers//cCommands.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mApp" src="../../PBS/PBS/js/models//mApp.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mModel" src="../../PBS/PBS/js/models//mModel.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mAudio" src="../../PBS/PBS/js/models//mAudio.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mSlide" src="../../PBS/PBS/js/models//mSlide.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="../../PBS/PBS/js/text.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vToolbar" src="../../PBS/PBS/js/views//vToolbar.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vSlide" src="../../PBS/PBS/js/views//vSlide.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vSubSlide" src="../../PBS/PBS/js/views//vSubSlide.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vDialog" src="../../PBS/PBS/js/views//vDialog.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vMenu" src="../../PBS/PBS/js/views//vMenu.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vAudio" src="../../PBS/PBS/js/views//vAudio.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="../../PBS/PBS/js/libs/underscore-min.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mThirdPartyViewer" src="../../PBS/PBS/js/models//mThirdPartyViewer.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mImage" src="../../PBS/PBS/js/models//mImage.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mButton" src="../../PBS/PBS/js/models//mButton.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mSelectPlace" src="../../PBS/PBS/js/models//mSelectPlace.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mSelect" src="../../PBS/PBS/js/models//mSelect.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mSplit" src="../../PBS/PBS/js/models//mSplit.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mCaseStudy" src="../../PBS/PBS/js/models//mCaseStudy.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mDropzone" src="../../PBS/PBS/js/models//mDropzone.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mText" src="../../PBS/PBS/js/models//mText.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mContentTable" src="../../PBS/PBS/js/models//mContentTable.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mList" src="../../PBS/PBS/js/models//mList.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mBuildList" src="../../PBS/PBS/js/models//mBuildList.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mTree" src="../../PBS/PBS/js/models//mTree.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mRadioButton" src="../../PBS/PBS/js/models//mRadioButton.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mCheckbox" src="../../PBS/PBS/js/models//mCheckbox.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="backbone" src="../../PBS/PBS/js/libs/backbone-min-0.9.9-amdjs.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="collections/cWidgets" src="../../PBS/PBS/js/collections//cWidgets.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vContentTable" src="../../PBS/PBS/js/views//vContentTable.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vThirdPartyViewer" src="../../PBS/PBS/js/views//vThirdPartyViewer.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vSelectPlace" src="../../PBS/PBS/js/views//vSelectPlace.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vSelectPlaceMUP" src="../../PBS/PBS/js/views//vSelectPlaceMUP.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vImage" src="../../PBS/PBS/js/views//vImage.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vButton" src="../../PBS/PBS/js/views//vButton.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vSplit" src="../../PBS/PBS/js/views//vSplit.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vSelect" src="../../PBS/PBS/js/views//vSelect.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vCaseStudy" src="../../PBS/PBS/js/views//vCaseStudy.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vDropzone" src="../../PBS/PBS/js/views//vDropzone.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vText" src="../../PBS/PBS/js/views//vText.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vList" src="../../PBS/PBS/js/views//vList.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vBuildList" src="../../PBS/PBS/js/views//vBuildList.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vTree" src="../../PBS/PBS/js/views//vTree.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vRadioButton" src="../../PBS/PBS/js/views//vRadioButton.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="views/vCheckbox" src="../../PBS/PBS/js/views//vCheckbox.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mDialog" src="../../PBS/PBS/js/models//mDialog.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mMenu" src="../../PBS/PBS/js/models//mMenu.js?bust=2016191034"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="models/mWidgets" src="../../PBS/PBS/js/models//mWidgets.js?bust=2016191034"></script>
+    <link rel="stylesheet" href="../../instances/MUP/assets/css/custom.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../instances/MUP/assets/css/custom.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../instances/MUP/assets/css/custom.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../instances/MUP/assets/css/custom.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../instances/MUP/assets/css/custom.css" type="text/css" media="screen">
+</head>
+<body onload="load()" style="-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;cursor:default;" id="lmsBody">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNWR9FJ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="blockScreen" class="blockScreen" style="display:none;"></div>
+    <div id="preloader">
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+                /*overflow: scroll !important; overflow-y: scroll !important;*/
+            }
+
+            .preloader {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: none;
+                z-index: 99999
+            }
+
+            .offpage {
+                position: absolute;
+                left: -5000px;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            }
+
+            /*body{
+              overflow: auto!important;
+            }*/
+        </style>
+        <!-- <div id="preloader-spin" class="preloader">
+          <span class="offpage">Loading</span>
+        </div> -->
+        <div id="preloader-spin" class="loading-background" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-empty"></div>
+                <div class="loading-text">
+                    <center><span id="preloaderSpinText">Please, wait...</span></center>
+                </div>
+                <div id="LLspinnerGrid" class="container ll-spinner loading-spinner" style="display: block;">
+                    <i class="fa fa-refresh fa-spin fa-lg fa-3x"></i>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row-fluid grid-margins">
-        <div class="span12" style="background: rgb(214, 218, 222);">
-            <div id="MIO" class="col-xs-12" style="width: 100%; max-width: 960px;">
-             
-                <div id="questionSlide" class="fontSize_m">
-                    <div id="questionStemDiv">
-                        <div id="questionStem" class="stem" style="height: 15px;"><p id="stemText" class="stemFont"></p><p>Your company's Microsoft Azure infrastructure team asks you for help in designing a traffic control solution for their deployment.<br> <br> The deployment consists of a single virtual network (VNet) that has the following topology:<br> <br> * edge subnet: Linux-based network virtual appliance (NVA) running enterprise firewall software with IP forwarding enabled<br> * data1 subnet: 4 Windows Server virtual machines (VMs)<br> * data2 subnet: 4 Ubuntu Linux VMs<br> <br> You need to recommend a solution to the infrastructure team so that all outbound Azure VM traffic must pass through the NVA on the edge subnet.<br> <br> What two actions should you perform? Each correct answer presents part of the solution.</p><p></p></div>
-                        <div id="zoomDialog"></div>
-                        <div id="answerDialog" class="scrollable"></div>
-                        <!-- <div id="zoom" title="Click here to magnify the question stem" class="zoom"></div> -->
-                    </div>
-                 
-                    <div id="application" class="scrollable" style="width: 100%; max-width: 960px; height: 100%;">
-                        <div id="mainSlide" style="width: 100%; max-width: 960px; height: 600px;">
-                            <div id="backgroundWidget" class="widgets" style="width:100%;height:100%">
 
-                            </div><div class="dd-handle-SR widgets null col-xs-12 correctAnswer" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 2%;">
-                                <input id="checkbox2" tabindex="1" cid="c74" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option2" style="display:block;">
-                                <span id="span_checkbox2" style="position: relative !important;display: block;" class="spanSingleChoice">Bind the resource to each subnet.</span>
-                            </div><div class="dd-handle-SR widgets null col-xs-12" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
-                                <input id="checkbox3" tabindex="1" cid="c75" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option3" style="display:block;">
-                                <span id="span_checkbox3" style="position: relative !important;display: block;" class="spanSingleChoice">Bind the resource to each VM virtual network interface card (vNIC).</span>
-                            </div><div class="dd-handle-SR widgets null col-xs-12" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
-                                <input id="checkbox1" tabindex="1" cid="c73" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option1" style="display:block;">
-                                <span id="span_checkbox1" style="position: relative !important;display: block;" class="spanSingleChoice">Create a network security group (NSG) with an outbound rule.</span>
-                            </div><div class="dd-handle-SR widgets null col-xs-12" tabindex="1" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
-                                <input id="checkbox4" tabindex="1" cid="c76" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option4" style="display:block;">
-                                <span id="span_checkbox4" style="position: relative !important;display: block;" class="spanSingleChoice">Deploy two internal load balancers between the three subnets.</span>
-                            </div><div class="dd-handle-SR widgets null col-xs-12 correctAnswer" tabindex="1" style="left: 20px; margin-top: 0px; width: 920px; height: auto;">
-                                <input id="checkbox0" tabindex="1" cid="c72" class="widgets pointer radioButtonNone" type="checkbox" name="AZ-100_4527" value="$$stAZ-100_4527__option0" style="display:block;">
-                                <span id="span_checkbox0" style="position: relative !important;display: block;" class="spanSingleChoice">Create a route table with a next-hop IP address.</span>
-                            </div>
+    <div id="tableReview" class="scoringReport" style="display:none;width: 100%; height:100%; display: table; background: rgb(214, 218, 222);">
+    </div>
+
+    <div id="scoringReport" class="scoringReportStyle" style="display: none;">
+        <div class="scoring-report-container">
+
+            <div id="scoringReportCaption" class="scoringCaption" style="margin: 0 auto;margin-bottom: 0px;">Test Score Report</div>
+            <div id="scoringReportData" class="row dataReport scoreReportQuestion">
+                <div class="col-sm-5" style="margin-left: 2%;">
+                    <!-- Name of user -->
+                    <div class="row dataReport" style="width: 100%;">
+                        <div class="col-sm-2">
+                            <div id="testNameReportText" style="font-weight: bold; margin-bottom:20px;"><img src="../LMS/assets/images/score-exam.png"></div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div id="testNameReport"></div>
                         </div>
                     </div>
-                    <div id="explanationDiv" style="">
-                        <div id="explanationHeader">
-                            <div id="expandExplanation" class="collapseExplanation"></div>
-                            <p id="explanationHeaderText">Explanation</p>
+                    <!-- Name of exam -->
+                    <div class="row dataReport" style="width: 100%;">
+                        <div class="col-sm-2">
+                            <div id="userNameReportText" style="font-weight: bold; margin-bottom:20px;"><img src="../LMS/assets/images/score-user.png"></div>
                         </div>
-                        <div id="explanationBody" class="scrollable">
-                            <p id="explanationBodyText"><p>You should create a route table with a next-hop IP address. The route table resource allows you to override the Azure-provided system routes that automatically route traffic into, within, and out of an Azure VNet. A route table contains a "next hop" default route that Azure uses when VMs within a subnet attempt to reach resources beyond that subnet. The available next hop types are:<br> <br> * Virtual appliance<br> * Internet<br> * Virtual network<br> * Virtual network gateway<br> <br> You should also bind the route table resource to each subnet. In this scenario, you would create a route table that defines a next hop to your NVA, and then bind the single route table to every subnet in the VNet.<br> <br> You should not create an NSG with an outbound rule. NSGs are software firewall resources used to selectively allow or block inbound and/or outbound traffic. You cannot define next hop routing with NSGs.<br> <br> You should not bind the resource to each VM vNIC. Route tables can be bound only to the subnet resource. By contrast, NSGs can be bound to subnet and/or vNIC resources.<br> <br> You should not deploy two internal load balancers between the three subnets. Load balancers are used to distribute user requests equitably among two or more back-end VMs and are not used to enforce next hop routing logic.<br><br><strong>References</strong><br><br><a href="https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal" target="_blank" rel="noopener" tabindex="190">Tutorial: Route network traffic with a route table using the Azure portal</a><br><br><a href="https://docs.microsoft.com/en-us/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn" target="_blank" rel="noopener" tabindex="190">Use network virtual appliances on a virtual network</a><br><br><a href="https://docs.microsoft.com/en-us/azure/virtual-network/security-overview" target="_blank" rel="noopener" tabindex="190">Security groups</a><br><br><a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview" target="_blank" rel="noopener" tabindex="190">What is Azure Load Balancer?</a><br><br><a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview" target="_blank" rel="noopener" tabindex="190">Virtual network traffic routing</a><br><br></p></p>
+                        <div class="col-sm-9">
+                            <div id="userNameReport"></div>
+                        </div>
+                    </div>
+
+                    <div class="row dataReport" style="width: 100%;">
+                        <div class="col-sm-2">
+                            <div id="timeSpentReportText" style="font-weight: bold; margin-bottom:20px;"><img src="../LMS/assets/images/score-time.png"></div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div id="timeSpentReport"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="marginScoreReport col-sm-6">
+                    <div id="scoringPassOrFail">
+                        <img id="scoringPassOrFailImage" src="../LMS/assets/images/score-pass.png">
+                    </div>
+                    <div class="row dataReport col-sm-6" style="width: 100%;">
+                        <div id="yourScoreReportText" style="font-weight: bold;">Your Score:</div>
+                    </div>
+                    <div class="row dataReport col-sm-6" style="width: 100%;">
+                        <div id="cutScoreReportText" style="font-weight: bold;">Passing Score:</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="reportStamp"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="objGraphReport" class="row dataReport">
+                <a id="analysisReportObjetives" class="report-menu" href="#skillgroupReport">Objectives</a>
+                <a id="analysisReportGraphics" class="report-menu" href="#tableReport">Graphics</a>
+            </div>
+
+            <div class="row dataReport">
+                <a name="skillgroupReport"></a>
+                <div id="tableSkillgroupReport">
+                </div>
+            </div>
+
+            <div class="row dataReport">
+                <a name="tableReport"></a>
+                <div id="attempsGraph" style="margin: 0 auto;margin-top: 15px;height: 250px; width: 100%;min-width: ">
+                </div>
+            </div>
+
+            <div id="scoringPie"></div>
+
+            <div class="row dataBtnReport" style="display:block!important">
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="exitTestBtn">Back to Locker</div>
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="viewQuestionsListBtn">
+                    <i class="fa fa-reorder"></i>
+                    <span id="viewQuestionsListText" class="btnPointer"> Questions List</span>
+                </div>
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="sendCommentsReportBtn">
+                    <i class="fa fa-comment"></i>
+                    <span id="sendCommentsReportsText" class="btnPointer">Comments</span>
+                </div>
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="printReportBtn">Print Report</div>
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="sendEmailReportBtn">
+                    <i class="fa fa-mail-forward"></i>
+                    <span id="sendEmailReportsText" class="btnPointer">Email Report</span>
+                </div>
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="openTestHistoryBtn">
+                    <i class="fa fa-clock-o"></i>
+                    <span id="openTestHistoryText" class="btnPointer">Open Test History</span>
+                </div>
+                <div tabindex="0" class="btn btn-default buttonScoreReportFinish" id="retakeTestBtn" rel="popover" title="" data-original-title="This will cancel any paused instances of this test">
+                    <i class="fa fa-repeat"></i>
+                    <span id="retakeTestText" class="btnPointer">Retake Test</span>
+                </div>
+            </div>
+
+            <div class="row dataCopyrightReport">
+                <img src="assets/images/MUP.png" style="width: 189px;vertical-align: sub;display:none;"><br><span style="font-size: 10px;">© 2019 Performance Testing Solution, Inc. All rights reserved. All trademarks are the property of their respective owners.</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="pbsRender" class="simulationViewer" style="background: rgb(214, 218, 222); display: block;">
+        <div class="divIframe" style="max-width: 970px;">
+            <div id="simulationViewer" style="display: block;">
+                <div class="container-fluid">
+                    <div class="row-fluid grid-margins">
+                        <div id="toolbarPane" class="span8">
                         </div>
                     </div>
                 </div>
-                <div id="console" class="hidden"></div>
+                <div class="container-fluid">
+                    <div class="row-fluid grid-margins">
+                        <div class="span12" style="background: rgb(214, 218, 222);">
+                            <div id="MIO" class="col-xs-12" style="width: 100%; max-width: 960px;">
+                                <div id="toolbarSlide" class="col-xs-12" style="display: block;">
+                                    <nav class="navbar navbar-default" role="navigation">
+                                        <!-- Brand and toggle get grouped for better mobile display -->
+                                        <!-- <div style="width:10%;" class="navbar-brand">PTS</div> -->
+                                        <!-- <div class="navbar-collapse collapse"> -->
+                                        <ul id="toolbarButtonsBar" class="nav navbar-nav navbar-brand" style="display:inline-flex;">
+                                            <li class="marginButtons" tabindex="1" id="reset"><button class="toolbarbutton">Reset</button></li>
+                                            <li class="marginButtons" tabindex="1" id="options"><button class="toolbarbutton">Options</button></li>
+                                            <li class="marginButtons" tabindex="1" id="answer" style="display: block;"><button id="answerButtonText" class="toolbarbutton">Show Answer</button></li>
+
+
+
+                                        </ul>
+                                        <!-- </div> -->
+                                        <ul class="nav navbar-nav navbar-right" style="display:block; max-width:100px; float:right">
+                                            <li><div id="scoreBox" class="navbar-brand pass unanswered" style="display: none;">Unanswered </div></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div id="questionSlide" class="fontSize_m">
+                                    <div id="questionStemDiv">
+                                        <div id="questionStem" class="stem" style="height: 15px;"><p id="stemText" class="stemFont"></p><p>You are the cloud operations lead for your company's Microsoft Azure subscription. Your team consists of eight administrators who co-manage all Azure-deployed resources.<br> <br> The corporate governance team mandates that all future Azure resources be deployed only within certain regions.<br> <br> You need to meet the compliance requirement.<br> <br> Which Azure feature should you use?</p><p></p></div>
+                                        <div id="zoomDialog"></div>
+                                        <div id="answerDialog" class="scrollable"></div>
+                                        <!-- <div id="zoom" title="Click here to magnify the question stem" class="zoom"></div> -->
+                                    </div>
+                                    <div id="answerHeader">
+                                        <p id="answerHeaderText">Choose the correct answer</p>
+                                    </div>
+                                    <div id="application" class="scrollable" style="width: 100%; max-width: 960px; height: 100%;">
+                                        <div id="mainSlide" style="width: 100%; max-width: 960px; height: 600px;">
+                                            <div id="backgroundWidget" class="widgets" style="width:100%;height:100%">
+
+                                            </div><div tabindex="1" class="dd-handle-SR widgets null col-xs-12" style="left: 20px; margin-top: 2%; width: 920px; height: auto;">
+                                                <input id="radio0" cid="c62" class="widgets pointer radioButtonNone" type="radio" name="AZ-100_4467" value="$$stAZ-100_4467__option0" style="display:block;">
+                                                <span id="span_radio0" style="position: relative !important;display: block;" class="spanSingleChoice">Azure Policy</span>
+                                            </div><div tabindex="1" class="dd-handle-SR widgets null col-xs-12" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
+                                                <input id="radio2" cid="c64" class="widgets pointer radioButtonNone" type="radio" name="AZ-100_4467" value="$$stAZ-100_4467__option2" style="display:block;">
+                                                <span id="span_radio2" style="position: relative !important;display: block;" class="spanSingleChoice">Taxonomic tags</span>
+                                            </div><div tabindex="1" class="dd-handle-SR widgets null col-xs-12" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
+                                                <input id="radio1" cid="c63" class="widgets pointer radioButtonNone" type="radio" name="AZ-100_4467" value="$$stAZ-100_4467__option1" style="display:block;">
+                                                <span id="span_radio1" style="position: relative !important;display: block;" class="spanSingleChoice">Role-Based Access Control (RBAC)</span>
+                                            </div><div tabindex="1" class="dd-handle-SR widgets null col-xs-12" style="left: 20px; width: 920px; height: auto; margin-top: 0px;">
+                                                <input id="radio3" cid="c65" class="widgets pointer radioButtonNone" type="radio" name="AZ-100_4467" value="$$stAZ-100_4467__option3" style="display:block;">
+                                                <span id="span_radio3" style="position: relative !important;display: block;" class="spanSingleChoice">Activity Log Analytics</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="explanationDiv" style="display: none;">
+                                        <div id="explanationHeader">
+                                            <div id="expandExplanation" class="collapseExplanation"></div>
+                                            <p id="explanationHeaderText">Explanation</p>
+                                        </div>
+                                        <div id="explanationBody" class="scrollable">
+                                            <p id="explanationBodyText"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="console" class="hidden"></div>
+                            </div>
+                            <div id="hintDialog"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="growlMessage" class="growlMessage" style="display:none;"><span class="growlText">This functionality is not implemented for this question.</span></div>
+                <div id="exhibitDialog"></div>
+                <div id="checkAnswertDialog"></div>
             </div>
-            <div id="hintDialog"></div>
+        </div>
+    </div><div id="NavigationBar" style="">
+        <div class="controlsPane">
+            <nav class="navbar navbar-default padding" role="navigation">
+                <div id="firstDv" class="col-xs-1">
+                    <button tabindex="190" id="lmsCompactMenu" class="lmsMenuButton"></button>
+                    <!--<button data-toggle="confirmation-singleton" id="exitTest" data-placement="top" data-original-title="Exit Test" title="Exit Test?" class="btn btn-default" value="Exit">
+                      Exit
+                    </button> -->
+                    <!--<div class="btn btn-default" id='pauseTestBtn'>
+                      <i class="fa fa-pause"></i>
+                      <span id="pauseTestBtnText" class="btnPointer">
+                        Pause
+                      </span>
+                    </div>
+                    <i id="tutorialBtn" class="fa fa-book fa-lg" rel="popover" title="Tutorial"></i>
+
+                    <i id="jumpToQuestionBtn" class="fa fa-share-square-o fa-lg" rel="popover" title="Jump to Question"></i>
+
+                    <i id="commentsBtn" class="fa fa-comment fa-lg" rel="popover" title="Comments"></i>
+
+                    <strong>
+                      <span id="testTitle" style="margin-left: 10px;">
+                        Test:
+                      </span>
+                    </strong>
+
+                    <span id="testName">
+                    </span> -->
+                </div>
+                <div id="secondDv" class="col-xs-6">
+                    <!-- <div class="btn btn-default" id='firstQuestion'>
+                      <i class="fa fa-arrow-left"></i>
+                      <span id="firstQuestionText" class="btnPointer">
+                        First Question
+                      </span>
+                    </div> -->
+                    <div class="btn btn-default btnLMS" id="previousQuestion" style="display: inline-block;">
+                        <i class="fa prevButton"></i>
+                        <span tabindex="190" id="previousQuestionText" class="btnPointer">Previous</span>
+                    </div>
+                    <div id="dvMarkReview" tabindex="190" style="text-align:center;display: inline-block;">
+                        <input type="checkbox" id="review" class="checkReview">
+                        <!-- <span class="spanMarkForReview"> -->
+                        <label for="review" style="cursor: pointer;" id="markForReview">
+                            <!-- Mark for review -->
+                        </label>
+                        <!-- </span> -->
+                    </div>
+                    <div class="btn btn-default btnLMS" id="nextQuestion">
+                        <span tabindex="190" id="nextQuestionText" class="btnPointer">Next</span>
+                        <i class="fa nextButton"></i>
+                    </div>
+                    <div class="btn btn-default btnLMS" id="viewReport2" style="display: none;">
+                        <span tabindex="190" id="viewReportBtnText2" class="btnPointer">Finish Test</span>
+                    </div>
+                    <!-- <div class="btn btn-default" id='lastQuestion'>
+                      <span id="lastQuestionText" class="btnPointer">
+                        Last Question
+                      </span>
+                      <i class="fa fa-arrow-right"></i>
+                    </div> -->
+                    <!-- <div class="btn btn-default" style="display: none;" id='reviewQuestions'>
+                      <span id="reviewQuestionsText" class="btnPointer">
+                        Review Questions
+                      </span>
+                    </div> -->
+                    <!-- <div class="btn btn-default" id='viewQuestionsListNotFinishedBtn'>
+                      <i class="fa fa-reorder"></i>
+                      <span id="viewQuestionsListText" class="btnPointer">
+                        Questions List
+                      </span>
+                    </div> -->
+                    <!-- <div class="btn btn-default skipQuestion" id='skipQuestion'>
+                      Skip
+                    </div> -->
+
+
+                </div>
+                <div id="thirdDv" class="col-xs-3">
+                    <div id="questionsPane" style="right: 25px;">
+                        <!-- <span id="questionsText">
+                          Question
+                        </span> -->
+
+                        <input tabindex="190" type="text" id="actualNumberQuestion" size="4" style="float:left">
+
+
+
+                        <div tabindex="190" id="btnQuestionList">
+                            <span id="ofText">of</span>
+
+                            <span id="numberQuestions">29</span>
+                        </div>
+                    </div>
+                    <div id="clock" class="disabled" style="display: none;">
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </div><table>
+        <tbody>
+            <tr></tr>
+            <tr></tr>
+        </tbody>
+    </table>
+    <div id="tutorial" style="display: none;">
+        <div id="caseStudyInfo" class="tutorialPage" style="background-color: white;padding-bottom: 35px;margin-left: 10px;margin-bottom: 50px !important;margin: 35px;display:none;">
+        </div>
+
+        <!-- <span id="resumeTestBtn" class="next" style="display:none;">Resume Test</span> -->
+        <div id="tutorialPage" class="tutorialPage" style="display: none;">
+
+
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgQEUFNUDxABV1haAQcCVFA="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+            <title>Tutorial del test</title>
+
+
+
+            <div class="contenedor fixTutorialPage">
+                <h2 id="testInformationTutorial">Test Information</h2>
+                <div id="wrapperTutorialPage1" style="height: 65%; overflow: auto; margin-top: 30px;">
+                    <p><span id="welcomeToTheTutorial">Welcome to the </span><span id="categoryTest">Microsoft</span> <span id="testWordTutorial">test</span>: <span style="font-weight: bold;" id="testTutorial">Microsoft (AZ-100): Azure Infrastructure Deployment</span> </p>
+                    <ul>
+                        <li class="liItems"><span id="theTestHasTutorial">The test has</span> <span id="questionsTutorial">29</span> <span id="questionsLowercaseTutorial">questions</span><div id="caseStudyTut"><span class="hiddenBCEN">, <span id="numberQuestionsCaseStudy">1</span> <span id="caseStudiesTutorial">Case Studies.</span></span></div><span class="hideOnStudy" style="display: none;"> <span id="andYouAreTutorial">and you have</span> </span><span id="timeTutorial" class="hideOnStudy" style="display: none;">120</span><span class="hideOnStudy" style="display: none;"> <span id="minutesToCompleteThemTutorial">minutes to complete them.</span></span></li>
+                        <li class="liItems hiddenBCEN"><span id="toPassTestTutorial">To pass the test, you must answer at least the </span><span id="cutScoreTutorial">80</span><span id="percentQuestionsTutorial">% of the questions correctly.</span></li>
+                    </ul>
+                    <div class="alert"><span id="pleaseInstructionsTutorial">Please, read the following instructions carefully.</span></div><br>
+                    <ul>
+
+                        <li class="liItems"><span id="timeAvailableTutorial">The time available for the test will start when the Begin Test button, on the last page of this tutorial, is clicked.</span></li>
+                        <li class="liItems"><span id="browserClosedTutorial">If the browser is closed or the Exit button is clicked, the test will close and the results will </span><strong><span id="not1Tutorial">NOT</span></strong> <span id="beSavedTutorial">be saved.</span></li>
+                        <li class="liItems"><span id="exitFullScreenTutorial">To exit the Full Screen view, press F11 or the ESC key on your keyboard. To go back to Full Screen view, press F11.</span></li>
+                        <li class="liItems hiddenBCEN"><span id="questionsCanBeTutorial">Questions can be completed by following different methods. If none of them were available, any of the other possible methods should be followed.</span></li>
+                        <li class="liItems hiddenBCEN"><span id="obtainedTestResultsTutorial">The obtained test results do </span><strong id="not2Tutorial">NOT</strong> <span id="takeIntoAccountTutorial">take into account the amount of time invested or the way in which each question has been completed. Only the final result matters.</span></li>
+                        <li class="liItems hiddenBCEN"><span id="taskDescribedTutorial">The tasks described in the question must be completed sequentially, by following the order established in the question.</span></li>
+                        <li class="liItems"><span id="transitionTimeTutorial">The transition time between questions is</span> <strong><span id="not3Tutorial">NOT</span></strong> <span id="countedAgainstTutorial">counted against the total test time.</span></li>
+                        <li class="liItems hiddenBCEN hiddenTesting"><span id="referencesMessage">While MeasureUp makes every effort to provide up-to-date reference links, website publishers may move, change, or remove web pages after the practice test is published. We apologize for any inconvenience and will work to update reference links when we next refresh the test.</span></li>
+                        <!-- <li class="liItems extraBCEN hiddenTesting"><span id="referencesMessageBCEN"></span></li> -->
+                    </ul>
+
+                </div>
+
+
+                <div class="botonera tutorialPage1">
+                    <!--<a href="#" class="previus">Anterior</a>-->
+                    <!-- <span id="goToTutorialPage2" class="next">Next</span> -->
+                    <div class="btn btn-default btnLMS" tabindex="0" id="goToTutorialPage2">
+                        <span id="nextPageText" class="btnPointer"><span id="nextButtonTutorial">Next</span></span>
+                        <i class="fa nextButton"></i>
+                    </div>
+                    <!-- <span class="next startTest" style="display:none;">Resume test</span> -->
+
+                    <div style="margin: 0 auto;width: 40%;padding-top: 8px;max-height: 45px;">
+                        <span class="btn btn-default btnLMS previus goto1" tabindex="0" style="display:none;"><span id="page1Tutorial">Page 1</span></span>
+                        <span class="btn btn-default btnLMS previus goto2" tabindex="0" style="display:none;"><span id="page2Tutorial">Page 2</span></span>
+                        <span class="btn btn-default btnLMS previus goto3" tabindex="0" style="display:none;"><span id="page3Tutorial">Page 3</span></span>
+                    </div>
+                    <span class="btn btn-default btnLMS startTest btnPointer" tabindex="0" style="display:none;"><span id="resumeTestTutorial">Resume test</span></span>
+                </div>
+            </div>
+            <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"78bf97a9ed","applicationID":"139866524","transactionName":"YVFWZBQAX0VQAk1RXVgbYUIPTkZTU05pemEZeHljSRVEQl4TUFleRRtARRIOQ19QDUlKU1VAXVMDUB9GWRE=","queueTime":0,"applicationTime":0,"atts":"TRZVElwaTEs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+        </div>
+
+        <div id="tutorialPage2" class="tutorialPage" style="display: none;">
+
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgQEUFNUDxABV1haAQcCVFA="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+            <title>TUTORIAL PBS</title>
+
+
+
+
+            <div class="contenedor fixTutorialPage">
+
+                <h2 id="testInterfaceTutorial">Test Interface</h2>
+                <div id="wrapperTutorialPage3" style="height: 65%; overflow: auto; margin-top: 30px;">
+                    <p id="followingControlsTutorial">The following controls will be available during the test:</p>
+                    <div id="scrollTutorial2">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5px" summary="Explicación de uso de los controles durante el test." style="overflow-y: scroll;">
+                            <caption>
+
+                            </caption>
+                            <tbody>
+                                <tr>
+                                    <th scope="col" class="headerStyle" style="text-align: center" id="controlTutorial">Control</th>
+                                    <th scope="col" class="headerStyle" id="definitionTutorial">Definition</th>
+                                </tr>
+                                <tr id="timerTutorial2" style="display: none;">
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/tiempo.png" alt="Temporizador"></td>
+                                    <td id="timerDisplaysTutorial">The Timer displays the remaining test time.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/contador.png" alt="Counter"></td>
+                                    <td id="counterDisplaysTutorial">The Counter displays the question in which you are, and the total number of questions of the test. You may also jump to any question by writing the number, or see the Question List by clicking.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/siguiente.png" alt="Next Question"></td>
+                                    <td id="nextButtonTakesTutorial">The Next button takes you to the next question, saving your progress.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/anterior.png" alt="Previous Question"></td>
+                                    <td id="previousButtonTakesTutorial">The Previous button takes you to the previous question, saving your progress.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/revision.png" alt="Mark for Review"></td>
+                                    <td id="questionsAreMarkedTutorial">Questions are marked to review them at the end of the test.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/exhibit.png" alt="Menu"></td>
+                                    <td>
+                                        <span id="exhibitButtonTutorial">The Exhibit button shows an explanation for this question.</span><br>
+                                        <u id="noteTutorial">NOTE:</u> <span id="buttonOnlyAppearsTutorial">This button only appears on certain questions.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/menu.png" alt="Menu"></td>
+                                    <td id="menuContainsTutorial">The Menu contains some of the buttons explained below.</td>
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/salir.png" alt="Exit"></td>
+                                    <td>
+                                        <span id="exitTestTutorial">Click this button if you want to exit the test.</span><br>
+                                        <u id="note2Tutorial">NOTE:</u> <span id="lostResultsTutorial">If you click this button, answers will be lost and the results will </span> <strong id="not4Tutorial">NOT</strong> <span id="beSavedTutorial2">be saved.</span>
+                                    </td>
+
+                                </tr>
+                                <!--   <tr>
+                                    <td class="center"><img src="assets/iconsTutorialsENU/omitir.png" alt="Skip"></td>
+                                    <td>This button takes you to the next question without answering the previous one. The skipped question will be marked in the Review Questions page as Unanswered.</td>
+
+                                  </tr> -->
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/reiniciar.png" alt="Reset"></td>
+                                    <td>
+                                        <span id="resetRestartsTutorial">Reset restarts the question and deletes the steps already performed.</span><br>
+                                        <u id="note1Tutorial">NOTE:</u> <span id="buttonDoesTutorial">This button does </span><strong id="not5Tutorial">NOT</strong> <span id="affectRemainingTutorial">affect the remaining test time.</span>
+                                    </td>
+
+                                </tr>
+                                <!-- <tr>
+                                  <td  class="center"><img src="assets/iconsTutorialsENU/entregar.png" alt="Deliver"></td>
+                                  <td>The Submit button will be available in all the questions. If you click this button, the steps already performed will be saved, as the Next Question button does.</td>
+
+                                </tr> -->
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/finalizar.png" alt="Finish Test"></td>
+                                    <td id="scoreReportTutorial">When you click this button, you will finish the test and go to the Score Report.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/pausar.png" alt="Pause"></td>
+                                    <td id="whenClickButtonPracticeTutorial">Click this button if you want to pause the test and resume it later.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/textsize.png" alt="Text Size"></td>
+                                    <td id="decreaseOrIncreaseTutorial">Decrease or increase the font size.</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="center tdTutorial"><img src="assets/iconsTutorialsENU/tutorial.png" alt="Tutorial"></td>
+                                    <td id="returnToTutorial">Return to this tutorial.</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="botonera tutorialPage2">
+                    <div class="btn btn-default btnLMS" tabindex="0" id="goToTutorialPage1">
+                        <i class="fa prevButton"></i>
+                        <span id="nextPageText" class="btnPointer"><span id="previousButtonTutorial">Previous</span></span>
+                    </div>
+                    <div class="btn btn-default btnLMS" tabindex="0" id="goToTutorialPage3">
+                        <span id="nextPageText" class="btnPointer"><span id="nextButton2Tutorial">Next</span></span>
+                        <i class="fa nextButton"></i>
+                    </div>
+                    <!-- <span class="next startTest" style="display:none;">Resume test</span> -->
+
+                    <div style="margin: 0 auto;width: 40%;padding-top: 8px;max-height: 45px;">
+                        <span class="btn btn-default btnLMS previus goto1" tabindex="0" style="display:none;"><span id="page4Tutorial">Page 1</span></span>
+                        <span class="btn btn-default btnLMS previus goto2" tabindex="0" style="display:none;"><span id="page5Tutorial">Page 2</span></span>
+                        <span class="btn btn-default btnLMS previus goto3" tabindex="0" style="display:none;"><span id="page6Tutorial">Page 3</span></span>
+                    </div>
+
+                    <span class="btn btn-default btnLMS startTest btnPointer" tabindex="0" style="display:none;"><span id="resumeTest1Tutorial">Resume test</span></span>
+                </div>
+            </div>
+            <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"78bf97a9ed","applicationID":"139866524","transactionName":"YVFWZBQAX0VQAk1RXVgbYUIPTkZTU05pemEZeHljSRVEQl4TUFleRRtARRIOQ19QDUlKU1VAXVMDUx9GWRE=","queueTime":0,"applicationTime":0,"atts":"TRZVElwaTEs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+
+        </div>
+
+        <div id="tutorialPage3" class="tutorialPage" style="display: block;">
+
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgQEUFNUDxABV1haAQcCVFA="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+            <title>TUTORIAL PBS</title>
+
+
+
+            <div class="contenedor fixTutorialPage">
+
+                <h2 id="questionListAndTutorial">Question List and Test Final Report</h2>
+                <div id="wrapperTutorialPage3" style="height: 65%; overflow: auto; margin-top: 30px;">
+                    <p><span id="finisTestOtherLanguagesTutorial"><span id="beforeCompletingTutorial">Before completing the test, remember you will be able to review the Question List by clicking on the Counter. This list will show if you did or did </span><strong id="not6Tutorial">NOT</strong> <span id="answerEachQuestionTutorial">answer each question, or if you marked any of them for further review. The following icons will show the status mentioned above:</span></span></p>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="5px" summary="Definitions for control of the test.">
+                        <caption>
+
+                        </caption>
+                        <tbody>
+                            <tr>
+                                <th scope="col" class="headerStyle" style="text-align: center" id="controlTutorial1">Control</th>
+                                <th scope="col" class="headerStyle" id="definitionTutorial1">Definition</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;line-height:30px;" class="tdTutorial center"><img src="assets/iconsTutorialsENU/check1.png" width="18" height="18" alt="Question saved as answered"></td>
+                                <td>
+                                    <span id="questionHasbeenATutorial">The question has been answered or any steps have been performed.</span><br>
+                                    <u id="note4Tutorial">NOTE:</u> <span id="thisInformationTutorial">This information is </span><strong id="not7Tutorial">NOT</strong> <span id="relatedToTutorial">related to the score. Whenever you click the Next button, the question will be saved as Answered.</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;line-height:30px;" class="tdTutorial  center"><img src="assets/iconsTutorialsENU/check2.png" width="18" height="18" alt="Question has been skipped"></td>
+                                <td><span id="questionHasTutorial">The question has </span><strong id="not8Tutorial">NOT</strong> <span id="beenAnseredTutorial">been answered nor have any step been performed. The question has been skipped during the completion of the test.</span></td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;line-height:30px;" class="tdTutorial  center"><img src="assets/iconsTutorialsENU/check3.png" width="18" height="18" alt="Question is marked for review"></td>
+                                <td id="markedForReviewTutorial">The question has been marked for review.</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        <br>
+                        <!-- <div class="alert"><u>NOTE:</u> You must take into account that <u>when you go back to a question already answered from the review page, the score will be deleted</u>. You will have to perform the necessary steps to complete it or to answer it again. </div> -->
+                    </p>
+                    <p id="canReviewTutorial">You can review a question as many times as you consider necessary by clicking on its stem or number in the Question List.</p>
+                    <p id="onceYouHavePracticeTutorial">Once you have finished the review, click on the Finish Test button to exit the test and obtain the final report with the results.</p>
+                </div>
+
+                <div class="botonera tutorialPage3">
+                    <div class="btn btn-default btnLMS previus" tabindex="0" id="goToTutorialPage2">
+                        <i class="fa prevButton"></i>
+                        <span id="nextPageText" class="btnPointer"><span id="previousButtonTutorial1">Previous</span></span>
+                    </div>
+
+                    <div id="startTest" class="btn btn-default btnLMS" tabindex="0">
+                        <span class="btnPointer" id="beginTestTutorial">Begin test</span>
+                    </div>
+                    <!-- <span class="next startTest" style="display:none;">Resume test</span> -->
+
+                    <div style="margin: 0 auto;width: 40%;padding-top: 8px;max-height: 45px;">
+
+                        <span class="btn btn-default btnLMS previus goto1" tabindex="0" style="display:none;"><span id="page7Tutorial">Page 1</span></span>
+                        <span class="btn btn-default btnLMS previus goto2" tabindex="0" style="display:none;"><span id="page8Tutorial">Page 2</span></span>
+                        <span class="btn btn-default btnLMS previus goto3" tabindex="0" style="display:none;"><span id="page9Tutorial">Page 3</span></span>
+                    </div>
+
+                    <span class="btn btn-default btnLMS startTest btnPointer" tabindex="0" style="display:none;"><span id="resumeTest2Tutorial">Resume test</span></span>
+
+                </div>
+            </div>
+            <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"78bf97a9ed","applicationID":"139866524","transactionName":"YVFWZBQAX0VQAk1RXVgbYUIPTkZTU05pemEZeHljSRVEQl4TUFleRRtARRIOQ19QDUlKU1VAXVMDUh9GWRE=","queueTime":0,"applicationTime":0,"atts":"TRZVElwaTEs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+
         </div>
     </div>
-</div>
-<div id="growlMessage" class="growlMessage" style="display:none;"><span class="growlText">This functionality is not implemented for this question.</span></div>
-<div id="exhibitDialog"></div>
-<div id="checkAnswertDialog"></div>
+
+    <div id="requestEmailDiv">
+        <p id="requestEmailTitle">Please, enter your email address to launch the test:</p>
+        <label id="requestEmailInput">
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="E-mail" id="emailReq">
+        </label>
+        <p id="interestedSMEsPar" style="display:none;font-size: 13px !important;">
+            <input type="checkbox" id="interestedSMEsCheck">MeasureUp
+            is looking for SMEs who are interested in writing and reviewing content for future Microsoft Official
+            Practice Tests. Please check this box if you are qualified and interested in being contacted via email about
+            upcoming opportunities.
+        </p>
+        <p id="LegalNote" style="display:none;font-size: 13px !important;">
+            <input type="checkbox" id="LegalNoteCheck">If
+            you click on "Send" button, you agree to the <a target="_blank" href="http://www.measureup.com/Privacy_terms.aspx">
+                Privacy
+                Policy and Terms of Use
+            </a>.
+        </p>
+
+        <button class="btn btn-success btn-newStyle" id="sendReqEmailBtn">Send</button>
+    </div>
+
+    <div class="modal fade in" id="divTestModesDialog" tabindex="-1" role="dialog" style="overflow: auto; display: none;" aria-labelledby="modalTermsLabel" aria-hidden="false"></div>
+
+
+    <div id="testOptionsDialog">
+        <p>
+            <b id="optionsDialog1">The following options may be changed for this test instance at any point during the test:</b>
+        </p>
+        <p id="optionsDialog2_1">Specify how you want to request answers and explanations during the test:</p>
+        <div class="icon-addon addon-sm">
+            <select id="optionsRequestExplanations" class="form-control">
+                <option value="0" id="optionsDialog2_2">Do not display any answers until the test is complete</option>
+                <option value="1" id="optionsDialog2_3">Let me ask for each answer</option>
+                <option value="2" id="optionsDialog2_4">Autodisplay answers to incorrect responses</option>
+                <option value="3" id="optionsDialog2_5">Autodisplay answers to any response</option>
+            </select>
+        </div>
+        <div class="smart-form">
+            <p>
+                <label class="checkbox">
+                    <input type="checkbox" id="optionsAllowChangeAnswers" name="optionsAllowChangeAnswers" checked="false"><i></i>
+                    <span id="optionsDialog3">Allow me to change my answers before scoring my test</span>
+                </label>
+            </p>
+        </div>
+    </div>
+
+    <div id="compactLMSMenuDialog" tabindex="1">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <!-- Row 1 -->
+            </p><div class="btn btn-default col-xs-6 btnCompactMenu borderRight borderBottom" id="textLessTestBtn">
+                <!-- <i id="tutorialBtn" class="fa fa-book fa-lg" rel="popover" title="Tutorial"></i>    -->
+                <img src="assets/images/textless.png" alt="decrease font size" style="width: 36px;vertical-align: sub;"><br>
+                <a href="javascript:void(0);"><span id="textLessTestBtnText" class="btnPointer btnTextCompactMenu">Text -</span></a>
+            </div>
+
+            <div class="btn btn-default col-xs-6 btnCompactMenu borderBottom" id="textPlusTestBtn">
+                <!-- <i id="commentsBtn" class="fa fa-comment fa-lg" rel="popover" title="Comments"></i>   -->
+                <img src="assets/images/textplus.png" alt="increase font size" style="width: 36px;vertical-align: sub;"><br>
+                <a href="javascript:void(0);"><span id="textPlusTestBtnText" class="btnPointer btnTextCompactMenu">Text +</span></a>
+            </div>
+
+            <!-- Row 2 -->
+
+            <div class="btn btn-default col-xs-6 btnCompactMenu borderBottom borderRight " id="tutorialBtn" data-original-title="Tutorial">
+                <!-- <i id="tutorialBtn" class="fa fa-book fa-lg" rel="popover" title="Tutorial"></i>    -->
+                <img src="assets/images/tutorial.png" alt="test information" style="width: 36px;vertical-align: sub;"><br>
+                <a href="javascript:void(0);"><span id="tutorialTestBtnText" class="btnPointer btnTextCompactMenu">Tutorial</span></a>
+            </div>
+
+            <div class="btn btn-default col-xs-6 btnCompactMenu borderBottom" id="commentsBtn" data-original-title="Comments">
+                <!-- <i id="commentsBtn" class="fa fa-comment fa-lg" rel="popover" title="Comments"></i>   -->
+                <img src="assets/images/feedback.png" alt="report technical issues or provide content suggestions" style="width: 36px;vertical-align: sub;"><br>
+                <a href="javascript:void(0);"><span id="commentsTestBtnText" class="btnPointer btnTextCompactMenu">Feedback</span></a>
+            </div>
+
+            <!-- Row 3 -->
+
+
+            <div class="btn btn-default col-xs-6 btnCompactMenu borderRight" id="exitTest" data-original-title="Exit Test?">
+                <img src="assets/images/exit.png" alt="Leave test" style="width: 36px;vertical-align: sub;"><br>
+                <a href="javascript:void(0);"><span id="exitTestBtnText" class="btnPointer btnTextCompactMenu">Exit</span></a>
+            </div>
+
+
+            <div class="btn btn-default col-xs-6 btnCompactMenu" id="pauseTestBtn">
+                <!-- <i class="fa fa-pause"></i> -->
+                <img src="assets/images/pause.png" alt="Pause test" style="width: 36px;vertical-align: sub;"><br>
+                <a href="javascript:void(0);"><span id="pauseTestBtnText" class="btnPointer btnTextCompactMenu">Pause</span></a>
+            </div>
+
+            <div class="btn btn-default col-xs-12 btnCompactMenuFinishTest" id="viewReport">
+                <a href="javascript:void(0);"><span id="viewReportBtnText" class="btn btn-default btnTextCompactMenu btnCompactMenuExit">Finish Test</span></a>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <div id="jumpToQuestionDialog">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <label class="checkbox">
+                    <span id="jumpQuestionDialog1">Please enter the Question number to navigate to:</span>
+                </label>
+                <input id="jumpToQuestionInput" class="form-control input-xs" type="number">
+            </p>
+        </div>
+    </div>
+
+
+    <div id="emailReportDialog">
+        <div class="smart-form">
+            <p id="titleEmailReport" style="display:block;">Email Your Test Results</p>
+            <p>
+                <span id="emailReportDialog0">Send a copy of your test results to yourself, your boss, your spouse, or anyone you want to impress... To email your test results, enter the email address and a brief message you want attached to the top of your test results and click the SEND button.</span>
+            </p>
+            <p style="display:flex; margin-top: 20px;">
+                <label>
+                    <span id="emailReportDialog1" style="font-weight: bold;">Send results to:</span>
+                </label>
+                <input id="emailReportDialogInput1" class="form-control input-xs">
+            </p>
+            <p style="display:flex;">
+                <span id="emailReportDialog2" style="font-weight: bold;">Message to Include With Test Results:</span>
+            </p>
+            <p style="display:flex;margin-top: 10px;">
+                <textarea id="emailReportDialogInput2" class="form-control input-xs"></textarea>
+            </p>
+            <div id="closeButtonEmail">
+                <img src="assets/images/closeButton.png" alt="close">
+            </div>
+        </div>
+    </div>
+
+    <div id="warningRetakeTest">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <span id="warningRetakeTest1">All records of the exam will be deleted! Are you sure you want to abort the exam?</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="lastQuestionDialog">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <span id="lastQuestionMessageText">You are navigating to the last question of your test. To complete and end the test, please click FINISH TEST.</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="showAnswerCSDialog">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <span id="showAnswerCSDialogText">
+                    Please, select the question whose answer you want to see.
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div id="dodFinishWarning">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <span id="dodFinishWarningText">
+                    Please remember to print or email your test results before exiting the application. Test records and score information cannot be retrieved.
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div id="exitAutoanswerWarning">
+        <div class="smart-form">
+            <p style="display:flex;">
+                <span id="exitAutoanswerWarningText">
+                    You can see the answer to the current question now. If you want to continue, please use the <span id="exitAutoanswerButtonPressed">Exit, Pause or Finish button</span> again.
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div id="commentsDialog">
+        <p id="commentHeader">Send Feedback</p>
+
+        <p id="comment1">Thank you for sharing your observations and feedback. If you need immediate help, please contact support@measureup.com.</p>
+        <p id="comment2">Your message will be reviewed by our Content Team to determine the need for corrections/updates. If we have any further questions, we may be in touch with you. Any changes made to this item will be reflected in our next release.</p>
+        <p id="commentQuestionId">
+
+        </p>
+        <p id="comment3">Name:</p>
+        <div class="smart-form">
+            <p>
+                <!-- <label id="comment4" class="label">Message:</label> -->
+                <textarea id="messageComments" rows="3" class="custom-scroll" style="width: 100%;"></textarea>
+            </p>
+        </div>
+        <div id="closeButtonFeedback">
+            <img src="assets/images/closeButton.png" alt="close">
+        </div>
+    </div>
+
+    <div id="timeOut" class="timeOut" style="display:none;">Your time has terminated, please click in Finish Test button.</div><div id="divSmallBoxes"></div><div id="divMiniIcons"></div><div id="divbigBoxes"></div>
+</body>
+</html>

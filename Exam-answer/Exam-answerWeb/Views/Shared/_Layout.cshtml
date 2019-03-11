@@ -12,7 +12,11 @@
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.mobile.min.css" />*@
     @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap-v4.min.css" />
+    @*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap-v4.min.css" />*@
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.mobile.min.css" />
 
     <style>
         html {
@@ -22,6 +26,13 @@
     </style>
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+
+    <style type='text/css'>
+        body {
+            background-image: url(../../128-168.jpg);
+            background-repeat: repeat;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -35,24 +46,17 @@
                     <li>
                         Az-100
                         <ul>
-                            <li>
-                                <a class="nav-link text-dark"
-                                   asp-area=""
-                                   asp-controller="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController).Replace(nameof(Controller), string.Empty))"
-                                   asp-action="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController.Question1))">Question1</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark"
-                                   asp-area=""
-                                   asp-controller="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController).Replace(nameof(Controller), string.Empty))"
-                                   asp-action="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController.Question2))">Question2</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark"
-                                   asp-area=""
-                                   asp-controller="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController).Replace(nameof(Controller), string.Empty))"
-                                   asp-action="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController.Question3))">Question3</a>
-                            </li>
+                            @{
+                                for (int i = 1; i <= 6; i++)
+                                {
+                                    <li>
+                                        <a class="nav-link text-dark"
+                                           asp-area=""
+                                           asp-controller="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController).Replace(nameof(Controller), string.Empty))"
+                                           asp-action="@($"Question{i}")">@($"Question{i}")</a>
+                                    </li>
+                                }
+                            }
                         </ul>
                     </li>
                 </ul>
@@ -61,12 +65,13 @@
         </ul>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <hr />
+        <br />
         <main role="main">
             @RenderBody()
         </main>
     </div>
+
+    <br />
 
     <footer class="border-top footer text-muted">
         @*<div class="container">
@@ -89,9 +94,9 @@
                 padding-bottom: 1em;
             }
 
-            .correct{
-                color:lightgreen
-            }
+        .correct {
+            color: lightgreen
+        }
     </style>
 </body>
 </html>

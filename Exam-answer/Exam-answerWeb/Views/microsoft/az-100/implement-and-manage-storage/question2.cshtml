@@ -13,19 +13,21 @@
         <li class="k-state-active">
             Answers
             <div>
-                <ul class="fieldlist">
-                    <li>
-                        <input type="radio" name="group" id="yes" class="k-radio">
-                        <label class="k-radio-label" for="yes">Yes</label>
-                    </li>
-                    <li class="correct">
-                        <input type="radio" name="group" id="no" class="k-radio">
-                        <label class="k-radio-label" for="no">No</label>
-                    </li>
-                </ul>
+                <p>
+                    <ul class="fieldlist">
+                        <li>
+                            <input type="radio" name="group" id="yes" class="k-radio">
+                            <label class="k-radio-label" for="yes">Yes</label>
+                        </li>
+                        <li class="correct">
+                            <input type="radio" name="group" id="no" class="k-radio">
+                            <label class="k-radio-label" for="no">No</label>
+                        </li>
+                    </ul>
+                </p>
             </div>
         </li>
-        <li>
+        <li class="k-state-active">
             Explanation
             <div>
                 <p>This solution does not meet the goal. Azure Active Directory (Azure AD) permissions are distinct from Azure resource permissions. In this case, you should enable the Access management for Azure resources property from the Azure AD tenant's Properties blade. This property, when enabled, ensures that Azure AD users assigned to the Global Administrators role maintain full resource access even if their account is stripped from resource-level access control lists (ACLs). The Add role assignment button is used to make an addition to that scope's ACL. For instance, you may need to add a new Azure administrator to the Owner role for a subscription, resource group, or resource.ReferencesElevate access for a Global Administrator in Azure Active DirectoryManage access using RBAC and the Azure portalManage app and resource access using Azure Active Directory groups</p>
