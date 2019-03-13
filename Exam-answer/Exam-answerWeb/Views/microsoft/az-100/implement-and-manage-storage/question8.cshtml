@@ -4,9 +4,22 @@
         <li class="k-state-active">
             Question
             <div>
-                <p>You manage a Windows Server virtual machine (VM) in Azure named prod-vm1. The VM uses managed disk storage, runs Windows Server 2012 R2, and resides in a resource group named prod-west-rg located in the West US region.</p>
-                <p>You need to move prod-vm1 to a resource group named prod-east located in the East US region.</p>
-                <p>What should you do?</p>
+                <p>
+                    You deploy a Storage Account named store01 in your Azure subscription.
+                </p>
+                <p>
+                    You grant the contributor role to some users in store01.
+                    The users work on an application that will use the storage account for storing some information.
+                </p>
+                <p>
+                    The users report that they are not able to list the storage account keys for connecting their application to the storage account.
+                </p>
+                <p>
+                    You need to identify the root cause of the issue.
+                </p>
+                <p>
+                    What is the most probable cause?
+                </p>
             </div>
         </li>
         <li class="k-state-active">
@@ -14,21 +27,29 @@
             <div>
                 <p>
                     <ul class="fieldlist">
-                        <li class="correct">
-                            <input type="radio" name="group" id="1" class="k-radio">
-                            <label class="k-radio-label" for="1">Back up prod-vm1 and restore the VM to the prod-east-rg resource group. Delete the original VM instance.</label>
-                        </li>
                         <li>
+                            <input type="radio" name="group" id="1" class="k-radio">
+                            <label class="k-radio-label" for="1">
+                                You need to grant the users the owner role.
+                            </label>
+                        </li>
+                        <li class="correct">
                             <input type="radio" name="group" id="2" class="k-radio">
-                            <label class="k-radio-label" for="2">Author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group.</label>
+                            <label class="k-radio-label" for="2">
+                                You configured a ReadOnly lock.
+                            </label>
                         </li>
                         <li>
                             <input type="radio" name="group" id="3" class="k-radio">
-                            <label class="k-radio-label" for="3">Move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet.</label>
+                            <label class="k-radio-label" for="3">
+                                You configured a CanNotDelete lock.
+                            </label>
                         </li>
                         <li>
                             <input type="radio" name="group" id="4" class="k-radio">
-                            <label class="k-radio-label" for="4">Use azcopy to copy prod-vm1 to the prod-east-rg resource group.</label>
+                            <label class="k-radio-label" for="4">
+                                You need to grant the users the Storage Account Key Operator Service role.
+                            </label>
                         </li>
                     </ul>
                 </p>

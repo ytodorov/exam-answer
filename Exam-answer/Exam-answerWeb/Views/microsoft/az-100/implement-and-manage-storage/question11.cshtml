@@ -4,9 +4,15 @@
         <li class="k-state-active">
             Question
             <div>
-                <p>You manage a Windows Server virtual machine (VM) in Azure named prod-vm1. The VM uses managed disk storage, runs Windows Server 2012 R2, and resides in a resource group named prod-west-rg located in the West US region.</p>
-                <p>You need to move prod-vm1 to a resource group named prod-east located in the East US region.</p>
-                <p>What should you do?</p>
+                <p>
+                    You are the owner of your organization's Microsoft Azure subscription. You hire a new administrator to help you manage a virtual network that contains nine Windows Server virtual machines (VMs). The deployment is contained in a resource group named prod-rg.
+                </p>
+                <p>
+                    You need to provide the administrator with least-privilege access only to the prod-rg resource group. The administrator should be allowed to manage all aspects of the Azure VMs. Your solution should minimize management effort.
+                </p>
+                <p>
+                    What should you do?
+                </p>            
             </div>
         </li>
         <li class="k-state-active">
@@ -14,21 +20,29 @@
             <div>
                 <p>
                     <ul class="fieldlist">
-                        <li class="correct">
+                        <li>
                             <input type="radio" name="group" id="1" class="k-radio">
-                            <label class="k-radio-label" for="1">Back up prod-vm1 and restore the VM to the prod-east-rg resource group. Delete the original VM instance.</label>
+                            <label class="k-radio-label" for="1">
+                                Assign the Allowed virtual machine SKUs Azure Policy at the resource group scope.
+                            </label>
                         </li>
                         <li>
                             <input type="radio" name="group" id="2" class="k-radio">
-                            <label class="k-radio-label" for="2">Author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group.</label>
+                            <label class="k-radio-label" for="2">
+                                Assign a custom Azure Policy at the management group scope.
+                            </label>
                         </li>
-                        <li>
+                        <li class="correct">
                             <input type="radio" name="group" id="3" class="k-radio">
-                            <label class="k-radio-label" for="3">Move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet.</label>
+                            <label class="k-radio-label" for="3">
+                                Assign the administrator to the Contributor role at the resource group scope.
+                            </label>
                         </li>
                         <li>
                             <input type="radio" name="group" id="4" class="k-radio">
-                            <label class="k-radio-label" for="4">Use azcopy to copy prod-vm1 to the prod-east-rg resource group.</label>
+                            <label class="k-radio-label" for="4">
+                                Assign the administrator to the Virtual Machine Operator role at the virtual machine scope.
+                            </label>
                         </li>
                     </ul>
                 </p>

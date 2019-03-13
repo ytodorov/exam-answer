@@ -58,6 +58,12 @@ namespace Exam_answerWeb
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                //    routes.MapRoute(
+                //    "Default2",                                              // Route name
+                //    "microsoft/az-100/question{id}",                           // URL with parameters
+                //    new { controller = "Microsoft", action = "Az100", id = "" }  // Parameter defaults
+                //);
             });
         }
     }

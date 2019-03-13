@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Exam_AnswerWeb.Controllers
 {   
@@ -10,6 +11,7 @@ namespace Exam_AnswerWeb.Controllers
     public class MicrosoftController : Controller
     {
         private const string folderName = "az-100/implement-and-manage-storage";
+               
 
         [Route("question1")]
         public IActionResult Question1()
@@ -39,6 +41,18 @@ namespace Exam_AnswerWeb.Controllers
         public IActionResult Question6()
         {
             return View($"{folderName}/question6");
+        }
+
+        [Route("question8")]
+        public IActionResult Question8()
+        {
+            return View($"{folderName}/question8");
+        }
+
+        [Route("question11")]
+        public IActionResult Question11()
+        {
+            return View($"{folderName}/question11");
         }
     }
 }
