@@ -1,55 +1,44 @@
-﻿<div id="example">
-    <ul id="panelbar">
-        <li class="k-state-active">
-            Question
-            <div>
-                <p>You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.</p>
-                <p>You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.</p>
-                <p>Solution: From the Azure Active Directory Properties blade, you enable Access management for Azure resources.</p>
-                <p>Does this solution meet the goal?</p>
-            </div>
-        </li>
-        <li class="k-state-active">
-            Answers
-            <div>
-                <p>
-                    <ul class="fieldlist">
-                        <li class="correct">
-                            <input type="radio" name="group" id="yes" class="k-radio">
-                            <label class="k-radio-label" for="yes">Yes</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="group" id="no" class="k-radio">
-                            <label class="k-radio-label" for="no">No</label>
-                        </li>
-                    </ul>
-                </p>
-            </div>
-        </li>
-        <li class="k-state-active">
-            Explanation
-            <div>
-                <p>
-                    This solution does meet the goal.
-                    The Access management for Azure resources property,
-                    located in the Azure Active Directory (Azure AD) tenant's settings,
-                    ensures that Azure AD users assigned to the Global Administrator role maintain full control over
-                    all subscription resources in the event that the identity is removed from Azure resource-level access lists.
-                    In keeping with least-privilege security, Microsoft recommends that you enable this property only when necessary.
-                    ReferencesElevate access for a Global Administrator in
-                    Azure Active DirectoryManage access using RBAC and the Azure portalManage app and resource access using
-                    Azure Active Directory groupsAdministrator role permissions in Azure Active Directory
-                </p>
-            </div>
-        </li>
-    </ul>
-
-    <script>
-        $(document).ready(function () {
-            $("#panelbar").kendoPanelBar({
-                expandMode: "multi"
-            });
-
-        });
-    </script>
-</div>
+﻿<ul id="panelbar">
+    <li class="k-state-active">
+        Question
+        <div>
+            <p>You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.</p>
+            <p>You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.</p>
+            <p>Solution: From the Azure Active Directory Properties blade, you enable Access management for Azure resources.</p>
+            <p>Does this solution meet the goal?</p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="radio" name="group" id="yes" class="k-radio">
+                        <label class="k-radio-label" for="yes">Yes</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="no" class="k-radio">
+                        <label class="k-radio-label" for="no">No</label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Explanation
+        <div>
+            <p>
+                This solution does meet the goal.
+                The Access management for Azure resources property,
+                located in the Azure Active Directory (Azure AD) tenant's settings,
+                ensures that Azure AD users assigned to the Global Administrator role maintain full control over
+                all subscription resources in the event that the identity is removed from Azure resource-level access lists.
+                In keeping with least-privilege security, Microsoft recommends that you enable this property only when necessary.
+                ReferencesElevate access for a Global Administrator in
+                Azure Active DirectoryManage access using RBAC and the Azure portalManage app and resource access using
+                Azure Active Directory groupsAdministrator role permissions in Azure Active Directory
+            </p>
+        </div>
+    </li>
+</ul>

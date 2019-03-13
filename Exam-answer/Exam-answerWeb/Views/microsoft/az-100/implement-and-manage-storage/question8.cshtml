@@ -1,75 +1,65 @@
-﻿<div id="example">
-    <ul id="panelbar">
-        <li class="k-state-active">
-            Question
-            <div>
-                <p>
-                    You deploy a Storage Account named store01 in your Azure subscription.
-                </p>
-                <p>
-                    You grant the contributor role to some users in store01.
-                    The users work on an application that will use the storage account for storing some information.
-                </p>
-                <p>
-                    The users report that they are not able to list the storage account keys for connecting their application to the storage account.
-                </p>
-                <p>
-                    You need to identify the root cause of the issue.
-                </p>
-                <p>
-                    What is the most probable cause?
-                </p>
-            </div>
-        </li>
-        <li class="k-state-active">
-            Answers
-            <div>
-                <p>
-                    <ul class="fieldlist">
-                        <li>
-                            <input type="radio" name="group" id="1" class="k-radio">
-                            <label class="k-radio-label" for="1">
-                                You need to grant the users the owner role.
-                            </label>
-                        </li>
-                        <li class="correct">
-                            <input type="radio" name="group" id="2" class="k-radio">
-                            <label class="k-radio-label" for="2">
-                                You configured a ReadOnly lock.
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" name="group" id="3" class="k-radio">
-                            <label class="k-radio-label" for="3">
-                                You configured a CanNotDelete lock.
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" name="group" id="4" class="k-radio">
-                            <label class="k-radio-label" for="4">
-                                You need to grant the users the Storage Account Key Operator Service role.
-                            </label>
-                        </li>
-                    </ul>
-                </p>
-            </div>
-        </li>
-        <li class="k-state-active">
-            Explanation
-            <div>
-                <p>You should back up prod-vm1, restore the VM to the prod-east-rg resource group, and then delete the original VM instance. Unfortunately, managed disks are one of the few Azure resources that cannot be moved between resource groups or subscriptions. Because the VM in Azure has so many dependencies, this managed disk restriction means that you are unable to move the entire VM without redeploying the disks and configuration into the new resource group.</p>
-                <p>You cannot move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet because the scenario states that the VM uses managed disk storage. If the VM used unmanaged disk storage, the Move-AzureRmResource command could move the VM to another resource group or even another Azure subscription.</p>
-                <p>You cannot use azcopy to copy prod-vm1 to the prod-east-rg resource group. Azcopy is a cross-platform command-line tool with which you can copy or move binary large object (BLOB) data between storage accounts. In this case, the VM in question uses managed disk storage. Moreover, Azcopy cannot migrate VM configuration, only virtual hard disks (VHDs).</p>
-                <p>You cannot author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group because it uses managed disk storage.</p>
-            </div>
-        </li>
-    </ul>
-
-    <script>
-        $(document).ready(function () {
-            $("#panelbar").kendoPanelBar({
-                expandMode: "multi"
-            });
-        });
-    </script>
-</div>
+﻿<ul id="panelbar">
+    <li class="k-state-active">
+        Question
+        <div>
+            <p>
+                You deploy a Storage Account named store01 in your Azure subscription.
+            </p>
+            <p>
+                You grant the contributor role to some users in store01.
+                The users work on an application that will use the storage account for storing some information.
+            </p>
+            <p>
+                The users report that they are not able to list the storage account keys for connecting their application to the storage account.
+            </p>
+            <p>
+                You need to identify the root cause of the issue.
+            </p>
+            <p>
+                What is the most probable cause?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="1" class="k-radio">
+                        <label class="k-radio-label" for="1">
+                            You need to grant the users the owner role.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="2" class="k-radio">
+                        <label class="k-radio-label" for="2">
+                            You configured a ReadOnly lock.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="3" class="k-radio">
+                        <label class="k-radio-label" for="3">
+                            You configured a CanNotDelete lock.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="4" class="k-radio">
+                        <label class="k-radio-label" for="4">
+                            You need to grant the users the Storage Account Key Operator Service role.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Explanation
+        <div>
+            <p>You should back up prod-vm1, restore the VM to the prod-east-rg resource group, and then delete the original VM instance. Unfortunately, managed disks are one of the few Azure resources that cannot be moved between resource groups or subscriptions. Because the VM in Azure has so many dependencies, this managed disk restriction means that you are unable to move the entire VM without redeploying the disks and configuration into the new resource group.</p>
+            <p>You cannot move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet because the scenario states that the VM uses managed disk storage. If the VM used unmanaged disk storage, the Move-AzureRmResource command could move the VM to another resource group or even another Azure subscription.</p>
+            <p>You cannot use azcopy to copy prod-vm1 to the prod-east-rg resource group. Azcopy is a cross-platform command-line tool with which you can copy or move binary large object (BLOB) data between storage accounts. In this case, the VM in question uses managed disk storage. Moreover, Azcopy cannot migrate VM configuration, only virtual hard disks (VHDs).</p>
+            <p>You cannot author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group because it uses managed disk storage.</p>
+        </div>
+    </li>
+</ul>

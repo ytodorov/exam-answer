@@ -71,5 +71,11 @@ namespace Exam_AnswerWeb.Controllers
         {
             return View($"{folderName}/question14");
         }
+
+        [Route("question16")]
+        public IActionResult Question16()
+        {
+            return View($"{folderName}/question16");
+        }
     }
 }
