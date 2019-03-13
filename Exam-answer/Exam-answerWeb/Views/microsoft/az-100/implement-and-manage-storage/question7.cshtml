@@ -1,0 +1,77 @@
+﻿<ul id="panelbar">
+    <li class="k-state-active">
+        Question
+        <div>
+            <p>
+                You deploy an application in a resource group named App-RG01 in your Azure subscription.
+            <p>
+                App-RG01 contains the following components:
+            </p>
+            <p>
+                * Two App Services, each with an SSL certificate
+                <br />
+                * A peered virtual network (VNet)
+                <br />
+                * Redis cache deployed in the VNet
+                <br />
+                * Standard Load Balancer
+            </p>
+            <p>
+                You need to move all resources in App-RG01 to a new resource group named App-RG02.
+            </p>
+            <p>
+                For each of the following statements, select it if the statement is true.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="1" class="k-checkbox">
+                        <label class="k-checkbox-label" for="1">
+                            You need to delete the SSL certificate from each App Service before moving it to the new resource group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="2" class="k-checkbox">
+                        <label class="k-checkbox-label" for="2">
+                            You can move the Load Balancer only within the same subscription.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="3" class="k-checkbox">
+                        <label class="k-checkbox-label" for="3">
+                            You need to disable the peer before moving the VNet.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="4" class="k-checkbox">
+                        <label class="k-checkbox-label" for="4">
+                            You can move the VNet only within the same subscription.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Explanation
+        <div>
+            <p>
+                You need to delete the SSL certificate from each App Service before moving it to the new resource group. You cannot move an App Service with an SSL certificate configured. If you want to do that, you need to delete the certificate, move the App Service and then upload the certificate again.
+            </p>
+            <p>
+                You cannot move the Load Balancer within the same subscription. A Standard Load Balancer cannot be moved either within the same subscription or between subscriptions.
+            </p>
+            <p>
+                You need to disable the peer before moving the VNet. When you want to move a VNet with a peer configured, you need to disable it before moving the VNet. When you move a VNet, you need to move all of its dependent resources.
+            </p>
+            <p>
+                You can only move the VNet within the same subscription. When you want to move a VNet, you also need to move all of its dependent resources. In this case, you also need to move the Redis cache, which can be moved only within the same subscription. Because you want to move the resources from App-RG01 to App-RG02, which is in the same subscription, you can move the VNet with no problem.
+            </p>
+        </div>
+    </li>
+</ul>

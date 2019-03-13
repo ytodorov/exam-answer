@@ -61,10 +61,9 @@
                                 for (int i = 1; i <= 20; i++)
                                 {
                                     <li>
-                                        <a class="nav-link text-dark"
-                                           asp-area=""
-                                           asp-controller="@(nameof(Exam_AnswerWeb.Controllers.MicrosoftController).Replace(nameof(Controller), string.Empty))"
-                                           asp-action="@($"Question{i}")">@($"Question{i}")</a>
+                                        <a class="nav-link text-dark" href="~/microsoft/az-100/question@(i)">
+                                            @($"Question{i}")
+                                        </a>
                                     </li>
                                 }
                             }
