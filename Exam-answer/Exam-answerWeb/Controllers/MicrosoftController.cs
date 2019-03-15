@@ -10,7 +10,13 @@ namespace Exam_AnswerWeb.Controllers
     [Route("microsoft/az-100")]
     public class MicrosoftController : Controller
     {
-        private const string folderName = "az-100/implement-and-manage-storage";
+        private const string folderName = "az-100";
+
+        [Route("")]
+        public IActionResult Index()
+        {
+            return View($"{folderName}/index");
+        }
 
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)

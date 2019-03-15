@@ -24,4 +24,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.9" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Views\microsoft\az-100\implement-and-manage-storage\" />
+  </ItemGroup>
+
 </Project>
