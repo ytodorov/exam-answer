@@ -21,6 +21,18 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
+
+            if (int.TryParse(id, out int intId))
+            {
+                if (intId > 1)
+                {
+                    ViewData["prev"] = intId - 1;
+                }
+                if (intId < 152)
+                {
+                    ViewData["next"] = intId + 1;
+                }
+            }
             return View($"{folderName}/question{id}");
         }
 

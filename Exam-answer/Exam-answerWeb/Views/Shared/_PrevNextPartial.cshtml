@@ -1,0 +1,18 @@
+﻿@{ if (ViewData["prev"] != null || ViewData["next"] != null)
+    {
+        <br />
+        <div style="text-align: center;">
+            @{ if (ViewData["prev"] != null)
+                {
+                    <a href="~/microsoft/az-100/question@(ViewData["prev"])" class="k-button">Previous</a>
+                }
+            }
+            @{ if (ViewData["next"] != null)
+                {
+                    <a href="~/microsoft/az-100/question@(ViewData["next"])" class="k-button">&nbsp;&nbsp;Next&nbsp;&nbsp;</a>
+                }
+            }
+        </div>
+        <br />
+    }
+}
