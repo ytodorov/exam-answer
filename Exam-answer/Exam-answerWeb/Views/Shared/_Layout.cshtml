@@ -17,15 +17,28 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
     @*
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap-v4.min.css" />*@
-
+    
+    @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.mobile.min.css" />
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet'>
+
+
+    @*<link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <style>
         html {
+            font-size: 15px;
+            font-family: 'Inconsolata', monospace;
+        }
+    </style>*@
+    <style>
+        html {
+            color:#333;
             font-size: 14px;
-            font-family: Roboto Slab
+            line-height:1.42861;
+            font-weight:400;
+            letter-spacing: -.016em;
+            font-family:  SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
         }
     </style>
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
@@ -78,7 +91,7 @@
 
         </ul>
     </header>
-    <div class="container">
+    <div>
         <main role="main">
             <partial name="_PrevNextPartial" />
             @RenderBody()
@@ -88,7 +101,7 @@
 
     <br />
 
-    <footer class="border-top footer text-muted">
+    <footer>
         @*<div class="container">
             Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>*@
