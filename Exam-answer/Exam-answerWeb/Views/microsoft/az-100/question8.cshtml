@@ -6,8 +6,7 @@
                 You deploy a Storage Account named store01 in your Azure subscription.
             </p>
             <p>
-                You grant the contributor role to some users in store01.
-                The users work on an application that will use the storage account for storing some information.
+                You grant the contributor role to some users in store01. The users work on an application that will use the storage account for storing some information.
             </p>
             <p>
                 The users report that they are not able to list the storage account keys for connecting their application to the storage account.
@@ -56,10 +55,15 @@
     <li class="k-state-active">
         Explanation
         <div>
-            <p>You should back up prod-vm1, restore the VM to the prod-east-rg resource group, and then delete the original VM instance. Unfortunately, managed disks are one of the few Azure resources that cannot be moved between resource groups or subscriptions. Because the VM in Azure has so many dependencies, this managed disk restriction means that you are unable to move the entire VM without redeploying the disks and configuration into the new resource group.</p>
-            <p>You cannot move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet because the scenario states that the VM uses managed disk storage. If the VM used unmanaged disk storage, the Move-AzureRmResource command could move the VM to another resource group or even another Azure subscription.</p>
-            <p>You cannot use azcopy to copy prod-vm1 to the prod-east-rg resource group. Azcopy is a cross-platform command-line tool with which you can copy or move binary large object (BLOB) data between storage accounts. In this case, the VM in question uses managed disk storage. Moreover, Azcopy cannot migrate VM configuration, only virtual hard disks (VHDs).</p>
-            <p>You cannot author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group because it uses managed disk storage.</p>
+            <p>
+                The reason that the users are not able to list the storage account keys is that you configured a ReadOnly lock. Locks are applied to any operation that makes a request to the following URL: https://management.azure.com. When you apply a ReadOnly lock, you can unintentionally block access to other resources. In this case, you are blocking access to the keys because the list operation is handled through POST operations and the returned keys will be used for write operations.
+            </p>
+            <p>
+                Configuring a CanNotDelete lock does not affect the list keys operation. The CanNotDelete lock prevents a user from deleting a resource but still allows users to modify and read resources in the resource group.
+            </p>
+            <p>
+                You do not need to grant your users with Owner or Storage Account Key Operator Service roles. When you configure a lock in a resource or resource group, this takes precedence over any assigned role, even the Owner role. If you want to remove the lock, you need to have access to the Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Only the Owner and User Access Administrator roles have enough privileges to manage locks. In this scenario, granting the Owner role to your users will enable them to remove the ReadOnly lock on their own.
+            </p>
         </div>
     </li>
 </ul>

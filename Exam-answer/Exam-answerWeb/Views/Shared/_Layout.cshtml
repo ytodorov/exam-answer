@@ -6,26 +6,26 @@
     <title>@ViewData["Title"]exam-answer</title>
 
     @*
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.metro.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.metro.mobile.min.css" />*@
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.metro.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.metro.mobile.min.css" />*@
     @*
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.mobile.min.css" />*@
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.mobile.min.css" />*@
     @*
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
     @*
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap-v4.min.css" />*@
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap-v4.min.css" />*@
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.mobile.min.css" />
-
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet'>
     <style>
         html {
             font-size: 14px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Roboto Slab
         }
     </style>
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
@@ -100,7 +100,9 @@
         $("#panelbar").kendoPanelBar({
             expandMode: "multi"
         });
-        $("select.ea").kendoDropDownList();
+        $("select.ea").kendoDropDownList({
+            autoWidth: true
+        });
 
         $("body").show();
     </script>
