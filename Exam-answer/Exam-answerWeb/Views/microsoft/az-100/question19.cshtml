@@ -1,4 +1,109 @@
-﻿<div id="example" role="application">
+﻿<div class="demo-section hidden-on-narrow two-way wide">
+    <div class="list-wrapper">
+        Possible actions
+        <ul id="sortable-listC" style="min-height: 110px;">
+            <li class="list-item">Execute New-AzureRmStorageAccount.</li>
+            <li class="list-item">Execute Get-AzureRmStorageAccountKeys.</li>
+            <li class="list-item">Execute New-AzureRmStorageContext</li>
+            <li class="list-item">Execute New-AzureRmStorageShare.</li>
+            <li class="list-item">Execute CMDKEY on the Windows Servers.</li>
+            <li class="list-item">Execute New-PSDrive on the Windows Servers.</li>
+            <li class="list-item">Execute Get-AzureRmStorageAccount.</li>
+            <li class="list-item">Execute Set-AzureRmStorageAccount.</li>
+            <li class="list-item">Execute Get-PSDrive on Windows Servers.</li>
+        </ul>
+        Actions to perform
+        <ul id="sortable-listD" style="min-height: 110px;"></ul>
+    </div>
+</div>
+
+<script>
+    function placeholder(element) {
+        return $("<li class='list-item' id='placeholder'>Drop Here!</li>");
+    }
+    $(document).ready(function () {
+        $("#sortable-listC").kendoSortable({
+            connectWith: "#sortable-listD",
+            placeholder: placeholder
+        });
+
+        $("#sortable-listD").kendoSortable({
+            connectWith: "#sortable-listC",
+            placeholder: placeholder
+        });
+    });
+</script>
+<style>
+    #example {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .demo-section {
+        padding: 50px 70px;
+    }
+        
+    .list-wrapper {
+        overflow: hidden;
+    }
+
+    #sortable-listA, #sortable-listB, #sortable-listC, #sortable-listD {
+        width: 210px;
+        min-height: 40px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+    }
+
+    #sortable-listA, #sortable-listC {
+        float: left;
+    }
+
+    #sortable-listB, #sortable-listD {
+        float: right;
+    }
+
+    .list-item {
+        list-style-type: none;
+        width: 200px;
+        margin: 5px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #222222;
+        color: #ffffff;
+        border-radius: 3px;
+        cursor: move;
+    }
+
+    #sortable-listA .list-item {
+        background-color: #54b8fa;
+        color: #000000;
+    }
+
+    #sortable-listB .list-item {
+        background-color: #ff879e;
+        color: #000000;
+    }
+
+    #sortable-listC .list-item {
+        background-color: #66cc66;
+        color: #000000;
+    }
+
+    #sortable-listD .list-item {
+        background-color: #ffcc33;
+        color: #000000;
+    }
+
+    #placeholder.list-item {
+        background-color: #ffffff;
+        color: #777;
+    }
+</style>
+<div id="example" role="application">
     <div class="demo-section k-content">
         <div>
 
@@ -16,23 +121,5 @@
             <select id="selected"></select>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $("#optional").kendoListBox({
-                connectWith: "selected",
-                draggable: true,
-                toolbar: {
-                    tools: ["transferTo", "transferFrom"]
-                }
-            });
 
-            $("#selected").kendoListBox({
-                connectWith: "optional",
-                draggable: true,
-                toolbar: {
-                    tools: ["moveUp", "moveDown"]
-                }
-            });
-        });
-    </script>
 </div>
