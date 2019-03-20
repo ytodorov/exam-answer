@@ -32,6 +32,8 @@ namespace Exam_AnswerWeb.Controllers
                 {
                     ViewData["next"] = intId + 1;
                 }
+                ViewData["current"] = intId;
+                ViewData["max"] = 28;
             }
             return View($"{folderName}/question{id}");
         }

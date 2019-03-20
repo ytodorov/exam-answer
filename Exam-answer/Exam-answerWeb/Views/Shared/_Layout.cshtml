@@ -26,11 +26,17 @@
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <style>
-        html {
-            font-size: 15px;
-            font-family: 'Inconsolata', monospace;
-        }
-    </style>
+    html {
+        font-size: 15px;
+        font-family: 'Inconsolata', monospace;
+    }
+
+    p, ul {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+  </style>
     @*<style>
         html {
             color:#333;
@@ -45,11 +51,12 @@
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
 
     <style type='text/css'>
-        body, li, ul, p, div {
-            background-image: url(../../128-168.jpg) !important;
-            background-repeat: repeat !important;
-        }
-    </style>
+    body, li, ul, p, li div {
+        background-image: url(../../128-168.jpg) !important;
+        background-repeat: repeat !important;
+    }
+
+  </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43988280-9"></script>
@@ -62,7 +69,7 @@
     </script>
 
 </head>
-<body style="display:none">
+<body style="        display: none">
     <header>
         <ul id="menu">
             <li>
@@ -93,8 +100,13 @@
     </header>
     <div>
         <main role="main">
+            <br />
             <partial name="_PrevNextPartial" />
+            <br />
+            <partial name="_ProgressPartial" />
+            <br />
             @RenderBody()
+            <br />
             <partial name="_PrevNextPartial" />
         </main>
     </div>
@@ -120,19 +132,20 @@
         $("body").show();
     </script>
     <style>
-        .fieldlist {
-            margin: 0 0 -1em;
-            padding: 0;
+    .fieldlist {
+        margin: 0 0 -1em;
+        padding: 0;
+    }
+
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 1em;
         }
 
-            .fieldlist li {
-                list-style: none;
-                padding-bottom: 1em;
-            }
+    .correct {
+        color: forestgreen
+    }
 
-        .correct {
-            color: forestgreen
-        }
-    </style>
+  </style>
 </body>
 </html>

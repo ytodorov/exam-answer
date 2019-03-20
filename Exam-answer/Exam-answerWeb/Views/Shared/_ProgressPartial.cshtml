@@ -1,0 +1,19 @@
+﻿@{ if (ViewData["current"] != null || ViewData["max"] != null)
+    {
+    <div style="text-align:center">
+        <div class="az-100"></div>
+        <script>
+            $(document).ready(function () {
+                var pb = $("div.az-100").kendoProgressBar({
+                    type: "percent",
+                    min: 1,
+                    max: @(ViewData["max"]),
+                    value: @(ViewData["current"])
+            }).data("kendoProgressBar");
+
+                pb.progressStatus.text("Question @(ViewData["current"]) / @(ViewData["max"])");
+            });
+        </script>
+    </div>
+    }
+}
