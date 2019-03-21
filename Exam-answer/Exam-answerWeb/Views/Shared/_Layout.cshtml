@@ -86,14 +86,14 @@
                         <a href="~/microsoft/az-100">Az-100</a>
                         <ul>
                             @{
-                            for (int i = 1; i <= 31; i++)
-                            {
-                            <li>
-                                <a class="nav-link text-dark" href="~/microsoft/az-100/question@(i)">
-                                    @($"Question{i}")
-                                </a>
-                            </li>
-                            }
+                                for (int i = 1; i <= 31; i++)
+                                {
+                                    <li>
+                                        <a class="nav-link text-dark" href="~/microsoft/az-100/question@(i)">
+                                            @($"Question{i}")
+                                        </a>
+                                    </li>
+                                }
                             }
                         </ul>
                     </li>
@@ -119,8 +119,8 @@
 
     <footer>
         @*<div class="container">
-            Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>*@
+                Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>*@
     </footer>
     <script>
 
@@ -136,20 +136,83 @@
         $("body").show();
     </script>
     <style>
-    .fieldlist {
-        margin: 0 0 -1em;
-        padding: 0;
-    }
-
-        .fieldlist li {
-            list-style: none;
-            padding-bottom: 1em;
+        .fieldlist {
+            margin: 0 0 -1em;
+            padding: 0;
         }
 
-    .correct {
-        color: forestgreen
-    }
+            .fieldlist li {
+                list-style: none;
+                padding-bottom: 1em;
+            }
 
-  </style>
+        .correct {
+            color: forestgreen
+        }
+    </style>
+
+
+
+
+    <script>
+        function placeholder(element) {
+            return $("<li class='list-item' id='placeholder'>Drop Here!</li>");
+        }
+        $(document).ready(function () {
+            $("#sortable-listC").kendoSortable({
+                placeholder: placeholder
+            });
+        });
+    </script>
+    <style>
+
+
+        .demo-section {
+            /*padding: 50px 70px;*/
+            text-align: center;
+        }
+
+        .list-wrapper {
+            overflow: hidden;
+        }
+
+        #sortable-listA, #sortable-listB, #sortable-listC, #sortable-listD {
+            /*width: 210px;*/
+            min-height: 40px;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+        }
+
+            #sortable-listC li {
+                border: solid;
+                border-color: black;
+                border-width: 1px;
+            }
+
+        .list-item {
+            list-style-type: none;
+            /*width: 200px;*/
+            margin: 5px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #222222;
+            color: #ffffff;
+            border-radius: 3px;
+            cursor: move;
+        }
+
+        #sortable-listC .list-item {
+            background-color: #66cc66;
+            color: black;
+        }
+
+
+        #placeholder.list-item {
+            /*background-color: #000000;*/
+            color: black;
+        }
+    </style>
 </body>
 </html>

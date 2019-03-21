@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\.well-knownOLD\pki-validation\D67C33543D08AB8D948517B8C6FC8AB6.txt" />
+    <Content Include="wwwroot\.well-knownOLD\pki-validationOLD\D67C33543D08AB8D948517B8C6FC8AB6.txt" />
   </ItemGroup>
 
   <ItemGroup>
