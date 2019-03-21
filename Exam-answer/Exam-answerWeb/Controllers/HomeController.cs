@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Controllers
         {
             return View();
         }
-
+         
         public IActionResult Privacy()
         {
             return View();
