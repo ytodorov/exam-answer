@@ -26,10 +26,10 @@ namespace Exam_answerWeb.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("/.well-known/pki-validation/D67C33543D08AB8D948517B8C6FC8AB6.txt")]
+        [Route("/.well-known/pki-validation/FC9F18C3634865886ED5E56EFF25A21F.txt")]
         public string Cert()
         {
-            return "C4EFB5C501298A5174718DC052BC2C7EBFF2038F2883504865F5B1A617013EA5 comodoca.com 5c93d4a8e2e04";
+            return "72D484190ADB24E5CA29B64BAFC2BDC32B279758A6E70A2589AE3610CF2AB79F comodoca.com 5c941e16c088d";
         }
     }
 }
