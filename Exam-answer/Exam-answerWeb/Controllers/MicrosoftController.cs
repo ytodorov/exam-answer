@@ -22,6 +22,8 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
+            
+            var cd = Environment.CurrentDirectory;
 
             if (int.TryParse(id, out int intId))
             {
@@ -36,7 +38,15 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["current"] = intId;
                 ViewData["max"] = 29;
             }
-            return View($"{folderName}/question{id}");
+            if (intId < 30)
+            {
+                return View($"{folderName}/question{id}");
+            }
+            else
+            {
+                int newId = intId - 29;
+                return View($"{folderName}/question2_{newId}");
+            }
         }
     }
 }
