@@ -22,7 +22,7 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
-            
+            ViewData["title"] = $": az-100 question{id}";
             var cd = Environment.CurrentDirectory;
 
             if (int.TryParse(id, out int intId))

@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]exam-answer</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="free, exam, question, answer, explanation">
+    <title>@("Exam-answer" + ViewData["title"])</title>
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.mobile.min.css" />
 
-    <meta name="keywords" content="free, exam, question, answer, explanation">
+
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <style>
@@ -104,17 +106,23 @@
             </div>*@
     </footer>
     <script>
+        $(document).ready(function () {
+            $("#menu").kendoMenu();
 
-        $("#menu").kendoMenu();
+            $("#panelbar").kendoPanelBar({
+                expandMode: "multi"
+            });
+            $("select.ea").kendoDropDownList({
+                autoWidth: true
+            });
 
-        $("#panelbar").kendoPanelBar({
-            expandMode: "multi"
+            $("body").show();
+
+            $("meta[name=description]").attr("content",
+                $("ul li div").first().find("p").text()
+                    .replace(/(\r\n|\n|\r)/gm, "")
+                    .replace(/\s\s+/g, ' '));
         });
-        $("select.ea").kendoDropDownList({
-            autoWidth: true
-        });
-
-        $("body").show();
     </script>
     <style>
         .fieldlist {
