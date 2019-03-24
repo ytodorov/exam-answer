@@ -118,10 +118,18 @@
 
             $("body").show();
 
-            $("meta[name=description]").attr("content",
-                $("ul li div").first().find("p").text()
-                    .replace(/(\r\n|\n|\r)/gm, "")
-                    .replace(/\s\s+/g, ' '));
+            var meta = $("meta[name=description]");
+
+            var lines = $("ul li div").first().find("p");
+            var descr = "";
+            if (lines.length > 0) {
+                descr = lines.first().text();
+            }
+            if (lines.length > 1) {
+                descr = $(lines[0]).text() + $(lines[1]).text();
+            }
+
+            meta.attr("content", descr);
         });
     </script>
     <style>
