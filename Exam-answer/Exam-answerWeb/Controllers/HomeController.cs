@@ -23,7 +23,20 @@ namespace Exam_answerWeb.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var c = ControllerContext;
+            //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View("GenericError");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error2(string id)
+        {
+            if (id == "404")
+            {
+                return View("NotFound");
+            }
+
+            return View("GenericError");
         }
 
         [Route("/.well-known/pki-validation/FC9F18C3634865886ED5E56EFF25A21F.txt")]
