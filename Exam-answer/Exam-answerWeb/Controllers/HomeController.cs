@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Exam_answerWeb.Models;
+using System.Net;
 
 namespace Exam_answerWeb.Controllers
 {
@@ -21,7 +22,7 @@ namespace Exam_answerWeb.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Exception()
         {
             var c = ControllerContext;
             //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
@@ -29,11 +30,16 @@ namespace Exam_answerWeb.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error2(string id)
+        public IActionResult Error(string id)
         {
             if (id == "404")
             {
+                HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
                 return View("NotFound");
+            }
+            else if (id == "500")
+            {
+                HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             }
 
             return View("GenericError");
