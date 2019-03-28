@@ -66,7 +66,9 @@ namespace Exam_answerWeb
             //app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-2.2
             app.UseRewriter(new RewriteOptions()
+                .AddRedirect("(.*)/$", "$1", (int)HttpStatusCode.MovedPermanently) // Strip trailing slash
                 .AddRedirectToWww()
                 .AddRedirectToHttps()
                 .Add(new RedirectLowerCaseRule())
@@ -86,12 +88,6 @@ namespace Exam_answerWeb
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-                //    routes.MapRoute(
-                //    "Default2",                                              // Route name
-                //    "microsoft/az-100/question{id}",                           // URL with parameters
-                //    new { controller = "Microsoft", action = "Az100", id = "" }  // Parameter defaults
-                //);
             });
         }
     }
@@ -106,6 +102,9 @@ namespace Exam_answerWeb
             PathString path = context.HttpContext.Request.Path;
             HostString host = context.HttpContext.Request.Host;
 
+            string location = ((request.Scheme + "://" +
+               host.Value + request.PathBase + request.Path).ToLower() + request.QueryString).Trim();
+
             if (path.HasValue && path.Value.Any(char.IsUpper) || host.HasValue && host.Value.Any(char.IsUpper))
             {
                 HttpResponse response = context.HttpContext.Response;
@@ -118,5 +117,5 @@ namespace Exam_answerWeb
                 context.Result = RuleResult.ContinueRules;
             }
         }
-    }
+    }   
 }
