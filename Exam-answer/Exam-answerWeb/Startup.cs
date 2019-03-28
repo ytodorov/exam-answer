@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 
 namespace Exam_answerWeb
 {
@@ -30,8 +32,15 @@ namespace Exam_answerWeb
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
             });
+
+            //services.AddRouting(options =>
+            //{
+            //    options.LowercaseUrls = true;
+            //    options.LowercaseQueryStrings = true;
+            //    options.AppendTrailingSlash = false;                
+            //});
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -60,6 +69,7 @@ namespace Exam_answerWeb
             app.UseRewriter(new RewriteOptions()
                 .AddRedirectToWww()
                 .AddRedirectToHttps()
+                .Add(new RedirectLowerCaseRule())
                 );
 
             FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
@@ -83,6 +93,30 @@ namespace Exam_answerWeb
                 //    new { controller = "Microsoft", action = "Az100", id = "" }  // Parameter defaults
                 //);
             });
+        }
+    }
+
+    public class RedirectLowerCaseRule : IRule
+    {
+        public int StatusCode { get; } = (int)HttpStatusCode.MovedPermanently;
+
+        public void ApplyRule(RewriteContext context)
+        {
+            HttpRequest request = context.HttpContext.Request;
+            PathString path = context.HttpContext.Request.Path;
+            HostString host = context.HttpContext.Request.Host;
+
+            if (path.HasValue && path.Value.Any(char.IsUpper) || host.HasValue && host.Value.Any(char.IsUpper))
+            {
+                HttpResponse response = context.HttpContext.Response;
+                response.StatusCode = StatusCode;
+                response.Headers[HeaderNames.Location] = (request.Scheme + "://" + host.Value + request.PathBase + request.Path).ToLower() + request.QueryString;
+                context.Result = RuleResult.EndResponse;
+            }
+            else
+            {
+                context.Result = RuleResult.ContinueRules;
+            }
         }
     }
 }
