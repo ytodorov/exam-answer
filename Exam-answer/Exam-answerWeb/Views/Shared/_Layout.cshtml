@@ -15,7 +15,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <style>
-        html {
+        html, h1, h2 {
             font-size: 15px;
             font-family: 'Inconsolata', monospace;
         }
@@ -30,6 +30,7 @@
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
 
     <style type='text/css'>
+
         body, li, ul, p, li div {
             background-image: url(../../128-168.jpg) !important;
             background-repeat: repeat !important;
@@ -56,7 +57,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<body style="display: none">
+<body style="        display: none">
     <header>
         <ul id="menu">
             <li>
@@ -106,6 +107,37 @@
             </div>*@
     </footer>
     <script>
+        var meta = $("meta[name=description]");
+
+        var lines = $("ul li div").first().find("p");
+        var descr = "";
+        if (lines.length > 0) {
+            descr = lines.first().text();
+        }
+        if (lines.length > 1) {
+            descr = $(lines[0]).text() + $(lines[1]).text();
+        }
+
+        meta.attr("content", descr);
+
+
+        var countOfP = $("ul li div").first().find("p").length;
+
+        if (countOfP > 1) {
+
+            var firstP = $("ul li div").first().find("p").first();
+            var secondP = $($("ul li div").first().find("p")[1]);
+
+            var textOfFirstP = firstP.html();
+            firstP.html("<h1>" + textOfFirstP + "</h1>");
+
+            var textOfSecondP = secondP.html();
+            secondP.html("<h2>" + textOfSecondP + "</h2>");
+            debugger;
+        }
+
+
+
         $(document).ready(function () {
             $("#menu").kendoMenu();
 
@@ -118,18 +150,6 @@
 
             $("body").show();
 
-            var meta = $("meta[name=description]");
-
-            var lines = $("ul li div").first().find("p");
-            var descr = "";
-            if (lines.length > 0) {
-                descr = lines.first().text();
-            }
-            if (lines.length > 1) {
-                descr = $(lines[0]).text() + $(lines[1]).text();
-            }
-
-            meta.attr("content", descr);
         });
     </script>
     <style>
