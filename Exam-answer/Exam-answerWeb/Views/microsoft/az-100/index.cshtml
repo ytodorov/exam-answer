@@ -14,36 +14,3 @@
         <partial name="~/views/microsoft/az-100/question2_@(i).cshtml" />
     }
 }
-
-
-
-<table id="grid">
-    <thead>
-        <tr>
-            <th>Question</th>
-            <th>Section</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @{
-            for (int i = 1; i < 30; i++)
-            {
-                <tr>
-                    <td>
-                        <a href="~/microsoft/az-100/question@(i)">
-                            @($"Question{i}")
-
-
-                        </a>
-                    </td>
-                    <td>Manage Azure subscriptions and resources</td>
-                </tr>
-            }
-        }
-    </tbody>
-</table>
-<script>
-    $("#grid").kendoGrid({
-    });
-</script>
