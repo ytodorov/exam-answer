@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -19,26 +19,26 @@
             <p>
                 <ul class="fieldlist">
                     <li>
-                        <input type="checkbox" id="1" class="k-checkbox">
-                        <label class="k-checkbox-label" for="1">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             You can use more than one Azure file share in the same sync group.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="2" class="k-checkbox">
-                        <label class="k-checkbox-label" for="2">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             A server can sync with multiple sync groups.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="3" class="k-checkbox">
-                        <label class="k-checkbox-label" for="3">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Changes made directly on the file share can take up to 24 to be synced.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="4" class="k-checkbox">
-                        <label class="k-checkbox-label" for="4">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Pre-seeding is the best approach for doing the first synchronization.
                         </label>
                     </li>

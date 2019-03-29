@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -19,26 +19,26 @@
             <p>
                 <ul class="fieldlist">
                     <li class="correct">
-                        <input type="checkbox" id="1" class="k-checkbox">
-                        <label class="k-checkbox-label" for="1">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             You need to configure a stored access policy.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="2" class="k-checkbox">
-                        <label class="k-checkbox-label" for="2">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             You should set the SAS start time to now.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="3" class="k-checkbox">
-                        <label class="k-checkbox-label" for="3">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             You should validate data written using SAS.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="4" class="k-checkbox">
-                        <label class="k-checkbox-label" for="4">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             One option for revoking a SAS is by deleting a stored access policy.
                         </label>
                     </li>

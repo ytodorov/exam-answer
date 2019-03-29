@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -18,26 +18,26 @@
             <p>
                 <ul class="fieldlist">
                     <li class="correct">
-                        <input type="checkbox" id="1" class="k-checkbox">
-                        <label class="k-checkbox-label" for="1">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Configure one Action Group with three actions: one for email notification, one for SMS notification, and one for ITSM ticket creation.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="2" class="k-checkbox">
-                        <label class="k-checkbox-label" for="2">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Configure System Center Service Manager with Azure Automation.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="3" class="k-checkbox">
-                        <label class="k-checkbox-label" for="3">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Configure two Action Groups: one Action Group for email and SMS notification and one for ITSM ticket creation.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="4" class="k-checkbox">
-                        <label class="k-checkbox-label" for="4">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Configure an IT Service Management Connector (ITSMC).
                         </label>
                     </li>

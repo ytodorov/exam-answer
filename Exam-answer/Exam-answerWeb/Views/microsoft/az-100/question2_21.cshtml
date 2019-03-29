@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -22,26 +22,26 @@
             <p>
                 <ul class="fieldlist">
                     <li>
-                        <input type="radio" name="group" id="1" class="k-radio">
-                        <label class="k-radio-label" for="1">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Create an Azure AD account for the board member and grant him role-based access control (RBAC) access to the storage account.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="2" class="k-radio">
-                        <label class="k-radio-label" for="2">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Deploy a point-to-site virtual private network (VPN)connection on the board member's Chromebook and grant the board member role-based access control (RBAC) access to the report.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="3" class="k-radio">
-                        <label class="k-radio-label" for="3">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Deploy Azure Traffic Manager.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="radio" name="group" id="4" class="k-radio">
-                        <label class="k-radio-label" for="4">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Generate a shared access signature (SAS) token for the report and share the Uniform Resource Locator (URL) with the board member.
                         </label>
                     </li>

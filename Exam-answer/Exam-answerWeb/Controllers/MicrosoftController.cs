@@ -24,6 +24,7 @@ namespace Exam_AnswerWeb.Controllers
         public IActionResult QuestionGeneric(string id)
         {
             ViewData["title"] = $"Exam AZ-100: Question {id} - ";
+            ViewData["id"] = id;
             var cd = Environment.CurrentDirectory;
 
             if (int.TryParse(id, out int intId))
@@ -41,7 +42,7 @@ namespace Exam_AnswerWeb.Controllers
             }
             if (intId < 30)
             {
-                return View($"{folderName}/question{id}");
+                return View($"{folderName}/question1_{id}");
             }
             else
             {

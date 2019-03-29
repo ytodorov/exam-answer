@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -19,26 +19,26 @@
             <p>
                 <ul class="fieldlist">
                     <li>
-                        <input type="checkbox" id="1" class="k-checkbox">
-                        <label class="k-checkbox-label" for="1">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Execute the Backup-AzureRmBackupItem PowerShell cmdlet.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="2" class="k-checkbox">
-                        <label class="k-checkbox-label" for="2">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Install the Azure VM Agent on the migrated VMs.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="3" class="k-checkbox">
-                        <label class="k-checkbox-label" for="3">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Install the Azure VM Backup Agent on the migrated VMs.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="4" class="k-checkbox">
-                        <label class="k-checkbox-label" for="4">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Enable Backup via the Backup Blade in the Azure VM Configuration Panel.
                         </label>
                     </li>

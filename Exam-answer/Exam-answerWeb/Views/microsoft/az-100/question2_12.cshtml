@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -22,32 +22,32 @@
             <p>
                 <ul class="fieldlist">
                     <li>
-                        <input type="checkbox" id="1" class="k-checkbox">
-                        <label class="k-checkbox-label" for="1">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Run the Set-AzureRmStorageSyncServerEndpoint -Id serverendpointid -CloudTiering true -VolumeFreeSpacePercent 60 PowerShell cmdlet.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="2" class="k-checkbox">
-                        <label class="k-checkbox-label" for="2">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Run the Test-NetConnection -ComputerName storage-account-name.file.core.windows.net -Port 443 PowerShell cmdlet.
                         </label>
                     </li>
                     <li>
-                        <input type="checkbox" id="3" class="k-checkbox">
-                        <label class="k-checkbox-label" for="3">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Run the fltmc command at an elevated command prompt.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="4" class="k-checkbox">
-                        <label class="k-checkbox-label" for="4">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Review the Application event log. the cluster to support File Server for General Use.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="checkbox" id="5" class="k-checkbox">
-                        <label class="k-checkbox-label" for="5">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                             Review the Services\Microsoft\FileSync\Agent event log.
                         </label>
                     </li>

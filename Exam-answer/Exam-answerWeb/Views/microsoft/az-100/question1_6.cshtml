@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -16,20 +16,20 @@
             <p>
                 <ul class="fieldlist">
                     <li class="correct">
-                        <input type="radio" name="group" id="1" class="k-radio">
-                        <label class="k-radio-label" for="1">Back up prod-vm1 and restore the VM to the prod-east-rg resource group. Delete the original VM instance.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Back up prod-vm1 and restore the VM to the prod-east-rg resource group. Delete the original VM instance.</label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="2" class="k-radio">
-                        <label class="k-radio-label" for="2">Author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group.</label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="3" class="k-radio">
-                        <label class="k-radio-label" for="3">Move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet.</label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="4" class="k-radio">
-                        <label class="k-radio-label" for="4">Use azcopy to copy prod-vm1 to the prod-east-rg resource group.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Use azcopy to copy prod-vm1 to the prod-east-rg resource group.</label>
                     </li>
                 </ul>
             </p>

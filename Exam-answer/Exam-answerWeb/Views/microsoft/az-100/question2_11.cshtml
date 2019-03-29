@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -25,26 +25,26 @@
             <p>
                 <ul class="fieldlist">
                     <li>
-                        <input type="radio" name="group" id="1" class="k-radio">
-                        <label class="k-radio-label" for="1">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             You forgot to register the file server with Azure File Sync.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="2" class="k-radio">
-                        <label class="k-radio-label" for="2">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Windows Server 2012 R2 Standard Edition is not supported by the Azure File Sync service.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="radio" name="group" id="3" class="k-radio">
-                        <label class="k-radio-label" for="3">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             You are using firewall rules in the storage account.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="4" class="k-radio">
-                        <label class="k-radio-label" for="4">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             You are trying to sync an encrypted volume.
                         </label>
                     </li>

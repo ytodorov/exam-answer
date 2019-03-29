@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -22,20 +22,20 @@
             <p>
                 <ul class="fieldlist">
                     <li class="correct">
-                        <input type="radio" name="group" id="1" class="k-radio">
-                        <label class="k-radio-label" for="1">Set a Read only lock at the resource group level.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Set a Read only lock at the resource group level.</label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="2" class="k-radio">
-                        <label class="k-radio-label" for="2">Set a Delete lock at the VM level.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Set a Delete lock at the VM level.</label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="3" class="k-radio">
-                        <label class="k-radio-label" for="3">Edit the RBAC permissions at the resource group level.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Edit the RBAC permissions at the resource group level.</label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="4" class="k-radio">
-                        <label class="k-radio-label" for="4">Edit the RBAC permissions at the VM level.</label>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Edit the RBAC permissions at the VM level.</label>
                     </li>
                 </ul>
             </p>

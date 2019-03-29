@@ -1,4 +1,4 @@
-﻿<ul id="panelbar">
+﻿<ul class="panelbar">
     <li class="k-state-active">
         Question
         <div>
@@ -19,26 +19,26 @@
             <p>
                 <ul class="fieldlist">
                     <li>
-                        <input type="radio" name="group" id="1" class="k-radio">
-                        <label class="k-radio-label" for="1">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Download the appropriate virtual hard disk (VHD) files from the Recovery Services vault to your administrative workstation.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="2" class="k-radio">
-                        <label class="k-radio-label" for="2">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Retrieve the files from the appropriate backed-up virtual hard disks (VHDs) by using Azure Storage Explorer.
                         </label>
                     </li>
                     <li class="correct">
-                        <input type="radio" name="group" id="3" class="k-radio">
-                        <label class="k-radio-label" for="3">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Mount the virtual hard disks (VHDs) from the relevant VM backup as drives on your administrative workstation.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="4" class="k-radio">
-                        <label class="k-radio-label" for="4">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
                             Make a Remote Desktop Protocol (RDP) connection to app1 and use the Previous Versions feature to restore the requested log files.
                         </label>
                     </li>
