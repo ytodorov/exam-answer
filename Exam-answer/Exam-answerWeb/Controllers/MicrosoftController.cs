@@ -19,12 +19,20 @@ namespace Exam_AnswerWeb.Controllers
             return View($"{folderName}/index");
         }
 
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            base.OnActionExecuted(context);
+        }
+                
         [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
             ViewData["title"] = $"Exam AZ-100: Question {id} - ";
             ViewData["id"] = id;
+
+            ViewData["exam"] = "AZ-100";
+
             var cd = Environment.CurrentDirectory;
 
             if (int.TryParse(id, out int intId))
@@ -38,7 +46,7 @@ namespace Exam_AnswerWeb.Controllers
                     ViewData["next"] = intId + 1;
                 }
                 ViewData["current"] = intId;
-                ViewData["max"] = 29;
+                ViewData["max"] = 61;
             }
             if (intId < 30)
             {
