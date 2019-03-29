@@ -21,31 +21,36 @@
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <style>
-        html, h1, h2 {
-            font-size: 15px;
-            font-family: 'Inconsolata', monospace;
-        }
+    html, h1, h2 {
+        font-size: 15px;
+        font-family: 'Inconsolata', monospace;
+    }
 
-        p, ul {
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-    </style>
+    p, ul {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+  </style>
 
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
 
     <style type='text/css'>
-
-        /*body, li, ul, p, li div {
+    body {
+        background-image:  url(../../128-168.jpg)  !important;
+        background-repeat: repeat  !important;
+    }
+    /*body, li, ul, p, li div {
             background-image: url(../../128-168.jpg) !important;
             background-repeat: repeat !important;
         }*/
 
-        ul.fieldlist li {
-            margin-left: 10px
-        }
-    </style>
+    ul.fieldlist li {
+        margin-left: 10px
+    }
+
+  </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43988280-9"></script>
@@ -158,20 +163,21 @@
         });
     </script>
     <style>
-        .fieldlist {
-            margin: 0 0 -1em;
-            padding: 0;
+    .fieldlist {
+        margin: 0 0 -1em;
+        padding: 0;
+    }
+
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 1em;
         }
 
-            .fieldlist li {
-                list-style: none;
-                padding-bottom: 1em;
-            }
+    .correct {
+        /*color: forestgreen*/
+    }
 
-        .correct {
-            color: forestgreen
-        }
-    </style>
+  </style>
 
 
 
@@ -189,52 +195,53 @@
     <style>
 
 
-        .demo-section {
-            /*padding: 50px 70px;*/
-            text-align: center;
+    .demo-section {
+        /*padding: 50px 70px;*/
+        text-align: center;
+    }
+
+    .list-wrapper {
+        overflow: hidden;
+    }
+
+    #sortable-listA, #sortable-listB, #sortable-listC, #sortable-listD {
+        /*width: 210px;*/
+        min-height: 40px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+    }
+
+        #sortable-listC li {
+            border: solid;
+            border-color: black;
+            border-width: 1px;
         }
 
-        .list-wrapper {
-            overflow: hidden;
-        }
+    .list-item {
+        list-style-type: none;
+        /*width: 200px;*/
+        margin: 5px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #222222;
+        color: #ffffff;
+        border-radius: 3px;
+        cursor: move;
+    }
 
-        #sortable-listA, #sortable-listB, #sortable-listC, #sortable-listD {
-            /*width: 210px;*/
-            min-height: 40px;
-            margin: 0;
-            padding: 0;
-            border: 1px solid #dddddd;
-            border-radius: 4px;
-        }
-
-            #sortable-listC li {
-                border: solid;
-                border-color: black;
-                border-width: 1px;
-            }
-
-        .list-item {
-            list-style-type: none;
-            /*width: 200px;*/
-            margin: 5px;
-            line-height: 30px;
-            text-align: center;
-            background-color: #222222;
-            color: #ffffff;
-            border-radius: 3px;
-            cursor: move;
-        }
-
-        #sortable-listC .list-item {
-            background-color: #66cc66;
-            color: black;
-        }
+    #sortable-listC .list-item {
+        background-color: #66cc66;
+        color: black;
+    }
 
 
-        #placeholder.list-item {
-            /*background-color: #000000;*/
-            color: black;
-        }
-    </style>
+    #placeholder.list-item {
+        /*background-color: #000000;*/
+        color: black;
+    }
+
+  </style>
 </body>
 </html>
