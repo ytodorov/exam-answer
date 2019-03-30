@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
@@ -35,12 +37,13 @@ namespace Exam_answerWeb
                 options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
             });
 
-            //services.AddRouting(options =>
-            //{
-            //    options.LowercaseUrls = true;
-            //    options.LowercaseQueryStrings = true;
-            //    options.AppendTrailingSlash = false;                
-            //});
+            services.Configure<GzipCompressionProviderOptions>(options =>
+                options.Level = CompressionLevel.Optimal);
+
+            services.AddResponseCompression(options =>
+            {
+                options.EnableForHttps = true;
+            });
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -74,6 +77,8 @@ namespace Exam_answerWeb
                 .Add(new RedirectLowerCaseRule())
                 );
 
+            app.UseResponseCompression();
+
             FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
             provider.Mappings[".webmanifest"] = "application/manifest+json";
 
@@ -81,7 +86,6 @@ namespace Exam_answerWeb
             {
                 ContentTypeProvider = provider
             });
-
 
             app.UseMvc(routes =>
             {
@@ -117,5 +121,5 @@ namespace Exam_answerWeb
                 context.Result = RuleResult.ContinueRules;
             }
         }
-    }   
+    }
 }
