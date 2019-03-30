@@ -7,18 +7,10 @@
     <meta name="keywords" content="free, exam, question, answer, explanation">
     <title>@(ViewData["title"] + "Exam-Answer")</title>
 
-    @*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css" />
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.min.css" />
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.silver.mobile.min.css" />*@
-    @*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.material-v2.min.css" />*@
-
-    @*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap-v4.min.css" />*@
-
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.mobile.min.css" />
-
-
+       
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <style>
     html, h1, h2 {
@@ -33,13 +25,12 @@
 
   </style>
 
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+
 
     <style type='text/css'>
     body {
-        background-image:  url(../../128-168.jpg)  !important;
-        background-repeat: repeat  !important;
+        background-image: url(../../128-168.jpg) !important;
+        background-repeat: repeat !important;
     }
     /*body, li, ul, p, li div {
             background-image: url(../../128-168.jpg) !important;
@@ -85,7 +76,7 @@
                                 {
                                     <li>
                                         <a class="nav-link text-dark" href="~/microsoft/az-100/question@(i)">
-                                            @($"Question{i}")
+                                            @($"Question {i}")
                                         </a>
                                     </li>
                                 }
@@ -117,6 +108,8 @@
                 Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>*@
     </footer>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
     <script>
         var meta = $("meta[name=description]");
 
@@ -163,24 +156,20 @@
         });
     </script>
     <style>
-    .fieldlist {
-        margin: 0 0 -1em;
-        padding: 0;
-    }
-
-        .fieldlist li {
-            list-style: none;
-            padding-bottom: 1em;
+        .fieldlist {
+            margin: 0 0 -1em;
+            padding: 0;
         }
 
-    .correct {
-        /*color: forestgreen*/
-    }
+            .fieldlist li {
+                list-style: none;
+                padding-bottom: 1em;
+            }
 
-  </style>
-
-
-
+        .correct {
+            /*color: forestgreen*/
+        }
+    </style>
 
     <script>
         function placeholder(element) {
@@ -195,53 +184,52 @@
     <style>
 
 
-    .demo-section {
-        /*padding: 50px 70px;*/
-        text-align: center;
-    }
-
-    .list-wrapper {
-        overflow: hidden;
-    }
-
-    #sortable-listA, #sortable-listB, #sortable-listC, #sortable-listD {
-        /*width: 210px;*/
-        min-height: 40px;
-        margin: 0;
-        padding: 0;
-        border: 1px solid #dddddd;
-        border-radius: 4px;
-    }
-
-        #sortable-listC li {
-            border: solid;
-            border-color: black;
-            border-width: 1px;
+        .demo-section {
+            /*padding: 50px 70px;*/
+            text-align: center;
         }
 
-    .list-item {
-        list-style-type: none;
-        /*width: 200px;*/
-        margin: 5px;
-        line-height: 30px;
-        text-align: center;
-        background-color: #222222;
-        color: #ffffff;
-        border-radius: 3px;
-        cursor: move;
-    }
+        .list-wrapper {
+            overflow: hidden;
+        }
 
-    #sortable-listC .list-item {
-        background-color: #66cc66;
-        color: black;
-    }
+        #sortable-listA, #sortable-listB, #sortable-listC, #sortable-listD {
+            /*width: 210px;*/
+            min-height: 40px;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+        }
+
+            #sortable-listC li {
+                border: solid;
+                border-color: black;
+                border-width: 1px;
+            }
+
+        .list-item {
+            list-style-type: none;
+            /*width: 200px;*/
+            margin: 5px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #222222;
+            color: #ffffff;
+            border-radius: 3px;
+            cursor: move;
+        }
+
+        #sortable-listC .list-item {
+            background-color: #66cc66;
+            color: black;
+        }
 
 
-    #placeholder.list-item {
-        /*background-color: #000000;*/
-        color: black;
-    }
-
-  </style>
+        #placeholder.list-item {
+            /*background-color: #000000;*/
+            color: black;
+        }
+    </style>
 </body>
 </html>
