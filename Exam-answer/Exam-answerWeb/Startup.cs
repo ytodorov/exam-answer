@@ -27,6 +27,8 @@ namespace Exam_answerWeb
 
         public IConfiguration Configuration { get; }
 
+        public IHostingEnvironment HostingEnvironment { get; set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -52,6 +54,7 @@ namespace Exam_answerWeb
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            HostingEnvironment = env;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

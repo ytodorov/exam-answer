@@ -1,32 +1,32 @@
 ﻿<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
 <script>
-    var meta = $("meta[name=description]");
+    //var meta = $("meta[name=description]");
 
-    var lines = $("ul li div").first().find("p");
-    var descr = "";
-    if (lines.length > 0) {
-        descr = lines.first().text();
-    }
-    if (lines.length > 1) {
-        descr = $(lines[0]).text() + $(lines[1]).text();
-    }
+    //var lines = $("ul li div").first().find("p");
+    //var descr = "";
+    //if (lines.length > 0) {
+    //    descr = lines.first().text();
+    //}
+    //if (lines.length > 1) {
+    //    descr = $(lines[0]).text() + $(lines[1]).text();
+    //}
 
-    meta.attr("content", descr);
+    //meta.attr("content", descr);
 
 
-    var countOfP = $("ul li div").first().find("p").length;
+    //var countOfP = $("ul li div").first().find("p").length;
 
-    if (countOfP > 1) {
+    //if (countOfP > 1) {
 
-        var firstP = $("ul li div").first().find("p").first();
-        var secondP = $($("ul li div").first().find("p")[1]);
+    //    var firstP = $("ul li div").first().find("p").first();
+    //    var secondP = $($("ul li div").first().find("p")[1]);
 
-        var textOfFirstP = firstP.html();
-        firstP.html("<h1>" + textOfFirstP + "</h1>");
+    //    var textOfFirstP = firstP.html();
+    //    firstP.html("<h1>" + textOfFirstP + "</h1>");
 
-        var textOfSecondP = secondP.html();
-        secondP.html("<h2>" + textOfSecondP + "</h2>");
-    }
+    //    var textOfSecondP = secondP.html();
+    //    secondP.html("<h2>" + textOfSecondP + "</h2>");
+    //}
 
 
     $(document).ready(function () {

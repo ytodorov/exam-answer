@@ -12,6 +12,12 @@ html, h1, h2 {
     font-family: 'Inconsolata', monospace;
 }
 
+/*same padding as p element*/
+h1, h2 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 p, ul {
     padding-left: 5px;
     padding-right: 5px;

@@ -11,8 +11,13 @@ namespace Exam_answerWeb.Models
 
         public string Title { get; set; }
 
-        public string H1Tag { get; set; }
+        public string H1OpenTag { get; set; }
 
-        public string H2Tag { get; set; }
+        public string H1CloseTag { get; set; }
+
+        public string H2OpenTag { get; set; }
+
+        public string H2CloseTag { get; set; }
+
     }
 }

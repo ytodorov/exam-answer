@@ -3,7 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Community powered free exam answers with explanations." />
+    @if (ViewData["description"] != null)
+    {
+        <meta name="description" content="@ViewData["description"]" />
+    }
+    else
+    {
+        <meta name="description" content="Community powered free exam answers with explanations." />
+    }
     <meta name="keywords" content="free, exam, question, answer, explanation">
     <title>@(ViewData["title"] + "Exam-Answer")</title>
 
@@ -12,7 +19,7 @@
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.mobile.min.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
-  
+
     <link href="~/css/site.css" rel="stylesheet" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -82,7 +89,7 @@
                 Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>*@
     </footer>
-      
+
     <partial name="_JsScripts" />
 </body>
 </html>
