@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Exam_answerWeb.Infrastructure;
+using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
@@ -49,14 +50,19 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["current"] = intId;
                 ViewData["max"] = 61;
             }
+            QuestionViewModel questionViewModel = new QuestionViewModel()
+            {
+                Id = id
+            };
+
             if (intId < 30)
             {
-                return View($"{folderName}/question1_{id}");
+                return View($"{folderName}/question1_{id}", questionViewModel);
             }
             else
             {
                 int newId = intId - 29;
-                return View($"{folderName}/question2_{newId}");
+                return View($"{folderName}/question2_{newId}", questionViewModel);
             }
         }
     }

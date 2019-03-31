@@ -1,11 +1,20 @@
-﻿<ul class="panelbar">
+﻿@model QuestionViewModel
+<ul class="panelbar">
     <li class="k-state-active">
-        <span class="k-link k-state-selected">Question @(ViewData["id"])</span>
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
-            <p>You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.</p>
-            <p>You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.</p>
-            <p>Solution: From the Azure Active Directory Properties blade, you enable Access management for Azure resources.</p>
-            <p>Does this solution meet the goal?</p>
+            <p>
+                You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.
+            </p>
+            <p>
+                You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.
+            </p>
+            <p>
+                Solution: From the Azure Active Directory Properties blade, you enable Access management for Azure resources.
+            </p>
+            <p>
+                Does this solution meet the goal?
+            </p>
         </div>
     </li>
     <li class="k-state-active">
