@@ -11,7 +11,14 @@
     {
         <meta name="description" content="Community powered free exam answers with explanations." />
     }
-    <meta name="keywords" content="free, exam, question, answer, explanation">
+    @if (ViewData["keywords"] != null)
+    {
+        <meta name="keywords" content="@ViewData["keywords"]" />
+    }
+    else
+    {
+        <meta name="keywords" content="free, exam, question, answer, explanation, az-100" />
+    }
     <title>@(ViewData["title"] + "Exam-Answer")</title>
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
