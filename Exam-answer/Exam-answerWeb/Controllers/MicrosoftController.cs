@@ -86,13 +86,13 @@ namespace Exam_AnswerWeb.Controllers
                 filePath = $"{folderName}/question2_{newId}";
                 //return View($"{folderName}/question2_{newId}", questionViewModel);
             }
-
+            // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
             string version = "Release";
 #if DEBUG
             version = "Debug";
 #endif
-            string path = Path.Combine(env.ContentRootPath, "bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
-            string[] files = Directory.GetFiles(path);
+            string path = Path.Combine(env.ContentRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
+            string[] files = Directory.GetFiles(path, "*.cshtml", SearchOption.AllDirectories);
 
             string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
             if (!string.IsNullOrEmpty(theFile))
