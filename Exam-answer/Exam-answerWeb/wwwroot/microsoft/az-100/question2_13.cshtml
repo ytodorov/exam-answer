@@ -1,0 +1,72 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have a Windows Server 2012 R2 file server deployed in your on-premises infrastructure. You want to deploy a file server hybrid solution. You decide to use Azure File Sync.
+            </p>
+            <p>
+                Choose all that apply:
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You can use cloud tiering with server endpoints on the system volume.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            The Data tiering free space policy apply to each server endpoint individually.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            For tiered files, the media file type will be partially downloaded as needed.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            The free space policy takes precedence over any other policy.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You can sync files in a mount point inside a server endpoint.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You cannot use cloud tiering with server endpoints on the system volume. You can create endpoints on the system volume, but those files will not be tiered. This means that all files in the server endpoint will be synced with the configured cloud endpoint.
+            </p>
+            <p>
+                The Data tiering free space policy does not apply to each server endpoint individually. You can configure a policy for each server endpoint individually, but the most restrictive free space policy applies to the entire volume. This means that if you configure two server endpoints in the same volume with two distinct policies, for example 20% and 40%, the 40% of free space policy will be applied. The free space tiering policy forces the sync system to start tiering, or moving data to the cloud, when the free space limit is reached. When the sync system tiers a file, it creates a pointer in the file system, and the actual data is moved to Azure. You can still list the tiered file, but the real data is no longer stored on your local disk.
+            </p>
+            <p>
+                For tiered files, the media file type will be partially downloaded as needed. When you try to access to a tiered file, it automatically downloads the entire file transparently. The exception is for those file types than can be read even if the data has not been completely downloaded, like media files or zip files.
+            </p>
+            <p>
+                The free space policy takes precedence over any other policy. You can configure date and free space policies on the same server endpoint, but the free space policy will always have precedence over the date policy. This means that if you configure a 60-day date policy and a 50% free space policy for the same server endpoint, and the volume reaches 50% of free space, the sync system will tier the files that have been unmodified for more time (coolest files), even if they were modified fewer than 60 days ago.
+            </p>
+            <p>
+                You cannot sync files in a mount point inside a server endpoint. You can use a mount point as a server endpoint, but you cannot have mount points inside a server endpoint. In this case, all files in the server endpoint will be synced except those files stored inside each mountpoint in the endpoint.
+            </p>
+        </div>
+    </li>
+</ul>

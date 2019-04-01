@@ -1,0 +1,74 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company has a line-of-business (LOB) application that uses Azure SQL Database for storing transactional information. The LOB application also uses Windows and Linux virtual machines for business and presentation application layers.
+            <p>
+                Some users are reporting errors in the application.
+            </p>
+            <p>
+                You need to be alerted every time that an exception arises in any part of the application. Your solution should require the minimal administrative effort.
+            </p>
+            <p>
+                Which two actions should you perform? Each correct answer presents part of the solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create an alert using a search query that looks for exceptions in Windows servers.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create an alert using a search query that looks for exceptions in business and presentation layer virtual machines.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create an alert using a search query that looks for exceptions in application layer servers.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create an alert using a search query that looks for exceptions in business layer servers.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create an alert using a search query that looks for exceptions in Linux servers.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should create an alert using a search query that looks for exceptions in Windows servers. You need to use Log Analytics or Application Insight resource types and Log signal types. Then you can write a search query that gets all messages from Windows Events that contains the word "Exception".
+            </p>
+            <p>
+                You should also create an alert using a search query that looks for exceptions in Linux servers. You use the same configuration as for Windows Events, but you will use Syslog messages.
+            </p>
+            <p>
+                You should not create an alert using a search query that looks for exceptions in business and presentation layer virtual machines. When creating an alert, you can only select one target type. This means that you can only get information from Windows Events or Syslog, so you will not be able to query both data sources at the same time.
+            </p>
+            <p>
+                You should not create an alert using a search query that looks for exceptions in application layer servers or in the business layer. You need to query for specific log data sources. Application and business layers is a concept of a design pattern for applications that can be compound of Windows, Linux virtual machines, or other Azure services.
+            </p>
+        </div>
+    </li>
+</ul>

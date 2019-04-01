@@ -1,0 +1,66 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You are the owner of your organization's Microsoft Azure subscription. You hire a new administrator to help you manage a virtual network that contains nine Windows Server virtual machines (VMs). The deployment is contained in a resource group named prod-rg.
+            </p>
+            <p>
+                You need to provide the administrator with least-privilege access only to the prod-rg resource group. The administrator should be allowed to manage all aspects of the Azure VMs. Your solution should minimize management effort.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="1_11" class="k-radio">
+                        <label class="k-radio-label" for="1_11">
+                            Assign the Allowed virtual machine SKUs Azure Policy at the resource group scope.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign a custom Azure Policy at the management group scope.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign the administrator to the Contributor role at the resource group scope.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign the administrator to the Virtual Machine Operator role at the virtual machine scope.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should assign the administrator to the Contributor role at the resource group scope. The Contributor role-based access control (RBAC) role provides the new administrator with full read/write privileges at that scope. Inheritance ensures that the permissions cascade to the VMs within the prod-rg resource group and minimizes management overhead.
+            </p>
+            <p>
+                You should not assign the administrator to the Virtual Machine Operator role at the virtual machine scope. The Virtual Machine Operator role does not grant the administrator full access to all resources contained on the virtual network. Moreover, making multiple RBAC assignments requires much more management effort than making a single role assignment at a parent scope.
+            </p>
+            <p>
+                You should not assign the Allowed virtual machine SKUs Azure Policy at the resource group scope. Doing so only restricts the administrator from selecting VM instance stock-keeping units (SKUs) that are defined in the Azure Policy. The scenario states only that the administrator should be able to fully manage existing VMs within the prod-rg resource group.
+            </p>
+            <p>
+                You should not assign a custom Azure Policy at the management group scope. Azure Policy is a governance feature that restricts the types of resources administrators can select in Azure Resource Manager. In other words, Azure Policy is fundamentally different from RBAC, which limits the ability for administrators to take particular actions in the first place.
+            </p>
+        </div>
+    </li>
+</ul>

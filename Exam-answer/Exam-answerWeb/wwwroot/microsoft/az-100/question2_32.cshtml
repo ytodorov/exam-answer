@@ -1,0 +1,45 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have a virtual machine (VM) named VM1 running in your Microsoft Azure subscription. You back up VM1 to a Recovery Services vault every morning at 1:00 A.M.
+            </p>
+            <p>
+                You need to recover 14 files that were accidentally deleted from the running VM.
+            </p>
+            <p>
+                Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <div class="demo-section hidden-on-narrow two-way wide">
+                <div class="list-wrapper">
+                    <ul id="sortable-listC">
+                        <li class="list-item">Start Azure File Recovery.</li>
+                        <li class="list-item">Mount the VHDs as local drives.</li>
+                        <li class="list-item">Transfer the 14 files.</li>
+                        <li class="list-item">Close the connection.</li>
+                        <li class="list-item">Start Azure Site Recovery.</li>
+                        <li class="list-item">Commit the recovery point.</li>
+                        <li class="list-item">Initiate a test failover.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should use Azure File Recovery to retrieve individual files from a backed-up VM in Azure. You start Azure File Recovery from the VM's Settings page in the Azure portal. The process involves downloading a small executable program file that mounts the VM's virtual hard disks (VHDs) as local drives on your system. You should then transfer the files you need and then close the connection to complete the procedure.
+            </p>
+            <p>
+                You should not use Azure Site Recovery (ASR). It is used to migrate or configure disaster recovery for one or more on-premises or cloud-based VMs. Likewise, you should not initiate a test failover or commit a recovery point because these are ASR tasks and not related to Azure File Recovery.
+            </p>
+        </div>
+    </li>
+</ul>

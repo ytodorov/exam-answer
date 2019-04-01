@@ -1,0 +1,66 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You are the lead architect for your company's Microsoft Azure infrastructure.
+            </p>
+            <p>
+                To maintain corporate compliance certifications, you need to ensure that any virtual machines (VMs) are created only in approved Azure regions.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create an Azure management group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Enforce conditional access policy in Azure Active Directory (Azure AD).
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Define and deploy a custom Azure Policy template.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Define and deploy an Azure Automation Desired State Configuration (DSC) configuration.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should define and deploy a custom Azure Policy by using JSON and Azure PowerShell. Azure Resource Manager includes a number of predefined policy templates that cover various governance use cases. However, you can also build a custom template and upload it to Azure to make it available in your subscriptions.
+            </p>
+            <p>
+                You should not define and deploy an Azure Automation DSC configuration. Azure Automation DSC prevents configuration drift on newly deployed or existing Azure or on-premises nodes. This scenario requires that you enforce compliance on VM locations at deployment time.
+            </p>
+            <p>
+                You should not deploy a management group. A management group is a scope level above the Azure subscription that allows you to assign Azure Policy that affects multiple subscriptions simultaneously. In your case, you need to define a policy in the first place, and then you can optionally scope the new custom policy to a management group.
+            </p>
+            <p>
+                You should not enforce conditional access policy on Azure Active Directory. This feature affects user accounts, not VMs deployed in Azure. Conditional access allows you to specify requirements for your users to access Azure AD-protected apps. For instance, you might require that users can only authenticate to an app if they are connecting from a corporate IP address.
+            </p>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,66 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company is developing a .NET application that stores part of the information in an Azure Storage Account. The application will be installed on end user computers.
+            </p>
+            <p>
+                You need to ensure that the information stored in the Storage Account is accessed in a secure way. You ask the developers to use a shared access signature (SAS) when accessing the information in the Storage Account. You need to make the required configurations on the storage account to follow security best practices.
+            </p>
+            <p>
+                Choose all that apply:
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You need to configure a stored access policy.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You should set the SAS start time to now.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You should validate data written using SAS.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            One option for revoking a SAS is by deleting a stored access policy.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You need to configure a stored access policy. When you use SAS, you have two different options. You can either use ad-hoc SAS or configure a stored access policy. By using ad-hoc SAS, you specify the start time, expiration time, and permission in the URI. If someone copies this URI, they will have the same level of access as the corresponding user. This means that this type of SAS can be used by anyone in the world. By configuring a stored access policy, you define the start time, expiration time, and permissions in the policy and then associate a SAS with the policy. You can associate more than one SAS with the same policy.
+            </p>
+            <p>
+                You should not set the SAS start time to now. When you set the start time of a SAS to now, there can be subtle differences in the clock of the servers that host the Storage Account. These differences could lead to an access problem for a few minutes after the configuration. If you need your SAS to be available as soon as possible, you should set the start time 15 minutes before the current time, or you can just not set the start time. Not setting the start time parameter means that the SAS will be active immediately.
+            </p>
+            <p>
+                You should validate data written using SAS. The information written to the storage account when the user uses a SAS can cause problems, such as communication issues or corruption. Because of this, it is a best practice to validate the data written to the storage account after it is written and before the information is used by any other service or application.
+            </p>
+            <p>
+                You can revoke a SAS by deleting a stored access policy. If you associate a SAS with a stored access policy, the start time, expiration time, and permission are inherited from the policy. If you remove the policy, you are invalidating the SAS and thus making it unusable. Keep in mind that if you remove a stored access policy with associated SAS and then create another stored access policy with the exact same name as the original policy, the associated SAS will be enabled again.
+            </p>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,122 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have Azure Blob Storage in your Azure Subscription that you need to export. You decide to use the Azure Import/Export service.
+            </p>
+            <p>
+                You have a storage account named STORAGE01 that has 3 TB of information stored. All the information is located in a container named CONTAINER01.
+            </p>
+            <p>
+                During the execution of the export job, the storage account key changes.
+            </p>
+            <p>
+                When the export job finishes, you realize that it completed successfully with errors. When you receive the disk with the export information, you attach the disk to a Windows computer and assign the letter G:
+            </p>
+            <p>
+                You need to download the files that are marked with errors by using the WAImportExport tool. You install the tool in the C:\WAImportExport folder.
+            </p>
+            <p>
+                How should you complete the command? To answer, select the appropriate command parts from the drop-down menus.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                WAImportExport.exe RepairExport
+                <br />
+                /r:&nbsp;
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">/STORAGE01/CONTAINER01</option>
+                    <option>CONTAINER01</option>
+                    <option>C:\WAImportExportExport\DRIVEID.rep</option>
+                    <option>G:\</option>
+                    <option>STORAGE01</option>
+                    <option>STORAGE01key</option>
+                    <option>STORAGE01sas</option>
+                </select>
+                <br />
+                /d:&nbsp;
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">/STORAGE01/CONTAINER01</option>
+                    <option>CONTAINER01</option>
+                    <option>C:\WAImportExportExport\DRIVEID.rep</option>
+                    <option>G:\</option>
+                    <option>STORAGE01</option>
+                    <option>STORAGE01key</option>
+                    <option>STORAGE01sas</option>
+                </select>
+                <br />
+                /sn:
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">/STORAGE01/CONTAINER01</option>
+                    <option>CONTAINER01</option>
+                    <option>C:\WAImportExportExport\DRIVEID.rep</option>
+                    <option>G:\</option>
+                    <option>STORAGE01</option>
+                    <option>STORAGE01key</option>
+                    <option>STORAGE01sas</option>
+                </select>
+                <br />
+                /sk:
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">/STORAGE01/CONTAINER01</option>
+                    <option>CONTAINER01</option>
+                    <option>C:\WAImportExportExport\DRIVEID.rep</option>
+                    <option>G:\</option>
+                    <option>STORAGE01</option>
+                    <option>STORAGE01key</option>
+                    <option>STORAGE01sas</option>
+                </select>
+                <br />
+                /CopyLogFile:C:\WAImportExport\DRIVERID.log
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should execute the following command in your on-premises environment:
+            </p>
+            <p>
+                WAImportExport.exe RepairExport
+                <br />
+                /r:C:\WAImportExport\DRIVERID.rep
+                <br />
+                /d:G:\
+                <br />
+                /sn:STORAGE01
+                <br />
+                /sk:STORAGE01key
+                <br />
+                /CopyLogFile:C:\WAImportExport\DRIVERID.log
+            </p>
+            <p>
+                You should use /r:C:\WAImportExport\DRIVERID.rep. This parameter is mandatory and tells the WAImportExport tool the location of the repair file. This file is needed for tracking the progress of the repair to damaged files and allows you to resume an interrupted repair. The repair process in an export job downloads those files that were not copied during the export job or have been damaged due to errors in the disk. In this scenario, you need to start a new repair process, so you need to ensure that the DRIVERID.rep does not exist before starting the process. If you set this parameter to an existing repair file, the WAImportExport tool will try to resume an interrupted repair process.
+            </p>
+            <p>
+                You should use /d:G:\. You use this parameter to set the path of the directory that you want to verify or repair. You can use either the path for the export drive or a network file share where you have a copy of the exported files.
+            </p>
+            <p>
+                You should use /sn:STORAGE01. You need to set the storage account name that you used to export the information. The WAImportExport tool connects to this storage account to download any damaged files that need to be repaired to your local storage.
+            </p>
+            <p>
+                You should use /sk:STORAGE01key. You need to use an account key or a shared access signature (SAS) to authenticate access to the storage account. In this scenario, you need to use the account key STORAGE01key because you used the /sk parameter. If you want to use the SAS instead, you need to use the /csas:<ContainerSAS>. You need to change the STORAGE01key placeholder to the name of your actual account key.
+            </p>
+            <p>
+                You should not use /STORAGE01/CONTAINER01 or CONTAINER01. The WAImportExport tool requires the storage account name, not the container name.
+            </p>
+            <p>
+                You should not use STORAGE01sas. You can authenticate access to the storage account by using the account key or the shared access signature. In this scenario, you use the /sk parameter, so you need to provide the storage account key. If you want to use the SAS, you need to use the /csas parameter.
+            </p>
+        </div>
+    </li>
+</ul>

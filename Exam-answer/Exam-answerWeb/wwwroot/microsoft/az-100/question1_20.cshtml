@@ -1,0 +1,69 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company is developing a line-of-business (LOB) application that uses the Azure IoT Hub for gathering information from Internet of things (IoT) devices.
+            </p>
+            <p>
+                The LOB application uses the IoT Hub Service SDK to read device telemetry from the IoT Hub.
+            </p>
+            <p>
+                You need to monitor device telemetry and be able configure alerts based on device telemetry values. Your solution should require the least administrative effort.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Enable Azure Monitor resource diagnostics logs on the IoT Hub.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Use Azure Resource Health.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Use Azure Activity Logs.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Use Azure Application Insights with the LOB application.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should enable Azure Monitor resource diagnostics logs on the IoT Hub. Resource-level diagnostics logs allow you to monitor events that happen inside the resource. Each type of resource provides a different type of events. For the IoT Hub, the event category DeviceTelemetry fits your needs.
+            </p>
+            <p>
+                You should not use Azure Activity Logs. This service provides information about the actions performed on the resources in a subscription while using Resource Manager. Creating an IoT Hub, listing keys from a storage account, or starting a virtual machine are some examples of the type of activity logging information provided by Activity Logs.
+            </p>
+            <p>
+                You should not use Azure Resource Health. This service provides information about the high-level health status of the resource or if there is a regional outage. You would use this service to know if the IoT Hub is running or not.
+            </p>
+            <p>
+                You should not use Azure Application Insights with the LOB application. Application Insights provides information about the application performance while the application is running.
+            </p>
+        </div>
+    </li>
+</ul>

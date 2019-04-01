@@ -1,0 +1,63 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have a Microsoft Azure subscription named Sub1. Your company has 120 terabytes (TB) in its on-premises data center.
+            </p>
+            <p>
+                You need to use Azure Import/Export Service to transfer the data into a storage account in Sub1.
+            </p>
+            <p>
+                Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <div class="demo-section hidden-on-narrow two-way wide">
+                <div class="list-wrapper">
+                    <ul id="sortable-listC">
+                        <li class="list-item">Prepare the hard drives.</li>
+                        <li class="list-item">Create an import job.</li>
+                        <li class="list-item">Ship the drives to an Azure datacenter.</li>
+                        <li class="list-item">Update the job with the tracking information.</li>
+                        <li class="list-item">Verify the data upload to Azure.</li>
+                        <li class="list-item">Ship the Azure Data Box to an Azure datacenter.</li>
+                        <li class="list-item">Order an Azure Data Box.</li>
+                        <li class="list-item">Create an Azure Key Vault.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should perform the following actions in order:
+            </p>
+            <p>
+                1. Prepare the hard drives.
+                <br />
+                2. Create an import job.
+                <br />
+                3. Ship the drives to an Azure datacenter.
+                <br />
+                4. Update the job with the tracking information.
+                <br />
+                5. Verify the data upload to Azure.
+            </p>
+            <p>
+                Azure Import/Export service is one way to securely transport large data volumes from your on-premises environment into Microsoft Azure. This service enables you to use your own hard drives to store the data. You use a command-line tool to prepare the drives and to populate them accordingly. You then pay for drive shipment to and from your desired Azure datacenter. All Import/Export service tasks can be tracked from the Azure portal.
+            </p>
+            <p>
+                You should not use Azure Data Box in this scenario because the scenario stipulates that you plan to use the Import/Export service. Azure Data Box is a newer alternative method for large-scale data import and export with Azure. With Azure Data Box you rent a hard drive array from Microsoft, populate the device, ship it back to Microsoft, and they unpack your data, securely erase the Data Box contents, and re-use the appliance with another customer.
+            </p>
+            <p>
+                You should not use Azure Key Vault because the Import/Export service stores your hard drive encryption keys in the Import/Export service job details in the Azure portal. Azure Key Vault is an Azure solution that leverages hardware-based security to store and manage your secrets, digital certificates, and authentication keys.
+            </p>
+        </div>
+    </li>
+</ul>

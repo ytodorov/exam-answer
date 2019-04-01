@@ -1,0 +1,79 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company is performing an internal audit for reviewing the company's IT infrastructure, including the Azure infrastructure you manage.
+            </p>
+            <p>
+                Your company also has an Office 365 subscription. The on-premises Active Directory Domain Services (AD DS) domain is synced with Azure Active Directory (Azure AD).
+            </p>
+            <p>
+                You need to provide auditors with administrator privileges. They need to be able to review users created in your Azure AD tenant. They should not be able to register applications in your Azure AD tenant.
+            </p>
+            <p>
+                Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <div class="demo-section hidden-on-narrow two-way wide">
+                <div class="list-wrapper">
+                    <ul id="sortable-listC">
+                        <li class="list-item corect 1">Create a Microsoft account for each auditor.</li>
+                        <li class="list-item corect 2">Assign the owner role to each account.</li>
+                        <li class="list-item corect 3">Add each auditor account as co-administrator.</li>
+                        <li class="list-item corect 4">Assign the Directory Reader role to each account.</li>
+                        <li class="list-item">Assign the contributors role to each account</li>
+                        <li class="list-item">Assign the Company Administrator role to each account.</li>
+                        <li class="list-item">Assign the Application Developer role to each account.</li>
+                        <li class="list-item">Create an Office 365 user account for each auditor.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should perform the following actions in order:
+            </p>
+            <p>
+                1. Create a Microsoft account for each auditor.
+                <br />
+                2. Assign the owner role to each account.
+                <br />
+                3. Add each auditor account as co-administrator.
+                <br />
+                4. Assign the Directory Reader role to each account.
+            </p>
+            <p>
+                First, you need to create a Microsoft account for each auditor that needs to be granted with administrator privileges on the subscription. Using Microsoft accounts, you need to manage those users as guest users.
+            </p>
+            <p>
+                Next, you need to assign the owner role to each auditor's account. Only users with the owner role can be configured as subscription co-administrators.
+            </p>
+            <p>
+                Next, you need to assign the co-administrator role to each auditor's account.
+            </p>
+            <p>
+                Finally, you need to grant the Directory Reader role to each auditor's account. Because you use guest accounts, these users do not have the same permissions as an Azure AD Work or School account. Guest users with co-administrator privileges cannot access information from users or register applications in the Azure AD tenant. You need to manually grant the Directory Reader privileges to the auditor accounts.
+            </p>
+            <p>
+                You should not assign the contributor role. You can only assign the co-administrator role to subscription owners.
+            </p>
+            <p>
+                You should not create an Office 365 user account for each auditor. This type of account would grant the auditors more privileges than needed. When you grant co-administrator privileges to Azure AD Work or School accounts, you grant all privileges to these users, including read permission over other users or the ability to create new applications in the Azure AD tenant.
+            </p>
+            <p>
+                You should not grant the Application Developer role. This role allows the user to create new applications in the Azure AD tenant. This goes against required privileges mentioned in the scenario.
+            </p>
+            <p>
+                You should not grant the Company Administrator role. This role allows you to manage the Azure AD tenant globally, including the ability to add new applications to the tenant.
+            </p>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,69 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have a website hosted in Azure App Services that is used globally within your company. The website contains a mixture of dynamic and static content.
+            </p>
+            <p>
+                You are asked to put a Content Delivery Network (CDN) in place to optimize the experience for the end users.
+            </p>
+            <p>
+                You need to configure the CDN and web app to optimize both dynamic and static content where possible.
+            </p>
+            <p>
+                What two actions should you perform? Each correct answer presents part of the solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Implement general web delivery on the CDN.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Implement custom caching rules on the CDN.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Implement cross origin sharing (CORS) on the website.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Implement dynamic site acceleration (DSA) on the CDN.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should implement Dynamic Site Acceleration (DSA) on the CDN. DSA adds support for route optimization, TCP optimizations, object prefetch, and adaptive image compression, all of which provide improved performance for dynamically generated content.
+            </p>
+            <p>
+                You should also implement custom caching rules on the CDN to identify the difference between static and dynamic content. DSA cannot cache content because by nature it is dynamic. In this case, if you implement DSA on the CDN, you need to implement custom caching rules to identify the source of static content, which can be cached within the CDN.
+            </p>
+            <p>
+                You should not implement general web delivery on the CDN. This will result in caching the static web content but not affect the dynamically generated content.
+            </p>
+            <p>
+                You should not implement CORS on the website. This allows scripting elements such as JavaScript to interact with the backend platforms in your environment.
+            </p>
+        </div>
+    </li>
+</ul>

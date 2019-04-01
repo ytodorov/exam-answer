@@ -1,0 +1,87 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You use taxonomic tags to logically organize resources and to make billing reporting easier.
+            </p>
+            <p>
+                You use Azure PowerShell to append an additional tag on a storage account named corpstorage99. The code is as follows:
+            </p>
+            <p>
+                $r = Get-AzureRmResource -ResourceName "corpstorage99" -ResourceGroupName "prod-rg"
+                <br />
+                Set-AzureRmResource -Tag @@{Dept="IT"} -ResourceId $r.ResourceId -Force
+            </p>
+            <p>
+                The code returns unexpected results.
+            </p>
+            <p>
+                You need to append the additional tag as quickly as possible.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Refactor the code by using the Azure Command-Line Interface (CLI).
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Call the Add() method on the resource to append the new tag.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Deploy the tag by using an Azure Resource Manager template.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign the Enforce tag and its value Azure Policy to the resource group.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should call the Add() method on the storage account resource as shown in the second line of this refactored Azure PowerShell code:
+            </p>
+            <p>
+                $r = Get-AzureRmResource -ResourceName "corpstorage99" -ResourceGroupName "prod-rg"
+                <br />
+                $r.Tags.Add("Dept", "IT")
+                <br />
+                Set-AzureRmResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
+            </p>
+            <p>
+                Unless you call the Add() method, the Set-AzureRmResource cmdlet will overwrite any existing taxonomic tags on the resource. The Add() method preserves existing tags and includes one or more tags to the resource tag list.
+            </p>
+            <p>
+                You should not deploy the tag by using an Azure Resource Manager template. Doing so is unnecessary in this case because the Azure PowerShell is mostly complete as-is. Furthermore, you must find the solution as quickly as possible.
+            </p>
+            <p>
+                You should not assign the Enforce tag and its value Azure Policy to the resource group. Azure Policy is a governance feature that helps businesses enforce compliance in resource creation. In this case, the solution involves too much administrative overhead to be a viable option. Moreover, the scenario makes no mention of the need for governance policy in specific terms.
+            </p>
+            <p>
+                You should not refactor the code by using the Azure Command-Line Interface (CLI). Either Azure PowerShell or Azure CLI can be used to institute this solution. It makes no sense to change the development language given that you have already completed most of the code in PowerShell.
+            </p>
+        </div>
+    </li>
+</ul>

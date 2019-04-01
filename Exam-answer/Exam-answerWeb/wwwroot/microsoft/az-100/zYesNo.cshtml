@@ -1,0 +1,74 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You deploy an application in a resource group named App-RG01 in your Azure subscription.
+            <p>
+                App-RG01 contains the following components:
+            </p>
+            <p>
+                * Two App Services, each with an SSL certificate
+                <br />
+                * A peered virtual network (VNet)
+                <br />
+                * Redis cache deployed in the VNet
+                <br />
+                * Standard Load Balancer
+            </p>
+            <p>
+                You need to move all resources in App-RG01 to a new resource group named App-RG02.
+            </p>
+            <p>
+                For each of the following statements, select Yes if the statement is true. Otherwise, DO NOT select it.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You need to delete SSL certificate from each App Service before moving it to the new resource group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                           You can move the Load Balancer only within the same subscription.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You need to disable the peer before moving the VNet.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You can move the VNet only within the same subscription.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should create a tag named CostCenter and assign it to each resource group. Creating a tag and assigning it to each resource group allows you to easily identify the cost center associated with each resource group. When you associate a tag with a resource or resource group, you need to provide a value to that tag. You can instruct the accounting department to use the Azure Cost Management tool to review the costs associated with each cost center by filtering by the newly created tag.
+            </p>
+            <p>
+                You should also create a tag named CostCenter and assign it to each resource. If you apply a tag to a resource group, that tag is not inherited by the resources in the resource group. You need to manually configure the tag for each resource that you want to include in the cost center. You can automate this action by using a PowerShell or Azure CLI script.
+            </p>
+            <p>
+                You should not instruct the accounting department to use either the Cost Analysis blade in the subscription panel or the Azure Account Center. Because your subscription is managed by a Cloud Service Provider, you can get that information from your provider. You can also get this information by using the Azure Cost Management tool.
+            </p>
+        </div>
+    </li>
+</ul>

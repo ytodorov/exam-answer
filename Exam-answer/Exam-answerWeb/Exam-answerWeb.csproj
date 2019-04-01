@@ -9,6 +9,76 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\microsoft\az-100\index.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_1.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_10.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_11.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_12.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_13.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_14.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_15.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_16.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_17.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_18.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_19.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_2.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_20.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_21.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_22.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_23.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_24.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_25.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_26.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_27.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_28.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_29.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_3.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_4.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_5.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_6.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_7.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_8.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question1_9.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_1.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_10.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_11.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_12.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_13.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_14.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_15.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_16.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_17.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_18.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_19.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_2.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_20.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_21.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_22.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_23.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_24.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_25.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_26.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_27.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_28.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_29.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_3.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_30.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_31.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_32.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_4.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_5.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_6.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_7.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_8.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question2_9.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\zCheckBoxes.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\zDropDown.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\zRadio.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\zSortable.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\zYesNo.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\.well-knownOLD\pki-validationOLD\D67C33543D08AB8D948517B8C6FC8AB6.txt" />
   </ItemGroup>
 
@@ -19,6 +89,207 @@
     <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="wwwroot\microsoft\az-100\index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_11.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_12.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_13.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_14.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_15.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_16.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_17.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_18.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_19.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_20.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_21.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_22.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_23.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_24.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_25.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_26.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_27.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_28.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_29.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_3.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_4.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_5.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_6.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_7.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_8.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question1_9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_11.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_12.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_13.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_14.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_15.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_16.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_17.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_18.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_19.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_20.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_21.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_22.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_23.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_24.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_25.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_26.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_27.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_28.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_29.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_3.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_30.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_31.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_32.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_4.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_5.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_6.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_7.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_8.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2_9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\zCheckBoxes.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\zDropDown.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\zRadio.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\zSortable.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\zYesNo.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 

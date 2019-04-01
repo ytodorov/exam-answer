@@ -1,0 +1,73 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                The development team asks you to provision an Azure storage account for their use.
+            </p>
+            <p>
+                To remain in compliance with IT security policy, you need to ensure that the new Azure storage account meets the following requirements:
+            </p>
+            <p>
+                * Data must be encrypted at rest.
+                <br />
+                * Access keys must facilitate automatic rotation.
+                <br />
+                * The company must manage the access keys.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Require secure transfer for the storage account.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Enable Storage Service Encryption (SSE) on the storage account.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create a service endpoint between the storage account and a virtual network (VNet).
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Configure the storage account to store its keys in Azure Key Vault.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should configure the storage account to store its keys in Azure Key Vault. Azure Key Vault provides a mechanism to store secrets, such as storage account keys, user credentials, and digital certificates, securely in the Microsoft Azure cloud. You can access the underlying Representational State Transfer (REST) application programming interface (API) to rotate or retrieve the secrets in your source code.
+            </p>
+            <p>
+                You should not enable SSE on the storage account for two reasons. First, SSE is enabled automatically on all Azure storage accounts and encrypts all storage account data at rest. Second, SSE in its native form uses Microsoft-managed access keys, which violates the scenario constraint for customer-managed keys.
+            </p>
+            <p>
+                You should not require secure transfer for the storage account. Secure transfer forces all REST API calls to use HTTPS instead of HTTP. This feature has nothing to do with either access keys or their management and rotation.
+            </p>
+            <p>
+                You should not create a service endpoint between the storage account and a VNet. A service endpoint allows you limit traffic to a storage account from resources residing on an Azure VNet.
+            </p>
+        </div>
+    </li>
+</ul>

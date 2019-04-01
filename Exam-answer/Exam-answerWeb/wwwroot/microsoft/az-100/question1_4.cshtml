@@ -1,0 +1,61 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You create a Windows Server virtual machine (VM) in an Azure resource group named iaas-rg. You plan to generalize the operating system and capture a system for use in future deployments.
+            </p>
+            <p>
+                You need to ensure that other administrators make no changes to the virtual machine configuration until you complete the image capture process. You need to enact your solution as quickly as possible.
+            </p>
+            <p>
+                Solution: From the Azure Active Directory Roles and administrators blade, you modify the Global administrator role properties.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Set a Read only lock at the resource group level.</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Set a Delete lock at the VM level.</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Edit the RBAC permissions at the resource group level.</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Edit the RBAC permissions at the VM level.</label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                Because time is of the essence, you should set a Read only lock at the resource group level. Resource locks in Azure allow you to prevent unwanted changes to Azure resources no matter what the user's privilege level is. For example, even subscription Owners would not be able to resize a VM if the resource has a Read only lock applied to it.
+            </p>
+            <p>
+                By settings the lock at the VM's parent resource group level, you ensure that other administrators can make no changes to the VM's entire configuration environment, including virtual network interface (vNIC), virtual hard disks (VHDs), and so forth.
+            </p>
+            <p>
+                We should not set a Delete lock at the VM level for two reasons. First, the Delete resource lock prevents only delete operations, so administrators would be able to undertake other management actions on the VM. Second, a resource-level lock does not affect related VM assets contained in the same resource group.
+            </p>
+            <p>
+                You should not edit the RBAC permissions at either the resource group or the VM level because the scenario states that you need to enact your solution as quickly as possible. Furthermore, by restricting other administrators' RBAC access, you potentially restrict them from undertaking actions on other VMs to which they should have management access.
+            </p>
+        </div>
+    </li>
+</ul>

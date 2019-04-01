@@ -1,0 +1,65 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company has a line-of-business (LOB) application that uses Azure SQL Database for storing transactional information. Your company also has deployed System Center Service Manager.
+            <p>
+                You need to configure an alert when the database reaches the 70% of CPU usage. When this alert rises, you need to notify several users by email and by SMS. You also need to automatically create a ticket in the ITSM system. Your solution should require the minimum administrative effort.
+            </p>
+            <p>
+                Which two actions should you perform? Each correct answer presents part of the solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure one Action Group with three actions: one for email notification, one for SMS notification, and one for ITSM ticket creation.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure System Center Service Manager with Azure Automation.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure two Action Groups: one Action Group for email and SMS notification and one for ITSM ticket creation.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure an IT Service Management Connector (ITSMC).
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should configure an ITSMC. You need configure an ITSM connector for connecting Azure with your System Center Service Manager service. Using this connector, you can create work items in the ITSM system based on alerts.
+            </p>
+            <p>
+                You should also configure one Action Group with three actions: one for email notification, one for SMS notification, and one for ITSM ticket creation. Once the alert fires, you need to configure the actions that the alert will perform. You can configure several types of actions for the alert, like Azure App Push, Email, SMS, Voice, Runbooks, Logic Apps, ITSM, or Webhooks. You can add several actions to the same action group.
+            </p>
+            <p>
+                You should not configure two Action Groups. Although you can create two separate action groups with different actions and attach them to the same alert, this would require more administrative effort.
+            </p>
+            <p>
+                You should not configure System Center Service Manager with Azure Automation. You could configure an Azure Automation Hybrid Worker for running Azure Automation runbooks to create tasks in System Center Service Manager, but this solution would require much more effort.
+            </p>
+        </div>
+    </li>
+</ul>

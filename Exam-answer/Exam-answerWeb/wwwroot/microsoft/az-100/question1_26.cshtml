@@ -1,0 +1,73 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have an Azure resource group named RG1. RG1 contains 14 Windows Server virtual machines (VMs). All VMs are connected to an Azure Log Analytics workspace named WS1.
+            </p>
+            <p>
+                You plan to write a log search query that collects all security events with the following properties:
+            </p>
+            <p>
+                * All security event levels other than 8
+                <br />
+                * Event ID 4672
+            </p>
+            <p>
+                How should you form your log search query? To answer, select the appropriate options from the drop-down menus.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                SecurityEvent
+                <br />
+                | where Level
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">==</option>
+                    <option><></option>
+                    <option>=~</option>
+                </select> 8
+                <br />
+                |
+                <select class="ea">
+                    <option></option>
+                    <option>where</option>
+                    <option>and</option>
+                    <option>summarize</option>
+                </select>
+                EventID == 4672
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should use the following query:
+            </p>
+            <p>
+                SecurityEvent
+                <br />
+                | where Level <> 8
+                <br />
+                | where EventID == 4672
+            </p>
+            <p>
+                You should use the <> or != operators to denote a "not equal to" condition in the Kusto Query Language (KQL). KQL is the new query language Microsoft developed for use in Azure Log Analytics. KQL combines the best parts of Structured Query Language (SQL), Splunk Search Processing Language (SPL), and PowerShell to give administrators and developers a unified mechanism for reporting on Azure Log Analytics workspace datasets.
+            </p>
+            <p>
+                You should not use the == operator because this denotes a case-sensitive "equal to" condition. Nor should you use the =~ operator, which represents a case-insensitive "equal to" condition.
+            </p>
+            <p>
+                You should use the where keyword to perform horizontal (row-level) filtering on your query results. Because the example code uses the pipe (|) to create a line break, you should add a second where statement instead of using the and operator.
+            </p>
+            <p>
+                You should not use the summarize keyword. This keyword is used to aggregate groups of rows.
+            </p>
+        </div>
+    </li>
+</ul>

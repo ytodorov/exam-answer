@@ -1,0 +1,72 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company has a file server that stores important information. The operating system for this file server is Windows Server 2012 R2 Standard Edition. The information is stored in a separate volume from the system volume. To improve security, the volume that stores corporate information is encrypted using BitLocker.
+            </p>
+            <p>
+                Your company wants to centralize the storage of information and improve the flexibility for accessing the information. You decide to use Azure File Sync for achieving this goal.
+            </p>
+            <p>
+                You configure an Azure File share and the appropriate firewall rules for allowing access from your company offices.
+            </p>
+            <p>
+                After configuring the Sync group, you receive an error about the cloud endpoint creation.
+            </p>
+            <p>
+                What is the most likely cause of the error?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You forgot to register the file server with Azure File Sync.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Windows Server 2012 R2 Standard Edition is not supported by the Azure File Sync service.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You are using firewall rules in the storage account.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You are trying to sync an encrypted volume.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You are getting the error while creating the cloud endpoint because you are using firewall rules in the storage account. This is not a supported configuration. You cannot use firewall rules or virtual networks with the storage account that will host the synced data from for on-premises file servers.
+            </p>
+            <p>
+                You are not getting the error because you forgot to register the file server with Azure File Sync. You can download and install the Azure Storage Sync agent in the file server after configuring the cloud endpoint. Once you install the agent, you need to register the file server with the Azure File Sync service before you can create a server endpoint.
+            </p>
+            <p>
+                You are not getting the error because you are using Windows Server 2012 R2 Standard Edition. Windows Server 2012 R2 Standard and Datacenter editions as well as Windows Server 2016 Standard and Datacenter editions are supported operating systems for working with the Azure File Sync service.
+            </p>
+            <p>
+                You are not getting the error because you are trying to sync an encrypted volume. Using encrypted disks with BitLocker is a supported configuration.
+            </p>
+        </div>
+    </li>
+</ul>

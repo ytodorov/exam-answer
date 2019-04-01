@@ -1,0 +1,140 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your Azure subscription has the following resources:
+            </p>
+            <p>
+                * three App Services
+                <br />
+                * one backup vault
+                <br />
+                * one Azure event hub
+                <br />
+                * a virtual network named VNET01
+                <br />
+                * a VPN Gateway
+            </p>
+            <p>
+                You deploy a new storage account named STORAGE01 in a resource group named RG01.
+            </p>
+            <p>
+                You need to ensure that the App Services, the backup vault, and the event hub can access this new storage account.
+            </p>
+            <p>
+                You decide to use PowerShell to set up the new storage account.
+            </p>
+            <p>
+                How should you complete the command string? To answer, select the appropriate options from the drop-down menus.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+
+                Get-AzureRmVirtualNetwork -ResourceGroupName "RG01" -Name "VNET01" |
+                <br />
+                Set-AzureRmVirtualNetworkSubnetConfig -Name "VSUBNET01"
+                <br />
+                -AddressPrefix "10.0.0.0/24" -ServiceEndpoint
+                <select class="ea">
+                    <option></option>
+                    <option>AzureServices</option>
+                    <option>Logging</option>
+                    <option>Metrics</option>
+                    <option class="correct">Microsoft.Storage</option>
+                    <option>None</option>
+                </select>
+                <br />
+                $subnet = Get-AzureRmVirtualNetwork -ResourceGroupName "RG01" -Name "VNET01" |
+                <br />
+                Get-AzureRmVirtualNetworkSubnetConfig -Name "VSUBNET01"
+                <br />
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">Add-AzureRmStorageAccountNetworkRule</option>
+                    <option>Remove-AzureRmStorageAccountNetworkRuleSet</option>
+                    <option>Set-AzureRmStorageAccount</option>
+                    <option>Update-AzureRmStorageAccountNetworkRuleSet</option>
+                </select>
+                -ResourceGroupName "VNET01"
+                <br />
+                -Name "STORAGE01"  -VirtualNetworkResourceId $subnet.Id
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">Add-AzureRmStorageAccountNetworkRule</option>
+                    <option>Remove-AzureRmStorageAccountNetworkRuleSet</option>
+                    <option>Set-AzureRmStorageAccount</option>
+                    <option class="correct">Update-AzureRmStorageAccountNetworkRuleSet</option>
+                </select>
+                -ResourceGroupName "RG01"
+                <br />
+                -Name "STORAGE01" -Bypass
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">AzureServices</option>
+                    <option>Logging</option>
+                    <option>Metrics</option>
+                    <option>Microsoft.Storage</option>
+                    <option>None</option>
+                </select>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should run the following script to ensure that the backup vault and the event hub services have access to the storage account:
+            </p>
+            <p>
+                Get-AzureRmVirtualNetwork -ResourceGroupName "RG01" -Name "VNET01" |
+                <br />
+                Set-AzureRmVirtualNetworkSubnetConfig -Name "VSUBNET01"
+                <br />
+                -AddressPrefix "10.0.0.0/24" -ServiceEndpoint "Microsoft.Storage"
+                <br />
+                | Set-AzureRmVirtualNetwork
+            </p>
+            <p>
+                $subnet = Get-AzureRmVirtualNetwork -ResourceGroupName "RG01" -Name "VNET01" |
+                <br />
+                Get-AzureRmVirtualNetworkSubnetConfig -Name "VSUBNET01"
+            </p>
+            <p>
+                Add-AzureRmStorageAccountNetworkRule -ResourceGroupName "VNET01"
+                <br />
+                -Name "STORAGE01"  -VirtualNetworkResourceId $subnet.Id
+            </p>
+            <p>
+                Update-AzureRmStorageAccountNetworkRuleSet -ResourceGroupName "RG01"
+                <br />
+                -Name "STORAGE01" -Bypass AzureServices
+            </p>
+            <p>
+                You should use Microsoft.Storage as the service endpoint. Using the Set-AzureRmVirtualNetworkSubnetConfig cmdlet enables the service endpoint on the subnet VSUBNET01 for a storage account. This will allow connections to the virtual subnet from the storage account. This cmdlet makes modifications only on the memory representation of the virtual network. You need to run Set-AzureRmVirtualNetwork to make the changes persistent.
+            </p>
+            <p>
+                You should use the Add-AzureRmStorageAccountNetworkRule cmdlet to add a firewall exception on the NetworkRule property in the storage account. This will allow the communication from the virtual subnet to the storage account.
+            </p>
+            <p>
+                You should use the Update-AzureRmStorageAccountNetworkRuleSet cmdlet. This cmdlet also updates the NetworkRule property. This cmdlet allows you to modify the NetworkRule property to allow other Azure services, like Backup or Event Hub, to have access to the storage account.
+            </p>
+            <p>
+                You should use AzureServices for the -Bypas parameter. This way, you instruct the Update-AzureRmStorageAccountNetworkRuleSet cmdlet to allow connections from other Azure services. Allowed values are AzureServices, Metrics, Logging, and None.
+            </p>
+            <p>
+                You should not use the Set-AzureRmStorageAccount cmdlet. You can use this cmdlet to modify a storage account, but not the NetworkRule property of the storage account. You typically use this cmdlet when you want to set a tag to a storage account, update a customer domain, or update the type of the account.
+            </p>
+            <p>
+                You should not use the Remove-AzureRmStorageAccountNetworkRuleSet cmdlet. You use this cmdlet to remove a NetworkRule property from the storage account. In this scenario, you need to add and modify a new network rule, not remove it.
+            </p>
+            <p>
+                You should not use the Logging, None or Metrics values. These are valid for the -Bypass parameter for Update-AzureRmStorageAccountNetworkRuleSet. You use the None value when you want to remove the access to all Azure services, including monitoring and logging services. You use the Metrics or Logging values when you want to allow access to monitoring or logging Azure Services respectively.
+            </p>
+        </div>
+    </li>
+</ul>

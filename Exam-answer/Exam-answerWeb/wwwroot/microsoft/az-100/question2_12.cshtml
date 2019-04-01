@@ -1,0 +1,75 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company deploys an Azure File Sync service. This service syncs with an on-premises file server located on your office. The server stores the information synced with Azure in a volume different from the system volume. The file server has an antivirus solution installed.
+            </p>
+            <p>
+                You notice that some infrequently accessed files are downloaded to the file server. After monitoring file system access, you determine that no user is accessing to the affected files.
+            </p>
+            <p>
+                You need to troubleshoot what is happening with those files.
+            </p>
+            <p>
+                What are two ways of meeting your goal? Each correct answer presents a complete solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Run the Set-AzureRmStorageSyncServerEndpoint -Id serverendpointid -CloudTiering true -VolumeFreeSpacePercent 60 PowerShell cmdlet.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Run the Test-NetConnection -ComputerName storage-account-name.file.core.windows.net -Port 443 PowerShell cmdlet.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Run the fltmc command at an elevated command prompt.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Review the Application event log. the cluster to support File Server for General Use.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Review the Services\Microsoft\FileSync\Agent event log.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should review the Application or Services\Microsoft\FileSync\Agent event logs. These diagnostics and operational event logs gathers information about sync, recall, and tiering issues. Since you notice that infrequent accessed files are being downloaded to the file server, this means that you have enabled cloud tiering for this server. When cloud tiering is enabled, the Azure File Sync file system filter replaces the actual file with a pointer to the file in the Azure File share where all the data is stored. When a user access to a tiered file, the file is transparently downloaded to the server. This issue could happen when an antivirus solution is not aware of the offline NTFS attribute in the file. This attribute is set to allow third-party applications to identify tiered files.
+            </p>
+            <p>
+                You should not run the fltmc command at an elevated command prompt. You use the fltmc command to list all filesystem filters loaded in the file server. If the StorageSync.sys and StorageSyncGuard.sys file system filter drivers are not loaded, tiered files are not recalled and downloaded again to the file server. This is not the observed behavior.
+            </p>
+            <p>
+                You should not run the Test-NetConnection -ComputerName storage-account-name.file.core.windows.net -Port 443 PowerShell cmdlet. You use the Test-NetConnection cmdlet to check the connectivity with a computer. If you use the Fully Qualified Domain Name, you are also checking the DNS resolution. You can check the connectivity to a TCP port if you use the -Port parameter.
+            </p>
+            <p>
+                You should not run the Set-AzureRmStorageSyncServerEndpoint -Id serverendpointid -CloudTiering true -VolumeFreeSpacePercent 60 PowerShell cmdlet. You use this cmdlet to enable cloud tiering on a server endpoint. You have already enable cloud tiering on this server.
+            </p>
+        </div>
+    </li>
+</ul>

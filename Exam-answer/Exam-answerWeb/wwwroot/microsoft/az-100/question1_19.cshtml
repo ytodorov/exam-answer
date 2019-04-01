@@ -1,0 +1,75 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You need to create a new Azure Files share in your company Azure subscription. This share contains resource files that the admins of all your Azure IaaS hosted Microsoft Windows servers will need to perform their daily activities. The share will exist in a new Storage Account.
+            </p>
+            <p>
+                You need to ensure the file share is mounted on the servers and is persisted across reboots.
+            </p>
+            <p>
+                Which six actions should you perform in sequence?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <div class="demo-section hidden-on-narrow two-way wide">
+                <div class="list-wrapper">
+                    <ul id="sortable-listC">
+                        <li class="list-item">Execute New-AzureRmStorageAccount.</li>
+                        <li class="list-item">Execute Get-AzureRmStorageAccountKeys.</li>
+                        <li class="list-item">Execute New-AzureRmStorageContext</li>
+                        <li class="list-item">Execute New-AzureRmStorageShare.</li>
+                        <li class="list-item">Execute CMDKEY on the Windows Servers.</li>
+                        <li class="list-item">Execute New-PSDrive on the Windows Servers.</li>
+                        <li class="list-item">Execute Get-AzureRmStorageAccount.</li>
+                        <li class="list-item">Execute Set-AzureRmStorageAccount.</li>
+                        <li class="list-item">Execute Get-PSDrive on Windows Servers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should perform the following actions in order:
+            </p>
+            <p>
+                1. Execute New-AzureRmStorageAccount.
+                <br />
+                2. Execute Get-AzureRmStorageAccountKeys.
+                <br />
+                3. Execute New-AzureRmStorageContext.
+                <br />
+                4. Execute New-AzureRmStorageShare.
+                <br />
+                5. Execute CMDKEY on the Windows Servers.
+                <br />
+                6. Execute New-PSDrive on the Windows Servers.
+            </p>
+            <p>
+                The process to create a new file share in Azure Files Service requires an existing Azure Storage account, which means the first operation is to create the Storage Account using New-AzureRmStorageAccount.
+            </p>
+            <p>
+                After this step, you must get the access key to the account using Get-AzureRmStorageAccountKeys. Once this is done,  a new Azure File Share can be created by leveraging the storage context via Get-AzureRmStorageContext followed by New-AzureRmStorageShare.
+            </p>
+            <p>
+                After the share has been created, it can be accessed from any machine in IaaS that has the access key and the path. To remain persisted, the access should be stored on the Windows Server via the CMDKEY operation, following which the drive can be mapped using the New-PSDrive cmdlet.
+            </p>
+            <p>
+                You should not execute Get-AzureRmStorageAccount. This cmdlet gets a currently existing service account, and the requirement is to create a new storage account. New-AzureRmStorageAccountContext is used to get a context on the newly created Azure storage account.
+            </p>
+            <p>
+                You should not execute Get-PSDrive. This cmdlet will get the drives in the current session but will not help create a new drive to meet the requirements.
+            </p>
+            <p>
+                You should not execute Set-AzureRmStorageAccount. This cmdlet is used to configure or set properties on an existing storage account. There is no need to configure the storage account properties to meet the requirements.
+            </p>
+        </div>
+    </li>
+</ul>

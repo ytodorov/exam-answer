@@ -1,0 +1,69 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your on-premises datacenter has a mixture of servers running Windows Server 2012 R2 Datacenter edition and Windows Server 2016 Datacenter edition.
+            </p>
+            <p>
+                You need to configure Azure Sync Service between the Azure Files service and the servers in the datacenter.
+            </p>
+            <p>
+                Which two activities must you complete to ensure that the service will operate successfully on your servers? Each correct answer presents part of the solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Disable Internet Explorer Enhanced Security for Admins and Users.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Ensure that the PowerShell version deployed to the servers is at minimum version 5.1.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Ensure that for fileserver clusters, Azure Active Directory Connect is deployed to at least one server in the cluster.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Disable Internet Explorer Enhanced Security for Admins only.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Ensure that the Windows Identity Framework is deployed to all servers.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                To enable Azure File Sync, you must disable Internet Explorer Enhanced Security for all admin and user accounts.
+            </p>
+            <p>
+                Azure File Sync requires a minimum PowerShell version of 5.1. Windows Server 2016 supports that as the minimum default version, but it may have to be installed on Windows Server 2012 R2 servers.
+            </p>
+            <p>
+                The Windows Identity Foundation and Azure Active directory connect do not need to be installed on the file servers in the environment. Azure Active Directory Connect is used to synchronize on-premises identities to Azure Active Directory (Azure AD) and so is needed in the overall environment, but not on the file servers.
+            </p>
+        </div>
+    </li>
+</ul>

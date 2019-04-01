@@ -1,0 +1,50 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have an Azure App Service named App1 located in the West US region. The web app includes 10 MB of static content.
+            </p>
+            <p>
+                You need to ensure that users experience App1 with as little latency as possible.
+            </p>
+            <p>
+                Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <div class="demo-section hidden-on-narrow two-way wide">
+                <div class="list-wrapper">
+                    <ul id="sortable-listC">
+                        <li class="list-item">Create an Azure CDN profile.</li>
+                        <li class="list-item">Define an Azure CDN endpoint</li>
+                        <li class="list-item">Associate a custom domain.</li>
+                        <li class="list-item">Add a Traffic Manager endpoint.</li>
+                        <li class="list-item">Enable Traffic Analytics.</li>
+                        <li class="list-item">Create a Traffic Manager profile.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                In this scenario you should use Azure Content Delivery Network (CDN) to deliver static web content to your users with minimum latency. A CDN is a world-wide mesh of network storage that caches your static web content. Connecting users receive that static web content from their lowest latency point of presence (POP) in the CDN network.
+            </p>
+            <p>
+                First, you should create an Azure CDN profile. Second, you should define at least one endpoint that is associated with your static web assets. Third, you should associate your custom Domain Name System (DNS) domain with your CDN profile so users do not receive browser errors due to Cross Origin Resource Sharing (CORS).
+            </p>
+            <p>
+                You should not use Traffic Manager in this scenario because Traffic Manager performs application-level load balancing across different Azure regions. The scenario states that the web app resides in a single region.
+            </p>
+            <p>
+                You should not configure Azure Traffic Analytics. Traffic Analytics is a Traffic Manager feature that provides insights into who connects to your load-balanced web application and what their connection latency values are. Traffic Analytics cannot in itself reduce user latency to your website or its assets.
+            </p>
+        </div>
+    </li>
+</ul>

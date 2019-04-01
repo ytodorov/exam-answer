@@ -1,0 +1,79 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                Your company is planning to move a large amount of data from its on-premises storage solution to Azure Blob Storage in an Azure Storage Account.
+            </p>
+            <p>
+                You decide to use the Azure Import/Export service to migrate the data.
+            </p>
+            <p>
+                You need to prepare the disks for copying the data that will be migrated to Azure.
+            </p>
+            <p>
+                Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <div class="demo-section hidden-on-narrow two-way wide">
+                <div class="list-wrapper">
+                    <ul id="sortable-listC">
+                        <li class="list-item">Purchase 2.5-inch SATA hard disk drives.</li>
+                        <li class="list-item">Connect the disks to a Windows machine.</li>
+                        <li class="list-item">Create a volume and encrypt it by using BitLocker.</li>
+                        <li class="list-item">Prepare the import by using the WaImportExportV1 tool.</li>
+                        <li class="list-item">Connect the disks to a Linux machine.</li>
+                        <li class="list-item">Purchase 2.5 inch SAS hard disk drivers.</li>
+                        <li class="list-item">Prepare the import by using the WaImportExportV2 tool.</li>
+                        <li class="list-item">Create a volume and encrypt it by using dm-crypt</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should perform the following actions in order:
+            </p>
+            <p>
+                1. Purchase 2.5-inch SATA hard disk drives.
+                <br />
+                2. Connect the disks to a Windows machine.
+                <br />
+                3. Create a volume and encrypt it by using BitLocker.
+                <br />
+                4. Prepare the import by using the WaImportExportV1 tool.
+            </p>
+            <p>
+                First, you need to purchase 2.5inch SATA hard disk drives. These disks will store the data that you want to migrate to Azure. Once you copy the data to these disks, you need to send them to an Azure datacenter. Once the import process is over, these disks will be shipped back to you.
+            </p>
+            <p>
+                Next, you need to connect the disks to a Windows machine. You can connect them by using a SATA port or by using an external USB adapter. Bear in mind that if you decide to use a USB adapter, you need to remove it before sending the disks to the Azure datacenter.
+            </p>
+            <p>
+                Next, you need to create a volume and encrypt it by using BitLocker. You need to do this for each disk that you will use for the import process. Once you have encrypted the volume, you can copy the data to the disk.
+            </p>
+            <p>
+                Finally, you need to prepare the import by using WaImportExportV1. You use this tool to prepare the data that will be imported in Azure. You need to unzip this tool to the C drive. You need to run this tool for each disk that you need to send to the Azure datacenter.
+            </p>
+            <p>
+                You should not purchase SAS disks. This is not a supported disk type for the Import/Export service.
+            </p>
+            <p>
+                You should not connect the disks to a Linux machine. Linux is not a supported operating system for the Import/Export service.
+            </p>
+            <p>
+                You should not create a volume and encrypt it by using dm-crypt. Dm-crypt is an encryption system for the Linux operating system. Because Linux is not supported, you cannot use dm-crypt for encrypting the volume that will store the data that will be migrated.
+            </p>
+            <p>
+                You should not prepare the import using the WaImportExportV2 tool. There are two versions of the WaImportExport tool. You use V1 when you want to import the data into Azure Blob Storage. You need to use the V2 version when you want to import the data into Azure File Storage. In this scenario, you need to use V1.
+            </p>
+        </div>
+    </li>
+</ul>

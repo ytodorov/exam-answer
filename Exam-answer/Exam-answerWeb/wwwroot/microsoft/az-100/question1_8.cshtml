@@ -1,0 +1,69 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You deploy a Storage Account named store01 in your Azure subscription.
+            </p>
+            <p>
+                You grant the contributor role to some users in store01. The users work on an application that will use the storage account for storing some information.
+            </p>
+            <p>
+                The users report that they are not able to list the storage account keys for connecting their application to the storage account.
+            </p>
+            <p>
+                You need to identify the root cause of the issue.
+            </p>
+            <p>
+                What is the most probable cause?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You need to grant the users the owner role.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You configured a ReadOnly lock.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You configured a CanNotDelete lock.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You need to grant the users the Storage Account Key Operator Service role.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                The reason that the users are not able to list the storage account keys is that you configured a ReadOnly lock. Locks are applied to any operation that makes a request to the following URL: https://management.azure.com. When you apply a ReadOnly lock, you can unintentionally block access to other resources. In this case, you are blocking access to the keys because the list operation is handled through POST operations and the returned keys will be used for write operations.
+            </p>
+            <p>
+                Configuring a CanNotDelete lock does not affect the list keys operation. The CanNotDelete lock prevents a user from deleting a resource but still allows users to modify and read resources in the resource group.
+            </p>
+            <p>
+                You do not need to grant your users with Owner or Storage Account Key Operator Service roles. When you configure a lock in a resource or resource group, this takes precedence over any assigned role, even the Owner role. If you want to remove the lock, you need to have access to the Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Only the Owner and User Access Administrator roles have enough privileges to manage locks. In this scenario, granting the Owner role to your users will enable them to remove the ReadOnly lock on their own.
+            </p>
+        </div>
+    </li>
+</ul>

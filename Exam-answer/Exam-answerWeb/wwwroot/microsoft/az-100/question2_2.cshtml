@@ -1,0 +1,88 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You are preparing to export data from an Azure blob store that is used for Archival purposes by your company. You are planning to use WAImportExport.exe with an xml input file to perform this export.
+            </p>
+            <p>
+                You are configuring the XML file specifying the data paths to use. This file will configure the export job to control the data exported. Your file currently looks like this:
+            </p>
+            <p>
+                @("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+                <br />
+                @("<BlobList>")
+                <br />
+                &nbsp;&nbsp;@("<BlobPath>pictures/animals/kangaroo.jpg</BlobPath>")
+                <br />
+                &nbsp;&nbsp;@("<BlobPathPrefix>/vhds/</BlobPathPrefix>")
+                <br />
+                &nbsp;&nbsp;@("<BlobPathPrefix>/movies/dramas</BlobPathPrefix>")
+                <br />
+                @("</BlobList>")
+            </p>
+            <p>
+                Choose all that apply:
+            </p>
+            <p>
+
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            The file kangaroo.jpg will be exported.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Everything in the vhds folder will be exported.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Everything in the dramas folder will be exported.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Files in the vhds folder but not the subfolders will be exported.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Everything in the movies folder beginning with dramas will be exported.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                The Azure import export service has an executable process that can be used to configure the import and export jobs. This process is WAImportExport.exe and can take an XML file as input. Looking at the file supplied and what will happen is as follows.
+            </p>
+            <p>
+                The @("<BlobPath>") option is used top specify the exact path to a blob file, in this case kangaroo.jpg. This file will be exported.
+            </p>
+            <p>
+                The @("<BlobPathPrefix>") option indicates a couple of different scenarios. /vhds/ has a trailing slash, which means that everything inside the folder vhds will be exported, without exclusion. All files and folders will be exported.
+            </p>
+            <p>
+                The /movies/dramas path does not have a trailing slash. This syntax means that everything in the movies folder prefixed by the word dramas will be exported. In this case any file and folder starting with dramas as a prefix will be exported.
+            </p>
+        </div>
+    </li>
+</ul>

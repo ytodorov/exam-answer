@@ -1,0 +1,60 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have a Microsoft Azure subscription that has 8 virtual machines (VMs).
+            </p>
+            <p>
+                You need to configure monitoring such that when either CPU usage or available memory reaches a threshold value, Azure both notifies administrators via email and creates a new issue in your corporate issue tracker.
+            </p>
+            <p>
+                What is the minimum number of Azure alerts and action groups you need to meet these requirements?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Eight alerts and one action group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Two alerts and two action groups.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            One alert and one action group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            One alert and two action groups.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should create one alert and one action group. A single alert can contain more than one metric-based condition. By contrast, if you needed alert conditions based on Activity Log events, as of this writing a single alert can contain no more than one Activity Log condition.
+            </p>
+            <p>
+                A single action group can contain more than one notification or remediation step. An action group is a sequence of actions that Azure takes in response to an alert condition. The Azure ITSM connector links Azure Monitor to your Information Technology Service Management (ITSM) solution to allow Azure to create issue tickets automatically.
+            </p>
+        </div>
+    </li>
+</ul>

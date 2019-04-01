@@ -1,0 +1,69 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have an Azure resource group named RG1. RG1 contains 12 virtual machines (VMs) that run Windows Server or Linux.
+            </p>
+            <p>
+                You need to use Azure Cloud Shell to lift any resource locks that were applied to the VMs.
+            </p>
+            <p>
+                How should you complete the Azure PowerShell command? To answer, select the appropriate options from the drop-down menus.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <select class="ea">
+                    <option></option>
+                    <option selected="selected">Get-AzureRmResourceLock</option>
+                    <option>Get-AzureRmResource</option>
+                </select>
+                &nbsp;| &nbsp;
+                <select class="ea">
+                    <option></option>
+                    <option>Select-Object</option>
+                    <option selected="selected">Where-Object</option>
+                </select>
+                &nbsp;ResourceGroupName -eq "$rg-name" | &nbsp;
+                <select class="ea">
+                    <option></option>
+                    <option>Remove-AzureRmResource</option>
+                    <option selected="selected">Remove-AzureRmResourceLock</option>
+                </select>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should use the following command:
+            </p>
+            <p>
+                $rg = "rg1"
+                <br />
+                Get-AzureRmResourceLock |
+                <br />
+                Where-Object ResourceGroupName -eq "$rg-name" |
+                <br />
+                Remove-AzureRmResourceLock -Force
+            </p>
+            <p>
+                To programmatically lift resource locks in Azure, start with the Get-AzureRmResourceLock command to retrieve all resource locks in your current subscription context. You can add a Where-Object filter expression to retrieve only locks from a particular resource group.
+            </p>
+            <p>
+                Next, you can take advantage of the PowerShell pipeline by piping your results to the Remove-AzureRmResourceLock cmdlet to actually remove the locks. The -Force switch parameter forces the command to run without asking for user confirmation.
+            </p>
+            <p>
+                You should not use the Get-AzureRmResource or Remove-AzureRmResource cmdlets because doing so requires far more PowerShell code than is shown in the scenario to retrieve only locked resources from a specific resource group.
+            </p>
+            <p>
+                You should not use the Select-Object cmdlet because it filters at the property level, and not the row level, and would therefore not restrict output to locked resources within a single resource group.
+            </p>
+        </div>
+    </li>
+</ul>

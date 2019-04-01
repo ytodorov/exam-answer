@@ -91,7 +91,7 @@ namespace Exam_AnswerWeb.Controllers
 #if DEBUG
             version = "Debug";
 #endif
-            string path = Path.Combine(env.ContentRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
+            string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
             string[] files = Directory.GetFiles(path, "*.cshtml", SearchOption.AllDirectories);
 
             string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));

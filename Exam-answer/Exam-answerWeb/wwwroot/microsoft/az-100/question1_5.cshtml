@@ -1,0 +1,64 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You use the Azure Command-line Interface (CLI) to manage the company's subscription.
+            </p>
+            <p>
+                You need to assign taxonomic tags to a new resource group named prod-rg.
+            </p>
+            <p>
+                How should you complete the Azure CLI command?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">az group update</option>
+                    <option>az policy assignment</option>
+                    <option>az resource tag</option>
+                    <option>az tag add-value</option>
+                    <option>name prod-rg</option>
+                </select>
+                &nbsp;--
+                <select class="ea">
+                    <option></option>
+                    <option>az group update</option>
+                    <option>az policy assignment</option>
+                    <option>az resource tag</option>
+                    <option>az tag add-value</option>
+                    <option class="correct">name prod-rg</option>
+                </select>
+                &nbsp;--set tags.Dept=IT
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should run az group update to assign taxonomic tags to an Azure resource group like so:
+            </p>
+            <p>
+                az group update --name prod-rg --set tags.Dept=IT
+            </p>
+            <p>
+                Note that this command overwrites any existing tags on the resource group. In that case, you would need to edit your Azure CLI code to retrieve the existing tags, reformat that value, and then reapply the existing and new tags.
+            </p>
+            <p>
+                You should not run the az resource tag command. This command applies tags at the individual resource level, but not the resource group level.
+            </p>
+            <p>
+                You should not run the az policy assignment command. This command assigns an Azure Policy to a management group or resource group.
+            </p>
+            <p>
+                You should not run the az tag add-value command. This command edits the value of a previously created Azure taxonomic tag.
+            </p>
+        </div>
+    </li>
+</ul>

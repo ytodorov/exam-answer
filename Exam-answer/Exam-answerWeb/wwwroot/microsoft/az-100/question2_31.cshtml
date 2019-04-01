@@ -1,0 +1,75 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                You have an Azure resource group named RG1 located in the West US region. RG1 contains a Windows Server 2016 virtual machine (VM) named VM1 located in the East US region.
+            </p>
+            <p>
+                You need to configure Azure to back up VM1 every day.
+            </p>
+            <p>
+                How should you configure the backup? To answer, drag the appropriate configuration property to each configuration task. A configuration property may be used once, more than once, or not at all.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                Create a:
+                <select class="ea">
+                    <option></option>
+                    <option class="correct">Recovery Servicese Vault</option>
+                    <option>East US</option>
+                    <option>Backup policy</option>
+                    <option>Storage account</option>
+                    <option>West US</option>
+                    <option>Recovery plan</option>
+                </select>
+                <br />
+                Region:
+                <select class="ea">
+                    <option></option>
+                    <option>Recovery Servicese Vault</option>
+                    <option class="correct">East US</option>
+                    <option>Backup policy</option>
+                    <option>Storage account</option>
+                    <option>West US</option>
+                    <option>Recovery plan</option>
+                </select>
+                <br />
+                Associate a:
+                <select class="ea">
+                    <option></option>
+                    <option>Recovery Servicese Vault</option>
+                    <option>East US</option>
+                    <option class="correct">Backup policy</option>
+                    <option>Storage account</option>
+                    <option>West US</option>
+                    <option>Recovery plan</option>
+                </select>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                First you should use Get-AzureRmRecoveryServicesBackupSchedulePolicyObject. This cmdlet creates a new policy object that can be configured and later applied to a specific backup policy. You should not use Set-AzureRmRecoveryServicesBackupProtectionPolicy because the policy change has not been defined yet and so cannot be applied.
+            </p>
+            <p>
+                Then you should use Get-AzureRmRecoveryServicesBackupRetentionPolicyObject. This cmdlet gets a new retention policy object that can be used to modify an existing backup policy. You should not use Set-AzureRmRecoveryServicesBackupProtectionPolicy. This cmdlet is used to assign the policy but so far the policy changes have not been made.
+            </p>
+            <p>
+                You need to specify the WorkLoad type as "AzureVM" to ensure that the correct type is implemented in the Get-AzureRmRecoveryServicesBackupRetentionPolicyObject cmdlet. You should not specify -BackupManagementType because you are not managing a backup. You are applying a policy to a workload type of AzureVM.
+            </p>
+            <p>
+                Then you should use Get-AzureRmRecoveryServicesBackupProtectionPolicy so that you can get a context to the current policies applied to the Azure protection vault. You should not use Get-AzureRmRecoveryServicesBackupSchedulePolicyObject because at this point in the script, you have already created the new policy object to apply to the policy and need to get the policy to apply it to.
+            </p>
+            <p>
+                Finally, you should use Set-AzureRmRecoveryServicesBackupProtectionPolicy. At this point the policy object has been defined, and the policy has been accessed and assigned to a variable, so the final step is to set the protection policy. You should not execute Get-AzureRmRecoveryServicesBackupSchedulePolicyObject because at this point in the script, you have already created the new policy object to apply to the policy, we also have the policy object and now need to apply it.
+            </p>
+        </div>
+    </li>
+</ul>
