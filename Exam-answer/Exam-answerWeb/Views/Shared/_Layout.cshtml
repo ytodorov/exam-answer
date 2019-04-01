@@ -9,7 +9,8 @@
     }
     else
     {
-        <meta name="description" content="Community powered free exam answers with explanations." />
+        ViewData["description"] = "Community powered free exam answers with explanations.";
+        <meta name="description" content="@(ViewData["description"])" />
     }
     @if (ViewData["keywords"] != null)
     {
@@ -22,13 +23,24 @@
     @if (ViewData["title"] != null)
     {
         <title>@(ViewData["title"] + " | Exam-Answer")</title>
+        ViewData["finalTitle"] = ViewData["title"] + " | Exam-Answer";
     }
     else
     {
         <title>Exam-Answer</title>
+        ViewData["finalTitle"] = "Exam-Answer";
     }
+    @{ 
+        ViewData["canonicalUrl"] = "https://www.exam-answer.com" + Context.Request.Path.ToString().TrimEnd('/');
+    }
+    <link href="@ViewData["canonicalUrl"]" rel="canonical" />
 
-    <link href="https://www.exam-answer.com@(Context.Request.Path.ToString().TrimEnd('/'))" rel="canonical" />
+
+    <meta property="og:url" content="@(ViewData["canonicalUrl"])" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@(ViewData["finalTitle"])" />
+    <meta property="og:description" content="@(ViewData["description"])" />
+    @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
