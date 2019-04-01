@@ -130,6 +130,24 @@ namespace Exam_AnswerWeb.Controllers
                 description = regex.Replace(description, " ");
                 description = description.Trim();
 
+                string[] sentences = description.Split('.');
+
+                StringBuilder descriptionLessThan320 = new StringBuilder();
+
+                foreach (var sent in sentences)
+                {
+                    if (descriptionLessThan320.Length + sent.Length < 320)
+                    {
+                        descriptionLessThan320.Append(sent);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                description = descriptionLessThan320.ToString();
+
                 ViewData["description"] = description;
 
 
