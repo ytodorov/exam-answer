@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company has an Azure subscription that hosts all services that the company uses in production. The Finance department notices that the bills related to Azure are increasing. The company wants to keep the costs of this Azure subscription under control.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 After reviewing the costs analysis reports you realize that there are several virtual machines that are consuming more resources than expected.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You need to inform management when the spend for these resources is unusual.

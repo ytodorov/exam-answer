@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You deploy a Storage Account named store01 in your Azure subscription.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You grant the contributor role to some users in store01. The users work on an application that will use the storage account for storing some information.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 The users report that they are not able to list the storage account keys for connecting their application to the storage account.

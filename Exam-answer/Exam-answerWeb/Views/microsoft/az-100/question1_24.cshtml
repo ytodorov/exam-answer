@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have a Microsoft Azure subscription that has 8 virtual machines (VMs).
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to configure monitoring such that when either CPU usage or available memory reaches a threshold value, Azure both notifies administrators via email and creates a new issue in your corporate issue tracker.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 What is the minimum number of Azure alerts and action groups you need to meet these requirements?

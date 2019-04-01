@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company is planning to move a large amount of data from its on-premises storage solution to Azure Blob Storage in an Azure Storage Account.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You decide to use the Azure Import/Export service to migrate the data.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You need to prepare the disks for copying the data that will be migrated to Azure.

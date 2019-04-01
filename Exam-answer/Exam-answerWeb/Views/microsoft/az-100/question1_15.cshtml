@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company is performing an internal audit for reviewing the company's IT infrastructure, including the Azure infrastructure you manage.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 Your company also has an Office 365 subscription. The on-premises Active Directory Domain Services (AD DS) domain is synced with Azure Active Directory (Azure AD).
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You need to provide auditors with administrator privileges. They need to be able to review users created in your Azure AD tenant. They should not be able to register applications in your Azure AD tenant.

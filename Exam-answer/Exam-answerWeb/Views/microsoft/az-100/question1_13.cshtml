@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You are the cloud operations lead for your company's Microsoft Azure subscription. Your team consists of eight administrators who co-manage all Azure-deployed resources.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 The corporate governance team mandates that all future Azure resources be deployed only within certain regions.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You need to meet the compliance requirement.

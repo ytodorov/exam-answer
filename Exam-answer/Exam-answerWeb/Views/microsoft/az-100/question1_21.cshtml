@@ -3,7 +3,10 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company has a line-of-business (LOB) application that uses Azure SQL Database for storing transactional information. Your company also has deployed System Center Service Manager.
+                @Html.Raw(Model.H1CloseTag)
+                </p>
             <p>
                 You need to configure an alert when the database reaches the 70% of CPU usage. When this alert rises, you need to notify several users by email and by SMS. You also need to automatically create a ticket in the ITSM system. Your solution should require the minimum administrative effort.
             </p>

@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You need to create a new Azure Files share in your company Azure subscription. This share contains resource files that the admins of all your Azure IaaS hosted Microsoft Windows servers will need to perform their daily activities. The share will exist in a new Storage Account.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to ensure the file share is mounted on the servers and is persisted across reboots.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 Which six actions should you perform in sequence?

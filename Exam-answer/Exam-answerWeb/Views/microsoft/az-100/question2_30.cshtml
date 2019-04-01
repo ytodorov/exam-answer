@@ -3,14 +3,18 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have an Azure subscription with the following types of the resources deployed:
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 * Azure Files
                 <br />
                 * Azure Virtual Machines
                 <br />
                 * Azure Backup server
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You make backups of all your resources by using Azure Backup in several Recovery Services vaults.

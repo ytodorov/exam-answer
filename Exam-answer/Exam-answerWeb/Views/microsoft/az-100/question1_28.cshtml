@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have an Azure subscription that contains 24 virtual machines (VMs). All VMs and their associated resources send their diagnostics data to an Azure Log Analytics workspace named WS1.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to generate a report that lists the top 10 VMs with the most error events over the past day.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 How should you write the Kusto Query Language (KQL) query? To answer, select the appropriate options from the drop-down menus.

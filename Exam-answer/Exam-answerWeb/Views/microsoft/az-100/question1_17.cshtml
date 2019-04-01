@@ -3,10 +3,15 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company requires all resources deployed in Azure to be assigned to a cost center.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You use a tag named CostCenter to assign each resource to the correct cost center. This tag has a set of valid values assigned.
-            </p>           
+                @Html.Raw(Model.H2CloseTag)
+            </p>
             <p>
                 Some of the resources deployed in your subscription already have a value assigned to the CostCenter tag.
             </p>

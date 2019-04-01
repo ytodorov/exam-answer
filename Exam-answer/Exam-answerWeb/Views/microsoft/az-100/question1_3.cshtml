@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 Solution: From the Azure Active Directory Roles and administrators blade, you modify the Global administrator role properties.

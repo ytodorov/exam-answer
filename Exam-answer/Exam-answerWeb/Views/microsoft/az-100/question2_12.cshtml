@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company deploys an Azure File Sync service. This service syncs with an on-premises file server located on your office. The server stores the information synced with Azure in a volume different from the system volume. The file server has an antivirus solution installed.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You notice that some infrequently accessed files are downloaded to the file server. After monitoring file system access, you determine that no user is accessing to the affected files.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You need to troubleshoot what is happening with those files.

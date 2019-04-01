@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have Azure Blob Storage in your Azure Subscription that you need to export. You decide to use the Azure Import/Export service.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You have a storage account named STORAGE01 that has 3 TB of information stored. All the information is located in a container named CONTAINER01.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 During the execution of the export job, the storage account key changes.

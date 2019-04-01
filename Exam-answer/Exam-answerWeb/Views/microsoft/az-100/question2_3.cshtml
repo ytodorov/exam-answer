@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company has developed a web application that serves dynamic and static content to users. The application is deployed in several Azure Web Apps in different Azure regions to achieve the best performance.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 The Support department for the web application receives complains from users about poor performance of the application.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You review the performance of all components of the application and determine that you need to deploy a Content Delivery Network (CDN).

@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have a Microsoft Azure subscription named Sub1. Your company has 120 terabytes (TB) in its on-premises data center.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to use Azure Import/Export Service to transfer the data into a storage account in Sub1.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.

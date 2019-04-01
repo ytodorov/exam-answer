@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your company has a file server that stores important information. The operating system for this file server is Windows Server 2012 R2 Standard Edition. The information is stored in a separate volume from the system volume. To improve security, the volume that stores corporate information is encrypted using BitLocker.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 Your company wants to centralize the storage of information and improve the flexibility for accessing the information. You decide to use Azure File Sync for achieving this goal.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You configure an Azure File share and the appropriate firewall rules for allowing access from your company offices.

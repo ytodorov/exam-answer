@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Exam_answerWeb.Infrastructure;
@@ -27,7 +28,6 @@ namespace Exam_AnswerWeb.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            ViewData["title"] = $"Exam AZ-100 - ";
             return View($"{folderName}/index");
         }
 
@@ -40,7 +40,7 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {           
-            ViewData["title"] = $"Exam AZ-100: Question {id} - ";
+            ViewData["title"] = $"Exam AZ-100: Question {id}";
             ViewData["id"] = id;
 
             ViewData["exam"] = "AZ-100";
@@ -78,19 +78,13 @@ namespace Exam_AnswerWeb.Controllers
             {
                 fileSystemId = intId;
                 filePath = $"{folderName}/question1_{id}";
-                //return View($"{folderName}/question1_{id}", questionViewModel);
             }
             else
             {
                 int newId = intId - 29;
                 filePath = $"{folderName}/question2_{newId}";
-                //return View($"{folderName}/question2_{newId}", questionViewModel);
             }
             // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
-            string version = "Release";
-#if DEBUG
-            version = "Debug";
-#endif
             string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
             string[] files = Directory.GetFiles(path, "*.cshtml", SearchOption.AllDirectories);
 
@@ -98,6 +92,19 @@ namespace Exam_AnswerWeb.Controllers
             if (!string.IsNullOrEmpty(theFile))
             {
                 string fileContent = System.IO.File.ReadAllText(theFile);
+
+                string[] lines = System.IO.File.ReadAllLines(theFile);
+                lines = lines.Where(l => !l.Trim().StartsWith("@") && !l.Trim().StartsWith("&")).ToArray();
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    sb.Append(lines[i]);
+                }
+
+                fileContent = sb.ToString();
+                    
+
                 int indexLiStart = fileContent.IndexOf("<li");
                 int indexLiEnd = fileContent.IndexOf("</li>");
                 int length = indexLiEnd - indexLiStart;
@@ -111,6 +118,7 @@ namespace Exam_AnswerWeb.Controllers
                     .Replace("</div>", string.Empty)
                     .Replace("<p>", string.Empty)
                     .Replace("</p>", string.Empty)
+                    .Replace("<br />", string.Empty)
                     .Replace("@Html.Raw(Model.H1OpenTag)", string.Empty)
                     .Replace("@Html.Raw(Model.H1CloseTag)", string.Empty)
                     .Replace("@Html.Raw(Model.H2OpenTag)", string.Empty)

@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You are the owner of your organization's Microsoft Azure subscription. You hire a new administrator to help you manage a virtual network that contains nine Windows Server virtual machines (VMs). The deployment is contained in a resource group named prod-rg.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to provide the administrator with least-privilege access only to the prod-rg resource group. The administrator should be allowed to manage all aspects of the Azure VMs. Your solution should minimize management effort.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 What should you do?

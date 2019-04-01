@@ -3,9 +3,12 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 Your Azure subscription has the following resources:
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 * three App Services
                 <br />
                 * one backup vault
@@ -15,6 +18,7 @@
                 * a virtual network named VNET01
                 <br />
                 * a VPN Gateway
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 You deploy a new storage account named STORAGE01 in a resource group named RG01.

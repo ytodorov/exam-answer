@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You have an Azure App Service named App1 located in the West US region. The web app includes 10 MB of static content.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to ensure that users experience App1 with as little latency as possible.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of possible actions to the answer area and arrange them in the correct order.

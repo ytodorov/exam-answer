@@ -3,10 +3,14 @@
         <span class="k-link k-state-selected">Question @Model?.Id</span>
         <div>
             <p>
+                @Html.Raw(Model.H1OpenTag)
                 You manage several Windows Server virtual machines (VMs) located in a virtual network (VNet) named prod-vnet. These VMs are used internally by development staff and are not accessible from the Internet.
+                @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
+                @Html.Raw(Model.H2OpenTag)
                 You need to provide your development staff with secure access to object and table data to support their Azure-based applications. The storage account data reside in Azure, but must not be exposed to the Internet.
+                @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
                 What two actions should you perform? Each correct answer presents part of the solution.
