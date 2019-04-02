@@ -30,7 +30,7 @@
         <title>Exam-Answer</title>
         ViewData["finalTitle"] = "Exam-Answer";
     }
-    @{ 
+    @{
         ViewData["canonicalUrl"] = "https://www.exam-answer.com" + Context.Request.Path.ToString().TrimEnd('/');
     }
     <link href="@ViewData["canonicalUrl"]" rel="canonical" />
@@ -42,9 +42,13 @@
     <meta property="og:description" content="@(ViewData["description"])" />
     @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
 
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.mobile.min.css" />
+
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
 

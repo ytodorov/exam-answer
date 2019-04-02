@@ -7,9 +7,9 @@ ul.fieldlist li {
     margin-left: 10px
 }
 
-html, h1, h2 {
-    font-size: 15px;
-    font-family: 'Inconsolata', monospace;
+html, body, h1, h2 {
+    font-size: 15px !important;
+    font-family: 'Inconsolata' !important, monospace;
 }
 
 /*same padding as p element*/
