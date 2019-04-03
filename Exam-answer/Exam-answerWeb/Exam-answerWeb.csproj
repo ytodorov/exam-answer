@@ -71,6 +71,16 @@
     <Content Remove="wwwroot\microsoft\az-100\question2_7.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question2_8.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question2_9.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_1.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_10.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_2.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_3.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_4.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_5.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_6.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_7.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_8.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question3_9.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zCheckBoxes.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zDropDown.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zRadio.cshtml" />
@@ -275,6 +285,36 @@
     <None Include="wwwroot\microsoft\az-100\question2_9.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\microsoft\az-100\question3_1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_3.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_4.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_5.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_6.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_7.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_8.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3_9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\microsoft\az-100\zCheckBoxes.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -303,6 +343,36 @@
 
   <ItemGroup>
     <Content Update="Views\microsoft\az-100\index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_8.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_7.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_4.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_5.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_6.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_3.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\microsoft\az-100\question3_1.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\microsoft\az-100\question1_1.cshtml">

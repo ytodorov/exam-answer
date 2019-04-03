@@ -1,0 +1,85 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                Your company has two Azure subscriptions, subsA and subsB, for different lines of business. Each subscription has its own Azure Active Directory (Azure AD) tenant assigned.                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You have a virtual machine (VM) deployed in the subsA subscription, in a resource group named RG-A1. You attempt to move the VM to another resource group named RG-B2 that is configured in the subsB subscription.                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                While you are trying to move the VM, you get an error.
+            </p>
+            <p>
+                You need to identify the cause of the error so you can move the VM.
+            </p>
+            <p>
+                What is the most likely cause?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The subscriptions are in different Azure AD tenants.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The VM is a classic VM.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The VM has managed disks configured.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The destination resource group is in a different subscription.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You cannot move the VM because the subscriptions are in different Azure AD tenants. One of the prerequisites for being able to move a resource between different subscriptions or resource groups is that the source and destination subscriptions need to exist in the same Azure AD tenant. You need to transfer the ownership of one of the subscriptions to the other Azure AD tenant before you will be able to move the VM.
+            </p>
+            <p>
+                You can move classic VMs between resource groups or subscriptions. Moving this type of VM has some restrictions. The cloud service associated with the VM needs to be moved with the VM, and all VMs in a cloud service need to be moved together. However, moving classic VMs is still technically possible.
+            </p>
+            <p>
+                It is true that you cannot move a VM if it has managed disks configured, but in this situation, you cannot make the move because of the different Azure AD tenants, not the managed disks.
+            </p>
+            <p>
+                You can move resources between resources groups in different subscriptions. As long as the source and destination subscriptions exist within the same Azure AD tenant, and the destination resource group exists prior to the move, this operation is allowed.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-move-resources" target="_blank" rel="noopener" tabindex="190">Move resources to new resource group or subscription</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/move-vm" target="_blank" rel="noopener" tabindex="190">Move a Windows VM to another Azure subscription or resource group</a>
+            </p>
+        </div>
+    </li>
+</ul>
