@@ -1,0 +1,53 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                Universal Containers’ current solution for managing its forecasts is cumbersome.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Enable override forecast permission in the Manager's profile.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create a forecast hierarchy and assign managers to the forecast manager role.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>    
+</ul>

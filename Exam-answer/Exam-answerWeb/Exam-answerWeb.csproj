@@ -86,6 +86,28 @@
     <Content Remove="wwwroot\microsoft\az-100\zRadio.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zSortable.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zYesNo.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_1.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_10.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_11.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_12.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_13.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_14.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_15.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_16.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_17.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_18.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_19.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_2.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_20.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_21.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_22.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_23.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_24.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_25.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_26.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_27.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_28.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_29.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -330,6 +352,72 @@
     <None Include="wwwroot\microsoft\az-100\zYesNo.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_11.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_12.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_13.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_14.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_15.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_16.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_17.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_18.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_19.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_20.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_21.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_22.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_23.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_24.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_25.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_26.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_27.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_28.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_29.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 
@@ -571,6 +659,75 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\microsoft\az-100\zYesNo.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_11.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_12.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_13.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_14.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_15.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_16.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_17.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_18.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_19.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_20.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_21.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_22.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_23.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_24.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_25.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_26.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_27.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_28.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\salesforce\crt-251\question1_29.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

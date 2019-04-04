@@ -1,0 +1,84 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You have an Azure resource group named RG1. RG1 contains a Windows Server virtual machine (VM) named VM1.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You plan to use Azure Monitor to configure an alert rule for VM1.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You need to configure an alert that notifies you whenever the VM is restarted.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Define an action group with an ITSM action type.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Define an action group with a webhook action type.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Define a metric-based alert condition.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Define an Activity Log alert condition.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should define an Activity Log alert condition. The Azure Activity Log tracks all control-plane operations that occur within your subscriptions. You can define Azure alert conditions that fire when a particular Azure Activity log event transpires. In this case, you would add the Restart Virtual Machine signal to your alert condition list.
+            </p>
+            <p>
+                You should not define a metric-based alert condition. Metric-based alerts are triggered when diagnostic measurement data exceeds a given threshold. For instance, you might trigger an alert when the VM's average CPU consumption exceeds 75 percent over a 10 minute period.
+            </p>
+            <p>
+                You should not define an action group with either a webhook or an IT Service Management (ITSM) action type. Action groups define how Azure responds whenever an alert condition is triggered. In this case you need only a single notification action group to inform you whenever a VM is restarted.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/alert-activity-log" target="_blank" rel="noopener">Create, view, and manage activity log alerts using Azure Monitor</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/alert-metric" target="_blank" rel="noopener">Create, view, and manage metric alerts using Azure Monitor</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups" target="_blank" rel="noopener">Create and manage action groups in the Azure portal</a>
+            </p>
+        </div>
+    </li>
+</ul>

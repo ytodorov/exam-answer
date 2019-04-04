@@ -1,0 +1,90 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You are the cloud operations lead for your company's Microsoft Azure subscription. Your team consists of eight administrators who co-manage all Azure-deployed resources.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                The corporate governance team mandates that all future Azure resources be deployed only within certain regions.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You need to meet the compliance requirement.
+            </p>
+            <p>
+                Which Azure feature should you use?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Taxonomic tags
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Activity Log Analytics
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Role-Based Access Control (RBAC)
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Azure Policy
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                To meet the new compliance requirement, you should deploy Azure Policy. Azure Policy is a governance feature that allows you to enforce requirements at two Azure scopes: the management group and the resource group. For example, you can require that all deployments are constrained to particular regions, or that only certain virtual machine (VM) sizes are allowed.
+            </p>
+            <p>
+                You should not use RBAC. RBAC focuses on user actions at different scopes. For example, a user may be restricted with RBAC from creating VMs in any Azure region. By contrast, Azure Policy customizes the properties a user can choose during resource deployment.
+            </p>
+            <p>
+                You should not use taxonomic tags. These key-value pairs are useful for organizing Azure resources (for instance, to identify different cost centers). However, tags have no authorization capability on their own.
+            </p>
+            <p>
+                You should not use Activity Log Analytics. This management solution aggregates Azure activity log data in a Log Analytics workspace. Specifically, the activity log records control plane activities such as resource creation, but does not enforce authorization.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction" target="_blank" rel="noopener">What is Azure Policy?</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/overview" target="_blank" rel="noopener">What is role-based access control (RBAC)?</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags" target="_blank" rel="noopener">Use tags to organize your Azure resources</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-activity" target="_blank" rel="noopener">Collect and analyze Azure activity logs in Log Analytics</a>
+            </p>
+        </div>
+    </li>
+</ul>

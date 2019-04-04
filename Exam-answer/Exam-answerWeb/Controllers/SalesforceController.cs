@@ -13,14 +13,14 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Exam_AnswerWeb.Controllers
 {
-    [Route("microsoft/az-100")]
-    public class MicrosoftController : Controller
+    [Route("salesforce/crt-251")]
+    public class SalesforceController : Controller
     {
-        private const string folderName = "az-100";
+        private const string folderName = "crt-251";
 
         private IHostingEnvironment env;
 
-        public MicrosoftController(IHostingEnvironment env)
+        public SalesforceController(IHostingEnvironment env)
         {
             this.env = env;
         }
@@ -40,10 +40,10 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {           
-            ViewData["title"] = $"Exam AZ-100: Question {id}";
+            ViewData["title"] = $"Exam CRT-251: Question {id}";
             ViewData["id"] = id;
 
-            ViewData["exam"] = "AZ-100";
+            ViewData["exam"] = "CRT-251";
 
             var cd = Environment.CurrentDirectory;
 
@@ -91,7 +91,7 @@ namespace Exam_AnswerWeb.Controllers
             }
             // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
             string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
-            string[] files = Directory.GetFiles(path + @"\microsoft\az-100", "*.cshtml", SearchOption.AllDirectories);
+            string[] files = Directory.GetFiles(path + @"\salesforce\crt-251", "*.cshtml", SearchOption.AllDirectories);
 
             string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
             if (!string.IsNullOrEmpty(theFile))

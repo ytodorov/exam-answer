@@ -99,14 +99,34 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                Salesforce
+                <ul>
+                    <li>
+                        <a href="~/salesforce/crt-251">CRT-251</a>
+                        <ul>
+                            @{
+                                for (int i = 1; i <= 1; i++)
+                                {
+                                    <li>
+                                        <a class="nav-link text-dark" href="~/salesforce/crt-251/question@(i)">
+                                            @($"Question {i}")
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </header>
     <div>
         <main role="main">
-            <div style="text-align: right;">
+            <div style="text-align: right;height:30px">
                 <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
             </div>
-            <br />
+           
             <partial name="_PrevNextPartial" />
             <br />
             <partial name="_ProgressPartial" />
