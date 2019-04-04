@@ -41,8 +41,7 @@
     <meta property="og:title" content="@(ViewData["finalTitle"])" />
     <meta property="og:description" content="@(ViewData["description"])" />
     @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
-
-
+       
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
@@ -72,7 +71,9 @@
 
     <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
 </head>
-<body style="        display: none">
+<body style="display: none">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=438289293607244&autoLogAppEvents=1"></script>
     <header>
         <ul id="menu">
             <li>
@@ -98,11 +99,13 @@
                     </li>
                 </ul>
             </li>
-
         </ul>
     </header>
     <div>
         <main role="main">
+            <div style="text-align: right;">
+                <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+            </div>
             <br />
             <partial name="_PrevNextPartial" />
             <br />
@@ -120,8 +123,7 @@
         @*<div class="container">
                 Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>*@
-    </footer>
-
+    </footer>    
     <partial name="_JsScripts" />
 </body>
 </html>
