@@ -4,19 +4,19 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.
+                Universal Containers’ current solution for managing its forecasts is cumbersome.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.
+                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. 
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                Solution: From the subscription's Access control (IAM) blade, you click Add role assignment.
+                As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
             </p>
             <p>
-                Does this solution meet the goal?
+                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
             </p>
         </div>
     </li>
@@ -25,37 +25,31 @@
         <div>
             <p>
                 <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Enable override forecast permission in the Manager's profile.
+                        </label>
+                    </li>
                     <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Yes</label>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+                        </label>
                     </li>
                     <li class="correct">
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">No</label>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create a forecast hierarchy and assign managers to the forecast manager role.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
+                        </label>
                     </li>
                 </ul>
-            </p>
-        </div>
-    </li>
-    <li>
-        Explanation
-        <div>
-            <p>
-                This solution does not meet the goal. Azure Active Directory (Azure AD) permissions are distinct from Azure resource permissions. In this case, you should enable the Access management for Azure resources property from the Azure AD tenant's Properties blade. This property, when enabled, ensures that Azure AD users assigned to the Global Administrators role maintain full resource access even if their account is stripped from resource-level access control lists (ACLs). The Add role assignment button is used to make an addition to that scope's ACL. For instance, you may need to add a new Azure administrator to the Owner role for a subscription, resource group, or resource.
-            </p>
-        </div>
-    </li>
-    <li>
-        References
-        <div>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin" target="_blank" rel="noopener">Elevate access for a Global Administrator in Azure Active Directory</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal" target="_blank" rel="noopener">Manage access using RBAC and the Azure portal</a>
-            </p>
-            <p>
-                <a title="Manage app and resource access using Azure Active Directory groups" href="https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups" target="_blank" rel="noopener">Manage app and resource access using Azure Active Directory groups</a>
             </p>
         </div>
     </li>
