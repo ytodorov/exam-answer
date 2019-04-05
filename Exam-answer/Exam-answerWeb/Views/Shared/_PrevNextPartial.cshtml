@@ -1,14 +1,15 @@
-﻿@{ if (ViewData["prev"] != null || ViewData["next"] != null)
+﻿@model QuestionViewModel
+@{ if (ViewData["prev"] != null || ViewData["next"] != null)
     {
         <div style="text-align: center;">
             @{ if (ViewData["prev"] != null)
                 {
-                    <a href="~/microsoft/az-100/question@(ViewData["prev"])" class="k-button">Previous</a>
+                    <a href="~/@(ViewData["basePath"].ToString() + ViewData["prev"])" class="k-button">Previous</a>
                 }
             }
             @{ if (ViewData["next"] != null)
-                {
-                    <a href="~/microsoft/az-100/question@(ViewData["next"])" class="k-button">&nbsp;&nbsp;Next&nbsp;&nbsp;</a>
+                {                    
+                    <a href="~/@(ViewData["basePath"].ToString() + ViewData["next"])" class="k-button">&nbsp;&nbsp;Next&nbsp;&nbsp;</a>
                 }
             }
         </div>

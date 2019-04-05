@@ -49,6 +49,7 @@ namespace Exam_AnswerWeb.Controllers
 
             if (int.TryParse(id, out int intId))
             {
+                ViewData["basePath"] = "microsoft/az-100/question";
                 if (intId > 1)
                 {
                     ViewData["prev"] = intId - 1;

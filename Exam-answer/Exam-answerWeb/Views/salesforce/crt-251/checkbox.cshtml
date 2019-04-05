@@ -4,13 +4,19 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers is planning to hire more sales representatives in response to three consecutive quarters of rapid growth. 
+                Universal Containers’ current solution for managing its forecasts is cumbersome.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                To optimize their sales impact, the sales management team wants to develop a better sales territory structure. Which two data points should the sales management team consider when developing the new sales territories? (Choose two.)
+                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. 
                 @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
+            </p>
+            <p>
+                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
             </p>
         </div>
     </li>
@@ -22,29 +28,29 @@
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Attributes needed to segment and categorize customers.
+                            Enable override forecast permission in the Manager's profile.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Distance between customer headquarters and their sales representatives
-                        </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Average number of customers managed by a sales representative.
+                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
                         </label>
                     </li>
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Number of currencies needed to support each sales territory.
+                            Create a forecast hierarchy and assign managers to the forecast manager role.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
                         </label>
                     </li>
                 </ul>
             </p>
         </div>
-    </li>    
+    </li>
 </ul>
