@@ -126,7 +126,26 @@
             <div style="text-align: right;height:30px">
                 <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
             </div>
-           
+
+            @*@(Html.Kendo().AutoComplete()
+         .Name("customers")
+         .DataTextField("ContactName")
+         .MinLength(2)
+         .HtmlAttributes(new { style = "width:100%" })
+         .Placeholder("Type a customer name")
+         .Height(400)
+         .DataSource(source => source
+             .Custom()
+             .Group(g => g.Add("Country", typeof(string)))
+             .Transport(transport => transport
+               .Read(read =>
+               {
+                   //read.Action("Customers_Read", "AutoComplete")
+                   //    .Data("onAdditionalData");
+               }))
+             .ServerFiltering(true)).Deferred()
+            )*@
+
             <partial name="_PrevNextPartial" />
             <br />
             <partial name="_ProgressPartial" />
@@ -143,7 +162,10 @@
         @*<div class="container">
                 Exam - Answer<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>*@
-    </footer>    
+    </footer>
     <partial name="_JsScripts" />
+    <script>
+    @Html.Kendo().DeferredScripts(false)
+    </script>
 </body>
 </html>

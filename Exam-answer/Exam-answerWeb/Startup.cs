@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
+using Newtonsoft.Json.Serialization;
 
 namespace Exam_answerWeb
 {
@@ -47,8 +48,18 @@ namespace Exam_answerWeb
                 options.EnableForHttps = true;
             });
 
+            // Add MVC services to the services container.
+            services
+                .AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services
+                .AddDistributedMemoryCache()
+                .AddSession();
+
+            // Add Kendo UI services to the services container
+            services.AddKendo();
+                                    
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
