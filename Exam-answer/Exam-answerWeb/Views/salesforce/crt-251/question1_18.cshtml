@@ -4,16 +4,19 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                You are the lead architect for your company's Microsoft Azure infrastructure.
+                Universal Containers allows its sales representatives to negotiate up to a 5% discount for their opportunities.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                To maintain corporate compliance certifications, you need to ensure that any virtual machines (VMs) are created only in approved Azure regions.
+                Discounts greater than 5% must be sent to their Regional Sales Manager (RSM) to approval.   
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                What should you do?
+                Discounts greater than 15% must also be sent to the Regional Vice President (RVP) for approval.
+            </p>
+            <p>
+                Which approach would satisfy these requirements?
             </p>
         </div>
     </li>
@@ -25,65 +28,28 @@
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Create an Azure management group.
+                            Configure an approval process for the RSM and a workflow rule for the RVP.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Enforce conditional access policy in Azure Active Directory (Azure AD).
+                            Create two approval processes, one for the RSM and one for the RVP
                         </label>
                     </li>
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Define and deploy a custom Azure Policy template.
+                            Create the two-step approval process for the RSM and RVP as approvers.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Define and deploy an Azure Automation Desired State Configuration (DSC) configuration.
+                            Configure a workflow approval task and email to notify the RSM and RVP
                         </label>
                     </li>
                 </ul>
-            </p>
-        </div>
-    </li>
-    <li>
-        Explanation
-        <div>
-            <p>
-                You should define and deploy a custom Azure Policy by using JSON and Azure PowerShell. Azure Resource Manager includes a number of predefined policy templates that cover various governance use cases. However, you can also build a custom template and upload it to Azure to make it available in your subscriptions.
-            </p>
-            <p>
-                You should not define and deploy an Azure Automation DSC configuration. Azure Automation DSC prevents configuration drift on newly deployed or existing Azure or on-premises nodes. This scenario requires that you enforce compliance on VM locations at deployment time.
-            </p>
-            <p>
-                You should not deploy a management group. A management group is a scope level above the Azure subscription that allows you to assign Azure Policy that affects multiple subscriptions simultaneously. In your case, you need to define a policy in the first place, and then you can optionally scope the new custom policy to a management group.
-            </p>
-            <p>
-                You should not enforce conditional access policy on Azure Active Directory. This feature affects user accounts, not VMs deployed in Azure. Conditional access allows you to specify requirements for your users to access Azure AD-protected apps. For instance, you might require that users can only authenticate to an app if they are connecting from a corporate IP address.
-            </p>
-        </div>
-    </li>
-    <li>
-        References
-        <div>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/azure-policy/create-manage-policy" target="_blank" rel="noopener">Create and manage policies to enforce compliance</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview" target="_blank" rel="noopener">Azure Automation State Configuration Overview</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction" target="_blank" rel="noopener">What is Azure Policy?</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management-groups-overview" target="_blank" rel="noopener">Organize your resources with Azure management groups</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal" target="_blank" rel="noopener">What is conditional access in Azure Active Directory?</a>
             </p>
         </div>
     </li>
