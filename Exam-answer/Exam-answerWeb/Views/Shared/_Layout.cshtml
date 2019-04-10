@@ -127,24 +127,24 @@
                 <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
             </div>
 
-            @*@(Html.Kendo().AutoComplete()
-         .Name("customers")
-         .DataTextField("ContactName")
-         .MinLength(2)
-         .HtmlAttributes(new { style = "width:100%" })
-         .Placeholder("Type a customer name")
-         .Height(400)
-         .DataSource(source => source
-             .Custom()
-             .Group(g => g.Add("Country", typeof(string)))
-             .Transport(transport => transport
-               .Read(read =>
-               {
-                   //read.Action("Customers_Read", "AutoComplete")
-                   //    .Data("onAdditionalData");
-               }))
-             .ServerFiltering(true)).Deferred()
-            )*@
+            @(Html.Kendo().AutoComplete()
+                 .Name("questions")
+                 .DataTextField(nameof(SearchQuestionViewModel.Title))
+                 .MinLength(2)
+                 .HtmlAttributes(new { style = "width:100%" })
+                 .Placeholder("Search any question here...")
+                 .Height(400)
+                 .DataSource(source => source
+                     .Custom()
+                     .Group(g => g.Add(nameof(SearchQuestionViewModel.ExamName), typeof(string)))
+                     .Transport(transport => transport
+                       .Read(read =>
+                       {
+                       read.Action("Read", "SearchQuestion")
+                           .Data("onAdditionalData");
+                   }))
+                     .ServerFiltering(true)).Deferred()
+            )
 
             <partial name="_PrevNextPartial" />
             <br />
@@ -166,6 +166,13 @@
     <partial name="_JsScripts" />
     <script>
     @Html.Kendo().DeferredScripts(false)
+    </script>
+    <script>
+        function onAdditionalData() {
+            return {
+                text: $("#questions").val()
+            };
+        }
     </script>
 </body>
 </html>

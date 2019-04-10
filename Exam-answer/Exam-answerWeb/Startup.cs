@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
+﻿using Exam_answerWeb.Infrastructure;
+using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json.Serialization;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Net;
+using System.Text;
 
 namespace Exam_answerWeb
 {
@@ -59,12 +58,50 @@ namespace Exam_answerWeb
 
             // Add Kendo UI services to the services container
             services.AddKendo();
-                                    
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
+            List<string> files = Directory.GetFiles(path, "*question*.cshtml", SearchOption.AllDirectories).ToList();
+            foreach (var filePath in files)
+            {
+                //string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    string fileContent = File.ReadAllText(filePath);
+
+                    string[] lines = File.ReadAllLines(filePath);
+                    lines = lines.Where(l => !l.Trim().StartsWith("@") && !l.Trim().StartsWith("&") && !l.Trim().StartsWith("<")).ToArray();
+
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        sb.Append(lines[i]);
+                    }
+
+                    fileContent = sb.ToString().Trim();
+
+                    FileInfo fi = new FileInfo(filePath);
+
+                    SearchQuestionViewModel searchQuestionViewModel = new SearchQuestionViewModel()
+                    {
+                        FilePath = filePath,
+                        Content = fileContent,
+                        Title = fileContent.Substring(0, 50),
+                        ExamName = fi.Directory.Name,
+                        ExamProvider = fi.Directory.Parent.Name
+                    };
+
+                    StaticContent.AllQuestions.Add(searchQuestionViewModel);
+
+
+                }
+            }
+
+
             HostingEnvironment = env;
             if (env.IsDevelopment())
             {
@@ -110,30 +147,5 @@ namespace Exam_answerWeb
         }
     }
 
-    public class RedirectLowerCaseRule : IRule
-    {
-        public int StatusCode { get; } = (int)HttpStatusCode.MovedPermanently;
 
-        public void ApplyRule(RewriteContext context)
-        {
-            HttpRequest request = context.HttpContext.Request;
-            PathString path = context.HttpContext.Request.Path;
-            HostString host = context.HttpContext.Request.Host;
-
-            string location = ((request.Scheme + "://" +
-               host.Value + request.PathBase + request.Path).ToLower() + request.QueryString).Trim();
-
-            if (path.HasValue && path.Value.Any(char.IsUpper) || host.HasValue && host.Value.Any(char.IsUpper))
-            {
-                HttpResponse response = context.HttpContext.Response;
-                response.StatusCode = StatusCode;
-                response.Headers[HeaderNames.Location] = (request.Scheme + "://" + host.Value + request.PathBase + request.Path).ToLower() + request.QueryString;
-                context.Result = RuleResult.EndResponse;
-            }
-            else
-            {
-                context.Result = RuleResult.ContinueRules;
-            }
-        }
-    }
 }
