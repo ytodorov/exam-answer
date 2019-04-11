@@ -42,7 +42,7 @@
     <meta property="og:description" content="@(ViewData["description"])" />
     @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
        
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />*@
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-fiori.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.fiori.min.css" />
@@ -127,25 +127,6 @@
                 <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
             </div>
 
-            @(Html.Kendo().AutoComplete()
-                 .Name("questions")
-                 .DataTextField(nameof(SearchQuestionViewModel.Title))
-                 .MinLength(2)
-                 .HtmlAttributes(new { style = "width:100%" })
-                 .Placeholder("Search any question here...")
-                 .Height(400)
-                 .DataSource(source => source
-                     .Custom()
-                     .Group(g => g.Add(nameof(SearchQuestionViewModel.ExamName), typeof(string)))
-                     .Transport(transport => transport
-                       .Read(read =>
-                       {
-                       read.Action("Read", "SearchQuestion")
-                           .Data("onAdditionalData");
-                   }))
-                     .ServerFiltering(true)).Deferred()
-            )
-
             <partial name="_PrevNextPartial" />
             <br />
             <partial name="_ProgressPartial" />
@@ -166,13 +147,6 @@
     <partial name="_JsScripts" />
     <script>
     @Html.Kendo().DeferredScripts(false)
-    </script>
-    <script>
-        function onAdditionalData() {
-            return {
-                text: $("#questions").val()
-            };
-        }
-    </script>
+    </script>   
 </body>
 </html>

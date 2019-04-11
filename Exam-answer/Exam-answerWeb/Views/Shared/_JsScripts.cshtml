@@ -29,3 +29,11 @@
         settings.url = settings.url.toLowerCase();
     });
 </script>
+
+<script>
+    function onAdditionalData() {
+        return {
+            text: $("#questions").val()
+        };
+    }
+</script>
