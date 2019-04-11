@@ -121,12 +121,12 @@ namespace Exam_answerWeb
             app.UseCookiePolicy();
 
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-2.2
-            app.UseRewriter(new RewriteOptions()
-                .AddRedirect("(.*)/$", "$1", (int)HttpStatusCode.MovedPermanently) // Strip trailing slash
-                .AddRedirectToWww()
-                .AddRedirectToHttps()
-                .Add(new RedirectLowerCaseRule())
-                );
+            //app.UseRewriter(new RewriteOptions()
+            //    .AddRedirect("(.*)/$", "$1", (int)HttpStatusCode.MovedPermanently) // Strip trailing slash
+            //    .AddRedirectToWww()
+            //    .AddRedirectToHttps()
+            //    .Add(new RedirectLowerCaseRule())
+            //    );
 
             app.UseResponseCompression();
 
