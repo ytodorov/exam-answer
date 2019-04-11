@@ -23,6 +23,10 @@
 
         $("body").show();
 
+        $("#gridExams").kendoGrid({
+            sortable: true
+        });
+
     });
 
     $(document).ajaxSend(function (event, request, settings) {
