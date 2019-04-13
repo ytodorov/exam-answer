@@ -3,7 +3,7 @@
     ViewData["description"] = "Exam CRT-251: Sales Cloud Consultant. Questions with answers and explanations.";
 }
 @{
-    for (int i = 1; i <= 22; i++)
+    for (int i = 1; i <= 40; i++)
     {
         <br />
         <partial name="~/views/salesforce/crt-251/question1_@(i).cshtml" model="@new QuestionViewModel() { Id = i.ToString() }" />
