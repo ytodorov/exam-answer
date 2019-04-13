@@ -1,12 +1,12 @@
 ﻿@(Html.Kendo().AutoComplete()
                 .Name("questions")
-                .DataTextField(nameof(SearchQuestionViewModel.Title))
+                .DataTextField(nameof(SearchQuestionViewModel.TextInUI))
                 .MinLength(2)
                 .HtmlAttributes(new { style = "width:100%" })
-                .Placeholder("Search any question here...")
-                .Height(400)
+                .Placeholder("Instantly search any question here...")
                 .DataSource(source => source
                     .Custom()
+                    
                     .Group(g => g.Add(nameof(SearchQuestionViewModel.ExamName), typeof(string)))
                     .Transport(transport => transport
                       .Read(read =>
@@ -61,25 +61,3 @@
     </tbody>
 </table>
 
-
-@*<div class="text-center">
-    <p>
-        <h1>Community powered exam questions with answers and explanations.</h1>
-    </p>
-    <p>
-        <h2>
-            Popular exams:
-        </h2>
-        <br />
-        <h3>
-            AZ-100: Microsoft Azure Infrastructure and Deployment.
-        </h3>
-        <a href="~/microsoft/az-100">Start learning mode</a>
-        <a href="~/microsoft/az-100/question1">Start exam mode</a>
-        <h3>
-            Exam CRT-251: Sales Cloud Consultant.
-        </h3>
-        <a href="~/salesforce/crt-251">Start learning mode</a>
-        <a href="~/salesforce/crt-251/question1">Start exam mode</a>
-    </p>
-</div>*@

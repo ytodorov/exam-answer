@@ -17,7 +17,22 @@ namespace Exam_answerWeb.Controllers
                 text = string.Empty;
             }
             List<SearchQuestionViewModel> result = StaticContent.AllQuestions
-                .Where(q => q.Content.Contains(text)).Take(10).ToList();
+                .Where(q => q.Content.Contains(text)).ToList();
+
+            int maxLengthTextInUi = 100;
+
+            foreach (SearchQuestionViewModel searchQuestionViewModel in result)
+            {
+                int index = searchQuestionViewModel.Content.IndexOf(text);
+                if (index + maxLengthTextInUi > searchQuestionViewModel.Content.Length)
+                {
+                    searchQuestionViewModel.TextInUI = searchQuestionViewModel.Content.Substring(index);
+                }
+                else
+                {
+                    searchQuestionViewModel.TextInUI = searchQuestionViewModel.Content.Substring(index, maxLengthTextInUi);
+                }
+            }
 
             return result;
         }
