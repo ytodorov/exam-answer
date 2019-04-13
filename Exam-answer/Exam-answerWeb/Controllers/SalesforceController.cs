@@ -59,7 +59,7 @@ namespace Exam_AnswerWeb.Controllers
                     ViewData["next"] = intId + 1;
                 }
                 ViewData["current"] = intId;
-                ViewData["max"] = 71;
+                ViewData["max"] = 55;
             }
             QuestionViewModel questionViewModel = new QuestionViewModel()
             {
@@ -77,7 +77,7 @@ namespace Exam_AnswerWeb.Controllers
 
 
             fileSystemId = intId;
-            filePath = $"{folderName}/question1_{id}";
+            filePath = $"{folderName}/question{id}";
 
             // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
             string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");

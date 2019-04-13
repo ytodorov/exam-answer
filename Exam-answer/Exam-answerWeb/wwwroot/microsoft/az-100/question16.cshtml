@@ -4,28 +4,19 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                You deploy an application in a resource group named App-RG01 in your Azure subscription.
+                Your company has an Azure Subscription with several resources deployed. The subscription is managed by a Cloud Service Provider.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                App-RG01 contains the following components:
+                The accounting department is currently granted the billing reader role, so they are able to see cost-related information. They need to get a better understanding of the costs so they can assign them to the correct cost center.
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                * Two App Services, each with an SSL certificate
-                <br />
-                * A peered virtual network (VNet)
-                <br />
-                * Redis cache deployed in the VNet
-                <br />
-                * Standard Load Balancer
+                You need to provide cost center information. Your solution should minimize the administrative effort.
             </p>
             <p>
-                You need to move all resources in App-RG01 to a new resource group named App-RG02.
-            </p>
-            <p>
-                For each of the following statements, select Yes if the statement is true. Otherwise, DO NOT select it.
+                What two actions should you perform? Each correct answer presents part of the solution.
             </p>
         </div>
     </li>
@@ -37,25 +28,25 @@
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            You need to delete SSL certificate from each App Service before moving it to the new resource group.
+                            Create a tag named CostCenter and assign it to each resource.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            You can move the Load Balancer only within the same subscription.
+                            Instruct the accounting department to use the Cost Analysis blade in the subscription panel.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Instruct the accounting department to use the Azure Account Center.
                         </label>
                     </li>
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            You need to disable the peer before moving the VNet.
-                        </label>
-                    </li>
-                    <li class="correct">
-                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            You can move the VNet only within the same subscription.
+                            Create a tag named CostCenter and assign it to each resource group.
                         </label>
                     </li>
                 </ul>
@@ -80,14 +71,16 @@
         References
         <div>
             <p>
+                <a title="Use tags to organize your Azure resources" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags" target="_blank" rel="noopener">Use tags to organize your Azure resources</a>
             </p>
             <p>
+                <a title="Prevent unexpected charges with Azure billing and cost management" href="https://docs.microsoft.com/en-us/azure/billing/billing-getting-started" target="_blank" rel="noopener"><br>Prevent unexpected charges with Azure billing and cost management</a>
             </p>
             <p>
+                <a title="Use tags to organize your Azure resources" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags" target="_blank" rel="noopener"><br>Use tags to organize your Azure resources</a>
             </p>
             <p>
-            </p>
-            <p>
+                <a title="What is Azure Cost Management?" href="https://docs.microsoft.com/en-us/azure/cost-management/overview-cost-mgt" target="_blank" rel="noopener"><br>What is Azure Cost Management?</a>
             </p>
         </div>
     </li>

@@ -1,0 +1,117 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You manage several Windows Server virtual machines (VMs) located in a virtual network (VNet) named prod-vnet. These VMs are used internally by development staff and are not accessible from the Internet.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You need to provide your development staff with secure access to object and table data to support their Azure-based applications. The storage account data reside in Azure, but must not be exposed to the Internet.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                What two actions should you perform? Each correct answer presents part of the solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure a service endpoint.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Deploy a blob storage account.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Deploy an Azure File Sync sync group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure a point-to-site (P2S) virtual private network (VPN).
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Deploy a general-purpose storage account.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure an Azure Content Delivery Network (CDN)profile.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should deploy a general-purpose storage account, and then configure a service endpoint. A general-purpose storage account consists of four services, two of which are called for in the scenario:
+            </p>
+            <p>
+                * Binary large object (blob) object storage
+                <br />
+                * Table (key-value pair) storage
+                <br />
+                * Queue (messaging) storage
+                <br />
+                * File (Server Message Block (SMB) file share) storage
+            </p>
+            <p>
+                Service endpoints allow you to bind certain Azure services, including storage accounts and Azure SQL Databases, to a VNet in order to restrict their access. In this scenario, you would create a service endpoint on prod-vnet to allow the Microsoft.Storage resource provider access. You would then complete the configuration by associating the storage account with the target VNet.
+            </p>
+            <p>
+                You should not deploy a blob storage account because a blob storage account has only one service and the scenario requires both object and table storage to support your developers. The blob storage account includes access tiers that save costs on cool and cold storage (archival) for block blobs such as documents or media files.
+            </p>
+            <p>
+                You should not deploy an Azure File Sync sync group. Azure File Sync is a mechanism to offer tiered and synchronized storage for on-premises Server Message Block (SMB) file shares. This feature meets none of the scenario's requirements.
+            </p>
+            <p>
+                You should not configure a CDN profile. CDN profiles are used in conjunction with Azure App Service web applications to deliver static website assets to worldwide customers with low latency.
+            </p>
+            <p>
+                You should not configure a P2S VPN. A P2S VPN is appropriate when you need to give individual users a secure connection to an Azure VNet. In this case you are concerned with providing secure access from the VNet to a storage account.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction" target="_blank" rel="noopener">Introduction to Azure Storage</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview" target="_blank" rel="noopener">Virtual Network Service Endpoints</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/cdn/cdn-overview" target="_blank" rel="noopener">What is a content delivery network on Azure?</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about" target="_blank" rel="noopener">About Point-to-Site VPN</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal" target="_blank" rel="noopener">Deploy Azure File Sync</a>
+            </p>
+        </div>
+    </li>
+</ul>

@@ -1,4 +1,8 @@
 ﻿@{
+    ViewData["title"] = "Exam AZ-100: Microsoft Azure Infrastructure and Deployment.";
+    ViewData["description"] = "Exam AZ-100: Microsoft Azure Infrastructure and Deployment. Questions with answers and explanations.";
+}
+@{
     for (int i = 1; i <= 29; i++)
     {
         <br />
@@ -17,3 +21,4 @@
         <partial name="~/views/microsoft/az-100/question3_@(i).cshtml" model="@new QuestionViewModel() { Id = (i + 61).ToString() }" />
     }
 }
+<partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />

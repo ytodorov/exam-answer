@@ -73,23 +73,23 @@ namespace Exam_AnswerWeb.Controllers
 
             int fileSystemId = 0;
 
-            string filePath = string.Empty;
+            string filePath = $"{folderName}/question{intId}";
 
-            if (intId < 30)
-            {
-                fileSystemId = intId;
-                filePath = $"{folderName}/question1_{id}";
-            }
-            else if (intId >= 30 && intId <= 61)
-            {
-                int newId = intId - 29;
-                filePath = $"{folderName}/question2_{newId}";
-            }
-            else if (intId >= 62)
-            {
-                int newId = intId - 61;
-                filePath = $"{folderName}/question3_{newId}";
-            }
+            //if (intId < 30)
+            //{
+            //    fileSystemId = intId;
+            //    filePath = $"{folderName}/question1_{id}";
+            //}
+            //else if (intId >= 30 && intId <= 61)
+            //{
+            //    int newId = intId - 29;
+            //    filePath = $"{folderName}/question2_{newId}";
+            //}
+            //else if (intId >= 62)
+            //{
+            //    int newId = intId - 61;
+            //    filePath = $"{folderName}/question3_{newId}";
+            //}
             // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
             string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
             string[] files = Directory.GetFiles(path + @"\microsoft\az-100", "*.cshtml", SearchOption.AllDirectories);

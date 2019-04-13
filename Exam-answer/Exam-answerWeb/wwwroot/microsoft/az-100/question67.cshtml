@@ -1,0 +1,66 @@
+﻿@model QuestionViewModel
+<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id<i class="fas fa-question" style="text-align:right"></i></span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You manage a Windows Server 2016 virtual machine (VM) named VM1.           
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You need to configure an additional public IPv4 address for VM1.    
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                Solution: From the virtual machine's Extensions blade, you click Add.
+            </p>
+            <p>
+                Does this solution meet the goal?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">Yes</label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">No</label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                This solution does not meet the goal. To add another public IP address to the VM, you should add a second IP configuration to the network interface associated with VM1 and configure a public IP address. By contrast, VM extensions are software agents that broaden the capabilities of Windows Server and Linux VMs running in Azure. Extensions are not related to IP address assignment.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm" target="_blank" rel="noopener" tabindex="190">Add network interfaces to or remove network interfaces from virtual machines</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-multiple-ip-addresses-portal" target="_blank" rel="noopener" tabindex="190">Assign multiple IP addresses to virtual machines using the Azure portal</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses" target="_blank" rel="noopener" tabindex="190">Add, change, or remove IP addresses for an Azure network interface</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/features-windows" target="_blank" rel="noopener" tabindex="190">Virtual machine extensions and features for Windows</a>
+            </p>
+        </div>
+    </li>
+</ul>

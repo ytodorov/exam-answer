@@ -1,0 +1,90 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You create a binary large object (blob) storage account named reportstorage99 that contains archival reports from past corporate board meetings.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                A board member requests access to a specific report. The member does not have an Azure Active Directory (Azure AD) user account. Moreover, he has access only to a web browser on his Google Chromebook device.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You need to provide the board member with least-privilege access to the requested report while maintaining security compliance and minimizing administrative overhead.
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create an Azure AD account for the board member and grant him role-based access control (RBAC) access to the storage account.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Deploy a point-to-site virtual private network (VPN)connection on the board member's Chromebook and grant the board member role-based access control (RBAC) access to the report.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Deploy Azure Traffic Manager.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Generate a shared access signature (SAS) token for the report and share the Uniform Resource Locator (URL) with the board member.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should generate an SAS token for the report and share the URL with the board member. SAS enables you to define time-limited read-only or read-write access to Azure storage account resources. It is important that you set the time restriction properly because the SAS includes no authentication. Any person with access to the URL can access the target resource(s) within the token's lifetime.  In this case, you both minimize administrative effort as well as maintain security compliance because the SAS token points only to a single file, not the entire blob container that hosts the requested report.
+            </p>
+            <p>
+                You should not create an Azure AD account for the board member and grant him RBAC access to the storage account. First, it requires significant management overhead to create and manage Azure AD accounts, even for external (guest) users. Second, SAS and not RBAC is the way Azure provides screened access to individual storage account resources. You can use RBAC roles only at the storage account scope.
+            </p>
+            <p>
+                You should not copy the report to an Azure File Service share and provide the board member with a PowerShell connection script. Here you create security and governance problems by creating multiple copies of the source report, as well as producing unnecessary administrative complexity.
+            </p>
+            <p>
+                You should not deploy a point-to-site (P2S) VPN connection on the board member's Chromebook and grant the board member RBAC access to the report. The scenario stipulates that the board member is limited to using a web browser on his Chromebook. Furthermore, the Azure P2S VPN client is supported only on Windows, macOS, and endorsed Linux distributions. Chrome OS is not supported.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1" target="_blank" rel="noopener">Using shared access signatures (SAS)</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-external-users" target="_blank" rel="noopener">Manage access for external users using RBAC</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction" target="_blank" rel="noopener">What is Azure Files?</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about" target="_blank" rel="noopener">About Point-to-Site VPN</a>
+            </p>
+        </div>
+    </li>
+</ul>

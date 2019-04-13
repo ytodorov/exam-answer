@@ -1,0 +1,82 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You have a Microsoft Azure subscription that contains a storage account.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                Your on-premises environment includes six file servers that host a total of 12 file shares. These file shares are consolidated in a Distributed File System Replication (DFS-R) configuration.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You plan to deploy Azure File Sync to centralize the distributed file shares in Azure and to enable cloud tiering. You configure Azure File Sync as follows:
+            </p>
+            <p>
+                * Two Storage Sync Service instances with 6 file servers in each instance
+                <br />
+                * Four Sync Groups
+                <br />
+                * Two cloud endpoints
+            </p>
+            <p>
+                Choose all that apply:
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            All servers in the topology can sync with each other
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            The topology requires six registered servers.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You need to decommission the DFS-R environment before enabling Azure File Sync
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                All servers in the topology cannot sync with each other because your topology includes two Storage Sync Service instances. Only servers registered within a single Storage Sync Service instance and Sync Group can sync with each other.
+            </p>
+            <p>
+                The topology requires six registered servers. You need to install the Azure File Sync agent on every local file server and register each with its respective Sync Group.
+            </p>
+            <p>
+                You do not need to decommission the DFS-R environment before enabling Azure File Sync because Azure File Sync supports DFS-R environments.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning" target="_blank" rel="noopener">Planning for an Azure File Sync deployment</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal" target="_blank" rel="noopener">Deploy Azure File Sync</a>
+            </p>
+        </div>
+    </li>
+</ul>
