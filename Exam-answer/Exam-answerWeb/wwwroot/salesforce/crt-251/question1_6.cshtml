@@ -4,12 +4,12 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has a private sharing model and wants the ability to share documents related to an opportunity, such as contracts and proposals, with the field sales team.
+                A marketing department that runs many concurrent campaigns has specified that the influence timeframe for a campaign is 60 days.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                How can the documents be shard efficiently and securely?
+                What is the impact on the campaign influence for opportunities when a contact is associated to an opportunity in a contact role?
                 @Html.Raw(Model.H2CloseTag)
             </p>
         </div>
@@ -22,25 +22,25 @@
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files and shared with the field sales organization.
+                            Campaigns in which a contact became a member within the last 60 days will be associated and displayed in Campaigns with Influenced Opportunities Report.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be emailed to the sales team on the opportunity record.
+                            All contacts associated with campaigns will be added to the campaign influence related list.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files from the opportunity record.
+                            Sales reps can choose which campaigns created within the last 60 days should be added to the campaign influence related list.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to a library that is shared with the field sales organization.
+                            All campaigns created within the last 60 days will be added to the campaign influence related list.
                         </label>
                     </li>
                 </ul>

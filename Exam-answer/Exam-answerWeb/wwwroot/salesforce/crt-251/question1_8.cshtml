@@ -4,19 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers’ current solution for managing its forecasts is cumbersome.
+                Universal Containers sells three unique products and each product has its own sales process.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. 
+                The company qualifies prospects for the three products in a consistent manner; however, once the customer has shown interest, the sales representatives must follow the relevant products sales process.
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
-            </p>
-            <p>
-                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
+                Which two solutions should a consultant recommend to meet these requirements? (Choose two.)
             </p>
         </div>
     </li>
@@ -25,28 +22,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
-                    <li class="correct">
-                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Enable override forecast permission in the Manager's profile.
-                        </label>
-                    </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+                            Configure opportunity record types for each sales process.
                         </label>
                     </li>
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create a forecast hierarchy and assign managers to the forecast manager role.
+                            Create sales stages that align with opportunity record types.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Define sales processes to map to each opportunity record type.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
+                            Define the default opportunity teams for each opportunity record type.
                         </label>
                     </li>
                 </ul>

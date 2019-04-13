@@ -4,19 +4,19 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Your company has an Azure subscription that hosts all services that the company uses in production. The Finance department notices that the bills related to Azure are increasing. The company wants to keep the costs of this Azure subscription under control.
+                Universal Containers uses a seven-step selling methodology.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                After reviewing the costs analysis reports you realize that there are several virtual machines that are consuming more resources than expected.
+                Each sales stage corresponds with a step in the methodology.
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                You need to inform management when the spend for these resources is unusual.
+                The first stage is a preliminary qualification step, and opportunities in this stage should NOT contribute to the forecast.
             </p>
             <p>
-                What should you do?
+                Which two actions should a consultant recommend to meet these requirements? (Choose two.)
             </p>
         </div>
     </li>
@@ -25,65 +25,31 @@
         <div>
             <p>
                 <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Instruct sales users to enter 0S for the opportunity amount.
+                        </label>
+                    </li>
                     <li class="correct">
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Configure the PowerBI content pack for Azure Enterprise.
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Configure the first stage with the omitted forecast category.
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Configure a billing alert in the subscription page of the account portal.
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Override the forecast to be 0S for first stage opportunities.
                         </label>
                     </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Use the costs-by-service blade in the cost analysis section of the subscription.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Configure a report schedule in the Cost Management portal.
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Assign 0% probability to the first sales stage.
                         </label>
                     </li>
                 </ul>
-            </p>
-        </div>
-    </li>
-    <li>
-        Explanation
-        <div>
-            <p>
-                You should configure a report schedule in the Cost Management portal. The Cost Management portal allows you to perform detailed cost analysis of your resources. When running a cost report, you can set the filter for the virtual machines that are consuming more resources than expected. Then you can schedule that report to run periodically and send it to a list of recipients. You can also save it to a JSON or CSV report in a Storage Account. Then you can set three different alert levels for the report, one for the green level, one for the yellow level and one for the red level. You need to set the cost thresholds for levels yellow and red.
-            </p>
-            <p>
-                You should not configure a billing alert in the subscription page of the account portal. This allows you to create alerts based on billing totals or monetary credits that apply to the entire subscription. You cannot configure alerts for specific resources in the subscription.
-            </p>
-            <p>
-                You should not configure the Power BI content pack for Azure Enterprise. This option allows you to connect your Enterprise Agreement subscription with Power BI for cost analysis. You can create alerts in Power BI if you are using a Power BI Pro license. You also need an Enterprise Agreement subscription.
-            </p>
-            <p>
-                You should not use the costs-by-service blade in the cost analysis section of the subscription. You can use this section for reviewing the cost analysis per service, but you cannot configure any alert for the service consumption on this page.
-            </p>
-        </div>
-    </li>
-    <li>
-        References
-        <div>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/cost-management/tutorial-review-usage" target="_blank" rel="noopener">Tutorial: Review usage and costs</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/cost-management/" target="_blank" rel="noopener">Azure Cost Management Documentation</a>
-            </p>
-            <p>
-                <a href="https://docs.microsoft.com/en-us/azure/billing/billing-getting-started" target="_blank" rel="noopener">Prevent unexpected charges with Azure billing and cost management</a>
-            </p>
-            <p>
-                <a href="https://azure.microsoft.com/en-us/blog/new-power-bi-content-pack-for-azure-enterprise-users/" target="_blank" rel="noopener">New Power BI content pack for Azure Enterprise users</a>
             </p>
         </div>
     </li>

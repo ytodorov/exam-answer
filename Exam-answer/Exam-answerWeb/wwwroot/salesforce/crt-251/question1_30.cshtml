@@ -4,19 +4,8 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers’ current solution for managing its forecasts is cumbersome.
+                What are two capabilities of Data Loader?    
                 @Html.Raw(Model.H1CloseTag)
-            </p>
-            <p>
-                @Html.Raw(Model.H2OpenTag)
-                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. 
-                @Html.Raw(Model.H2CloseTag)
-            </p>
-            <p>
-                As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
-            </p>
-            <p>
-                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
             </p>
         </div>
     </li>
@@ -25,28 +14,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
-                    <li class="correct">
+                    <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Enable override forecast permission in the Manager's profile.
+                            Ability to extract organization and configuration data.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+                            Ability to prevent importing duplicate records.
                         </label>
                     </li>
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create a forecast hierarchy and assign managers to the forecast manager role.
+                            Ability to export field history data
                         </label>
                     </li>
-                    <li>
+                    <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
+                            Ability to run one-time or scheduled data loads
                         </label>
                     </li>
                 </ul>

@@ -4,13 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has a private sharing model and wants the ability to share documents related to an opportunity, such as contracts and proposals, with the field sales team.
+                What should a consultant recommend to support selling the two product lines?
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                How can the documents be shard efficiently and securely?
+                Universal Containers sells two product lines that each use a distinct selling methodology. 
                 @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                Additionally, each product line captures different information that is used to sell the products.
             </p>
         </div>
     </li>
@@ -19,28 +22,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create a one page layout, two sales processes, and validation rules to capture relevant opportunity information.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create two page layouts and two sales processes; assign them to the respective product lines to collect relevant information.
+                        </label>
+                    </li>
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files and shared with the field sales organization.
+                            Create two sales processes and two page layouts; assign them to two different opportunity record types for each product line.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be emailed to the sales team on the opportunity record.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files from the opportunity record.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to a library that is shared with the field sales organization.
+                            Create two page layouts, one opportunity record type, and one workflow rule to assign the correct page layout to the record type.
                         </label>
                     </li>
                 </ul>

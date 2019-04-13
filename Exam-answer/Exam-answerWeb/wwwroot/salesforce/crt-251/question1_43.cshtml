@@ -4,13 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has a private sharing model and wants the ability to share documents related to an opportunity, such as contracts and proposals, with the field sales team.
+                Universal Containers has enabled Social Accounts and contacts.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                How can the documents be shard efficiently and securely?
+                When a sales representative accesses a contact within salesforce, the representative is unable to see detailed information from the contacts Facebook profile (e.g. contacts wall postings). 
                 @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                What is preventing the sales representative from accessing detailed information on the contacts Facebook page?
             </p>
         </div>
     </li>
@@ -19,28 +22,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The fields configured by Universal Containers administrator on the contact page layout are missing
+                        </label>
+                    </li>
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files and shared with the field sales organization.
+                            The information shown is based on the sales representative’s connection level with the contact on Facebook.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be emailed to the sales team on the opportunity record.
+                            The link to the Facebook profile is not configured with the administrator password to access detailed information.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files from the opportunity record.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to a library that is shared with the field sales organization.
+                            Universal Containers must purchase the Facebook license to access public information for its users.
                         </label>
                     </li>
                 </ul>

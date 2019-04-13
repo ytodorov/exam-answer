@@ -4,19 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers’ current solution for managing its forecasts is cumbersome.
+                Sales management at Universal Containers wants product managers to become more involved with sales deals that are being delayed in the negotiation stage of the sales process.         
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. 
+                Product managers need to understand the details of specific sales deals, and address product capability and roadmap questions with customers.
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
-            </p>
-            <p>
-                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
+                Which two solutions should a consultant recommend to help product managers engage in sales deals? (Choose two.)
             </p>
         </div>
     </li>
@@ -28,25 +25,25 @@
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Enable override forecast permission in the Manager's profile.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+                            Create a Chatter group to share product information with the sales team, product managers, and customers.
                         </label>
                     </li>
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create a forecast hierarchy and assign managers to the forecast manager role.
+                            Use Process Builder to create a chatter post.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
+                            Use an assignment to notify product managers when opportunities are updated.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Add the opportunity team, product managers, and customers to libraries containing files relevant to sales deals.
                         </label>
                     </li>
                 </ul>

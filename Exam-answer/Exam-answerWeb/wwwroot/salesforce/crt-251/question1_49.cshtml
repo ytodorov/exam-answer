@@ -4,12 +4,12 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has a private sharing model and wants the ability to share documents related to an opportunity, such as contracts and proposals, with the field sales team.
+                Resellers for Universal Containers need access to reports in the Partner Communities to help manage their opportunities.    
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                How can the documents be shard efficiently and securely?
+                How should Salesforce be configured to give resellers the correct level of access to reports?
                 @Html.Raw(Model.H2CloseTag)
             </p>
         </div>
@@ -19,28 +19,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create a chatter group that allows a partner to post item appropriate list view and report
+                        </label>
+                    </li>
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files and shared with the field sales organization.
+                            Create the appropriate list views and report folder, and share with all partner users
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be emailed to the sales team on the opportunity record.
+                            Create the opportunity list view and report folder in the partner communities for all partners
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files from the opportunity record.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to a library that is shared with the field sales organization.
+                            Create a new tab in the partner communities to display the appropriate list view and report folder
                         </label>
                     </li>
                 </ul>

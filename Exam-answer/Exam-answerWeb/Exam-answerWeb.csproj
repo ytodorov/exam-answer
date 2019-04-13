@@ -114,6 +114,39 @@
     <Content Remove="wwwroot\salesforce\crt-251\question1_27.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question1_28.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question1_29.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_3.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_30.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_31.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_32.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_33.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_34.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_35.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_36.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_37.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_38.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_39.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_4.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_40.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_41.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_42.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_43.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_44.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_45.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_46.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_47.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_48.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_49.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_5.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_50.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_51.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_52.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_53.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_54.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_55.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_6.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_7.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_8.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question1_9.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -424,6 +457,39 @@
     <None Include="wwwroot\salesforce\crt-251\question1_29.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\salesforce\crt-251\question1_3.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_30.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_31.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_32.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_33.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_34.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_35.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_36.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_37.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_38.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_39.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_4.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_40.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_41.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_42.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_43.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_44.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_45.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_46.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_47.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_48.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_49.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_5.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_50.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_51.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_52.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_53.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_54.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_55.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_6.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_7.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_8.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\question1_9.cshtml" />
   </ItemGroup>
 
 

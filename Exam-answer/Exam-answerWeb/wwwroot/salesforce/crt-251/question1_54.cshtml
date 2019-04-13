@@ -4,19 +4,13 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers’ current solution for managing its forecasts is cumbersome.
+                Universal Containers wants to track the campaigns that influence won opportunities. 
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. 
+                Using standard functionality, what should a consultant recommend to meet this requirement? (Choose 2 answers)
                 @Html.Raw(Model.H2CloseTag)
-            </p>
-            <p>
-                As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
-            </p>
-            <p>
-                Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.)
             </p>
         </div>
     </li>
@@ -25,28 +19,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
-                    <li class="correct">
+                    <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Enable override forecast permission in the Manager's profile.
+                            Have representatives populate a field on the opportunity record with the dollar amount of the expected revenue from the campaigns that influenced the opportunity.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+                            Automatically add child campaigns of the primary campaign source if the child campaigns have an end date that falls before the opportunity close date.
+                        </label>
+                    </li>
+                    <li  class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Add campaigns to opportunities when the campaign is related to a contact that is assigned a contact role on the opportunity prior to the close date.
                         </label>
                     </li>
                     <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create a forecast hierarchy and assign managers to the forecast manager role.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Create forecast Chatter groups where sales representatives can post and share their forecasts.
+                            Have the administrator specify a time frame that limits the time a campaign can influence the opportunity after the campaign first associated date and before the opportunity created date.
                         </label>
                     </li>
                 </ul>

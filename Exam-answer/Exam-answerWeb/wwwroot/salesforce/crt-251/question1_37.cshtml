@@ -4,12 +4,12 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has a private sharing model and wants the ability to share documents related to an opportunity, such as contracts and proposals, with the field sales team.
+                A consultant has created a custom formula field on Opportunity that multiples the Opportunity Amount by the Accounts Discount field.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                How can the documents be shard efficiently and securely?
+                Which Currency will the formula field use for its value if the Opportunity and the Account records have different Currencies? 
                 @Html.Raw(Model.H2CloseTag)
             </p>
         </div>
@@ -19,28 +19,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
-                    <li class="correct">
+                    <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files and shared with the field sales organization.
+                            The Account currency
+                        </label>
+                    </li>
+                    <li  class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The User currency
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be emailed to the sales team on the opportunity record.
+                            The Corporate currency
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files from the opportunity record.
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to a library that is shared with the field sales organization.
+                            The Opportunity currency
                         </label>
                     </li>
                 </ul>

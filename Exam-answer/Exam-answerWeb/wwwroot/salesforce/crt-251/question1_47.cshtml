@@ -4,13 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has a private sharing model and wants the ability to share documents related to an opportunity, such as contracts and proposals, with the field sales team.
+                The shipping department at Universal Containers is responsible for sending product samples as part of the sales process.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                How can the documents be shard efficiently and securely?
+                When an opportunity moves to the "sampling" stage, Universal Containers wants an automatic email sent to the shipping department listing the products on the opportunity.
                 @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                How can this requirement be met using a workflow email?
             </p>
         </div>
     </li>
@@ -22,25 +25,25 @@
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files and shared with the field sales organization.
+                            Create it on the opportunity using a Visualforce email template.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be emailed to the sales team on the opportunity record.
+                            Create it on the opportunity product using a Visualforce email template.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to Salesforce Files from the opportunity record.
+                            Create it on the opportunity product using a Visualforce email template.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            The documents should be uploaded to a library that is shared with the field sales organization.
+                            Create it on the opportunity product using an HTML email template.
                         </label>
                     </li>
                 </ul>
