@@ -292,80 +292,222 @@
     <None Include="wwwroot\microsoft\az-100\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="wwwroot\microsoft\az-100\question1.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question10.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question11.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question12.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question13.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question14.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question15.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question16.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question17.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question18.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question19.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question2.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question20.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question21.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question22.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question23.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question24.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question25.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question26.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question27.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question28.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question29.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question3.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question30.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question31.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question32.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question33.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question34.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question35.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question36.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question37.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question38.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question39.cshtml" />
+    <None Include="wwwroot\microsoft\az-100\question1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question11.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question12.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question13.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question14.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question15.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question16.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question17.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question18.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question19.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question20.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question21.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question22.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question23.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question24.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question25.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question26.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question27.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question28.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question29.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question3.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question30.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question31.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question32.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question33.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question34.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question35.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question36.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question37.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question38.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question39.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\microsoft\az-100\question3_10.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="wwwroot\microsoft\az-100\question4.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question40.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question41.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question42.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question43.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question44.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question45.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question46.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question47.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question48.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question49.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question5.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question50.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question51.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question52.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question53.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question54.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question55.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question56.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question57.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question58.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question59.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question6.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question60.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question61.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question62.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question63.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question64.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question65.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question66.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question67.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question68.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question69.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question7.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question70.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question71.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question8.cshtml" />
-    <None Include="wwwroot\microsoft\az-100\question9.cshtml" />
+    <None Include="wwwroot\microsoft\az-100\question4.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question40.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question41.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question42.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question43.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question44.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question45.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question46.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question47.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question48.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question49.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question5.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question50.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question51.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question52.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question53.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question54.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question55.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question56.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question57.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question58.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question59.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question6.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question60.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question61.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question62.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question63.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question64.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question65.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question66.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question67.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question68.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question69.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question7.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question70.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question71.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question8.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\microsoft\az-100\zCheckBoxes.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -381,64 +523,180 @@
     <None Include="wwwroot\microsoft\az-100\zYesNo.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="wwwroot\salesforce\crt-251\checkbox.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\index.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question1.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question10.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question11.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question12.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question13.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question14.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question15.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question16.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question17.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question18.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question19.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question2.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question20.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question21.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question22.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question23.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question24.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question25.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question26.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question27.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question28.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question29.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question3.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question30.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question31.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question32.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question33.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question34.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question35.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question36.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question37.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question38.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question39.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question4.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question40.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question41.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question42.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question43.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question44.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question45.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question46.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question47.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question48.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question49.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question5.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question50.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question51.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question52.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question53.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question54.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question55.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question6.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question7.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question8.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\question9.cshtml" />
-    <None Include="wwwroot\salesforce\crt-251\_radio.cshtml" />
+    <None Include="wwwroot\salesforce\crt-251\checkbox.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question1.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question10.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question11.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question12.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question13.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question14.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question15.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question16.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question17.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question18.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question19.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question2.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question20.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question21.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question22.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question23.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question24.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question25.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question26.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question27.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question28.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question29.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question3.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question30.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question31.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question32.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question33.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question34.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question35.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question36.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question37.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question38.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question39.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question4.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question40.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question41.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question42.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question43.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question44.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question45.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question46.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question47.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question48.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question49.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question5.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question50.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question51.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question52.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question53.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question54.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question55.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question6.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question7.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question8.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\_radio.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 
