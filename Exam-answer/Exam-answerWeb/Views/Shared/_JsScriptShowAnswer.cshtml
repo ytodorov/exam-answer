@@ -1,0 +1,32 @@
+﻿<script>
+    $(document).ready(function () {
+
+        var panelBars = $(".panelbar");
+
+        panelBars.each(function f(index, element) {
+            var answerLi = $(element).children("li:nth-child(2)");
+            var $answerLi = $(answerLi);
+            $answerLi.append(`<div style="text-align:center">
+            <p>
+                <input type="button" class="k-button showAnswer" value="Show answer" />
+            </p>
+        </div>`);
+        });
+
+        $(".showAnswer").click(function showAnswerClick(ev) {
+            var $this = $(this);
+            var correctAnswers = $(this).parent().parent().parent().find(".correct");
+            debugger;
+            var isGreen = correctAnswers.hasClass("green");
+            if (!isGreen) {
+                correctAnswers.addClass("green");
+                $this.val("Hide Answer");
+            }
+            else {
+                correctAnswers.removeClass("green");
+                $this.val("Show Answer");
+            }
+
+        });
+    });
+</script>

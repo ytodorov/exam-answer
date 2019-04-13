@@ -36,6 +36,10 @@ p, ul {
 .correct {
     /*color: forestgreen*/
 }
+
+.green {
+    color: forestgreen;   
+}
 /*-------------------------------*/
 
 .demo-section {
@@ -84,3 +88,4 @@ p, ul {
     /*background-color: #000000;*/
     color: black;
 }
+
