@@ -4,19 +4,8 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers has set the organization-wide default to public read-only for accounts, contacts, and opportunities.
+                What are two capabilities of Data Loader?    
                 @Html.Raw(Model.H1CloseTag)
-            </p>
-            <p>
-                @Html.Raw(Model.H2OpenTag)
-                Activities are set to be controlled by the parent.  
-                @Html.Raw(Model.H2CloseTag)
-            </p>
-            <p>
-                The ABC Corporation account is owned by a sales user whose profile grants create, read, edit, and delete access to accounts, contacts, and opportunities.
-            </p>
-            <p>
-                Which two actions does the owner of the ABC Corporation account have the right to take? (Choose two.)
             </p>
         </div>
     </li>
@@ -25,28 +14,28 @@
         <div>
             <p>
                 <ul class="fieldlist">
-                    <li class="correct">
+                    <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            View, edit, and delete activities owned by other users directly related to the account.
-                        </label>
-                    </li>
-                    <li class="correct">
-                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            View, edit, and delete related contacts and opportunities owned by other users.
+                            Ability to extract organization and configuration data.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Share the account with other users through manual sharing and account teams.
+                            Ability to prevent importing duplicate records.
                         </label>
                     </li>
-                    <li>
+                    <li class="correct">
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Transfer ownership of related contacts and opportunities owned by other users.
+                            Ability to export field history data
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Ability to run one-time or scheduled data loads
                         </label>
                     </li>
                 </ul>
