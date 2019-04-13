@@ -13,10 +13,14 @@ namespace Exam_answerWeb.Models
 
         public string ExamProvider { get; set; }
 
+        public string QuestionName { get; set; }
+
         public string Content { get; set; }
 
         public string FilePath { get; set; }
 
         public string TextInUI { get; set; }
+
+        public string Url { get; set; }
     }
 }

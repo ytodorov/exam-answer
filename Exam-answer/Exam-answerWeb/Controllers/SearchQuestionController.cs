@@ -21,18 +21,25 @@ namespace Exam_answerWeb.Controllers
 
             int maxLengthTextInUi = 100;
 
-            foreach (SearchQuestionViewModel searchQuestionViewModel in result)
+            var baseUrl = Request.Scheme + "://" + Request.Host;
+
+            foreach (SearchQuestionViewModel scvm in result)
             {
-                int index = searchQuestionViewModel.Content.IndexOf(text);
-                if (index + maxLengthTextInUi > searchQuestionViewModel.Content.Length)
+                int index = scvm.Content.IndexOf(text);
+                if (index + maxLengthTextInUi > scvm.Content.Length)
                 {
-                    searchQuestionViewModel.TextInUI = searchQuestionViewModel.Content.Substring(index);
+                    scvm.TextInUI = scvm.Content.Substring(index);
                 }
                 else
                 {
-                    searchQuestionViewModel.TextInUI = searchQuestionViewModel.Content.Substring(index, maxLengthTextInUi);
+                    scvm.TextInUI = scvm.Content.Substring(index, maxLengthTextInUi);
                 }
+                scvm.Url = $"{baseUrl}/{scvm.ExamProvider}/{scvm.ExamName}/{scvm.QuestionName}";
+
+
             }
+
+
 
             return result;
         }

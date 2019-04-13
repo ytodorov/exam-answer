@@ -4,6 +4,7 @@
                 .MinLength(2)
                 .HtmlAttributes(new { style = "width:100%" })
                 .Placeholder("Instantly search any question here...")
+                .Events(e => e.Select("questionsSelect"))
                 .DataSource(source => source
                     .Custom()
                     
@@ -14,6 +15,7 @@
                       read.Action("Read", "SearchQuestion")
                           .Data("onAdditionalData");
                   }))
+
                     .ServerFiltering(true)).Deferred()
 )
 <br />

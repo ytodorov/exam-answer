@@ -92,8 +92,9 @@ namespace Exam_answerWeb
                         Content = fileContent,
                         Title = fileContent.Substring(0, 50),
                         ExamName = fi.Directory.Name,
-                        ExamProvider = fi.Directory.Parent.Name
-                    };
+                        ExamProvider = fi.Directory.Parent.Name,
+                        QuestionName = fi.Name.Replace(fi.Extension, string.Empty)
+                    }; 
 
                     StaticContent.AllQuestions.Add(searchQuestionViewModel);
 
