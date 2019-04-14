@@ -17,7 +17,7 @@ namespace Exam_answerWeb.Controllers
                 text = string.Empty;
             }
             List<SearchQuestionViewModel> result = StaticContent.AllQuestions
-                .Where(q => q.Content.Contains(text)).ToList();
+                .Where(q => q.Content.Contains(text, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
             int maxLengthTextInUi = 100;
 
@@ -25,7 +25,7 @@ namespace Exam_answerWeb.Controllers
 
             foreach (SearchQuestionViewModel scvm in result)
             {
-                int index = scvm.Content.IndexOf(text);
+                int index = scvm.Content.IndexOf(text, StringComparison.InvariantCultureIgnoreCase);
                 if (index + maxLengthTextInUi > scvm.Content.Length)
                 {
                     scvm.TextInUI = scvm.Content.Substring(index);
