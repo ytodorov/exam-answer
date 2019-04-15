@@ -3,7 +3,7 @@
     ViewData["description"] = "Exam AZ-100: Microsoft Azure Infrastructure and Deployment. Questions with answers and explanations.";
 }
 @{
-    for (int i = 1; i <= 71; i++)
+    for (int i = 1; i <= 82; i++)
     {
         <br />
         <partial name="~/views/microsoft/az-100/question@(i).cshtml" model="@new QuestionViewModel() { Id = i.ToString() }" />

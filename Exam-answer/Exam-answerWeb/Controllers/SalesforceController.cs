@@ -18,7 +18,7 @@ namespace Exam_AnswerWeb.Controllers
     {
         private const string folderName = "crt-251";
 
-        private IHostingEnvironment env;
+        private readonly IHostingEnvironment env;
 
         public SalesforceController(IHostingEnvironment env)
         {
@@ -59,7 +59,7 @@ namespace Exam_AnswerWeb.Controllers
                     ViewData["next"] = intId + 1;
                 }
                 ViewData["current"] = intId;
-                ViewData["max"] = 55;
+                ViewData["max"] = 54;
             }
             QuestionViewModel questionViewModel = new QuestionViewModel()
             {

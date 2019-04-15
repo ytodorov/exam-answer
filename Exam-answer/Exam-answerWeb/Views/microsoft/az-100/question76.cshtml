@@ -16,7 +16,16 @@
                 You need to design a scalable compute solution. The solution must meet the following technical and business requirements:
             </p>
             <p>
-                Which cmdlet should you use?
+                * Must use VM instance sizes smaller than H series
+                <br />
+                * Must support automatic scale out and scale in based on CPU metrics
+                <br />
+                * Must minimize deployment time
+                <br />
+                * Must minimize administrative overhead
+            </p>
+            <p>
+                What should you do?
             </p>
         </div>
     </li>
@@ -28,31 +37,25 @@
                     <li class="correct">
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Set-AzureRmVM
+                            Deploy a virtual machine scale set (VMSS).
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            New-AzureRmVMConfig
+                            Create an Azure Data Factory pipeline.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Remove-AzureRmVM
+                            Configure an auto-scaling rule on the existing VM.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Restart-AzureRmVM
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Update-AzureRmVM
+                            Author an Azure Resource Manager (ARM) template that creates additional VMs.
                         </label>
                     </li>
                 </ul>
@@ -63,19 +66,16 @@
         Explanation
         <div>
             <p>
-                You should use the Set-AzureRmVM cmdlet with the -Redeploy switch. You need to provide the resource group name and the VM name that you want to redeploy.
+                You should deploy a virtual machine scale set (VMSS). Scale sets represent the only way to horizontally scale Azure VMs automatically. A scale set is a collection of two or more identically configured Windows Server or Linux VMs that provide full, centralized control over their lifecycle. Scale sets support up to 1,000 instances when you use VM images in the Azure Marketplace.
             </p>
             <p>
-                You should not use the Update-AzureRmVM cmdlet. You use this cmdlet for updating the state of a VM to the values stored in a VM object that you can usually get using the Get-Azure RmVM cmdlet.
+                You cannot configure an auto-scaling rule on the existing VM. Scale sets are the only way to horizontally autoscale Azure VMs. By contrast, Azure App Service apps can be configured individually with auto-scaling rules based on time, date, or CPU metric.
             </p>
             <p>
-                You should not use the Restart-AzureRmVM cmdlet. This cmdlet will restart the VM. Restarting a VM does not redeploy it to a new host.
+                You should not create an Azure Data Factory pipeline. Azure Data Factory is a cloud-based data orchestration engine similar in function to SQL Server Integration Services (SSIS). Therefore, Data Factory is not appropriate for this scenario.
             </p>
             <p>
-                You should not use the New-AzureRmVMConfig cmdlet. This cmdlet is intended for a creating new VM object configuration that you can use with other cmdlets.
-            </p>
-            <p>
-                You should not use the Remove-AzureRmVM cmdlet. You typically use this cmdlet when you want to remove a VM from Azure.
+                You should not author an ARM template that creates additional VMs. While you can indeed use ARM templates to automate the deployment and removal of VMs, doing so violates the scenario constraints of minimized setup time and management overhead.
             </p>
         </div>
     </li>
@@ -83,19 +83,19 @@
         References
         <div>
             <p>
-                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/set-azurermvm" target="_blank" rel="noopener" tabindex="190">Set-AzureRmVM</a>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview" target="_blank" rel="noopener" tabindex="190">What are virtual machine scale sets?</a>
             </p>
             <p>
-                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/restart-azurermvm" target="_blank" rel="noopener" tabindex="190">Restart-AzureRmVM</a>
+                <a href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling" target="_blank" rel="noopener" tabindex="190">Autoscaling</a>
             </p>
             <p>
-                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/remove-azurermvm" target="_blank" rel="noopener" tabindex="190">Remove-AzureRmVM</a>
+                <a href="https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-autoscale-get-started" target="_blank" rel="noopener" tabindex="190">Get started with Autoscale in Azure</a>
             </p>
             <p>
-                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/update-azurermvm" target="_blank" rel="noopener" tabindex="190">Update-AzureRmVM</a>
+                <a href="https://docs.microsoft.com/en-us/azure/data-factory/introduction" target="_blank" rel="noopener" tabindex="190">Introduction to Azure Data Factory</a>
             </p>
             <p>
-                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvmconfig" target="_blank" rel="noopener" tabindex="190">New-AzureRmVMConfig</a>
+                <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy" target="_blank" rel="noopener" tabindex="190">Deploy resources with Resource Manager templates and Azure PowerShell</a>
             </p>
         </div>
     </li>

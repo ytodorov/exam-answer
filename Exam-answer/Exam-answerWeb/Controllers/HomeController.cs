@@ -24,7 +24,6 @@ namespace Exam_answerWeb.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Exception()
         {
-            var c = ControllerContext;
             //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             return View("GenericError");
         }

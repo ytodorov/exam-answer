@@ -713,9 +713,6 @@
     <Content Update="Views\microsoft\az-100\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\microsoft\az-100\question3_10.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="Views\microsoft\az-100\question3_9.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
