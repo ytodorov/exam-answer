@@ -10,11 +10,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Exam_answerWeb
 {
@@ -94,7 +96,7 @@ namespace Exam_answerWeb
                         ExamName = fi.Directory.Name,
                         ExamProvider = fi.Directory.Parent.Name,
                         QuestionName = fi.Name.Replace(fi.Extension, string.Empty)
-                    }; 
+                    };
 
                     StaticContent.AllQuestions.Add(searchQuestionViewModel);
 
@@ -138,6 +140,31 @@ namespace Exam_answerWeb
             {
                 ContentTypeProvider = provider
             });
+
+            app.Use(
+                       next =>
+                       {
+                           return async context =>
+                           {
+                               var stopWatch = new Stopwatch();
+                               stopWatch.Start();
+                               context.Response.OnStarting(
+                                   () =>
+                                   {
+                                       stopWatch.Stop();
+                                       context.Response.Headers.Add("X-ResponseTime-Ms", stopWatch.ElapsedMilliseconds.ToString());
+
+                                       // these cannot  be removed because they are not yet added here.
+                                       context.Response.Headers.Remove("x-powered-by");
+                                       context.Response.Headers.Remove("server");
+
+                                       return Task.CompletedTask;
+                                   });
+
+                               await next(context);
+                           };
+                       });
+
 
             app.UseMvc(routes =>
             {
