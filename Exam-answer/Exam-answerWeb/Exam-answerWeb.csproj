@@ -156,8 +156,31 @@
     <Content Remove="wwwroot\microsoft\az-100\question7.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question70.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question71.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question72.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question73.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question74.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question75.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question76.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question77.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question78.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question79.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question8.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question80.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question81.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question82.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question83.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question84.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question85.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question86.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question87.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question88.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question89.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question9.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question90.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question91.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question92.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question93.cshtml" />
+    <Content Remove="wwwroot\microsoft\az-100\question94.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zCheckBoxes.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zDropDown.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\zRadio.cshtml" />
@@ -502,10 +525,102 @@
     <None Include="wwwroot\microsoft\az-100\question71.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\microsoft\az-100\question72.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question73.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question74.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question75.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question76.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question77.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question78.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question79.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\microsoft\az-100\question8.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\microsoft\az-100\question80.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question81.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question82.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question83.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question84.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question85.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question86.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question87.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question88.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question89.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\microsoft\az-100\question9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question90.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question91.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question92.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question93.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\microsoft\az-100\question94.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\microsoft\az-100\zCheckBoxes.cshtml">

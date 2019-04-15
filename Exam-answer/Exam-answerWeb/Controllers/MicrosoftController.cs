@@ -54,12 +54,12 @@ namespace Exam_AnswerWeb.Controllers
                 {
                     ViewData["prev"] = intId - 1;
                 }
-                if (intId < 152)
+                if (intId < 94)
                 {
                     ViewData["next"] = intId + 1;
                 }
                 ViewData["current"] = intId;
-                ViewData["max"] = 82;
+                ViewData["max"] = 94;
             }
             QuestionViewModel questionViewModel = new QuestionViewModel()
             {

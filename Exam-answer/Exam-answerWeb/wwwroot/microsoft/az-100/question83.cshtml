@@ -1,0 +1,96 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You deploy a new virtual machine (VM) named newVM to your Azure subscription. Your company's security policy requires that all VMs deployed in Azure must be protected by a Backup.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You have a Recovery Services vault configured in Azure for protecting other VMs in your subscription. You configure a backup policy named CompanyPolicy.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You need to include this new VM in the backup. You also need to perform the first backup as soon as possible.
+            </p>
+            <p>
+                How should you complete the PowerShell script? To answer, select the appropriate options from the drop-down menus.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        TO DO
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should use the following script:
+            </p>
+            <p>
+                $p = Get-AzureRmRecoveryServicesBackupProtectionPolicy -Name "CompanyPolicy"
+                <br />
+                Enable-AzureRmRecoveryServicesBackupProtection -ResourceGroupName "RG01" -Name "newVM" -Policy $p
+                <br />
+                $c = Get-AzureRmRecoveryServicesBackupContainer  -ContainerType "AzureVM"  -FriendlyName "newVM"
+                <br />
+                $i = Get-AzureRmRecoveryServicesBackupItem  -Container $c -WorkloadType "AzureVM"
+                <br />
+                Backup-AzureRmRecoveryServicesBackupItem -Item $i
+            </p>
+            <p>
+                You should use the Get-AzureRmRecoveryServicesBackupProtectionPolicy cmdlet first. This cmdlet gets the backup policy that you already have configured in your Recovery Service vault. You need to get this policy to enable the backup service on the new VM.
+            </p>
+            <p>
+                You should then use the Enable-AzureRmRecoveryServicesBackupProtection cmdlet. You use this cmdlet to enable the backup service on your new VM. The first backup of the VM will be performed following the schedule set in the assigned backup policy.
+            </p>
+            <p>
+                You should use the Get-AzureRmRecoveryServicesBackupContainer cmdlet. A backup container is a special data source designed to store backup items. You need to get the object that represents the backup container before you can get the object for the VM on which you want to make the backup.
+            </p>
+            <p>
+                You should use the Get-AzureRmRecoveryServicesBackupItem cmdlet. An VM is represented by an item in the Recovery Services context. You need to get the item to start the backup of your new VM.
+            </p>
+            <p>
+                You should then use the Backup-AzureRmRecoveryServicesBackupItem cmdlet. This cmdlet starts the backup immediately on the item that you provide in the -Item parameter. You can also use this cmdlet to start a backup after a scheduled backup failed.
+            </p>
+            <p>
+                You should not use the Get-AzureRmRecoveryServicesBackupJob cmdlet. This cmdlet is useful to monitor the status of backup jobs.
+            </p>
+            <p>
+                You should not use the New-AzureRmRecoveryServicesVault cmdlet. You typically use this cmdlet to create a new Recovery Services vault. In this scenario, you already have a vault where you store all your backups.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-powershell" target="_blank" rel="noopener" tabindex="190">Back up a virtual machine in Azure with PowerShell</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices.backup/backup-azurermrecoveryservicesbackupitem" target="_blank" rel="noopener" tabindex="190">Backup-AzureRmRecoveryServicesBackupItem</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupprotectionpolicy" target="_blank" rel="noopener" tabindex="190">Get-AzureRmRecoveryServicesBackupProtectionPolicy</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices.backup/enable-azurermrecoveryservicesbackupprotection" target="_blank" rel="noopener" tabindex="190">Enable-AzureRmRecoveryServicesBackupProtection</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupcontainer" target="_blank" rel="noopener" tabindex="190">Get-AzureRmRecoveryServicesBackupContainer</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupitem" target="_blank" rel="noopener" tabindex="190">Get-AzureRmRecoveryServicesBackupItem</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupjob" target="_blank" rel="noopener" tabindex="190">Get-AzureRmRecoveryServicesBackupJob</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices/new-azurermrecoveryservicesvault" target="_blank" rel="noopener" tabindex="190">New-AzureRmRecoveryServicesVault</a>
+            </p>
+        </div>
+    </li>
+</ul>
