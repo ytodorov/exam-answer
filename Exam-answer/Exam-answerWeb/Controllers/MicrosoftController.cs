@@ -39,7 +39,7 @@ namespace Exam_AnswerWeb.Controllers
         //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
-        {           
+        {
             ViewData["title"] = $"Exam AZ-100: Question {id}";
             ViewData["id"] = id;
 
@@ -50,16 +50,10 @@ namespace Exam_AnswerWeb.Controllers
             if (int.TryParse(id, out int intId))
             {
                 ViewData["basePath"] = "microsoft/az-100/question";
-                if (intId > 1)
-                {
-                    ViewData["prev"] = intId - 1;
-                }
-                if (intId < 94)
-                {
-                    ViewData["next"] = intId + 1;
-                }
+                ViewData["prev"] = intId - 1;
+                ViewData["next"] = intId + 1;
                 ViewData["current"] = intId;
-                ViewData["max"] = 94;
+                ViewData["max"] = 115;
             }
             QuestionViewModel questionViewModel = new QuestionViewModel()
             {
@@ -72,7 +66,7 @@ namespace Exam_AnswerWeb.Controllers
             };
 
             string filePath = $"{folderName}/question{intId}";
-                       
+
             // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
             string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
             string[] files = Directory.GetFiles(path + @"\microsoft\az-100", "*.cshtml", SearchOption.AllDirectories);
@@ -92,7 +86,7 @@ namespace Exam_AnswerWeb.Controllers
                 }
 
                 fileContent = sb.ToString();
-                    
+
 
                 int indexLiStart = fileContent.IndexOf("<li");
                 int indexLiEnd = fileContent.IndexOf("</li>");

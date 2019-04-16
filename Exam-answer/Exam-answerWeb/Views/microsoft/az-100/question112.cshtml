@@ -1,0 +1,77 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You are asked to connect a virtual network (VNet) to a private DNS zone to support new application namespaces in the new private zone. The VNet already has virtual machines (VMs) assigned to it and has existing private DNS zones assigned.                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You need to complete this task.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                What should you do first?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Set the existing VMs to support the new DNS zone via the Windows Server IP Configuration DNS settings app.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add the new private DNS zone to the existing VNet.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Remove the existing VMs from the VNet.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Setup a new VNet, assign the private DNS zone to this VNet, and move the existing VMs to it.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                To complete this task, you should just add the new private DNS zone to the existing VNet. When adding a new private DNS zone to an existing VNet that already has private zones assigned, you do not need to complete any other task other than add the zone.
+            </p>
+            <p>
+                You do not need to remove the existing VMs from the VNet. This would have been a requirement if the VNet did not already have private DNS zones linked to it.
+            </p>
+            <p>
+                Setting up a new VNet, assigning the private DNS zone to this VNet, and moving the existing VMs to it would satisfy the connectivity to the new private DNS zone, but the existing linked private zones would be lost.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns" target="_blank" rel="noopener" tabindex="190">Tutorial: Host your domain in Azure DNS</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/dns/private-dns-overview" target="_blank" rel="noopener" tabindex="190">Use Azure DNS for private domains</a>
+            </p>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,90 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                A client asks you to assist in moving a public website and Domain Name System (DNS) domain from the current host into Azure.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You help the client migrate the website to an Azure App Service web application. You also create a zone in Azure DNS for the client's company.com domain.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You now need to configure DNS so that user requests to company.com resolve to the Azure App Service app.
+            </p>
+            <p>
+                What should you do next?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create a CNAME record for company.com in Azure DNS.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Delegate the company.com zone to Azure DNS.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Configure Azure DNS as a secondary name server.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Create an A record for company.com in Azure DNS.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should delegate the company.com zone to Azure DNS at the client's registrar. Azure DNS is not the registrar, so this step is necessary to ensure that DNS lookups for company.com are redirected to Azure DNS, which will serve as the domain's source of authority from now on.
+            </p>
+            <p>
+                You should not create a host (A) record for company.com in Azure DNS until you have delegated the zone to Azure DNS at the original registrar. This new resource record will ensure that calls to company.com (the so-called "naked" domain) resolve to the correct Azure App Service web application.
+            </p>
+            <p>
+                You should not create an alias (CNAME) record for company.com in Azure DNS for two reasons. First, as previously described, you need to complete the zone delegation before you populate the Azure DNS zone. Second, a CNAME record is used to map an additional host name to an existing A record. In this scenario, you need to handle only the company.com root domain name.
+            </p>
+            <p>
+                You should not configure Azure DNS as a secondary name server because the client's goal is to manage DNS from within Azure and Azure DNS does not support zone transfers.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain" target="_blank" rel="noopener" tabindex="190">Tutorial: Create DNS records in a custom domain for a web app</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/dns/dns-domain-delegation" target="_blank" rel="noopener" tabindex="190">Delegation of DNS zones with Azure DNS</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/dns/dns-faq" target="_blank" rel="noopener" tabindex="190">Azure DNS FAQ</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/dns/dns-zones-records" target="_blank" rel="noopener" tabindex="190">Overview of DNS zones and records</a>
+            </p>
+        </div>
+    </li>
+</ul>

@@ -50,14 +50,8 @@ namespace Exam_AnswerWeb.Controllers
             if (int.TryParse(id, out int intId))
             {
                 ViewData["basePath"] = "salesforce/crt-251/question";
-                if (intId > 1)
-                {
-                    ViewData["prev"] = intId - 1;
-                }
-                if (intId < 152)
-                {
-                    ViewData["next"] = intId + 1;
-                }
+                ViewData["prev"] = intId - 1;
+                ViewData["next"] = intId + 1;
                 ViewData["current"] = intId;
                 ViewData["max"] = 54;
             }
