@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -16,6 +17,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Exam_answerWeb
@@ -95,14 +97,45 @@ namespace Exam_answerWeb
                         Title = fileContent.Substring(0, 50),
                         ExamName = fi.Directory.Name,
                         ExamProvider = fi.Directory.Parent.Name,
-                        QuestionName = fi.Name.Replace(fi.Extension, string.Empty)
+                        QuestionName = fi.Name.Replace(fi.Extension, string.Empty),                        
                     };
+
+                    searchQuestionViewModel.Number = int.Parse(searchQuestionViewModel.QuestionName
+                        .ToLowerInvariant().Replace("question", string.Empty));
+
+                    RegexOptions options = RegexOptions.None;
+                    Regex regex = new Regex("[ ]{2,}", options);
+                    searchQuestionViewModel.Content = regex.Replace(searchQuestionViewModel.Content, " ");
+                    searchQuestionViewModel.Content = searchQuestionViewModel.Content.Trim();
 
                     StaticContent.AllQuestions.Add(searchQuestionViewModel);
 
-
                 }
             }
+
+            //var salesForceQuestions = StaticContent.AllQuestions
+            //    .Where(s => s.ExamProvider.Equals("SalesForce", StringComparison.InvariantCultureIgnoreCase))
+            //    .OrderBy(s => s.Number)
+            //    .ToList();
+
+            //for (int i = 0; i < salesForceQuestions.Count - 1; i++)
+            //{
+            //    for (int j = i + 1; j < salesForceQuestions.Count; j++)
+            //    {
+            //        var s = salesForceQuestions[i].Content;
+            //        var sNumber = salesForceQuestions[i].Number;
+
+            //        var t = salesForceQuestions[j].Content;
+            //        var tNumber = salesForceQuestions[j].Number;
+
+            //        var distance = LevenshteinDistance.Compute(s, t);
+            //        var similaruty = LevenshteinDistance.CalculateSimilarity(s, t);
+            //        if (similaruty > 0.5)
+            //        {
+
+            //        }
+            //    }
+            //}
 
 
             HostingEnvironment = env;
@@ -116,12 +149,10 @@ namespace Exam_answerWeb
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            //app.UseExceptionHandler("/Home/Error");
-            //app.UseExceptionHandler("/home/exception");
             app.UseStatusCodePagesWithRedirects("/home/error/{0}");
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
+
             app.UseCookiePolicy();
 
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-2.2

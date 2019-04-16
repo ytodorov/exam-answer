@@ -111,7 +111,6 @@
     <Content Remove="wwwroot\microsoft\az-100\question38.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question39.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question3_1.cshtml" />
-    <Content Remove="wwwroot\microsoft\az-100\question3_10.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question3_2.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question3_3.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question3_4.cshtml" />
@@ -412,9 +411,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\microsoft\az-100\question39.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="wwwroot\microsoft\az-100\question3_10.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\microsoft\az-100\question4.cshtml">

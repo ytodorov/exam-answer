@@ -22,5 +22,7 @@ namespace Exam_answerWeb.Models
         public string TextInUI { get; set; }
 
         public string Url { get; set; }
+
+        public int Number { get; set; }
     }
 }
