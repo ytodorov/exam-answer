@@ -108,7 +108,7 @@ namespace Exam_answerWeb
             HostingEnvironment = env;
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -116,8 +116,9 @@ namespace Exam_answerWeb
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            //app.UseExceptionHandler("/Home/Error");
             //app.UseExceptionHandler("/home/exception");
-            //app.UseStatusCodePagesWithRedirects("/home/error/{0}");
+            app.UseStatusCodePagesWithRedirects("/home/error/{0}");
 
             app.UseHttpsRedirection();
             //app.UseStaticFiles();
