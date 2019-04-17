@@ -1,0 +1,12 @@
+A sales manager wants a report that reflects all activities in the managers accounts, including contacts and
+opportunities.
+
+Which report should the sales manager use?
+
+A. O Activities report on accounts the manager owns
+
+B. O Activities report on accounts and contacts the manager owns
+
+C. O Activities report on accounts and opportunities the manager owns
+
+D. O Activities report on accounts, contacts, and opportunities the manager owns

@@ -1,0 +1,16 @@
+Northern Trail Outfitters gains sales leads at its annual trade show. Duplicate leads are generated when they are
+
+imported and already exist in the system.
+
+What should be done to address the issue with duplicate leads?
+
+A. © Upload the leads to Data.com to remove the duplicates and select the option to have them automatically
+imported.
+
+B. © Upload the leads and click the "Find Duplicates" button for each of the leads to identify potential duplicate lead
+records.
+
+C. © Upload the leads using Data Loader and enable the “Find Duplicates" setting to prevent duplicate records.
+
+D. © Upload the leads using the Data Import Wizard and select the appropriate field to match duplicates against
+existing records.

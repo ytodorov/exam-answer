@@ -1,0 +1,12 @@
+Which two processes should minimize changes in project scope during the design and build phases, post sign-off,
+when using a traditional waterfall project methodology?
+
+Choose 2 answers
+
+A. LJ Obtain customer sign-off on the solution design.
+
+B. LJ Map solution design documents to system test scripts.
+
+c. CO Map business requirements to the solution design.
+
+D. LJ Update requirements based on feedback from key stakeholders.

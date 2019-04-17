@@ -4,13 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                A sales manager wants a report that all activities in the manager’s accounts, including contacts and opportunities.
+                Northern Trail Outfitters (NTO) has over 20,000 Accounts and 75,000 Contacts.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                Which report should the sales manager use?
+                NTO wants to ensure the customer data is accurate and that the customers are still currently at their respective companies.
                 @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                How can this be confirmed?
             </p>
         </div>
     </li>
@@ -22,25 +25,25 @@
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Activities report on accounts the manager owns.
+                            Use a data cleansing tool and the Stay-in-Touch feature of Salesforce to email contacts.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Activities report on accounts and contacts the manager owns
+                            Create a workflow rule to mass email the contacts and capture any email bounces.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Activities report on accounts and opportunities the manager owns
+                            Use a data enrichment tool to verify account and contact data is up-to-date.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Activities report on accounts, contacts, and opportunities the manager owns
+                            Create a workflow rule for the account and contact owner to confirm contact data.
                         </label>
                     </li>
                 </ul>

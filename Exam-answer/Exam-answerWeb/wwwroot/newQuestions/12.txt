@@ -1,0 +1,13 @@
+Northern Trail Outfitters (NTO) wants to record information about its conferences and the attendees. Some customers
+attend multiple NTO conferences.
+
+What should the consultant recommend if NTO desires to present this data on the contact layout using the standard
+configuration?
+
+A. © Create a custom object for conferences and a custom object to record attendee information.
+
+B. © Utilize Campaigns for conferences and a custom object to record attendee information.
+
+C. © Utilize Campaigns for conferences and add Campaign Members to record attendee information.
+
+D. O Create a custom object for conferences and a custom lookup field to conferences on Contacts.

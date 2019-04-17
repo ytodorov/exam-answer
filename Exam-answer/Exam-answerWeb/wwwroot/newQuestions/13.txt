@@ -1,0 +1,12 @@
+Northern Trail Outfitters has Advanced Currency Management enabled and needs reports that span time periods when
+the exchange rate was different.
+
+What is the converted amount based on in this scenario?
+
+A. © On the exchange rates entered in the opportunity
+
+B. © On exchange rates that use the oldest entry
+
+Cc. © On exchange rates that use the most current entry
+
+D. O On the historical exchange rate associated with the close date

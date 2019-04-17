@@ -1,0 +1,11 @@
+Leads created from the "Contact Us" form on Northern Trail Outfitters' website are not being followed-up on in a timely
+manner. Management wants to be notified when a lead has NOT been followed-up within 24 hours of being submitted.
+Which action should be recommended?
+
+A. © Send an email using lead escalation rule
+
+B. © Notify using Chatter on leads
+
+C. O Notify using publisher action
+
+D. O Send an email using time-based workflow

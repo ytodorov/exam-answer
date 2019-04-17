@@ -1,0 +1,13 @@
+The sales management team at Northern Trail Outfitters (NTO) wants to analyze how the sales funnel is changing
+throughout the month. NTO wants to store the details of open opportunities weekly, and forecasts and closes business
+monthly.
+
+What should be recommended?
+
+A. © Create a reporting snapshot to run daily and store the results in a custom object.
+
+B. ® Create a reporting snapshot to run weekly and store the results in a custom object.
+
+C. © Schedule a custom forecast report to run daily and store the results in a custom report folder.
+
+D. © Schedule a custom forecast report to run weekly and store the results in a custom report folder.

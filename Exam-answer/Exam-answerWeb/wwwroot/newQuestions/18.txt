@@ -1,0 +1,16 @@
+Northern Trail Outfitters has its sales support team enter new prospecting leads for sales representatives.
+
+Which three actions should be implemented to enforce data quality and accuracy once the new lead has been qualified
+and the opportunity has been created to track the deal?
+
+Choose 3 answers
+
+A. LJ Enable the lead conversion permission.
+
+B. LJ Enable validation rules on the lead.
+
+Cc. CL] Map custom lead fields to corresponding custom opportunity fields.
+
+D. LK Enable validation rules on the opportunity.
+
+E. LJ Create an Apex trigger to perform data quality checks.

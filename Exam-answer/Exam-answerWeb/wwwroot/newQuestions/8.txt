@@ -1,0 +1,11 @@
+Northern Trail Outfitters' partners need the new quoting functionality that was recently implemented for sales
+representatives.
+
+What should be recommended?
+
+A. O Create a custom quote object to capture partner quotes on opportunities separate from non-partner quotes.
+B. © Grant partner access to quotes and add the quotes related list to the partner opportunity page layouts.
+
+C. © Update the partner sales process to include stages for managing and submitting partner quotes.
+
+D. © Enable quotes and content in the Partner Communities to allow partners to store their PDF quotes.

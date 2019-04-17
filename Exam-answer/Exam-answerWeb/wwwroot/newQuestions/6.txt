@@ -1,0 +1,15 @@
+Which two processes should be recommended to track campaigns that influence won opportunities?
+
+Choose 2 answers
+
+A. C] Have the administrator specify a timeframe that limits the time a campaign can influence an opportunity after the
+campaign first associated date and before the opportunity created date.
+
+B. LJ Add campaigns to opportunities when the campaign is related to a contact that is assigned a contact role on the
+opportunity prior to the close date.
+
+c. UJ Automatically add child campaigns of the primary campaign source if the child campaigns have an end date that
+falls before the opportunity close date.
+
+D. LJ Have representatives populate a field on the opportunity record with the dollar amount of the expected revenue
+from the campaigns that influenced the opportunity.

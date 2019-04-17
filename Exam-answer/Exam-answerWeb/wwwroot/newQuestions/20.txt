@@ -1,0 +1,14 @@
+Northern Trail Outfitters' Board of Directors thinks that sales user adoption should be calculated by the number of
+daily logins.
+
+Which two measures of sales user adoption should be considered when implementing Sales Cloud?
+
+Choose 2 answers
+
+A. UJ Overall effectiveness of mass email campaigns
+
+B. LJ Number of neglected opportunities over time by role
+
+Cc. L] Completeness of records entered into the new system
+
+D. LJ Number of reports exported to Excel for analysis

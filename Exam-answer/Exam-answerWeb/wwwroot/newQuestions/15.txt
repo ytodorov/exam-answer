@@ -1,0 +1,8 @@
+What should a consultant recommend to show a dashboard with forecast by product family with quotas?
+A. © Create an analytic snapshot to capture the opportunity forecast.
+
+B. © Build a joined report with closed opportunities, forecasting items, and quotas.
+
+C. © Build a custom report type with forecasting quotas and forecasting items.
+
+D. © Customize quotas with product report, and add necessary fields.

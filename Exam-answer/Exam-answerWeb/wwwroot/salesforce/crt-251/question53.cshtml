@@ -4,16 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                Universal Containers supports two lines of business: shipping and freight.
+                Northern Trail Outfitters (NTO) wants to launch an email campaign for its new winter gear. 
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                The sales cycle for freight deals is more complex and involves more stages than the shipping sales cycle.
+                The NTO sales representatives will review the response to the campaign and determine who the decision makers are prior to beginning the sales process with each respondent.                
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                Which solution should a consultant recommend to meet these business requirements?
+                What set of steps should the consultant recommend for NTO?
             </p>
         </div>
     </li>
@@ -25,25 +25,25 @@
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Create different record types sales processes for each line of business, and assign different stages to each page layout.
+                            Create a campaign, qualify the respondents, and create accounts and contacts.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Create different record types sales processes for each line of business, and assign different sales processes to each page layout.
+                            Create a campaign, associate the leads to the campaign, and qualify the respondents.
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Create different record types sales processes for each line of business, and use workflow field updates to assign stages.
+                            Create leads, convert them to opportunities, and qualify the respondents on the opportunities.
                         </label>
                     </li>
-                    <li class="correct">
+                    <li>
                         <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                         <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                            Create different record types and sales processes for each line of business, and assign different page layouts to each record type.
+                            Create both account and contact records, then associate the contacts to the campaign.
                         </label>
                     </li>
                 </ul>

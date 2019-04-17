@@ -1,0 +1,14 @@
+A consultant is recommending Salesforce Console for Sales to Northern Trail Outfitters to improve sales productivity in
+inside sales.
+
+Which two use cases support this recommendation?
+
+Choose 2 answers
+
+A. C1 Need to prioritize search results for contacts and opportunities
+
+B. LJ Need to add notes quickly while talking to the client
+
+Cc. LJ Need to chat with customers in real time with Chatter
+
+D. LJ Need to view the caller ID on screen and quickly make calls with one click

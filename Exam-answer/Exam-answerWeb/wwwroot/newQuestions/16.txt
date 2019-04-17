@@ -1,0 +1,13 @@
+Northern Trail Outfitters (NTO) uses channel partners for selling and servicing its products. As volume of leads has
+increased, NTO has noticed a decrease in satisfaction from partners on the quality of leads and a noticeable decrease in
+the lead conversion rate.
+
+What should the consultant suggest in order to increase partner satisfaction with the leads being shared?
+
+A. © Assign all leads to the partner channel manager to validate the lead data and manually assign to partners.
+
+B. © Use the lead score on the Find Duplicates button and assign the leads with a score in the high category.
+
+C. © Create a custom lead score field to assess lead quality and assign the leads that exceed this score to partners.
+
+D. © Create multiple validation rules to ensure that all fields on the lead record are populated with data.

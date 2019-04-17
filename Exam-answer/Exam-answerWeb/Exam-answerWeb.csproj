@@ -291,8 +291,6 @@
     <Content Remove="wwwroot\salesforce\crt-251\question51.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question52.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question53.cshtml" />
-    <Content Remove="wwwroot\salesforce\crt-251\question54.cshtml" />
-    <Content Remove="wwwroot\salesforce\crt-251\question55.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question6.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question7.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question8.cshtml" />
@@ -785,12 +783,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\salesforce\crt-251\question53.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="wwwroot\salesforce\crt-251\question54.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="wwwroot\salesforce\crt-251\question55.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\salesforce\crt-251\question6.cshtml">

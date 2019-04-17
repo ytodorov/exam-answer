@@ -70,6 +70,9 @@ namespace Exam_answerWeb
         {
             string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
             List<string> files = Directory.GetFiles(path, "*question*.cshtml", SearchOption.AllDirectories).ToList();
+
+            List<string> newFiles = Directory.GetFiles(Path.Combine(path, "newQuestions"), "*.*", SearchOption.AllDirectories).ToList();
+
             foreach (var filePath in files)
             {
                 //string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
@@ -113,29 +116,60 @@ namespace Exam_answerWeb
                 }
             }
 
-            //var salesForceQuestions = StaticContent.AllQuestions
-            //    .Where(s => s.ExamProvider.Equals("SalesForce", StringComparison.InvariantCultureIgnoreCase))
-            //    .OrderBy(s => s.Number)
-            //    .ToList();
+            var salesForceQuestions = StaticContent.AllQuestions
+                .Where(s => s.ExamProvider.Equals("SalesForce", StringComparison.InvariantCultureIgnoreCase))
+                .OrderBy(s => s.Number)
+                .ToList();
 
-            //for (int i = 0; i < salesForceQuestions.Count - 1; i++)
-            //{
-            //    for (int j = i + 1; j < salesForceQuestions.Count; j++)
-            //    {
-            //        var s = salesForceQuestions[i].Content;
-            //        var sNumber = salesForceQuestions[i].Number;
+            List<string> duplicates = new List<string>();
 
-            //        var t = salesForceQuestions[j].Content;
-            //        var tNumber = salesForceQuestions[j].Number;
+            for (int i = 0; i < salesForceQuestions.Count - 1; i++)
+            {
+                //for (int j = i + 1; j < salesForceQuestions.Count; j++)
+                //{
+                //    var s = salesForceQuestions[i].Content;
+                //    var sNumber = salesForceQuestions[i].Number;
 
-            //        var distance = LevenshteinDistance.Compute(s, t);
-            //        var similaruty = LevenshteinDistance.CalculateSimilarity(s, t);
-            //        if (similaruty > 0.5)
-            //        {
+                //    var t = salesForceQuestions[j].Content;
+                //    var tNumber = salesForceQuestions[j].Number;
 
-            //        }
-            //    }
-            //}
+                //    var distance = LevenshteinDistance.Compute(s, t);
+                //    var similarity = LevenshteinDistance.CalculateSimilarity(s, t);
+                //    if (similarity > 0.5)
+                //    {
+
+                //    }
+                //}
+
+                foreach (var nf in newFiles)
+                {
+                    string nfContent = File.ReadAllText(nf);
+
+                    nfContent = nfContent.Replace(" O ", string.Empty);
+                    nfContent = nfContent.Replace("\r\n", " ");
+
+                    RegexOptions options = RegexOptions.None;
+                    Regex regex = new Regex("[ ]{2,}", options);
+                    nfContent = regex.Replace(nfContent, " ");
+
+                    nfContent = nfContent.Replace("A.", "");
+                    nfContent = nfContent.Replace("B.", "");
+                    nfContent = nfContent.Replace("C.", "");
+                    nfContent = nfContent.Replace("D.", "");
+
+                    nfContent = nfContent.Trim();
+
+                    var s = salesForceQuestions[i].Content;
+                    var sNumber = salesForceQuestions[i].Number;
+
+                    //var distance = LevenshteinDistance.Compute(s, t);
+                    var similarity = LevenshteinDistance.CalculateSimilarity(s, nfContent);
+                    if (similarity > 0.5)
+                    {
+                        duplicates.Add(new FileInfo(nf).Name);
+                    }
+                }
+            }
 
 
             HostingEnvironment = env;
