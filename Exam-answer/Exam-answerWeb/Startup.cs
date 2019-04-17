@@ -123,54 +123,53 @@ namespace Exam_answerWeb
 
             List<string> duplicates = new List<string>();
 
-            for (int i = 0; i < salesForceQuestions.Count - 1; i++)
-            {
-                //for (int j = i + 1; j < salesForceQuestions.Count; j++)
-                //{
-                //    var s = salesForceQuestions[i].Content;
-                //    var sNumber = salesForceQuestions[i].Number;
+            //for (int i = 0; i < salesForceQuestions.Count - 1; i++)
+            //{
+            //    for (int j = i + 1; j < salesForceQuestions.Count; j++)
+            //    {
+            //        var s = salesForceQuestions[i].Content;
+            //        var sNumber = salesForceQuestions[i].Number;
 
-                //    var t = salesForceQuestions[j].Content;
-                //    var tNumber = salesForceQuestions[j].Number;
+            //        var t = salesForceQuestions[j].Content;
+            //        var tNumber = salesForceQuestions[j].Number;
 
-                //    var distance = LevenshteinDistance.Compute(s, t);
-                //    var similarity = LevenshteinDistance.CalculateSimilarity(s, t);
-                //    if (similarity > 0.5)
-                //    {
+            //        var similarity = LevenshteinDistance.CalculateSimilarity(s, t);
+            //        if (similarity > 0.5)
+            //        {
 
-                //    }
-                //}
+            //        }
+            //    }
 
-                foreach (var nf in newFiles)
-                {
-                    string nfContent = File.ReadAllText(nf);
+            //    foreach (var nf in newFiles)
+            //    {
+            //        string nfContent = File.ReadAllText(nf);
 
-                    nfContent = nfContent.Replace(" O ", string.Empty);
-                    nfContent = nfContent.Replace("\r\n", " ");
+            //        nfContent = nfContent.Replace(" O ", string.Empty);
+            //        nfContent = nfContent.Replace("\r\n", " ");
 
-                    RegexOptions options = RegexOptions.None;
-                    Regex regex = new Regex("[ ]{2,}", options);
-                    nfContent = regex.Replace(nfContent, " ");
+            //        RegexOptions options = RegexOptions.None;
+            //        Regex regex = new Regex("[ ]{2,}", options);
+            //        nfContent = regex.Replace(nfContent, " ");
 
-                    nfContent = nfContent.Replace("A.", "");
-                    nfContent = nfContent.Replace("B.", "");
-                    nfContent = nfContent.Replace("C.", "");
-                    nfContent = nfContent.Replace("D.", "");
+            //        nfContent = nfContent.Replace("A.", "");
+            //        nfContent = nfContent.Replace("B.", "");
+            //        nfContent = nfContent.Replace("C.", "");
+            //        nfContent = nfContent.Replace("D.", "");
 
-                    nfContent = nfContent.Trim();
+            //        nfContent = nfContent.Trim();
 
-                    var s = salesForceQuestions[i].Content;
-                    var sNumber = salesForceQuestions[i].Number;
+            //        var s = salesForceQuestions[i].Content;
+            //        var sNumber = salesForceQuestions[i].Number;
 
-                    //var distance = LevenshteinDistance.Compute(s, t);
-                    var similarity = LevenshteinDistance.CalculateSimilarity(s, nfContent);
-                    if (similarity > 0.5)
-                    {
-                        duplicates.Add(new FileInfo(nf).Name);
-                    }
-                }
-            }
-            duplicates = duplicates.OrderBy(d => int.Parse(d.Replace(".txt", string.Empty))).ToList();
+            //        //var distance = LevenshteinDistance.Compute(s, t);
+            //        var similarity = LevenshteinDistance.CalculateSimilarity(s, nfContent);
+            //        if (similarity > 0.5)
+            //        {
+            //            duplicates.Add(new FileInfo(nf).Name);
+            //        }
+            //    }
+            //}
+            //duplicates = duplicates.OrderBy(d => int.Parse(d.Replace(".txt", string.Empty))).ToList();
 
 
             HostingEnvironment = env;
