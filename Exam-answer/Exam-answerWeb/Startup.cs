@@ -170,6 +170,7 @@ namespace Exam_answerWeb
                     }
                 }
             }
+            duplicates = duplicates.OrderBy(d => int.Parse(d.Replace(".txt", string.Empty))).ToList();
 
 
             HostingEnvironment = env;

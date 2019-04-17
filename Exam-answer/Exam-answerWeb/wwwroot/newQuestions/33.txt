@@ -1,0 +1,14 @@
+A Sales Cloud consultant is working on an implementation that has multi-currency, multi-language, and region-
+specific sales processes and workflows.
+
+Which two actions are essential for optimizing user adoption?
+
+Choose 2 answers
+
+A. C] Developing only a standardized, global training curriculum for all users
+
+B. LJ Communicating the training plan well in advance of training start date
+
+c. CJ Customizing the training curriculum for each specific region
+
+D. LJ Employing realistic training data in the corporate standard currency

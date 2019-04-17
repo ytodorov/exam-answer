@@ -1,0 +1,16 @@
+Channel sales representatives at Northern Trail Outfitters (NTO) need to push pre-qualified leads to their partners.
+
+Partners need the ability to access and update the leads assigned to them. To meet this requirement, NTO plans to
+
+implement lead management functionality.
+
+Which solution should a consultant recommend?
+
+A. © Create a task for a partner when a new lead is created and assign the task to the partner in the Partner
+Community.
+
+B. © Create a customized site where partners can self-register and access their leads.
+
+C. O Configure a separate lead record type and page layout for the Partner Community.
+
+D. © Add the leads tab to the Partner Community and configure partner profiles to access leads.

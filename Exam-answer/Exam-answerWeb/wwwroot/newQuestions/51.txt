@@ -1,0 +1,11 @@
+Northern Trail Outfitters has two sales divisions;
+e An individual sales division, and
+e A business sales division.
+The sales representatives for each division have their own user profiles and person accounts. The business sales
+division sales representatives cannot create person accounts and they should only be able to set up business accounts.
+How can these requirements be met?
+A. © Remove person account record types from the business sales division's sales representative user profile.
+B. O Check the “disable person accounts” permission on the business sales division's sales representative user profile.
+C. © Use field-level security to hide the “Is Person Account” checkbox from the business sales division's sales
+representative user profile.
+D. O Use Divisions to hide person accounts from the business sales division's sales representative user profile.

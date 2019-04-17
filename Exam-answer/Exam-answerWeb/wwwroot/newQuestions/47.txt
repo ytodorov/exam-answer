@@ -1,0 +1,14 @@
+A consultant wants to confirm requirements are collected during the project planning stage.
+Which three customer information data points should be requested?
+
+Choose 3 answers
+
+A. LJ List of stakeholders with roles and titles
+
+B. LI Key reports from the current system
+
+Cc. O List of required objects and fields
+
+D. LJ Company financial information
+
+E. LJ Organizational chart with titles

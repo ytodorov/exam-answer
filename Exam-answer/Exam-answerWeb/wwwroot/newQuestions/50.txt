@@ -1,0 +1,19 @@
+Northern Trail Outfitters’ sales representatives have to be certified to sell items in its Professional catalog.
+
+Which two ways should Salesforce be set up to prevent those who are NOT certified from adding these items to
+
+opportunities?
+
+Choose 2 answers
+
+A. C Utilize a validation rule on products marked as requiring certification to prevent them from being added to an
+opportunity.
+
+B. CJ Utilize a validation rule on opportunity products to prevent them from adding products marked as requiring
+certification if they are NOT certified.
+
+c. UO Utilize a criteria-based sharing rule on products marked as requiring certification to only share the products to
+users who are certified.
+
+D. LJ Utilize a separate price book for the products requiring certification and only share the price book to users who
+are certified.

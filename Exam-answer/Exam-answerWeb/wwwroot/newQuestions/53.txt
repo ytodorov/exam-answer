@@ -1,0 +1,12 @@
+A sales manager at Northern Trail Outfitters (NTO) needs to give the another manager access to an account as well as
+its four child accounts. NTO has account hierarchies with a private sharing model.
+
+How should the sales manager enable access?
+
+A. O Add the user to a public group for that account and share all child accounts to this group.
+
+B. © Add the user manually to the parent account team and each of the child account teams.
+
+C. © Add the user to the account team on the parent account; the child accounts will inherit access.
+
+D. © Add the user to each child account team; visibility will then roll up to the parent account.

@@ -1,0 +1,12 @@
+Northern Trail Outfitters is migrating from its legacy campaign and email management system to Salesforce and
+wants to ensure that its email templates are retained.
+
+What should be recommended for a successful migration?
+
+A. © Enable Email to Salesforce before sending email templates to Salesforce.
+
+B. © Create an email template change set or use the Lightning Platform.
+
+C. O Enable Email-to-Case and use the Import Wizard.
+
+D. O Manually recreate the email and mail merge templates in Salesforce.

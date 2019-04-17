@@ -1,0 +1,12 @@
+Northern Trail Outfitters uses Products in Salesforce and has a private security model.
+
+What should a consultant recommend to allow product management employees the ability track the performance of a
+newly launched products if they do NOT have access to all opportunities?
+
+A. © Create a criteria-based sharing rule to add the product management team to relevant opportunities.
+
+B. © Create a trigger to add the product management team to the sales team of relevant opportunities.
+
+C. O Create a trigger to set the product manager as owner for opportunities on the new product.
+
+D. © Create a new product and add it to the price book with the product manager as an owner.

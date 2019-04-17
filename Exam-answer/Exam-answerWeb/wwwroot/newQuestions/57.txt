@@ -1,0 +1,14 @@
+Northern Trail Outfitters (NTO) has a multi-step selling process; every sales stage coincides with a step in this process.
+The first step is preliminary qualification in which opportunities should not contribute to NTO's forecast.
+
+Which two methods should be used to ensure these conditions are met?
+
+Choose 2 answers
+
+A. J Instruct sales users to enter $0 for the opportunity amount.
+
+B. LJ Override the forecast to be $0 for first stage opportunities.
+
+Cc. LJ Assign 0% probability to the first sales stage.
+
+D. LJ Configure the first stage with the omitted forecast category.

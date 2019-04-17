@@ -1,0 +1,11 @@
+Northern Trail Outfitters has multiple currency enabled.
+
+Which two statements are true about opportunities in this situation?
+Choose 2 answers
+
+A. CJ User's default currency overrides the specified opportunity currency.
+B. LJ The selected currency is used for the Amount field.
+
+Cc. UO The selected currency is used for the Amount (Converted) field.
+
+D. LJ Currency must be specified for the opportunity.

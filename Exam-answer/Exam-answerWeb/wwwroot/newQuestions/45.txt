@@ -1,0 +1,12 @@
+Northern Trail Outfitters (NTO) attributes a decline in profit to an excessive number of discounts on opportunities.
+Which two actions can NTO request to monitor and control opportunity discounting?
+
+Choose 2 answers
+
+A. UJ Ensure that sales management approves discount requests for each opportunity.
+
+B. LJ Run a report on opportunities showing list price and discounted price.
+
+Cc. C1 Create a custom roll-up summary field to calculate the average product discount for each customer.
+
+D. LF Limit the number of discounted products that can be added to an opportunity.

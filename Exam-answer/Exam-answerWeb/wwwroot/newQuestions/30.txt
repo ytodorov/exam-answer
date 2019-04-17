@@ -1,0 +1,13 @@
+Northern Trail Outfitters (NTO) needs to quickly look up contacts, accounts, and opportunities and easily log calls. The
+team wants access to customer information even without an Internet connection because of limited coverage in certain
+geographic areas.
+
+Which mobile solution should NTO use?
+
+A. O SalesforceA App
+
+B. © Salesforce Touch App
+
+C. © Custom hybrid App
+
+D. O Salesforce Mobile App

@@ -1,0 +1,12 @@
+Northern Trail Outfitters (NTO) wants to boost the importance of its sales stages and their role in NTO's sales
+methodology; they also want to enhance the precision of their sales forecast.
+
+How should the steps in the sales process be mapped so NTO's requirements are met?
+
+A. © Map sales probability values to forecast categories; assign sales stages accurate percentages.
+
+B. © Map forecast probability to opportunity probability; assign appropriate sales stage.
+
+C. © Map appropriate sales stage to opportunity stage; assign accurate forecast probability.
+
+D. O Map opportunity stages to forecast categories; assign accurate probability to each stage.

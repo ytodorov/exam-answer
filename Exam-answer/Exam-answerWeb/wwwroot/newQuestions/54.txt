@@ -1,0 +1,12 @@
+Northern Trail Outfitters wants to link contacts with more than one account.
+
+What solution should be recommended if a contact is an employee in one account, and on the boards of three
+additional accounts?
+
+A. O Associate the contact to other accounts using a custom lookup field.
+
+B. © Add the contact to the partners related list on the second account.
+
+C. © Clone the contact record and add it to the second account.
+
+D. O Enable contacts to multiple accounts feature.

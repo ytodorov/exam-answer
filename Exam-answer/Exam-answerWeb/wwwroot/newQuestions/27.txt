@@ -1,0 +1,14 @@
+Sales directors at Northern Trail Outfitters (NTO) cannot see or update their teams’ forecasts. Sales representatives are constantly
+asked to provide the directors with their updated forecast information.
+
+Which two methods should NTO use to correct how forecasts are managed?
+
+Choose 2 answers
+
+A. LJ Configure weekly customized forecast reports and dashboards to be emailed to sales management.
+
+B. LJ Enable override forecast permission in the Manager’s profile.
+
+Cc. C1 Create forecast Chatter groups where sales representatives can post and share their forecasts.
+
+D. LJ Create a forecast hierarchy and assign managers to the forecast manager role.

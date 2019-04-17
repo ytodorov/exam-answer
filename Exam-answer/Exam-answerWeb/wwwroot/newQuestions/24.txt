@@ -1,0 +1,12 @@
+Northern Trail Outfitters (NTO) wants the ability to share documents related to an opportunity, such as contracts and
+proposals, with the field sales team. NTO currently has a private sharing model.
+
+How should the documents be shared efficiently and securely?
+
+A. © Uploaded to a library that is shared with the field sales organization
+
+B. © Emailed to the sales team on the opportunity record
+
+C. © Uploaded to Salesforce Files and shared with the field sales organization
+
+D. O Uploaded to Salesforce Files from the opportunity record

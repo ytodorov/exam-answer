@@ -1,0 +1,14 @@
+Which three actions should a consultant recommend to provide alignment between a new formal sales methodology
+and Salesforce?
+
+Choose 3 answers
+
+A. L] Override Salesforce user interface with the sales methodology user interface.
+
+B. LJ Consider available sales methodology AppExchange applications.
+
+c. CJ Develop a data integration between Salesforce and the sales methodology database.
+
+D. LJ Configure Salesforce standard and custom objects to support the sales methodology.
+
+E. LJ Embed Lightning components within Salesforce to support the sales methodology.

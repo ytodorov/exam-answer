@@ -1,0 +1,14 @@
+A sales representative at Northern Trail Outfitters needs to securely send confidential product roadmap information to
+a premier customer.
+
+Which two steps should be taken to send this information using content delivery?
+
+Choose 2 answers
+
+A. UJ Require the recipient to log into Salesforce to access the content.
+
+B. LJ Require the customer to enter a security token to download the content.
+
+C. C1 Require the customer to enter a password to view the content.
+
+D. LJ Remove access to the content after a specified date.

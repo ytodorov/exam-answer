@@ -1,0 +1,12 @@
+A Northern Trail Outfitters (NTO) customer orders four lanterns. The order is activated in Salesforce, and the products
+are successfully shipped to the customer. One week later, the customer returns one lantern.
+
+How should NTO record the return in Salesforce?
+
+A. © Create a new Order Product with quantity set to -1.
+
+B. O Create a reduction Order under the activated Order.
+
+C. © Change the quantity value on the Order Product to 3.
+
+D. O Create a custom field on the Order Product object.

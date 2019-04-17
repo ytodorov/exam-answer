@@ -1,0 +1,14 @@
+Northern Trail Outfitters wants to implement a Partner Community to help manage an extensive distributor and
+reseller partner community. The consultant is setting up partner users.
+
+What are two considerations for this step in the process?
+
+Choose 2 answers
+
+A. CJ Partner users are associated with the same set of profiles as internal users.
+
+B. LJ Partner users can own account and opportunity records in Salesforce.
+
+c. LJ Partner users CANNOT receive emails generated through workflow actions.
+
+D. LO The sharing model should be re-evaluated when the Partner Community is enabled.

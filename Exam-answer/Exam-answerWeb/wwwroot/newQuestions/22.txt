@@ -1,0 +1,13 @@
+How should a consultant configure Sales Cloud if a customer requires two unique sets of sales stages for opportunities
+
+based on the opportunity amount being greater than or less than $100,000 USD?
+
+A. © Create two sales processes and a workflow rule triggered by opportunity amount to assign a sales process.
+
+B. © Create two sales processes, two opportunity record types, and a workflow rule triggered by sales stage.
+
+C. O Create two sales processes, two opportunity record types, and workflow rules triggered by the opportunity
+amount.
+
+D. © Create one sales process and a validation rule that evaluates opportunity amount to determine the appropriate
+sales stage.

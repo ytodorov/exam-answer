@@ -1,0 +1,14 @@
+A salesperson at Northern Trail Outfitters (NTO) cannot view a contact's information from social profiles.
+
+NTO has Social Accounts and Contacts turned on in its account.
+
+Why is the salesperson unable to access the information?
+
+A. © The fields configured by the administrator on the contact page layout are missing.
+
+B. © The link to the Facebook profile is NOT configured with the administrator password to access detailed
+information.
+
+C. O The information shown is based on the sales representative's social connection with the contact.
+
+D. © The administrator must install and APP Exchange package to access public profile information for its users.

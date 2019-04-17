@@ -1,0 +1,15 @@
+Northern Trail Outfitters has organization-wide defaults set to private. Sales representatives own the accounts and
+want to collaborate with relevant people from other departments (e.g., marketing and finance). Collaborating team
+members must be able to access and report on relevant data.
+
+Which two solutions should be recommended?
+
+Choose 2 answers
+
+A. LJ Use Chatter to share records with relevant people.
+
+B. LJ Use manual sharing on account to share specific records.
+
+Cc. LJ Use account team to share records to relevant people.
+
+D. LJ Use opportunity team to share records with relevant people.

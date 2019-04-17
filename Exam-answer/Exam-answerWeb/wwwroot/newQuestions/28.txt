@@ -1,0 +1,12 @@
+Management at Northern Trail Outfitters wants to make sure their sales representatives are recording important email
+communication with customers while they are away from their offices. The sales representatives use various email
+applications.
+
+Which solution should be recommended?
+
+A. © Download and install a Salesforce universal connector for their smartphones and computers.
+
+B. © Copy and paste emails manually to the customer record in Salesforce from their smartphones and computers.
+C. © Download and install the Salesforce for Outlook connector on their smartphones and computers.
+
+D. O Forward emails using their Email-to-Salesforce email address from their smartphones and computers.

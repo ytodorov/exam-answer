@@ -1,0 +1,11 @@
+Northern Trail Outfitters uses a third-party application for credit ratings. An external web-based credit application has
+to be launched from a customer's account record in Salesforce. The application uses a credit ID on the account object.
+What should be created to meet this requirement?
+
+A. O A formula field that uses the hyperlink function to launch the credit application and pass the credit ID
+
+B. © A custom button that calls an Apex trigger to launch the credit application and pass the credit ID
+
+Cc. © A custom credit ID field as an external ID on the account to launch the credit application and pass the credit ID
+
+D. O A workflow rule to launch the product fulfillment application and pass the credit ID

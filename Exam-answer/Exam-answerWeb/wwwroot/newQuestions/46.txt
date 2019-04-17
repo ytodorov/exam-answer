@@ -1,0 +1,15 @@
+Which method should be used to automate repeat opportunities when regular customers are classified as a repeat
+
+account type?
+
+A. © Develop an Apex trigger to set an opportunity revenue schedule that automatically sets up a new opportunity for
+repeat accounts when it reaches closed/won stage.
+
+B. © Develop an Apex trigger for repeat accounts that inserts a copy of an opportunity for the sales representative
+when it reaches closed/won stage.
+
+C. © Configure a workflow rule for repeat accounts that sends a reminder task to the sales representative to create a
+new opportunity when it reaches closed/won stage.
+
+D. © Configure a workflow rule for repeat accounts that inserts a copy of an opportunity for the sales representative
+when it reaches closed/won stage.

@@ -1,0 +1,13 @@
+Northern Trail Outfitters allows its sales representatives to negotiate up to a 10% discount for their opportunities.
+Discounts greater than 10% must be sent to their Regional Sales Manager (RSM) for approval. Discounts greater
+than 15% must also be sent to the Regional Vice President (RVP) for approval.
+
+Which approach would satisfy these requirements?
+
+A. © Configure an approval process for the RSM and a workflow rule for the RVP.
+
+B. © Create two approval processes, one for the RSM and one for the RVP.
+
+C. © Create a two-step approval process for the RSM and RVP as approvers.
+
+D. © Configure a workflow approval task and email to notify the RSM and RVP.

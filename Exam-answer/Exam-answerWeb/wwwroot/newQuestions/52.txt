@@ -1,0 +1,11 @@
+Northern Trail Outfitters (NTO) wants to utilize opportunities to track and report customer subscriptions to its online
+magazine. Payments can be made using the following methods:
+e In full (all at one time)
+¢ Weekly
+e Monthly
+e Quarterly.
+How should this solution be implemented?
+A. © Use contracts with a lookup to opportunity object.
+B. © Enable schedules on opportunity object.
+C. O Enable schedules on product object.
+D. © Use assets with a lookup to opportunity object.

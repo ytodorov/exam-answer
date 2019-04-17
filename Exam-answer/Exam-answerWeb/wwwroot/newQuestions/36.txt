@@ -1,0 +1,12 @@
+Northern Trail Outfitters (NTO) wants controlled access for its users allowing them to see all accounts, but only make
+changes to the accounts they own and the contacts within those accounts.
+
+How should NTO set its default access for accounts and contacts?
+
+A. © Set accounts to private and contacts to controlled by parent.
+
+B. © Set accounts to public read-only and contacts to controlled by parent.
+
+C. © Set accounts to public read-only and contacts to private.
+
+D. © Set accounts to private and contacts to private.

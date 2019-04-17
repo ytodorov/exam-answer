@@ -1,0 +1,20 @@
+Northern Trail Outfitters (NTO) has configured a private sharing model for the following:
+e Accounts
+¢ Opportunities
+
+As part of NTO's sales strategy, each sales representative collaborates with the same set of individuals for each
+
+opportunity.
+
+How should sales representatives be given appropriate access to an opportunity?
+
+A. © Enable opportunity team selling and have each sales representative configure his or her default opportunity
+team.
+
+B. © Create a public group for each team and have the sales representatives manually share the opportunity with
+their respective group.
+
+C. © Enable Chatter and configure a customer Chatter group for the opportunity to allow collaboration on ideas.
+
+D. © Create a trigger for each sales representative that would automatically share the opportunity with his or her
+default opportunity team.

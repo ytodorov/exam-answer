@@ -1,0 +1,12 @@
+A consultant needs to migrate data in Sales Cloud and is considering using Data Loader.
+What are two capabilities of this migration tool?
+
+Choose 2 answers
+
+A. CJ Extract organization and configuration data
+
+B. LJ Prevent importing duplicate records
+
+c. LJ Run one-time or scheduled data loads
+
+D. LJ Export field history data

@@ -1,0 +1,9 @@
+Northern Trail Outfitters has a lead qualification team that does the following:
+¢ Qualifies opportunities
+e Converts leads into opportunities
+During lead conversion, the new opportunity must be assigned to the account owner.
+What should be created in order to meet this requirement?
+A. © An assignment rule on the account
+B. O A trigger on the opportunity
+C. O A workflow on the opportunity
+D. O An assignment rule on the opportunity
