@@ -1,0 +1,53 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                A sales manager at Northern Trail Outfitters (NTO) needs to give the another manager access to an account as well as its four child accounts.                
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                NTO has account hierarchies with a private sharing model.              
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                How should the sales manager enable access?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add the user to a public group for that account and share all child accounts to this group.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add the user manually to the parent account team and each of the child account teams.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add the user to the account team on the parent account; the child accounts will inherit access.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add the user to each child account team; visibility will then roll up to the parent account.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+</ul>

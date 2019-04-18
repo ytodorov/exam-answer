@@ -329,7 +329,17 @@
     <Content Remove="wwwroot\salesforce\crt-251\question86.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question87.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question88.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question89.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\question9.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question90.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question91.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question92.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question93.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question94.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question95.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question96.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question97.cshtml" />
+    <Content Remove="wwwroot\salesforce\crt-251\question98.cshtml" />
     <Content Remove="wwwroot\salesforce\crt-251\_radio.cshtml" />
   </ItemGroup>
 
@@ -950,7 +960,37 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\salesforce\crt-251\question89.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\salesforce\crt-251\question9.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question90.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question91.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question92.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question93.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question94.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question95.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question96.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question97.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\salesforce\crt-251\question98.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\salesforce\crt-251\_radio.cshtml">

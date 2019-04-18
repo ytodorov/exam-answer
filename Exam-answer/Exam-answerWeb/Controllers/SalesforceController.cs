@@ -53,7 +53,7 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["prev"] = intId - 1;
                 ViewData["next"] = intId + 1;
                 ViewData["current"] = intId;
-                ViewData["max"] = 88;
+                ViewData["max"] = 98;
             }
             QuestionViewModel questionViewModel = new QuestionViewModel()
             {
