@@ -1,0 +1,45 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                Which method should be used to automate repeat opportunities when regular customers are classified as a repeat account type?
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Develop an Apex trigger to set an opportunity revenue schedule that automatically sets up a new opportunity for repeat accounts when it reaches closed/won stage.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Develop an Apex trigger for repeat accounts that inserts a copy of an opportunity for the sales representative when it reaches closed/won stage.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Configure a workflow rule for repeat accounts that sends a reminder task to the sales representative to create a new opportunity when it reaches closed/won stage.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Configure a workflow rule for repeat accounts that inserts a copy of an opportunity for the sales representative when it reaches closed/won stage.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+</ul>

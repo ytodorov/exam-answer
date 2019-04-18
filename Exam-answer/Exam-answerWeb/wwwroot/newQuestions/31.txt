@@ -1,13 +1,12 @@
-Northern Trail Outfitters (NTO) needs to quickly look up contacts, accounts, and opportunities and easily log calls. The
-team wants access to customer information even without an Internet connection because of limited coverage in certain
-geographic areas.
+Northern Trail Outfitters (NTO) plans to integrate with Salesforce and track product shipments from each customer.
+The tracking information is currently available in a back-end system.
 
-Which mobile solution should NTO use?
+Which set of objects are important for this integration?
 
-A. O SalesforceA App
+A. © Opportunity, opportunity product, custom object-shipment status
 
-B. © Salesforce Touch App
+B. © Opportunity, opportunity product, campaign, custom object-shipment status
 
-C. © Custom hybrid App
+C. © Lead, opportunity, product, custom object-shipment status
 
-D. O Salesforce Mobile App
+D. © Lead, account, opportunity product, custom object-shipment status

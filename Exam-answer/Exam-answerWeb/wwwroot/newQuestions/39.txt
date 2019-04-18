@@ -1,4 +1,4 @@
-Northern Trail Outfitters’ European and Asia Pacific sales teams have different business requirements on how to
+﻿Northern Trail Outfitters’ European and Asia Pacific sales teams have different business requirements on how to
 
 create new opportunities. The teams must configure a set of geographically-specific fields relevant only to their team as
 
@@ -8,8 +8,7 @@ region-specific fields.
 
 What solution should be recommended?
 
-A. © Utilize Visualforce to build an opportunity page that dynamically checks the user's region to determine which fields
-to display.
+A. © Utilize Visualforce to build an opportunity page that dynamically checks the user's region to determine which fields to display.
 
 B. © Build a custom object with private sharing to capture the additional fields as a separate record.
 
