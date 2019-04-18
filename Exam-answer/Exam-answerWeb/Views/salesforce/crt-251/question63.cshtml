@@ -4,16 +4,16 @@
         <div>
             <p>
                 @Html.Raw(Model.H1OpenTag)
-                A consultant is recommending Salesforce Console for Sales to Northern Trail Outfitters to improve sales productivity in inside sales.
+                Northern Trail Outfitters has its sales support team enter new prospecting leads for sales representatives.
                 @Html.Raw(Model.H1CloseTag)
             </p>
             <p>
                 @Html.Raw(Model.H2OpenTag)
-                Which two use cases support this recommendation?
+                Which three actions should be implemented to enforce data quality and accuracy once the new lead has been qualified and the opportunity has been created to track the deal?
                 @Html.Raw(Model.H2CloseTag)
             </p>
             <p>
-                Choose 2 answers
+                Choose 3 answers
             </p>
         </div>
     </li>
@@ -25,25 +25,31 @@
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Need to prioritize search results for contacts and opportunities
+                            Enable the lead conversion permission.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Need to add notes quickly while talking to the client
+                            Enable validation rules on the lead.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Need to chat with customers in real time with Chatter
+                            Map custom lead fields to corresponding custom opportunity fields.
                         </label>
                     </li>
                     <li>
                         <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
                         <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                            Need to view the caller ID on screen and quickly make calls with one click
+                            Enable validation rules on the opportunity.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Create an Apex trigger to perform data quality checks.
                         </label>
                     </li>
                 </ul>
