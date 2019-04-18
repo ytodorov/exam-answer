@@ -121,13 +121,13 @@ namespace Exam_AnswerWeb.Controllers
 
                 string[] sentences = description.Split('.');
 
-                StringBuilder descriptionLessThan320 = new StringBuilder();
+                StringBuilder descriptionLessThan250 = new StringBuilder();
 
                 foreach (var sent in sentences)
                 {
-                    if (descriptionLessThan320.Length + sent.Length < 320)
+                    if (descriptionLessThan250.Length + sent.Length < 250)
                     {
-                        descriptionLessThan320.Append(sent);
+                        descriptionLessThan250.Append(sent);
                     }
                     else
                     {
@@ -135,7 +135,7 @@ namespace Exam_AnswerWeb.Controllers
                     }
                 }
 
-                description = descriptionLessThan320.ToString();
+                description = descriptionLessThan250.ToString();
 
                 ViewData["description"] = description;
 
