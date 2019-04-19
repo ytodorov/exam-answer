@@ -40,7 +40,9 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
-            ViewData["title"] = $"Exam AZ-100: Question {id}";
+            string title = $"Exam AZ-100: Question {id}";
+
+            ViewData["title"] = title;
             ViewData["id"] = id;
 
             ViewData["exam"] = "AZ-100";
@@ -129,9 +131,31 @@ namespace Exam_AnswerWeb.Controllers
                     }
                 }
 
-                description = descriptionLessThan250.ToString();
+                //description = descriptionLessThan250.ToString();
 
-                ViewData["description"] = description;
+                ViewData["description"] = descriptionLessThan250;
+
+                StringBuilder microdataJson = new StringBuilder();
+
+                DateTime dateCreated = new DateTime(2019, 2, 17);
+                string dateCreatedString = dateCreated.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
+
+                ViewData["hasMicrodata"] = true;
+
+                microdataJson.Append(
+$@"
+<script type=""application/ld+json"">
+{{  
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""Question"",
+  ""name"": ""{title}"",
+  ""text"": ""{description}"",
+  ""dateCreated"": ""{dateCreatedString}""
+}}
+ </script>");
+
+                string microdata = microdataJson.ToString();
+                ViewData["microdata"] = microdata;
 
 
             }

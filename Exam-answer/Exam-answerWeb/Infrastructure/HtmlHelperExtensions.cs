@@ -47,5 +47,16 @@ namespace Exam_answerWeb.Infrastructure
             helper.ViewContext.HttpContext.Items["questionId"] = currentId;
             return currentId?.ToString();
         }
+
+        public static string GetMicrodata(this IHtmlHelper helper)
+        {
+            string microdata = string.Empty;
+            if (helper.ViewContext.ViewData["hasMicrodata"] != null)
+            {
+                microdata = helper.ViewContext.ViewData["microdata"]?.ToString();
+            }
+            return microdata;
+
+        }
     }
 }

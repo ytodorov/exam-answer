@@ -1,0 +1,24 @@
+{
+  "@context": "https:\/\/schema.org",
+  "@type": "Article",
+  "name": "Justin Timberlake",
+  "url": "https:\/\/en.wikipedia.org\/wiki\/Justin_Timberlake",
+  "sameAs": "http:\/\/www.wikidata.org\/entity\/Q43432",
+  "mainEntity": "http:\/\/www.wikidata.org\/entity\/Q43432",
+  "author": {
+    "@type": "Organization",
+    "name": "Contributors to Wikimedia projects"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Wikimedia Foundation, Inc.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"
+    }
+  },
+  "datePublished": "2002-08-08T11:22:05Z",
+  "dateModified": "2019-04-16T00:55:41Z",
+  "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ed\/Justin_Timberlake_by_Gage_Skidmore_2.jpg",
+  "headline": "American singer, record producer, and actor from Tennessee"
+}
