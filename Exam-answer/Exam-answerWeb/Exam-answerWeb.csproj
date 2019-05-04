@@ -1373,4 +1373,9 @@
     <Folder Include="wwwroot\duplicates\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
 </Project>
