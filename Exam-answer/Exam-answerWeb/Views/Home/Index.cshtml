@@ -1,6 +1,6 @@
 ﻿@(Html.Kendo().AutoComplete()
                 .Name("questions")
-                .DataTextField(nameof(SearchQuestionViewModel.TextInUI))
+                .DataTextField(nameof(SearchQuestionOldViewModel.TextInUI))
                 .MinLength(2)
                 .HtmlAttributes(new { style = "width:100%" })
                 .Placeholder("Instantly search any question here...")
@@ -9,7 +9,7 @@
                 .DataSource(source => source
                     .Custom()
                     
-                    .Group(g => g.Add(nameof(SearchQuestionViewModel.ExamName), typeof(string)))
+                    .Group(g => g.Add(nameof(SearchQuestionOldViewModel.ExamName), typeof(string)))
                     .Transport(transport => transport
                       .Read(read =>
                       {

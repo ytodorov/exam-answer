@@ -8,6 +8,6 @@ namespace Exam_answerWeb.Infrastructure
 {
     public class StaticContent
     {
-        public static List<SearchQuestionViewModel> AllQuestions = new List<SearchQuestionViewModel>();
+        public static List<SearchQuestionOldViewModel> AllQuestions = new List<SearchQuestionOldViewModel>();
     }
 }

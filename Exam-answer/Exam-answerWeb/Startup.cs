@@ -97,7 +97,7 @@ namespace Exam_answerWeb
 
                     FileInfo fi = new FileInfo(filePath);
 
-                    SearchQuestionViewModel searchQuestionViewModel = new SearchQuestionViewModel()
+                    SearchQuestionOldViewModel searchQuestionOldViewModel = new SearchQuestionOldViewModel()
                     {
                         FilePath = filePath,
                         Content = fileContent,
@@ -107,15 +107,15 @@ namespace Exam_answerWeb
                         QuestionName = fi.Name.Replace(fi.Extension, string.Empty),                        
                     };
 
-                    searchQuestionViewModel.Number = int.Parse(searchQuestionViewModel.QuestionName
+                    searchQuestionOldViewModel.Number = int.Parse(searchQuestionOldViewModel.QuestionName
                         .ToLowerInvariant().Replace("question", string.Empty));
 
                     RegexOptions options = RegexOptions.None;
                     Regex regex = new Regex("[ ]{2,}", options);
-                    searchQuestionViewModel.Content = regex.Replace(searchQuestionViewModel.Content, " ");
-                    searchQuestionViewModel.Content = searchQuestionViewModel.Content.Trim();
+                    searchQuestionOldViewModel.Content = regex.Replace(searchQuestionOldViewModel.Content, " ");
+                    searchQuestionOldViewModel.Content = searchQuestionOldViewModel.Content.Trim();
 
-                    StaticContent.AllQuestions.Add(searchQuestionViewModel);
+                    StaticContent.AllQuestions.Add(searchQuestionOldViewModel);
 
                 }
             }

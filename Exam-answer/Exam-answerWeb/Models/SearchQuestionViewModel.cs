@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Exam_answerWeb.Models
 {
-    public class SearchQuestionViewModel
+    public class SearchQuestionOldViewModel
     {
         public string Title { get; set; }
 

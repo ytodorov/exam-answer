@@ -77,7 +77,7 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["current"] = intId;
                 ViewData["max"] = 98;
             }
-            QuestionViewModel questionViewModel = new QuestionViewModel()
+            QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
             {
                 Id = id,
                 H1OpenTag = "<h1>",
