@@ -1,4 +1,5 @@
-﻿using Exam_answerWeb.Infrastructure;
+﻿using DAL.Entities;
+using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
@@ -55,6 +57,8 @@ namespace Exam_answerWeb
             services
                 .AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+            services.AddDbContext<ExamAnswerContext>(options => options.UseInMemoryDatabase(databaseName: "ExamAnswerContext"));
 
             services
                 .AddDistributedMemoryCache()

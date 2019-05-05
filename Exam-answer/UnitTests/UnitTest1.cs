@@ -9,7 +9,7 @@ namespace UnitTests
         [Fact]
         public void Test1()
         {
-            var res = LevenshteinDistance.Compute(@"
+            var res = LevenshteinDistance.CalculateSimilarity(@"
  Universal Containers’ current solution for managing its forecasts is cumbersome.
 
 The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. ",

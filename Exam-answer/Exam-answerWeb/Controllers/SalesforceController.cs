@@ -5,25 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using DAL.Entities;
+using Exam_answerWeb.Controllers;
 using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Exam_AnswerWeb.Controllers
 {
     [Route("salesforce/crt-251")]
-    public class SalesforceController : Controller
+    public class SalesforceController : BaseController
     {
-        private const string folderName = "crt-251";
-
-        private readonly IHostingEnvironment env;
-
-        public SalesforceController(IHostingEnvironment env)
+        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env) :
+            base(examAnswerContext, env)
         {
-            this.env = env;
+
         }
+
+        private const string folderName = "crt-251";
 
         [Route("")]
         public IActionResult Index()
@@ -40,6 +43,23 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
+            ExamEntity examEntity = examAnswerContext.Exams
+                .Include(e => e.Questions)
+                .ThenInclude(q => q.Contents)
+
+                .Include(e => e.Questions)
+                .ThenInclude(q => q.Answers)
+
+                .Include(e => e.Questions)
+                .ThenInclude(q => q.Explanations)
+
+                .Include(e => e.Questions)
+                .ThenInclude(q => q.References)
+
+                .AsNoTracking()
+
+                .FirstOrDefault();
+
             string title = $"Exam CRT-251: Question {id}";
             ViewData["title"] = title;
 

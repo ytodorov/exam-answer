@@ -9,5 +9,9 @@ namespace DAL.Entities
         public string Text { get; set; }
 
         public bool? IsCorrect { get; set; }
+
+        public QuestionEntity Question { get; set; }
+
+        public int? QuestionId { get; set; }
     }
 }

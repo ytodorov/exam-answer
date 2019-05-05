@@ -15,7 +15,10 @@ namespace Exam_answerWeb.Infrastructure
             using (var context = new ExamAnswerContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ExamAnswerContext>>()))
             {
-                ExamEntity crt251 = new ExamEntity();
+                ExamEntity crt251 = new ExamEntity()
+                {
+                    Questions = new List<QuestionEntity>()
+                };
                 crt251.Questions.Add(new QuestionEntity()
                 {
                     Contents = new List<ContentEntity>()
@@ -55,6 +58,9 @@ namespace Exam_answerWeb.Infrastructure
                         },
                     }
                 });
+
+                context.Exams.Add(crt251);
+                context.SaveChanges();
             }
         }
     }

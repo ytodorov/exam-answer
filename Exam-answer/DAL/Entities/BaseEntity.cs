@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,6 +11,6 @@ namespace DAL.Entities
 
         public int? Order { get; set; }
 
-        public DateTime DateCreatedInMemory { get; set; } = DateTime.Now;
+        public long DateCreatedInMemory { get; set; } = StaticMethods.GetTicksNow();
     }
 }
