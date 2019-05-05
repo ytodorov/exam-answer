@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using AutoMapper;
+using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Builder;
@@ -52,6 +53,8 @@ namespace Exam_answerWeb
             {
                 options.EnableForHttps = true;
             });
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // Add MVC services to the services container.
             services

@@ -1,23 +1,31 @@
-﻿using System;
+﻿using DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Exam_answerWeb.Models
 {
-    public class QuestionOldViewModel
+    public class QuestionViewModel : SchemaOrgViewModel
     {
-        public string Id { get; set; }
+        public ExamViewModel Exam { get; set; }
 
-        public string Title { get; set; }
+        public int? ExamId { get; set; }
 
-        public string H1OpenTag { get; set; }
+        public QuestionType QuestionType { get; set; }
 
-        public string H1CloseTag { get; set; }
+        public List<ContentViewModel> Contents { get; set; }
 
-        public string H2OpenTag { get; set; }
+        public List<AnswerViewModel> Answers { get; set; }
 
-        public string H2CloseTag { get; set; }
+        public List<ExplanationViewModel> Explanations { get; set; }
 
+        public List<ReferenceViewModel> References { get; set; }
+
+        public int AnswerCountLd { get; set; }
+
+        public List<AnswerViewModel> AcceptedAnswerLd { get; set; }
+
+        public List<AnswerViewModel> SuggestedAnswerLd { get; set; }
     }
 }

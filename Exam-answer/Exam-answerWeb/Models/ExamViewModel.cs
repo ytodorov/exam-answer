@@ -13,6 +13,6 @@ namespace Exam_answerWeb.Models
 
         public string Provider { get; set; }
 
-        public List<QuestionOldViewModel> Questions { get; set; }
+        public List<QuestionViewModel> Questions { get; set; }
     }
 }

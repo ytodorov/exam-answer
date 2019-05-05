@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DAL.Entities
+namespace Exam_answerWeb.Models
 {
-    public class SchemaOrgEntity : BaseEntity
-    {     
+    public class SchemaOrgViewModel : BaseViewModel
+    {
         public int? UpvoteCountLd { get; set; }
 
         public int? DownvoteCountLd { get; set; }

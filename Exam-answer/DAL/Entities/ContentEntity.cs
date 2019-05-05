@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DAL.Entities
 {
-    public class ContentEntity : SchemaOrgTextEntity
+    public class ContentEntity : BaseEntity
     {
         public string Text { get; set; }
 

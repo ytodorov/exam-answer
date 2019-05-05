@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using AutoMapper;
 using DAL.Entities;
 using Exam_answerWeb.Controllers;
 using Exam_answerWeb.Infrastructure;
@@ -20,8 +21,8 @@ namespace Exam_AnswerWeb.Controllers
     [Route("salesforce/crt-251")]
     public class SalesforceController : BaseController
     {
-        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env) :
-            base(examAnswerContext, env)
+        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper) :
+            base(examAnswerContext, env, mapper)
         {
 
         }
@@ -60,6 +61,11 @@ namespace Exam_AnswerWeb.Controllers
 
                 .FirstOrDefault();
 
+            var examViewModel = mapper.Map<ExamViewModel>(examEntity);
+            var questionVM = examViewModel.Questions.FirstOrDefault();
+
+            
+
             string title = $"Exam CRT-251: Question {id}";
             ViewData["title"] = title;
 
@@ -77,6 +83,12 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["current"] = intId;
                 ViewData["max"] = 98;
             }
+
+            if (id == "1")
+            {
+                return View("Question", questionVM);
+            }
+
             QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
             {
                 Id = id,

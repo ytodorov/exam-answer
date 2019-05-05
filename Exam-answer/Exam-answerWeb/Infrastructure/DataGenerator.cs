@@ -21,6 +21,7 @@ namespace Exam_answerWeb.Infrastructure
                 };
                 crt251.Questions.Add(new QuestionEntity()
                 {
+                    QuestionType = QuestionType.CheckBox,
                     Contents = new List<ContentEntity>()
                     {
                         new ContentEntity()

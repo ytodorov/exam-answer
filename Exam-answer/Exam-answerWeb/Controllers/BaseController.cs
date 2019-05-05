@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using AutoMapper;
+using DAL.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,10 +14,13 @@ namespace Exam_answerWeb.Controllers
         protected ExamAnswerContext examAnswerContext;
         protected readonly IHostingEnvironment env;
 
-        public BaseController(ExamAnswerContext examAnswerContext, IHostingEnvironment env)
+        protected readonly IMapper mapper;
+
+        public BaseController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper)
         {
             this.examAnswerContext = examAnswerContext;
             this.env = env;
+            this.mapper = mapper;
         }
     }
 }
