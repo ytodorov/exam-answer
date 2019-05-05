@@ -84,9 +84,10 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["max"] = 98;
             }
 
-            if (id == "1")
+            if (intId <= examViewModel.Questions.Count)
             {
-                return View("Question", questionVM);
+                var theQuestion = examViewModel.Questions[intId - 1];
+                return View("Question", theQuestion);
             }
 
             QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
