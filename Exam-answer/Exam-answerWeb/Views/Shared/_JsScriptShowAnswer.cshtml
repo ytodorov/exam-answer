@@ -16,7 +16,6 @@
         $(".showAnswer").click(function showAnswerClick(ev) {
             var $this = $(this);
             var correctAnswers = $(this).parent().parent().parent().find(".correct");
-            debugger;
             var isGreen = correctAnswers.hasClass("green");
             if (!isGreen) {
                 correctAnswers.addClass("green");
