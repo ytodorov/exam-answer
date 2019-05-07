@@ -127,14 +127,14 @@
                 <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
             </div>
 
-            <partial name="_PrevNextPartial" />
+            @*<partial name="_PrevNextPartial" />
             <br />
             <partial name="_ProgressPartial" />
-            <br />
+            <br />*@
             @RenderBody()
-            <br />
+            @*<br />
             <partial name="_PrevNextPartial" />
-            <partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />
+            <partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />*@
             @Html.Raw(Html.GetMicrodata())
         </main>
     </div>

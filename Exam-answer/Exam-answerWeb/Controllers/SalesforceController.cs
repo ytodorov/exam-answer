@@ -84,11 +84,11 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["max"] = 98;
             }
 
-            if (intId <= examViewModel.Questions.Count)
-            {
-                var theQuestion = examViewModel.Questions[intId - 1];
-                return View("Question", theQuestion);
-            }
+            //if (intId <= examViewModel.Questions.Count)
+            //{
+            //    var theQuestion = examViewModel.Questions[intId - 1];
+            //    return View("Question", theQuestion);
+            //}
 
             QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
             {
@@ -195,6 +195,12 @@ $@"
 
                 string microdata = microdataJson.ToString();
                 ViewData["microdata"] = microdata;
+            }
+
+            if (intId <= examViewModel.Questions.Count)
+            {
+                var theQuestion = examViewModel.Questions[intId - 1];
+                return View("Question", theQuestion);
             }
 
             return View(filePath, questionViewModel);

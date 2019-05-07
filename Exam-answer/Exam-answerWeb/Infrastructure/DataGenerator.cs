@@ -18,6 +18,9 @@ namespace Exam_answerWeb.Infrastructure
             {
                 ExamEntity crt251 = new ExamEntity()
                 {
+                    Provider = "Salesforce",
+                    Code = "CRT-251",
+                    Name = "Sales Cloud Consultant",
                     Questions = new List<QuestionEntity>()
                 };
 

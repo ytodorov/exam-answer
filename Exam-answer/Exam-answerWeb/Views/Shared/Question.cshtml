@@ -1,84 +1,89 @@
 ﻿@model QuestionViewModel
-    <ul class="panelbar">
-        <li class="k-state-active">
-            <span class="k-link k-state-selected">Question @Model?.Id</span>
-            @if (Model.Contents?.Count >= 2)
-            {
-                <div>
-                    <p>
-                        <h1>
-                            @Model.Contents.FirstOrDefault()?.Text
-                        </h1>
-                    </p>
-                    <p>
-                        <h2>
-                            @Model.Contents.Skip(1).FirstOrDefault()?.Text
-                        </h2>
-                    </p>
-                    @{
-                        var lastContent = Model.Contents.Skip(2).ToList();
-                    }
-                    @foreach (var content in lastContent)
-                    {
-                        <p>
-                            @content.Text
-                        </p>
-                    }
-                </div>
-            }
-            @if (Model.Contents?.Count == 1)
-            {
-                <div>
-                    <p>
-                        <h1>
-                            @Model.Contents.FirstOrDefault()?.Text
-                        </h1>
-                    </p>
-                </div>
-            }
-        </li>
-        @if (Model.QuestionType == QuestionType.CheckBox)
+<h1>@Model.Exam.Provider / @Model.Exam.Name / Question@(Model.Order)</h1>
+<partial name="_PrevNextPartial" />
+<br />
+<partial name="_ProgressPartial" />
+<br />
+
+<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        @if (Model.Contents?.Count >= 2)
         {
-            <li class="k-state-active">
-                Answers
-                <div>
+            <div>
+                <p>
+                    <h2>
+                        @Model.Contents.FirstOrDefault()?.Text
+                    </h2>
+                </p>
+                <p>
+                    @Model.Contents.Skip(1).FirstOrDefault()?.Text
+                </p>
+                @{
+                    var lastContent = Model.Contents.Skip(2).ToList();
+                }
+                @foreach (var content in lastContent)
+                {
                     <p>
-                        <ul class="fieldlist">
-                            @foreach (var answer in Model.Answers)
-                            {
-                                <li class=@(answer.IsCorrect == true ? "correct" : "")>
-                                    <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                                        @(answer.Text)
-                                    </label>
-                                </li>
-                            }
-                        </ul>
+                        @content.Text
                     </p>
-                </div>
-            </li>
+                }
+            </div>
         }
-        @if (Model.QuestionType == QuestionType.RadioButon)
+        @if (Model.Contents?.Count == 1)
         {
-            <li class="k-state-active">
-                Answers
-                <div>
-                    <p>
-                        <ul class="fieldlist">
-                            @foreach (var answer in Model.Answers)
-                            {
+            <div>
+                <p>
+                    <h2>
+                        @Model.Contents.FirstOrDefault()?.Text
+                    </h2>
+                </p>
+            </div>
+        }
+    </li>
+    @if (Model.QuestionType == QuestionType.CheckBox)
+    {
+        <li class="k-state-active">
+            Answers
+            <div>
+                <p>
+                    <ul class="fieldlist">
+                        @foreach (var answer in Model.Answers)
+                        {
+                            <li class=@(answer.IsCorrect == true ? "correct" : "")>
+                                <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                                <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                                    @(answer.Text)
+                                </label>
+                            </li>
+                        }
+                    </ul>
+                </p>
+            </div>
+        </li>
+    }
+    @if (Model.QuestionType == QuestionType.RadioButon)
+    {
+        <li class="k-state-active">
+            Answers
+            <div>
+                <p>
+                    <ul class="fieldlist">
+                        @foreach (var answer in Model.Answers)
+                        {
                             <li class=@(answer.IsCorrect == true ? "correct" : "")>
                                 <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
                                 <label class="k-radio-label" for="@(Html.GetNextId(true))">
                                     @(answer.Text)
                                 </label>
                             </li>
-                            }
-                        </ul>
-                    </p>
-                </div>
-            </li>
-        }
-
-
-    </ul>
+                        }
+                    </ul>
+                </p>
+            </div>
+        </li>
+    }
+</ul>
+<br />
+<partial name="_PrevNextPartial" />
+<partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />

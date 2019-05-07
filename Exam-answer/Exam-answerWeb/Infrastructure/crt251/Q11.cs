@@ -7,6 +7,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
     {
         public static QuestionEntity Instance = new QuestionEntity()
         {
+            Order = 11,
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()

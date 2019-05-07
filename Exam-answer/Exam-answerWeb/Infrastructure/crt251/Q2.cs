@@ -7,6 +7,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
     {
         public static QuestionEntity Instance = new QuestionEntity()
         {
+            Order = 2,
             QuestionType = QuestionType.CheckBox,
             Contents = new List<ContentEntity>()
                     {
