@@ -1,5 +1,5 @@
 ﻿@model QuestionViewModel
-<h1>@Model.Exam.Provider / @Model.Exam.Name / Question@(Model.Order)</h1>
+<h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(Model.Order)</h1>
 <partial name="_PrevNextPartial" />
 <br />
 <partial name="_ProgressPartial" />
@@ -8,19 +8,16 @@
 <ul class="panelbar">
     <li class="k-state-active">
         <span class="k-link k-state-selected">Question @Model?.Id</span>
-        @if (Model.Contents?.Count >= 2)
+        @if (Model.Contents?.Count >= 1)
         {
             <div>
                 <p>
                     <h2>
                         @Model.Contents.FirstOrDefault()?.Text
                     </h2>
-                </p>
-                <p>
-                    @Model.Contents.Skip(1).FirstOrDefault()?.Text
-                </p>
+                </p>               
                 @{
-                    var lastContent = Model.Contents.Skip(2).ToList();
+                    var lastContent = Model.Contents.Skip(1).ToList();
                 }
                 @foreach (var content in lastContent)
                 {
@@ -29,17 +26,7 @@
                     </p>
                 }
             </div>
-        }
-        @if (Model.Contents?.Count == 1)
-        {
-            <div>
-                <p>
-                    <h2>
-                        @Model.Contents.FirstOrDefault()?.Text
-                    </h2>
-                </p>
-            </div>
-        }
+        }        
     </li>
     @if (Model.QuestionType == QuestionType.CheckBox)
     {
@@ -85,5 +72,5 @@
     }
 </ul>
 <br />
-<partial name="_PrevNextPartial" />
-<partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />
+@*<partial name="_PrevNextPartial" />
+<partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />*@
