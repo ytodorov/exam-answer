@@ -31,8 +31,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a trigger to add the sales engineers to their sales representatives account and opportunity teams.",
-                    IsCorrect = true
+                    Text = "Create a trigger to add the sales engineers to their sales representatives account and opportunity teams.",                   
                 },
                 new AnswerEntity()
                 {
@@ -40,7 +39,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable account and opportunity teams selling and have each sales representative configure their default teams.",                    
+                    Text = "Enable account and opportunity teams selling and have each sales representative configure their default teams.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
