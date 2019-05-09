@@ -102,6 +102,12 @@ namespace Exam_answerWeb.Infrastructure
                 crt251.Questions.Add(Q76.Instance);
                 crt251.Questions.Add(Q77.Instance);
                 crt251.Questions.Add(Q78.Instance);
+                crt251.Questions.Add(Q79.Instance);
+                crt251.Questions.Add(Q80.Instance);
+                crt251.Questions.Add(Q81.Instance);
+                crt251.Questions.Add(Q82.Instance);
+                crt251.Questions.Add(Q83.Instance);
+                crt251.Questions.Add(Q84.Instance);
 
 
                 context.Exams.Add(crt251);
