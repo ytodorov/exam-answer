@@ -120,12 +120,11 @@ namespace Exam_answerWeb.Infrastructure
                 crt251.Questions.Add(Q93.Instance);
                 crt251.Questions.Add(Q94.Instance);
                 crt251.Questions.Add(Q95.Instance);
-                crt251.Questions.Add(Q96.Instance);
 
 
                 context.Exams.Add(crt251);
                 context.SaveChanges();
-
+                return;
                 var allquestions = crt251.Questions;
 
                 List<double> distances = new List<double>();
@@ -170,6 +169,7 @@ namespace Exam_answerWeb.Infrastructure
                         }
                     }
                 }
+                distances = distances.OrderByDescending(d => d).ToList();
             }
         }
     }
