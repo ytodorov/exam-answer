@@ -32,19 +32,22 @@
                 }
                 @foreach (var content in lastContent)
                 {
-
-                    var lines2 = content.Text.Split(Environment.NewLine);
-                    @for (int i = 0; i < lines2.Length; i++)
-                    {
-                        var line = lines2[i];
-                        <p>
-                            @line
-                        </p>
-                        if (i != lines2.Length - 1)
-                        {
-                            <br />
+                    <p>
+                        @{ 
+                            var lines2 = content.Text.Split(Environment.NewLine);
                         }
-                    }
+                        @for (int i = 0; i < lines2.Length; i++)
+                        {
+                            var line = lines2[i];
+
+                            @line
+
+                            if (i != lines2.Length - 1)
+                            {
+                                <br />
+                            }
+                        }
+                    </p>
                 }
             </div>
         }

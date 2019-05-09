@@ -108,6 +108,19 @@ namespace Exam_answerWeb.Infrastructure
                 crt251.Questions.Add(Q82.Instance);
                 crt251.Questions.Add(Q83.Instance);
                 crt251.Questions.Add(Q84.Instance);
+                crt251.Questions.Add(Q85.Instance);
+                crt251.Questions.Add(Q86.Instance);
+                crt251.Questions.Add(Q87.Instance);
+                crt251.Questions.Add(Q88.Instance);
+                crt251.Questions.Add(Q89.Instance);
+                crt251.Questions.Add(Q90.Instance);
+                crt251.Questions.Add(Q91.Instance);
+                crt251.Questions.Add(Q92.Instance);
+                crt251.Questions.Add(Q93.Instance);
+                crt251.Questions.Add(Q94.Instance);
+                crt251.Questions.Add(Q95.Instance);
+                crt251.Questions.Add(Q96.Instance);
+                crt251.Questions.Add(Q97.Instance);
 
 
                 context.Exams.Add(crt251);
