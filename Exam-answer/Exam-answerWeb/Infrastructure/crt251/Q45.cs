@@ -12,35 +12,34 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new ContentEntity()
                 {
-                    Text = "Universal Computing is planning to implement salesforce sales cloud to support its professional services division.",
+                    Text = "Channel sales representatives at Northern Trail Outfitters (NTO) need to push pre-qualified leads to their partners.",
                 },
                 new ContentEntity()
                 {
-                    Text = "The universal computing sales team wants to easily see customer purchasing activity on account, contact, and contract detail pages.",
+                    Text = "Partners need the ability to access and update the leads assigned to them. To meet this requirement, NTO plans to implement lead management functionality.",
                 },
                 new ContentEntity()
                 {
-                    Text = "What should a consultant recommend to meet this requirement?",
+                    Text = "Which solution should a consultant recommend?",
                 },
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a global publisher action to view all customer purchasing activity.",
+                    Text = "Create a task for a partner when a new lead is created and assign the task to the partner in the Partner Community.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable the orders object in Salesforce to track customer purchases.",
-                    IsCorrect = true
+                    Text = "Create a customized site where partners can self-register and access their leads.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable salesforce console for sales to see customer purchasing activity.",                    
+                    Text = "Configure a separate lead record type and page layout for the Partner Community.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom object related to the account, contact and contact objects.",                    
+                    Text = "Add the leads tab to the Partner Community and configure partner profiles to access leads.",
                 },
             }
         };

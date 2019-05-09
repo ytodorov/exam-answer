@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Exam_answerWeb.Infrastructure.crt251;
+using System.Text;
 
 namespace Exam_answerWeb.Infrastructure
 {
@@ -120,11 +121,55 @@ namespace Exam_answerWeb.Infrastructure
                 crt251.Questions.Add(Q94.Instance);
                 crt251.Questions.Add(Q95.Instance);
                 crt251.Questions.Add(Q96.Instance);
-                crt251.Questions.Add(Q97.Instance);
 
 
                 context.Exams.Add(crt251);
                 context.SaveChanges();
+
+                var allquestions = crt251.Questions;
+
+                List<double> distances = new List<double>();
+
+                for (int i = 0; i < allquestions.Count; i++)
+                {
+                    for (int j = i + 1; j < allquestions.Count; j++)
+                    {
+                        QuestionEntity q1 = allquestions[i];
+                        QuestionEntity q2 = allquestions[j];
+
+
+                        StringBuilder sb1 = new StringBuilder();
+                        foreach (var content in q1.Contents)
+                        {
+                            sb1.AppendLine(content.Text);
+                        }
+                        foreach (var answer in q1.Answers)
+                        {
+                            sb1.AppendLine(answer.Text);
+                        }
+
+                        StringBuilder sb2 = new StringBuilder();
+                        foreach (var content in q2.Contents)
+                        {
+                            sb2.AppendLine(content.Text);
+                        }
+                        foreach (var answer in q2.Answers)
+                        {
+                            sb2.AppendLine(answer.Text);
+                        }
+
+                        string text1 = sb1.ToString();
+
+                        string text2 = sb2.ToString();
+
+                        var distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
+                        distances.Add(distance);
+                        if (distance > 0.6)
+                        {
+
+                        }
+                    }
+                }
             }
         }
     }
