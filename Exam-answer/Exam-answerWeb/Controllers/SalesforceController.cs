@@ -176,20 +176,89 @@ namespace Exam_AnswerWeb.Controllers
 
                 StringBuilder microdataJson = new StringBuilder();
 
-                DateTime dateCreated = new DateTime(2019, 2, 17);
-                string dateCreatedString = dateCreated.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
+                DateTime dateCreatedDate = new DateTime(2019, 2, 17);
+                string dateCreated = "2019-03-27T15:01Z";
 
                 ViewData["hasMicrodata"] = true;
+
+
+                string author = "exam-answer.com";
+
+                string upvoteCount = "0";
+                string url = $"https://www.exam-answer.com/salesforce/crt-251/question{id}";
+
+                var acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
+                var suggestedAnswers = questionVM.Answers.Where(a => a.IsCorrect != true).ToList();
+
+                StringBuilder sbAcceptedAnswer = new StringBuilder();
+                StringBuilder sbSuggestedAnswer = new StringBuilder();
+
+                sbAcceptedAnswer.AppendLine("[");
+                foreach (var aa in acceptedAnswers)
+                {
+                    sbAcceptedAnswer.Append($@"{{
+        ""@type"": ""Answer"",
+        ""author"": ""{author}"",
+        ""upvoteCount"": ""{upvoteCount}"",
+        ""url"": ""{url}"",
+        ""dateCreated"": ""{dateCreated}"",
+        ""text"": ""{aa.Text}""
+                }}");
+                    if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
+                    {
+                        sbAcceptedAnswer.Append(",");
+                    }
+                }
+                sbAcceptedAnswer.AppendLine("]");
+
+                sbSuggestedAnswer.AppendLine("[");
+                foreach (var aa in suggestedAnswers)
+                {
+                    sbSuggestedAnswer.Append($@"{{
+        ""@type"": ""Answer"",
+        ""author"": ""{author}"",
+        ""upvoteCount"": ""{upvoteCount}"",
+        ""url"": ""{url}"",
+        ""dateCreated"": ""{dateCreated}"",
+        ""text"": ""{aa.Text}""
+                }}");
+                    if (suggestedAnswers.IndexOf(aa) != suggestedAnswers.Count - 1)
+                    {
+                        sbSuggestedAnswer.Append(",");
+                    }
+                }
+                sbSuggestedAnswer.AppendLine("]");
+
+                string acceptedAnswer = sbAcceptedAnswer.ToString();
+                string suggestedAnswer = sbSuggestedAnswer.ToString();
+
+                StringBuilder sbQuestionText = new StringBuilder();
+
+                foreach (var c in questionVM.Contents)
+                {
+                    sbQuestionText.Append(c.Text);
+                }
+
+                string questionText = sbQuestionText.ToString();
+
+               
 
                 microdataJson.Append(
 $@"
 <script type=""application/ld+json"">
 {{  
   ""@context"": ""http://schema.org"",
+  ""@type"": ""QAPage"",
+  ""mainEntity"": {{
   ""@type"": ""Question"",
   ""name"": ""{title}"",
-  ""text"": ""{description}"",
-  ""dateCreated"": ""{dateCreatedString}""
+  ""author"": ""{author}"",
+  ""dateCreated"": ""{dateCreatedDate}"",
+  ""text"": ""{questionText}"",
+  ""answerCount"": ""{questionVM.Answers.Count}"",
+  ""acceptedAnswer"": {acceptedAnswer},
+  ""suggestedAnswer"": {suggestedAnswer}
+}}
 }}
  </script>");
 
