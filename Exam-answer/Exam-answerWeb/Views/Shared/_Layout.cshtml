@@ -80,6 +80,26 @@
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
             </li>
             <li>
+                Salesforce
+                <ul>
+                    <li>
+                        <a href="~/salesforce/crt-251">CRT-251</a>
+                        <ul>
+                            @{
+                                for (int i = 1; i <= 95; i++)
+                                {
+                                    <li>
+                                        <a title="Salesforce / CRT-251 / Question @(i)" href="~/salesforce/crt-251/question@(i)">
+                                            @($"Question {i}")
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 Microsoft
                 <ul>
                     <li>
@@ -89,27 +109,7 @@
                                 for (int i = 1; i <= 115; i++)
                                 {
                                     <li>
-                                        <a href="~/microsoft/az-100/question@(i)">
-                                            @($"Question {i}")
-                                        </a>
-                                    </li>
-                                }
-                            }
-                        </ul>
-                    </li>
-                </ul> 
-            </li>
-            <li>
-                Salesforce
-                <ul>
-                    <li>
-                        <a href="~/salesforce/crt-251">CRT-251</a>
-                        <ul>
-                            @{
-                                for (int i = 1; i <= 98; i++)
-                                {
-                                    <li>
-                                        <a href="~/salesforce/crt-251/question@(i)">
+                                        <a title="Microsoft / AZ-100 / Question @(i)" href="~/microsoft/az-100/question@(i)">
                                             @($"Question {i}")
                                         </a>
                                     </li>
