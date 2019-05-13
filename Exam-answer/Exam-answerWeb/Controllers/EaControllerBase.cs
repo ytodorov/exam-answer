@@ -1,47 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using DAL.Entities;
-using Exam_answerWeb.Controllers;
-using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace Exam_AnswerWeb.Controllers
+namespace Exam_answerWeb.Controllers
 {
-    [Route("salesforce/crt-251")]
-    public class SalesforceController : EaControllerBase
+    public class EaControllerBase : Controller
     {
-        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper) :
-            base(examAnswerContext, env, mapper)
-        {
+        protected ExamAnswerContext examAnswerContext;
+        protected readonly IHostingEnvironment env;
 
+        protected readonly IMapper mapper;
+
+        public EaControllerBase(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper)
+        {
+            this.examAnswerContext = examAnswerContext;
+            this.env = env;
+            this.mapper = mapper;
         }
 
-        [Route("")]
-        public IActionResult Index()
+        [NonAction]
+        protected IActionResult QuestionGeneric(string provider, string examCode, string id)
         {
-            return View($"crt-251/index");
-        }
-
-        //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
-        [Route("question{id}")]
-        public IActionResult QuestionGeneric(string id)
-        {
-            var res = QuestionGeneric("salesforce", "crt-251", id);
-            return res;
             ExamEntity examEntity = examAnswerContext.Exams
-                .Where(e => e.Provider.Equals("salesforce", StringComparison.InvariantCultureIgnoreCase) &&
-                    e.Code.Equals("crt-251", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
+                    e.Code.Equals(examCode, StringComparison.InvariantCultureIgnoreCase))
 
                 .Include(e => e.Questions)
                 .ThenInclude(q => q.Contents)
@@ -60,8 +50,6 @@ namespace Exam_AnswerWeb.Controllers
                 .FirstOrDefault();
 
             var examViewModel = mapper.Map<ExamViewModel>(examEntity);
-           
-
 
             string title = $"Exam {examViewModel.Code}: Question {id}";
             ViewData["title"] = title;
@@ -77,6 +65,11 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["next"] = intId + 1;
                 ViewData["current"] = intId;
                 ViewData["max"] = examViewModel.Questions.Count;
+            }
+
+            if (intId > examViewModel.Questions.Count || intId == 0)
+            {
+                return NotFound();
             }
 
             var questionVM = examViewModel.Questions[intId];
@@ -182,6 +175,5 @@ $@"
                 return NotFound();
             }
         }
-
     }
 }

@@ -45,8 +45,6 @@ namespace Exam_AnswerWeb.Controllers
             ViewData["title"] = title;
             ViewData["id"] = id;
 
-            ViewData["exam"] = "AZ-100";
-
             var cd = Environment.CurrentDirectory;
 
             if (int.TryParse(id, out int intId))
