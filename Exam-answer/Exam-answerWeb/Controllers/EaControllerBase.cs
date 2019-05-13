@@ -72,7 +72,7 @@ namespace Exam_answerWeb.Controllers
                 return NotFound();
             }
 
-            var questionVM = examViewModel.Questions[intId];
+            var questionVM = examViewModel.Questions[intId - 1];
 
             ViewData["description"] = questionVM.Contents?.FirstOrDefault()?.Text;
 
