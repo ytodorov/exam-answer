@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using AutoMapper;
+using DAL.Entities;
+using Exam_answerWeb.Controllers;
 using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -14,15 +17,13 @@ using Microsoft.AspNetCore.Mvc.Filters;
 namespace Exam_AnswerWeb.Controllers
 {
     [Route("microsoft/az-100")]
-    public class MicrosoftController : Controller
+    public class MicrosoftController : EaControllerBase
     {
         private const string folderName = "az-100";
 
-        private readonly IHostingEnvironment env;
-
-        public MicrosoftController(IHostingEnvironment env)
+        public MicrosoftController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper) :
+            base(examAnswerContext, env, mapper)
         {
-            this.env = env;
         }
 
         [Route("")]
@@ -40,13 +41,6 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
-            string title = $"Exam AZ-100: Question {id}";
-
-            ViewData["title"] = title;
-            ViewData["id"] = id;
-
-            var cd = Environment.CurrentDirectory;
-
             if (int.TryParse(id, out int intId))
             {
                 ViewData["basePath"] = "microsoft/az-100/question";
@@ -55,6 +49,21 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["current"] = intId;
                 ViewData["max"] = 115;
             }
+
+            if (intId > 0 && intId <= 1)
+            {
+                var res = QuestionGeneric("microsoft", "az-100", id);
+                return res;
+            }
+
+            string title = $"Exam AZ-100: Question {id}";
+
+            ViewData["title"] = title;
+            ViewData["id"] = id;
+
+            var cd = Environment.CurrentDirectory;
+
+           
             QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
             {
                 Id = id,

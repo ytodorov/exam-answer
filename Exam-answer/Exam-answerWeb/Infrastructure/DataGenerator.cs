@@ -120,9 +120,21 @@ namespace Exam_answerWeb.Infrastructure
                 crt251.Questions.Add(Q93.Instance);
                 crt251.Questions.Add(Q94.Instance);
                 crt251.Questions.Add(Q95.Instance);
-
-
+                
                 context.Exams.Add(crt251);
+
+                ExamEntity az100 = new ExamEntity()
+                {
+                    Provider = "Microsoft",
+                    Code = "AZ-100",
+                    Name = "Microsoft Azure Infrastructure and Deployment",
+                    Questions = new List<QuestionEntity>()
+                };
+
+                az100.Questions.Add(Az100.Q1Instance);
+
+                context.Exams.Add(az100);
+
                 context.SaveChanges();
                 return;
                 var allquestions = crt251.Questions;
