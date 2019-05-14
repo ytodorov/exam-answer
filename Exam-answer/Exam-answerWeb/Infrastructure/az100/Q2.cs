@@ -5,9 +5,9 @@ namespace Exam_answerWeb.Infrastructure.crt251
 {
     public partial class Az100
     {
-        public static QuestionEntity Q1Instance = new QuestionEntity()
+        public static QuestionEntity Q2Instance = new QuestionEntity()
         {
-            Order = 1,
+            Order = 2,
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
@@ -20,7 +20,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new ContentEntity()
                 {
-                    Text = "Solution: From the Azure Active Directory Properties blade, you enable Access management for Azure resources."
+                    Text = "Solution: From the subscription's Access control (IAM) blade, you click Add role assignment."
                 },
                 new ContentEntity()
                 {
@@ -31,19 +31,19 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes",
-                    IsCorrect = true
+                    Text = "Yes",                    
                 },
                 new AnswerEntity()
                 {
-                    Text = "No"
+                    Text = "No",
+                    IsCorrect = true
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
                 new ExplanationEntity()
                 {
-                    Text = "This solution does meet the goal. The Access management for Azure resources property, located in the Azure Active Directory (Azure AD) tenant's settings, ensures that Azure AD users assigned to the Global Administrator role maintain full control over all subscription resources in the event that the identity is removed from Azure resource-level access lists. In keeping with least-privilege security, Microsoft recommends that you enable this property only when necessary."
+                    Text = "This solution does not meet the goal. Azure Active Directory (Azure AD) permissions are distinct from Azure resource permissions. In this case, you should enable the Access management for Azure resources property from the Azure AD tenant's Properties blade. This property, when enabled, ensures that Azure AD users assigned to the Global Administrators role maintain full resource access even if their account is stripped from resource-level access control lists (ACLs). The Add role assignment button is used to make an addition to that scope's ACL. For instance, you may need to add a new Azure administrator to the Owner role for a subscription, resource group, or resource."
                 }
             },
             References = new List<ReferenceEntity>()
@@ -62,11 +62,6 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 {
                      Text = "Manage app and resource access using Azure Active Directory groups",
                      Url = "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "Administrator role permissions in Azure Active Directory",
-                     Url = "https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles",
                 },
             }
         };

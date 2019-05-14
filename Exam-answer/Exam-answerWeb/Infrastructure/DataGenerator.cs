@@ -132,6 +132,7 @@ namespace Exam_answerWeb.Infrastructure
                 };
 
                 az100.Questions.Add(Az100.Q1Instance);
+                az100.Questions.Add(Az100.Q2Instance);
 
                 context.Exams.Add(az100);
 
