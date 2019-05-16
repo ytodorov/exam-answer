@@ -33,7 +33,7 @@
                 @foreach (var content in lastContent)
                 {
                     <p>
-                        @{ 
+                        @{
                             var lines2 = content.Text.Split(Environment.NewLine);
                         }
                         @for (int i = 0; i < lines2.Length; i++)
@@ -94,7 +94,33 @@
             </div>
         </li>
     }
+    @if (Model.Explanations?.Count > 0)
+    {
+        <li>
+            Explanation
+            <div>
+                @foreach (var explanation in Model.Explanations)
+                {
+                    <p>
+                        @explanation.Text
+                    </p>
+                }
+            </div>
+        </li>
+    }
+    @if (Model.References?.Count > 0)
+    {
+        <li>
+            References
+            <div>
+                @foreach (var reference in Model.References)
+                {
+                    <p>
+                        <a href="@reference.Url" target="_blank" rel="noopener">@reference.Text</a>
+                    </p>
+                }
+            </div>
+        </li>
+    }
 </ul>
 <br />
-@*<partial name="_PrevNextPartial" />
-    <partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />*@
