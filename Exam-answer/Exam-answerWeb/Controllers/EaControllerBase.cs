@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Exam_answerWeb.Controllers
 {
@@ -82,10 +83,10 @@ namespace Exam_answerWeb.Controllers
 
             ViewData["hasMicrodata"] = true;
 
-            string author = "exam-answer.com";
+            string author = HttpUtility.JavaScriptStringEncode("exam-answer.com");
 
-            string upvoteCount = "0";
-            string url = $"https://www.exam-answer.com/salesforce/crt-251/question{id}";
+            string upvoteCount = HttpUtility.JavaScriptStringEncode("0");
+            string url = HttpUtility.JavaScriptStringEncode($"https://www.exam-answer.com/salesforce/crt-251/question{id}");
 
             var acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
             var suggestedAnswers = questionVM.Answers.Where(a => a.IsCorrect != true).ToList();
@@ -96,13 +97,15 @@ namespace Exam_answerWeb.Controllers
             sbAcceptedAnswer.AppendLine("[");
             foreach (var aa in acceptedAnswers)
             {
+                string text = HttpUtility.JavaScriptStringEncode(aa.Text);
+
                 sbAcceptedAnswer.Append($@"{{
         ""@type"": ""Answer"",
         ""author"": ""{author}"",
         ""upvoteCount"": ""{upvoteCount}"",
         ""url"": ""{url}"",
         ""dateCreated"": ""{dateCreated}"",
-        ""text"": ""{aa.Text}""
+        ""text"": ""{text}""
                 }}");
                 if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
                 {
@@ -114,13 +117,15 @@ namespace Exam_answerWeb.Controllers
             sbSuggestedAnswer.AppendLine("[");
             foreach (var aa in suggestedAnswers)
             {
+                string text = HttpUtility.JavaScriptStringEncode(aa.Text);
+
                 sbSuggestedAnswer.Append($@"{{
         ""@type"": ""Answer"",
         ""author"": ""{author}"",
         ""upvoteCount"": ""{upvoteCount}"",
         ""url"": ""{url}"",
         ""dateCreated"": ""{dateCreated}"",
-        ""text"": ""{aa.Text}""
+        ""text"": ""{text}""
                 }}");
                 if (suggestedAnswers.IndexOf(aa) != suggestedAnswers.Count - 1)
                 {
@@ -138,8 +143,8 @@ namespace Exam_answerWeb.Controllers
             {
                 sbQuestionText.Append(c.Text);
             }
-
-            string questionText = sbQuestionText.ToString();
+            var test =  HttpUtility.JavaScriptStringEncode("\"test\"");
+            string questionText = HttpUtility.JavaScriptStringEncode(sbQuestionText.ToString());
 
             // https://developers.google.com/search/docs/data-types/faqpage
             microdataJson.Append(
