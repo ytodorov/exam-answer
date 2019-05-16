@@ -142,16 +142,18 @@ namespace Exam_answerWeb.Controllers
 
             string questionText = sbQuestionText.ToString();
 
+            // https://developers.google.com/search/docs/data-types/faqpage
             microdataJson.Append(
 $@"
 <script type=""application/ld+json"">
 {{  
   ""@context"": ""http://schema.org"",
-  ""@type"": ""QAPage"",
+  ""@type"": ""FAQPage"",
   ""mainEntity"": {{
   ""@type"": ""Question"",
-  ""name"": ""{title}"",
+  ""name"": ""{questionText}"",
   ""author"": ""{author}"",
+  ""url"": ""{url}"",
   ""dateCreated"": ""{dateCreatedDate}"",
   ""text"": ""{questionText}"",
   ""answerCount"": ""{questionVM.Answers.Count}"",
