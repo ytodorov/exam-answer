@@ -50,7 +50,7 @@ namespace Exam_AnswerWeb.Controllers
                 ViewData["max"] = 115;
             }
 
-            if (intId > 0 && intId <= 1)
+            if (intId > 0 && intId <= 5)
             {
                 var res = QuestionGeneric("microsoft", "az-100", id);
                 return res;
