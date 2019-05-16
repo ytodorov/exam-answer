@@ -78,7 +78,6 @@ namespace Exam_answerWeb.Controllers
 
             StringBuilder microdataJson = new StringBuilder();
 
-            DateTime dateCreatedDate = new DateTime(2019, 2, 17);
             string dateCreated = "2019-03-27T15:01Z";
 
             ViewData["hasMicrodata"] = true;
@@ -154,7 +153,7 @@ $@"
   ""name"": ""{questionText}"",
   ""author"": ""{author}"",
   ""url"": ""{url}"",
-  ""dateCreated"": ""{dateCreatedDate}"",
+  ""dateCreated"": ""{dateCreated}"",
   ""text"": ""{questionText}"",
   ""answerCount"": ""{questionVM.Answers.Count}"",
   ""acceptedAnswer"": {acceptedAnswer},
