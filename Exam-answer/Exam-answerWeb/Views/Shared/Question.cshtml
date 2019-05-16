@@ -11,7 +11,7 @@
         @if (Model.Contents?.Count >= 1)
         {
             <div>
-                <p>
+                
                     <h2>
                         @{
                             var lines = Model.Contents.FirstOrDefault()?.Text?.Split(Environment.NewLine);
@@ -26,7 +26,7 @@
                             }
                         }
                     </h2>
-                </p>
+                
                 @{
                     var lastContent = Model.Contents.Skip(1).ToList();
                 }
@@ -57,7 +57,7 @@
         <li class="k-state-active">
             Answers
             <div>
-                <p>
+                <br />
                     <ul class="fieldlist">
                         @foreach (var answer in Model.Answers)
                         {
@@ -82,7 +82,7 @@
                             }
                         }
                     </ul>
-                </p>
+                    <br />
             </div>
         </li>
     }
@@ -91,7 +91,7 @@
         <li class="k-state-active">
             Answers
             <div>
-                <p>
+                <br />
                     <ul class="fieldlist">
                         @foreach (var answer in Model.Answers)
                         {
@@ -115,7 +115,7 @@
                             }
                         }
                     </ul>
-                </p>
+                    <br />
             </div>
         </li>
     }
