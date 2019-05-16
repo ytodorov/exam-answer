@@ -89,3 +89,7 @@ p, ul {
     color: black;
 }
 
+input.k-checkbox+label
+{
+    user-select: inherit;
+}
