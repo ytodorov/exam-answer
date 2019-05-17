@@ -141,51 +141,51 @@ namespace Exam_answerWeb.Infrastructure
 
                 context.SaveChanges();
                 return;
-                var allquestions = crt251.Questions;
+                //var allquestions = crt251.Questions;
 
-                List<double> distances = new List<double>();
+                //List<double> distances = new List<double>();
 
-                for (int i = 0; i < allquestions.Count; i++)
-                {
-                    for (int j = i + 1; j < allquestions.Count; j++)
-                    {
-                        QuestionEntity q1 = allquestions[i];
-                        QuestionEntity q2 = allquestions[j];
+                //for (int i = 0; i < allquestions.Count; i++)
+                //{
+                //    for (int j = i + 1; j < allquestions.Count; j++)
+                //    {
+                //        QuestionEntity q1 = allquestions[i];
+                //        QuestionEntity q2 = allquestions[j];
 
 
-                        StringBuilder sb1 = new StringBuilder();
-                        foreach (var content in q1.Contents)
-                        {
-                            sb1.AppendLine(content.Text);
-                        }
-                        foreach (var answer in q1.Answers)
-                        {
-                            sb1.AppendLine(answer.Text);
-                        }
+                //        StringBuilder sb1 = new StringBuilder();
+                //        foreach (var content in q1.Contents)
+                //        {
+                //            sb1.AppendLine(content.Text);
+                //        }
+                //        foreach (var answer in q1.Answers)
+                //        {
+                //            sb1.AppendLine(answer.Text);
+                //        }
 
-                        StringBuilder sb2 = new StringBuilder();
-                        foreach (var content in q2.Contents)
-                        {
-                            sb2.AppendLine(content.Text);
-                        }
-                        foreach (var answer in q2.Answers)
-                        {
-                            sb2.AppendLine(answer.Text);
-                        }
+                //        StringBuilder sb2 = new StringBuilder();
+                //        foreach (var content in q2.Contents)
+                //        {
+                //            sb2.AppendLine(content.Text);
+                //        }
+                //        foreach (var answer in q2.Answers)
+                //        {
+                //            sb2.AppendLine(answer.Text);
+                //        }
 
-                        string text1 = sb1.ToString();
+                //        string text1 = sb1.ToString();
 
-                        string text2 = sb2.ToString();
+                //        string text2 = sb2.ToString();
 
-                        var distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
-                        distances.Add(distance);
-                        if (distance > 0.6)
-                        {
+                //        var distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
+                //        distances.Add(distance);
+                //        if (distance > 0.6)
+                //        {
 
-                        }
-                    }
-                }
-                distances = distances.OrderByDescending(d => d).ToList();
+                //        }
+                //    }
+                //}
+                //distances = distances.OrderByDescending(d => d).ToList();
             }
         }
     }

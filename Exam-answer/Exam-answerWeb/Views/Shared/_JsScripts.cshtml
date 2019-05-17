@@ -1,6 +1,6 @@
-﻿<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>
+﻿<script src="https://kendo.cdn.telerik.com/2019.2.514/js/jszip.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.aspnetmvc.min.js"></script>
 <script>
     function placeholder(element) {
         return $("<li class='list-item' id='placeholder'>Drop Here!</li>");
@@ -23,10 +23,17 @@
 
         $("body").show();
 
+        var isMobile = Boolean(kendo.support.mobileOS);
+
         $("#gridExams").kendoGrid({
-            sortable: true
+            sortable: true,
+            mobile: true,
         });
-                
+
+        if (isMobile) {
+            $("#gridExams").data("kendoGrid").resize();
+        }
+
 
     });
 
