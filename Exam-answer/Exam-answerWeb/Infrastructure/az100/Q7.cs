@@ -8,6 +8,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
         public static QuestionEntity Q7Instance = new QuestionEntity()
         {
             Order = 7,
+            QuestionType = QuestionType.CheckBox,
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
@@ -38,40 +39,38 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Back up prod-vm1 and restore the VM to the prod-east-rg resource group. Delete the original VM instance.",
+                    Text = "You need to delete SSL certificate from each App Service before moving it to the new resource group.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group.",
+                    Text = "You can move the Load Balancer only within the same subscription.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet.",
+                    Text = "You need to disable the peer before moving the VNet.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use azcopy to copy prod-vm1 to the prod-east-rg resource group.",
+                    Text = "You can move the VNet only within the same subscription.",
+                    IsCorrect = true
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
                 new ExplanationEntity()
                 {
-                    Text = "You should back up prod-vm1, restore the VM to the prod-east-rg resource group, and then delete the original VM instance. Unfortunately, managed disks are one of the few Azure resources that cannot be moved between resource groups or subscriptions. Because the VM in Azure has so many dependencies, this managed disk restriction means that you are unable to move the entire VM without redeploying the disks and configuration into the new resource group."
+                    Text = "You should create a tag named CostCenter and assign it to each resource group. Creating a tag and assigning it to each resource group allows you to easily identify the cost center associated with each resource group. When you associate a tag with a resource or resource group, you need to provide a value to that tag. You can instruct the accounting department to use the Azure Cost Management tool to review the costs associated with each cost center by filtering by the newly created tag."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "You cannot move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet because the scenario states that the VM uses managed disk storage. If the VM used unmanaged disk storage, the Move-AzureRmResource command could move the VM to another resource group or even another Azure subscription."
+                    Text = "You should also create a tag named CostCenter and assign it to each resource. If you apply a tag to a resource group, that tag is not inherited by the resources in the resource group. You need to manually configure the tag for each resource that you want to include in the cost center. You can automate this action by using a PowerShell or Azure CLI script."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "You cannot use azcopy to copy prod-vm1 to the prod-east-rg resource group. Azcopy is a cross-platform command-line tool with which you can copy or move binary large object (BLOB) data between storage accounts. In this case, the VM in question uses managed disk storage. Moreover, Azcopy cannot migrate VM configuration, only virtual hard disks (VHDs)."
+                    Text = "You should not instruct the accounting department to use either the Cost Analysis blade in the subscription panel or the Azure Account Center. Because your subscription is managed by a Cloud Service Provider, you can get that information from your provider. You can also get this information by using the Azure Cost Management tool."
                 },
-                new ExplanationEntity()
-                {
-                    Text = "You cannot author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group because it uses managed disk storage."
-                }
             },
             References = new List<ReferenceEntity>()
             {
@@ -79,26 +78,6 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 {
                      Text = "Move resources to new resource group or subscription",
                      Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-move-resources",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "Frequently asked questions about Azure IaaS VM disks and managed and unmanaged premium disks",
-                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq-for-disks",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "Transfer data with the AzCopy on Windows",
-                     Url = "https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "Download the template for a VM",
-                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/download-template",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "Move-AzureRmResource",
-                     Url = "https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/move-azurermresource",
                 },
             }
         };
