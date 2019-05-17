@@ -5,10 +5,10 @@
                 .HtmlAttributes(new { style = "width:100%" })
                 .Placeholder("Instantly search any question here...")
                 .Events(e => e.Select("questionsSelect"))
-                .Template("<a href=\"#: data.Url #\">#: data.TextInUI #</a>")               
+                .Template("<a href=\"#: data.Url #\">#: data.TextInUI #</a>")
                 .DataSource(source => source
                     .Custom()
-                    
+
                     .Group(g => g.Add(nameof(SearchQuestionOldViewModel.ExamName), typeof(string)))
                     .Transport(transport => transport
                       .Read(read =>
@@ -16,20 +16,56 @@
                       read.Action("Read", "SearchQuestion")
                           .Data("onAdditionalData");
                   }))
-                  
+
 
                     .ServerFiltering(true)).Deferred()
 )
-    
+
 <br />
 <br />
-<table id="gridExams" style="width:99%">
+<br />
+
+
+
+<div class="k-block">
+    <div class="k-header">
+        Salesforce: CRT-251
+    </div>
+    <h2>
+        Sales Cloud Consultant
+    </h2>
+    <p>
+        <a href="~/salesforce/crt-251">Start in Learn Model</a>
+    </p>
+    <p>
+        <a href="~/salesforce/crt-251/question1">Start in Exam Model</a>
+    </p>
+</div>
+
+<br />
+
+<div class="k-block">
+    <div class="k-header">
+        Microsoft: AZ-100
+    </div>
+    <h2>
+        Microsoft Azure Infrastructure and Deployment
+    </h2>
+    <p>
+        <a href="~/microsoft/az-100">Start in Learn Model</a>
+    </p>
+    <p>
+        <a href="~/microsoft/az-100/question1">Start in Exam Model</a>
+    </p>
+</div>
+
+<table id="gridExams" style="width:99%;display:none">
     <colgroup>
-        <col style="width:60px"/>
+        <col style="width:60px" />
         <col style="width:200px" />
         <col style="width:60px" />
-        <col style="width:60px"/>
-        <col style="width:60px"/>
+        <col style="width:60px" />
+        <col style="width:60px" />
     </colgroup>
     <thead>
         <tr>

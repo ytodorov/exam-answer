@@ -44,7 +44,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                     <option></option>
                     <option>Remove-AzureRmResource</option>
                     <option selected=""selected"">Remove-AzureRmResourceLock</option>
-                </select>",
+                </select>
+",
                 },               
             },
             Explanations = new List<ExplanationEntity>()
