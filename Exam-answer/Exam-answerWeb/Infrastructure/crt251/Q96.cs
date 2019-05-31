@@ -3,39 +3,40 @@ using System.Collections.Generic;
 
 namespace Exam_answerWeb.Infrastructure.crt251
 {
-    public class Q52
+    public class Q96
     {
         public static QuestionEntity Instance = new QuestionEntity()
         {
-            Order = 52,
+            Order = 96,
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "A sales manager wants a report that all activities in the manager’s accounts, including contacts and opportunities.",
+                    Text = "Universal Containers was bought by a larger company and needs to provide information on a monthly basis to the new parent company to help predict sales.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Which report should the sales manager use?",
+                    Text = "Which data should the new parent company review?",
                 },
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts the manager owns.",                    
+                    Text = "Dashboard of user login history.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts and contacts the manager owns.",                   
+                    Text = "Count of new lead records created.",                    
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts and opportunities the manager owns.",                    
+                    Text = "Number of activities tied to opportunities",                    
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts, contacts, and opportunities the manager owns.",                    
+                    Text = "Opportunity pipeline report grouped by month",
+                    IsCorrect = true
                 },
             }
         };

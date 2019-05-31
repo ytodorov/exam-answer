@@ -95,23 +95,48 @@ namespace Exam_answerWeb.Controllers
             StringBuilder sbSuggestedAnswer = new StringBuilder();
 
             sbAcceptedAnswer.AppendLine("[");
+
+            var allAnswers = string.Empty;
             foreach (var aa in acceptedAnswers)
             {
-                string text = HttpUtility.JavaScriptStringEncode(aa.Text);
+                allAnswers += $"{aa.Text} ";
+            }
 
-                sbAcceptedAnswer.Append($@"{{
+            allAnswers = allAnswers.Trim();
+
+            sbAcceptedAnswer.Append($@"{{
         ""@type"": ""Answer"",
         ""author"": ""{author}"",
         ""upvoteCount"": ""{upvoteCount}"",
         ""url"": ""{url}"",
         ""dateCreated"": ""{dateCreated}"",
-        ""text"": ""{text}""
+        ""text"": ""{allAnswers}""
                 }}");
-                if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
-                {
-                    sbAcceptedAnswer.Append(",");
-                }
-            }
+            //if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
+            //{
+            //    sbAcceptedAnswer.Append(",");
+            //}
+
+            //    foreach (var aa in acceptedAnswers)
+            //    {
+            //        string text = HttpUtility.JavaScriptStringEncode(aa.Text);
+
+
+            //        sbAcceptedAnswer.Append($@"{{
+            //""@type"": ""Answer"",
+            //""author"": ""{author}"",
+            //""upvoteCount"": ""{upvoteCount}"",
+            //""url"": ""{url}"",
+            //""dateCreated"": ""{dateCreated}"",
+            //""text"": ""{text}""
+            //        }}");
+            //        if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
+            //        {
+            //            sbAcceptedAnswer.Append(",");
+            //        }
+
+            //        break;
+            //    }
             sbAcceptedAnswer.AppendLine("]");
 
             sbSuggestedAnswer.AppendLine("[");

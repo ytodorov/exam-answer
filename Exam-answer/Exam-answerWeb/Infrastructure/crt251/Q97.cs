@@ -3,39 +3,40 @@ using System.Collections.Generic;
 
 namespace Exam_answerWeb.Infrastructure.crt251
 {
-    public class Q52
+    public class Q97
     {
         public static QuestionEntity Instance = new QuestionEntity()
         {
-            Order = 52,
+            Order = 97,
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "A sales manager wants a report that all activities in the manager’s accounts, including contacts and opportunities.",
+                    Text = "When the billing address on an account is changed, the mailing address of all related contact records should be updated to reflect the new address.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Which report should the sales manager use?",
+                    Text = "How can this requirement be met?",
                 },
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts the manager owns.",                    
+                    Text = "Create a workflow rule on accounts.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts and contacts the manager owns.",                   
+                    Text = "Create a workflow rule on contacts.",                    
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts and opportunities the manager owns.",                    
+                    Text = "Create a process on accounts using Process Builder.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts, contacts, and opportunities the manager owns.",                    
+                    Text = "Create a Force.com trigger on contacts.",
                 },
             }
         };

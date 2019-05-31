@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Configure a separate lead record type and page layout for the Partner Community.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

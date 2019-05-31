@@ -120,7 +120,12 @@ namespace Exam_answerWeb.Infrastructure
                 crt251.Questions.Add(Q93.Instance);
                 crt251.Questions.Add(Q94.Instance);
                 crt251.Questions.Add(Q95.Instance);
-                
+                crt251.Questions.Add(Q96.Instance);
+                crt251.Questions.Add(Q97.Instance);
+                crt251.Questions.Add(Q98.Instance);
+                crt251.Questions.Add(Q99.Instance);
+                crt251.Questions.Add(Q100.Instance);
+
                 context.Exams.Add(crt251);
 
                 ExamEntity az100 = new ExamEntity()
