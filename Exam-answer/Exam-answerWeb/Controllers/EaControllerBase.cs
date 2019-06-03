@@ -56,7 +56,11 @@ namespace Exam_answerWeb.Controllers
             ViewData["title"] = title;
 
             ViewData["id"] = id;
-            ViewData["imageUrl"] = "images/salesforce/crt-251.png";
+            if (examViewModel.Code?.Equals("CRT-251", StringComparison.InvariantCultureIgnoreCase) == true)
+            {
+                ViewData["imageUrl"] = "images/salesforce/crt-251.png";
+                ViewData["imageAlt"] = $"{examViewModel.Provider}, {examViewModel.Code}: {examViewModel.Name}";
+            }
 
             var cd = Environment.CurrentDirectory;
 

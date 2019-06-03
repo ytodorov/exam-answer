@@ -35,7 +35,7 @@
     }
     <link href="@ViewData["canonicalUrl"]" rel="canonical" />
 
-
+    <meta property="fb:app_id" content="438289293607244" />
     <meta property="og:url" content="@(ViewData["canonicalUrl"])" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@(ViewData["finalTitle"])" />
@@ -43,6 +43,7 @@
     @if (ViewData["imageUrl"] != null)
     {
         <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
+        <meta property="og:image:alt" content="@ViewData["imageAlt"]" />
     }
 
     @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
