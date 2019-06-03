@@ -6,7 +6,7 @@ using System.Text;
 namespace DAL.Entities
 {
     public class QuestionEntity : SchemaOrgEntity
-    {       
+    {
 
         public ExamEntity Exam { get; set; }
 
@@ -30,7 +30,47 @@ namespace DAL.Entities
 
         [NotMapped]
         public List<AnswerEntity> SuggestedAnswerLd { get; set; }
-               
+
+        [NotMapped]
+        public string QuestionText
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                if (Contents != null)
+                {
+                    foreach (var content in Contents)
+                    {
+                        sb.Append(content.Text);
+                        sb.Append(" ");
+                    }
+                }
+                string result = sb.ToString().Trim();
+
+                return result;
+            }
+        }
+
+        [NotMapped]
+        public string ExplanationText
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                if (Explanations != null)
+                {
+                    foreach (var explanation in Explanations)
+                    {
+                        sb.Append(explanation.Text);
+                        sb.Append(" ");
+                    }
+                }
+                string result = sb.ToString().Trim();
+
+                return result;
+            }
+        }
+
     }
-        
+
 }

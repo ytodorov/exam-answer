@@ -13,7 +13,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                     {
                         new ContentEntity()
                         {
-                             Text = "Universal Containers’ current solution for managing its forecasts is cumbersome.",
+                             Text = "Universal Containers' current solution for managing its forecasts is cumbersome.",
                         },
                         new ContentEntity()
                         {

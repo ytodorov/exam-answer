@@ -89,12 +89,95 @@ namespace UnitTests
 
             var crt251 = exams.FirstOrDefault();
 
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-            var result = stringBuilder.ToString();
+
+
+            foreach (var question in crt251.Questions)
+            {
+                if (!question.Answers.Any(a => a.IsCorrect == true))
+                {
+                    continue;
+                }
+
+                sb.Append(question.QuestionText.Replace("\"", "\"\""));
+                sb.Append(",");
+
+                if (question.QuestionType == QuestionType.RadioButon)
+                {
+                    sb.Append("multiple-choice");
+                    sb.Append(",");
+                }
+                else if (question.QuestionType == QuestionType.CheckBox)
+                {
+                    sb.Append("multi-select");
+                    sb.Append(",");
+                }
+
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i < question.Answers?.Count)
+                    {
+                        var answer = question.Answers[i];
+                        sb.Append(answer.Text);
+                        sb.Append(",");
+                    }
+                    else
+                    {
+                        //sb.Append(string.Empty);
+                        sb.Append(",");
+                    }
+                }
+                if (question.QuestionType == QuestionType.CheckBox)
+                {
+                    sb.Append("\"");
+                }
+                for (int i = 0; i < 6; i++)
+                {
+
+                    if (i < question.Answers?.Count)
+                    {
+                        var answer = question.Answers[i];
+
+                        if (answer.IsCorrect == true)
+                        {
+                            var indexToInsert = question.Answers.IndexOf(answer) + 1;
+                            sb.Append(indexToInsert);
+                            if (question.QuestionType == QuestionType.CheckBox)
+                            {
+                                    sb.Append(",");
+                            }
+                        }
+                    }
+
+                }
+
+                sb = new StringBuilder(sb.ToString().Trim(','));
+
+                if (question.QuestionType == QuestionType.CheckBox)
+                {
+                    sb.Append("\"");
+                }
+                sb.Append(",");
+                if (!string.IsNullOrEmpty(question.ExplanationText))
+                {
+                    sb.Append($"\"{question.ExplanationText.Replace("\"", "\"\"")}\"");
+                }
+
+                sb.Append(",");
+
+                //string knowledgeArea = string.Empty;
+
+                //sb.Append(knowledgeArea);
+
+                sb.Append(Environment.NewLine);
+
+            }
+
+            var result = sb.ToString();
 
             File.WriteAllText("exportCrt-251.csv", result);
-                
+
         }
 
         [Fact]
