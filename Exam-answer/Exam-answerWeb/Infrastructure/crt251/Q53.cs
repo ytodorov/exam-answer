@@ -32,6 +32,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a campaign, associate the leads to the campaign, and qualify the respondents.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

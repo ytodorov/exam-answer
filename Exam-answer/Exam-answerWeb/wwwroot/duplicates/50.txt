@@ -1,4 +1,4 @@
-Northern Trail Outfitters’ sales representatives have to be certified to sell items in its Professional catalog.
+Northern Trail Outfitters' sales representatives have to be certified to sell items in its Professional catalog.
 
 Which two ways should Salesforce be set up to prevent those who are NOT certified from adding these items to
 

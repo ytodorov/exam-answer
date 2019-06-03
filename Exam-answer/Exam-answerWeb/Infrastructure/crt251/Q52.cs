@@ -12,7 +12,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new ContentEntity()
                 {
-                    Text = "A sales manager wants a report that all activities in the manager’s accounts, including contacts and opportunities.",
+                    Text = "A sales manager wants a report that all activities in the manager's accounts, including contacts and opportunities.",
                 },
                 new ContentEntity()
                 {
@@ -35,7 +35,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts, contacts, and opportunities the manager owns.",                    
+                    Text = "Activities report on accounts, contacts, and opportunities the manager owns.",     
+                    IsCorrect = true
                 },
             }
         };

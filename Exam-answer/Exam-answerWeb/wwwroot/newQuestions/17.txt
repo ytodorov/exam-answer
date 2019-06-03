@@ -1,4 +1,4 @@
-Northern Trail Outfitters’ (NTO) consumer business has grown to more than 500,000 contacts. NTO stores all individual
+Northern Trail Outfitters' (NTO) consumer business has grown to more than 500,000 contacts. NTO stores all individual
 consumer contacts under a single account called "Consumer." Mass updates are no longer completed within the defined
 maintenance timeframe and an increased number of errors are being reported.
 

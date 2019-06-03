@@ -13,7 +13,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new ContentEntity()
                 {
-                    Text = "Northern Trail Outfitters’ (NTO) consumer business has grown to more than 500,000 contacts.",
+                    Text = "Northern Trail Outfitters' (NTO) consumer business has grown to more than 500,000 contacts.",
                 },
                 new ContentEntity()
                 {

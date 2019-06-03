@@ -31,7 +31,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The information shown is based on the sales representative’s connection level with the contact on Facebook.",
+                    Text = "The information shown is based on the sales representative's connection level with the contact on Facebook.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

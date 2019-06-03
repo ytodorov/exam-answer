@@ -13,7 +13,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new ContentEntity()
                 {
-                    Text = "Sales directors at Northern Trail Outfitters (NTO) cannot see or update their teams’ forecasts.",
+                    Text = "Sales directors at Northern Trail Outfitters (NTO) cannot see or update their teams' forecasts.",
                 },                
                 new ContentEntity()
                 {
@@ -36,7 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable override forecast permission in the Manager’s profile.",                    
+                    Text = "Enable override forecast permission in the Manager's profile.",                    
                 },
                 new AnswerEntity()
                 {

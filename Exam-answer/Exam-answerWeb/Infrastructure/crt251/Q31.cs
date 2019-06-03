@@ -13,7 +13,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new ContentEntity()
                 {
-                    Text = "Universal Containers’ management wants to see forecast numbers by all sales representatives and by multiple product groups.",
+                    Text = "Universal Containers' management wants to see forecast numbers by all sales representatives and by multiple product groups.",
                 },
                 new ContentEntity()
                 {

@@ -29,6 +29,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Use a workflow rule to email sales management when the opportunity is created in the closed/won stage.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -41,6 +42,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a report that displays opportunities that have a closed date less than or equal to the created date.",
+                    IsCorrect = true
                 },
             }
         };

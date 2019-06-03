@@ -17,7 +17,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                         },
                         new ContentEntity()
                         {
-                            Text = "The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts."
+                            Text = "The sales managers do NOT have visibility into their teams' forecasts and are NOT able to update the forecasts."
                         },
                         new ContentEntity()
                         {

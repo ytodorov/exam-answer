@@ -40,15 +40,18 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Two record types",                    
+                    Text = "Two record types",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Two page layouts.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Two sales processes.",
+                    IsCorrect = true
                 },
             }
         };

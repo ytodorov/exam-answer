@@ -28,6 +28,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Grant partner access to quotes and add the quotes related list to the partner opportunity page layouts.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

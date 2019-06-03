@@ -1,4 +1,4 @@
-﻿Northern Trail Outfitters’ European and Asia Pacific sales teams have different business requirements on how to
+﻿Northern Trail Outfitters' European and Asia Pacific sales teams have different business requirements on how to
 
 create new opportunities. The teams must configure a set of geographically-specific fields relevant only to their team as
 

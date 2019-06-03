@@ -41,7 +41,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                         },
                         new AnswerEntity()
                         {
-                            Text = "Follow the opportunities’ quotes in Chatter.",
+                            Text = "Follow the opportunities' quotes in Chatter.",
                         },
                     }
         };

@@ -100,7 +100,7 @@ namespace UnitTests
                     continue;
                 }
 
-                sb.Append(question.QuestionText.Replace("\"", "\"\""));
+                sb.Append(question.QuestionText.Replace("\"", "\"\"").Replace(",", ""));
                 sb.Append(",");
 
                 if (question.QuestionType == QuestionType.RadioButon)
@@ -119,7 +119,7 @@ namespace UnitTests
                     if (i < question.Answers?.Count)
                     {
                         var answer = question.Answers[i];
-                        sb.Append(answer.Text);
+                        sb.Append(answer.Text.Replace("\"", "\"\"").Replace(",", ""));
                         sb.Append(",");
                     }
                     else
@@ -161,7 +161,7 @@ namespace UnitTests
                 sb.Append(",");
                 if (!string.IsNullOrEmpty(question.ExplanationText))
                 {
-                    sb.Append($"\"{question.ExplanationText.Replace("\"", "\"\"")}\"");
+                    sb.Append($"\"{question.ExplanationText.Replace("\"", "\"\"").Replace(",", "")}\"");
                 }
 
                 sb.Append(",");
@@ -212,9 +212,9 @@ namespace UnitTests
             //var examViewModel = mapper.Map<ExamViewModel>(examEntity);
 
             var res = LevenshteinDistance.CalculateSimilarity(@"
- Universal Containers’ current solution for managing its forecasts is cumbersome.
+ Universal Containers' current solution for managing its forecasts is cumbersome.
 
-The sales managers do NOT have visibility into their teams’ forecasts and are NOT able to update the forecasts. ",
+The sales managers do NOT have visibility into their teams' forecasts and are NOT able to update the forecasts. ",
 
 
 @" As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.

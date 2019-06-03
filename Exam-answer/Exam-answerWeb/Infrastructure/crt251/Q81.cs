@@ -12,7 +12,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new ContentEntity()
                 {
-                    Text = "Northern Trail Outfitters’ European and Asia Pacific sales teams have different business requirements on how to create new opportunities.",
+                    Text = "Northern Trail Outfitters' European and Asia Pacific sales teams have different business requirements on how to create new opportunities.",
                 },
                 new ContentEntity()
                 {

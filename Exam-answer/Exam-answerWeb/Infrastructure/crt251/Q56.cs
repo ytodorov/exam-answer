@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Use a data enrichment tool to verify account and contact data is up-to-date.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

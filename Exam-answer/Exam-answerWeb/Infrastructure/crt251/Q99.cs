@@ -27,7 +27,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Confirm that the products are shared with the sales representative’s role.",                    
+                    Text = "Confirm that the products are shared with the sales representative's role.",                    
                 },
                 new AnswerEntity()
                 {

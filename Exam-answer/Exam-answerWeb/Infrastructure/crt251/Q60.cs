@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Utilize Campaigns for conferences and add Campaign Members to record attendee information.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
