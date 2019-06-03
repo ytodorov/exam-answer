@@ -93,3 +93,7 @@ input.k-checkbox+label
 {
     user-select: inherit;
 }
+
+.twitter-follow-button[style] {
+    vertical-align: text-bottom !important;
+}
