@@ -56,6 +56,7 @@ namespace Exam_answerWeb.Controllers
             ViewData["title"] = title;
 
             ViewData["id"] = id;
+            ViewData["imageUrl"] = "images/salesforce/crt-251.png";
 
             var cd = Environment.CurrentDirectory;
 

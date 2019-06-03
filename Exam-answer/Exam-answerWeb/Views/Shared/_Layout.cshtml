@@ -40,8 +40,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@(ViewData["finalTitle"])" />
     <meta property="og:description" content="@(ViewData["description"])" />
+    @if (ViewData["imageUrl"] != null)
+    {
+        <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
+    }
+
     @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
-       
+
     @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />*@
 
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.common-fiori.min.css" />
@@ -128,9 +133,9 @@
             </div>
 
             @*<partial name="_PrevNextPartial" />
-            <br />
-            <partial name="_ProgressPartial" />
-            <br />*@
+                <br />
+                <partial name="_ProgressPartial" />
+                <br />*@
             @RenderBody()
             <br />
             <partial name="_PrevNextPartial" />
@@ -149,6 +154,6 @@
     <partial name="_JsScripts" />
     <script>
     @Html.Kendo().DeferredScripts(false)
-    </script>   
+    </script>
 </body>
 </html>

@@ -28,7 +28,7 @@ namespace Exam_answerWeb
                 var context = services.GetRequiredService<ExamAnswerContext>();
 
                 //4. Call the DataGenerator to create sample data
-                DataGenerator.Initialize(services);
+                DataGenerator.Initialize(context);
             }
 
             //Continue to run the application
