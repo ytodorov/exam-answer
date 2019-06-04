@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a custom lead score field to assess lead quality and assign the leads that exceed this score to partners.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

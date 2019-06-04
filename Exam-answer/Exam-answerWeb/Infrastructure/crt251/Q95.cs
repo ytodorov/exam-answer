@@ -37,10 +37,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Assign 0% probability to the first sales stage.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Configure the first stage with the omitted forecast category.",
+                    IsCorrect = true
                 },
             }
         };

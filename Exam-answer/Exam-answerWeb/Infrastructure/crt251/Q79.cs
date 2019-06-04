@@ -27,7 +27,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Set accounts to public read-only and contacts to controlled by parent.",                    
+                    Text = "Set accounts to public read-only and contacts to controlled by parent.",           
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

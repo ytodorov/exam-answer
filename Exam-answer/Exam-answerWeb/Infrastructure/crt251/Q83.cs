@@ -24,6 +24,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a validation rule to enforce field access based on the sales stage and a custom permission.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

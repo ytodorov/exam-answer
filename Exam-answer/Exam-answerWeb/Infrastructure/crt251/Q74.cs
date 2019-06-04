@@ -24,6 +24,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a criteria-based sharing rule to add the product management team to relevant opportunities.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

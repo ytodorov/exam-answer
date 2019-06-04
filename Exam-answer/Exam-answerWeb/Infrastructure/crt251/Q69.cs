@@ -32,6 +32,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a reduction Order under the activated Order.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

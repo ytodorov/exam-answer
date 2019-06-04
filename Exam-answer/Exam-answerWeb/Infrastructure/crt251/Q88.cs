@@ -29,10 +29,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "List of stakeholders with roles and titles.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Key reports from the current system.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -45,6 +47,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Organizational chart with titles.",
+                    IsCorrect = true
                 },
             }
         };

@@ -30,6 +30,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Enable opportunity team selling and have each sales representative configure his or her default opportunity team.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

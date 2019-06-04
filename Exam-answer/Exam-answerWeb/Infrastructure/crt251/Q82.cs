@@ -36,7 +36,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Partner users can own account and opportunity records in Salesforce.",                    
+                    Text = "Partner users can own account and opportunity records in Salesforce.",            
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -45,6 +46,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "The sharing model should be re-evaluated when the Partner Community is enabled.",
+                    IsCorrect = true
                 },
             }
         };

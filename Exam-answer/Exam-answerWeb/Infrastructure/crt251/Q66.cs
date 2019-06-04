@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create two sales processes, two opportunity record types, and workflow rules triggered by the opportunity amount.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

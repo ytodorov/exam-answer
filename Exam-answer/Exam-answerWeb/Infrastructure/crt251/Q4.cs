@@ -28,21 +28,21 @@ namespace Exam_answerWeb.Infrastructure.crt251
              {
                  new AnswerEntity()
                  {
-                     Text = "Schedule a custom forecast report to run weekly and store the results in a custom report folder.",
-                      IsCorrect = true
-                  },
-                        new AnswerEntity()
-                        {
-                            Text = "Create a reporting snapshot to run daily and store the results in a custom object.",
-                        },
-                        new AnswerEntity()
-                        {
-                            Text = "Create a reporting snapshot to run weekly and store the results in a custom object.",
-                        },
-                        new AnswerEntity()
-                        {
-                            Text = "Schedule a custom forecast report to run daily and store the results in a custom report folder.",
-                        },
+                     Text = "Schedule a custom forecast report to run weekly and store the results in a custom report folder.",                     
+                 },
+                 new AnswerEntity()
+                 {
+                     Text = "Create a reporting snapshot to run daily and store the results in a custom object.",
+                 },
+                 new AnswerEntity()
+                 {
+                    Text = "Create a reporting snapshot to run weekly and store the results in a custom object.",
+                    IsCorrect = true
+                 },
+                 new AnswerEntity()
+                 {
+                    Text = "Schedule a custom forecast report to run daily and store the results in a custom report folder.",
+                 },
             }
         };
     }

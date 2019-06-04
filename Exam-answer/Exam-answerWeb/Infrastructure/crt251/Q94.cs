@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "The information shown is based on the sales representative's social connection with the contact.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

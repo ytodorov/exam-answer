@@ -34,6 +34,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Remove person account record types from the business sales division's sales representative user profile.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

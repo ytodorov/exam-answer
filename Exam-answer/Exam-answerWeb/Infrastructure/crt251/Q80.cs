@@ -25,10 +25,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Ensure that all sales representatives have access to at least one PriceBook when creating product lines.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Configure a validation rule that tests the Has Line Item and Stage fields for the correct condition.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

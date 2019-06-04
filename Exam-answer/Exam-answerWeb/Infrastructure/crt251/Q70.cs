@@ -33,6 +33,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Configure weekly customized forecast reports and dashboards to be emailed to sales management.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -45,6 +46,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Create a forecast hierarchy and assign managers to the forecast manager role.",
+                    IsCorrect = true                     
                 },
             }
         };

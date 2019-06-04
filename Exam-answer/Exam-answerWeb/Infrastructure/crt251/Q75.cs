@@ -40,11 +40,13 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use account team to share records to relevant people.",                    
+                    Text = "Use account team to share records to relevant people.",      
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Use opportunity team to share records with relevant people.",
+                    IsCorrect = true
                 },
             }
         };
