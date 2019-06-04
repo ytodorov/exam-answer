@@ -29,6 +29,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Consider available sales methodology AppExchange applications.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -37,10 +38,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Configure Salesforce standard and custom objects to support the sales methodology.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
                     Text = "Embed Lightning components within Salesforce to support the sales methodology.",
+                    IsCorrect = true
                 },                
             }
         };

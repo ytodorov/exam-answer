@@ -24,6 +24,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Develop an Apex trigger for repeat accounts that inserts a copy of an opportunity for the sales representative when it reaches closed/won stage.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Map opportunity stages to forecast categories; assign accurate probability to each stage.",
+                    IsCorrect = true
                 },
             }
         };

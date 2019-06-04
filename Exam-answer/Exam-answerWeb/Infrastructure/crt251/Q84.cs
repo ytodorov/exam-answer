@@ -33,7 +33,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "A trigger on the opportunity.",                    
+                    Text = "A trigger on the opportunity.",       
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

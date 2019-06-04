@@ -25,6 +25,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Obtain customer sign-off on the solution design.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -32,7 +33,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Map business requirements to the solution design.",                    
+                    Text = "Map business requirements to the solution design.",             
+                    IsCorrect = true                     
                 },
                 new AnswerEntity()
                 {

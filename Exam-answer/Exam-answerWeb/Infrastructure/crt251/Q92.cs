@@ -31,7 +31,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add the user manually to the parent account team and each of the child account teams.",                    
+                    Text = "Add the user manually to the parent account team and each of the child account teams.", 
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

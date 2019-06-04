@@ -40,6 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Send an email using time-based workflow.",
+                    IsCorrect = true
                 },
             }
         };

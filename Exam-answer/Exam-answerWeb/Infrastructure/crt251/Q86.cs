@@ -29,10 +29,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Ensure that sales management approves discount requests for each opportunity.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Run a report on opportunities showing list price and discounted price.",                    
+                    Text = "Run a report on opportunities showing list price and discounted price.",            
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

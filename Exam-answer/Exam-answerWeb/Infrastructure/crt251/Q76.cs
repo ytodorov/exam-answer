@@ -33,10 +33,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Communicating the training plan well in advance of training start date.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Customizing the training curriculum for each specific region.",                    
+                    Text = "Customizing the training curriculum for each specific region.",        
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

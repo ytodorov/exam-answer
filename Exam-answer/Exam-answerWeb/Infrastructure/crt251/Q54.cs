@@ -32,7 +32,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Need to add notes quickly while talking to the client.",                    
+                    Text = "Need to add notes quickly while talking to the client.",       
+                    IsCorrect  = true                    
                 },
                 new AnswerEntity()
                 {
@@ -41,6 +42,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Need to view the caller ID on screen and quickly make calls with one click.",
+                    IsCorrect = true
                 },
             }
         };

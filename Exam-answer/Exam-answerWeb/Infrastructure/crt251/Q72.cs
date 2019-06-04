@@ -28,6 +28,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Campaigns in which a contact became a member within the last 60 days will be associated and displayed in Campaigns with Influenced Opportunities Report.",                    
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

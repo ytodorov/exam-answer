@@ -40,6 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Forward emails using their Email-to-Salesforce email address from their smartphones and computers.",
+                    IsCorrect = true
                 },
             }
         };

@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Report on lead lifetime by industry.",
+                    IsCorrect = true
                 },
             }
         };

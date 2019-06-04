@@ -40,6 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Salesforce Mobile App.",
+                    IsCorrect = true
                 },
             }
         };

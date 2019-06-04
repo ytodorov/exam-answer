@@ -36,6 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Embed a chart on the account page; no other customization is needed.",
+                    IsCorrect = true
                 },
             }
         };

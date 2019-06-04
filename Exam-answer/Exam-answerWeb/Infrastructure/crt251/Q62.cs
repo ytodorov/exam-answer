@@ -33,6 +33,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Enable person accounts and migrate the contact data.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -45,6 +46,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Ensure that no single account has more than 10,000 contacts.",
+                    IsCorrect =true                     
                 },
             }
         };

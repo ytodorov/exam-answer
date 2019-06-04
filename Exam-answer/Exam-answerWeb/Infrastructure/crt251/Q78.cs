@@ -36,11 +36,13 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Run one-time or scheduled data loads.",                    
+                    Text = "Run one-time or scheduled data loads.",       
+                    IsCorrect = true                     
                 },
                 new AnswerEntity()
                 {
                     Text = "Export field history data.",
+                    IsCorrect = true
                 },
             }
         };

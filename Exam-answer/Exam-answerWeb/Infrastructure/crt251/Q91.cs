@@ -39,7 +39,8 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable schedules on product object.",                    
+                    Text = "Enable schedules on product object.",                 
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
