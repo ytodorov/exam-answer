@@ -30,7 +30,29 @@ namespace Exam_AnswerWeb.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            return View($"crt-251/index");
+            ExamEntity examEntity = examAnswerContext.Exams
+               .Where(e => e.Provider.Equals("salesforce", StringComparison.InvariantCultureIgnoreCase) &&
+                   e.Code.Equals("crt-251", StringComparison.InvariantCultureIgnoreCase))
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.Contents)
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.Answers)
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.Explanations)
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.References)
+
+               .AsNoTracking()
+
+               .FirstOrDefault();
+
+            var examViewModel = mapper.Map<ExamViewModel>(examEntity);
+
+            return View($"crt-251/index", examViewModel);
         }
 
         //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
