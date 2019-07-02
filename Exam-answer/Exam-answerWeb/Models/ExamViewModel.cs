@@ -14,5 +14,14 @@ namespace Exam_answerWeb.Models
         public string Provider { get; set; }
 
         public List<QuestionViewModel> Questions { get; set; }
+
+        public string UdemyLinkUrl { get; set; }
+
+        public string UdemyLinkMessage { get; set; }
+
+        public string UdemyMessage { get; set; }
+
+        public bool ShowUdemy { get; set; } = true;
+
     }
 }

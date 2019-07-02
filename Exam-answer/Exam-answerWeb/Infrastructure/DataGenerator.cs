@@ -125,6 +125,14 @@ namespace Exam_answerWeb.Infrastructure
             crt251.Questions.Add(Q99.Instance);
             crt251.Questions.Add(Q100.Instance);
 
+            crt251.ShowUdemy = true;
+                
+            crt251.UdemyLinkUrl = "https://www.udemy.com/salesforce-crt-251-sales-cloud-consultant-exam-questions/?couponCode=50_OFF";
+            crt251.UdemyLinkMessage = "Salesforce CRT-251: Sales Cloud Consultant - 50% OFF";
+            crt251.UdemyMessage =
+                "If you like what you see, please support the future development of our web site by buying this practice test at Udemy." +
+                " Click this link for a 50% discount. The price is ONLY 9.99!";
+
             context?.Exams?.Add(crt251);
 
             result.Add(crt251);
@@ -152,8 +160,6 @@ namespace Exam_answerWeb.Infrastructure
             az100.Questions.Add(Az100.Q13Instance);
             az100.Questions.Add(Az100.Q14Instance);
             az100.Questions.Add(Az100.Q15Instance);
-
-
 
             context?.Exams?.Add(az100);
             result.Add(az100);

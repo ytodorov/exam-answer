@@ -1,0 +1,9 @@
+﻿@model ExamViewModel
+@if (Model.ShowUdemy)
+{
+    <div class="k-block k-success-colored">
+        @Model.UdemyMessage
+        <a href="@Model.UdemyLinkUrl" title="@Model.UdemyLinkMessage" rel="stylesheet">@Model.UdemyLinkMessage</a>
+    </div>
+}
+

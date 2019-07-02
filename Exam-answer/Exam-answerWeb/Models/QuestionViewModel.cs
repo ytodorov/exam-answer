@@ -26,6 +26,6 @@ namespace Exam_answerWeb.Models
 
         public List<AnswerViewModel> AcceptedAnswerLd { get; set; }
 
-        public List<AnswerViewModel> SuggestedAnswerLd { get; set; }
+        public List<AnswerViewModel> SuggestedAnswerLd { get; set; }        
     }
 }
