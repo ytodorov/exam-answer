@@ -4,6 +4,7 @@ using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Rewrite;
@@ -237,6 +238,25 @@ namespace Exam_answerWeb
                                await next(context);
                            };
                        });
+
+            //app.Use(async (context, next) =>
+            //{
+            //    var body = context.Response.Body;
+
+            //    using (var updatedBody = new MemoryStream())
+            //    {
+            //        context.Response.Body = updatedBody;
+
+            //        await next();
+
+            //        context.Response.Body = body;
+
+            //        updatedBody.Seek(0, SeekOrigin.Begin);
+            //        var newContent = new StreamReader(updatedBody).ReadToEnd();
+
+            //        await context.Response.WriteAsync(AngleSharpHelper.PrettifyHtml(newContent));
+            //    }
+            //});
 
 
             app.UseMvc(routes =>
