@@ -17,7 +17,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new ContentEntity()
                 {
-                    Text = "Universal containers have set up a sales process that requires opportunities to have associated product line items before moving to the negotiation stage.",
+                    Text = "Universal containers have set up a sales process that requires opportunities to have associated product line items before moving to the negotiation stage. (Choose 2 answers)",
                 },
             },
             Answers = new List<AnswerEntity>()
