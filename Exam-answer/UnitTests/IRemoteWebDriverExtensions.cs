@@ -138,7 +138,7 @@ console.log(aTags[i]);
 
             string result = ((IJavaScriptExecutor)driver).ExecuteScript(jsToBeExecuted)?.ToString();
             driver.WaitFoss();
-            return driver;
+            return driver;  
         }
 
         /// <summary>
