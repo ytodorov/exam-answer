@@ -12,6 +12,8 @@ namespace DAL.Entities
 
         public int? ExamId { get; set; }
 
+        public string Section { get; set; }
+
         public QuestionType QuestionType { get; set; } = QuestionType.RadioButon;
 
         public List<ContentEntity> Contents { get; set; }

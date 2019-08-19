@@ -12,6 +12,8 @@ namespace Exam_answerWeb.Models
 
         public int? ExamId { get; set; }
 
+        public string Section { get; set; }
+
         public QuestionType QuestionType { get; set; }
 
         public List<ContentViewModel> Contents { get; set; }

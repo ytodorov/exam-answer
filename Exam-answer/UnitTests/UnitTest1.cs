@@ -82,8 +82,8 @@ namespace UnitTests
             var allquestions = crt251.Questions.Where(q => !q.Answers.Any(a => a.IsCorrect == true)).Select(q => q.Order).ToList();
         }
 
-        [Fact]
-        public void CreateExportTest()
+        // [Fact]
+        public void CreateExportForUdemyTest()
         {
             var exams = DataGenerator.Initialize(null);
 
