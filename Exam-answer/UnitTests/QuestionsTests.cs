@@ -11,18 +11,25 @@ using Xunit;
 
 namespace UnitTests
 {
-    public class UnitTest1
+    public class QuestionsTests
     {
+        public List<ExamEntity> ExamsToCheck { get; set; }
+
+        public QuestionsTests()
+        {
+            ExamsToCheck = DataGenerator.Initialize(null);
+            ExamsToCheck = ExamsToCheck.Where(e => !e.Code.Equals("AZ-100", StringComparison.CurrentCultureIgnoreCase)).ToList();
+        }
 
         [Fact]
         public void CheckForSimilarityOfQuestionsTest()
         {
 
-            var exams = DataGenerator.Initialize(null);
+            List<ExamEntity> exams = DataGenerator.Initialize(null);
 
-            var theExam = exams.FirstOrDefault(e => e.Code.Equals("AZ-900"));
+            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("AZ-900"));
 
-            var allquestions = theExam.Questions;
+            List<QuestionEntity> allquestions = theExam.Questions;
 
             List<double> distances = new List<double>();
 
@@ -35,21 +42,21 @@ namespace UnitTests
 
 
                     StringBuilder sb1 = new StringBuilder();
-                    foreach (var content in q1.Contents)
+                    foreach (ContentEntity content in q1.Contents)
                     {
                         sb1.AppendLine(content.Text);
                     }
-                    foreach (var answer in q1.Answers)
+                    foreach (AnswerEntity answer in q1.Answers)
                     {
                         sb1.AppendLine(answer.Text);
                     }
 
                     StringBuilder sb2 = new StringBuilder();
-                    foreach (var content in q2.Contents)
+                    foreach (ContentEntity content in q2.Contents)
                     {
                         sb2.AppendLine(content.Text);
                     }
-                    foreach (var answer in q2.Answers)
+                    foreach (AnswerEntity answer in q2.Answers)
                     {
                         sb2.AppendLine(answer.Text);
                     }
@@ -58,7 +65,7 @@ namespace UnitTests
 
                     string text2 = sb2.ToString();
 
-                    var distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
+                    double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
                     distances.Add(Math.Round(distance, 2));
                     if (distance > 0.96)
                     {
@@ -72,28 +79,48 @@ namespace UnitTests
         }
 
         [Fact]
-        public void CheckWithoutAnswersCrt251Test()
+        public void AllQuestionsShouldHaveAnswerTest()
         {
+            foreach (ExamEntity exam in ExamsToCheck)
+            {
+                List<int?> questionsWithoutAnswers = exam.Questions.Where(q => !q.Answers.Any(a => a.IsCorrect == true)).Select(q => q.Order).ToList();
+                Assert.Empty(questionsWithoutAnswers);
+            }
+        }
 
-            var exams = DataGenerator.Initialize(null);
+        [Fact]
+        public void AllQuestionsAnsewerAndTypeShouldMatchTest()
+        {
+            foreach (ExamEntity exam in ExamsToCheck)
+            {
+                foreach (var question in exam.Questions)
+                {
+                    var correctQuestionCount = question.Answers.Where(a => a.IsCorrect.GetValueOrDefault()).ToList();
 
-            var crt251 = exams.FirstOrDefault();
-
-            var allquestions = crt251.Questions.Where(q => !q.Answers.Any(a => a.IsCorrect == true)).Select(q => q.Order).ToList();
+                    if (question.QuestionType == QuestionType.CheckBox)
+                    {
+                        Assert.True(correctQuestionCount.Count > 1);
+                    }
+                    else if (question.QuestionType == QuestionType.RadioButon)
+                    {
+                        Assert.True(correctQuestionCount.Count == 1);
+                    }
+                }
+            }
         }
 
         // [Fact]
         public void CreateExportForUdemyTest()
         {
-            var exams = DataGenerator.Initialize(null);
+            List<ExamEntity> exams = DataGenerator.Initialize(null);
 
-            var crt251 = exams.FirstOrDefault();
+            ExamEntity crt251 = exams.FirstOrDefault();
 
             StringBuilder sb = new StringBuilder();
 
 
 
-            foreach (var question in crt251.Questions)
+            foreach (QuestionEntity question in crt251.Questions)
             {
                 if (!question.Answers.Any(a => a.IsCorrect == true))
                 {
@@ -118,7 +145,7 @@ namespace UnitTests
                 {
                     if (i < question.Answers?.Count)
                     {
-                        var answer = question.Answers[i];
+                        AnswerEntity answer = question.Answers[i];
                         sb.Append(answer.Text.Replace("\"", "\"\"").Replace(",", ""));
                         sb.Append(",");
                     }
@@ -137,11 +164,11 @@ namespace UnitTests
 
                     if (i < question.Answers?.Count)
                     {
-                        var answer = question.Answers[i];
+                        AnswerEntity answer = question.Answers[i];
 
                         if (answer.IsCorrect == true)
                         {
-                            var indexToInsert = question.Answers.IndexOf(answer) + 1;
+                            int indexToInsert = question.Answers.IndexOf(answer) + 1;
                             sb.Append(indexToInsert);
                             if (question.QuestionType == QuestionType.CheckBox)
                             {
@@ -174,7 +201,7 @@ namespace UnitTests
 
             }
 
-            var result = sb.ToString();
+            string result = sb.ToString();
 
             File.WriteAllText("exportCrt-251.csv", result);
 
@@ -211,7 +238,7 @@ namespace UnitTests
 
             //var examViewModel = mapper.Map<ExamViewModel>(examEntity);
 
-            var res = LevenshteinDistance.CalculateSimilarity(@"
+            double res = LevenshteinDistance.CalculateSimilarity(@"
  Universal Containers' current solution for managing its forecasts is cumbersome.
 
 The sales managers do NOT have visibility into their teams' forecasts and are NOT able to update the forecasts. ",

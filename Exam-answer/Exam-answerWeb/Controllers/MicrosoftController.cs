@@ -52,7 +52,7 @@ namespace Exam_AnswerWeb.Controllers
 
             if (intId > 0 && intId <= 15)
             {
-                var res = QuestionGeneric("microsoft", "az-100", id);
+                IActionResult res = QuestionGeneric("microsoft", "az-100", id);
                 return res;
             }
 
@@ -61,7 +61,7 @@ namespace Exam_AnswerWeb.Controllers
             ViewData["title"] = title;
             ViewData["id"] = id;
 
-            var cd = Environment.CurrentDirectory;
+            string cd = Environment.CurrentDirectory;
 
            
             QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
@@ -126,7 +126,7 @@ namespace Exam_AnswerWeb.Controllers
 
                 StringBuilder descriptionLessThan250 = new StringBuilder();
 
-                foreach (var sent in sentences)
+                foreach (string sent in sentences)
                 {
                     if (descriptionLessThan250.Length + sent.Length < 250)
                     {

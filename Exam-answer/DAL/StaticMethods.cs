@@ -12,8 +12,8 @@ namespace Core
         {
             long fileTime;
             GetSystemTimePreciseAsFileTime(out fileTime);
-            var offset = DateTimeOffset.FromFileTime(fileTime);
-            var ticks = offset.Ticks;
+            DateTimeOffset offset = DateTimeOffset.FromFileTime(fileTime);
+            long ticks = offset.Ticks;
 
             return ticks;
         }

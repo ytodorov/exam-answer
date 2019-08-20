@@ -81,7 +81,7 @@ namespace Exam_answerWeb
 
             List<string> newFiles = Directory.GetFiles(Path.Combine(path, "newQuestions"), "*.*", SearchOption.AllDirectories).ToList();
 
-            foreach (var filePath in files)
+            foreach (string filePath in files)
             {
                 //string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
                 if (!string.IsNullOrEmpty(filePath))
@@ -124,7 +124,7 @@ namespace Exam_answerWeb
                 }
             }
 
-            var salesForceQuestions = StaticContent.AllQuestions
+            List<SearchQuestionOldViewModel> salesForceQuestions = StaticContent.AllQuestions
                 .Where(s => s.ExamProvider.Equals("SalesForce", StringComparison.InvariantCultureIgnoreCase))
                 .OrderBy(s => s.Number)
                 .ToList();
@@ -220,7 +220,7 @@ namespace Exam_answerWeb
                        {
                            return async context =>
                            {
-                               var stopWatch = new Stopwatch();
+                               Stopwatch stopWatch = new Stopwatch();
                                stopWatch.Start();
                                context.Response.OnStarting(
                                    () =>

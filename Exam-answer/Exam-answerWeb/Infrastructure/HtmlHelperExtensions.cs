@@ -9,8 +9,8 @@ namespace Exam_answerWeb.Infrastructure
     public static class HtmlHelperExtensions
     {
         public static string GetNextId(this IHtmlHelper helper, bool returnLast = false)
-        {            
-            var currentId = helper.ViewContext.HttpContext.Items["currentId"];
+        {
+            object currentId = helper.ViewContext.HttpContext.Items["currentId"];
             if (returnLast)
             {
                 return currentId?.ToString();
@@ -30,7 +30,7 @@ namespace Exam_answerWeb.Infrastructure
 
         public static string GetNextQuestionId(this IHtmlHelper helper, bool returnLast = false)
         {
-            var currentId = helper.ViewContext.HttpContext.Items["questionId"];
+            object currentId = helper.ViewContext.HttpContext.Items["questionId"];
             if (returnLast)
             {
                 return currentId?.ToString();

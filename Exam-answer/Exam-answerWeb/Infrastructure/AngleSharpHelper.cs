@@ -11,10 +11,10 @@ namespace Exam_answerWeb.Infrastructure
     {
         public static string PrettifyHtml(string newContent)
         {
-            var parser = new AngleSharp.Html.Parser.HtmlParser();
-            var document = parser.ParseDocument(newContent);
+            AngleSharp.Html.Parser.HtmlParser parser = new AngleSharp.Html.Parser.HtmlParser();
+            AngleSharp.Html.Dom.IHtmlDocument document = parser.ParseDocument(newContent);
 
-            var sw = new StringWriter();
+            StringWriter sw = new StringWriter();
             document.ToHtml(sw, new PrettyMarkupFormatter());
             return sw.ToString();
         }

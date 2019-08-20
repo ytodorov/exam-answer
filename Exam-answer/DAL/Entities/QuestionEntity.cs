@@ -41,7 +41,7 @@ namespace DAL.Entities
                 StringBuilder sb = new StringBuilder();
                 if (Contents != null)
                 {
-                    foreach (var content in Contents)
+                    foreach (ContentEntity content in Contents)
                     {
                         sb.Append(content.Text);
                         sb.Append(" ");
@@ -61,7 +61,7 @@ namespace DAL.Entities
                 StringBuilder sb = new StringBuilder();
                 if (Explanations != null)
                 {
-                    foreach (var explanation in Explanations)
+                    foreach (ExplanationEntity explanation in Explanations)
                     {
                         sb.Append(explanation.Text);
                         sb.Append(" ");

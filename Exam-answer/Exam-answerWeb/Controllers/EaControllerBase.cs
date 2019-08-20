@@ -50,7 +50,7 @@ namespace Exam_answerWeb.Controllers
 
                 .FirstOrDefault();
 
-            var examViewModel = mapper.Map<ExamViewModel>(examEntity);
+            ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
 
             string title = $"Exam {examViewModel.Code}: Question {id}";
             ViewData["title"] = title;
@@ -62,7 +62,7 @@ namespace Exam_answerWeb.Controllers
                 ViewData["imageAlt"] = $"{examViewModel.Provider}, {examViewModel.Code}: {examViewModel.Name}";
             }
 
-            var cd = Environment.CurrentDirectory;
+            string cd = Environment.CurrentDirectory;
 
             if (int.TryParse(id, out int intId))
             {
@@ -78,7 +78,7 @@ namespace Exam_answerWeb.Controllers
                 return NotFound();
             }
 
-            var questionVM = examViewModel.Questions[intId - 1];
+            QuestionViewModel questionVM = examViewModel.Questions[intId - 1];
 
             ViewData["description"] = questionVM.Contents?.FirstOrDefault()?.Text;
 
@@ -93,16 +93,16 @@ namespace Exam_answerWeb.Controllers
             string upvoteCount = HttpUtility.JavaScriptStringEncode("0");
             string url = HttpUtility.JavaScriptStringEncode($"https://www.exam-answer.com/salesforce/crt-251/question{id}");
 
-            var acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
-            var suggestedAnswers = questionVM.Answers.Where(a => a.IsCorrect != true).ToList();
+            List<AnswerViewModel> acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
+            List<AnswerViewModel> suggestedAnswers = questionVM.Answers.Where(a => a.IsCorrect != true).ToList();
 
             StringBuilder sbAcceptedAnswer = new StringBuilder();
             StringBuilder sbSuggestedAnswer = new StringBuilder();
 
             sbAcceptedAnswer.AppendLine("[");
 
-            var allAnswers = string.Empty;
-            foreach (var aa in acceptedAnswers)
+            string allAnswers = string.Empty;
+            foreach (AnswerViewModel aa in acceptedAnswers)
             {
                 allAnswers += $"{aa.Text} ";
             }
@@ -145,7 +145,7 @@ namespace Exam_answerWeb.Controllers
             sbAcceptedAnswer.AppendLine("]");
 
             sbSuggestedAnswer.AppendLine("[");
-            foreach (var aa in suggestedAnswers)
+            foreach (AnswerViewModel aa in suggestedAnswers)
             {
                 string text = HttpUtility.JavaScriptStringEncode(aa.Text);
 
@@ -169,11 +169,11 @@ namespace Exam_answerWeb.Controllers
 
             StringBuilder sbQuestionText = new StringBuilder();
 
-            foreach (var c in questionVM.Contents)
+            foreach (ContentViewModel c in questionVM.Contents)
             {
                 sbQuestionText.Append(c.Text);
             }
-            var test =  HttpUtility.JavaScriptStringEncode("\"test\"");
+            string test =  HttpUtility.JavaScriptStringEncode("\"test\"");
             string questionText = HttpUtility.JavaScriptStringEncode(sbQuestionText.ToString());
 
             // https://developers.google.com/search/docs/data-types/faqpage
@@ -203,7 +203,7 @@ $@"
 
             if (intId <= examViewModel.Questions.Count)
             {
-                var theQuestion = examViewModel.Questions[intId - 1];
+                QuestionViewModel theQuestion = examViewModel.Questions[intId - 1];
                 return View("Question", theQuestion);
             }
             else

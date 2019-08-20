@@ -21,7 +21,7 @@ namespace Exam_answerWeb.Controllers
 
             int maxLengthTextInUi = 100;
 
-            var baseUrl = Request.Scheme + "://" + Request.Host;
+            string baseUrl = Request.Scheme + "://" + Request.Host;
 
             foreach (SearchQuestionOldViewModel scvm in result)
             {

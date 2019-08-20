@@ -50,7 +50,7 @@ namespace Exam_AnswerWeb.Controllers
 
                .FirstOrDefault();
 
-            var examViewModel = mapper.Map<ExamViewModel>(examEntity);
+            ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
 
             return View($"crt-251/index", examViewModel);
         }
@@ -59,7 +59,7 @@ namespace Exam_AnswerWeb.Controllers
         [Route("question{id}")]
         public IActionResult QuestionGeneric(string id)
         {
-            var res = QuestionGeneric("salesforce", "crt-251", id);
+            IActionResult res = QuestionGeneric("salesforce", "crt-251", id);
 
             return res;
         }
