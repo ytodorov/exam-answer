@@ -1,93 +1,56 @@
 using DAL.Entities;
 using System.Collections.Generic;
 
-namespace Exam_answerWeb.Infrastructure.Az900
+namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
         public static QuestionEntity Q22Instance = new QuestionEntity()
         {
             Order = 22,
-            Section = "",
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "",
+                    Text = "This question requires that you evaluate the UPPER-CASE text to determine if it is correct.",
                 },
                 new ContentEntity()
                 {
-                    Text = ""
+                    Text = "An organization that hosts its infrastructure IN A PRIVATE CLOUD can decommission its data center."
                 },
                 new ContentEntity()
                 {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                }
+                    Text = "Instructions: Review the UPPER-CASE text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct."
+                },               
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "No change is needed.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "In a hybrid cloud."
                 },
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "In the public cloud.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "On a Hyper-V host."
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
+                
             },
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
+               
             }
         };
     }

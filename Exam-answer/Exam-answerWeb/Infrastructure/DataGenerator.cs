@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Exam_answerWeb.Infrastructure.crt251;
 using System.Text;
+using Exam_answerWeb.Infrastructure.Questions;
 
 namespace Exam_answerWeb.Infrastructure
 {
@@ -163,6 +164,37 @@ namespace Exam_answerWeb.Infrastructure
 
             context?.Exams?.Add(az100);
             result.Add(az100);
+
+            ExamEntity az900 = new ExamEntity()
+            {
+                Provider = "Microsoft",
+                Code = "AZ-900",
+                Name = "Microsoft Azure Fundamentals",
+                Questions = new List<QuestionEntity>()
+            };
+
+            az900.Questions.Add(Az900.Q1Instance);
+            az900.Questions.Add(Az900.Q2Instance);
+            az900.Questions.Add(Az900.Q3Instance);
+            az900.Questions.Add(Az900.Q4Instance);
+            az900.Questions.Add(Az900.Q5Instance);
+            az900.Questions.Add(Az900.Q6Instance);
+            az900.Questions.Add(Az900.Q7Instance);
+            az900.Questions.Add(Az900.Q8Instance);
+            az900.Questions.Add(Az900.Q9Instance);
+            az900.Questions.Add(Az900.Q10Instance);
+            az900.Questions.Add(Az900.Q11Instance);
+            az900.Questions.Add(Az900.Q12Instance);
+            az900.Questions.Add(Az900.Q13Instance);
+            az900.Questions.Add(Az900.Q14Instance);
+            az900.Questions.Add(Az900.Q15Instance);
+            az900.Questions.Add(Az900.Q16Instance);
+            az900.Questions.Add(Az900.Q17Instance);
+            az900.Questions.Add(Az900.Q18Instance);
+            az900.Questions.Add(Az900.Q19Instance);
+
+            context?.Exams?.Add(az900);
+            result.Add(az900);
 
             context?.SaveChanges();
             return result;

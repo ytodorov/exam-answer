@@ -1,93 +1,58 @@
 using DAL.Entities;
 using System.Collections.Generic;
 
-namespace Exam_answerWeb.Infrastructure.Az900
+namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
         public static QuestionEntity Q23Instance = new QuestionEntity()
         {
             Order = 23,
-            Section = "",
+            QuestionType = QuestionType.CheckBox,
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "",
+                    Text = "What are two characteristics of the public cloud?",
                 },
                 new ContentEntity()
                 {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                }
+                    Text = "Each correct answer presents a complete solution."
+                },               
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "Dedicated hardware.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Unsecured connections."
                 },
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "Limited storage.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Metered pricing.",
+                    IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "Self-service management.",
+                    IsCorrect = true
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
+                
             },
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
+                
             }
         };
     }

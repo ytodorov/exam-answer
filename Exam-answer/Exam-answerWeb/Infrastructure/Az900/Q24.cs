@@ -1,93 +1,59 @@
 using DAL.Entities;
 using System.Collections.Generic;
 
-namespace Exam_answerWeb.Infrastructure.Az900
+namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
+        /// <summary>
+        /// 7
+        /// </summary>
         public static QuestionEntity Q24Instance = new QuestionEntity()
         {
             Order = 24,
-            Section = "",
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "",
+                    Text = "This question requires that you evaluate the UPPER-CASE text to determine if it is correct.",
                 },
                 new ContentEntity()
                 {
-                    Text = ""
+                    Text = "When planning to migrate a public website to Azure, you must plan to PAY MONTHLY USAGE COSTS."
                 },
                 new ContentEntity()
                 {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                }
+                    Text = "Instructions: Review the UPPER-CASE text. If it makes the statement correct, select \"No change is needed\". If the statement is incorrect, select the answer choice that makes the statement correct."
+                },               
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "No change is needed.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Deploy a VPN."
                 },
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "Pay to transfer all the website data to Azure.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Reduce the number of connections to the website."
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
+               
             },
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
+               
             }
         };
     }

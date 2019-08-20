@@ -1,10 +1,13 @@
 using DAL.Entities;
 using System.Collections.Generic;
 
-namespace Exam_answerWeb.Infrastructure.Az900
+namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
+        /// <summary>
+        /// 8 TODO
+        /// </summary>
         public static QuestionEntity Q25Instance = new QuestionEntity()
         {
             Order = 25,
