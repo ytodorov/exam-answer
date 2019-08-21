@@ -67,7 +67,7 @@ namespace UnitTests
 
                     double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
                     distances.Add(Math.Round(distance, 2));
-                    if (distance > 0.96)
+                    if (distance > 0.999)
                     {
 
                     }

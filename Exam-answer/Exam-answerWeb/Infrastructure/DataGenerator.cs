@@ -192,6 +192,18 @@ namespace Exam_answerWeb.Infrastructure
             az900.Questions.Add(Az900.Q17Instance);
             az900.Questions.Add(Az900.Q18Instance);
             az900.Questions.Add(Az900.Q19Instance);
+            az900.Questions.Add(Az900.Q20Instance);
+            az900.Questions.Add(Az900.Q21Instance);
+            az900.Questions.Add(Az900.Q22Instance);
+            az900.Questions.Add(Az900.Q23Instance);
+            az900.Questions.Add(Az900.Q24Instance);
+            az900.Questions.Add(Az900.Q25Instance);
+            az900.Questions.Add(Az900.Q26Instance);
+            az900.Questions.Add(Az900.Q27Instance);
+            az900.Questions.Add(Az900.Q28Instance);
+            az900.Questions.Add(Az900.Q29Instance);
+            az900.Questions.Add(Az900.Q30Instance);
+            az900.Questions.Add(Az900.Q31Instance);
 
             context?.Exams?.Add(az900);
             result.Add(az900);

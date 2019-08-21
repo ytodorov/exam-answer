@@ -1,2 +1,3 @@
 ﻿AZ-900.VCEplus.premium.exam.48q
-skip the first 2 questions
+
+skip question 1, 2, 12, 13, 15, 16, 18, 19

@@ -29,7 +29,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\Exam-answerWeb\Exam-answerWeb.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Az900RawQuestions19.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Az900RawQuestions40.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Az900RawQuestions48.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Az900RawQuestions60.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,485 @@
+﻿AZ-900.VCEplus.premium.exam.48q
+Number: AZ-900
+Passing Score: 800 Time Limit: 120 min
+File Version: 1.0
+Website: https://vceplus.com VCE to PDF Converter: https://vceplus.com/vce-to-pdf/ Facebook: https://www.facebook.com/VCE.For.All.VN/ Twitter : https://twitter.com/VCE_Plus
+AZ-900
+Microsoft Azure Fundamentals
+Version 1.0
+Sections
+1. Understand Core Azure Services
+2. Understand Security, Privacy, Compliance and Trust
+3. Understand Cloud Concepts
+4. Understand Azure Pricing and Support 
+Exam A
+QUESTION 1 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area:
+Correct Answer: 
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 2 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer: 
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 3 This question requires that you evaluate the underlined text to determine if it is correct.
+When you are implementing a software as a service (SaaS) solution, you are responsible for configuring high availability.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed.
+B. defining scalability rules
+C. installing the SaaS solution
+D. configuring the SaaS solution
+Correct Answer: D
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 4
+You have an on-premises network that contains several servers.
+You plan to migrate all the servers to Azure. 
+You need to recommend a solution to ensure that some of the servers are available if a single Azure data center goes offline for an extended period.
+What should you include in the recommendation?
+A. fault tolerance
+B. elasticity
+C. scalability
+D. low latency
+Correct Answer: A
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 5 This question requires that you evaluate the underlined text to determine if it is correct.
+An organization that hosts its infrastructure in a private cloud can decommission its data center.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed.
+B. in a hybrid cloud
+C. in the public cloudD. on a Hyper-V host
+Correct Answer: C
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 6 What are two characteristics of the public cloud? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+A. dedicated hardware
+B. unsecured connections
+C. limited storage
+D. metered pricing
+E. self-service management
+Correct Answer: DE
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 7 This question requires that you evaluate the underlined text to determine if it is correct.
+When planning to migrate a public website to Azure, you must plan to pay monthly usage costs.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed
+B. Deploy a VPN 
+C. pay to transfer all the website data to Azure
+D. reduce the number of connections to the website
+Correct Answer: A
+Section: Understand Cloud Concepts Explanation
+Explanation/Reference:
+QUESTION 8
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+An Azure administrator plans to run a PowerShell script that creates Azure resources.
+You need to recommend which computer configuration to use to run the script.
+Solution: Run the script from a computer that runs Linux and has the Azure CLI tools installed.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: B
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 9
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+An Azure administrator plans to run a PowerShell script that creates Azure resources.
+You need to recommend which computer configuration to use to run the script.
+Solution: Run the script from a computer that runs Chrome OS and uses Azure Cloud Shell.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: B
+Section: Understand Core Azure Services
+Explanation
+Explanation/Reference:
+QUESTION 10
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution. 
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+An Azure administrator plans to run a PowerShell script that creates Azure resources.
+You need to recommend which computer configuration to use to run the script.
+Solution: Run the script from a computer that runs macOS and has PowerShell Core 6.0 installed.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: A
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 11 You have an Azure environment that contains 10 virtual networks and 100 virtual machines.
+You need to limit the amount of inbound traffic to all the Azure virtual networks.
+What should you create?
+A. one network security group (NSG)
+B. 10 virtual network gateways
+C. 10 Azure ExpressRoute circuits
+D. one Azure firewall
+Correct Answer: D
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 12 HOTSPOT
+You need to view a list of planned maintenance events that can affect the availability of an Azure subscription.
+Which blade should you use from the Azure portal? To answer, select the appropriate blade in the answer area.
+Hot Area:
+Correct Answer:
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 13 DRAG DROP
+Match the Azure service to the correct definition.
+Instructions: To answer, drag the appropriate Azure service from the column on the left to its description on the right. Each service may be used once, more than once, or not at all. 
+NOTE: Each correct match is worth one point.
+Select and Place:
+Correct Answer:
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 14
+You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned mapped drive.
+What should you create?
+A. an Azure SQL database
+B. a virtual machine data disk
+C. a Files service in a storage account
+D. a Blobs service in a storage account
+Correct Answer: C
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 15 HOTSPOT
+You plan to implement an Azure database solution.
+You need to implement a database solution that meets the following requirements:
+Can add data concurrently from multiple regions Can store JSON documents
+Which database service should you deploy? To answer, select the appropriate service in the answer area.
+Hot Area:
+Correct Answer:
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+References:
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=csharp
+QUESTION 16 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer:
+Section: Understand Core Azure Services Explanation 
+Explanation/Reference:
+QUESTION 17 Your company plans to deploy an Artificial Intelligence (AI) solution in Azure.
+What should the company use to build, test, and deploy predictive analytics solutions?
+A. Azure Logic Apps
+B. Azure Machine Learning Studio
+C. Azure Batch
+D. Azure Cosmos DB
+Correct Answer: B
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 18 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area:
+Correct Answer: 
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 19 HOTSPOT
+Several support engineers plan to manage Azure by using the computers shown in the following table:
+You need to identify which Azure management tools can be used from each computer.
+What should you identify for each computer? To answer, select the appropriate options in the answer area.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer: 
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+References: https://buildazure.com/2016/08/18/powershell-now-open-source-and-cross-platform-linux-macos-windows/
+QUESTION 20 This question requires that you evaluate the underlined text to determine if it is correct.
+Azure policies provide a common platform for deploying objects to a cloud infrastructure and for implementing consistency across the Azure environment.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed
+B. Resource groups provide
+C. Azure Resource Manager provides
+D. Management groups provide
+Correct Answer: C
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 21 
+DRAG DROP
+Match the Azure service to the correct description.
+Instructions: To answer, drag the appropriate Azure service from the column on the left to its description on the right. Each service may be used once, more than once, or not at all.
+NOTE: Each correct selection is worth one point.
+Select and Place:
+Correct Answer:
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 22 Your company has several business units.
+Each business unit requires 20 different Azure resources for daily operation. All the business units require the same type of Azure resources. 
+You need to recommend a solution to automate the creation of the Azure resources.
+What should you include in the recommendations?
+A. Azure Resource Manager templates
+B. virtual machine scale sets
+C. the Azure API Management service
+D. management groups
+Correct Answer: A
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 23 DRAG DROP
+Match the Azure service to the correct definition.
+Instructions: To answer, drag the appropriate Azure service from the column on the left to its description on the right. Each service may be used once, more than once, or not at all.
+NOTE: Each correct selection is worth one point.
+Select and Place:
+Correct Answer: 
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 24 HOTSPOT
+You plan to deploy a critical line-of-business application to Azure.
+The application will run on an Azure virtual machine.
+You need to recommend a deployment solution for the application. The solution must provide a guaranteed availability of 99.99 percent.
+What is the minimum number of virtual machines and the minimum number of availability zones you should recommend for the deployment? To answer, select the appropriate options in the answer area.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer:
+
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+References: https://docs.microsoft.com/en-us/azure/availability-zones/az-overview
+QUESTION 25
+Which Azure service should you use to correlate events from multiple resources into a centralized repository?
+A. Azure Event Hubs
+B. Azure Analysis Services
+C. Azure Monitor
+D. Azure Log Analytics
+Correct Answer: D
+Section: Understand Core Azure Services Explanation
+Explanation/Reference:
+QUESTION 26
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+Your Azure environment contains multiple Azure virtual machines.
+You need to ensure that a virtual machine named VM1 is accessible from the Internet over HTTP.
+Solution: You modify a DDoS protection plan.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: B
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 27
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+Your Azure environment contains multiple Azure virtual machines.
+You need to ensure that a virtual machine named VM1 is accessible from the Internet over HTTP.
+Solution: You modify an Azure firewall.
+Does this meet the goal?
+A. Yes
+B. No 
+Correct Answer: A
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 28
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+Your Azure environment contains multiple Azure virtual machines.
+You need to ensure that a virtual machine named VM1 is accessible from the Internet over HTTP.
+Solution: You modify an Azure Traffic Manager profile.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: B
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 29
+Which two types of customers are eligible to use Azure Government to develop a cloud solution? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+A. a Canadian government contractor
+B. a European government contractor
+C. a United States government entity
+D. a United States government contractor
+E. a European government entity
+Correct Answer: CD
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+References: https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-government/2-what-is-azure-government
+QUESTION 30 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area:
+Correct Answer:
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference: 
+QUESTION 31 You need to ensure that when Azure Active Directory (Azure AD) users connect to Azure AD from the Internet by using an anonymous IP address, the users are prompted automatically to change their password.
+Which Azure service should you use?
+A. Azure AD Connect Health
+B. Azure AD Privileged Identity Management
+C. Azure Advanced Threat Protection (ATP)
+D. Azure AD Identity Protection
+Correct Answer: D
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+References:
+https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-sign-in-risk-policy
+QUESTION 32 DRAG DROP
+Match the term to the correct definition.
+Instructions: To answer, drag the appropriate term from the column on the left to its description on the right. Each term may be used once, more than once, or not at all.
+NOTE: Each correct match is worth one point.
+Select and Place:
+Correct Answer:
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 33 Your company plans to deploy several web servers and several database servers to Azure.
+You need to recommend an Azure solution to limit the types of connections from the web servers to the database servers.
+What should you include in the recommendation?
+A. network security groups (NSGs)
+B. Azure Service Bus
+C. a local network gateway
+D. a route filter
+Correct Answer: A
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 34 To what should an application connect to retrieve security tokens?
+A. an Azure Storage account
+B. Azure Active Directory (Azure AD)
+C. a certificate store 
+D. an Azure key vault
+Correct Answer: B
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 35 This question requires that you evaluate the underlined text to determine if it is correct.
+Resource groups provide organizations with the ability to manage the compliance of Azure resources across multiple subscriptions.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed
+B. Management groups
+C. Azure policies
+D. Azure App Service plans
+Correct Answer: C
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 36 Your network contains an Active Directory forest. The forest contains 5,000 user accounts.
+Your company plans to migrate all network resources to Azure and to decommission the on-premises data center.
+You need to recommend a solution to minimize the impact on users after the planned migration.
+What should you recommend?
+A. Implement Azure Multi-Factor Authentication (MFA)
+B. Sync all the Active Directory user accounts to Azure Active Directory (Azure AD)
+C. Instruct all users to change their password
+D. Create a guest user account in Azure Active Directory (Azure AD) for each user
+Correct Answer: B
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference:
+QUESTION 37 HOTSPOT
+You create a resource group named RG1 in Azure Resource Manager.
+You need to prevent the deletion of the resources in RG1.
+Which setting should you use? To answer, select the appropriate setting in the answer area.
+Hot Area:
+Correct Answer:
+Section: Understand Security, Privacy, Compliance and Trust Explanation
+Explanation/Reference: 
+QUESTION 38
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+Your company plans to purchase Azure.
+The company’s support policy states that the Azure environment must provide an option to access support engineers by phone or email.
+You need to recommend which support plan meets the support policy requirement.
+Solution: Recommend a Basic support plan.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: B
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+References: https://azure.microsoft.com/en-gb/support/plans/
+QUESTION 39
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+Your company plans to purchase Azure.
+The company’s support policy states that the Azure environment must provide an option to access support engineers by phone or email. You need to recommend which support plan meets the support policy requirement.
+Solution: Recommend a Standard support plan.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: A
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+References: https://azure.microsoft.com/en-gb/support/plans/
+QUESTION 40
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+Your company plans to purchase Azure.
+The company’s support policy states that the Azure environment must provide an option to access support engineers by phone or email. You need to recommend which support plan meets the support policy requirement. 
+Solution: Recommend a Premier support plan.
+Does this meet the goal?
+A. Yes
+B. No
+Correct Answer: A
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+References: https://azure.microsoft.com/en-gb/support/plans/
+QUESTION 41 Your company plans to request an architectural review of an Azure environment from Microsoft.
+The company currently has a Basic support plan.
+You need to recommend a new support plan for the company. The solution must minimize costs.
+Which support plan should you recommend?
+A. Premier
+B. Developer
+C. Professional Direct
+D. Standard
+Correct Answer: A
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+References: https://azure.microsoft.com/en-gb/support/plans/
+QUESTION 42
+HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer: 
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+QUESTION 43 What is required to use Azure Cost Management?
+A. a Dev/Test subscription
+B. Software Assurance
+C. an Enterprise Agreement (EA)
+D. a pay-as-you-go subscription
+Correct Answer: C
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+References: https://docs.microsoft.com/en-gb/azure/cost-management/overview-cost-mgt
+QUESTION 44 This question requires that you evaluate the underlined text to determine if it is correct.
+Your Azure trial account expired last week. You are now unable to create additional Azure Active Directory (Azure AD) user accounts.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed 
+B. start an existing Azure virtual machine
+C. access your data stored in Azure
+D. access the Azure portal
+Correct Answer: C
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+QUESTION 45 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area:
+Correct Answer: 
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+QUESTION 46 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer: 
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+QUESTION 47 HOTSPOT
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.
+Hot Area: 
+Correct Answer: 
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference:
+QUESTION 48 This question requires that you evaluate the underlined text to determine if it is correct.
+You have several virtual machines in an Azure subscription. You create a new subscription. The virtual machines cannot be moved to the new subscription.
+Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.
+A. No change is needed
+B. The virtual machines can be moved to the new subscription
+C. The virtual machines can be moved to the new subscription only if they are all in the same resource group
+D. The virtual machines can be moved to the new subscription only if they run Windows Server 2016.
+Correct Answer: B
+Section: Understand Azure Pricing and Support Explanation
+Explanation/Reference: 

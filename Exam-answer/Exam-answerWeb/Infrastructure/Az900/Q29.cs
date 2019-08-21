@@ -5,89 +5,50 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
+        /// <summary>
+        /// 14
+        /// </summary>
         public static QuestionEntity Q29Instance = new QuestionEntity()
         {
             Order = 29,
-            Section = "",
+            Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "",
+                    Text = "You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned mapped drive.",
                 },
                 new ContentEntity()
                 {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                }
+                    Text = "What should you create?"
+                },               
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "An Azure SQL database.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "A virtual machine data disk."
                 },
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "A Files service in a storage account.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "A Blobs service in a storage account."
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
+                
             },
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
+                
             }
         };
     }

@@ -5,6 +5,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
+        /// <summary>
+        /// 17
+        /// </summary>
         public static QuestionEntity Q30Instance = new QuestionEntity()
         {
             Order = 30,
@@ -13,81 +16,40 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "",
+                    Text = "Your company plans to deploy an Artificial Intelligence (AI) solution in Azure.",
                 },
                 new ContentEntity()
                 {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                },
-                new ContentEntity()
-                {
-                    Text = ""
-                }
+                    Text = "What should the company use to build, test, and deploy predictive analytics solutions?"
+                },               
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "Azure Logic Apps.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Azure Machine Learning Studio.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "Azure Batch.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Azure Cosmos DB."
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
+                
             },
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
+                
             }
         };
     }

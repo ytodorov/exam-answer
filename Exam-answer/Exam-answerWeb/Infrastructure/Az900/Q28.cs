@@ -5,89 +5,59 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
+        /// <summary>
+        /// 22
+        /// </summary>
         public static QuestionEntity Q28Instance = new QuestionEntity()
         {
             Order = 28,
-            Section = "",
+            Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "",
+                    Text = "Your company has several business units.",
                 },
                 new ContentEntity()
                 {
-                    Text = ""
+                    Text = "Each business unit requires 20 different Azure resources for daily operation. All the business units require the same type of Azure resources."
                 },
                 new ContentEntity()
                 {
-                    Text = ""
+                    Text = "You need to recommend a solution to automate the creation of the Azure resources."
                 },
                 new ContentEntity()
                 {
-                    Text = ""
-                }
+                    Text = "What should you include in the recommendations?"
+                },
             },
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "Azure Resource Manager templates.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Virtual machine scale sets."
                 },
                 new AnswerEntity()
                 {
-                    Text = "",
+                    Text = "The Azure API Management service.",
                 },
                 new AnswerEntity()
                 {
-                    Text = ""
+                    Text = "Management groups.",                  
                 },
             },
             Explanations = new List<ExplanationEntity>()
             {
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
+                
             },
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
-                new ReferenceEntity()
-                {
-                     Text = "",
-                     Url = "",
-                },
+               
             }
         };
     }
