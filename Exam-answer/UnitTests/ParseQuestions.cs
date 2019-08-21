@@ -23,7 +23,8 @@ namespace UnitTests
                 "Az900RawQuestions19.txt",
                 "Az900RawQuestions40.txt",
                 "Az900RawQuestions48.txt",
-                "Az900RawQuestions60.txt"
+                "Az900RawQuestions60.txt",
+                "Az900RawQuestions62.txt"
             };
 
             foreach (var path in paths)
@@ -130,6 +131,7 @@ namespace UnitTests
             List<double> distances = new List<double>();
 
             List<QuestionEntity> duplicateQuestions = new List<QuestionEntity>();
+            List<string> duplicateQuestionsPairs = new List<string>();
 
             for (int i = 0; i < questions.Count; i++)
             {
@@ -167,10 +169,11 @@ namespace UnitTests
                     distances.Add(Math.Round(distance, 2));
                     if (distance > 0.9)
                     {
-                        if (!duplicateQuestions.Any(q => q.Order == q1.Order))
-                        {
-                            duplicateQuestions.Add(q1);
-                        }
+                        duplicateQuestionsPairs.Add($"q{q1.Order}_q{q2.Order}_d: {distance}");
+                    }
+                    if (distance > 0.999)
+                    {
+                        duplicateQuestions.Add(q2);
                     }
                 }
             }

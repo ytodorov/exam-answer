@@ -43,6 +43,9 @@
     <None Update="Az900RawQuestions48.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Az900RawQuestions62.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Az900RawQuestions60.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
