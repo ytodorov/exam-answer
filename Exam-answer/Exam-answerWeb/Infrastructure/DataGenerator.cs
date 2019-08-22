@@ -201,9 +201,9 @@ namespace Exam_answerWeb.Infrastructure
             az900.Questions.Add(Az900.Q26Instance);
             az900.Questions.Add(Az900.Q27Instance);
             az900.Questions.Add(Az900.Q28Instance);
-            az900.Questions.Add(Az900.Q29Instance);
-            az900.Questions.Add(Az900.Q30Instance);
-            az900.Questions.Add(Az900.Q31Instance);
+            //az900.Questions.Add(Az900.Q29Instance);
+            //az900.Questions.Add(Az900.Q30Instance);
+            //az900.Questions.Add(Az900.Q31Instance);
 
             context?.Exams?.Add(az900);
             result.Add(az900);
