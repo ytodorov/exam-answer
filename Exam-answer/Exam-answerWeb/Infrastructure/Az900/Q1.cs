@@ -1,57 +1,66 @@
-﻿using DAL.Entities;
+
+using DAL.Entities;
 using System.Collections.Generic;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q1Instance = new QuestionEntity()
+        public static QuestionEntity Q0Instance = new QuestionEntity()
         {
             Order = 1,
-            Section = "Understand Cloud Concepts",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
-                new ContentEntity()
+
+
+                    new ContentEntity()
                 {
-                    Text = "This question requires that you evaluate the UPPER-CASE text to determine if it is correct.",
+                    Text = "What are two characteristics of the public cloud? Each correct answer presents a complete solution..",
                 },
-                new ContentEntity()
+
+                    new ContentEntity()
                 {
-                    Text = "An organization that hosts its infrastructure IN A PRIVATE CLOUD can decommission its data center."
+                    Text = "NOTE: Each correct selection is worth one point..",
                 },
-                new ContentEntity()
-                {
-                    Text = "Review the UPPER-CASE text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct."
-                },
+
             },
-            Answers = new List<AnswerEntity>()
+
+                        Answers = new List<AnswerEntity>()
             {
-                new AnswerEntity()
+
+
+                    new AnswerEntity()
                 {
-                    Text = "No change is needed.",
+                    Text = "Dedicated hardware.", 
+                    IsCorrect = false
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "In a hybrid cloud."
+                    Text = "Unsecured connections.", 
+                    IsCorrect = false
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "In the public cloud.",
-                    IsCorrect =  true,
+                    Text = "Limited storage.", 
+                    IsCorrect = false
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "On a Hyper-V host."
+                    Text = "Metered pricing.", 
+                    IsCorrect = true
                 },
-            },
-            Explanations = new List<ExplanationEntity>()
-            {
-                
-            },
-            References = new List<ReferenceEntity>()
-            {
-                
-            }
+
+                    new AnswerEntity()
+                {
+                    Text = "Self-service management.", 
+                    IsCorrect = true
+                },
+
+            },           
         };
     }
 }

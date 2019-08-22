@@ -16,13 +16,13 @@ namespace DAL.Entities
 
         public QuestionType QuestionType { get; set; } = QuestionType.RadioButon;
 
-        public List<ContentEntity> Contents { get; set; }
+        public List<ContentEntity> Contents { get; set; } = new List<ContentEntity>();
 
-        public List<AnswerEntity> Answers { get; set; }
+        public List<AnswerEntity> Answers { get; set; } = new List<AnswerEntity>();
 
-        public List<ExplanationEntity> Explanations { get; set; }
+        public List<ExplanationEntity> Explanations { get; set; } = new List<ExplanationEntity>();
 
-        public List<ReferenceEntity> References { get; set; }
+        public List<ReferenceEntity> References { get; set; } = new List<ReferenceEntity>();
 
         [NotMapped]
         public int AnswerCountLd { get; set; }

@@ -1,3 +1,4 @@
+
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -5,57 +6,60 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q5Instance = new QuestionEntity()
+        public static QuestionEntity Q4Instance = new QuestionEntity()
         {
             Order = 5,
-            Section = "Understand Core Azure Services",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
-                new ContentEntity()
+
+
+                    new ContentEntity()
                 {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
+                    Text = "Your company hosts an accounting named App1 that is used by all the customers of the company..",
                 },
-                new ContentEntity()
+
+                    new ContentEntity()
                 {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
+                    Text = "App1 has low usage during the first three weeks of each month and very high usage during the last week of each month..",
                 },
-                new ContentEntity()
+
+                    new ContentEntity()
                 {
-                    Text = "An Azure administrator plans to run a PowerShell script that creates Azure resources."
+                    Text = "Which benefit of Azure Cloud Services supports cost management for this type of usage pattern?.",
                 },
-                new ContentEntity()
-                {
-                    Text = "You need to recommend which computer configuration to use to run the script."
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: Run the script from a computer that runs macOS and has PowerShell Core 6.0 installed."
-                },
-                new ContentEntity()
-                {
-                    Text = "Does this meet the goal?"
-                }
+
             },
-            Answers = new List<AnswerEntity>()
+
+                        Answers = new List<AnswerEntity>()
             {
-                new AnswerEntity()
+
+
+                    new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "High availability.", 
+                    IsCorrect = false
+                },
+
+                    new AnswerEntity()
+                {
+                    Text = "High latency.", 
+                    IsCorrect = false
+                },
+
+                    new AnswerEntity()
+                {
+                    Text = "Elasticity.", 
                     IsCorrect = true
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "No."
-                },               
-            },
-            Explanations = new List<ExplanationEntity>()
-            {
-               
-            },
-            References = new List<ReferenceEntity>()
-            {
-                
-            }
+                    Text = "Load balancing.", 
+                    IsCorrect = false
+                },
+
+            },           
         };
     }
 }

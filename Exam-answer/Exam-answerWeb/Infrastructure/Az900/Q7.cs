@@ -1,3 +1,4 @@
+
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -5,47 +6,60 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q7Instance = new QuestionEntity()
+        public static QuestionEntity Q6Instance = new QuestionEntity()
         {
             Order = 7,
-            Section = "Understand Core Azure Services",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
-                new ContentEntity()
+
+
+                    new ContentEntity()
                 {
-                    Text = "You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned mapped drive.",
+                    Text = "You have an on-premises network that contains 100 servers..",
                 },
-                new ContentEntity()
+
+                    new ContentEntity()
                 {
-                    Text = "What should you create?"
+                    Text = "You need to recommend a solution that provides additional resources to your users. The solution must minimize capital and operational expenditure costs..",
                 },
+
+                    new ContentEntity()
+                {
+                    Text = "What should you include in the recommendation?.",
+                },
+
             },
-            Answers = new List<AnswerEntity>()
+
+                        Answers = new List<AnswerEntity>()
             {
-                new AnswerEntity()
+
+
+                    new AnswerEntity()
                 {
-                    Text = "An Azure SQL database.",
+                    Text = "A complete migration to the public cloud.", 
+                    IsCorrect = false
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "A virtual machine data disk."
+                    Text = "An additional data center.", 
+                    IsCorrect = false
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "A Files service in a storage account.",
+                    Text = "A private cloud.", 
                     IsCorrect = true
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "A Blobs service in a storage account."
+                    Text = "A hybrid cloud.", 
+                    IsCorrect = false
                 },
-            },
-            Explanations = new List<ExplanationEntity>()
-            {
-            },
-            References = new List<ReferenceEntity>()
-            {
-            }
+
+            },           
         };
     }
 }

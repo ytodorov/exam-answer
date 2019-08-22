@@ -1372,6 +1372,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Infrastructure\Az900\" />
     <Folder Include="wwwroot\duplicates\" />
   </ItemGroup>
 

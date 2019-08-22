@@ -1,3 +1,4 @@
+
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -5,47 +6,68 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q9Instance = new QuestionEntity()
+        public static QuestionEntity Q8Instance = new QuestionEntity()
         {
             Order = 9,
-            Section = "Understand Core Azure Services",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
-                new ContentEntity()
+
+
+                    new ContentEntity()
                 {
-                    Text = "This question requires that you evaluate the UPPER-CASE text to determine if it is correct.",
+                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
                 },
-                new ContentEntity()
+
+                    new ContentEntity()
                 {
-                    Text = "AZURE POLICIES PROVIDE a common platform for deploying objects to a cloud infrastructure and for implementing consistency across the Azure environment."
-                }
+                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution..",
+                },
+
+                    new ContentEntity()
+                {
+                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen..",
+                },
+
+                    new ContentEntity()
+                {
+                    Text = "You plan to deploy several Azure virtual machines..",
+                },
+
+                    new ContentEntity()
+                {
+                    Text = "You need to ensure that the services running on the virtual machines are available if a single data center fails..",
+                },
+
+                    new ContentEntity()
+                {
+                    Text = "Solution: You deploy the virtual machines to two or more availability zones..",
+                },
+
+                    new ContentEntity()
+                {
+                    Text = "Does this meet the goal?.",
+                },
+
             },
-            Answers = new List<AnswerEntity>()
+
+                        Answers = new List<AnswerEntity>()
             {
-                new AnswerEntity()
+
+
+                    new AnswerEntity()
                 {
-                    Text = "No change is needed.",
-                },
-                new AnswerEntity()
-                {
-                    Text = "Resource groups provide.",
-                },
-                new AnswerEntity()
-                {
-                    Text = "Azure Resource Manager provides.",
+                    Text = "Yes.", 
                     IsCorrect = true
                 },
-                new AnswerEntity()
+
+                    new AnswerEntity()
                 {
-                    Text = "Management groups provide."
+                    Text = "No.", 
+                    IsCorrect = false
                 },
-            },
-            Explanations = new List<ExplanationEntity>()
-            {
-            },
-            References = new List<ReferenceEntity>()
-            {
-            }
+
+            },           
         };
     }
 }

@@ -21,6 +21,103 @@ namespace UnitTests
             var text = pdfDoc.ExtractTextFromPage(1);
         }
 
+        private string FormatTextToBeFirstCapitalEndInPeriod(string sourceText)
+        {
+            if (string.IsNullOrEmpty(sourceText))
+            {
+                return sourceText;
+            }
+            sourceText = sourceText.Trim();
+            sourceText = sourceText[0].ToString().ToUpperInvariant() + sourceText.Substring(1);
+
+            string lastLetter = sourceText[sourceText.Length - 1].ToString();
+
+            if (lastLetter != "." || lastLetter != "?" || lastLetter != "!")
+            {
+                sourceText += ".";
+            }
+
+            return sourceText;
+            
+        }
+
+
+        private void GenerateCS(List<QuestionEntity> questions)
+        {
+            for (int i = 0; i < questions.Count; i++)
+            {
+                var question = questions[i];
+                var currOrder = i + 1;
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append(
+                    $@"
+using DAL.Entities;
+using System.Collections.Generic;
+
+namespace Exam_answerWeb.Infrastructure.Questions
+{{
+    public partial class Az900
+    {{
+        public static QuestionEntity Q{i}Instance = new QuestionEntity()
+        {{
+            Order = {question.Order},
+            Section = ""{question.Section}"",
+            Contents = new List<ContentEntity>()
+            {{
+
+");
+
+                foreach (var content in question.Contents)
+                {
+                    sb.Append(
+                    $@"
+                    new ContentEntity()
+                {{
+                    Text = ""{content.Text}"",
+                }},
+");
+                }
+
+                sb.Append($@"
+            }},
+");
+
+                sb.Append(
+                    $@"
+                        Answers = new List<AnswerEntity>()
+            {{
+
+");
+
+                foreach (var answer in question.Answers)
+                {
+                    sb.Append(
+               $@"
+                    new AnswerEntity()
+                {{
+                    Text = ""{answer.Text}"", 
+                    IsCorrect = {answer.IsCorrect.GetValueOrDefault().ToString().ToLowerInvariant()}
+                }},
+");
+
+                }
+                sb.Append($@"
+            }},           
+        }};
+    }}
+}}
+"
+                    );
+
+
+                string textToWrite = sb.ToString();
+
+                File.WriteAllText($"Q{currOrder}.cs", textToWrite);
+            }
+        }
+
         [Fact]
         public void ParseAz900()
         {
@@ -43,7 +140,8 @@ namespace UnitTests
             foreach (var path in files)
             {
                 var lines = File.ReadAllLines(path).ToList();
-                var allText = File.ReadAllText(path);
+
+                lines = lines.Where(l => !string.IsNullOrEmpty(l?.Trim())).ToList();
 
                 var linesStartingWithQuestion = lines.Where(l => l.StartsWith("QUESTION "));
                 List<int> indexes = new List<int>();
@@ -54,7 +152,7 @@ namespace UnitTests
                     indexes.Add(index);
                 }
                 indexes.Add(lines.Count);
-                                
+
                 for (int i = 0; i < indexes.Count - 1; i++)
                 {
                     var currentIndex = indexes[i];
@@ -69,14 +167,11 @@ namespace UnitTests
 
                     QuestionEntity questionEntity = new QuestionEntity();
 
-                    questionEntity.Contents = new List<ContentEntity>();
-                    questionEntity.Answers = new List<AnswerEntity>();
-
                     foreach (var lineWithContent in linesWithContent)
                     {
                         questionEntity.Contents.Add(new ContentEntity()
                         {
-                            Text = lineWithContent
+                            Text = FormatTextToBeFirstCapitalEndInPeriod(lineWithContent)
                         });
                     }
 
@@ -92,6 +187,8 @@ namespace UnitTests
                     if (!string.IsNullOrEmpty(answer1))
                     {
                         var answerText1 = answer1.Replace("A. ", string.Empty).Trim();
+                        answerText1 = FormatTextToBeFirstCapitalEndInPeriod(answerText1);
+
                         bool isCorrect1 = correctAnswers.Any(c => c.ToString() == "A");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText1, IsCorrect = isCorrect1 });
                     }
@@ -100,6 +197,8 @@ namespace UnitTests
                     if (!string.IsNullOrEmpty(answer2))
                     {
                         var answerText2 = answer2.Replace("B. ", string.Empty).Trim();
+                        answerText2 = FormatTextToBeFirstCapitalEndInPeriod(answerText2);
+
                         bool isCorrect2 = correctAnswers.Any(c => c.ToString() == "B");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText2, IsCorrect = isCorrect2 });
                     }
@@ -108,6 +207,8 @@ namespace UnitTests
                     if (!string.IsNullOrEmpty(answer3))
                     {
                         var answerText3 = answer3.Replace("C. ", string.Empty).Trim();
+                        answerText3 = FormatTextToBeFirstCapitalEndInPeriod(answerText3);
+
                         bool isCorrect3 = correctAnswers.Any(c => c.ToString() == "C");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText3, IsCorrect = isCorrect3 });
                     }
@@ -116,6 +217,8 @@ namespace UnitTests
                     if (!string.IsNullOrEmpty(answer4))
                     {
                         var answerText4 = answer4.Replace("D. ", string.Empty).Trim();
+                        answerText4 = FormatTextToBeFirstCapitalEndInPeriod(answerText4);
+
                         bool isCorrect4 = correctAnswers.Any(c => c.ToString() == "D");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText4, IsCorrect = isCorrect4 });
                     }
@@ -124,6 +227,8 @@ namespace UnitTests
                     if (!string.IsNullOrEmpty(answer5))
                     {
                         var answerText5 = answer5.Replace("E. ", string.Empty).Trim();
+                        answerText5 = FormatTextToBeFirstCapitalEndInPeriod(answerText5);
+
                         bool isCorrect5 = correctAnswers.Any(c => c.ToString() == "E");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText5, IsCorrect = isCorrect5 });
                     }
@@ -132,6 +237,8 @@ namespace UnitTests
                     if (!string.IsNullOrEmpty(answer6))
                     {
                         var answerText6 = answer6.Replace("F. ", string.Empty).Trim();
+                        answerText6 = FormatTextToBeFirstCapitalEndInPeriod(answerText6);
+
                         bool isCorrect6 = correctAnswers.Any(c => c.ToString() == "F");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText6, IsCorrect = isCorrect6 });
                     }
@@ -147,10 +254,18 @@ namespace UnitTests
 
             questions = questions.Where(q => !saveDuplicatesOrders.Any(d => d == q.Order)).ToList();
 
+
+            GenerateCS(questions);
+
+
+
+
+
+
             for (int i = 0; i < questions.Count; i++)
             {
                 QuestionEntity q1 = questions[i];
-               
+
                 for (int j = i + 1; j < questions.Count; j++)
                 {
                     QuestionEntity q2 = questions[j];
@@ -203,6 +318,8 @@ namespace UnitTests
             string toWrite = sbDuplicatesToSave.ToString();
 
             File.WriteAllText("AZ-900\\az-900Duplicates.txt", toWrite);
+
+
 
 
         }
