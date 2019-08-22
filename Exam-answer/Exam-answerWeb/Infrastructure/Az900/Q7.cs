@@ -1,3 +1,4 @@
+
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -8,51 +9,50 @@ namespace Exam_answerWeb.Infrastructure.Questions
         public static QuestionEntity Q6Instance = new QuestionEntity()
         {
             Order = 7,
-            Section = "",
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "You have an on-premises network that contains 100 servers..",
+                    Text = "You have an on-premises network that contains 100 servers.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "You need to recommend a solution that provides additional resources to your users. The solution must minimize capital and operational expenditure costs..",
+                    Text = "You need to recommend a solution that provides additional resources to your users. The solution must minimize capital and operational expenditure costs.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "What should you include in the recommendation?.",
+                    Text = "What should you include in the recommendation?",
                 },
             },
 
             Answers = new List<AnswerEntity>()
             {
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "A complete migration to the public cloud.",
+                    Text = "A complete migration to the public cloud.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "An additional data center.",
+                    Text = "An additional data center.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "A private cloud.",
+                    Text = "A private cloud.", 
                     IsCorrect = true
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "A hybrid cloud.",
+                    Text = "A hybrid cloud.", 
                     IsCorrect = false
                 },
             },
+
+            References = new List<ReferenceEntity>()
+            {
+            },           
         };
     }
 }

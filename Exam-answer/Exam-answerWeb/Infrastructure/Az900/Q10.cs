@@ -6,9 +6,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q3Instance = new QuestionEntity()
+        public static QuestionEntity Q9Instance = new QuestionEntity()
         {
-            Order = 4,
+            Order = 10,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
@@ -26,19 +26,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
+                    Text = "You plan to deploy several Azure virtual machines.",
                 },
                 new ContentEntity()
                 {
-                    Text = "The company’s migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
+                    Text = "You need to ensure that the services running on the virtual machines are available if a single data center fails.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
+                    Text = "Solution: You deploy the virtual machines to two or more regions.",
                 },
                 new ContentEntity()
                 {
@@ -62,6 +58,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/regions-and-availability",
+                },
             },           
         };
     }

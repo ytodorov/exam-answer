@@ -32,7 +32,7 @@ namespace UnitTests
 
             string lastLetter = sourceText[sourceText.Length - 1].ToString();
 
-            if (lastLetter != "." || lastLetter != "?" || lastLetter != "!")
+            if (lastLetter != "." && lastLetter != "?" && lastLetter != "!")
             {
                 sourceText += ".";
             }
@@ -65,19 +65,16 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = {question.Order},
             Section = ""{question.Section}"",
             Contents = new List<ContentEntity>()
-            {{
-
-");
+            {{");
 
                 foreach (var content in question.Contents)
                 {
                     sb.Append(
                     $@"
-                    new ContentEntity()
+                new ContentEntity()
                 {{
                     Text = ""{content.Text}"",
-                }},
-");
+                }},");
                 }
 
                 sb.Append($@"
@@ -86,23 +83,39 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
                 sb.Append(
                     $@"
-                        Answers = new List<AnswerEntity>()
-            {{
-
-");
+            Answers = new List<AnswerEntity>()
+            {{");
 
                 foreach (var answer in question.Answers)
                 {
                     sb.Append(
-               $@"
-                    new AnswerEntity()
+                $@"
+                new AnswerEntity()
                 {{
                     Text = ""{answer.Text}"", 
                     IsCorrect = {answer.IsCorrect.GetValueOrDefault().ToString().ToLowerInvariant()}
-                }},
-");
+                }},");
 
                 }
+
+                sb.Append($@"
+            }},
+");
+
+                sb.Append($@"
+            References = new List<ReferenceEntity>()
+            {{");
+
+                foreach (var reference in question.References)
+                {
+                    sb.Append(
+                    $@"
+                new ReferenceEntity()
+                {{
+                    Url = ""{reference.Url}"",
+                }},");
+                }
+
                 sb.Append($@"
             }},           
         }};
@@ -124,7 +137,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             List<QuestionEntity> questions = new List<QuestionEntity>();
 
-            var files = Directory.GetFiles("AZ-900", "*.txt");
+            var files = Directory.GetFiles("AZ-900", "*.txt").OrderBy(s => s).ToList();
 
             var savedDuplicates = File.ReadAllText("AZ-900\\az-900Duplicates.txt");
             var splitsStrings = savedDuplicates.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -164,7 +177,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     var indexOfFirstAnswer = questionLines.IndexOf(answer1);
 
                     var linesWithContent = questionLines.Skip(1).Take(indexOfFirstAnswer - 1).ToList();
-
+                                        
                     QuestionEntity questionEntity = new QuestionEntity();
 
                     foreach (var lineWithContent in linesWithContent)
@@ -242,7 +255,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
                         bool isCorrect6 = correctAnswers.Any(c => c.ToString() == "F");
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText6, IsCorrect = isCorrect6 });
                     }
+
+                    string sectionLine = questionLines.FirstOrDefault(f => f.StartsWith("Section:"));
+                    string sectionName = sectionLine.Replace("Section:", string.Empty).Replace("Explanation", string.Empty).Trim();
+
+                    questionEntity.Section = sectionName;
                     questionEntity.Order = questions.Count + 1;
+
+                    var references = questionLines.FirstOrDefault(f => f.Trim().StartsWith("References:"));
+                    if (references != null)
+                    {
+                        var indexOfReferences = questionLines.IndexOf(references);
+
+                        for (int refIndex = indexOfReferences; refIndex < questionLines.Count; refIndex++)
+                        {
+                            string refUrl = questionLines[refIndex].Replace("References:", string.Empty).Trim();
+
+                            if (!string.IsNullOrEmpty(refUrl))
+                            {
+                                questionEntity.References.Add(new ReferenceEntity()
+                                {
+                                    Url = refUrl
+                                });
+                            }
+                        }
+                    }
+
                     questions.Add(questionEntity);
                 }
             }

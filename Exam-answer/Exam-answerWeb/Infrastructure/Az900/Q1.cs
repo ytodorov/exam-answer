@@ -9,57 +9,50 @@ namespace Exam_answerWeb.Infrastructure.Questions
         public static QuestionEntity Q0Instance = new QuestionEntity()
         {
             Order = 1,
-            Section = "",
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
-
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "What are two characteristics of the public cloud? Each correct answer presents a complete solution..",
+                    Text = "What are two characteristics of the public cloud? Each correct answer presents a complete solution.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "NOTE: Each correct selection is worth one point..",
+                    Text = "NOTE: Each correct selection is worth one point.",
                 },
-
             },
 
-                        Answers = new List<AnswerEntity>()
+            Answers = new List<AnswerEntity>()
             {
-
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Dedicated hardware.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Unsecured connections.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Limited storage.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Metered pricing.", 
                     IsCorrect = true
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Self-service management.", 
                     IsCorrect = true
                 },
+            },
 
+            References = new List<ReferenceEntity>()
+            {
             },           
         };
     }

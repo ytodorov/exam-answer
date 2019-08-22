@@ -9,61 +9,53 @@ namespace Exam_answerWeb.Infrastructure.Questions
         public static QuestionEntity Q1Instance = new QuestionEntity()
         {
             Order = 2,
-            Section = "",
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
-
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "This question requires that you evaluate the underlined text to determine if it is correct..",
+                    Text = "This question requires that you evaluate the underlined text to determine if it is correct.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "When planning to migrate a public website to Azure, you must plan to pay monthly usage costs..",
+                    Text = "When planning to migrate a public website to Azure, you must plan to pay monthly usage costs.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
                     Text = "Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "Makes the statement correct..",
+                    Text = "Makes the statement correct.",
                 },
-
             },
 
-                        Answers = new List<AnswerEntity>()
+            Answers = new List<AnswerEntity>()
             {
-
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "No change is needed.", 
                     IsCorrect = true
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Deploy a VPN.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Pay to transfer all the website data to Azure.", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
                     Text = "Reduce the number of connections to the website.", 
                     IsCorrect = false
                 },
+            },
 
+            References = new List<ReferenceEntity>()
+            {
             },           
         };
     }

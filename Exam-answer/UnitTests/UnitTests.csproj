@@ -28,46 +28,46 @@
     <None Update="AZ-900\az-900Duplicates.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
+    <None Update="AZ-900\1_gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.txt">
+    <None Update="AZ-900\1_gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.pdf">
+    <None Update="AZ-900\2_gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.txt">
+    <None Update="AZ-900\2_gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.pdf">
+    <None Update="AZ-900\3_gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.txt">
+    <None Update="AZ-900\3_gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.pdf">
+    <None Update="AZ-900\4_Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.txt">
+    <None Update="AZ-900\4_Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\Microsoft.Premium.AZ-900.by_.VCEplus.48q.pdf">
+    <None Update="AZ-900\5_Microsoft.Premium.AZ-900.by_.VCEplus.48q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\Microsoft.Premium.AZ-900.by_.VCEplus.48q.txt">
+    <None Update="AZ-900\5_Microsoft.Premium.AZ-900.by_.VCEplus.48q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.pdf">
+    <None Update="AZ-900\6_microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.txt">
+    <None Update="AZ-900\6_microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
+    <None Update="AZ-900\7_Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.txt">
+    <None Update="AZ-900\7_Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Az900RawQuestions40.txt">

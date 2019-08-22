@@ -1,3 +1,4 @@
+
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -8,51 +9,50 @@ namespace Exam_answerWeb.Infrastructure.Questions
         public static QuestionEntity Q5Instance = new QuestionEntity()
         {
             Order = 6,
-            Section = "",
+            Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "You plan to migrate a web application to Azure. The web application is accessed by external users..",
+                    Text = "You plan to migrate a web application to Azure. The web application is accessed by external users.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "You need to recommend a cloud deployment solution to minimize the amount of administrative effort used to manage the web application..",
+                    Text = "You need to recommend a cloud deployment solution to minimize the amount of administrative effort used to manage the web application.",
                 },
-
-                    new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "What should you include in the recommendation?.",
+                    Text = "What should you include in the recommendation?",
                 },
             },
 
             Answers = new List<AnswerEntity>()
             {
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "Software as a service (SaaS).",
+                    Text = "Software as a service (SaaS).", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "Platform as a service (PaaS).",
+                    Text = "Platform as a service (PaaS).", 
                     IsCorrect = true
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "Infrastructure as a service (IaaS).",
+                    Text = "Infrastructure as a service (IaaS).", 
                     IsCorrect = false
                 },
-
-                    new AnswerEntity()
+                new AnswerEntity()
                 {
-                    Text = "Database as a service (DaaS).",
+                    Text = "Database as a service (DaaS).", 
                     IsCorrect = false
                 },
             },
+
+            References = new List<ReferenceEntity>()
+            {
+            },           
         };
     }
 }
