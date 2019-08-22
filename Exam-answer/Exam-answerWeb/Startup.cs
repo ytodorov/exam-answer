@@ -47,12 +47,22 @@ namespace Exam_answerWeb
                 options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
             });
 
+            services.Configure<BrotliCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.Optimal;
+            });
+
             services.Configure<GzipCompressionProviderOptions>(options =>
-                options.Level = CompressionLevel.Optimal);
+            {
+                options.Level = CompressionLevel.Optimal;
+            });
 
             services.AddResponseCompression(options =>
             {
                 options.EnableForHttps = true;
+                options.Providers.Clear();
+                options.Providers.Add<BrotliCompressionProvider>();
+                options.Providers.Add<GzipCompressionProvider>();
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
