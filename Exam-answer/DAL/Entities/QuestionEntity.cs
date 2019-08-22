@@ -54,6 +54,26 @@ namespace DAL.Entities
         }
 
         [NotMapped]
+        public string AnswerText
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                if (Contents != null)
+                {
+                    foreach (var answer in Answers)
+                    {
+                        sb.Append(answer.Text);
+                        sb.Append(" ");
+                    }
+                }
+                string result = sb.ToString().Trim();
+
+                return result;
+            }
+        }
+
+        [NotMapped]
         public string ExplanationText
         {
             get

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="PDF.Core" Version="2019.6.5" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="76.0.3809.6801" />
@@ -34,6 +35,51 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="AZ-900\az-900Duplicates.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\Microsoft.Premium.AZ-900.by_.VCEplus.48q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\Microsoft.Premium.AZ-900.by_.VCEplus.48q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Az900RawQuestions19.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -46,7 +92,7 @@
     <None Update="Az900RawQuestions62.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Az900RawQuestions60.txt">
+    <None Update="gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

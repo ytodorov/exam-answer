@@ -1380,4 +1380,41 @@
     <ProjectReference Include="..\DAL\DAL.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Update="Exams\AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\gratisexam.com-Microsoft.PracticeTest.AZ-900.v2019-05-02.by.Gabrielle.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\gratisexam.com-Microsoft.Test-king.AZ-900.v2019-04-19.by.Martin.40q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\Microsoft.Premium.AZ-900.by_.VCEplus.48q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\Microsoft.Premium.AZ-900.by_.VCEplus.48q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\Microsoft.Pass4sure.AZ-900.v2019-02-02.by_.Colin_.19q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\microsoft.prep4sure.az-900.v2019-08-07.by.porter.73q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

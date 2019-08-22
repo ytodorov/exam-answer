@@ -1,5 +1,6 @@
 ﻿using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
+using IronPdf;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,21 +14,33 @@ namespace UnitTests
     public class ParseQuestions
     {
         [Fact]
+        public void ReadPdf()
+        {
+            var pdfDoc = PdfDocument.FromFile("gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf");
+
+            var text = pdfDoc.ExtractTextFromPage(1);
+        }
+
+        [Fact]
         public void ParseAz900()
         {
 
             List<QuestionEntity> questions = new List<QuestionEntity>();
 
-            List<string> paths = new List<string>()
-            {
-                "Az900RawQuestions19.txt",
-                "Az900RawQuestions40.txt",
-                "Az900RawQuestions48.txt",
-                "Az900RawQuestions60.txt",
-                "Az900RawQuestions62.txt"
-            };
+            var files = Directory.GetFiles("AZ-900", "*.txt");
 
-            foreach (var path in paths)
+            var savedDuplicates = File.ReadAllText("AZ-900\\az-900Duplicates.txt");
+            var splitsStrings = savedDuplicates.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            List<int> saveDuplicatesOrders = new List<int>();
+            foreach (var s in splitsStrings)
+            {
+                saveDuplicatesOrders.Add(int.Parse(s));
+            }
+
+            List<int> questionsDuplicatesOrders = new List<int>();
+
+            foreach (var path in files)
             {
                 var lines = File.ReadAllLines(path).ToList();
                 var allText = File.ReadAllText(path);
@@ -41,8 +54,7 @@ namespace UnitTests
                     indexes.Add(index);
                 }
                 indexes.Add(lines.Count);
-
-
+                                
                 for (int i = 0; i < indexes.Count - 1; i++)
                 {
                     var currentIndex = indexes[i];
@@ -133,13 +145,15 @@ namespace UnitTests
             List<QuestionEntity> duplicateQuestions = new List<QuestionEntity>();
             List<string> duplicateQuestionsPairs = new List<string>();
 
+            questions = questions.Where(q => !saveDuplicatesOrders.Any(d => d == q.Order)).ToList();
+
             for (int i = 0; i < questions.Count; i++)
             {
+                QuestionEntity q1 = questions[i];
+               
                 for (int j = i + 1; j < questions.Count; j++)
                 {
-                    QuestionEntity q1 = questions[i];
                     QuestionEntity q2 = questions[j];
-
 
                     StringBuilder sb1 = new StringBuilder();
                     foreach (ContentEntity content in q1.Contents)
@@ -174,10 +188,23 @@ namespace UnitTests
                     if (distance > 0.999)
                     {
                         duplicateQuestions.Add(q2);
+                        questionsDuplicatesOrders.Add(q2.Order.GetValueOrDefault());
                     }
                 }
             }
             distances = distances.OrderByDescending(d => d).ToList();
+            questionsDuplicatesOrders = questionsDuplicatesOrders.Distinct().OrderBy(s => s).ToList();
+            StringBuilder sbDuplicatesToSave = new StringBuilder();
+            foreach (var d in questionsDuplicatesOrders)
+            {
+                sbDuplicatesToSave.Append($"{d},");
+            }
+
+            string toWrite = sbDuplicatesToSave.ToString();
+
+            File.WriteAllText("AZ-900\\az-900Duplicates.txt", toWrite);
+
+
         }
     }
 }
