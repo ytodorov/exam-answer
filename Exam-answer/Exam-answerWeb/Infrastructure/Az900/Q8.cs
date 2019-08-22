@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,8 +11,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Section = "",
             Contents = new List<ContentEntity>()
             {
-
-
                     new ContentEntity()
                 {
                     Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
@@ -48,26 +45,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Does this meet the goal?.",
                 },
-
             },
 
-                        Answers = new List<AnswerEntity>()
+            Answers = new List<AnswerEntity>()
             {
-
-
                     new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
-
-            },           
+            },
         };
     }
 }

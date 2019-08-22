@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,8 +11,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Section = "",
             Contents = new List<ContentEntity>()
             {
-
-
                     new ContentEntity()
                 {
                     Text = "You have an on-premises network that contains 100 servers..",
@@ -28,38 +25,34 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "What should you include in the recommendation?.",
                 },
-
             },
 
-                        Answers = new List<AnswerEntity>()
+            Answers = new List<AnswerEntity>()
             {
-
-
                     new AnswerEntity()
                 {
-                    Text = "A complete migration to the public cloud.", 
+                    Text = "A complete migration to the public cloud.",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "An additional data center.", 
+                    Text = "An additional data center.",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "A private cloud.", 
+                    Text = "A private cloud.",
                     IsCorrect = true
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "A hybrid cloud.", 
+                    Text = "A hybrid cloud.",
                     IsCorrect = false
                 },
-
-            },           
+            },
         };
     }
 }

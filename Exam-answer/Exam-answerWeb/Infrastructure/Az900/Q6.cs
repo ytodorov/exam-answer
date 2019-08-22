@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,8 +11,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Section = "",
             Contents = new List<ContentEntity>()
             {
-
-
                     new ContentEntity()
                 {
                     Text = "You plan to migrate a web application to Azure. The web application is accessed by external users..",
@@ -28,38 +25,34 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "What should you include in the recommendation?.",
                 },
-
             },
 
-                        Answers = new List<AnswerEntity>()
+            Answers = new List<AnswerEntity>()
             {
-
-
                     new AnswerEntity()
                 {
-                    Text = "Software as a service (SaaS).", 
+                    Text = "Software as a service (SaaS).",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "Platform as a service (PaaS).", 
+                    Text = "Platform as a service (PaaS).",
                     IsCorrect = true
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "Infrastructure as a service (IaaS).", 
+                    Text = "Infrastructure as a service (IaaS).",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "Database as a service (DaaS).", 
+                    Text = "Database as a service (DaaS).",
                     IsCorrect = false
                 },
-
-            },           
+            },
         };
     }
 }

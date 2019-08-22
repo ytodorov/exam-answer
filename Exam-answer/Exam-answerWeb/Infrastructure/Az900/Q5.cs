@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,8 +11,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Section = "",
             Contents = new List<ContentEntity>()
             {
-
-
                     new ContentEntity()
                 {
                     Text = "Your company hosts an accounting named App1 that is used by all the customers of the company..",
@@ -28,38 +25,34 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Which benefit of Azure Cloud Services supports cost management for this type of usage pattern?.",
                 },
-
             },
 
-                        Answers = new List<AnswerEntity>()
+            Answers = new List<AnswerEntity>()
             {
-
-
                     new AnswerEntity()
                 {
-                    Text = "High availability.", 
+                    Text = "High availability.",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "High latency.", 
+                    Text = "High latency.",
                     IsCorrect = false
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "Elasticity.", 
+                    Text = "Elasticity.",
                     IsCorrect = true
                 },
 
                     new AnswerEntity()
                 {
-                    Text = "Load balancing.", 
+                    Text = "Load balancing.",
                     IsCorrect = false
                 },
-
-            },           
+            },
         };
     }
 }
