@@ -8,37 +8,26 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q9Instance = new QuestionEntity()
         {
-            Order = 10,
-            Section = "Understand Cloud Concepts",
+            QuestionType = QuestionType.RadioButon,
+            Order = 13,
+            Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
+                    Text = "This question requires that you evaluate the underlined text to determine if it is correct.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
+                    Text = "Azure policies provide a common platform for deploying objects to a cloud infrastructure and for implementing consistency across the Azure environment.",
                 },
                 new ContentEntity()
                 {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
+                    Text = "Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You plan to deploy several Azure virtual machines.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You need to ensure that the services running on the virtual machines are available if a single data center fails.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You deploy the virtual machines to two or more regions.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "Makes the statement correct.",
                 },
             },
 
@@ -46,22 +35,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "No change is needed.", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "Resource groups provide.", 
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Azure Resource Manager provides.", 
                     IsCorrect = true
                 },
+                new AnswerEntity()
+                {
+                    Text = "Management groups provide.", 
+                    IsCorrect = false
+                },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                    Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/regions-and-availability",
-                },
             },           
         };
     }

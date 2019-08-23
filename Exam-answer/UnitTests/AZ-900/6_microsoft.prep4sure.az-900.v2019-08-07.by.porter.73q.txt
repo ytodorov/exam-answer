@@ -189,23 +189,8 @@ administrator.
 4. Press Select to save.
 References:
 https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal
+QUESTION 1
 
-Testlet 2
-Case study
-This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may
-be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in
-the time provided.
-To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and
-other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this
-case study.
-At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section
-of the exam. After you begin a new section, you cannot return to this section.
-To start the case study
-To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the
-questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All
-Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question,
-click the Question button to return to the question.
-Overview
 Humongous Insurance is an insurance company that has three offices in Miami, Tokyo and Bangkok. Each office has 5.000 users.
 Existing Environment
 Active Directory Environment
@@ -245,7 +230,6 @@ configuration of the web apps will be identical. The web administrators have per
 During the testing phase, auditors in the finance department must be able to review all Azure costs from the past week.
 Authentication Requirements
 Users in the Miami office must use Azure Active Directory Seamless Single Sign-on (Azure AD Seamless SSO) when accessing resources in Azure.
-QUESTION 1
 
 You need to resolve the licensing issue before you attempt to assign the license again.
 What should you do?
@@ -262,6 +246,47 @@ Scenario: Licensing Issue
 You attempt to assign a license in Azure to several users and receive the following error message: "Licenses not assigned. License agreement failed for one user."
 You verify that the Azure subscription has the available licenses.
 QUESTION 2
+
+Humongous Insurance is an insurance company that has three offices in Miami, Tokyo and Bangkok. Each office has 5.000 users.
+Existing Environment
+Active Directory Environment
+Humongous Insurance has a single-domain Active Directory forest named humongousinsurance.com. The functional level of the forest is Windows Server 2012.
+You recently provisioned an Azure Active Directory (Azure AD) tenant.
+Network Infrastructure
+Each office has a local data center that contains all the servers for that office. Each office has a dedicated connection to the Internet.
+Each office has several link load balancers that provide access to the servers.
+Active Directory Issue
+Several users in humongousinsurance.com have UPNs that contain special characters.
+You suspect that some of the characters are unsupported in Azure AD.
+
+Licensing Issue
+You attempt to assign a license in Azure to several users and receive the following error message: "Licenses not assigned. License assignment failed for one user."
+You verify that the Azure subscription has the available licenses.
+Requirements
+Planned Changes
+Humongous Insurance plans to open a new office in Paris. The Paris office will contain 1,000 users who will be hired during the next 12 months. All the resources
+used by the Paris office users will be hosted in Azure.
+Planned Azure AD Infrastructure
+The on-premises Active Directory domain will be synchronized to Azure AD.
+All client computers in the Paris office will be joined to an Azure AD domain.
+Planned Azure Networking Infrastructure
+You plan to create the following networking resources in a resource group named All_Resources:
+Default Azure system routes that will be the only routes used to route traffic
+A virtual network named Paris-VNet that will contain two subnets named Subnet1 and Subnet2
+A virtual network named ClientResources-VNet that will contain one subnet named ClientSubnet
+A virtual network named AllOffices-VNet that will contain two subnets named Subnet3 and Subnet4
+You plan to enable peering between Paris-VNet and AllOffices-VNet. You will enable the Use remote gateways setting for the Paris-VNet peerings.
+You plan to create a private DNS zone named humongousinsurance.local and set the registration network to the ClientResources-VNet virtual network.
+Planned Azure Computer Infrastructure
+Each subnet will contain several virtual machines that will run either Windows Server 2012 R2, Windows Server 2016, or Red Hat Linux.
+Department Requirements
+Humongous Insurance identifies the following requirements for the company's departments:
+Web administrators will deploy Azure web apps for the marketing department. Each web app will be added to a separate resource group. The initial
+configuration of the web apps will be identical. The web administrators have permission to deploy web apps to resource groups.
+During the testing phase, auditors in the finance department must be able to review all Azure costs from the past week.
+Authentication Requirements
+Users in the Miami office must use Azure Active Directory Seamless Single Sign-on (Azure AD Seamless SSO) when accessing resources in Azure.
+
 You need to resolve the Active Directory issue.
 What should you do?
 A. Run the IdFix tool then use the Update actions.
@@ -471,22 +496,8 @@ Step 3: Provide Name (storagelod9272261) and Quota (250 GB).
 References:
 https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share
 
-Testlet 2
-Case study
-This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may
-be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in
-the time provided.
-To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and
-other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this
-case study.
-At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section
-of the exam. After you begin a new section, you cannot return to this section.
-To start the case study
-To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the
-questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All
-Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question,
-click the Question button to return to the question.
-Overview
+QUESTION 1
+
 Contoso, Ltd. is a manufacturing company that has offices worldwide. Contoso works with partner organizations to bring products to market.
 Contoso products are manufactured by using blueprint files that the company authors and maintains.
 Existing Environment
@@ -525,7 +536,7 @@ Ensure that only users who are part of a group named Pilot can join devices to A
 Designate a new user named Admin1 as the service admin for the Azure subscription.
 Admin1 must receive email alerts regarding service outages.
 Ensure that a new user named User3 can create network objects for the Azure subscription.
-QUESTION 1
+
 You need to move the blueprint files to Azure.
 
 
@@ -547,6 +558,46 @@ Technical Requirements include: Copy the blueprint files to Azure over the Inter
 References:
 https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer
 QUESTION 2
+
+Contoso, Ltd. is a manufacturing company that has offices worldwide. Contoso works with partner organizations to bring products to market.
+Contoso products are manufactured by using blueprint files that the company authors and maintains.
+Existing Environment
+Currently, Contoso uses multiple types of servers for business operations, including the following:
+File servers
+Domain controllers
+Microsoft SQL Server servers
+Your network contains an Active Directory forest named contoso.com. All servers and client computers are joined to Active Directory.
+You have a public-facing application named App1. App1 is comprised of the following three tiers:
+A SQL database
+A web front end
+A processing middle tier
+
+Each tier is comprised of five virtual machines. Users access the web front end by using HTTPS only.
+Requirements
+Planned Changes
+Contoso plans to implement the following changes to the infrastructure:
+Move all the tiers of App1 to Azure.
+Move the existing product blueprint files to Azure Blob storage.
+Create a hybrid directory to support an upcoming Microsoft Office 365 migration project.
+Technical Requirements
+Contoso must meet the following technical requirements:
+Move all the virtual machines for App1 to Azure.
+Minimize the number of open ports between the App1 tiers.
+Ensure that all the virtual machines for App1 are protected by backups.
+Copy the blueprint files to Azure over the Internet.
+Ensure that the blueprint files are stored in the archive storage tier.
+Ensure that partner access to the blueprint files is secured and temporary.
+Prevent user passwords or hashes of passwprds from being stored in Azure.
+Use unmanaged standard storage for the hard disks of the virtual machines.
+Ensure that when users join devices to Azure Active Directory (Azure AD), the users use a mobile phone to verify their identity
+Minimize administrative effort whenever possible
+User Requirements
+Contoso identifies the following requirements for users:
+Ensure that only users who are part of a group named Pilot can join devices to Azure AD.
+Designate a new user named Admin1 as the service admin for the Azure subscription.
+Admin1 must receive email alerts regarding service outages.
+Ensure that a new user named User3 can create network objects for the Azure subscription.
+
 You need to implement a backup solution for App1 after the application is moved.
 What should you create first?
 A. a recovery plan
@@ -885,22 +936,8 @@ put in plain text in the template parameter file.
 References:
 https://azure.microsoft.com/en-us/resources/templates/101-vm-secure-password/
 
-Testlet 2
-Case study
-This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may
-be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in
-the time provided.
-To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and
-other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this
-case study.
-At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section
-of the exam. After you begin a new section, you cannot return to this section.
-To start the case study
-To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the
-questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All
-Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question,
-click the Question button to return to the question.
-Overview
+QUESTION 1
+
 Contoso, Ltd. is a consulting company that has a main office in Montreal and two branch offices in Seattle and New York.
 The Montreal office has 2,000 employees. The Seattle office has 1,000 employees. The New York office has 200 employees.
 All the resources used by Contoso are hosted on-premises.
@@ -937,7 +974,7 @@ Connect the New York office to VNet1 over the Internet by using an encrypted con
 Create a workflow to send an email message when the settings of VM4 are modified.
 Create a custom Azure role named Role1 that is based on the Reader role.
 Minimize costs whenever possible.
-QUESTION 1
+
 You discover that VM3 does NOT meet the technical requirements.
 You need to verify whether the issue relates to the NSGs.
 What should you use?
@@ -961,6 +998,44 @@ https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-ip-flow-v
 
 Question Set 1
 QUESTION 1
+
+Contoso, Ltd. is a consulting company that has a main office in Montreal and two branch offices in Seattle and New York.
+The Montreal office has 2,000 employees. The Seattle office has 1,000 employees. The New York office has 200 employees.
+All the resources used by Contoso are hosted on-premises.
+Contoso creates a new Azure subscription. The Azure Active Directory (Azure AD) tenant uses a domain named contoso.onmicrosoft.com. The tenant uses the P1
+pricing tier.
+Existing Environment
+The network contains an Active Directory forest named contoso.com. All domain controllers are configured as DNS servers and host the contoso.com DNS zone.
+Contoso has finance, human resources, sales, research, and information technology departments. Each department has an organizational unit (OU) that contains
+all the accounts of that respective department. All the user accounts have the department attribute set to their respective department. New users are added
+frequently.
+Contoso.com contains a user named User1.
+
+All the offices connect by using private links.
+Contoso has data centers in the Montreal and Seattle offices. Each data center has a firewall that can be configured as a VPN device.
+All infrastructure servers are virtualized. The virtualization environment contains the servers in the following table.
+Contoso uses two web applications named App1 and App2. Each instance on each web application requires 1GB of memory.
+The Azure subscription contains the resources in the following table.
+The network security team implements several network security groups (NSGs).
+Planned Changes
+Contoso plans to implement the following changes:
+Deploy Azure ExpressRoute to the Montreal office.
+Migrate the virtual machines hosted on Server1 and Server2 to Azure.
+Synchronize on-premises Active Directory to Azure Active Directory (Azure AD).
+Migrate App1 and App2 to two Azure web apps named WebApp1 and WebApp2.
+Technical requirements
+Contoso must meet the following technical requirements:
+Ensure that WebApp1 can adjust the number of instances automatically based on the load and can scale up to five instances.
+Ensure that VM3 can establish outbound connections over TCP port 8080 to the applications servers in the Montreal office.
+Ensure that routing information is exchanged automatically between Azure and the routers in the Montreal office.
+Ensure Azure Multi-Factor Authentication (MFA) for the users in the finance department only.
+Ensure that webapp2.azurewebsites.net can be accessed by using the name app2.contoso.com
+
+Connect the New York office to VNet1 over the Internet by using an encrypted connection.
+Create a workflow to send an email message when the settings of VM4 are modified.
+Create a custom Azure role named Role1 that is based on the Reader role.
+Minimize costs whenever possible.
+
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might
 meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
@@ -985,6 +1060,44 @@ a default number of seconds for the time-to-live file on resource records.
 References:
 https://searchnetworking.techtarget.com/definition/start-of-authority-record
 QUESTION 2
+
+Contoso, Ltd. is a consulting company that has a main office in Montreal and two branch offices in Seattle and New York.
+The Montreal office has 2,000 employees. The Seattle office has 1,000 employees. The New York office has 200 employees.
+All the resources used by Contoso are hosted on-premises.
+Contoso creates a new Azure subscription. The Azure Active Directory (Azure AD) tenant uses a domain named contoso.onmicrosoft.com. The tenant uses the P1
+pricing tier.
+Existing Environment
+The network contains an Active Directory forest named contoso.com. All domain controllers are configured as DNS servers and host the contoso.com DNS zone.
+Contoso has finance, human resources, sales, research, and information technology departments. Each department has an organizational unit (OU) that contains
+all the accounts of that respective department. All the user accounts have the department attribute set to their respective department. New users are added
+frequently.
+Contoso.com contains a user named User1.
+
+All the offices connect by using private links.
+Contoso has data centers in the Montreal and Seattle offices. Each data center has a firewall that can be configured as a VPN device.
+All infrastructure servers are virtualized. The virtualization environment contains the servers in the following table.
+Contoso uses two web applications named App1 and App2. Each instance on each web application requires 1GB of memory.
+The Azure subscription contains the resources in the following table.
+The network security team implements several network security groups (NSGs).
+Planned Changes
+Contoso plans to implement the following changes:
+Deploy Azure ExpressRoute to the Montreal office.
+Migrate the virtual machines hosted on Server1 and Server2 to Azure.
+Synchronize on-premises Active Directory to Azure Active Directory (Azure AD).
+Migrate App1 and App2 to two Azure web apps named WebApp1 and WebApp2.
+Technical requirements
+Contoso must meet the following technical requirements:
+Ensure that WebApp1 can adjust the number of instances automatically based on the load and can scale up to five instances.
+Ensure that VM3 can establish outbound connections over TCP port 8080 to the applications servers in the Montreal office.
+Ensure that routing information is exchanged automatically between Azure and the routers in the Montreal office.
+Ensure Azure Multi-Factor Authentication (MFA) for the users in the finance department only.
+Ensure that webapp2.azurewebsites.net can be accessed by using the name app2.contoso.com
+
+Connect the New York office to VNet1 over the Internet by using an encrypted connection.
+Create a workflow to send an email message when the settings of VM4 are modified.
+Create a custom Azure role named Role1 that is based on the Reader role.
+Minimize costs whenever possible.
+
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might
 
 meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -1609,22 +1722,8 @@ Explanation/Reference:
 References:
 https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain
 
-Testlet 2
-Case study
-This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may
-be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in
-the time provided.
-To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and
-other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this
-case study.
-At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section
-of the exam. After you begin a new section, you cannot return to this section.
-To start the case study
-To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the
-questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All
-Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question,
-click the Question button to return to the question.
-Overview
+QUESTION 1
+
 Contoso, Ltd. is a consulting company that has a main office in Montreal and two branch offices in Seattle and New York.
 The Montreal office has 2,000 employees. The Seattle office has 1,000 employees. The New York office has 200 employees.
 All the resources used by Contoso are hosted on-premises.
@@ -1661,7 +1760,7 @@ Connect the New York office to VNet1 over the Internet by using an encrypted con
 Create a workflow to send an email message when the settings of VM4 are modified.
 Create a custom Azure role named Role1 that is based on the Reader role.
 Minimize costs whenever possible.
-QUESTION 1
+
 You need to recommend a solution to automate the configuration for the finance department users. The solution must meet the technical requirements.
 What should you include in the recommendation?
 A. Azure AD B2C
@@ -1678,22 +1777,9 @@ The recommendation is to use conditional access policies that can then be target
 References:
 https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates
 
-Testlet 3
-Case study
-This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may
-be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in
-the time provided.
-To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and
-other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this
-case study.
-At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section
-of the exam. After you begin a new section, you cannot return to this section.
-To start the case study
-To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the
-questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All
-Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question,
-click the Question button to return to the question.
-Overview
+
+QUESTION 1
+
 Humongous Insurance is an insurance company that has three offices in Miami, Tokyo and Bangkok. Each office has 5.000 users.
 Existing Environment
 Active Directory Environment
@@ -1734,7 +1820,7 @@ configuration of the web apps will be identical. The web administrators have per
 During the testing phase, auditors in the finance department must be able to review all Azure costs from the past week.
 Authentication Requirements
 Users in the Miami office must use Azure Active Directory Seamless Single Sign-on (Azure AD Seamless SSO) when accessing resources in Azure.
-QUESTION 1
+
 You need to prepare the environment to meet the authentication requirements.
 Which two actions should you perform? Each correct answer presents part of the solution.
 NOTE: Each correct selection is worth one point.

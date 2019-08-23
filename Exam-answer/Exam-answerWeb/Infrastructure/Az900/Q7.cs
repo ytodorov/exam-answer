@@ -8,21 +8,38 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q6Instance = new QuestionEntity()
         {
-            Order = 7,
+            QuestionType = QuestionType.RadioButon,
+            Order = 8,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "You have an on-premises network that contains 100 servers.",
+                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to recommend a solution that provides additional resources to your users. The solution must minimize capital and operational expenditure costs.",
+                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
                 },
                 new ContentEntity()
                 {
-                    Text = "What should you include in the recommendation?",
+                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You plan to deploy several Azure virtual machines.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You need to ensure that the services running on the virtual machines are available if a single data center fails.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Solution: You deploy the virtual machines to two or more scale sets.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Does this meet the goal?",
                 },
             },
 
@@ -30,28 +47,26 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A complete migration to the public cloud.", 
+                    Text = "Yes.", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An additional data center.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "A private cloud.", 
+                    Text = "No.", 
                     IsCorrect = true
                 },
-                new AnswerEntity()
-                {
-                    Text = "A hybrid cloud.", 
-                    IsCorrect = false
-                },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/regions-and-availability",
+                },
             },           
         };
     }

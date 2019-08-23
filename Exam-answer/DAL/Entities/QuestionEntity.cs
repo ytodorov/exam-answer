@@ -34,7 +34,7 @@ namespace DAL.Entities
         public List<AnswerEntity> SuggestedAnswerLd { get; set; }
 
         [NotMapped]
-        public string QuestionText
+        public string ContentText
         {
             get
             {
@@ -43,8 +43,7 @@ namespace DAL.Entities
                 {
                     foreach (ContentEntity content in Contents)
                     {
-                        sb.Append(content.Text);
-                        sb.Append(" ");
+                        sb.AppendLine(content.Text);
                     }
                 }
                 string result = sb.ToString().Trim();
@@ -63,8 +62,7 @@ namespace DAL.Entities
                 {
                     foreach (var answer in Answers)
                     {
-                        sb.Append(answer.Text);
-                        sb.Append(" ");
+                        sb.AppendLine(answer.Text);
                     }
                 }
                 string result = sb.ToString().Trim();
@@ -83,8 +81,26 @@ namespace DAL.Entities
                 {
                     foreach (ExplanationEntity explanation in Explanations)
                     {
-                        sb.Append(explanation.Text);
-                        sb.Append(" ");
+                        sb.AppendLine(explanation.Text);
+                    }
+                }
+                string result = sb.ToString().Trim();
+
+                return result;
+            }
+        }
+
+        [NotMapped]
+        public string ReferenceText
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                if (Explanations != null)
+                {
+                    foreach (var reference in References)
+                    {
+                        sb.AppendLine(reference.Text);
                     }
                 }
                 string result = sb.ToString().Trim();

@@ -8,21 +8,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q4Instance = new QuestionEntity()
         {
-            Order = 5,
+            QuestionType = QuestionType.RadioButon,
+            Order = 6,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Your company hosts an accounting named App1 that is used by all the customers of the company.",
+                    Text = "You plan to migrate a web application to Azure. The web application is accessed by external users.",
                 },
                 new ContentEntity()
                 {
-                    Text = "App1 has low usage during the first three weeks of each month and very high usage during the last week of each month.",
+                    Text = "You need to recommend a cloud deployment solution to minimize the amount of administrative effort used to manage the web application.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Which benefit of Azure Cloud Services supports cost management for this type of usage pattern?",
+                    Text = "What should you include in the recommendation?",
                 },
             },
 
@@ -30,24 +31,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "High availability.", 
+                    Text = "Software as a service (SaaS).", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "High latency.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "Elasticity.", 
+                    Text = "Platform as a service (PaaS).", 
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Load balancing.", 
+                    Text = "Infrastructure as a service (IaaS).", 
                     IsCorrect = false
                 },
+                new AnswerEntity()
+                {
+                    Text = "Database as a service (DaaS).", 
+                    IsCorrect = false
+                },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()

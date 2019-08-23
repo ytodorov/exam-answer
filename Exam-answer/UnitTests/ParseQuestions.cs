@@ -16,9 +16,9 @@ namespace UnitTests
         [Fact]
         public void ReadPdf()
         {
-            var pdfDoc = PdfDocument.FromFile("gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf");
+            //var pdfDoc = PdfDocument.FromFile("gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf");
 
-            var text = pdfDoc.ExtractTextFromPage(1);
+            //var text = pdfDoc.ExtractTextFromPage(1);
         }
 
         private string FormatTextToBeFirstCapitalEndInPeriod(string sourceText)
@@ -38,7 +38,7 @@ namespace UnitTests
             }
 
             return sourceText;
-            
+
         }
 
 
@@ -62,6 +62,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {{
         public static QuestionEntity Q{i}Instance = new QuestionEntity()
         {{
+            QuestionType = QuestionType.{question.QuestionType},
             Order = {question.Order},
             Section = ""{question.Section}"",
             Contents = new List<ContentEntity>()
@@ -73,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     $@"
                 new ContentEntity()
                 {{
-                    Text = ""{content.Text}"",
+                    Text = ""{content.Text.Replace("\"", "\\\"")}"",
                 }},");
                 }
 
@@ -92,7 +93,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 $@"
                 new AnswerEntity()
                 {{
-                    Text = ""{answer.Text}"", 
+                    Text = ""{answer.Text.Replace("\"", "\\\"")}"", 
                     IsCorrect = {answer.IsCorrect.GetValueOrDefault().ToString().ToLowerInvariant()}
                 }},");
 
@@ -101,6 +102,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 sb.Append($@"
             }},
 ");
+
+                sb.Append(
+                  $@"
+            Explanations = new List<ExplanationEntity>()
+            {{");
+
+                foreach (var explanation in question.Explanations)
+                {
+                    sb.Append(
+                $@"
+                new ExplanationEntity()
+                {{
+                    Text = ""{explanation.Text.Replace("\"", "\\\"")}""
+                }},");
+
+                }
+
+                sb.Append($@"
+            }},
+");
+
 
                 sb.Append($@"
             References = new List<ReferenceEntity>()
@@ -112,7 +134,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     $@"
                 new ReferenceEntity()
                 {{
-                    Url = ""{reference.Url}"",
+                    Url = ""{reference.Url.Replace("\"", "\\\"")}"",
                 }},");
                 }
 
@@ -156,15 +178,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
                 lines = lines.Where(l => !string.IsNullOrEmpty(l?.Trim())).ToList();
 
-                var linesStartingWithQuestion = lines.Where(l => l.StartsWith("QUESTION "));
                 List<int> indexes = new List<int>();
 
-                foreach (var line in linesStartingWithQuestion)
+                for (int i = 0; i < lines.Count; i++)
                 {
-                    var index = lines.IndexOf(line);
-                    indexes.Add(index);
+                    var currLine = lines[i];
+                    if (currLine.StartsWith("QUESTION "))
+                    {
+                        indexes.Add(i);
+                    }
                 }
-                indexes.Add(lines.Count);
+
+                //var linesStartingWithQuestion = lines.Where(l => l.StartsWith("QUESTION ")).ToList();
+               
+
+                //foreach (var line in linesStartingWithQuestion)
+                //{
+                //    var index = lines.IndexOf(line);
+                //    indexes.Add(index);
+                //}
+                //indexes.Add(lines.Count);
+
+                //indexes = indexes.OrderBy(s => s).ToList();
 
                 for (int i = 0; i < indexes.Count - 1; i++)
                 {
@@ -172,12 +207,30 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     var nextIndex = indexes[i + 1];
                     var questionLines = lines.Skip(currentIndex).Take(nextIndex - currentIndex).ToList();
 
+                    // Catch parsing errors here
+                    if (questionLines.Count > 100)
+                    {
+
+                    }
+
+
+                    // Fix missing : in Explanation
+
+                    for (int currIndexLine = 0; currIndexLine < questionLines.Count; currIndexLine++)
+                    {
+                        var currLine = questionLines[currIndexLine];
+                        if ("Explanation".Equals(currLine, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            questionLines[currIndexLine] = "Explanation:";
+                        }
+                    }
+                    
                     var answer1 = questionLines.FirstOrDefault(f => f.Trim().StartsWith("A."));
 
                     var indexOfFirstAnswer = questionLines.IndexOf(answer1);
 
                     var linesWithContent = questionLines.Skip(1).Take(indexOfFirstAnswer - 1).ToList();
-                                        
+
                     QuestionEntity questionEntity = new QuestionEntity();
 
                     foreach (var lineWithContent in linesWithContent)
@@ -256,16 +309,25 @@ namespace Exam_answerWeb.Infrastructure.Questions
                         questionEntity.Answers.Add(new AnswerEntity() { Text = answerText6, IsCorrect = isCorrect6 });
                     }
 
+                    if (questionEntity.Answers.Count(a => a.IsCorrect.GetValueOrDefault()) > 1)
+                    {
+                        questionEntity.QuestionType = QuestionType.CheckBox;
+                    }                    
+
                     string sectionLine = questionLines.FirstOrDefault(f => f.StartsWith("Section:"));
                     string sectionName = sectionLine.Replace("Section:", string.Empty).Replace("Explanation", string.Empty).Trim();
 
-                    questionEntity.Section = sectionName;
+                    if (!sectionName.Contains("none", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        questionEntity.Section = sectionName;
+                    }
                     questionEntity.Order = questions.Count + 1;
 
                     var references = questionLines.FirstOrDefault(f => f.Trim().StartsWith("References:"));
+                    var indexOfReferences = -1;
                     if (references != null)
                     {
-                        var indexOfReferences = questionLines.IndexOf(references);
+                        indexOfReferences = questionLines.IndexOf(references);
 
                         for (int refIndex = indexOfReferences; refIndex < questionLines.Count; refIndex++)
                         {
@@ -281,6 +343,33 @@ namespace Exam_answerWeb.Infrastructure.Questions
                         }
                     }
 
+                    var explanation = questionLines.FirstOrDefault(f => f.Trim().StartsWith("Explanation:"));
+                    var indexOfExplanation = -1;
+                    if (explanation != null)
+                    {
+                        indexOfExplanation = questionLines.IndexOf(explanation);
+
+                        if (indexOfReferences != -1 && indexOfExplanation != -1)
+                        {
+                            for (int explIndex = indexOfExplanation; explIndex < indexOfReferences; explIndex++)
+                            {
+                                string explanationString = questionLines[explIndex].Replace("Explanation:", string.Empty).Trim();
+
+                                if (!string.IsNullOrEmpty(explanationString) &&
+                                    !"Explanation/Reference:".Equals(explanationString.Trim(), StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    questionEntity.Explanations.Add(new ExplanationEntity()
+                                    {
+                                        Text = explanationString
+                                    });
+                                }
+                            }
+                        }
+                    }
+                  
+
+                    
+
                     questions.Add(questionEntity);
                 }
             }
@@ -290,8 +379,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             List<QuestionEntity> duplicateQuestions = new List<QuestionEntity>();
             List<string> duplicateQuestionsPairs = new List<string>();
 
+            questions = questions.Where(q => q.Answers.Count > 0 && q.Contents.Count > 0).ToList();
+
             questions = questions.Where(q => !saveDuplicatesOrders.Any(d => d == q.Order)).ToList();
 
+            
 
             GenerateCS(questions);
 
@@ -308,29 +400,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     QuestionEntity q2 = questions[j];
 
-                    StringBuilder sb1 = new StringBuilder();
-                    foreach (ContentEntity content in q1.Contents)
-                    {
-                        sb1.AppendLine(content.Text);
-                    }
-                    foreach (AnswerEntity answer in q1.Answers)
-                    {
-                        sb1.AppendLine(answer.Text);
-                    }
-
-                    StringBuilder sb2 = new StringBuilder();
-                    foreach (ContentEntity content in q2.Contents)
-                    {
-                        sb2.AppendLine(content.Text);
-                    }
-                    foreach (AnswerEntity answer in q2.Answers)
-                    {
-                        sb2.AppendLine(answer.Text);
-                    }
-
-                    string text1 = sb1.ToString();
-
-                    string text2 = sb2.ToString();
+                    string text1 = q1.ContentText + q1.AnswerText;
+                    string text2 = q2.ContentText + q2.AnswerText;
 
                     double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
                     distances.Add(Math.Round(distance, 2));
@@ -338,10 +409,20 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     {
                         duplicateQuestionsPairs.Add($"q{q1.Order}_q{q2.Order}_d: {distance}");
                     }
-                    if (distance > 0.999)
+                    if (distance > 0.9)
                     {
-                        duplicateQuestions.Add(q2);
-                        questionsDuplicatesOrders.Add(q2.Order.GetValueOrDefault());
+                        if (q1.ExplanationText.Length + q1.ReferenceText.Length >= q2.ExplanationText.Length + q2.ReferenceText.Length)
+                        {
+                            duplicateQuestions.Add(q2);
+                            questionsDuplicatesOrders.Add(q2.Order.GetValueOrDefault());
+                        }
+                        else
+                        {
+                            duplicateQuestions.Add(q1);
+                            questionsDuplicatesOrders.Add(q1.Order.GetValueOrDefault());
+                        }
+                        
+                        
                     }
                 }
             }
@@ -356,9 +437,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             string toWrite = sbDuplicatesToSave.ToString();
 
             File.WriteAllText("AZ-900\\az-900Duplicates.txt", toWrite);
-
-
-
 
         }
     }

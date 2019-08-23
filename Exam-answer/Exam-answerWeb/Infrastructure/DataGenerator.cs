@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Exam_answerWeb.Infrastructure.crt251;
 using System.Text;
+using System.Reflection;
+using Exam_answerWeb.Infrastructure.Questions;
 //using Exam_answerWeb.Infrastructure.Questions;
 
 namespace Exam_answerWeb.Infrastructure
@@ -170,8 +172,30 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Microsoft",
                 Code = "AZ-900",
                 Name = "Microsoft Azure Fundamentals",
+                Title = "Exam AZ-900: Microsoft Azure Fundamentals",
+                Description = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations.",
                 Questions = new List<QuestionEntity>()
             };
+
+            var az900Fields = typeof(Az900).GetFields(BindingFlags.Static |
+                                                      BindingFlags.Public |
+                                                      BindingFlags.NonPublic).ToList();
+
+            az900Fields = az900Fields.OrderBy(a => (a.GetValue(null) as QuestionEntity).Order).ToList();
+
+            foreach (var f in az900Fields)
+            {
+                var qe = f.GetValue(null) as QuestionEntity;
+                az900.Questions.Add(qe);
+            }
+            //var values = from type in someAssembly.GetTypes()
+            //             from field in type.GetFields(BindingFlags.Static |
+            //                                          BindingFlags.Public |
+            //                                          BindingFlags.NonPublic)
+            //             where field.IsInitOnly &&
+            //                   field.FieldType == typeof(QuestionEntity)
+            //             select (QuestionEntity)field.GetValue(null);
+
 
             //az900.Questions.Add(Az900.Q1Instance);
             //az900.Questions.Add(Az900.Q2Instance);

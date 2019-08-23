@@ -8,17 +8,18 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q5Instance = new QuestionEntity()
         {
-            Order = 6,
+            QuestionType = QuestionType.RadioButon,
+            Order = 7,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "You plan to migrate a web application to Azure. The web application is accessed by external users.",
+                    Text = "You have an on-premises network that contains 100 servers.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to recommend a cloud deployment solution to minimize the amount of administrative effort used to manage the web application.",
+                    Text = "You need to recommend a solution that provides additional resources to your users. The solution must minimize capital and operational expenditure costs.",
                 },
                 new ContentEntity()
                 {
@@ -30,24 +31,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Software as a service (SaaS).", 
+                    Text = "A complete migration to the public cloud.", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Platform as a service (PaaS).", 
+                    Text = "An additional data center.", 
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "A private cloud.", 
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Infrastructure as a service (IaaS).", 
+                    Text = "A hybrid cloud.", 
                     IsCorrect = false
                 },
-                new AnswerEntity()
-                {
-                    Text = "Database as a service (DaaS).", 
-                    IsCorrect = false
-                },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()

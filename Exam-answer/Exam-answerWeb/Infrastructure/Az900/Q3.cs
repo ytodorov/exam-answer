@@ -8,6 +8,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q2Instance = new QuestionEntity()
         {
+            QuestionType = QuestionType.RadioButon,
             Order = 3,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
@@ -58,6 +59,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "No.", 
                     IsCorrect = false
                 },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()

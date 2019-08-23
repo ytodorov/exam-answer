@@ -8,6 +8,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q0Instance = new QuestionEntity()
         {
+            QuestionType = QuestionType.CheckBox,
             Order = 1,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
@@ -49,6 +50,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Self-service management.", 
                     IsCorrect = true
                 },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()

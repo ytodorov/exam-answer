@@ -155,7 +155,7 @@
                 @foreach (var reference in Model.References)
                 {
                     <p>
-                        <a href="@reference.Url" target="_blank" rel="noopener">@reference.Text</a>
+                        <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
                     </p>
                 }
             </div>

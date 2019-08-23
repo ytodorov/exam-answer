@@ -8,6 +8,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q1Instance = new QuestionEntity()
         {
+            QuestionType = QuestionType.RadioButon,
             Order = 2,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
@@ -52,6 +53,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Reduce the number of connections to the website.", 
                     IsCorrect = false
                 },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()

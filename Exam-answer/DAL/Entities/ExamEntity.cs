@@ -12,6 +12,10 @@ namespace DAL.Entities
 
         public string Provider { get; set; }
 
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
         public List<QuestionEntity> Questions { get; set; }
 
         public string UdemyLinkUrl { get; set; }

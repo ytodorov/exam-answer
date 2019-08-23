@@ -11,11 +11,11 @@ using Xunit;
 
 namespace UnitTests
 {
-    public class QuestionsTests
+    public class ValidateQuestionsTests
     {
         public List<ExamEntity> ExamsToCheck { get; set; }
 
-        public QuestionsTests()
+        public ValidateQuestionsTests()
         {
             ExamsToCheck = DataGenerator.Initialize(null);
             ExamsToCheck = ExamsToCheck.Where(e => !e.Code.Equals("AZ-100", StringComparison.CurrentCultureIgnoreCase)).ToList();
@@ -33,6 +33,9 @@ namespace UnitTests
 
             List<double> distances = new List<double>();
 
+            List<Tuple<QuestionEntity, QuestionEntity, string>> duplicatesLists =
+                 new List<Tuple<QuestionEntity, QuestionEntity, string>>();
+
             for (int i = 0; i < allquestions.Count; i++)
             {
                 for (int j = i + 1; j < allquestions.Count; j++)
@@ -40,36 +43,20 @@ namespace UnitTests
                     QuestionEntity q1 = allquestions[i];
                     QuestionEntity q2 = allquestions[j];
 
+                    string text1 = q1.ContentText + q1.AnswerText;
 
-                    StringBuilder sb1 = new StringBuilder();
-                    foreach (ContentEntity content in q1.Contents)
-                    {
-                        sb1.AppendLine(content.Text);
-                    }
-                    foreach (AnswerEntity answer in q1.Answers)
-                    {
-                        sb1.AppendLine(answer.Text);
-                    }
 
-                    StringBuilder sb2 = new StringBuilder();
-                    foreach (ContentEntity content in q2.Contents)
-                    {
-                        sb2.AppendLine(content.Text);
-                    }
-                    foreach (AnswerEntity answer in q2.Answers)
-                    {
-                        sb2.AppendLine(answer.Text);
-                    }
-
-                    string text1 = sb1.ToString();
-
-                    string text2 = sb2.ToString();
+                    string text2 = q2.ContentText + q2.AnswerText;
 
                     double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
                     distances.Add(Math.Round(distance, 2));
-                    if (distance > 0.999)
+                    if (distance > 0.98)
                     {
+                        duplicatesLists.Add(new Tuple<QuestionEntity, QuestionEntity, string>(
+                            q1, q2, distance.ToString()));
 
+                        string textToSee = $"{text1} {Environment.NewLine}{Environment.NewLine} {text2}";
+                        
                     }
                 }
             }
@@ -79,12 +66,51 @@ namespace UnitTests
         }
 
         [Fact]
-        public void AllQuestionsShouldHaveAnswerTest()
+        public void AllQuestionsShouldHaveCorrectAnswerTest()
         {
             foreach (ExamEntity exam in ExamsToCheck)
             {
                 List<int?> questionsWithoutAnswers = exam.Questions.Where(q => !q.Answers.Any(a => a.IsCorrect == true)).Select(q => q.Order).ToList();
                 Assert.Empty(questionsWithoutAnswers);
+            }
+        }
+
+        [Fact]
+        public void AllQuestionsShouldHaveContentTest()
+        {
+            foreach (ExamEntity exam in ExamsToCheck)
+            {
+                foreach (var question in exam.Questions)
+                {
+                    Assert.False(string.IsNullOrWhiteSpace(question.ContentText));
+                }
+            }
+        }
+
+        [Fact]
+        public void AllQuestionsShouldHaveAnswerTextTest()
+        {
+            foreach (ExamEntity exam in ExamsToCheck)
+            {
+                foreach (var question in exam.Questions)
+                {
+                    Assert.False(string.IsNullOrWhiteSpace(question.AnswerText));
+                }
+            }
+        }
+
+        [Fact]
+        public void AllQuestionsShouldNotVeryLongTextTest()
+        {
+            foreach (ExamEntity exam in ExamsToCheck)
+            {
+                foreach (var question in exam.Questions)
+                {
+                    Assert.True(question.ContentText.Length < 4000);
+                    Assert.True(question.AnswerText.Length < 4000);
+                    Assert.True(question.ExplanationText.Length < 4000);
+                    Assert.True(question.ReferenceText.Length < 4000);                    
+                }
             }
         }
 
@@ -127,7 +153,7 @@ namespace UnitTests
                     continue;
                 }
 
-                sb.Append(question.QuestionText.Replace("\"", "\"\"").Replace(",", ""));
+                sb.Append(question.ContentText.Replace("\"", "\"\"").Replace(",", ""));
                 sb.Append(",");
 
                 if (question.QuestionType == QuestionType.RadioButon)

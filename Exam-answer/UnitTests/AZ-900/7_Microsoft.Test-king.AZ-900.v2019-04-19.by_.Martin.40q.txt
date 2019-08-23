@@ -21,7 +21,8 @@ B. Deploy a VPN
 C. pay to transfer all the website data to Azure
 D. reduce the number of connections to the website
 Correct Answer: A
-Section: Understand Cloud Concepts Explanation
+Section: Understand Cloud Concepts
+Explanation:
 Explanation/Reference:
 QUESTION 2
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -34,7 +35,8 @@ Solution: You create an Azure App Service and Azure SQL databases.
 A. Yes
 B. No
 Correct Answer: A
-Section: Understand Cloud Concepts Explanation
+Section: Understand Cloud Concepts
+Explanation:
 Explanation/Reference:
 QUESTION 3
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -71,7 +73,8 @@ B. platform as a service (PaaS)
 C. infrastructure as a service (IaaS)
 D. database as a service (DaaS)
 Correct Answer: B 
-Section: Understand Cloud Concepts Explanation
+Section: Understand Cloud Concepts
+Explanation:
 Explanation/Reference:
 QUESTION 6
 You have an on-premises network that contains 100 servers.
@@ -82,7 +85,8 @@ B. an additional data center
 C. a private cloud
 D. a hybrid cloud
 Correct Answer: C
-Section: Understand Cloud Concepts Explanation
+Section: Understand Cloud Concepts
+Explanation:
 Explanation/Reference:
 QUESTION 7
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -107,7 +111,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: B
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 9
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -119,7 +124,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: A
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 10
 You have an Azure environment that contains 10 virtual networks and 100 virtual machines.
@@ -139,7 +145,8 @@ Instructions: To answer, drag the appropriate Azure service from the column on t
 NOTE: Each correct match is worth one point.
 Select and Place:
 Correct Answer:
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 12
 You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned mapped drive.
@@ -149,7 +156,8 @@ B. a virtual machine data disk
 C. a Files service in a storage account
 D. a Blobs service in a storage account
 Correct Answer: C
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 13
 Your company plans to deploy an Artificial Intelligence (AI) solution in Azure.
@@ -159,7 +167,8 @@ B. Azure Machine Learning Studio
 C. Azure Batch
 D. Azure Cosmos DB
 Correct Answer: B
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 14
 This question requires that you evaluate the underlined text to determine if it is correct.
@@ -183,7 +192,8 @@ B. virtual machine scale sets
 C. the Azure API Management service
 D. management groups
 Correct Answer: A
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 16 HOTSPOT
 You plan to deploy a critical line-of-business application to Azure.
@@ -193,7 +203,8 @@ What is the minimum number of virtual machines and the minimum number of availab
 NOTE: Each correct selection is worth one point.
 Hot Area:
 Correct Answer: 
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 References: https://docs.microsoft.com/en-us/azure/availability-zones/az-overview
 QUESTION 17
@@ -204,7 +215,8 @@ C. Azure Monitor
 D. Azure Log Analytics
 
 Correct Answer: D
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 18
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -215,7 +227,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: A 
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 19
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -226,7 +239,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: B
-Section: Understand Core Azure Services Explanation
+Section: Understand Core Azure Services 
+Explanation:
 Explanation/Reference:
 QUESTION 20
 This question requires that you evaluate the underlined text to determine if it is correct.
@@ -326,7 +340,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: B
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 28
 Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.
@@ -338,7 +353,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: B
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 29
 Which two types of customers are eligible to use Azure Government to develop a cloud solution? Each correct answer presents a complete solution.
@@ -349,7 +365,8 @@ C. a United States government entity
 D. a United States government contractor
 E. a European government entity
 Correct Answer: CD
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 References: https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-government/2-what-is-azure-government
 QUESTION 30
@@ -361,7 +378,8 @@ B. Azure Service Bus
 C. a local network gateway
 D. a route filter
 Correct Answer: A
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 31
 To what should an application connect to retrieve security tokens?
@@ -370,7 +388,8 @@ B. Azure Active Directory (Azure AD)
 C. a certificate store
 D. an Azure key vault
 Correct Answer: B
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 32
 This question requires that you evaluate the underlined text to determine if it is correct.
@@ -381,7 +400,8 @@ B. Management groups
 C. Azure policies
 D. Azure App Service plans
 Correct Answer: C
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 33
 Your company has an Azure environment that contains resources in several regions.
@@ -393,7 +413,8 @@ B. an Azure policy
 C. a management group
 D. a reservation
 Correct Answer: B
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 34
 This question requires that you evaluate the underlined text to determine if it is correct.
@@ -403,7 +424,8 @@ B. Authentication
 C. Federation
 D. Ticketing
 Correct Answer: B
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 35
 Your company plans to migrate all on-premises data to Azure. You need to identify whether Azure complies with the company’s regional requirements.
@@ -413,7 +435,8 @@ B. Azure Marketplace
 C. the Azure portal
 D. the Trust Center
 Correct Answer: D
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 36
 Your company plans to automate the deployment of servers to Azure.
@@ -425,7 +448,8 @@ B. Azure Information Protection
 C. Azure Security Center
 D. Azure Multi-Factor Authentication (MFA)
 Correct Answer: A
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 QUESTION 37
 This question requires that you evaluate the underlined text to determine if it is correct.
@@ -436,7 +460,8 @@ B. only enterprises that are registered in Germany
 C. only enterprises that purchase their azure licenses from a partner based in Germany
 D. any user or enterprise that requires its data to reside in Germany
 Correct Answer: D
-Section: Understand Security, Privacy, Compliance and Trust Explanation
+Section: Understand Security, Privacy, Compliance and Trust 
+Explanation:
 Explanation/Reference:
 References: https://docs.microsoft.com/en-us/azure/germany/germany-welcome?toc=%2fazure%2fgermany%2ftoc.json
 QUESTION 38
@@ -450,7 +475,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: B
-Section: Understand Azure Pricing and Support Explanation
+Section: Understand Azure Pricing and Support 
+Explanation:
 Explanation/Reference:
 References: https://azure.microsoft.com/en-gb/support/plans/
 QUESTION 39
@@ -463,7 +489,8 @@ Does this meet the goal?
 A. Yes
 B. No
 Correct Answer: A 
-Section: Understand Azure Pricing and Support Explanation
+Section: Understand Azure Pricing and Support 
+Explanation:
 Explanation/Reference:
 References: https://azure.microsoft.com/en-gb/support/plans/
 QUESTION 40
@@ -473,7 +500,8 @@ B. Software Assurance
 C. an Enterprise Agreement (EA)
 D. a pay-as-you-go subscription
 Correct Answer: C
-Section: Understand Azure Pricing and Support Explanation
+Section: Understand Azure Pricing and Support 
+Explanation:
 Explanation/Reference:
 References: https://docs.microsoft.com/en-gb/azure/cost-management/overview-cost-mgt
  

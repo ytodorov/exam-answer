@@ -8,37 +8,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
     {
         public static QuestionEntity Q7Instance = new QuestionEntity()
         {
-            Order = 8,
-            Section = "Understand Cloud Concepts",
+            QuestionType = QuestionType.RadioButon,
+            Order = 11,
+            Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
+                    Text = "You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
+                    Text = "Mapped drive.",
                 },
                 new ContentEntity()
                 {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You plan to deploy several Azure virtual machines.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You need to ensure that the services running on the virtual machines are available if a single data center fails.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You deploy the virtual machines to two or more scale sets.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "What should you create?",
                 },
             },
 
@@ -46,22 +31,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "An Azure SQL database.", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "A virtual machine data disk.", 
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "A Files service in a storage account.", 
                     IsCorrect = true
                 },
+                new AnswerEntity()
+                {
+                    Text = "A Blobs service in a storage account.", 
+                    IsCorrect = false
+                },
+            },
+
+            Explanations = new List<ExplanationEntity>()
+            {
             },
 
             References = new List<ReferenceEntity>()
             {
-                new ReferenceEntity()
-                {
-                    Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/regions-and-availability",
-                },
             },           
         };
     }
