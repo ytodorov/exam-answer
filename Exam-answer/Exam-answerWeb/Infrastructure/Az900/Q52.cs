@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Authorization is the process of verifying a user’s credentials.",
+                    Text = "*** AUTHORIZATION *** is the process of verifying a user’s credentials.",
                 },
                 new ContentEntity()
                 {

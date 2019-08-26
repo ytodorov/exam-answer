@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "You deploy an Azure resource. The resource becomes unavailable for an extended period due to a service outage. Microsoft will automatically refund your bank.",
+                    Text = "You deploy an Azure resource. The resource becomes unavailable for an extended period due to a service outage. Microsoft will *** AUTOMATICALLY REFUND YOUR BANK ***.",
                 },
                 new ContentEntity()
                 {

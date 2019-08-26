@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "When planning to migrate a public website to Azure, you must plan to pay monthly usage costs.",
+                    Text = "When planning to migrate a public website to Azure, you must plan to *** PAY MONTHLY USAGE *** costs.",
                 },
                 new ContentEntity()
                 {

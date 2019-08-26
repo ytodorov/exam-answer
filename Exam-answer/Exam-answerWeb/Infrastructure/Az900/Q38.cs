@@ -23,7 +23,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "You assign an Azure policy specifying that virtual networks are not an allowed resource type in RG1. VNET1 is deleted automatically.",
+                    Text = "You assign an Azure policy specifying that virtual networks are not an allowed resource type in RG1. VNET1 *** IS DELETED AUTOMATICALLY ***.",
                 },
                 new ContentEntity()
                 {

@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "When you need to delegate permissions to several Azure virtual machines simultaneously, you must deploy the Azure virtual machines to the same Azure region.",
+                    Text = "When you need to delegate permissions to several Azure virtual machines simultaneously, you must deploy the Azure virtual machines *** TO THE SAME AZURE REGION ***.",
                 },
                 new ContentEntity()
                 {

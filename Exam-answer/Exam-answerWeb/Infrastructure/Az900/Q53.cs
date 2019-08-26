@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Azure Germany can be used by legal residents of Germany only.",
+                    Text = "Azure Germany can be used by *** LEGAL RESIDENTS OF GERMANY ONLY ***.",
                 },
                 new ContentEntity()
                 {

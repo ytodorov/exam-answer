@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Your Azure trial account expired last week. You are now unable to create additional Azure Active Directory (Azure AD) user accounts.",
+                    Text = "Your Azure trial account expired last week. You are now unable to *** CREATE ADDITIONAL AZURE ACTIVE DIRECTORY (AZURE AD) USER ACCOUNTS ***.",
                 },
                 new ContentEntity()
                 {

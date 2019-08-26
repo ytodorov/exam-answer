@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "From Azure Monitor, you can view which user turned off a specific virtual machine during the last 14 days.",
+                    Text = "From *** AZURE MONITOR ***, you can view which user turned off a specific virtual machine during the last 14 days.",
                 },
                 new ContentEntity()
                 {

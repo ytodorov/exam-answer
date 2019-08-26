@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Resource groups provide organizations with the ability to manage the compliance of Azure resources across multiple subscriptions.",
+                    Text = "*** RESOURCE GROUPS *** provide organizations with the ability to manage the compliance of Azure resources across multiple subscriptions.",
                 },
                 new ContentEntity()
                 {

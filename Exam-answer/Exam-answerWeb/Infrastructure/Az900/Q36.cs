@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Your company implements Azure policies to automatically add a watermark to Microsoft Word documents that contain credit card information.",
+                    Text = "Your company implements *** AZURE POLICIES *** to automatically add a watermark to Microsoft Word documents that contain credit card information.",
                 },
                 new ContentEntity()
                 {

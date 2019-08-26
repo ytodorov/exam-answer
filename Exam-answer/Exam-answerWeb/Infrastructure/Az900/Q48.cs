@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "One of the benefits of Azure SQL Data Warehouse is that high availability is built into the platform.",
+                    Text = "One of the benefits of Azure SQL Data Warehouse is that *** HIGH AVAILABILITY *** is built into the platform.",
                 },
                 new ContentEntity()
                 {

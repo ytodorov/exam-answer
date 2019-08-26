@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "An organization that hosts its infrastructure in a private cloud can decommission its data center.",
+                    Text = "An organization that hosts its infrastructure *** IN A PRIVATE CLOUD *** can decommission its data center.",
                 },
                 new ContentEntity()
                 {

@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "If a resource group named RG1 has a delete lock, only a member of the global administrators group can delete RG1.",
+                    Text = "If a resource group named RG1 has a delete lock, *** ONLY A MEMBER OF THE GLOBAL ADMINISTRATORS GROUP *** can delete RG1.",
                 },
                 new ContentEntity()
                 {

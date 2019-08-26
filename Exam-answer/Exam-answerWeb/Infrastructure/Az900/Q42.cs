@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "You have several virtual machines in an Azure subscription. You create a new subscription. The virtual machines cannot be moved to the new subscription.",
+                    Text = "You have several virtual machines in an Azure subscription. You create a new subscription. *** THE VIRTUAL MACHINES CANNOT BE MOVED TO THE NEW SUBSCRIPTION ***.",
                 },
                 new ContentEntity()
                 {
