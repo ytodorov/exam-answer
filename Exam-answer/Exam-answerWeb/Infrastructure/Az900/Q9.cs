@@ -49,10 +49,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Machine Learning Studio is a powerfully simple browser-based, visual drag-and-drop authoring environment where no coding is necessary. Go from idea to deployment in a matter of clicks."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Azure Machine Learning is designed for applied machine learning. Use best-in-class algorithms and a simple drag-and-drop interface—and go from idea to deployment in a matter of clicks. "
+                },           
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Machine Learning Studio",
+                    Url = "https://azure.microsoft.com/en-in/services/machine-learning-studio/"
+                }
             },           
         };
     }

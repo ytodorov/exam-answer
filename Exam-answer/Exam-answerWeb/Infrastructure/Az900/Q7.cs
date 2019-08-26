@@ -12,19 +12,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 8,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
-            {
-                new ContentEntity()
-                {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
-                },
-                new ContentEntity()
-                {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
+            {                
                 new ContentEntity()
                 {
                     Text = "You plan to deploy several Azure virtual machines.",
@@ -59,13 +47,26 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Azure virtual machine scale sets let you create and manage a group of identical, load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule. Scale sets provide high availability to your applications, and allow you to centrally manage, configure, and update a large number of VMs. With virtual machine scale sets, you can build large-scale services for areas such as compute, big data, and container workloads."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "To provide redundancy and improved performance, applications are typically distributed across multiple instances. Customers may access your application through a load balancer that distributes requests to one of the application instances. If you need to perform maintenance or update an application instance, your customers must be distributed to another available application instance. To keep up with additional customer demand, you may need to increase the number of application instances that run your application."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "A region is a set of datacenters deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. With more global regions than any other cloud provider, Azure gives customers the flexibility to deploy applications where they need to. Azure is generally available in 46 regions around the world, with plans announced for 8 additional regions."
+                },               
             },
 
             References = new List<ReferenceEntity>()
             {
                 new ReferenceEntity()
                 {
-                    Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/regions-and-availability",
+                    Text = "Azure regions",
+                    Url = "https://azure.microsoft.com/en-us/global-infrastructure/regions/",
                 },
             },           
         };

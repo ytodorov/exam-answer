@@ -53,10 +53,39 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Azure Files offers fully managed file shares in the cloud that are accessible via the industry standard Server Message Block (SMB) protocol. Azure file shares can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS. Additionally, Azure file shares can be cached on Windows Servers with Azure File Sync for fast access near where the data is being used."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Azure Files:"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Extend your servers to Azure with Sync for on-premises performance and capability."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Secure data at rest and in-transit using SMB 3.0 and HTTPS."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Simplify cloud file share management using familiar tools."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Create high-performance file shares using the Premium Files storage tier."
+                },
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "What is Azure Files?",
+                    Url = "https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction"
+                }
             },           
         };
     }

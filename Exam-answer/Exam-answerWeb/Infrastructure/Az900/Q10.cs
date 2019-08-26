@@ -53,10 +53,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Azure Resource Manager is the deployment and management service for Azure. It provides a consistent management layer that enables you to create, update, and delete resources in your Azure subscription. You can use its access control, auditing, and tagging features to secure and organize your resources after deployment."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "When you take actions through the portal, PowerShell, Azure CLI, REST APIs, or client SDKs, the Azure Resource Manager API handles your request. Because all requests are handled through the same API, you see consistent results and capabilities in all the different tools. All capabilities that are available in the portal are also available through PowerShell, Azure CLI, REST APIs, and client SDKs."
+                },               
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Azure Resource Manager overview",
+                    Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Azure Resource Manager",
+                    Url = "https://azure.microsoft.com/en-us/features/resource-manager/"
+                }
             },           
         };
     }
