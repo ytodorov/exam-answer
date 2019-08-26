@@ -15,7 +15,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "This question requires that you evaluate the underlined text to determine if it is correct.",
+                    Text = "This question requires that you evaluate the UPPER-CASED text surrounded by *** text to determine if it is correct.",
                 },
                 new ContentEntity()
                 {

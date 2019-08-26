@@ -15,20 +15,16 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "This question requires that you evaluate the underlined text to determine if it is correct.",
+                    Text = "This question requires that you evaluate the UPPER-CASED text surrounded by *** text to determine if it is correct.",
                 },
                 new ContentEntity()
                 {
-                    Text = "An Azure region contains one or more data centers that are connected by using a low-latency network.",
+                    Text = "An Azure region *** CONTAINS ONE OR MORE DATA CENTERS *** that are connected by using a low-latency network.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Makes the statement correct.",
-                },
+                    Text = "Instructions: Review the underlined text. If it makes the statement correct, select “No change is needed”. If the statement is incorrect, select the answer choice that makes the statement correct.",
+                },               
             },
 
             Answers = new List<AnswerEntity>()

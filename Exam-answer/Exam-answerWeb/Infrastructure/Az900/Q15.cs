@@ -15,11 +15,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "This question requires that you evaluate the underlined text to determine if it is correct.",
+                    Text = "This question requires that you evaluate the UPPER-CASED text surrounded by *** text to determine if it is correct.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You plan to deploy 20 virtual machines to an Azure environment. To ensure that a virtual machine named VM1 cannot connect to the other virtual machines, VM1.",
+                    Text = "You plan to deploy 20 virtual machines to an Azure environment. To ensure that a virtual machine named VM1 cannot connect to the other virtual machines, VM1 must *** BE DEPLOYED TO A SEPARATE VIRTUAL NETWORK ***.",
                 },
                 new ContentEntity()
                 {
