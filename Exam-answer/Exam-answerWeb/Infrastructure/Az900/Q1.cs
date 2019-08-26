@@ -54,10 +54,40 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Advantages of public clouds:"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Lower costs—no need to purchase hardware or software, and you pay only for the service you use."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "No maintenance—your service provider provides the maintenance."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Near-unlimited scalability—on-demand resources are available to meet your business needs."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "High reliability—a vast network of servers ensures against failure."
+                }
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Public Cloud vs Private Cloud vs Hybrid Cloud",
+                    Url = "https://azure.microsoft.com/en-us/overview/what-are-private-public-hybrid-clouds/"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "What is a Public Cloud - Definition",
+                    Url = "https://azure.microsoft.com/en-us/overview/what-is-a-public-cloud/"
+                }
             },           
         };
     }

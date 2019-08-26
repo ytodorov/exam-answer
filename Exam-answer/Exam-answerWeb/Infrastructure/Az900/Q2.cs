@@ -61,6 +61,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Pricing calculator",
+                    Url = "https://azure.microsoft.com/en-in/pricing/calculator/"
+                }
             },           
         };
     }

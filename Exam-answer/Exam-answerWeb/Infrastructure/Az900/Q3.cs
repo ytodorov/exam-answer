@@ -12,19 +12,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 3,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
-            {
-                new ContentEntity()
-                {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
-                },
-                new ContentEntity()
-                {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
+            {              
                 new ContentEntity()
                 {
                     Text = "Your company plans to migrate all its data and resources to Azure.",
@@ -51,22 +39,39 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = false
                 },
             },
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Platform as a service (PaaS) is a complete development and deployment environment in the cloud, with resources that enable you to deliver everything from simple cloud-based apps to sophisticated, cloud-enabled enterprise applications. You purchase the resources you need from a cloud service provider on a pay-as-you-go basis and access them over a secure Internet connection."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Like IaaS, PaaS includes infrastructure—servers, storage and networking—but also middleware, development tools, business intelligence (BI) services, database management systems and more. PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing and updating."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "PaaS allows you to avoid the expense and complexity of buying and managing software licenses, the underlying application infrastructure and middleware, container orchestrators such as Kubernetes or the development tools and other resources. You manage the applications and services you develop and the cloud service provider typically manages everything else."
+                }
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "",
+                    Url = "https://azure.microsoft.com/en-in/overview/what-is-paas/"
+                }
             },           
         };
     }
