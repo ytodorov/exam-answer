@@ -45,10 +45,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text ="Log Analytics is a web tool used to write and execute Azure Monitor log queries. Open it by selecting Logs in the Azure Monitor menu. It starts with a new blank query."
+                }
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Azure Monitor",
+                    Url = "https://azure.microsoft.com/en-us/services/monitor/"
+                }
             },           
         };
     }
