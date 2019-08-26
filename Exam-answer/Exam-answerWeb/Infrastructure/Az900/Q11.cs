@@ -57,10 +57,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Azure Resource Manager Template defines the resources you need to deploy for your solution. First of all, you must know that an Azure Resource Manager Template is a just a simple JSON file. JSON is an open-standard file format derived from JavaScript. Note that a JSON file is a collection of name/value pairs."
+                }
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Azure Quickstart Templates",
+                    Url = "https://azure.microsoft.com/en-us/resources/templates/"
+                }
             },           
         };
     }
