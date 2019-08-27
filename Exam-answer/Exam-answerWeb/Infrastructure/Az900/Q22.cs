@@ -59,19 +59,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Azure virtual networks are similar to LANs on your on-premises network. The idea behind an Azure virtual network is that you create a network, based on a single private IP address space, on which you can place all your Azure virtual machines. The private IP address spaces available are in the Class A (10.0.0.0/8), Class B (172.16.0.0/12), and Class C (192.168.0.0/16) ranges."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Best practice: Create network access controls between subnets. Routing between subnets happens automatically, and you don’t need to manually configure routing tables. By default, there are no network access controls between the subnets that you create on an Azure virtual network."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Detail: Use a network security group to protect against unsolicited traffic into Azure subnets. Network security groups are simple, stateful packet inspection devices that use the 5-tuple approach (source IP, source port, destination IP, destination port, and layer 4 protocol) to create allow/deny rules for network traffic. You allow or deny traffic to and from a single IP address, to and from multiple IP addresses, or to and from entire subnets."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "When you use network security groups for network access control between subnets, you can put resources that belong to the same security zone or role in their own subnets."
                 },
             },
 
@@ -79,7 +79,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Plan virtual networks",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-plan-design-arm",
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Azure best practices for network security",
+                    Url = "https://docs.microsoft.com/en-us/azure/security/fundamentals/network-best-practices",
                 },
             },           
         };

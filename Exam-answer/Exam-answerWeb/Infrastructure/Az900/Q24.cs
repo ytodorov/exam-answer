@@ -59,19 +59,31 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Distributed denial of service (DDoS) attacks are some of the largest availability and security concerns facing customers that are moving their applications to the cloud. A DDoS attack attempts to exhaust an application’s resources, making the application unavailable to legitimate users. DDoS attacks can be targeted at any endpoint that is publicly reachable through the internet."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Product features:"
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Always-on monitoring and automatic network attack mitigation"
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Adaptive tuning based on platform insights in Azure"
+                },
+                 new ExplanationEntity()
+                {
+                    Text = "Application layer protection with Azure Application Gateway Web Application Firewall"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Integration with Azure Monitor for analytics and insights"
+                },
+                 new ExplanationEntity()
+                {
+                    Text = "Protection against the unforeseen costs of a DDoS attack"
                 },
             },
 
@@ -79,13 +91,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text = "",
-                    Url = ""
+                    Text = "Azure DDoS Protection",
+                    Url = "https://azure.microsoft.com/en-us/services/ddos-protection/"
                 },
                 new ReferenceEntity()
                 {
-                    Text = "",
-                    Url = ""
+                    Text = "Azure DDoS Protection Standard overview",
+                    Url = "https://docs.microsoft.com/en-us/azure/virtual-network/ddos-protection-overview"
                 },
             },           
         };

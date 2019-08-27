@@ -51,19 +51,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "The Azure Security Information site on Azure.com gives you the information you need to plan, design, deploy, configure, and manage your cloud solutions securely. With the Microsoft Trust center, you also have the information you need to be confident that the Azure platform on which you run your services is secure."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
+                    Text = "Compliance: Microsoft helps organizations comply with national, regional, and industry-specific requirements governing the collection and use of individuals’ data."
                 },
             },
 
@@ -71,13 +63,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text = "",
-                    Url = ""
+                    Text = "Microsoft Trust Center",
+                    Url = "https://www.microsoft.com/en-us/trust-center/product-overview"
                 },
                 new ReferenceEntity()
                 {
-                    Text = "",
-                    Url = ""
+                    Text = "Microsoft Trust Center Home",
+                    Url = "https://www.microsoft.com/en-us/trust-center"
                 },
             },           
         };
