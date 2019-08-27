@@ -57,10 +57,36 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = ""
+                },
+                new ExplanationEntity()
+                {
+                    Text = ""
+                },
+                new ExplanationEntity()
+                {
+                    Text = ""
+                },
+                new ExplanationEntity()
+                {
+                    Text = ""
+                },
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "",
+                    Url = ""
+                },
+                new ReferenceEntity()
+                {
+                    Text = "",
+                    Url = ""
+                },
             },           
         };
     }

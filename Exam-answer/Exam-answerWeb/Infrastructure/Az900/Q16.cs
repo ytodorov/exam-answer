@@ -66,10 +66,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "For Windows the Azure CLI is installed via an MSI, which gives you access to the CLI through the Windows Command Prompt (CMD) or PowerShell. When installing for Windows Subsystem for Linux (WSL), packages are available for your Linux distribution. "
+                },
+                new ExplanationEntity()
+                {
+                    Text = "The Azure CLI is a command-line tool providing a great experience for managing Azure resources. The CLI is designed to make scripting easy, query data, support long-running operations, and more."
+                },                
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Install Azure CLI on Windows",
+                    Url = "https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Get started with Azure CLI",
+                    Url = "https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest"
+                },
             },           
         };
     }

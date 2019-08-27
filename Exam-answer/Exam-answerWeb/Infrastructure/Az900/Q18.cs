@@ -49,10 +49,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Azure Monitor maximizes the availability and performance of your applications by delivering a comprehensive solution for collecting, analyzing, and acting on telemetry from your cloud and on-premises environments. It helps you understand how your applications are performing and proactively identifies issues affecting them and the resources they depend on."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "All data collected by Azure Monitor fits into one of two fundamental types, metrics and logs. Metrics are numerical values that describe some aspect of a system at a particular point in time. They are lightweight and capable of supporting near real-time scenarios. Logs contain different kinds of data organized into records with different sets of properties for each type. Telemetry such as events and traces are stored as logs in addition to performance data so that it can all be combined for analysis."
+                },               
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Azure Monitor overview",
+                    Url = "https://docs.microsoft.com/en-us/azure/azure-monitor/overview"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Azure Monitor Documentation",
+                    Url = "https://docs.microsoft.com/en-us/azure/azure-monitor/"
+                },
             },           
         };
     }

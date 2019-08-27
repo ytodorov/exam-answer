@@ -53,10 +53,24 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             Explanations = new List<ExplanationEntity>()
             {
+                new ExplanationEntity()
+                {
+                    Text = "Azure Firewall: Cloud-native network security to protect your Azure Virtual Network resources"
+                },               
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Azure Firewall",
+                    Url = "https://azure.microsoft.com/en-in/services/azure-firewall/"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Azure Firewall Documentation",
+                    Url = "https://docs.microsoft.com/en-us/azure/firewall/"
+                },
             },           
         };
     }
