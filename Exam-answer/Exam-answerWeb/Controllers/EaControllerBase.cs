@@ -26,9 +26,22 @@ namespace Exam_answerWeb.Controllers
             this.env = env;
             this.mapper = mapper;
         }
+        [Route("question{id}")]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
+        public virtual IActionResult QuestionGeneric(string id)
+        {
+            List<string> segments = Request.Path.Value.Split("/", StringSplitOptions.RemoveEmptyEntries).ToList();
+            string provider = segments[0];
+            string examCode = segments[1];
+            string questionId = segments[2].ToLowerInvariant().Replace("question", string.Empty);
+
+            IActionResult res = QuestionGenericInternal(provider, examCode, questionId);
+
+            return res;
+        }
 
         [NonAction]
-        protected IActionResult QuestionGeneric(string provider, string examCode, string id)
+        protected IActionResult QuestionGenericInternal(string provider, string examCode, string id)
         {
             ExamEntity examEntity = examAnswerContext.Exams
                 .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&

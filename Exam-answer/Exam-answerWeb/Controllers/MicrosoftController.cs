@@ -39,7 +39,7 @@ namespace Exam_AnswerWeb.Controllers
 
         //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         [Route("question{id}")]
-        public IActionResult QuestionGeneric(string id)
+        public override IActionResult QuestionGeneric(string id)
         {
             if (int.TryParse(id, out int intId))
             {
@@ -52,7 +52,7 @@ namespace Exam_AnswerWeb.Controllers
 
             if (intId > 0 && intId <= 15)
             {
-                IActionResult res = QuestionGeneric("microsoft", "az-100", id);
+                IActionResult res = QuestionGenericInternal("microsoft", "az-100", id);
                 return res;
             }
 

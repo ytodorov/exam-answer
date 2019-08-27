@@ -54,15 +54,5 @@ namespace Exam_AnswerWeb.Controllers
 
             return View($"crt-251/index", examViewModel);
         }
-
-        //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
-        [Route("question{id}")]
-        public IActionResult QuestionGeneric(string id)
-        {
-            IActionResult res = QuestionGeneric("salesforce", "crt-251", id);
-
-            return res;
-        }
-
     }
 }

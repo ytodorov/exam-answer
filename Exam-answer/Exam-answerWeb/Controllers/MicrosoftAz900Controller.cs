@@ -55,14 +55,7 @@ namespace Exam_AnswerWeb.Controllers
             return View($"az-900/index", examViewModel);
         }
 
-        //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
-        [Route("question{id}")]
-        public IActionResult QuestionGeneric(string id)
-        {
-            IActionResult res = QuestionGeneric("microsoft", "az-900", id);
-
-            return res;
-        }
+        
 
     }
 }
