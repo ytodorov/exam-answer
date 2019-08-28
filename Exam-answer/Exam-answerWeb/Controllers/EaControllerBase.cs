@@ -26,8 +26,9 @@ namespace Exam_answerWeb.Controllers
             this.env = env;
             this.mapper = mapper;
         }
+
         [Route("question{id}")]
-        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
         public virtual IActionResult QuestionGeneric(string id)
         {
             List<string> segments = Request.Path.Value.Split("/", StringSplitOptions.RemoveEmptyEntries).ToList();

@@ -39,6 +39,7 @@ namespace Exam_AnswerWeb.Controllers
 
         //[ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         [Route("question{id}")]
+        [ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
         public override IActionResult QuestionGeneric(string id)
         {
             if (int.TryParse(id, out int intId))
