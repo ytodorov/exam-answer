@@ -65,7 +65,17 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             References = new List<ReferenceEntity>()
             {
-            },           
+                new ReferenceEntity()
+                {
+                    Text ="",
+                    Url = ""
+                },
+                new ReferenceEntity()
+                {
+                    Text ="",
+                    Url = ""
+                }
+            },                
         };
     }
 }
