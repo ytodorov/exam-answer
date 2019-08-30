@@ -55,19 +55,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Lock resources to prevent unexpected changes!"
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "As an administrator, you may need to lock a subscription, resource group, or resource to prevent other users in your organization from accidentally deleting or modifying critical resources. You can set the lock level to CanNotDelete or ReadOnly. In the portal, the locks are called Delete and Read-only respectively."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "CanNotDelete means authorized users can still read and modify a resource, but they can't delete the resource."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "ReadOnly means authorized users can read a resource, but they can't delete or update the resource. Applying this lock is similar to restricting all authorized users to the permissions granted by the Reader role."
                 },
             },
 
@@ -75,13 +75,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text = "",
-                    Url = ""
+                    Text = "How to Lock Azure Resources to Prevent Modification or Deletion",
+                    Url = "https://techcommunity.microsoft.com/t5/ITOps-Talk-Blog/How-to-Lock-Azure-Resources-to-Prevent-Modification-or-Deletion/ba-p/356945"
                 },
                 new ReferenceEntity()
                 {
-                    Text = "",
-                    Url = ""
+                    Text = "Lock resources",
+                    Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources"
                 },
             },           
         };

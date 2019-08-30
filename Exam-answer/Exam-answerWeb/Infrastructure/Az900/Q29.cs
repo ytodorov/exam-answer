@@ -55,19 +55,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = ""
+                    Text = "Azure Active Directory Identity Protection enables organizations to configure automated responses to detected suspicious actions related to user identities."
                 },
                 new ExplanationEntity()
                 {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
-                },
-                new ExplanationEntity()
-                {
-                    Text = ""
+                    Text = "Microsoft has secured cloud-based identities for more than a decade. With Azure Active Directory Identity Protection, in your environment, you can use the same protection systems Microsoft uses to secure identities."
                 },
             },
 
@@ -75,6 +67,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "What is Azure Active Directory Identity Protection?",
+                    Url = "https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "How To: Configure the sign-in risk policy",
                     Url = "https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-sign-in-risk-policy",
                 },
             },           
