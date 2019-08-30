@@ -140,6 +140,21 @@
                             }
                         </ul>
                     </li>
+                    <li>
+                        <a href="~/microsoft/az-900">AZ-900</a>
+                        <ul>
+                            @{
+                                for (int i = 1; i <= 115; i++)
+                                {
+                                    <li>
+                                        <a title="Microsoft / AZ-900 / Question @(i)" href="~/microsoft/az-900/question@(i)">
+                                            @($"Question {i}")
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
                 </ul>
             </li>
         </ul>

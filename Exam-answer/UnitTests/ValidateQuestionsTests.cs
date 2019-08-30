@@ -56,7 +56,7 @@ namespace UnitTests
                             q1, q2, distance.ToString()));
 
                         string textToSee = $"{text1} {Environment.NewLine}{Environment.NewLine} {text2}";
-                        
+
                     }
                 }
             }
@@ -88,6 +88,18 @@ namespace UnitTests
         }
 
         [Fact]
+        public void AllQuestionsShouldHaveExplanationsTest()
+        {
+            var exam = ExamsToCheck.FirstOrDefault(f => f.Code == "AZ-900");
+
+            foreach (var question in exam.Questions)
+            {
+                Assert.False(string.IsNullOrWhiteSpace(question.ExplanationText));
+            }
+        }
+
+
+        [Fact]
         public void AllQuestionsShouldHaveAnswerTextTest()
         {
             foreach (ExamEntity exam in ExamsToCheck)
@@ -109,7 +121,7 @@ namespace UnitTests
                     Assert.True(question.ContentText.Length < 4000);
                     Assert.True(question.AnswerText.Length < 4000);
                     Assert.True(question.ExplanationText.Length < 4000);
-                    Assert.True(question.ReferenceText.Length < 4000);                    
+                    Assert.True(question.ReferenceText.Length < 4000);
                 }
             }
         }
@@ -198,7 +210,7 @@ namespace UnitTests
                             sb.Append(indexToInsert);
                             if (question.QuestionType == QuestionType.CheckBox)
                             {
-                                    sb.Append(",");
+                                sb.Append(",");
                             }
                         }
                     }
@@ -270,7 +282,7 @@ namespace UnitTests
 The sales managers do NOT have visibility into their teams' forecasts and are NOT able to update the forecasts. ",
 
 
-@" As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
+    @" As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
 
 Which two solutions should a consultant recommend to help Universal Containers improve the management of their forecasts? (Choose two.) ");
         }
