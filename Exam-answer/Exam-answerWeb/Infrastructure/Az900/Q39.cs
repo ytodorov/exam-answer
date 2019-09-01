@@ -15,18 +15,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
-                },
-                new ContentEntity()
-                {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
-                new ContentEntity()
-                {
                     Text = "Your company plans to purchase Azure.",
                 },
                 new ContentEntity()
@@ -51,12 +39,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -65,19 +53,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "BASIC: No Technical Support."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "DEVELOPER: Business hours access1 to Support Engineers via email"
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "STANDARD, PROFESSIONAL DIRECT, PREMIER: 24x7 access to Support Engineers via email and phone"
                 },
             },
 
@@ -85,6 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Compare support plans",
                     Url = "https://azure.microsoft.com/en-gb/support/plans/",
                 },
             },           

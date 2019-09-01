@@ -59,19 +59,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "The journey of creating and implementing a policy in Azure Policy begins with creating a policy definition. Every policy definition has conditions under which it's enforced. And, it has a defined effect that takes place if the conditions are met."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "In Azure Policy, we offer several built-in policies that are available by default. For example:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Allowed Resource Type: Defines the resource types that you can deploy. Its effect is to deny all resources that aren't part of this defined list."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Not allowed resource types: Prevents a list of resource types from being deployed."
                 },
             },
 
@@ -79,6 +79,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Sample - Not allowed resource types",
+                    Url = "https://docs.microsoft.com/en-us/azure/governance/policy/samples/not-allowed-resource-types"
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Overview of the Azure Policy service",
                     Url = "https://docs.microsoft.com/en-us/azure/governance/policy/overview",
                 },
             },           
