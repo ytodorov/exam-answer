@@ -55,34 +55,21 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Moving between subscriptions can be handy if you originally created a VM in a personal subscription and now want to move it to your company's subscription to continue your work. You do not need to start the VM in order to move it and it should continue to run during the move."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
+                    Text = "New resource IDs are created as part of the move. After the VM has been moved, you will need to update your tools and scripts to use the new resource IDs."
+                },               
             },
 
             References = new List<ReferenceEntity>()
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Move a Windows VM to another Azure subscription or resource group",
+                    Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/move-vm"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },                
         };
     }

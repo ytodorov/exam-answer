@@ -12,19 +12,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 56,
             Section = "Understand Azure Pricing and Support",
             Contents = new List<ContentEntity>()
-            {
-                new ContentEntity()
-                {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
-                },
-                new ContentEntity()
-                {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
+            {               
                 new ContentEntity()
                 {
                     Text = "Your company has an Azure subscription that contains the following unused resources:.",
@@ -77,19 +65,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "When creating a virtual machine using the Azure portal, the portal creates a network interface with default settings for you. If you'd rather specify all your network interface settings, you can create a network interface with custom settings and attach the network interface to a virtual machine when creating the virtual machine (using PowerShell or the Azure CLI). You can also create a network interface and add it to an existing virtual machine (using PowerShell or the Azure CLI). To learn how to create a virtual machine with an existing network interface or to add to, or remove network interfaces from existing virtual machines, see Add or remove network interfaces. Before creating a network interface, you must have an existing virtual network in the same location and subscription you create a network interface in."
                 },
             },
 
@@ -97,6 +73,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Reduce costs by deleting or reconfiguring idle virtual network gateways",
                     Url = "https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways",
                 },
             },           

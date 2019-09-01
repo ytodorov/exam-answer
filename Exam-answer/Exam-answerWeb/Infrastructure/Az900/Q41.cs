@@ -55,33 +55,34 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Your credit is expired:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "When you sign up for an Azure free account, you get a Free Trial subscription, which provides you $200 in Azure credits for 30 days and 12 months of free services. At the end of 30 days, Azure disables your subscription. Your subscription is disabled to protect you from accidentally incurring charges for usage beyond the credit and free services included with your subscription. To continue using Azure services, you must upgrade your subscription. After you upgrade, your subscription still has access to free services for 12 months. You only get charged for usage beyond the free services and quantities."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "You reached your spending limit:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Azure subscriptions with credit such as Free Trial and Visual Studio Enterprise have spending limits on them. This means you can only use services up to the included credit. When your usage reaches the spending limit, Azure disables your subscription for the remainder of that billing period. Your subscription is disabled to protect you from accidentally incurring charges for usage beyond the credit included with your subscription. To remove your spending limit, see Remove the spending limit in Account Center."
                 },
+              
             },
 
             References = new List<ReferenceEntity>()
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Azure free account FAQ",
+                    Url = "https://azure.microsoft.com/en-us/free/free-account-faq/"
                 },
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Reactivate a disabled Azure subscription",
+                    Url = "https://docs.microsoft.com/bs-latn-ba/azure/billing/billing-subscription-become-disable"
                 }
             },                
         };
