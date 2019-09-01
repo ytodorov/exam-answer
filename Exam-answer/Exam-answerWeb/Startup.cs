@@ -67,6 +67,8 @@ namespace Exam_answerWeb
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            services.AddOutputCaching();
+
             // Add MVC services to the services container.
             services
                 .AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
@@ -268,7 +270,7 @@ namespace Exam_answerWeb
             //    }
             //});
 
-
+            app.UseOutputCaching();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

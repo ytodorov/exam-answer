@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Entities;
+using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,11 +25,12 @@ namespace Exam_answerWeb.Controllers
         {
             this.examAnswerContext = examAnswerContext;
             this.env = env;
-            this.mapper = mapper;
+            this.mapper = mapper;           
         }
 
         [Route("question{id}")]
-        [ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        //[ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        [OutputCache(Duration = 600)]
         public virtual IActionResult QuestionGeneric(string id)
         {
             List<string> segments = Request.Path.Value.Split("/", StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -44,24 +46,10 @@ namespace Exam_answerWeb.Controllers
         [NonAction]
         protected IActionResult QuestionGenericInternal(string provider, string examCode, string id)
         {
-            ExamEntity examEntity = examAnswerContext.Exams
+            ExamEntity examEntity = DataGenerator.AllExames
                 .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
                     e.Code.Equals(examCode, StringComparison.InvariantCultureIgnoreCase))
-
-                .Include(e => e.Questions)
-                .ThenInclude(q => q.Contents)
-
-                .Include(e => e.Questions)
-                .ThenInclude(q => q.Answers)
-
-                .Include(e => e.Questions)
-                .ThenInclude(q => q.Explanations)
-
-                .Include(e => e.Questions)
-                .ThenInclude(q => q.References)
-
-                .AsNoTracking()
-
+                                
                 .FirstOrDefault();
 
             ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
