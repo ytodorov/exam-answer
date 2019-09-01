@@ -59,19 +59,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Azure Active Directory (Azure AD) is Microsoft’s cloud-based identity and access management service, which helps your employees sign in and access resources in:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "External resources, such as Microsoft Office 365, the Azure portal, and thousands of other SaaS applications."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Internal resources, such as apps on your corporate network and intranet, along with any cloud apps developed by your own organization."
                 },
             },
 
@@ -79,13 +75,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="How to Sync On-premise AD with Windows Azure AD using Azure AD Connect tool ",
+                    Url = "https://www.ecanarys.com/Blogs/ArticleID/234/How-to-Sync-On-premise-AD-with-Windows-Azure-AD-using-Azure-AD-Connect-tool"
                 },
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Step-By-Step: Syncing An On Premise AD with Azure Active Directory",
+                    Url = "https://blogs.technet.microsoft.com/canitpro/2014/05/13/step-by-step-syncing-an-on-premise-ad-with-azure-active-directory/"
                 }
             },                
         };

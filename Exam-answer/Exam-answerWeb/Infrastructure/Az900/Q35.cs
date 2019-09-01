@@ -47,19 +47,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Azure Security Center helps you prevent, detect, and respond to threats with increased visibility into and control over the security of your Azure resources. It provides integrated security monitoring and policy management across your subscriptions, helps detect threats that might otherwise go unnoticed, and works with a broad ecosystem of security solutions."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Azure Security Center is enabled with your Microsoft Azure subscription and accessed from the Azure portal. (Sign in to the portal, select Browse, and scroll to Security Center)."
                 },
             },
 
@@ -67,6 +59,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Azure Security Center frequently asked questions (FAQ)",
+                    Url = "https://docs.microsoft.com/en-us/azure/security-center/security-center-faq"
+                },
+                new ReferenceEntity()
+                {
+                    Text= "Regulatory compliance dashboard in Azure Security Center now available",
                     Url = "https://azure.microsoft.com/en-us/blog/regulatory-compliance-dashboard-in-azure-security-center-now-available/",
                 },
             },           

@@ -31,22 +31,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "DDoS protection.", 
+                    Text = "DDoS protection.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Information Protection.", 
+                    Text = "Azure Information Protection.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Active Directory (Azure AD) Identity Protection.", 
+                    Text = "Azure Active Directory (Azure AD) Identity Protection.",
                     IsCorrect = false
                 },
             },
@@ -55,19 +55,47 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "An Azure Information Protection policy contains the following elements that you can configure:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Which labels are included that let administrators and users classify (and optionally, protect) documents and emails."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Title and tooltip for the Information Protection bar that users see in their Office applications."
+                },
+               new ExplanationEntity()
+                {
+                    Text = "The option to set a default label as a starting point for classifying documents and emails."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "The option to enforce classification when users save documents and send emails."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "The option to prompt users to provide a reason when they select a label that has a lower sensitivity level than the original."
+                },
+               new ExplanationEntity()
+                {
+                    Text = "The option to automatically label an email message, based on its attachments."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "The option to control whether the Information Protection bar is displayed in Office applications."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "The option to control whether the Do Not Forward button is displayed in Outlook."
+                },
+               new ExplanationEntity()
+                {
+                    Text = "The option to let users specify their own permissions for documents."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "The option to provide a custom help link for users."
                 },
             },
 
@@ -75,9 +103,16 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Configuring visual markings in Azure Information Protection",
+                    Url = "https://alberthoitingh.com/2018/01/05/configuring-visual-markings-in-azure-information-protection/"
+
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Tutorial: Configure Azure Information Protection policy settings and create a new label",
                     Url = "https://docs.microsoft.com/en-us/azure/information-protection/infoprotect-quick-start-tutorial",
                 },
-            },           
+            },
         };
     }
 }
