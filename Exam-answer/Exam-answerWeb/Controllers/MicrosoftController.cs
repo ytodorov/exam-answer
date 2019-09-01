@@ -26,6 +26,7 @@ namespace Exam_AnswerWeb.Controllers
         {
         }
 
+        [OutputCache(Duration = int.MaxValue)]
         [Route("")]
         public IActionResult Index()
         {

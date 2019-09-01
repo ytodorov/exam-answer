@@ -11,6 +11,7 @@ namespace Exam_answerWeb.Controllers
 {
     public class HomeController : Controller
     {
+        [OutputCache(Duration = int.MaxValue)]
         public IActionResult Index()
         {
             return View();

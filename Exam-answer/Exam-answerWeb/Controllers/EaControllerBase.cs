@@ -30,7 +30,7 @@ namespace Exam_answerWeb.Controllers
 
         [Route("question{id}")]
         //[ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
-        [OutputCache(Duration = 600)]
+        [OutputCache(Duration = int.MaxValue)]
         public virtual IActionResult QuestionGeneric(string id)
         {
             List<string> segments = Request.Path.Value.Split("/", StringSplitOptions.RemoveEmptyEntries).ToList();
