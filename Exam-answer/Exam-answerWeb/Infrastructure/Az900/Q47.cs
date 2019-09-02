@@ -55,19 +55,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Access management for cloud resources is a critical function for any organization that is using the cloud. Role-based access control (RBAC) helps you manage who has access to Azure resources, what they can do with those resources, and what areas they have access to."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Here are some examples of what you can do with RBAC:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Allow one user to manage virtual machines in a subscription and another user to manage virtual networks."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Allow a DBA group to manage SQL databases in a subscription"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Allow an application to access all resources in a resource group"
                 },
             },
 
@@ -75,13 +83,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Manage access to Azure resources using RBAC and the Azure portal",
+                    Url = "https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
                 },
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="What is role-based access control (RBAC) for Azure resources?",
+                    Url = "https://docs.microsoft.com/en-us/azure/role-based-access-control/overview"
                 }
             },                
         };
