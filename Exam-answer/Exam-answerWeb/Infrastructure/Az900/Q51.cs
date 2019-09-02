@@ -55,19 +55,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "You can filter network traffic to and from Azure resources in an Azure virtual network with a network security group. A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, several types of Azure resources. To learn about which Azure resources can be deployed into a virtual network and have network security groups associated to them, see Virtual network integration for Azure services. For each rule, you can specify source and destination, port, and protocol."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Network security group security rules are evaluated by priority using the 5-tuple information (source, source port, destination, destination port, and protocol) to allow or deny the traffic. A flow record is created for existing connections. Communication is allowed or denied based on the connection state of the flow record. The flow record allows a network security group to be stateful. If you specify an outbound security rule to any address over port 80, for example, it's not necessary to specify an inbound security rule for the response to the outbound traffic. You only need to specify an inbound security rule if communication is initiated externally. The opposite is also true. If inbound traffic is allowed over a port, it's not necessary to specify an outbound security rule to respond to traffic over the port. Existing connections may not be interrupted when you remove a security rule that enabled the flow. Traffic flows are interrupted when connections are stopped and no traffic is flowing in either direction, for at least a few minutes."
                 },
             },
 
@@ -75,14 +67,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Security groups",
+                    Url = "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },                
         };
     }
