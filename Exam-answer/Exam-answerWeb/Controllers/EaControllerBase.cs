@@ -4,6 +4,7 @@ using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Exam_answerWeb.Controllers
 
         [Route("question{id}")]
         //[ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
-        [OutputCache(Duration = int.MaxValue)]
+        [OutputCache(Duration = int.MaxValue, VaryByHeader = "", VaryByParam = "")]
         public virtual IActionResult QuestionGeneric(string id)
         {
             List<string> segments = Request.Path.Value.Split("/", StringSplitOptions.RemoveEmptyEntries).ToList();
