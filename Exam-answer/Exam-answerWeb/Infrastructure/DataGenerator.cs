@@ -15,7 +15,7 @@ namespace Exam_answerWeb.Infrastructure
 {
     public class DataGenerator
     {
-        public static List<ExamEntity> AllExames;
+        public static List<ExamEntity> AllExams;
 
         public static List<ExamEntity> Initialize(ExamAnswerContext context)
         {
@@ -236,7 +236,7 @@ namespace Exam_answerWeb.Infrastructure
 
             context?.SaveChanges();
 
-            AllExames = result;
+            AllExams = result;
             return result;
             //var allquestions = crt251.Questions;
 

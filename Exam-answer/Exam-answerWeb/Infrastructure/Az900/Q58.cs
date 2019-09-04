@@ -6,16 +6,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q57Instance = new QuestionEntity()
+        public static QuestionEntity Q113Instance = new QuestionEntity()
         {
-            QuestionType = QuestionType.CheckBox,
+            QuestionType = QuestionType.RadioButon,
             Order = 156,
-            Section = "Understand Cloud Concepts",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "NOTE: Each correct selection is worth one point.",
+                    Text = "You have an Azure Active Directory (Azure AD) tenant.",
+                },
+                new ContentEntity()
+                {
+                    Text = "All administrators must enter a verification code to access the Azure portal.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You need to ensure that the administrators can access the Azure portal only from your on-premises network.",
+                },
+                new ContentEntity()
+                {
+                    Text = "What should you configure?",
                 },
             },
 
@@ -23,28 +35,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Dedicated hardware.", 
+                    Text = "An Azure AD Identity Protection user risk policy.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Unsecured connections.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "Limited storage.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "Metered pricing.", 
+                    Text = "The multi-factor authentication service settings.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Self-service management.", 
-                    IsCorrect = true
+                    Text = "The default for all the roles in Azure AD Privileged Identity Management.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "An Azure AD Identity Protection sign-in risk policy.",
+                    IsCorrect = false
                 },
             },
 
@@ -52,19 +59,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "The security of two-step verification lies in its layered approach. Compromising multiple authentication factors presents a significant challenge for attackers. Even if an attacker manages to learn the user's password, it is useless without also having possession of the additional authentication method. It works by requiring two or more of the following authentication methods:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Something you know (typically a password)."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Something you have (a trusted device that is not easily duplicated, like a phone)."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Something you are (biometrics)."
                 },
             },
 
@@ -72,15 +79,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="How it works: Azure Multi-Factor Authentication",
+                    Url = "https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks"
                 },
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text = "Planning a cloud-based Azure Multi-Factor Authentication deployment",
+                    Url = "https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-getstarted"
                 }
-            },                
+            },
         };
     }
 }

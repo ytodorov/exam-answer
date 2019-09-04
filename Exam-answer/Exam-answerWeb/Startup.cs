@@ -83,61 +83,6 @@ namespace Exam_answerWeb
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
-            List<string> files = Directory.GetFiles(path, "*question*.cshtml", SearchOption.AllDirectories).ToList();
-
-            List<string> newFiles = Directory.GetFiles(Path.Combine(path, "newQuestions"), "*.*", SearchOption.AllDirectories).ToList();
-
-            foreach (string filePath in files)
-            {
-                //string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
-                if (!string.IsNullOrEmpty(filePath))
-                {
-                    string fileContent = File.ReadAllText(filePath);
-
-                    string[] lines = File.ReadAllLines(filePath);
-                    lines = lines.Where(l => !l.Trim().StartsWith("@") && !l.Trim().StartsWith("&") && !l.Trim().StartsWith("<")).ToArray();
-
-                    StringBuilder sb = new StringBuilder();
-                    for (int i = 0; i < lines.Length; i++)
-                    {
-                        sb.Append(lines[i]);
-                    }
-
-                    fileContent = sb.ToString().Trim();
-
-                    FileInfo fi = new FileInfo(filePath);
-
-                    SearchQuestionOldViewModel searchQuestionOldViewModel = new SearchQuestionOldViewModel()
-                    {
-                        FilePath = filePath,
-                        Content = fileContent,
-                        Title = fileContent.Substring(0, 50),
-                        ExamName = fi.Directory.Name,
-                        ExamProvider = fi.Directory.Parent.Name,
-                        QuestionName = fi.Name.Replace(fi.Extension, string.Empty),
-                    };
-
-                    searchQuestionOldViewModel.Number = int.Parse(searchQuestionOldViewModel.QuestionName
-                        .ToLowerInvariant().Replace("question", string.Empty));
-
-                    RegexOptions options = RegexOptions.None;
-                    Regex regex = new Regex("[ ]{2,}", options);
-                    searchQuestionOldViewModel.Content = regex.Replace(searchQuestionOldViewModel.Content, " ");
-                    searchQuestionOldViewModel.Content = searchQuestionOldViewModel.Content.Trim();
-
-                    StaticContent.AllQuestions.Add(searchQuestionOldViewModel);
-
-                }
-            }
-
-            List<SearchQuestionOldViewModel> salesForceQuestions = StaticContent.AllQuestions
-                .Where(s => s.ExamProvider.Equals("SalesForce", StringComparison.InvariantCultureIgnoreCase))
-                .OrderBy(s => s.Number)
-                .ToList();
-
-            List<string> duplicates = new List<string>();
-
             HostingEnvironment = env;
             if (env.IsDevelopment())
             {

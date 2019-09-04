@@ -59,19 +59,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "A High Availability system is one that is designed to be available 99.999% of the time, or as close to it as possible. Usually this means configuring a failover system that can handle the same workloads as the primary system."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "A Fault Tolerant system is extremely similar to HA, but goes one step further by guaranteeing zero downtime. HA still comes with a small portion of downtime, hence the ideal of a perfect HA strategy reaching “five nines” rather than 100% uptime. The time it takes for the intermediary layer, like the load balancer or hypervisor, to detect a problem and restart the VM can add up to minutes or even hours over the course of yearly runtime."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Disaster Recovery goes beyond FT or HA and consists of a complete plan to recover critical business systems and normal operations in the event of a catastrophic disaster like a major weather event (hurricane, flood, tornado, etc), a cyberattack, or any other cause of significant downtime. HA is often a major component of DR, which can also consist of an entirely separate physical infrastructure site with a 1:1 replacement for every critical infrastructure component, or at least as many as required to restore the most essential business functions."
                 },
             },
 
@@ -79,14 +75,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="High Availability vs. Fault Tolerance vs. Disaster Recovery",
+                    Url = "https://www.greenhousedata.com/blog/high-availability-vs-fault-tolerance-vs-disaster-recovery"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },                
         };
     }

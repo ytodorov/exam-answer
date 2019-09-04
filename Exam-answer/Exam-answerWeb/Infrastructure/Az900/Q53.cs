@@ -55,19 +55,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Microsoft Azure Germany delivers a cloud platform built on the foundational principles of security, privacy, compliance, and transparency. Azure Germany is a physically isolated instance of Microsoft Azure. It uses world-class security and compliance services that are critical to German data privacy regulations for all systems and applications built on its architecture. Operated by a data trustee, Azure Germany supports multiple hybrid scenarios for building and deploying solutions on-premises or in the cloud. You can also take advantage of the instant scalability and guaranteed uptime of a hyperscale cloud service."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Azure Germany includes the core components of infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). These components include infrastructure, network, storage, data management, identity management, and many other services."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Azure Germany supports most of the same great features that global Azure customers have used, like geosynchronous data replication and autoscaling."
                 },
             },
 
@@ -75,7 +71,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Url = "https://docs.microsoft.com/en-us/azure/germany/germany-welcome?toc=%2fazure%2fgermany%2ftoc.json",
+                    Text = "Welcome to Azure Germany",
+                    Url = "https://docs.microsoft.com/en-us/azure/germany/germany-welcome",
                 },
             },           
         };

@@ -1,4 +1,5 @@
-﻿using Exam_answerWeb.Infrastructure;
+﻿using DAL.Entities;
+using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,32 +17,39 @@ namespace Exam_answerWeb.Controllers
             {
                 text = string.Empty;
             }
-            List<SearchQuestionOldViewModel> result = StaticContent.AllQuestions
-                .Where(q => q.Content.Contains(text, StringComparison.InvariantCultureIgnoreCase)).ToList();
+
+            List<QuestionEntity> allQuestions = DataGenerator.AllExams.SelectMany(e => e.Questions).ToList();
+
+            var result = allQuestions
+                .Where(q => q.ContentText.Contains(text, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
             int maxLengthTextInUi = 100;
 
             string baseUrl = Request.Scheme + "://" + Request.Host;
 
-            foreach (SearchQuestionOldViewModel scvm in result)
+            List<SearchQuestionOldViewModel> list = new List<SearchQuestionOldViewModel>();
+
+            foreach (var question in result)
             {
-                int index = scvm.Content.IndexOf(text, StringComparison.InvariantCultureIgnoreCase);
-                if (index + maxLengthTextInUi > scvm.Content.Length)
+                var sqvm = new SearchQuestionOldViewModel();
+                int index = question.ContentText.IndexOf(text, StringComparison.InvariantCultureIgnoreCase);
+                if (index + maxLengthTextInUi > question.ContentText.Length)
                 {
-                    scvm.TextInUI = scvm.Content.Substring(index);
+                    sqvm.TextInUI = question.ContentText.Substring(index);
                 }
                 else
                 {
-                    scvm.TextInUI = scvm.Content.Substring(index, maxLengthTextInUi);
+                    sqvm.TextInUI = question.ContentText.Substring(index, maxLengthTextInUi);
                 }
-                scvm.Url = $"{baseUrl}/{scvm.ExamProvider}/{scvm.ExamName}/{scvm.QuestionName}";
 
+                var realOrder = question.Exam.Questions.OrderBy(qs => qs.Order).ToList().IndexOf(question) + 1;
 
+                sqvm.Url = $"{baseUrl}/{question.Exam.Provider}/{question.Exam.Code}/question{realOrder}";
+                sqvm.Url = sqvm.Url.ToLowerInvariant();
+                list.Add(sqvm);
             }
 
-
-
-            return result;
+            return list;
         }
     }
 }

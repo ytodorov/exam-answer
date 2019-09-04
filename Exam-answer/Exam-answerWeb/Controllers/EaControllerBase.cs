@@ -84,7 +84,7 @@ namespace Exam_answerWeb.Controllers
         [NonAction]
         protected IActionResult QuestionGenericInternal(string provider, string examCode, string id)
         {
-            ExamEntity examEntity = DataGenerator.AllExames
+            ExamEntity examEntity = DataGenerator.AllExams
                 .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
                     e.Code.Equals(examCode, StringComparison.InvariantCultureIgnoreCase))
                                 

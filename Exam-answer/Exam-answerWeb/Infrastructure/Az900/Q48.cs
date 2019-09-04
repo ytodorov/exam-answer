@@ -55,19 +55,51 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "SQL Data Warehouse is supported by a broad ecosystem of partners, including data preparation, ingestion service and visualisation tool providers. Enjoy guaranteed 99.9 percent availability in 40 Azure regions worldwide."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Service capabilities:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Massive query concurrency - Democratise data across your enterprise."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Integrated data processing - Ingest and query from multiple data types and sources within a single solution."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Quick and easy provisioning - Provision thousands of compute cores in less than five minutes and scale to a petabyte in hours."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Elastic design - Independently scale for performance or memory with separate compute and storage."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Advanced security - Help protect your data with virtual network service endpoints, advanced threat detection, always-on encryption, auditing and simplified secure access."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Fully managed infrastructure - Automate infrastructure allocation and workload optimisation to focus on data analysis and use the built-in advisor to optimise your cloud data warehouse."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Strong Ecosystem - Integrate with leading data preparation and visualisation vendors and get support from our partners to accelerate time to value."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Powerful SQL engine - Take advantage of Microsoft SQL Server, the industry’s top-performing SQL engine, offering comprehensive support for SQL language."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Industry-leading compliance - Help ensure peace of mind with more than 50 government and industry compliance certifications, including HIPAA."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Global availability - Benefit from availability in 40 Azure regions, the most among all cloud-based data warehouse providers."
                 },
             },
 
@@ -75,13 +107,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="SQL Data Warehouse",
+                    Url = "https://azure.microsoft.com/en-in/services/sql-data-warehouse/"
                 },
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Compare Azure SQL Database vs. Azure SQL Data Warehouse: Definitions, Differences and When to Use",
+                    Url = "https://stackify.com/azure-sql-database-vs-warehouse/"
                 }
             },                
         };
