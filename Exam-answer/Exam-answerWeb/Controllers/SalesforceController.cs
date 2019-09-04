@@ -14,20 +14,19 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Exam_AnswerWeb.Controllers
 {
     [Route("salesforce/crt-251")]
     public class SalesforceController : EaControllerBase
     {
-        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper) :
-            base(examAnswerContext, env, mapper)
+        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
+            base(examAnswerContext, env, mapper, memoryCache)
         {
 
         }
 
-        [OutputCache(Duration = int.MaxValue)]
         [Route("")]
         public IActionResult Index()
         {

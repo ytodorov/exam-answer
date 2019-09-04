@@ -1,10 +1,14 @@
 ﻿using AutoMapper;
 using DAL.Entities;
+using Exam_answerWeb.Extensions;
 using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +22,53 @@ namespace Exam_answerWeb.Controllers
     {
         protected ExamAnswerContext examAnswerContext;
         protected readonly IHostingEnvironment env;
-
         protected readonly IMapper mapper;
+        private IMemoryCache cache;
 
-        public EaControllerBase(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper)
+
+        public EaControllerBase(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache)
         {
             this.examAnswerContext = examAnswerContext;
             this.env = env;
-            this.mapper = mapper;           
+            this.mapper = mapper;
+            cache = memoryCache;
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            //if (DateTime.Now.Ticks > 1)
+            //{
+            //    context.Result = new ContentResult() { Content = "test", ContentType = "text/html; charset=utf-8" };
+            //    return;
+            //}
+            var cachedHtml = cache.Get<string>(HttpContext.Request.Path.ToString());
+
+            if (!string.IsNullOrEmpty(cachedHtml))
+            {
+                context.Result = new ContentResult() { Content = cachedHtml, ContentType = "text/html; charset=utf-8" };                
+                //return;
+            }
+            base.OnActionExecuting(context);
+        }
+
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            var viewResult = context.Result as ViewResult;
+            if (viewResult != null)
+            {
+                var htmlToCache = viewResult.ToHtml(HttpContext);
+
+                cache.Set<string>(HttpContext.Request.Path.ToString(), htmlToCache);
+            }
+            base.OnActionExecuted(context);
+        }
+
+        public override ViewResult View(string viewName, object model)
+        {
+            return base.View(viewName, model);
         }
 
         [Route("question{id}")]
-        //[ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
-        [OutputCache(Duration = int.MaxValue)]
         public virtual IActionResult QuestionGeneric(string id)
         {
             List<string> segments = Request.Path.Value.Split("/", StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -206,7 +244,13 @@ $@"
             if (intId <= examViewModel.Questions.Count)
             {
                 QuestionViewModel theQuestion = examViewModel.Questions[intId - 1];
-                return View("Question", theQuestion);
+                var view = View("Question", theQuestion);
+
+                //var htmlToCache = view.ToHtml(HttpContext);
+
+                //cache.Set<string>(HttpContext.Request.Path.ToString(), htmlToCache);
+
+                return view;
             }
             else
             {

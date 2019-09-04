@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
@@ -40,12 +41,7 @@ namespace Exam_answerWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
-            });
+            services.AddMemoryCache();
 
             services.Configure<BrotliCompressionProviderOptions>(options =>
             {
@@ -76,13 +72,12 @@ namespace Exam_answerWeb
 
             services.AddDbContext<ExamAnswerContext>(options => options.UseInMemoryDatabase(databaseName: "ExamAnswerContext"));
 
-            services
-                .AddDistributedMemoryCache()
-                .AddSession();
+            //services
+            //    .AddDistributedMemoryCache()
+            //    .AddSession();
 
             // Add Kendo UI services to the services container
             services.AddKendo();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -120,7 +115,7 @@ namespace Exam_answerWeb
                         Title = fileContent.Substring(0, 50),
                         ExamName = fi.Directory.Name,
                         ExamProvider = fi.Directory.Parent.Name,
-                        QuestionName = fi.Name.Replace(fi.Extension, string.Empty),                        
+                        QuestionName = fi.Name.Replace(fi.Extension, string.Empty),
                     };
 
                     searchQuestionOldViewModel.Number = int.Parse(searchQuestionOldViewModel.QuestionName
@@ -142,55 +137,6 @@ namespace Exam_answerWeb
                 .ToList();
 
             List<string> duplicates = new List<string>();
-
-            //for (int i = 0; i < salesForceQuestions.Count - 1; i++)
-            //{
-            //    for (int j = i + 1; j < salesForceQuestions.Count; j++)
-            //    {
-            //        var s = salesForceQuestions[i].Content;
-            //        var sNumber = salesForceQuestions[i].Number;
-
-            //        var t = salesForceQuestions[j].Content;
-            //        var tNumber = salesForceQuestions[j].Number;
-
-            //        var similarity = LevenshteinDistance.CalculateSimilarity(s, t);
-            //        if (similarity > 0.5)
-            //        {
-
-            //        }
-            //    }
-
-            //    foreach (var nf in newFiles)
-            //    {
-            //        string nfContent = File.ReadAllText(nf);
-
-            //        nfContent = nfContent.Replace(" O ", string.Empty);
-            //        nfContent = nfContent.Replace("\r\n", " ");
-
-            //        RegexOptions options = RegexOptions.None;
-            //        Regex regex = new Regex("[ ]{2,}", options);
-            //        nfContent = regex.Replace(nfContent, " ");
-
-            //        nfContent = nfContent.Replace("A.", "");
-            //        nfContent = nfContent.Replace("B.", "");
-            //        nfContent = nfContent.Replace("C.", "");
-            //        nfContent = nfContent.Replace("D.", "");
-
-            //        nfContent = nfContent.Trim();
-
-            //        var s = salesForceQuestions[i].Content;
-            //        var sNumber = salesForceQuestions[i].Number;
-
-            //        //var distance = LevenshteinDistance.Compute(s, t);
-            //        var similarity = LevenshteinDistance.CalculateSimilarity(s, nfContent);
-            //        if (similarity > 0.5)
-            //        {
-            //            duplicates.Add(new FileInfo(nf).Name);
-            //        }
-            //    }
-            //}
-            //duplicates = duplicates.OrderBy(d => int.Parse(d.Replace(".txt", string.Empty))).ToList();
-
 
             HostingEnvironment = env;
             if (env.IsDevelopment())
@@ -251,24 +197,23 @@ namespace Exam_answerWeb
                            };
                        });
 
-            //app.Use(async (context, next) =>
-            //{
-            //    var body = context.Response.Body;
-
-            //    using (var updatedBody = new MemoryStream())
-            //    {
-            //        context.Response.Body = updatedBody;
-
-            //        await next();
-
-            //        context.Response.Body = body;
-
-            //        updatedBody.Seek(0, SeekOrigin.Begin);
-            //        var newContent = new StreamReader(updatedBody).ReadToEnd();
-
-            //        await context.Response.WriteAsync(AngleSharpHelper.PrettifyHtml(newContent));
-            //    }
-            //});
+            app.Use(
+                       next =>
+                       {
+                           return async context =>
+                           {
+                               var cache = context.RequestServices.GetRequiredService<IMemoryCache>();
+                               var cachedHtml = cache.Get<string>(context.Request.Path.ToString());
+                               if (!string.IsNullOrEmpty(cachedHtml))
+                               {
+                                   await context.Response.WriteAsync(cachedHtml);
+                               }
+                               else
+                               {
+                                   await next(context);
+                               }
+                           };
+                       });
 
             app.UseOutputCaching();
             app.UseMvc(routes =>

@@ -13,6 +13,7 @@ using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Exam_AnswerWeb.Controllers
 {
@@ -21,12 +22,11 @@ namespace Exam_AnswerWeb.Controllers
     {
         private const string folderName = "az-100";
 
-        public MicrosoftController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper) :
-            base(examAnswerContext, env, mapper)
+        public MicrosoftController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
+            base(examAnswerContext, env, mapper, memoryCache)
         {
         }
 
-        [OutputCache(Duration = int.MaxValue)]
         [Route("")]
         public IActionResult Index()
         {

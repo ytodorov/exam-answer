@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Exam_answerWeb.Models;
 using System.Net;
+using DAL.Entities;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Caching.Memory;
+using AutoMapper;
 
 namespace Exam_answerWeb.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : EaControllerBase //EaControllerBase
     {
-        [OutputCache(Duration = int.MaxValue)]
+        public HomeController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
+            base(examAnswerContext, env, mapper, memoryCache)
+        {
+        }
+
         public IActionResult Index()
         {
             return View();

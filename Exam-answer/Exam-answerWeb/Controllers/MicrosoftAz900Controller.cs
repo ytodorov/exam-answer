@@ -14,20 +14,19 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Exam_AnswerWeb.Controllers
 {
     [Route("microsoft/az-900")]
     public class MicrosoftAz900Controller : EaControllerBase
     {
-        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper) :
-            base(examAnswerContext, env, mapper)
+        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
+            base(examAnswerContext, env, mapper, memoryCache)
         {
 
         }
 
-        [OutputCache(Duration = int.MaxValue)]
         [Route("")]
         public IActionResult Index()
         {
