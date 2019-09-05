@@ -10,16 +10,24 @@ namespace Exam_answerWeb.Infrastructure.Questions
         {
             QuestionType = QuestionType.RadioButon,
             Order = 157,
-            Section = "Understand Cloud Concepts",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "When planning to migrate a public website to Azure, you must plan to pay monthly usage costs.",
+                    Text = "You have two Azure Active Directory (Azure AD) tenants named contoso.com and fabrikam.com.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Instructions: Review the UPPER-CASED text surrounded by ***. If it makes the statement correct, select \"No change is needed\". If the statement is incorrect, select the answer choice that makes the statement correct.",
+                    Text = "You have a Microsoft account that you use to sign in to both tenants.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You need to configure the default sign-in tenant for the Azure portal.",
+                },
+                new ContentEntity()
+                {
+                    Text = "What should you do?",
                 },
             },
 
@@ -27,22 +35,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "From Azure Cloud Shell, run Set-AzureRmSubscription.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "From Azure Cloud Shell, run Set-AzureRmContext.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Deploy a VPN.", 
+                    Text = "From the Azure portal, configure the portal settings.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Pay to transfer all the website data to Azure.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "Reduce the number of connections to the website.", 
+                    Text = "From the Azure portal, change the directory.",
                     IsCorrect = false
                 },
             },
@@ -51,19 +59,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "The Set-AzureRmContext cmdlet sets authentication information for cmdlets that you run in the current session. The context includes tenant, subscription, and environment information."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Example: PS C:\\>Set-AzureRmContext -SubscriptionId \"xxxx-xxxx-xxxx-xxxx\""
                 },
             },
 
@@ -71,15 +71,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text = "Set-AzureRmContext",
+                    Url = "https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/set-azurermcontext?view=azurermps-6.13.0",
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
-            },                
+            },
         };
     }
 }

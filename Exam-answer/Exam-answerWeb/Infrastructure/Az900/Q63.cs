@@ -10,12 +10,24 @@ namespace Exam_answerWeb.Infrastructure.Questions
         {
             QuestionType = QuestionType.RadioButon,
             Order = 174,
-            Section = "Understand Security, Privacy, Compliance and Trust",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Which Azure service should you use?",
+                    Text = "Your company has an Azure Active Directory (Azure AD) tenant named contoso.com that is configured for hybrid coexistence with the on-premises Active Directory.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Domain. The tenant contains the users shown in the following table.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Whenever possible, you need to enable Azure Multi-Factor Authentication (MFA) for the users in contoso.com.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Which users should you enable for Azure MFA?",
                 },
             },
 
@@ -23,23 +35,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure AD Connect Health.", 
+                    Text = "User1 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure AD Privileged Identity Management.", 
+                    Text = "User1, User2, and User3 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Advanced Threat Protection (ATP).", 
+                    Text = "User1 and User2 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure AD Identity Protection.", 
+                    Text = "User1, User2, User3, and User4.",
                     IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "User2 only.",
+                    IsCorrect = false
                 },
             },
 
@@ -67,9 +84,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Url = "https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-sign-in-risk-policy",
+                    Text ="",
+                    Url = ""
                 },
-            },           
+                new ReferenceEntity()
+                {
+                    Text ="",
+                    Url = ""
+                }
+            },
         };
     }
 }

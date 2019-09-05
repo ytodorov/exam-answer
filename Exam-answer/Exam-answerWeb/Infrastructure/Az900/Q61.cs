@@ -47,19 +47,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Azure Machine Learning Studio gives you an interactive, visual workspace to easily build, test, and iterate on a predictive analysis model."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Microsoft Azure Machine Learning Studio is a collaborative, drag-and-drop tool you can use to build, test, and deploy predictive analytics solutions on your data. Machine Learning Studio publishes models as web services that can easily be consumed by custom apps or BI tools such as Excel."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Machine Learning Studio is where data science, predictive analytics, cloud resources, and your data meet."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "To develop a predictive analysis model, you typically use data from one or more sources, transform, and analyze that data through various data manipulation and statistical functions, and generate a set of results. Developing a model like this is an iterative process. As you modify the various functions and their parameters, your results converge until you are satisfied that you have a trained, effective model."
                 },
             },
 
@@ -67,14 +67,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="What is Azure Machine Learning Studio?",
+                    Url = "https://docs.microsoft.com/en-us/azure/machine-learning/studio/what-is-ml-studio"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },                
         };
     }
