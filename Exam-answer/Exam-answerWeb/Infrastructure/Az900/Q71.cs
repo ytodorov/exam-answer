@@ -6,6 +6,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
+        /// <summary>
+        /// TO DO
+        /// </summary>
         public static QuestionEntity Q70Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,

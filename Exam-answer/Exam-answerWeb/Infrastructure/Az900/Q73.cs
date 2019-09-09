@@ -15,18 +15,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
-                },
-                new ContentEntity()
-                {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
-                new ContentEntity()
-                {
                     Text = "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using.",
                 },
                 new ContentEntity()
@@ -65,19 +53,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "The Azure Activity Log provides insight into subscription-level events that have occurred in Azure. This includes a range of data, from Azure Resource Manager operational data to updates on Service Health events. The Activity Log was previously known as Audit Logs or Operational Logs, since the Administrative category reports control-plane events for your subscriptions."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Use the Activity Log, to determine the what, who, and when for any write operations (PUT, POST, DELETE) taken on the resources in your subscription. You can also understand the status of the operation and other relevant properties."
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "The Activity Log does not include read (GET) operations or operations for resources that use the Classic/RDFE model."
                 },
             },
 
@@ -85,14 +69,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="Overview of Azure Activity log",
+                    Url = "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-overview"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },                
         };
     }

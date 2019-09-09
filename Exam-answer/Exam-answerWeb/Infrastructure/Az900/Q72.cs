@@ -59,19 +59,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Billing Tags Policy Initiative:"
                 },
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "Requires specified tag values for cost center and product name. Uses built-in policies to apply and enforce required tags. You specify the required values for the tags."
                 },
             },
 
@@ -79,12 +71,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Prevent unexpected charges with Azure billing and cost management",
                     Url = "https://docs.microsoft.com/en-us/azure/billing/billing-getting-started",
                 },
                 new ReferenceEntity()
                 {
+                    Text = "Use tags to organize your Azure resources",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags",
                 },
+                new ReferenceEntity()
+                {
+                    Text = "Sample - Billing tags policy initiative",
+                    Url = "https://docs.microsoft.com/en-us/azure/governance/policy/samples/billing-tags-policy-initiative"
+                }
             },           
         };
     }

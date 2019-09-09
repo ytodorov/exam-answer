@@ -66,11 +66,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "3. For the selected user, select Directory role, select Add role, and then pick the appropriate admin roles from the Directory roles list, such as Conditional access"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "administrator."
+                    Text = "3. For the selected user, select Directory role, select Add role, and then pick the appropriate admin roles from the Directory roles list, such as Conditional access administrator."
                 },
                 new ExplanationEntity()
                 {
@@ -82,6 +78,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Assign administrator and non-administrator roles to users with Azure Active Directory",
                     Url = "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal",
                 },
             },           

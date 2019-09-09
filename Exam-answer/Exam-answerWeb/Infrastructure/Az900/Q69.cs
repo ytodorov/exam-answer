@@ -12,26 +12,14 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 190,
             Section = "",
             Contents = new List<ContentEntity>()
-            {
+            {               
                 new ContentEntity()
                 {
-                    Text = "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might.",
+                    Text = "You have an Azure Active Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.",
-                },
-                new ContentEntity()
-                {
-                    Text = "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You have an Azure Active Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Developers. Subscription1 contains a resource group named Dev.",
+                    Text = "Subscription1 contains a resource group named Dev.",
                 },
                 new ContentEntity()
                 {
@@ -65,7 +53,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "The Logic App Contributor role lets you manage logic app, but not access to them. It provides access to view, edit, and update a logic app."
+                    Text = "You can permit only specific users or groups to run specific operations, such as managing, editing, and viewing logic apps. To control their permissions, use Azure Role-Based Access Control (RBAC) to assign customized or built-in roles to members in your Azure subscription:"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Logic App Contributor: Lets you manage logic apps, but you can't change access to them."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Logic App Operator: Lets you read, enable, and disable logic apps, but you can't edit or update them."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "To prevent others from changing or deleting your logic app, you can use Azure Resource Lock, which prevents others from changing or deleting production resources."
                 },
             },
 
@@ -73,10 +73,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Built-in roles for Azure resources",
                     Url = "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
                 },
                 new ReferenceEntity()
                 {
+                    Text = "Secure access and data in Azure Logic Apps",
                     Url = "https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app",
                 },
             },           
