@@ -10,16 +10,36 @@ namespace Exam_answerWeb.Infrastructure.Questions
         {
             QuestionType = QuestionType.RadioButon,
             Order = 175,
-            Section = "Understand Security, Privacy, Compliance and Trust",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "You need to recommend an Azure solution to limit the types of connections from the web servers to the database servers.",
+                    Text = "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.",
                 },
                 new ContentEntity()
                 {
-                    Text = "What should you include in the recommendation?",
+                    Text = "The User administrator role is assigned to a user named Admin1.",
+                },
+                new ContentEntity()
+                {
+                    Text = "An external partner has a Microsoft account that uses the user1@outlook.com sign in.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Admin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: “Unable to invite user.",
+                },
+                new ContentEntity()
+                {
+                    Text = "User1@outlook.com – Generic authorization exception.”.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You need to ensure that Admin1 can invite the external partner to sign in to the Azure AD tenant.",
+                },
+                new ContentEntity()
+                {
+                    Text = "What should you do?",
                 },
             },
 
@@ -27,23 +47,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Network security groups (NSGs).", 
+                    Text = "From the Roles and administrators blade, assign the Security administrator role to Admin1.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "From the Organizational relationships blade, add an identity provider.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "From the Custom domain names blade, add a custom domain.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "From the Users blade, modify the External collaboration settings.",
                     IsCorrect = true
-                },
-                new AnswerEntity()
-                {
-                    Text = "Azure Service Bus.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "A local network gateway.", 
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "A route filter.", 
-                    IsCorrect = false
                 },
             },
 
@@ -51,19 +71,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "By default, all users and guests in your directory can invite guests even if they're not assigned to an admin role. External collaboration settings let you turn guest invitations on or off for different types of users in your organization. You can also delegate invitations to individual users by assigning roles that allow them to invite guests."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "With Azure AD B2B collaboration, a tenant admin can set the following invitation policies:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Turn off invitations"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Only admins and users in the Guest Inviter role can invite"
+                },
+                 new ExplanationEntity()
+                {
+                     Text = "Admins, the Guest Inviter role, and members can invite"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "All users, including guests, can invite"
                 },
             },
 
@@ -71,15 +99,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text = "Enable B2B external collaboration and manage who can invite guests",
+                    Url = "https://docs.microsoft.com/en-us/azure/active-directory/b2b/delegate-invitations",
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
-            },                
+            },
         };
     }
 }

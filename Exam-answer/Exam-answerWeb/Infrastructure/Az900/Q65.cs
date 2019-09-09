@@ -10,16 +10,20 @@ namespace Exam_answerWeb.Infrastructure.Questions
         {
             QuestionType = QuestionType.RadioButon,
             Order = 177,
-            Section = "Understand Security, Privacy, Compliance and Trust",
+            Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Resource groups provide organizations with the ability to manage the compliance of Azure resources across multiple subscriptions.",
+                    Text = "You have an Azure DNS zone named adatum.com.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Instructions: Review the UPPER-CASED text surrounded by ***. If it makes the statement correct, select \"No change is needed\". If the statement is incorrect, select the answer choice that makes the statement correct.",
+                    Text = "You need to delegate a subdomain named research.adatum.com to a different DNS server in Azure.",
+                },
+                new ContentEntity()
+                {
+                    Text = "What should you do?",
                 },
             },
 
@@ -27,23 +31,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "Create an A record named *.research in the adatum.com zone.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Management groups.", 
+                    Text = "Create a PTR record named research in the adatum.com zone.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure policies.", 
+                    Text = "Modify the SOA record of adatum.com.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Create an NS record named research in the adatum.com zone.",
                     IsCorrect = true
-                },
-                new AnswerEntity()
-                {
-                    Text = "Azure App Service plans.", 
-                    IsCorrect = false
                 },
             },
 
@@ -51,19 +55,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "You need to create a name server (NS) record for the zone."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "The A Record points your hostname to an IP address. The record A specifies IP address (IPv4) for given host. This is one of the most frequently used records in the DNS Zones."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "PTR records are used for the Reverse DNS (Domain Name System) lookup. Using the IP address you can get the associated domain/hostname. An A record should exist for every PTR record. The usage of a reverse DNS setup for a mail server is a good solution."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "The SOA means Start Of Authority. The SOA record defines the beginning of the authority DNS zone and specifies the global parameters for the zone. The SOA record has the following structure: \"Serial number\", \"Primary name server (NS)\", \"DNS admin e-mail\", \"Refresh Rate\", \"Retry Rate\", \"Expire time\" and \"Default TTL\"."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "The NS records identify the name servers, responsible for your DNS zone. In order to have a valid DNS configuration, the NS records configured in the DNS zone must be exactly the same as these configured as name servers at your domain name provider."
                 },
             },
 
@@ -71,15 +79,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text = "Overview of DNS zones and records",
+                    Url = "https://docs.microsoft.com/en-us/azure/dns/dns-zones-records",
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
-            },                
+            },
         };
     }
 }

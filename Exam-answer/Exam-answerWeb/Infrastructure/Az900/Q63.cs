@@ -15,11 +15,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "Your company has an Azure Active Directory (Azure AD) tenant named contoso.com that is configured for hybrid coexistence with the on-premises Active Directory.",
+                    Text = "Your company has an Azure Active Directory (Azure AD) tenant named contoso.com that is configured for hybrid coexistence with the on-premises Active Directory Domain.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Domain. The tenant contains the users shown in the following table.",
+                    Text = "The tenant contains the users shown in the following users.",
+                },
+                new ContentEntity()
+                {
+                    Text = "User1: User Type - Member, Source - AzureAD, Sign-in - User1@contoso.com.",
+                },
+                new ContentEntity()
+                {
+                    Text = "User2: User Type - Member, Source - Windows Server Active Directory, Sign-in - User2@contoso.com.",
+                },
+                new ContentEntity()
+                {
+                    Text = "User3: User Type - Guest, Source - Multiple, Sign-in - User3@outlook.com.",
+                },
+                new ContentEntity()
+                {
+                    Text = "User4: User Type - Guest, Source - Multiple, Sign-in - User4@gmail.com.",
                 },
                 new ContentEntity()
                 {
@@ -64,19 +80,35 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "The security of two-step verification lies in its layered approach. Compromising multiple authentication factors presents a significant challenge for attackers. Even if an attacker manages to learn the user's password, it is useless without also having possession of the additional authentication method. It works by requiring two or more of the following authentication methods:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Something you know (typically a password)"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Something you have (a trusted device that is not easily duplicated, like a phone)"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Something you are (biometrics)"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Multi-Factor Authentication comes as part of the following offerings:"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Azure Active Directory Premium or Microsoft 365 Business - Full featured use of Azure Multi-Factor Authentication using Conditional Access policies to require multi-factor authentication."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Azure AD Free or standalone Office 365 licenses - Use pre-created Conditional Access baseline protection policies to require multi-factor authentication for your users and administrators."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Azure Active Directory Global Administrators - A subset of Azure Multi-Factor Authentication capabilities are available as a means to protect global administrator accounts."
                 },
             },
 
@@ -84,14 +116,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="How it works: Azure Multi-Factor Authentication",
+                    Url = "https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },
         };
     }
