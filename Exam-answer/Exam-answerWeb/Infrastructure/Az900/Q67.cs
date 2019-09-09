@@ -15,6 +15,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
+                    Text = "Your company plans to request an architectural review of an Azure environment from Microsoft."
+                },
+                new ContentEntity()
+                {
                     Text = "The company currently has a Basic support plan.",
                 },
                 new ContentEntity()
@@ -55,19 +59,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Architecture Support for Premier Plan: Customer-specific architectural support such as design reviews, performance tuning, configuration and implementation assistance delivered by Microsoft Azure technical specialists."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Operations Support for Premier Plan: Technical account manager-led service reviews and reporting"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Training for Premier Plan: Azure Engineering-led web seminars, on-demand training"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Proactive Guidance for Premier Plan: Designated Technical Account Manager"
                 },
             },
 
@@ -75,6 +79,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Compare support plans",
                     Url = "https://azure.microsoft.com/en-gb/support/plans/",
                 },
             },           
