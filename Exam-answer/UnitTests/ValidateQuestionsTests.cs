@@ -43,14 +43,17 @@ namespace UnitTests
                     QuestionEntity q1 = allquestions[i];
                     QuestionEntity q2 = allquestions[j];
 
-                    string text1 = q1.ContentText + q1.AnswerText;
+                    string text1 = q1.ContentText.Replace(" ", string.Empty) + q1.AnswerText.Replace(" ", string.Empty);
 
 
-                    string text2 = q2.ContentText + q2.AnswerText;
+                    string text2 = q2.ContentText.Replace(" ", string.Empty) + q2.AnswerText.Replace(" ", string.Empty);
+
+                    string helperTextForDebug = $"{q1.Id + 1}{text1}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{q2.Id + 1}{text2}";
+                         
 
                     double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
                     distances.Add(Math.Round(distance, 2));
-                    if (distance > 0.98)
+                    if (distance > 0.81)
                     {
                         duplicatesLists.Add(new Tuple<QuestionEntity, QuestionEntity, string>(
                             q1, q2, distance.ToString()));
@@ -61,8 +64,6 @@ namespace UnitTests
                 }
             }
             distances = distances.OrderByDescending(d => d).ToList();
-
-
         }
 
         [Fact]
