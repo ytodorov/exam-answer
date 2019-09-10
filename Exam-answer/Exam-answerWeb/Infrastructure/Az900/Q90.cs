@@ -27,11 +27,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Contoso creates a new Azure subscription. The Azure Active Directory (Azure AD) tenant uses a domain named contoso.onmicrosoft.com. The tenant uses the P1.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Pricing tier.",
+                    Text = "Contoso creates a new Azure subscription. The Azure Active Directory (Azure AD) tenant uses a domain named contoso.onmicrosoft.com. The tenant uses the P1 pricing tier.",
                 },
                 new ContentEntity()
                 {
@@ -47,11 +43,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "All the accounts of that respective department. All the user accounts have the department attribute set to their respective department. New users are added.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Frequently.",
+                    Text = "All the accounts of that respective department. All the user accounts have the department attribute set to their respective department. New users are added frequently.",
                 },
                 new ContentEntity()
                 {
@@ -71,12 +63,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
+                    Text = "Name: Server1, Role: VMWare vCenter server, Container virtual machine: VM1"
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Server2, Role: Hyper-V-host, Container virtual machine: VM2"
+                },
+                new ContentEntity()
+                {
                     Text = "Contoso uses two web applications named App1 and App2. Each instance on each web application requires 1GB of memory.",
                 },
                 new ContentEntity()
                 {
                     Text = "The Azure subscription contains the resources in the following table.",
                 },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet1, Type: Virtual network",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM3, Type: Virtual machine",
+                },
+                 new ContentEntity()
+                {
+                    Text = "Name: VM4, Type: Virtual machine",
+                },            
                 new ContentEntity()
                 {
                     Text = "The network security team implements several network security groups (NSGs).",
@@ -87,7 +99,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Contoso plans to implement the following changes:.",
+                    Text = "Contoso plans to implement the following changes:",
                 },
                 new ContentEntity()
                 {
@@ -204,27 +216,24 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "IP flow verify checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP, remote IP, local port, and"
+                    Text = "IP flow verify checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP, remote IP, local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. While any source or destination IP can be chosen, IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. While any source or destination IP can be chosen,"
+                    Text = "IP flow verify looks at the rules for all Network Security Groups (NSGs) applied to the network interface, such as a subnet or virtual machine NIC. Traffic flow is then verified based on the configured settings to or from that network interface. IP flow verify is useful in confirming if a rule in a Network Security Group is blocking ingress or egress traffic to or from a virtual machine.",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment."
-                },
+                    Text = "An instance of Network Watcher needs to be created in all regions that you plan to run IP flow verify. Network Watcher is a regional service and can only be ran against resources in the same region. The instance used does not affect the results of IP flow verify, as any route associated with the NIC or subnet is still be returned.",
+                }
             },
 
             References = new List<ReferenceEntity>()
             {
                 new ReferenceEntity()
                 {
+                    Text = "Introduction to IP flow verify in Azure Network Watcher",
                     Url = "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-ip-flow-verify-overview",
-                },
-                new ReferenceEntity()
-                {
-                    Url = "Question Set 1",
                 },
             },           
         };

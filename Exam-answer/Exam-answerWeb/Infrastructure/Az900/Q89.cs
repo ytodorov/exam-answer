@@ -55,11 +55,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "You can use a template that allows you to deploy a simple Windows VM by retrieving the password that is stored in a Key Vault. Therefore, the password is never"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "put in plain text in the template parameter file."
+                    Text = "You can use a template that allows you to deploy a simple Windows VM by retrieving the password that is stored in a Key Vault. Therefore, the password is never put in plain text in the template parameter file."
                 },
             },
 
@@ -67,6 +63,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Secure VM password with Key Vault",
                     Url = "https://azure.microsoft.com/en-us/resources/templates/101-vm-secure-password/",
                 },
             },           
