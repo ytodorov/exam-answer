@@ -19,11 +19,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "The NVA subnet contains two network virtual appliances (NVAs) that will perform network traffic inspection between the Perimeter subnet and the Production.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Subnet.",
+                    Text = "The NVA subnet contains two network virtual appliances (NVAs) that will perform network traffic inspection between the Perimeter subnet and the Production subnet.",
                 },
                 new ContentEntity()
                 {
@@ -31,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "The NVAs must run in an active-active configuration that uses automatic failover.",
+                    Text = "* The NVAs must run in an active-active configuration that uses automatic failover.",
                 },
                 new ContentEntity()
                 {
-                    Text = "The NVAs must load balance traffic to two services on the Profuction subnet. The services have different IP addresses.",
+                    Text = "* The NVAs must load balance traffic to two services on the Profuction subnet. The services have different IP addresses.",
                 },
                 new ContentEntity()
                 {
@@ -97,11 +93,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Incorrect Answers:"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "F: HA Ports are not available for the basic load balancer."
+                    Text = "HA Ports are not available for the basic load balancer."
                 },
             },
 
@@ -109,10 +101,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Azure Standard Load Balancer overview",
                     Url = "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview",
                 },
                 new ReferenceEntity()
                 {
+                    Text = "Multiple Frontends for Azure Load Balancer",
                     Url = "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-multivip-overview",
                 },
             },           

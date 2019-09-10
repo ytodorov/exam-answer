@@ -1,11 +1,12 @@
 
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
-    {
+    {      
         public static QuestionEntity Q101Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
@@ -19,11 +20,31 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "VM1 and VM2 are deployed from the same template and host line-of-business applications accessed by using Remote Desktop.",
+                    Text = "***"
                 },
                 new ContentEntity()
                 {
-                    Text = "You configure the network security group (NSG) shown in the exhibit. (Click the Exhibit tab.).",
+                    Text = "Name: VNet1,".PadRightEA() + "Type: Virtual network,".PadRightEA() + "Details: Not applicable",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Subnet1,".PadRightEA() + "Type: Subnet,".PadRightEA() + "Details: Hosted on VNet1",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM1,".PadRightEA() + "Type: Virtual machine,".PadRightEA() + "Details: On Subnet1",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM2,".PadRightEA() + "Type: Virtual machine,".PadRightEA() + "Details: On Subnet1",
+                },
+                 new ContentEntity()
+                {
+                    Text = "***"
+                },
+                new ContentEntity()
+                {
+                    Text = "VM1 and VM2 are deployed from the same template and host line-of-business applications accessed by using Remote Desktop.",
                 },
                 new ContentEntity()
                 {
@@ -75,6 +96,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Create, change, or delete a network security group",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group",
                 },
             },           
