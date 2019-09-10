@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace Exam_answerWeb.Infrastructure
 {
-    public class StringConstants
+    public class Constants
     {
         public const char PaddingChar = '·';
+
+        public const int ColumnWidth = 30;
     }
 }

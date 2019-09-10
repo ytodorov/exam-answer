@@ -6,7 +6,7 @@ using Exam_answerWeb.Extensions;
 namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
-    {      
+    {
         public static QuestionEntity Q101Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
@@ -20,7 +20,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "***"
+                    Text = "***",
                 },
                 new ContentEntity()
                 {

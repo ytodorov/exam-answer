@@ -18,9 +18,9 @@
                     }
                     @for (int i = 0; i < lines.Length; i++)
                     {
-                        var line = lines[i];
-                        
-                        @line
+                        var line = lines[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
+
+                        @Html.Raw(line)
 
                         if (i != lines.Length - 1)
                         {
@@ -39,10 +39,10 @@
                             var lines2 = content.Text.Split(Environment.NewLine);
                         }
                         @for (int i = 0; i < lines2.Length; i++)
-                        {
-                            var line = lines2[i];
+                    {
+                        var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-                            @line
+                            @Html.Raw(line)
 
                             if (i != lines2.Length - 1)
                             {
