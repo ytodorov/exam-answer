@@ -64,15 +64,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "Virtual Machine Scale Sets can be used with the Azure Desired State Configuration (DSC) extension handler. Virtual machine scale sets provide a way to deploy"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "and manage large numbers of virtual machines, and can elastically scale in and out in response to load. DSC is used to configure the VMs as they come online so"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "they are running the production software."
+                    Text = "Virtual Machine Scale Sets can be used with the Azure Desired State Configuration (DSC) extension handler. Virtual machine scale sets provide a way to deploy and manage large numbers of virtual machines, and can elastically scale in and out in response to load. DSC is used to configure the VMs as they come online so they are running the production software."
                 },
             },
 
@@ -80,6 +72,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Using Virtual Machine Scale Sets with the Azure DSC Extension",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-dsc",
                 },
             },           

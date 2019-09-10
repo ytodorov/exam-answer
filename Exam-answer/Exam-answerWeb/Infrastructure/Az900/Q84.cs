@@ -59,38 +59,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "Azure Backup provides backup for virtual machines — created through both the classic deployment model and the Azure Resource Manager deployment model —"
+                    Text = "Azure Backup provides backup for virtual machines — created through both the classic deployment model and the Azure Resource Manager deployment model — by using custom-defined backup policies in a Recovery Services vault."
+                },               
+                new ExplanationEntity()
+                {
+                    Text = "With the release of backup policy management, customers can manage backup policies and model them to meet their changing requirements from a single window. Customers can edit a policy, associate more virtual machines to a policy, and delete unnecessary policies to meet their compliance requirements."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "by using custom-defined backup policies in a Recovery Services vault."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "With the release of backup policy management, customers can manage backup policies and model them to meet their changing requirements from a single"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "window. Customers can edit a policy, associate more virtual machines to a policy, and delete unnecessary policies to meet their compliance requirements."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "Incorrect Answers:"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "B: You can't delete a Recovery Services vault if it is registered to a server and holds backup data. If you try to delete a vault, but can't, the vault is still configured to"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "receive backup data."
-                },
+                    Text = "You can't delete a Recovery Services vault if it is registered to a server and holds backup data. If you try to delete a vault, but can't, the vault is still configured to receive backup data."
+                },                
             },
 
             References = new List<ReferenceEntity>()
             {
                 new ReferenceEntity()
                 {
+                    Text = "Backup policy management for Azure VM backup in a Recovery Services vault",
                     Url = "https://azure.microsoft.com/en-in/updates/azure-vm-backup-policy-management/",
                 },
             },           
