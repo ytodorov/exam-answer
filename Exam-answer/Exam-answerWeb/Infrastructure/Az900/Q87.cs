@@ -15,11 +15,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You have an Azure subscription named Subscription1 that is used by several departments at your company. Subscription1 contains the resources in the following.",
+                    Text = "You have an Azure subscription named Subscription1 that is used by several departments at your company. Subscription1 contains the resources in the following table:",
                 },
                 new ContentEntity()
                 {
-                    Text = "Table.",
+                    Text = "Name: Storage1, Type: Storage account",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: RG1, Type: Resource group",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Container1, Type: Blob container",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Share1, Type: File share",
                 },
                 new ContentEntity()
                 {
@@ -49,12 +61,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new AnswerEntity()
                 {
-                    Text = "VM1.", 
+                    Text = "Share1.", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Storage2.", 
+                    Text = "Storage1.", 
                     IsCorrect = false
                 },
             },
@@ -75,11 +87,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "3. The portal displays a summary of the deployment. The summary includes the status of the deployment and its operations and the values that you provided for"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "parameters. To see the template that you used for the deployment, select View template."
+                    Text = "3. The portal displays a summary of the deployment. The summary includes the status of the deployment and its operations and the values that you provided for parameters. To see the template that you used for the deployment, select View template."
                 },
             },
 
@@ -87,6 +95,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Manage Azure resources by using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template",
                 },
             },           

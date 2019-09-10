@@ -63,11 +63,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "The basic host metrics are available, but to see more granular and VM-specific metrics, you need to install the Azure diagnostics extension on the VM. The Azure"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "diagnostics extension allows additional monitoring and diagnostics data to be retrieved from the VM."
+                    Text = "The basic host metrics are available, but to see more granular and VM-specific metrics, you need to install the Azure diagnostics extension on the VM. The Azure diagnostics extension allows additional monitoring and diagnostics data to be retrieved from the VM."
                 },
             },
 
@@ -75,6 +71,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Tutorial: Monitor and update a Linux virtual machine in Azure",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-monitoring",
                 },
             },           
