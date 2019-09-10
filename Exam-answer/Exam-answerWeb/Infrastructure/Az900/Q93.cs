@@ -63,31 +63,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "The virtual networks can be in the same or different regions, and from the same or different subscriptions. When connecting VNets from different subscriptions, the"
+                    Text = "The virtual networks can be in the same or different regions, and from the same or different subscriptions. When connecting VNets from different subscriptions, the subscriptions do not need to be associated with the same Active Directory tenant."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "subscriptions do not need to be associated with the same Active Directory tenant."
+                    Text = "Configuring a VNet-to-VNet connection is a good way to easily connect VNets. Connecting a virtual network to another virtual network using the VNet-to-VNet connection type (VNet2VNet) is similar to creating a Site-to-Site IPsec connection to an on-premises location. Both connectivity types use a VPN gateway to provide a secure tunnel using IPsec/IKE, and both function the same way when communicating."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Configuring a VNet-to-VNet connection is a good way to easily connect VNets. Connecting a virtual network to another virtual network using the VNet-to-VNet"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "connection type (VNet2VNet) is similar to creating a Site-to-Site IPsec connection to an on-premises location. Both connectivity types use a VPN gateway to provide"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "a secure tunnel using IPsec/IKE, and both function the same way when communicating."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "The local network gateway for each VNet treats the other VNet as a local site. This lets you specify additional address space for the local network gateway in order"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "to route traffic."
+                    Text = "The local network gateway for each VNet treats the other VNet as a local site. This lets you specify additional address space for the local network gateway in order to route traffic."
                 },
             },
 
@@ -95,6 +79,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Configure a VNet-to-VNet VPN gateway connection by using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal",
                 },
             },           

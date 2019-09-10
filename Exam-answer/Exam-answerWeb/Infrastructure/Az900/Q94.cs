@@ -27,27 +27,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "The subnets on VNet2 only.", 
+                    Text = "The subnets on VNet2 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The subnets on VNet2 and VNet3 only.", 
+                    Text = "The subnets on VNet2 and VNet3 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The subnets on VNet1, VNet2, and VNet3.", 
+                    Text = "The subnets on VNet1, VNet2, and VNet3.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The subnets on VNet1 only.", 
+                    Text = "The subnets on VNet1 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The subnets on VNet3 only.", 
+                    Text = "The subnets on VNet3 only.",
                     IsCorrect = true
                 },
             },
@@ -56,11 +56,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "All Azure resources are created in an Azure region and subscription. A resource can only be created in a virtual network that exists in the same region and"
+                    Text = "All Azure resources are created in an Azure region and subscription. A resource can only be created in a virtual network that exists in the same region and subscription as the resource. You can however, connect virtual networks that exist in different subscriptions and regions. For more information, see connectivity. When deciding which region(s) to deploy resources in, consider where consumers of the resources are physically located:"
                 },
                 new ExplanationEntity()
                 {
-                    Text = "subscription as the resource."
+                    Text = "Consumers of resources typically want the lowest network latency to their resources. To determine relative latencies between a specified location and Azure regions, see View relative latencies."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Do you have data residency, sovereignty, compliance, or resiliency requirements? If so, choosing the region that aligns to the requirements is critical. ",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Do you require resiliency across Azure Availability Zones within the same Azure region for the resources you deploy? You can deploy resources, such as virtual machines (VM) to different availability zones within the same virtual network. Not all Azure regions support availability zones however. "
                 },
             },
 
@@ -68,9 +76,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Plan virtual networks",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-plan-design-arm",
                 },
-            },           
+            },
         };
     }
 }

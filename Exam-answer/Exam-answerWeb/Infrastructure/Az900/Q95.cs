@@ -67,6 +67,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Configure Azure Load Balancer For Sticky Sessions",
                     Url = "https://cloudopszone.com/configure-azure-load-balancer-for-sticky-sessions/",
                 },
             },           

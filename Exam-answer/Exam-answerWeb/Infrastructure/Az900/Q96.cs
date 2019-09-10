@@ -19,6 +19,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
+                    Text = "Name: VNet1, Address space: 10.11.0.0/16, Subnet: 10.11.0.0/17, Azure Region: West US",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet2, Address space: 10.11.0.0/17, Subnet: 10.11.0.0/25, Azure Region: West US",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet3, Address space: 10.10.0.0/22, Subnet: 10.10.1.0/24, Azure Region: East US",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet4, Address space: 192.168.16.0/22, Subnet: 192.168.16.0/24, Azure Region: North Europe",
+                },
+                new ContentEntity()
+                {
                     Text = "To which virtual networks can you establish a peering connection from VNet1?",
                 },
             },
@@ -51,19 +67,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
-                },
-                new ExplanationEntity()
-                {
-
+                    Text = "You can connect virtual networks to each other with virtual network peering. These virtual networks can be in the same region or different regions (also known as Global VNet peering). Once virtual networks are peered, resources in both virtual networks are able to communicate with each other, with the same latency and bandwidth as if the resources were in the same virtual network."
                 },
             },
 
@@ -71,6 +75,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Tutorial: Connect virtual networks with virtual network peering using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-connect-virtual-networks-portal",
                 },
             },           

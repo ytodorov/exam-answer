@@ -69,31 +69,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "B: A VPN gateway is used when creating a VPN connection to your on-premises network."
+                    Text = "A VPN gateway is used when creating a VPN connection to your on-premises network."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Route-based VPN devices use any-to-any (wildcard) traffic selectors, and let routing/forwarding tables direct traffic to different IPsec tunnels. It is typically built on"
+                    Text = "Route-based VPN devices use any-to-any (wildcard) traffic selectors, and let routing/forwarding tables direct traffic to different IPsec tunnels. It is typically built on router platforms where each IPsec tunnel is modeled as a network interface or VTI (virtual tunnel interface)."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "router platforms where each IPsec tunnel is modeled as a network interface or VTI (virtual tunnel interface)."
+                    Text = "Policy-based VPN devices use the combinations of prefixes from both networks to define how traffic is encrypted/decrypted through IPsec tunnels. It is typically built on firewall devices that perform packet filtering. IPsec tunnel encryption and decryption are added to the packet filtering and processing engine."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "C: Policy-based VPN devices use the combinations of prefixes from both networks to define how traffic is encrypted/decrypted through IPsec tunnels. It is typically"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "built on firewall devices that perform packet filtering. IPsec tunnel encryption and decryption are added to the packet filtering and processing engine."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "Incorrect Answers:"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "D: Point-to-Site connections do not require a VPN device or a public-facing IP address."
+                    Text = "Point-to-Site connections do not require a VPN device or a public-facing IP address."
                 },
             },
 
@@ -101,10 +89,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Create a route-based VPN gateway using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/create-routebased-vpn-gateway-portal",
                 },
                 new ReferenceEntity()
                 {
+                    Text = "Connect Azure VPN gateways to multiple on-premises policy-based VPN devices using PowerShell",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps",
                 },
             },           
