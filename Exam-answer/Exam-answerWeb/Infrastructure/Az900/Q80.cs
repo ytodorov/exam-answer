@@ -19,6 +19,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
+                    Text = "Name: VM1, Azure Region: West Europe",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM2, Azure Region: West Europe",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM3, Azure Region: North Europe",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM4, Azure Region: North Europe",
+                },
+                new ContentEntity()
+                {
                     Text = "You have a Recovery Services vault that protects VM1 and VM2.",
                 },
                 new ContentEntity()
@@ -59,11 +75,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "A Recovery Services vault is a storage entity in Azure that houses data. The data is typically copies of data, or configuration information for virtual machines (VMs),"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "workloads, servers, or workstations. You can use Recovery Services vaults to hold backup data for various Azure services"
+                    Text = "A Recovery Services vault is a storage entity in Azure that houses data. The data is typically copies of data, or configuration information for virtual machines (VMs), workloads, servers, or workstations. You can use Recovery Services vaults to hold backup data for various Azure services."
                 },
             },
 
@@ -71,6 +83,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Set up disaster recovery for Azure VMs",
                     Url = "https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication",
                 },
             },           

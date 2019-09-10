@@ -19,6 +19,18 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
+                    Text = "Name: RG1, Type: Resource group",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Store1, Type: Azure Storage Account",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Sync1, Type: Azure File Sync",
+                },
+                new ContentEntity()
+                {
                     Text = "Store1 contains a file share named Data. Data contains 5,000 files.",
                 },
                 new ContentEntity()
@@ -68,35 +80,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "Step 1 (E): Install the Azure File Sync agent on Server1"
+                    Text = "Use Azure File Sync to centralize your organization's file shares in Azure Files, while keeping the flexibility, performance, and compatibility of an on-premises file server. Azure File Sync transforms Windows Server into a quick cache of your Azure file share. You can use any protocol that's available on Windows Server to access your data locally, including SMB, NFS, and FTPS. You can have as many caches as you need across the world."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "The Azure File Sync agent is a downloadable package that enables Windows Server to be synced with an Azure file share"
+                    Text = "Step 1: Install the Azure File Sync agent on Server1. The Azure File Sync agent is a downloadable package that enables Windows Server to be synced with an Azure file share."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Step 2 (B): Register Server1."
+                    Text = "Step 2: Register Server1. Register Windows Server with Storage Sync Service. Registering your Windows Server with a Storage Sync Service establishes a trust relationship between your server (or cluster) and the Storage Sync Service."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Register Windows Server with Storage Sync Service"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "Registering your Windows Server with a Storage Sync Service establishes a trust relationship between your server (or cluster) and the Storage Sync Service."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "Step 3 (C): Create a sync group and a cloud endpoint."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "A sync group defines the sync topology for a set of files. Endpoints within a sync group are kept in sync with each other. A sync group must contain one cloud"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "endpoint, which represents an Azure file share and one or more server endpoints. A server endpoint represents a path on registered server."
+                    Text = "Step 3: Create a sync group and a cloud endpoint. A sync group defines the sync topology for a set of files. Endpoints within a sync group are kept in sync with each other. A sync group must contain one cloud , which represents an Azure file share and one or more server endpoints. A server endpoint represents a path on registered server."
                 },
             },
 
@@ -104,6 +100,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Deploy Azure File Sync",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide",
                 },
             },           

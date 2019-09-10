@@ -60,15 +60,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "A: Modify the driveset.csv file in the root folder where the tool resides."
+                    Text = "1. Modify the driveset.csv file in the root folder where the tool resides."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "E: Modify the dataset.csv file in the root folder where the tool resides. Depending on whether you want to import a file or folder or both, add entries in the"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "dataset.csv file"
+                    Text = "2. Modify the dataset.csv file in the root folder where the tool resides. Depending on whether you want to import a file or folder or both, add entries in the dataset.csv file."
                 },
             },
 
@@ -76,6 +72,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Use Azure Import/Export service to import data to Azure Files",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-to-files",
                 },
             },           

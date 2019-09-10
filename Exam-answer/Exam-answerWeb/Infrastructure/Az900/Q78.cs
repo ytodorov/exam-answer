@@ -59,7 +59,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "Ensure port 445 is open: The SMB protocol requires TCP port 445 to be open; connections will fail if port 445 is blocked."
+                    Text = "Azure Files is Microsoft's easy-to-use cloud file system. Azure file shares can be seamlessly used in Windows and Windows Server."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Prerequisites:"
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Storage account name: To mount an Azure file share, you will need the name of the storage account."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Storage account key: To mount an Azure file share, you will need the primary (or secondary) storage key. SAS keys are not currently supported for mounting."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Ensure port 445 is open: The SMB protocol requires TCP port 445 to be open; connections will fail if port 445 is blocked. You can check to see if your firewall is blocking port 445 with the Test-NetConnection cmdlet."
                 },
             },
 
@@ -67,6 +83,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Use an Azure file share with Windows",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows",
                 },
             },           
