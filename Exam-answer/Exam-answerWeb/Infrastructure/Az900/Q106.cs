@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Azure Cloud Shell, run the New-AzureADUser cmdlet and specify the.", 
+                    Text = "From Azure Cloud Shell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.", 
                     IsCorrect = false
                 },
                 new AnswerEntity()
@@ -50,7 +50,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Windows PowerShell, run the New-AzureADUser cmdlet and specify the.", 
+                    Text = "From Windows PowerShell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.", 
                     IsCorrect = true
                 },
             },
@@ -59,15 +59,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "UserPrincipalName - contains the UserPrincipalName (UPN) of this user. The UPN is what the user will use when they sign in into Azure AD. The common"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "structure is @, so for Abby Brown in Contoso.com, the UPN would be AbbyB@contoso.com"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "Example:"
+                    Text = "UserPrincipalName - contains the UserPrincipalName (UPN) of this user. The UPN is what the user will use when they sign in into Azure AD. The common structure is @, so for Abby Brown in Contoso.com, the UPN would be AbbyB@contoso.com"
                 },
                 new ExplanationEntity()
                 {
@@ -75,11 +67,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "powershell New-AzureADUser -AccountEnabled $True -DisplayName \"Abby Brown\" -PasswordProfile $PasswordProfile -MailNickName \"AbbyB\" -"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "UserPrincipalName \"AbbyB@contoso.com\""
+                    Text = "powershell New-AzureADUser -AccountEnabled $True -DisplayName \"Abby Brown\" -PasswordProfile $PasswordProfile -MailNickName \"AbbyB\" - UserPrincipalName \"AbbyB@contoso.com\""
                 },
             },
 
@@ -87,6 +75,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Creating a new user in Azure AD",
                     Url = "https://docs.microsoft.com/bs-cyrl-ba/powershell/azure/active-directory/new-user-sample?view=azureadps-2.0",
                 },
             },           

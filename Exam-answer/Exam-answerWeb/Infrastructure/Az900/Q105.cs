@@ -15,11 +15,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You have an Azure subscription that contains three virtual networks named VNet1, VNet2, and VNet3. VNet2 contains a virtual appliance named VM2 that operates.",
-                },
-                new ContentEntity()
-                {
-                    Text = "As a router.",
+                    Text = "You have an Azure subscription that contains three virtual networks named VNet1, VNet2, and VNet3. VNet2 contains a virtual appliance named VM2 that operates as a router.",
                 },
                 new ContentEntity()
                 {
@@ -72,19 +68,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "Allow gateway transit: Check this box if you have a virtual network gateway attached to this virtual network and want to allow traffic from the peered virtual network"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "to flow through the gateway."
-                },
-                new ExplanationEntity()
-                {
-                    Text = "The peered virtual network must have the Use remote gateways checkbox checked when setting up the peering from the other virtual network to this virtual"
-                },
-                new ExplanationEntity()
-                {
-                    Text = "network."
+                    Text = "Allow gateway transit: Check this box if you have a virtual network gateway attached to this virtual network and want to allow traffic from the peered virtual network to flow through the gateway. For example, this virtual network may be attached to an on-premises network through a virtual network gateway. The gateway can be an ExpressRoute or VPN gateway. Checking this box allows traffic from the peered virtual network to flow through the gateway attached to this virtual network to the on-premises network. If you check this box, the peered virtual network cannot have a gateway configured. The peered virtual network must have the Use remote gateways checkbox checked when setting up the peering from the other virtual network to this virtual network. If you leave this box unchecked (default), traffic from the peered virtual network still flows to this virtual network, but cannot flow through a virtual network gateway attached to this virtual network. If the peering is between a virtual network (Resource Manager) and a virtual network (classic), the gateway must be in the virtual network (Resource Manager)."
                 },
             },
 
@@ -92,11 +76,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Create, change, or delete a virtual network peering",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints",
-                },
-                new ReferenceEntity()
-                {
-                    Url = "Question Set 1",
                 },
             },           
         };

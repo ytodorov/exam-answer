@@ -55,19 +55,47 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
+                    Text = "Create an inbound NAT port-forwarding rule:"
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "Create a load balancer inbound network address translation (NAT) rule to forward traffic from a specific port of the front-end IP address to a specific port of a back-end VM."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "1. Select All resources in the left-hand menu, and then select MyLoadBalancer from the resource list."
                 },
                 new ExplanationEntity()
                 {
-
+                    Text = "2. Under Settings, select Inbound NAT rules, and then select Add.",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "3. On the Add inbound NAT rule page, type or select the following values:",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "* Name: Type MyNATRuleVM1.",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "* Port: Type 4221.",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "* Target virtual machine: Select MyVM1 from the drop-down.",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "* Port mapping: Select Custom.",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "* Target port: Type 3389.",
+                },
+                new ExplanationEntity()
+                {
+                    Text = "4. Select OK.",
                 },
             },
 
@@ -75,10 +103,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
+                    Text = "Tutorial: Configure port forwarding in Azure Load Balancer using the portal",
                     Url = "https://docs.microsoft.com/en-us/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal",
                 },
                 new ReferenceEntity()
                 {
+                    Text = "Azure Load Balancer For RDP",
                     Url = "https://pixelrobots.co.uk/2017/08/azure-load-balancer-for-rds/",
                 },
             },           
