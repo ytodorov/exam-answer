@@ -59,7 +59,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "You can choose the verification methods that are available for your users. The following table provides a brief overview of the methods."
+                    Text = "You can choose the verification methods that are available for your users."
                 },
                 new ExplanationEntity()
                 {

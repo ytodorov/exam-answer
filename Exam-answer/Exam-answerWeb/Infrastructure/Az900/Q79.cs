@@ -1,6 +1,7 @@
 
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -19,15 +20,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: RG1, Type: Resource group",
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Store1, Type: Azure Storage Account",
+                    Text = "Name: RG1,".PadRightEA() + "Type: Resource group",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Sync1, Type: Azure File Sync",
+                    Text = "Name: Store1,".PadRightEA() + "Type: Azure Storage Account",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Sync1,".PadRightEA() + "Type: Azure File Sync",
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
                 },
                 new ContentEntity()
                 {

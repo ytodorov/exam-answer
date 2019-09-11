@@ -55,7 +55,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "If you want to raise the limit or quota above the default limit, open an online customer support request at no charge. The limits can't be raised above the maximum limit value shown in the following tables. If there's no maximum limit column, the resource doesn't have adjustable limits."
+                    Text = "If you want to raise the limit or quota above the default limit, open an online customer support request at no charge."
                 },
                 new ExplanationEntity()
                 {
