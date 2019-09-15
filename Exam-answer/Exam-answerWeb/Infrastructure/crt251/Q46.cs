@@ -24,6 +24,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new AnswerEntity()
                 {
                     Text = "Enable contacts to multiple accounts feature.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {
@@ -35,8 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add the contact to the partners related list on the second account.",
-                    IsCorrect = true
+                    Text = "Add the contact to the partners related list on the second account.",                   
                 },
             }
         };
