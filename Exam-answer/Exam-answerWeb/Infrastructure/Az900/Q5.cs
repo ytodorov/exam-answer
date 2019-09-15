@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Software as a service (SaaS).", 
+                    Text = "Software as a service (SaaS).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Platform as a service (PaaS).", 
+                    Text = "Platform as a service (PaaS).",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Infrastructure as a service (IaaS).", 
+                    Text = "Infrastructure as a service (IaaS).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Database as a service (DaaS).", 
+                    Text = "Database as a service (DaaS).",
                     IsCorrect = false
                 },
             },
@@ -86,7 +85,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Windows Azure IaaS vs. PaaS vs. SaaS",
                     Url = "http://robertgreiner.com/2014/03/windows-azure-iaas-paas-saas-overview/"
                 }
-            },           
+            },
         };
     }
 }

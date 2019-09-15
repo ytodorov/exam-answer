@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,27 +26,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A Canadian government contractor.", 
+                    Text = "A Canadian government contractor.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A European government contractor.", 
+                    Text = "A European government contractor.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A United States government entity.", 
+                    Text = "A United States government entity.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A United States government contractor.", 
+                    Text = "A United States government contractor.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A European government entity.", 
+                    Text = "A European government entity.",
                     IsCorrect = false
                 },
             },
@@ -80,7 +79,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is Azure Government?",
                     Url = "https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-government/2-what-is-azure-government",
                 },
-            },           
+            },
         };
     }
 }

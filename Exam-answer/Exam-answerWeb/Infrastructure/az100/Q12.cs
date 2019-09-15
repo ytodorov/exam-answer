@@ -36,7 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Deploy the Enforce tag and its value on resource groups Azure Policy.",                   
+                    Text = "Deploy the Enforce tag and its value on resource groups Azure Policy.",
                 },
                 new AnswerEntity()
                 {

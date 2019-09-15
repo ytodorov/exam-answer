@@ -38,11 +38,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Check the “disable person accounts” permission on the business sales division's sales representative user profile.",                    
+                    Text = "Check the “disable person accounts” permission on the business sales division's sales representative user profile.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use field-level security to hide the “Is Person Account” checkbox from the business sales division's sales representative user profile.",                    
+                    Text = "Use field-level security to hide the “Is Person Account” checkbox from the business sales division's sales representative user profile.",
                 },
                 new AnswerEntity()
                 {

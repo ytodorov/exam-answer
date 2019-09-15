@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -182,22 +181,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Run the IdFix tool then use the Update actions.", 
+                    Text = "Run the IdFix tool then use the Update actions.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Active Directory Domains and Trusts, modify the list of UPN suffixes.", 
+                    Text = "From Active Directory Domains and Trusts, modify the list of UPN suffixes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Azure AD Connect, modify the outbound synchronization rule.", 
+                    Text = "From Azure AD Connect, modify the outbound synchronization rule.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Active Directory Users and Computers, select the user accounts and then modify the UPN suffix value.", 
+                    Text = "From Active Directory Users and Computers, select the user accounts and then modify the UPN suffix value.",
                     IsCorrect = false
                 },
             },
@@ -236,7 +235,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Url = "Question Set 1",
                 },
-            },           
+            },
         };
     }
 }

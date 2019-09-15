@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A physical server failure.", 
+                    Text = "A physical server failure.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure region failure.", 
+                    Text = "An Azure region failure.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A storage failure.", 
+                    Text = "A storage failure.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure data center failure.", 
+                    Text = "An Azure data center failure.",
                     IsCorrect = true
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="What are Availability Zones in Azure?",
                     Url = "https://docs.microsoft.com/en-us/azure/availability-zones/az-overview"
                 },
-            },                
+            },
         };
     }
 }

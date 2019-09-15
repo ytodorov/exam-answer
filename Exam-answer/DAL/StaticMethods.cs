@@ -6,7 +6,7 @@ namespace Core
     public static class StaticMethods
     {
         [DllImport("Kernel32.dll", CallingConvention = CallingConvention.Winapi)]
-        static extern void GetSystemTimePreciseAsFileTime(out long filetime);
+        private static extern void GetSystemTimePreciseAsFileTime(out long filetime);
 
         public static long GetTicksNow()
         {

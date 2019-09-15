@@ -23,11 +23,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "File Sync.",                    
+                    Text = "File Sync.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Salesforce Files.",                    
+                    Text = "Salesforce Files.",
                 },
                 new AnswerEntity()
                 {

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure AD Connect Health.", 
+                    Text = "Azure AD Connect Health.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure AD Privileged Identity Management.", 
+                    Text = "Azure AD Privileged Identity Management.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Advanced Threat Protection (ATP).", 
+                    Text = "Azure Advanced Threat Protection (ATP).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure AD Identity Protection.", 
+                    Text = "Azure AD Identity Protection.",
                     IsCorrect = true
                 },
             },
@@ -75,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "How To: Configure the sign-in risk policy",
                     Url = "https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-sign-in-risk-policy",
                 },
-            },           
+            },
         };
     }
 }

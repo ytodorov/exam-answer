@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -23,22 +22,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A Dev/Test subscription.", 
+                    Text = "A Dev/Test subscription.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Software Assurance.", 
+                    Text = "Software Assurance.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Enterprise Agreement (EA).", 
+                    Text = "An Enterprise Agreement (EA).",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A pay-as-you-go subscription.", 
+                    Text = "A pay-as-you-go subscription.",
                     IsCorrect = true
                 },
             },
@@ -71,7 +70,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is Azure Cost Management?",
                     Url = "https://docs.microsoft.com/en-gb/azure/cost-management/overview-cost-mgt",
                 },
-            },           
+            },
         };
     }
 }

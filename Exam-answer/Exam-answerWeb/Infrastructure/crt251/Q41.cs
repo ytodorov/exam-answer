@@ -36,11 +36,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Relationship selling.",                    
+                    Text = "Relationship selling.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Direct selling.",                    
+                    Text = "Direct selling.",
                 },
             }
         };

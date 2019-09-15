@@ -1,11 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 using Xunit;
 
@@ -23,7 +19,6 @@ namespace UnitTests
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
             {
-
                 for (int i = 10; i < 20; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-900/question{i}");
@@ -41,7 +36,6 @@ namespace UnitTests
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
             {
-
                 string baseAddress = "https://www.exam-answer.com";
 
                 // string baseAddress2 = "https://localhost:44356";

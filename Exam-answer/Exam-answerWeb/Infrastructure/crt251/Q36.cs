@@ -38,11 +38,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use an assignment to notify product managers when opportunities are updated.",                    
+                    Text = "Use an assignment to notify product managers when opportunities are updated.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add the opportunity team, product managers, and customers to libraries containing files relevant to sales deals.",                    
+                    Text = "Add the opportunity team, product managers, and customers to libraries containing files relevant to sales deals.",
                 },
             }
         };

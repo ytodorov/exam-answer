@@ -32,15 +32,15 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a workflow rule for an account and contact owner to confirm contact data.",                    
+                    Text = "Create a workflow rule for an account and contact owner to confirm contact data.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a workflow rule to mass email the contacts and capture any email bounces.",                   
+                    Text = "Create a workflow rule to mass email the contacts and capture any email bounces.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use a data enrichment tool to verify account and contact data is up-to-date.",                    
+                    Text = "Use a data enrichment tool to verify account and contact data is up-to-date.",
                 },
             }
         };

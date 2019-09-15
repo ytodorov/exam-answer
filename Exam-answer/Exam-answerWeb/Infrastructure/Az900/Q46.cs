@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 56,
             Section = "Understand Azure Pricing and Support",
             Contents = new List<ContentEntity>()
-            {               
+            {
                 new ContentEntity()
                 {
                     Text = "Your company has an Azure subscription that contains the following unused resources:.",
@@ -51,12 +50,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -76,7 +75,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Reduce costs by deleting or reconfiguring idle virtual network gateways",
                     Url = "https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways",
                 },
-            },           
+            },
         };
     }
 }

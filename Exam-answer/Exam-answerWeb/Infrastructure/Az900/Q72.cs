@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Configure locks for the virtual machine.", 
+                    Text = "Configure locks for the virtual machine.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add an extension to the virtual machines.", 
+                    Text = "Add an extension to the virtual machines.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Assign tags to the virtual machines.", 
+                    Text = "Assign tags to the virtual machines.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Modify the inventory settings of the virtual machine.", 
+                    Text = "Modify the inventory settings of the virtual machine.",
                     IsCorrect = false
                 },
             },
@@ -84,7 +83,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Sample - Billing tags policy initiative",
                     Url = "https://docs.microsoft.com/en-us/azure/governance/policy/samples/billing-tags-policy-initiative"
                 }
-            },           
+            },
         };
     }
 }

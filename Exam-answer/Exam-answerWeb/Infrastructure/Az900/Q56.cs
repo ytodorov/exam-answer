@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Fault tolerance.", 
+                    Text = "Fault tolerance.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Elasticity.", 
+                    Text = "Elasticity.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Scalability.", 
+                    Text = "Scalability.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Low latency.", 
+                    Text = "Low latency.",
                     IsCorrect = false
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="High Availability vs. Fault Tolerance vs. Disaster Recovery",
                     Url = "https://www.greenhousedata.com/blog/high-availability-vs-fault-tolerance-vs-disaster-recovery"
                 },
-            },                
+            },
         };
     }
 }

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Firewall.", 
+                    Text = "Azure Firewall.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A network security group (NSG).", 
+                    Text = "A network security group (NSG).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Information Protection.", 
+                    Text = "Azure Information Protection.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "DDoS protection.", 
+                    Text = "DDoS protection.",
                     IsCorrect = true
                 },
             },
@@ -99,7 +98,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure DDoS Protection Standard overview",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/ddos-protection-overview"
                 },
-            },           
+            },
         };
     }
 }

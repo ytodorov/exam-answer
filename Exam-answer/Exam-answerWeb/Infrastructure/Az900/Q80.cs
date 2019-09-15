@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -51,22 +50,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a new backup policy.", 
+                    Text = "Create a new backup policy.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Configure the extensions for VM3 and VM4.", 
+                    Text = "Configure the extensions for VM3 and VM4.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a storage account.", 
+                    Text = "Create a storage account.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a new Recovery Services vault.", 
+                    Text = "Create a new Recovery Services vault.",
                     IsCorrect = true
                 },
             },
@@ -86,7 +85,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Set up disaster recovery for Azure VMs",
                     Url = "https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication",
                 },
-            },           
+            },
         };
     }
 }

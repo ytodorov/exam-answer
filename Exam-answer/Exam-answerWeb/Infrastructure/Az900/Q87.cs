@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -51,22 +50,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Container1.", 
+                    Text = "Container1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "RG1.", 
+                    Text = "RG1.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Share1.", 
+                    Text = "Share1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Storage1.", 
+                    Text = "Storage1.",
                     IsCorrect = false
                 },
             },
@@ -98,7 +97,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Manage Azure resources by using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template",
                 },
-            },           
+            },
         };
     }
 }

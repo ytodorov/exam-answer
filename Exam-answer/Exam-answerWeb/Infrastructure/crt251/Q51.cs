@@ -37,11 +37,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Report on campaign return on investment (ROI).",                    
+                    Text = "Report on campaign return on investment (ROI).",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Dashboard of Month-over- month trend of lead conversions.",                    
+                    Text = "Dashboard of Month-over- month trend of lead conversions.",
                 },
                 new AnswerEntity()
                 {

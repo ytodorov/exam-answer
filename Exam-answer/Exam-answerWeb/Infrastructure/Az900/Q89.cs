@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "An Azure Key Vault and an access policy.", 
+                    Text = "An Azure Key Vault and an access policy.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A Recovery Services vault and a backup policy.", 
+                    Text = "A Recovery Services vault and a backup policy.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Active Directory (AD) Identity Protection and an Azure policy.", 
+                    Text = "Azure Active Directory (AD) Identity Protection and an Azure policy.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure Storage account and an access policy.", 
+                    Text = "An Azure Storage account and an access policy.",
                     IsCorrect = false
                 },
             },
@@ -66,7 +65,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Secure VM password with Key Vault",
                     Url = "https://azure.microsoft.com/en-us/resources/templates/101-vm-secure-password/",
                 },
-            },           
+            },
         };
     }
 }

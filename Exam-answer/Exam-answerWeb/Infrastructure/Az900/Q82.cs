@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,27 +34,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Modify the extensionProfile section of the Azure Resource Manager template.", 
+                    Text = "Modify the extensionProfile section of the Azure Resource Manager template.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create an automation account.", 
+                    Text = "Create an automation account.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Upload a configuration script.", 
+                    Text = "Upload a configuration script.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a new virtual machine scale set in the Azure portal.", 
+                    Text = "Create a new virtual machine scale set in the Azure portal.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create an Azure policy.", 
+                    Text = "Create an Azure policy.",
                     IsCorrect = false
                 },
             },
@@ -75,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Using Virtual Machine Scale Sets with the Azure DSC Extension",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-dsc",
                 },
-            },           
+            },
         };
     }
 }

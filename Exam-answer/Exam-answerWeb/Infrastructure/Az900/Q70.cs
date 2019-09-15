@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,32 +30,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Get-Event Event | where ($_.EventType –eq \"error\").", 
+                    Text = "Get-Event Event | where ($_.EventType –eq \"error\").",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Get-Event Event | where ($_.EventType == \"error\").", 
+                    Text = "Get-Event Event | where ($_.EventType == \"error\").",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Search in (Event) * | where EventType –eq \"error\".", 
+                    Text = "Search in (Event) * | where EventType –eq \"error\".",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Search in (Event) \"error\".", 
+                    Text = "Search in (Event) \"error\".",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Select *from Event where EventType == \"error\".", 
+                    Text = "Select *from Event where EventType == \"error\".",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Event | where EventType is \"error\".", 
+                    Text = "Event | where EventType is \"error\".",
                     IsCorrect = false
                 },
             },
@@ -75,7 +74,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Search in multiple tables: search in (Event, SecurityEvent) \"error\"| take 100"
                 }
-                
             },
 
             References = new List<ReferenceEntity>()
@@ -90,7 +88,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Get started with Log Analytics in Azure Monitor",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-portal",
                 },
-            },           
+            },
         };
     }
 }

@@ -37,16 +37,16 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add an index to the account field on the contact object.",                    
+                    Text = "Add an index to the account field on the contact object.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Remove the account assignment for all contacts.",                    
+                    Text = "Remove the account assignment for all contacts.",
                 },
                 new AnswerEntity()
                 {
                     Text = "Ensure that no single account has more than 10,000 contacts.",
-                    IsCorrect =true                     
+                    IsCorrect =true
                 },
             }
         };

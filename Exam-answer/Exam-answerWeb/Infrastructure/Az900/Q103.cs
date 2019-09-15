@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 238,
             Section = "",
             Contents = new List<ContentEntity>()
-            {               
+            {
                 new ContentEntity()
                 {
                     Text = "Your company registers a domain name of contoso.com.",
@@ -43,12 +42,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -84,7 +83,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Tutorial: Host your domain in Azure DNS",
                     Url = "https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
                 },
-            },           
+            },
         };
     }
 }

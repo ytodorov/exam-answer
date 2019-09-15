@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "One network security group (NSG).", 
+                    Text = "One network security group (NSG).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "10 virtual network gateways.", 
+                    Text = "10 virtual network gateways.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "10 Azure ExpressRoute circuits.", 
+                    Text = "10 Azure ExpressRoute circuits.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "One Azure firewall.", 
+                    Text = "One Azure firewall.",
                     IsCorrect = true
                 },
             },
@@ -56,7 +55,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "Azure Firewall: Cloud-native network security to protect your Azure Virtual Network resources"
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -71,7 +70,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure Firewall Documentation",
                     Url = "https://docs.microsoft.com/en-us/azure/firewall/"
                 },
-            },           
+            },
         };
     }
 }

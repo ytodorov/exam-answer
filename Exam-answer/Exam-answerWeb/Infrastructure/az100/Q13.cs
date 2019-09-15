@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Role-Based Access Control (RBAC)",                   
+                    Text = "Role-Based Access Control (RBAC)",
                 },
                 new AnswerEntity()
                 {

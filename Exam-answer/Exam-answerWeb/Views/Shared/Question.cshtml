@@ -10,172 +10,171 @@
         <span class="k-link k-state-selected">Question @(Model.Exam.Questions.IndexOf(Model) + 1)</span>
         @if (Model.Contents?.Count >= 1)
         {
-            <div>
+        <div>
 
-                <h2>
-                    @{
+            <h2>
+                @{
                         var lines = Model.Contents.FirstOrDefault()?.Text?.Split(Environment.NewLine);
-                    }
-                    @for (int i = 0; i < lines.Length; i++)
+                }
+                @for (int i = 0; i < lines.Length; i++)
                     {
                         var line = lines[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-                        @Html.Raw(line)
+                @Html.Raw(line)
 
                         if (i != lines.Length - 1)
                         {
-                            <br />
+                <br />
                         }
                     }
-                </h2>
+            </h2>
 
-                @{
+            @{
                     var lastContent = Model.Contents.Skip(1).ToList();
-                }
-                @foreach (var content in lastContent)
+            }
+            @foreach (var content in lastContent)
                 {
-                    <h2>
-                        @{
+            <h2>
+                @{
                             var lines2 = content.Text.Split(Environment.NewLine);
-                        }
-                        @for (int i = 0; i < lines2.Length; i++)
+                }
+                @for (int i = 0; i < lines2.Length; i++)
                     {
                         var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-                            @Html.Raw(line)
+                @Html.Raw(line)
 
                             if (i != lines2.Length - 1)
                             {
-                                <br />
+                <br />
                             }
                         }
-                    </h2>
+            </h2>
                 }
-            </div>
+        </div>
         }
     </li>
     @if (Model.QuestionType == QuestionType.CheckBox)
     {
-        <li class="k-state-active">
-            Answers
-            <div>
-                <br />
-                <ul class="fieldlist">
-                    @foreach (var answer in Model.Answers)
+    <li class="k-state-active">
+        Answers
+        <div>
+            <br />
+            <ul class="fieldlist">
+                @foreach (var answer in Model.Answers)
                     {
 
                         if (answer.IsCorrect == true)
                         {
-                            <li class="correct">
-                                <h3>
-                                    <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                <li class="correct">
+                    <h3>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
 
-                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                                        @(answer.Text)
-                                    </label>
-                                </h3>
-                            </li>
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            @(answer.Text)
+                        </label>
+                    </h3>
+                </li>
                         }
                         else
                         {
-                            <li>
-                                <h3>
-                                    <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                <li>
+                    <h3>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
 
-                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
 
-                                        @(answer.Text)
-
-                                    </label>
-                                </h3>
-                            </li>
+                            @(answer.Text)
+                        </label>
+                    </h3>
+                </li>
                         }
                     }
-                </ul>
-                <br />
-            </div>
-        </li>
+            </ul>
+            <br />
+        </div>
+    </li>
     }
     @if (Model.QuestionType == QuestionType.RadioButon)
     {
-        <li class="k-state-active">
-            Answers
-            <div>
-                <br />
-                <ul class="fieldlist">
-                    @foreach (var answer in Model.Answers)
+    <li class="k-state-active">
+        Answers
+        <div>
+            <br />
+            <ul class="fieldlist">
+                @foreach (var answer in Model.Answers)
                     {
                         if (answer.IsCorrect == true)
                         {
-                            <li class="correct">
-                                <h3>
-                                    <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                <li class="correct">
+                    <h3>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
 
-                                    <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                                        @(Html.Raw(answer.Text))
-                                    </label>
-                                </h3>
-                            </li>
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            @(Html.Raw(answer.Text))
+                        </label>
+                    </h3>
+                </li>
                         }
                         else
                         {
-                            <li>
-                                <h3>
-                                    <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                <li>
+                    <h3>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
 
-                                    <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                                        @(Html.Raw(answer.Text))
-                                    </label>
-                                </h3>
-                            </li>
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            @(Html.Raw(answer.Text))
+                        </label>
+                    </h3>
+                </li>
                         }
                     }
-                </ul>
-                <br />
-            </div>
-        </li>
+            </ul>
+            <br />
+        </div>
+    </li>
     }
     @if (Model.QuestionType == QuestionType.CustomHtml)
     {
-        <li class="k-state-active">
-            Answers
-            <div>
-                <p>
-                    @foreach (var answer in Model.Answers)
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                @foreach (var answer in Model.Answers)
                     {
-                        @(Html.Raw(answer.Text))
+                @(Html.Raw(answer.Text))
                     }
-                </p>
-            </div>
-        </li>
+            </p>
+        </div>
+    </li>
     }
     @if (Model.Explanations?.Count > 0)
     {
-        <li>
-            Explanation
-            <div>
-                @foreach (var explanation in Model.Explanations)
+    <li>
+        Explanation
+        <div>
+            @foreach (var explanation in Model.Explanations)
                 {
-                    <h4>
-                        @explanation.Text
-                    </h4>
+            <h4>
+                @explanation.Text
+            </h4>
                 }
-            </div>
-        </li>
+        </div>
+    </li>
     }
     @if (Model.References?.Count > 0)
     {
-        <li>
-            References
-            <div>
-                @foreach (var reference in Model.References)
+    <li>
+        References
+        <div>
+            @foreach (var reference in Model.References)
                 {
-                    <h5>
-                        <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
-                    </h5>
+            <h5>
+                <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
+            </h5>
                 }
-            </div>
-        </li>
+        </div>
+    </li>
     }
 </ul>
 <br />

@@ -31,11 +31,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Configure an approval process for the RSM and a workflow rule for the RVP.",                    
+                    Text = "Configure an approval process for the RSM and a workflow rule for the RVP.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create two approval processes, one for the RSM and one for the RVP.",                    
+                    Text = "Create two approval processes, one for the RSM and one for the RVP.",
                 },
                 new AnswerEntity()
                 {

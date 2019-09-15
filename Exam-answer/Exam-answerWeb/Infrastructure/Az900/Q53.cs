@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Only enterprises that are registered in Germany.", 
+                    Text = "Only enterprises that are registered in Germany.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Only enterprises that purchase their azure licenses from a partner based in Germany.", 
+                    Text = "Only enterprises that purchase their azure licenses from a partner based in Germany.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Any user or enterprise that requires its data to reside in Germany.", 
+                    Text = "Any user or enterprise that requires its data to reside in Germany.",
                     IsCorrect = true
                 },
             },
@@ -74,7 +73,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Welcome to Azure Germany",
                     Url = "https://docs.microsoft.com/en-us/azure/germany/germany-welcome",
                 },
-            },           
+            },
         };
     }
 }

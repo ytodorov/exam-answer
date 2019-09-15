@@ -29,7 +29,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Automatically add child campaigns of the primary campaign source if the child campaigns have an end date that fails before the opportunity close date.",                    
+                    Text = "Automatically add child campaigns of the primary campaign source if the child campaigns have an end date that fails before the opportunity close date.",
                 },
                 new AnswerEntity()
                 {
@@ -38,7 +38,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Have representatives populate a field on the opportunity record with the dollar amount of the expected revenue from the campaigns that influenced the opportunity.",                    
+                    Text = "Have representatives populate a field on the opportunity record with the dollar amount of the expected revenue from the campaigns that influenced the opportunity.",
                 },
             }
         };

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -23,22 +22,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Event Hubs.", 
+                    Text = "Azure Event Hubs.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Analysis Services.", 
+                    Text = "Azure Analysis Services.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Monitor.", 
+                    Text = "Azure Monitor.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Log Analytics.", 
+                    Text = "Azure Log Analytics.",
                     IsCorrect = true
                 },
             },
@@ -58,7 +57,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure Monitor",
                     Url = "https://azure.microsoft.com/en-us/services/monitor/"
                 }
-            },           
+            },
         };
     }
 }

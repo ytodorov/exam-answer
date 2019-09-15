@@ -33,12 +33,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable validation rules on the lead.",                    
+                    Text = "Enable validation rules on the lead.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Map custom lead fields to corresponding custom opportunity fields.",            
+                    Text = "Map custom lead fields to corresponding custom opportunity fields.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

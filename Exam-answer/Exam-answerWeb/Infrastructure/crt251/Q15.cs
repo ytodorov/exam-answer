@@ -28,11 +28,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Clone the contact record and add it to the second account.",                    
+                    Text = "Clone the contact record and add it to the second account.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add the contact to the partners related list on the second account.",                   
+                    Text = "Add the contact to the partners related list on the second account.",
                 },
                 new AnswerEntity()
                 {

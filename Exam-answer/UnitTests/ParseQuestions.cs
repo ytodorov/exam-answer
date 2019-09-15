@@ -1,6 +1,5 @@
 ﻿using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
-using IronPdf;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +9,6 @@ using Xunit;
 
 namespace UnitTests
 {
-
     public class ParseQuestions
     {
         [Fact]
@@ -38,9 +36,7 @@ namespace UnitTests
             }
 
             return sourceText;
-
         }
-
 
         private void GenerateCS(List<QuestionEntity> questions)
         {
@@ -93,10 +89,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 $@"
                 new AnswerEntity()
                 {{
-                    Text = ""{answer.Text.Replace("\"", "\\\"")}"", 
+                    Text = ""{answer.Text.Replace("\"", "\\\"")}"",
                     IsCorrect = {answer.IsCorrect.GetValueOrDefault().ToString().ToLowerInvariant()}
                 }},");
-
                 }
 
                 sb.Append($@"
@@ -116,13 +111,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {{
                     Text = ""{explanation.Text.Replace("\"", "\\\"")}""
                 }},");
-
                 }
 
                 sb.Append($@"
             }},
 ");
-
 
                 sb.Append($@"
             References = new List<ReferenceEntity>()
@@ -139,13 +132,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 }
 
                 sb.Append($@"
-            }},           
+            }},
         }};
     }}
 }}
 "
                     );
-
 
                 string textToWrite = sb.ToString();
 
@@ -156,7 +148,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
         [Fact]
         public void ParseAz900()
         {
-
             List<QuestionEntity> questions = new List<QuestionEntity>();
 
             var files = Directory.GetFiles("AZ-900", "*.txt").OrderBy(s => s).ToList();
@@ -190,7 +181,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 }
 
                 //var linesStartingWithQuestion = lines.Where(l => l.StartsWith("QUESTION ")).ToList();
-               
 
                 //foreach (var line in linesStartingWithQuestion)
                 //{
@@ -210,9 +200,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     // Catch parsing errors here
                     if (questionLines.Count > 100)
                     {
-
                     }
-
 
                     // Fix missing : in Explanation
 
@@ -224,7 +212,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                             questionLines[currIndexLine] = "Explanation:";
                         }
                     }
-                    
+
                     var answer1 = questionLines.FirstOrDefault(f => f.Trim().StartsWith("A."));
 
                     var indexOfFirstAnswer = questionLines.IndexOf(answer1);
@@ -312,7 +300,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     if (questionEntity.Answers.Count(a => a.IsCorrect.GetValueOrDefault()) > 1)
                     {
                         questionEntity.QuestionType = QuestionType.CheckBox;
-                    }                    
+                    }
 
                     string sectionLine = questionLines.FirstOrDefault(f => f.StartsWith("Section:"));
                     string sectionName = sectionLine.Replace("Section:", string.Empty).Replace("Explanation", string.Empty).Trim();
@@ -366,9 +354,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                             }
                         }
                     }
-                  
-
-                    
 
                     questions.Add(questionEntity);
                 }
@@ -383,14 +368,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
             questions = questions.Where(q => !saveDuplicatesOrders.Any(d => d == q.Order)).ToList();
 
-            
-
             GenerateCS(questions);
-
-
-
-
-
 
             for (int i = 0; i < questions.Count; i++)
             {
@@ -421,8 +399,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                             duplicateQuestions.Add(q1);
                             questionsDuplicatesOrders.Add(q1.Order.GetValueOrDefault());
                         }
-                        
-                        
                     }
                 }
             }
@@ -437,7 +413,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
             string toWrite = sbDuplicatesToSave.ToString();
 
             File.WriteAllText("AZ-900\\az-900Duplicates.txt", toWrite);
-
         }
     }
 }

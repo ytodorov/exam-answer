@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 190,
             Section = "",
             Contents = new List<ContentEntity>()
-            {               
+            {
                 new ContentEntity()
                 {
                     Text = "You have an Azure Active Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers.",
@@ -39,12 +38,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = false
                 },
             },
@@ -81,7 +80,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Secure access and data in Azure Logic Apps",
                     Url = "https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app",
                 },
-            },           
+            },
         };
     }
 }

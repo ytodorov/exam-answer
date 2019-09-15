@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using DAL.Entities;
 using Exam_answerWeb.Controllers;
-using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Caching.Memory;
+using System;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Exam_AnswerWeb.Controllers
 {
@@ -65,7 +62,6 @@ namespace Exam_AnswerWeb.Controllers
 
             string cd = Environment.CurrentDirectory;
 
-           
             QuestionOldViewModel questionViewModel = new QuestionOldViewModel()
             {
                 Id = id,
@@ -73,7 +69,6 @@ namespace Exam_AnswerWeb.Controllers
                 H1CloseTag = "</h1>",
                 H2OpenTag = "<h2>",
                 H2CloseTag = "</h2>",
-
             };
 
             string filePath = $"{folderName}/question{intId}";
@@ -97,7 +92,6 @@ namespace Exam_AnswerWeb.Controllers
                 }
 
                 fileContent = sb.ToString();
-
 
                 int indexLiStart = fileContent.IndexOf("<li");
                 int indexLiEnd = fileContent.IndexOf("</li>");
@@ -154,7 +148,7 @@ namespace Exam_AnswerWeb.Controllers
                 microdataJson.Append(
 $@"
 <script type=""application/ld+json"">
-{{  
+{{
   ""@context"": ""http://schema.org"",
   ""@type"": ""Question"",
   ""name"": ""{title}"",
@@ -165,8 +159,6 @@ $@"
 
                 string microdata = microdataJson.ToString();
                 ViewData["microdata"] = microdata;
-
-
             }
 
             return View(filePath, questionViewModel);

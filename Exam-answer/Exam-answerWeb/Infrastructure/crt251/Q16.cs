@@ -27,15 +27,15 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a customized site where partners can self-register and access their leads.",                    
+                    Text = "Create a customized site where partners can self-register and access their leads.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Configure a separate leas record type and page layout for the Partner Community.",                    
+                    Text = "Configure a separate leas record type and page layout for the Partner Community.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a task for a partner when a new lead is created and assign the task to the partner in the Partner Community.",                   
+                    Text = "Create a task for a partner when a new lead is created and assign the task to the partner in the Partner Community.",
                 },
                 new AnswerEntity()
                 {

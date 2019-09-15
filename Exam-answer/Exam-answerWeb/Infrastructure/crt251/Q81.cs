@@ -35,11 +35,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Build a custom object with private sharing to capture the additional fields as a separate record.",                    
+                    Text = "Build a custom object with private sharing to capture the additional fields as a separate record.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Implement field-level security to allow access to fields for the respective regional sales teams.",     
+                    Text = "Implement field-level security to allow access to fields for the respective regional sales teams.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 8,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
-            {                
+            {
                 new ContentEntity()
                 {
                     Text = "You plan to deploy several Azure virtual machines.",
@@ -35,12 +34,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -58,7 +57,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "A region is a set of datacenters deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. With more global regions than any other cloud provider, Azure gives customers the flexibility to deploy applications where they need to. Azure is generally available in 46 regions around the world, with plans announced for 8 additional regions."
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -68,7 +67,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure regions",
                     Url = "https://azure.microsoft.com/en-us/global-infrastructure/regions/",
                 },
-            },           
+            },
         };
     }
 }

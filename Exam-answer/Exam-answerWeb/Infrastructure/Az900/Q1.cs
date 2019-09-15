@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,27 +26,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Dedicated hardware.", 
+                    Text = "Dedicated hardware.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Unsecured connections.", 
+                    Text = "Unsecured connections.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Limited storage.", 
+                    Text = "Limited storage.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Metered pricing.", 
+                    Text = "Metered pricing.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Self-service management.", 
+                    Text = "Self-service management.",
                     IsCorrect = true
                 },
             },
@@ -88,7 +87,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is a Public Cloud - Definition",
                     Url = "https://azure.microsoft.com/en-us/overview/what-is-a-public-cloud/"
                 }
-            },           
+            },
         };
     }
 }

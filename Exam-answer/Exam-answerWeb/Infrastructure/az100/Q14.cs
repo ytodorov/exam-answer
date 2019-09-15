@@ -40,7 +40,7 @@ Set-AzureRmResource -Tag @{Dept=""IT""} -ResourceId $r.ResourceId -Force"
             {
                 new AnswerEntity()
                 {
-                    Text = "Refactor the code by using the Azure Command-Line Interface (CLI).",                    
+                    Text = "Refactor the code by using the Azure Command-Line Interface (CLI).",
                 },
                 new AnswerEntity()
                 {
@@ -49,7 +49,7 @@ Set-AzureRmResource -Tag @{Dept=""IT""} -ResourceId $r.ResourceId -Force"
                 },
                 new AnswerEntity()
                 {
-                    Text = "Deploy the tag by using an Azure Resource Manager template.",                   
+                    Text = "Deploy the tag by using an Azure Resource Manager template.",
                 },
                 new AnswerEntity()
                 {

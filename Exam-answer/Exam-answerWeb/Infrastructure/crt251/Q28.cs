@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Opportunity, opportunity product, campaign, custom object-shipment status.",                    
+                    Text = "Opportunity, opportunity product, campaign, custom object-shipment status.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Opportunity, opportunity product, custom object-shipment status.",              
+                    Text = "Opportunity, opportunity product, custom object-shipment status.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Lead, opportunity, product, custom object-shipment status.",                    
+                    Text = "Lead, opportunity, product, custom object-shipment status.",
                 },
             }
         };

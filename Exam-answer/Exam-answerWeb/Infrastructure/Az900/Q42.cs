@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The virtual machines can be moved to the new subscription.", 
+                    Text = "The virtual machines can be moved to the new subscription.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "The virtual machines can be moved to the new subscription only if they are all in the same resource group.", 
+                    Text = "The virtual machines can be moved to the new subscription only if they are all in the same resource group.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The virtual machines can be moved to the new subscription only if they run Windows Server 2016.", 
+                    Text = "The virtual machines can be moved to the new subscription only if they run Windows Server 2016.",
                     IsCorrect = false
                 },
             },
@@ -60,7 +59,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "New resource IDs are created as part of the move. After the VM has been moved, you will need to update your tools and scripts to use the new resource IDs."
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Move a Windows VM to another Azure subscription or resource group",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/move-vm"
                 },
-            },                
+            },
         };
     }
 }

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -88,7 +87,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                  new ContentEntity()
                 {
                     Text = "Name: VM4, Type: Virtual machine",
-                },            
+                },
                 new ContentEntity()
                 {
                     Text = "The network security team implements several network security groups (NSGs).",
@@ -179,27 +178,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Diagram in VNet1.", 
+                    Text = "Diagram in VNet1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The security recommendations in Azure Advisor.", 
+                    Text = "The security recommendations in Azure Advisor.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Diagnostic settings in Azure Monitor.", 
+                    Text = "Diagnostic settings in Azure Monitor.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Diagnose and solve problems in Traffic Manager profiles.", 
+                    Text = "Diagnose and solve problems in Traffic Manager profiles.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "IP flow verify in Azure Network Watcher.", 
+                    Text = "IP flow verify in Azure Network Watcher.",
                     IsCorrect = true
                 },
             },
@@ -235,7 +234,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Introduction to IP flow verify in Azure Network Watcher",
                     Url = "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-ip-flow-verify-overview",
                 },
-            },           
+            },
         };
     }
 }

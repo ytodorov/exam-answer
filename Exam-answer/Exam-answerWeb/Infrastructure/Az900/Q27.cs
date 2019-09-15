@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The delete lock must be removed before an administrator.", 
+                    Text = "The delete lock must be removed before an administrator.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure policy must be modified before an administrator.", 
+                    Text = "An Azure policy must be modified before an administrator.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure tag must be added before an administrator.", 
+                    Text = "An Azure tag must be added before an administrator.",
                     IsCorrect = false
                 },
             },
@@ -83,7 +82,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Lock resources",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources"
                 },
-            },           
+            },
         };
     }
 }

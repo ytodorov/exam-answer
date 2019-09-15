@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Is moved automatically to another resource group.", 
+                    Text = "Is moved automatically to another resource group.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Continues to function normally.", 
+                    Text = "Continues to function normally.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Is now a read-only object.", 
+                    Text = "Is now a read-only object.",
                     IsCorrect = false
                 },
             },
@@ -87,7 +86,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Overview of the Azure Policy service",
                     Url = "https://docs.microsoft.com/en-us/azure/governance/policy/overview",
                 },
-            },           
+            },
         };
     }
 }

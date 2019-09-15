@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Key Vault.", 
+                    Text = "Azure Key Vault.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Information Protection.", 
+                    Text = "Azure Information Protection.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Security Center.", 
+                    Text = "Azure Security Center.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Multi-Factor Authentication (MFA).", 
+                    Text = "Azure Multi-Factor Authentication (MFA).",
                     IsCorrect = false
                 },
             },
@@ -91,7 +90,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is Azure Key Vault?",
                     Url = "https://docs.microsoft.com/en-in/azure/key-vault/key-vault-overview"
                 },
-            },           
+            },
         };
     }
 }

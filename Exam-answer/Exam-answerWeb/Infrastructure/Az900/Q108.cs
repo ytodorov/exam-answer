@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Use Azure Storage Explorer to copy the files.", 
+                    Text = "Use Azure Storage Explorer to copy the files.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use the Azure Import/Export service.", 
+                    Text = "Use the Azure Import/Export service.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Generate a shared access signature (SAS). Map a drive, and then copy the files by using File Explorer.", 
+                    Text = "Generate a shared access signature (SAS). Map a drive, and then copy the files by using File Explorer.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Generate an access key. Map a drive, and then copy the files by using File Explorer.", 
+                    Text = "Generate an access key. Map a drive, and then copy the files by using File Explorer.",
                     IsCorrect = false
                 },
             },
@@ -62,7 +61,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Move data to and from Azure Blob Storage using Azure Storage Explorer",
                     Url = "https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer",
                 },
-            },           
+            },
         };
     }
 }

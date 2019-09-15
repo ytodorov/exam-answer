@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,22 +38,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Move VM1 to Subscription2.", 
+                    Text = "Move VM1 to Subscription2.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Modify the IP address space of VNet2.", 
+                    Text = "Modify the IP address space of VNet2.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Provision virtual network gateways.", 
+                    Text = "Provision virtual network gateways.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Move VNet1 to Subscription2.", 
+                    Text = "Move VNet1 to Subscription2.",
                     IsCorrect = false
                 },
             },
@@ -82,7 +81,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Configure a VNet-to-VNet VPN gateway connection by using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal",
                 },
-            },           
+            },
         };
     }
 }

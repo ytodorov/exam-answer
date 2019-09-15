@@ -24,11 +24,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Define a workflow rule that automatically defaults to a pricebook and negotiation stage.",                    
+                    Text = "Define a workflow rule that automatically defaults to a pricebook and negotiation stage.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Configure the opportunity record types to enforce product line item.",                    
+                    Text = "Configure the opportunity record types to enforce product line item.",
                 },
                 new AnswerEntity()
                 {

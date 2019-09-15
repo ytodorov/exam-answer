@@ -48,7 +48,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                     <option selected=""selected"">$tags</option>
                 </select>
 ",
-                },               
+                },
             },
             Explanations = new List<ExplanationEntity>()
             {

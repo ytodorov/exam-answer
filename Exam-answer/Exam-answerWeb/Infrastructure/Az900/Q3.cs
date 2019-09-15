@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 3,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
-            {              
+            {
                 new ContentEntity()
                 {
                     Text = "Your company plans to migrate all its data and resources to Azure.",
@@ -72,7 +71,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "",
                     Url = "https://azure.microsoft.com/en-in/overview/what-is-paas/"
                 }
-            },           
+            },
         };
     }
 }

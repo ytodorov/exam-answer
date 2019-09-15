@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Start an existing Azure virtual machine.", 
+                    Text = "Start an existing Azure virtual machine.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Access your data stored in Azure.", 
+                    Text = "Access your data stored in Azure.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Access the Azure portal.", 
+                    Text = "Access the Azure portal.",
                     IsCorrect = false
                 },
             },
@@ -69,7 +68,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Azure subscriptions with credit such as Free Trial and Visual Studio Enterprise have spending limits on them. This means you can only use services up to the included credit. When your usage reaches the spending limit, Azure disables your subscription for the remainder of that billing period. Your subscription is disabled to protect you from accidentally incurring charges for usage beyond the credit included with your subscription. To remove your spending limit, see Remove the spending limit in Account Center."
                 },
-              
             },
 
             References = new List<ReferenceEntity>()
@@ -84,7 +82,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Reactivate a disabled Azure subscription",
                     Url = "https://docs.microsoft.com/bs-latn-ba/azure/billing/billing-subscription-become-disable"
                 }
-            },                
+            },
         };
     }
 }

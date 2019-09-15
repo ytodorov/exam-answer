@@ -23,7 +23,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "The Account currency.",                    
+                    Text = "The Account currency.",
                 },
                 new AnswerEntity()
                 {
@@ -32,11 +32,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Corporate currency.",                   
+                    Text = "The Corporate currency.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Opportunity currency.",                   
+                    Text = "The Opportunity currency.",
                 },
             }
         };

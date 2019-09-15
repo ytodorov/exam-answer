@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,17 +34,17 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "From the Directory role blade, modify the directory role.", 
+                    Text = "From the Directory role blade, modify the directory role.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "From the Licenses blade, assign a new license.", 
+                    Text = "From the Licenses blade, assign a new license.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From the Groups blade, invite the user account to a new group.", 
+                    Text = "From the Groups blade, invite the user account to a new group.",
                     IsCorrect = false
                 },
             },
@@ -81,7 +80,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Assign administrator and non-administrator roles to users with Azure Active Directory",
                     Url = "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal",
                 },
-            },           
+            },
         };
     }
 }

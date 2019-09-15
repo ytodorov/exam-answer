@@ -47,7 +47,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 </select>
                 &nbsp;--set tags.Dept=IT",
                     IsCorrect = true
-                },              
+                },
             },
             Explanations = new List<ExplanationEntity>()
             {

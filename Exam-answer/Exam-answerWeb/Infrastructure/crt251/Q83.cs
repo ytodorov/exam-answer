@@ -28,11 +28,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a workflow rule to enable field access for sales directors based on the sales stage.",                    
+                    Text = "Create a workflow rule to enable field access for sales directors based on the sales stage.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Modify the profile for sales directors to enable the \"Modify All\" object permission for opportunities.",                    
+                    Text = "Modify the profile for sales directors to enable the \"Modify All\" object permission for opportunities.",
                 },
                 new AnswerEntity()
                 {

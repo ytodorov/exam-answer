@@ -1,7 +1,6 @@
-
 using DAL.Entities;
-using System.Collections.Generic;
 using Exam_answerWeb.Extensions;
+using System.Collections.Generic;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -60,22 +59,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Change the DenyWebSites outbound security rule.", 
+                    Text = "Change the DenyWebSites outbound security rule.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Change the Port_80 inbound security rule.", 
+                    Text = "Change the Port_80 inbound security rule.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Disassociate the NSG from a network interface.", 
+                    Text = "Disassociate the NSG from a network interface.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Associate the NSG to Subnet1.", 
+                    Text = "Associate the NSG to Subnet1.",
                     IsCorrect = true
                 },
             },
@@ -99,7 +98,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Create, change, or delete a network security group",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group",
                 },
-            },           
+            },
         };
     }
 }

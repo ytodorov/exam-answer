@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Run a different operating system than the other virtual machines.", 
+                    Text = "Run a different operating system than the other virtual machines.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Be deployed to a separate resource group.", 
+                    Text = "Be deployed to a separate resource group.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Have two network interfaces.", 
+                    Text = "Have two network interfaces.",
                     IsCorrect = false
                 },
             },
@@ -95,7 +94,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Virtual Network Documentation",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/"
                 },
-            },           
+            },
         };
     }
 }

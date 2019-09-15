@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Enable Salesforce Console for Sales to see customer purchasing activity.",                    
+                    Text = "Enable Salesforce Console for Sales to see customer purchasing activity.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a global publisher action to view all customer purchasing activity.",                    
+                    Text = "Create a global publisher action to view all customer purchasing activity.",
                 },
                 new AnswerEntity()
                 {
@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom object related to the account, contact, and contract objects.",                    
+                    Text = "Create a custom object related to the account, contact, and contract objects.",
                 },
             }
         };

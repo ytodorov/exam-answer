@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -23,22 +22,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "The Knowledge Center website.", 
+                    Text = "The Knowledge Center website.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Advisor blade from the Azure portal.", 
+                    Text = "The Advisor blade from the Azure portal.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Compliance Manager from the Security Trust Portal.", 
+                    Text = "Compliance Manager from the Security Trust Portal.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Security Center blade from the Azure portal.", 
+                    Text = "The Security Center blade from the Azure portal.",
                     IsCorrect = true
                 },
             },
@@ -67,7 +66,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text= "Regulatory compliance dashboard in Azure Security Center now available",
                     Url = "https://azure.microsoft.com/en-us/blog/regulatory-compliance-dashboard-in-azure-security-center-now-available/",
                 },
-            },           
+            },
         };
     }
 }

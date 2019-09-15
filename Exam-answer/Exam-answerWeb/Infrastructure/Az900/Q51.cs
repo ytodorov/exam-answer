@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Network security groups (NSGs).", 
+                    Text = "Network security groups (NSGs).",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Service Bus.", 
+                    Text = "Azure Service Bus.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A local network gateway.", 
+                    Text = "A local network gateway.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A route filter.", 
+                    Text = "A route filter.",
                     IsCorrect = false
                 },
             },
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Security groups",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview"
                 },
-            },                
+            },
         };
     }
 }

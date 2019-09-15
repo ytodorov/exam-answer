@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Resource Manager templates.", 
+                    Text = "Azure Resource Manager templates.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Virtual machine scale sets.", 
+                    Text = "Virtual machine scale sets.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Azure API Management service.", 
+                    Text = "The Azure API Management service.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Management groups.", 
+                    Text = "Management groups.",
                     IsCorrect = false
                 },
             },
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure Quickstart Templates",
                     Url = "https://azure.microsoft.com/en-us/resources/templates/"
                 }
-            },           
+            },
         };
     }
 }

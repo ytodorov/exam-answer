@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 24,
             Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
-            {                
+            {
                 new ContentEntity()
                 {
                     Text = "An Azure administrator plans to run a PowerShell script that creates Azure resources.",
@@ -35,12 +34,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -54,7 +53,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "If there's no package for the Azure CLI for your distribution, install the CLI manually by running a script."
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -63,8 +62,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Install Azure CLI on Linux manually",
                     Url = "https://docs.microsoft.com/bs-latn-ba/cli/azure/install-azure-cli-linux?view=azure-cli-latest"
-                },               
-            },           
+                },
+            },
         };
     }
 }

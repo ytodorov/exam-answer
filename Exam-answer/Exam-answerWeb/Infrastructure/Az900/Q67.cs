@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Premier.", 
+                    Text = "Premier.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Developer.", 
+                    Text = "Developer.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Professional Direct.", 
+                    Text = "Professional Direct.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Standard.", 
+                    Text = "Standard.",
                     IsCorrect = false
                 },
             },
@@ -82,7 +81,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Compare support plans",
                     Url = "https://azure.microsoft.com/en-gb/support/plans/",
                 },
-            },           
+            },
         };
     }
 }

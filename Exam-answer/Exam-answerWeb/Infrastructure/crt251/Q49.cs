@@ -23,7 +23,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a chatter group that allows a partner to post item appropriate list view and report.",                    
+                    Text = "Create a chatter group that allows a partner to post item appropriate list view and report.",
                 },
                 new AnswerEntity()
                 {
@@ -32,11 +32,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create the opportunity list view and report folder in the partner communities for all partners.",                    
+                    Text = "Create the opportunity list view and report folder in the partner communities for all partners.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a new tab in the partner communities to display the appropriate list view and report folder.",                    
+                    Text = "Create a new tab in the partner communities to display the appropriate list view and report folder.",
                 },
             }
         };

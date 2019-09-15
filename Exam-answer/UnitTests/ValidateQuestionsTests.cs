@@ -1,13 +1,11 @@
 using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using Xunit;
-
 
 namespace UnitTests
 {
@@ -24,7 +22,6 @@ namespace UnitTests
         [Fact]
         public void CheckForSimilarityOfQuestionsTest()
         {
-
             List<ExamEntity> exams = DataGenerator.Initialize(null);
 
             ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("AZ-900"));
@@ -45,11 +42,9 @@ namespace UnitTests
 
                     string text1 = q1.ContentText.Replace(" ", string.Empty) + q1.AnswerText.Replace(" ", string.Empty);
 
-
                     string text2 = q2.ContentText.Replace(" ", string.Empty) + q2.AnswerText.Replace(" ", string.Empty);
 
                     string helperTextForDebug = $"{q1.Id + 1}{text1}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{q2.Id + 1}{text2}";
-                         
 
                     double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
                     distances.Add(Math.Round(distance, 2));
@@ -59,7 +54,6 @@ namespace UnitTests
                             q1, q2, distance.ToString()));
 
                         string textToSee = $"{text1} {Environment.NewLine}{Environment.NewLine} {text2}";
-
                     }
                 }
             }
@@ -98,7 +92,6 @@ namespace UnitTests
                 Assert.False(string.IsNullOrWhiteSpace(question.ExplanationText));
             }
         }
-
 
         [Fact]
         public void AllQuestionsShouldHaveAnswerTextTest()
@@ -157,8 +150,6 @@ namespace UnitTests
 
             StringBuilder sb = new StringBuilder();
 
-
-
             foreach (QuestionEntity question in crt251.Questions)
             {
                 if (!question.Answers.Any(a => a.IsCorrect == true))
@@ -200,7 +191,6 @@ namespace UnitTests
                 }
                 for (int i = 0; i < 6; i++)
                 {
-
                     if (i < question.Answers?.Count)
                     {
                         AnswerEntity answer = question.Answers[i];
@@ -215,7 +205,6 @@ namespace UnitTests
                             }
                         }
                     }
-
                 }
 
                 sb = new StringBuilder(sb.ToString().Trim(','));
@@ -237,13 +226,11 @@ namespace UnitTests
                 //sb.Append(knowledgeArea);
 
                 sb.Append(Environment.NewLine);
-
             }
 
             string result = sb.ToString();
 
             File.WriteAllText("exportCrt-251.csv", result);
-
         }
 
         [Fact]
@@ -253,7 +240,6 @@ namespace UnitTests
 
             //using (ExamAnswerContext context = new ExamAnswerContext(options))
             //{
-
             //}
             //ExamEntity examEntity = examAnswerContext.Exams
             //   .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
@@ -281,7 +267,6 @@ namespace UnitTests
  Universal Containers' current solution for managing its forecasts is cumbersome.
 
 The sales managers do NOT have visibility into their teams' forecasts and are NOT able to update the forecasts. ",
-
 
     @" As a result, the managers are continually asking their sales representatives to provide updated forecast data via email or phone.
 

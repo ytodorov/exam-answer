@@ -31,11 +31,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a workflow rule to launch the product fulfillment application and pass the credit ID.",                    
+                    Text = "Create a workflow rule to launch the product fulfillment application and pass the credit ID.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom button that calls an Apex trigger to launch the credit application and pass the credit ID.",                    
+                    Text = "Create a custom button that calls an Apex trigger to launch the credit application and pass the credit ID.",
                 },
                 new AnswerEntity()
                 {
@@ -44,7 +44,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom credit ID field as an external ID on the account to launch the credit application and pass the credit ID.",                    
+                    Text = "Create a custom credit ID field as an external ID on the account to launch the credit application and pass the credit ID.",
                 },
             }
         };

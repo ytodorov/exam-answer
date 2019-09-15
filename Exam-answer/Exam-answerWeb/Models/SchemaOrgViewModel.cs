@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Exam_answerWeb.Models
+﻿namespace Exam_answerWeb.Models
 {
     public class SchemaOrgViewModel : BaseViewModel
     {

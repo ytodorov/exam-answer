@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Resource groups provide.", 
+                    Text = "Resource groups provide.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Resource Manager provides.", 
+                    Text = "Azure Resource Manager provides.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Management groups provide.", 
+                    Text = "Management groups provide.",
                     IsCorrect = false
                 },
             },
@@ -95,7 +94,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Resource Manager on Azure documentation",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/"
                 }
-            },                
+            },
         };
     }
 }

@@ -29,11 +29,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Build a custom forecast report showing product groups.",                    
+                    Text = "Build a custom forecast report showing product groups.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Build a forecast list view by product family group.",                    
+                    Text = "Build a forecast list view by product family group.",
                 },
                 new AnswerEntity()
                 {

@@ -23,19 +23,19 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts the manager owns.",                    
+                    Text = "Activities report on accounts the manager owns.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts and contacts the manager owns.",                   
+                    Text = "Activities report on accounts and contacts the manager owns.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts and opportunities the manager owns.",                    
+                    Text = "Activities report on accounts and opportunities the manager owns.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Activities report on accounts, contacts, and opportunities the manager owns.",     
+                    Text = "Activities report on accounts, contacts, and opportunities the manager owns.",
                     IsCorrect = true
                 },
             }

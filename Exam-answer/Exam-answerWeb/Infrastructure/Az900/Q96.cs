@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -43,22 +42,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "VNet2 and VNet3 only.", 
+                    Text = "VNet2 and VNet3 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "VNet2 only.", 
+                    Text = "VNet2 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "VNet3 and VNet4 only.", 
+                    Text = "VNet3 and VNet4 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "VNet2, VNet3, and VNet4.", 
+                    Text = "VNet2, VNet3, and VNet4.",
                     IsCorrect = true
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Tutorial: Connect virtual networks with virtual network peering using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-connect-virtual-networks-portal",
                 },
-            },           
+            },
         };
     }
 }

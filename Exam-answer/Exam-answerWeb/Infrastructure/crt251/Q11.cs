@@ -23,11 +23,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a custom field on the Lead, Account, and Contact objects and configure mapping of these two field for conversion. Use a trigger to update the Contact field with the Account value.",                   
+                    Text = "Create a custom field on the Lead, Account, and Contact objects and configure mapping of these two field for conversion. Use a trigger to update the Contact field with the Account value.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom field on the Lead and Account objects. Create a custom formula field on the Contact object to pull the value from the Account object.",                    
+                    Text = "Create a custom field on the Lead and Account objects. Create a custom formula field on the Contact object to pull the value from the Account object.",
                 },
                 new AnswerEntity()
                 {

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,32 +34,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Reset GW1.", 
+                    Text = "Reset GW1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a route-based virtual network gateway.", 
+                    Text = "Create a route-based virtual network gateway.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Delete GW1.", 
+                    Text = "Delete GW1.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add a public IP address space to VNet1.", 
+                    Text = "Add a public IP address space to VNet1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add a connection to GW1.", 
+                    Text = "Add a connection to GW1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add a service endpoint to VNet1.", 
+                    Text = "Add a service endpoint to VNet1.",
                     IsCorrect = false
                 },
             },
@@ -97,7 +96,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Connect Azure VPN gateways to multiple on-premises policy-based VPN devices using PowerShell",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps",
                 },
-            },           
+            },
         };
     }
 }

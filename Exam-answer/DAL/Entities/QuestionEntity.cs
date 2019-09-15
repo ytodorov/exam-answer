@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -7,7 +6,6 @@ namespace DAL.Entities
 {
     public class QuestionEntity : SchemaOrgEntity
     {
-
         public ExamEntity Exam { get; set; }
 
         public int? ExamId { get; set; }
@@ -108,7 +106,5 @@ namespace DAL.Entities
                 return result;
             }
         }
-
     }
-
 }

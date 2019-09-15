@@ -23,7 +23,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Enable Email-to-Close and use the Import Wizard.",                    
+                    Text = "Enable Email-to-Close and use the Import Wizard.",
                 },
                 new AnswerEntity()
                 {
@@ -31,12 +31,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Manually recreate the email and mail merge templates in Salesforce.",      
+                    Text = "Manually recreate the email and mail merge templates in Salesforce.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable Email to Salesforce before sending email templates to Salesforce.",                   
+                    Text = "Enable Email to Salesforce before sending email templates to Salesforce.",
                 },
             }
         };

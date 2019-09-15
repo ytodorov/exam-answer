@@ -32,12 +32,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Need to add notes quickly while talking to the client.",       
-                    IsCorrect  = true                    
+                    Text = "Need to add notes quickly while talking to the client.",
+                    IsCorrect  = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Need to chat with customers in real time with Chatter.",                    
+                    Text = "Need to chat with customers in real time with Chatter.",
                 },
                 new AnswerEntity()
                 {

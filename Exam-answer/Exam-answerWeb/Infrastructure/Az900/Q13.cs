@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -65,7 +64,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="PowerShell Scripting",
                     Url = "https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6"
                 }
-            },           
+            },
         };
     }
 }

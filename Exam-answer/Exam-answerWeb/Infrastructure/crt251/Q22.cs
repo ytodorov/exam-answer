@@ -32,7 +32,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Instruct sales users to enter 0S for the opportunity amount.",                    
+                    Text = "Instruct sales users to enter 0S for the opportunity amount.",
                 },
                 new AnswerEntity()
                 {
@@ -41,7 +41,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Override the forecast to be $0 for first stage opportunities.",                    
+                    Text = "Override the forecast to be $0 for first stage opportunities.",
                 },
                 new AnswerEntity()
                 {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Exam_answerWeb.Models
+﻿namespace Exam_answerWeb.Models
 {
     public class QuestionOldViewModel
     {
@@ -18,6 +13,5 @@ namespace Exam_answerWeb.Models
         public string H2OpenTag { get; set; }
 
         public string H2CloseTag { get; set; }
-
     }
 }

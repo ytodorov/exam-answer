@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading;
 
 namespace UnitTests
@@ -106,17 +105,12 @@ for (var i = 0; i < aTags.length; i++) {{
   }}
 counter = counter + 1;
 }}
-
-
 }}";
-
-
 
             string result = ((IJavaScriptExecutor)driver).ExecuteScript(jsToBeExecuted)?.ToString();
             driver.WaitFoss();
             return driver;
         }
-
 
         public static RemoteWebDriver ClickButtonFossByCssAndContent(this RemoteWebDriver driver, string css, string content)
         {
@@ -138,7 +132,7 @@ console.log(aTags[i]);
 
             string result = ((IJavaScriptExecutor)driver).ExecuteScript(jsToBeExecuted)?.ToString();
             driver.WaitFoss();
-            return driver;  
+            return driver;
         }
 
         /// <summary>
@@ -206,7 +200,6 @@ document.querySelector('{cssToFindElement}').dispatchEvent(event);";
             return driver;
         }
 
-       
         public static string GetBaseAddress(this RemoteWebDriver driver)
         {
             string urlString = driver.Url;
@@ -240,7 +233,6 @@ document.querySelector('{cssToFindElement}').dispatchEvent(event);";
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             IWebElement inputUserNameLogOut = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("nav")));
-
 
             driver.Navigate().GoToUrl(fullUrl);
 

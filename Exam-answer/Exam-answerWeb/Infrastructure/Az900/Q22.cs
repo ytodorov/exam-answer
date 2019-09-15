@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A resource group for FinServer and another resource group for all the other servers.", 
+                    Text = "A resource group for FinServer and another resource group for all the other servers.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A virtual network for FinServer and another virtual network for all the other servers.", 
+                    Text = "A virtual network for FinServer and another virtual network for all the other servers.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A VPN for FinServer and a virtual network gateway for each other server.", 
+                    Text = "A VPN for FinServer and a virtual network gateway for each other server.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "One resource group for all the servers and a resource lock for FinServer.", 
+                    Text = "One resource group for all the servers and a resource lock for FinServer.",
                     IsCorrect = false
                 },
             },
@@ -87,7 +86,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure best practices for network security",
                     Url = "https://docs.microsoft.com/en-us/azure/security/fundamentals/network-best-practices",
                 },
-            },           
+            },
         };
     }
 }

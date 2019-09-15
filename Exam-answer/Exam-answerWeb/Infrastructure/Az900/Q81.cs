@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -171,22 +170,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A recovery plan.", 
+                    Text = "A recovery plan.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A Recovery Services vault.", 
+                    Text = "A Recovery Services vault.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure Backup Server.", 
+                    Text = "An Azure Backup Server.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A backup policy.", 
+                    Text = "A backup policy.",
                     IsCorrect = false
                 },
             },
@@ -222,7 +221,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Back up a virtual machine in Azure",
                     Url = "https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal",
                 },
-            },           
+            },
         };
     }
 }

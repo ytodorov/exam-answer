@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "An inbound NAT rule.", 
+                    Text = "An inbound NAT rule.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A load balancing rule.", 
+                    Text = "A load balancing rule.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A new public load balancer for VM3.", 
+                    Text = "A new public load balancer for VM3.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A frontend IP configuration.", 
+                    Text = "A frontend IP configuration.",
                     IsCorrect = false
                 },
             },
@@ -111,7 +110,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure Load Balancer For RDP",
                     Url = "https://pixelrobots.co.uk/2017/08/azure-load-balancer-for-rds/",
                 },
-            },           
+            },
         };
     }
 }

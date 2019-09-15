@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Modify the profile for sales directors to enable the \"Modify All\" object permission for opportunities.",                    
+                    Text = "Modify the profile for sales directors to enable the \"Modify All\" object permission for opportunities.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Change the field-level security for sales representatives to restrict field access based on the sales stage.",                    
+                    Text = "Change the field-level security for sales representatives to restrict field access based on the sales stage.",
                 },
                 new AnswerEntity()
                 {

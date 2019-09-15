@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -51,27 +50,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Create VNET1 in RG2, and then set East Asia as the location.", 
+                    Text = "Create VNET1 in RG2, and then set East Asia as the location.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create VNET1 in a new resource group in the West US location, and then set West US as the location.", 
+                    Text = "Create VNET1 in a new resource group in the West US location, and then set West US as the location.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create VNET1 in RG1, and then set East US as the location.", 
+                    Text = "Create VNET1 in RG1, and then set East US as the location.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create VNET1 in RG2, and then set East US as the location.", 
+                    Text = "Create VNET1 in RG2, and then set East US as the location.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create VNET1 in RG1, and then set East Asia as the location.", 
+                    Text = "Create VNET1 in RG1, and then set East Asia as the location.",
                     IsCorrect = true
                 },
             },
@@ -123,7 +122,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Azure Resource Manager overview",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview"
                 },
-            },                
+            },
         };
     }
 }

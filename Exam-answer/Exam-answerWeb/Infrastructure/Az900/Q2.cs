@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Deploy a VPN.", 
+                    Text = "Deploy a VPN.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Pay to transfer all the website data to Azure.", 
+                    Text = "Pay to transfer all the website data to Azure.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Reduce the number of connections to the website.", 
+                    Text = "Reduce the number of connections to the website.",
                     IsCorrect = false
                 },
             },
@@ -55,19 +54,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
                 },
                 new ExplanationEntity()
                 {
-
                 },
                 new ExplanationEntity()
                 {
-
                 },
                 new ExplanationEntity()
                 {
-
                 },
             },
 
@@ -78,7 +73,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Pricing calculator",
                     Url = "https://azure.microsoft.com/en-in/pricing/calculator/"
                 }
-            },           
+            },
         };
     }
 }

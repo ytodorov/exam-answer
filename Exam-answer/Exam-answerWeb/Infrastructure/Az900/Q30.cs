@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -23,22 +22,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "An Azure Storage account.", 
+                    Text = "An Azure Storage account.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Active Directory (Azure AD).", 
+                    Text = "Azure Active Directory (Azure AD).",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A certificate store.", 
+                    Text = "A certificate store.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure key vault.", 
+                    Text = "An Azure key vault.",
                     IsCorrect = false
                 },
             },
@@ -58,7 +57,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Microsoft identity platform (formerly Azure Active Directory for developers)",
                     Url = "https://docs.microsoft.com/en-us/azure/active-directory/develop/"
                 },
-            },           
+            },
         };
     }
 }

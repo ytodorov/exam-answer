@@ -17,7 +17,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "How should the steps in the sales process be mapped so NTO's requirements are met?",
-                },              
+                },
             },
             Answers = new List<AnswerEntity>()
             {
@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Map forecast probability to opportunity probability; assign appropriate sales stage.",                    
+                    Text = "Map forecast probability to opportunity probability; assign appropriate sales stage.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Map appropriate sales stage to opportunity stage; assign accurate forecast probability.",                    
+                    Text = "Map appropriate sales stage to opportunity stage; assign accurate forecast probability.",
                 },
                 new AnswerEntity()
                 {

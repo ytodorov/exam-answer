@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A read-only lock.", 
+                    Text = "A read-only lock.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure policy.", 
+                    Text = "An Azure policy.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A management group.", 
+                    Text = "A management group.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A reservation.", 
+                    Text = "A reservation.",
                     IsCorrect = false
                 },
             },
@@ -64,7 +63,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "There are a few key differences between Azure Policy and role-based access control (RBAC). RBAC focuses on user actions at different scopes. You might be added to the contributor role for a resource group, allowing you to make changes to that resource group. Azure Policy focuses on resource properties during deployment and for already existing resources. Azure Policy controls properties such as the types or locations of resources. Unlike RBAC, Azure Policy is a default allow and explicit deny system."
-                },                
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -79,7 +78,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Documentation for the Azure Policy service",
                     Url = "https://docs.microsoft.com/en-us/azure/governance/policy/"
                 },
-            },           
+            },
         };
     }
 }

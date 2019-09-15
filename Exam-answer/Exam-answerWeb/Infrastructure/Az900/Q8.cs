@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "An Azure SQL database.", 
+                    Text = "An Azure SQL database.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A virtual machine data disk.", 
+                    Text = "A virtual machine data disk.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A Files service in a storage account.", 
+                    Text = "A Files service in a storage account.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A Blobs service in a storage account.", 
+                    Text = "A Blobs service in a storage account.",
                     IsCorrect = false
                 },
             },
@@ -86,7 +85,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is Azure Files?",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction"
                 }
-            },           
+            },
         };
     }
 }

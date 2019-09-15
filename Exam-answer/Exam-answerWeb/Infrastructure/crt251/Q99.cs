@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Confirm that the products are shared with the sales representative's role.",                    
+                    Text = "Confirm that the products are shared with the sales representative's role.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Confirm that the old price book is disabled for the sales representative.",                    
+                    Text = "Confirm that the old price book is disabled for the sales representative.",
                 },
                 new AnswerEntity()
                 {

@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create public groups for extended team members and allow the sales representative to assign manual sharing on their opportunities.",                   
+                    Text = "Create public groups for extended team members and allow the sales representative to assign manual sharing on their opportunities.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Define a sharing rule for each lead sales representative to assign appropriate access for all extended team members.",                    
+                    Text = "Define a sharing rule for each lead sales representative to assign appropriate access for all extended team members.",
                 },
                 new AnswerEntity()
                 {

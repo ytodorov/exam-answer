@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "Sales directors at Northern Trail Outfitters (NTO) cannot see or update their teams' forecasts.",
-                },                
+                },
                 new ContentEntity()
                 {
                     Text = "Sales representatives are constantly asked to provide the directors with their updated forecast information.",
@@ -37,16 +37,16 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable override forecast permission in the Manager's profile.",                    
+                    Text = "Enable override forecast permission in the Manager's profile.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create forecast Chatter groups where sales representatives can post and share their forecasts.",                    
+                    Text = "Create forecast Chatter groups where sales representatives can post and share their forecasts.",
                 },
                 new AnswerEntity()
                 {
                     Text = "Create a forecast hierarchy and assign managers to the forecast manager role.",
-                    IsCorrect = true                     
+                    IsCorrect = true
                 },
             }
         };

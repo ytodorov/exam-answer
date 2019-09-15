@@ -32,11 +32,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Override the forecast to be $0 for first stage opportunities.",                    
+                    Text = "Override the forecast to be $0 for first stage opportunities.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Assign 0% probability to the first sales stage.",                    
+                    Text = "Assign 0% probability to the first sales stage.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

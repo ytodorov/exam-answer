@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -47,32 +46,32 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Add two load balancing rules that have HA Ports enabled and Floating IP disabled.", 
+                    Text = "Add two load balancing rules that have HA Ports enabled and Floating IP disabled.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add a frontend IP configuration, two backend pools, and a health probe.", 
+                    Text = "Add a frontend IP configuration, two backend pools, and a health probe.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add two load balancing rules that have HA Ports and Floating IP enabled.", 
+                    Text = "Add two load balancing rules that have HA Ports and Floating IP enabled.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Deploy a standard load balancer.", 
+                    Text = "Deploy a standard load balancer.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Deploy a basic load balancer.", 
+                    Text = "Deploy a basic load balancer.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add a frontend IP configuration a backend pool, and a health probe.", 
+                    Text = "Add a frontend IP configuration a backend pool, and a health probe.",
                     IsCorrect = false
                 },
             },
@@ -109,7 +108,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Multiple Frontends for Azure Load Balancer",
                     Url = "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-multivip-overview",
                 },
-            },           
+            },
         };
     }
 }

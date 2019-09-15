@@ -28,7 +28,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Enable validation rules on the opportunity.",                    
+                    Text = "Enable validation rules on the opportunity.",
                 },
                 new AnswerEntity()
                 {
@@ -37,7 +37,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create an Apex trigger to perform data quality checks.",                    
+                    Text = "Create an Apex trigger to perform data quality checks.",
                 },
                 new AnswerEntity()
                 {
@@ -48,7 +48,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 {
                     Text = "Enable the lead conversion permission.",
                     IsCorrect = true
-                },                
+                },
             }
         };
     }

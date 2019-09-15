@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Implement Azure Multi-Factor Authentication (MFA).", 
+                    Text = "Implement Azure Multi-Factor Authentication (MFA).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Sync all the Active Directory user accounts to Azure Active Directory (Azure AD).", 
+                    Text = "Sync all the Active Directory user accounts to Azure Active Directory (Azure AD).",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Instruct all users to change their password.", 
+                    Text = "Instruct all users to change their password.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a guest user account in Azure Active Directory (Azure AD) for each user.", 
+                    Text = "Create a guest user account in Azure Active Directory (Azure AD) for each user.",
                     IsCorrect = false
                 },
             },
@@ -83,7 +82,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Step-By-Step: Syncing An On Premise AD with Azure Active Directory",
                     Url = "https://blogs.technet.microsoft.com/canitpro/2014/05/13/step-by-step-syncing-an-on-premise-ad-with-azure-active-directory/"
                 }
-            },                
+            },
         };
     }
 }

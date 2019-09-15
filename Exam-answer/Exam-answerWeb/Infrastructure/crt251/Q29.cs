@@ -42,11 +42,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Share the account with other users through manual sharing and account teams.",                    
+                    Text = "Share the account with other users through manual sharing and account teams.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Transfer ownership of related contacts and opportunities owned by other users.",                    
+                    Text = "Transfer ownership of related contacts and opportunities owned by other users.",
                 },
             }
         };

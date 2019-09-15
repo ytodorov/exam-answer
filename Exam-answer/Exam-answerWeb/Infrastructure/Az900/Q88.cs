@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,12 +38,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = false
                 },
             },
@@ -64,7 +63,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Redeploy Windows virtual machine to new Azure node",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/redeploy-to-new-node",
                 },
-            },           
+            },
         };
     }
 }

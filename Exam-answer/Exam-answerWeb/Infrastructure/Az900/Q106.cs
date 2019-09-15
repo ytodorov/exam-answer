@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "From the Azure portal, add a custom domain name, create a new Azure AD user, and then specify user1@outlook.com as the username.", 
+                    Text = "From the Azure portal, add a custom domain name, create a new Azure AD user, and then specify user1@outlook.com as the username.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Azure Cloud Shell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.", 
+                    Text = "From Azure Cloud Shell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From the Azure portal, add a new guest user, and then specify user1@outlook.com as the email address.", 
+                    Text = "From the Azure portal, add a new guest user, and then specify user1@outlook.com as the email address.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Windows PowerShell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.", 
+                    Text = "From Windows PowerShell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.",
                     IsCorrect = true
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Creating a new user in Azure AD",
                     Url = "https://docs.microsoft.com/bs-cyrl-ba/powershell/azure/active-directory/new-user-sample?view=azureadps-2.0",
                 },
-            },           
+            },
         };
     }
 }

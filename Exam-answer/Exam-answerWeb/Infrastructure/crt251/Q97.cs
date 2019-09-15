@@ -27,7 +27,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a workflow rule on contacts.",                    
+                    Text = "Create a workflow rule on contacts.",
                 },
                 new AnswerEntity()
                 {

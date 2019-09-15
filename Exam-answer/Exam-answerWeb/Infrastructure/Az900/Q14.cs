@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -24,29 +23,29 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ContentEntity()
                 {
                     Text = "Instructions: Review the UPPER-CASED text surrounded by ***. If it makes the statement correct, select \"No change is needed\". If the statement is incorrect, select the answer choice that makes the statement correct.",
-                },               
+                },
             },
 
             Answers = new List<AnswerEntity>()
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Is found in each country where Microsoft has a subsidiary office.", 
+                    Text = "Is found in each country where Microsoft has a subsidiary office.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Can be found in every country in Europe and the Americas only.", 
+                    Text = "Can be found in every country in Europe and the Americas only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Contains one or more data centers that are connect by using a high-latency network.", 
+                    Text = "Contains one or more data centers that are connect by using a high-latency network.",
                     IsCorrect = false
                 },
             },
@@ -68,7 +67,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "Availability Zones are physically separate locations within an Azure region. Each Availability Zone is made up of one or more datacenters equipped with independent power, cooling, and networking. Availability Zones allow customers to run mission-critical applications with high availability and low-latency replication."
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure regions",
                     Url = "https://azure.microsoft.com/en-us/global-infrastructure/regions/"
                 }
-            },           
+            },
         };
     }
 }

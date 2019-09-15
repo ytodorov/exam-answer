@@ -18,7 +18,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "What are two capabilities of this migration tool?",
-                },               
+                },
                 new ContentEntity()
                 {
                     Text = "Choose 2 answers.",
@@ -32,12 +32,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Prevent importing duplicate records.",                    
+                    Text = "Prevent importing duplicate records.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Run one-time or scheduled data loads.",       
-                    IsCorrect = true                     
+                    Text = "Run one-time or scheduled data loads.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

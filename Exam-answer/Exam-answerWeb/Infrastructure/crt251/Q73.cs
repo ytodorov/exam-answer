@@ -31,11 +31,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Salesforce Touch App.",                    
+                    Text = "Salesforce Touch App.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Custom hybrid App.",                    
+                    Text = "Custom hybrid App.",
                 },
                 new AnswerEntity()
                 {

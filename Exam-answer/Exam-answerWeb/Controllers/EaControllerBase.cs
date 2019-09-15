@@ -7,13 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace Exam_answerWeb.Controllers
@@ -24,7 +22,6 @@ namespace Exam_answerWeb.Controllers
         protected readonly IHostingEnvironment env;
         protected readonly IMapper mapper;
         private IMemoryCache cache;
-
 
         public EaControllerBase(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache)
         {
@@ -45,7 +42,7 @@ namespace Exam_answerWeb.Controllers
 
             if (!string.IsNullOrEmpty(cachedHtml))
             {
-                context.Result = new ContentResult() { Content = cachedHtml, ContentType = "text/html; charset=utf-8" };                
+                context.Result = new ContentResult() { Content = cachedHtml, ContentType = "text/html; charset=utf-8" };
                 //return;
             }
             base.OnActionExecuting(context);
@@ -87,7 +84,7 @@ namespace Exam_answerWeb.Controllers
             ExamEntity examEntity = DataGenerator.AllExams
                 .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
                     e.Code.Equals(examCode, StringComparison.InvariantCultureIgnoreCase))
-                                
+
                 .FirstOrDefault();
 
             ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
@@ -166,7 +163,6 @@ namespace Exam_answerWeb.Controllers
             //    {
             //        string text = HttpUtility.JavaScriptStringEncode(aa.Text);
 
-
             //        sbAcceptedAnswer.Append($@"{{
             //""@type"": ""Answer"",
             //""author"": ""{author}"",
@@ -213,14 +209,14 @@ namespace Exam_answerWeb.Controllers
             {
                 sbQuestionText.Append(c.Text);
             }
-            string test =  HttpUtility.JavaScriptStringEncode("\"test\"");
+            string test = HttpUtility.JavaScriptStringEncode("\"test\"");
             string questionText = HttpUtility.JavaScriptStringEncode(sbQuestionText.ToString());
 
             // https://developers.google.com/search/docs/data-types/faqpage
             microdataJson.Append(
 $@"
 <script type=""application/ld+json"">
-{{  
+{{
   ""@context"": ""http://schema.org"",
   ""@type"": ""FAQPage"",
   ""mainEntity"": {{
@@ -239,7 +235,6 @@ $@"
 
             string microdata = microdataJson.ToString();
             ViewData["microdata"] = microdata;
-
 
             if (intId <= examViewModel.Questions.Count)
             {

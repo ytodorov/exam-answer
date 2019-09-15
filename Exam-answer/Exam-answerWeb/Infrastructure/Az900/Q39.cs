@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -72,7 +71,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Compare support plans",
                     Url = "https://azure.microsoft.com/en-gb/support/plans/",
                 },
-            },           
+            },
         };
     }
 }

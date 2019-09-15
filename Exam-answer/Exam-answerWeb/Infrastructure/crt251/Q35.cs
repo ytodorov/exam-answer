@@ -23,15 +23,15 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Converted amounts are based on exchange rates that use the oldest entry.",                    
+                    Text = "Converted amounts are based on exchange rates that use the oldest entry.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Converted amounts are based on the exchange rates entered in the opportunity.",                    
+                    Text = "Converted amounts are based on the exchange rates entered in the opportunity.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Converted amounts are based on exchange rates that use the current entry.",                   
+                    Text = "Converted amounts are based on exchange rates that use the current entry.",
                 },
                 new AnswerEntity()
                 {

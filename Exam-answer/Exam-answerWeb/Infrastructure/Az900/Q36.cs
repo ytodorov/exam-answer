@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -105,7 +104,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Configuring visual markings in Azure Information Protection",
                     Url = "https://alberthoitingh.com/2018/01/05/configuring-visual-markings-in-azure-information-protection/"
-
                 },
                 new ReferenceEntity()
                 {

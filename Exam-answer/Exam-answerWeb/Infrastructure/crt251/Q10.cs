@@ -28,7 +28,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The documents should be emailed to the sales team on the opportunity record.",                    
+                    Text = "The documents should be emailed to the sales team on the opportunity record.",
                 },
                 new AnswerEntity()
                 {

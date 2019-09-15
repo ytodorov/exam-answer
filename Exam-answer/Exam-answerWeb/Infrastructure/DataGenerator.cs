@@ -1,14 +1,10 @@
 ﻿using DAL.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+using Exam_answerWeb.Infrastructure.crt251;
+using Exam_answerWeb.Infrastructure.Questions;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Exam_answerWeb.Infrastructure.crt251;
-using System.Text;
 using System.Reflection;
-using Exam_answerWeb.Infrastructure.Questions;
+
 //using Exam_answerWeb.Infrastructure.Questions;
 
 namespace Exam_answerWeb.Infrastructure
@@ -131,7 +127,7 @@ namespace Exam_answerWeb.Infrastructure
             crt251.Questions.Add(Q100.Instance);
 
             crt251.ShowUdemy = true;
-                
+
             crt251.UdemyLinkUrl = "https://www.udemy.com/salesforce-crt-251-sales-cloud-consultant-exam-questions/?couponCode=50_OFF";
             crt251.UdemyLinkMessage = "Salesforce CRT-251: Sales Cloud Consultant - 50% OFF";
             crt251.UdemyMessage =
@@ -198,7 +194,6 @@ namespace Exam_answerWeb.Infrastructure
             //                   field.FieldType == typeof(QuestionEntity)
             //             select (QuestionEntity)field.GetValue(null);
 
-
             //az900.Questions.Add(Az900.Q1Instance);
             //az900.Questions.Add(Az900.Q2Instance);
             //az900.Questions.Add(Az900.Q3Instance);
@@ -249,7 +244,6 @@ namespace Exam_answerWeb.Infrastructure
             //        QuestionEntity q1 = allquestions[i];
             //        QuestionEntity q2 = allquestions[j];
 
-
             //        StringBuilder sb1 = new StringBuilder();
             //        foreach (var content in q1.Contents)
             //        {
@@ -278,7 +272,6 @@ namespace Exam_answerWeb.Infrastructure
             //        distances.Add(distance);
             //        if (distance > 0.6)
             //        {
-
             //        }
             //    }
             //}

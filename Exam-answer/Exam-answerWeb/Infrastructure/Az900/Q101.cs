@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,22 +38,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Select Allow gateway transit on VNet2.", 
+                    Text = "Select Allow gateway transit on VNet2.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable BGP on VPNGW1.", 
+                    Text = "Enable BGP on VPNGW1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Select Allow gateway transit on VNet1.", 
+                    Text = "Select Allow gateway transit on VNet1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Download and re-install the VPN client configuration package on Client1.", 
+                    Text = "Download and re-install the VPN client configuration package on Client1.",
                     IsCorrect = true
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "About Point-to-Site VPN routing",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-point-to-site-routing",
                 },
-            },           
+            },
         };
     }
 }

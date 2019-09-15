@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create different record types and sales processes for each line of business, and assign different stages to each page layout.",                    
+                    Text = "Create different record types and sales processes for each line of business, and assign different stages to each page layout.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create different record types and sales processes for each line of business, and use workflow field updates to assign stages.",                    
+                    Text = "Create different record types and sales processes for each line of business, and use workflow field updates to assign stages.",
                 },
                 new AnswerEntity()
                 {
@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create different record types and sales processes for each line of business, and assign different sales processes to each page layout.",                    
+                    Text = "Create different record types and sales processes for each line of business, and assign different sales processes to each page layout.",
                 },
             }
         };

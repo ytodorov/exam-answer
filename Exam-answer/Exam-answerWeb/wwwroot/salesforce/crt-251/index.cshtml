@@ -5,8 +5,8 @@
 @{
     for (int i = 1; i <= 88; i++)
     {
-        <br />
-        <partial name="~/views/salesforce/crt-251/question1_@(i).cshtml" model="@new QuestionOldViewModel() { Id = i.ToString() }" />
+    <br />
+    <partial name="~/views/salesforce/crt-251/question1_@(i).cshtml" model="@new QuestionOldViewModel() { Id = i.ToString() }" />
     }
 }
 <partial name="~/views/shared/_JsScriptShowAnswer.cshtml" />

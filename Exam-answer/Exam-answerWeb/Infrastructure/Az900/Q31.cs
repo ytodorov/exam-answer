@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Management groups.", 
+                    Text = "Management groups.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure policies.", 
+                    Text = "Azure policies.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure App Service plans.", 
+                    Text = "Azure App Service plans.",
                     IsCorrect = false
                 },
             },
@@ -75,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Tutorial: Create and manage policies to enforce compliance",
                     Url = "https://docs.microsoft.com/en-us/azure/governance/policy/tutorials/create-and-manage"
                 }
-            },                
+            },
         };
     }
 }

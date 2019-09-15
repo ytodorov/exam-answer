@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "VM1 is stopped.", 
+                    Text = "VM1 is stopped.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "VM1 does not have the latest version of WaAppAgent.exe installed.", 
+                    Text = "VM1 does not have the latest version of WaAppAgent.exe installed.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "VM1 has an unmanaged disk.", 
+                    Text = "VM1 has an unmanaged disk.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A Recovery Services vault is unavailable.", 
+                    Text = "A Recovery Services vault is unavailable.",
                     IsCorrect = false
                 },
             },
@@ -74,7 +73,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Introducing Backup Pre-Checks for Backup of Azure VMs",
                     Url = "https://azure.microsoft.com/en-us/blog/azure-vm-backup-pre-checks/",
                 },
-            },           
+            },
         };
     }
 }

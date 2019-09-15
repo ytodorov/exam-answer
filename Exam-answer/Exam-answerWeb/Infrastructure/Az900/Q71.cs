@@ -1,7 +1,6 @@
-
 using DAL.Entities;
-using System.Collections.Generic;
 using Exam_answerWeb.Extensions;
+using System.Collections.Generic;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -59,22 +58,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "The App Service plan for WebApp1 moves to North Europe. Policy2 applies to WebApp1.", 
+                    Text = "The App Service plan for WebApp1 moves to North Europe. Policy2 applies to WebApp1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The App Service plan for WebApp1 remains in West Europe. Policy2 applies to WebApp1.", 
+                    Text = "The App Service plan for WebApp1 remains in West Europe. Policy2 applies to WebApp1.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "The App Service plan for WebApp1 moves to North Europe. Policy1 applies to WebApp1.", 
+                    Text = "The App Service plan for WebApp1 moves to North Europe. Policy1 applies to WebApp1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The App Service plan for WebApp1 remains in West Europe. Policy1 applies to WebApp1.", 
+                    Text = "The App Service plan for WebApp1 remains in West Europe. Policy1 applies to WebApp1.",
                     IsCorrect = false
                 },
             },
@@ -97,7 +96,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Url = "https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage",
                 },
-            },           
+            },
         };
     }
 }

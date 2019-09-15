@@ -33,12 +33,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Run a report on opportunities showing list price and discounted price.",            
+                    Text = "Run a report on opportunities showing list price and discounted price.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom roll-up summary field to calculate the average product discount for each customer.",                    
+                    Text = "Create a custom roll-up summary field to calculate the average product discount for each customer.",
                 },
                 new AnswerEntity()
                 {

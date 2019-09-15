@@ -34,11 +34,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Require the customer to enter a security token to download the content.",                    
+                    Text = "Require the customer to enter a security token to download the content.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Require the recipient to log into Salesforce to access the content.",                    
+                    Text = "Require the recipient to log into Salesforce to access the content.",
                 },
             }
         };

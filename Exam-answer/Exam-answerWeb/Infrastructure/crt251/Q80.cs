@@ -29,12 +29,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Configure a validation rule that tests the Has Line Item and Stage fields for the correct condition.",                    
+                    Text = "Configure a validation rule that tests the Has Line Item and Stage fields for the correct condition.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Define a workflow rule that automatically defaults to a PriceBook and product line item when selecting the negotiation stage.",                    
+                    Text = "Define a workflow rule that automatically defaults to a PriceBook and product line item when selecting the negotiation stage.",
                 },
                 new AnswerEntity()
                 {

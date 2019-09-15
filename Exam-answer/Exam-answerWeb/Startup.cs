@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
-using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -15,14 +14,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Exam_answerWeb
@@ -169,6 +164,4 @@ namespace Exam_answerWeb
             });
         }
     }
-
-
 }

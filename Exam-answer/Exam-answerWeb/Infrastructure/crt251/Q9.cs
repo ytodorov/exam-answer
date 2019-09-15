@@ -32,7 +32,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a roll-up summary field on the parent account showing the total value of open opportunities from the child accounts.",                    
+                    Text = "Create a roll-up summary field on the parent account showing the total value of open opportunities from the child accounts.",
                 },
                 new AnswerEntity()
                 {

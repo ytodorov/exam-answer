@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,27 +30,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A driveset CSV file.", 
+                    Text = "A driveset CSV file.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A JSON configuration file.", 
+                    Text = "A JSON configuration file.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A PowerShell PS1 file.", 
+                    Text = "A PowerShell PS1 file.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An XML manifest file.", 
+                    Text = "An XML manifest file.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A dataset CSV file.", 
+                    Text = "A dataset CSV file.",
                     IsCorrect = true
                 },
             },
@@ -75,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Use Azure Import/Export service to import data to Azure Files",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-to-files",
                 },
-            },           
+            },
         };
     }
 }

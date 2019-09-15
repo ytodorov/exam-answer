@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -102,7 +101,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is private cloud (internal cloud or corporate cloud)",
                     Url = "https://searchcloudcomputing.techtarget.com/definition/private-cloud"
                 }
-            },           
+            },
         };
     }
 }

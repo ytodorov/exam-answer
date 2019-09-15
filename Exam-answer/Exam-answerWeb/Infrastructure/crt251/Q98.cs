@@ -32,7 +32,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The representative can see all of sales manager's data but the Sales manager CANNOT see all of the representative's data.",                    
+                    Text = "The representative can see all of sales manager's data but the Sales manager CANNOT see all of the representative's data.",
                 },
                 new AnswerEntity()
                 {

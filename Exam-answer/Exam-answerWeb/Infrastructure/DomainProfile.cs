@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Entities;
 using Exam_answerWeb.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Exam_answerWeb.Infrastructure
 {
@@ -23,8 +19,6 @@ namespace Exam_answerWeb.Infrastructure
             CreateMap<ExplanationEntity, ExplanationViewModel>().ReverseMap();
 
             CreateMap<ReferenceEntity, ReferenceViewModel>().ReverseMap();
-
-
         }
     }
 }

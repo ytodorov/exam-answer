@@ -28,11 +28,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Review the current system with executive management to understand their requirements.",                    
+                    Text = "Review the current system with executive management to understand their requirements.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Review the current system with IT management to understand their requirements.",                    
+                    Text = "Review the current system with IT management to understand their requirements.",
                 },
                 new AnswerEntity()
                 {

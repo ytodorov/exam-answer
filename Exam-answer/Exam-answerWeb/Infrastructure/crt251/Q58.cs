@@ -33,11 +33,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a workflow rule that automatically updates the opportunity to the first stage in the sales process.",                    
+                    Text = "Create a workflow rule that automatically updates the opportunity to the first stage in the sales process.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Run the opportunity pipeline standard report to view the upcoming opportunities by stage.",                    
+                    Text = "Run the opportunity pipeline standard report to view the upcoming opportunities by stage.",
                 },
                 new AnswerEntity()
                 {

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -72,7 +71,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Quickstart: Configure a label for users to easily protect emails that contain sensitive information",
                     Url = "https://docs.microsoft.com/en-us/azure/information-protection/quickstart-label-dnf-protectedemail",
                 },
-            },           
+            },
         };
     }
 }

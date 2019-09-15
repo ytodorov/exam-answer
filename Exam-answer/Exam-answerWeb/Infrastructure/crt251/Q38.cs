@@ -27,7 +27,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a custom field on opportunity to flag and report on these sales.",                    
+                    Text = "Create a custom field on opportunity to flag and report on these sales.",
                 },
                 new AnswerEntity()
                 {
@@ -36,11 +36,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a separate page layout and report to flag and report on these deals.",                   
+                    Text = "Create a separate page layout and report to flag and report on these deals.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add \"upsell\" as a stage and create a summary by opportunity stage.",                   
+                    Text = "Add \"upsell\" as a stage and create a summary by opportunity stage.",
                 },
             }
         };

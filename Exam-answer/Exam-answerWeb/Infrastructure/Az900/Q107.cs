@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,22 +38,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "TXT.", 
+                    Text = "TXT.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "SRV.", 
+                    Text = "SRV.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "DNSKEY.", 
+                    Text = "DNSKEY.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "NSEC.", 
+                    Text = "NSEC.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
@@ -100,7 +99,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Tutorial: Create DNS records in a custom domain for a web app",
                     Url = "https://docs.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain",
                 },
-            },           
+            },
         };
     }
 }

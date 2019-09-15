@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -23,22 +22,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Security Center.", 
+                    Text = "Azure Security Center.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An Azure Storage account.", 
+                    Text = "An Azure Storage account.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Key Vault.", 
+                    Text = "Azure Key Vault.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Information Protection.", 
+                    Text = "Azure Information Protection.",
                     IsCorrect = false
                 },
             },
@@ -79,7 +78,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is Azure Key Vault?",
                     Url = "https://docs.microsoft.com/en-us/azure/key-vault/key-vault-overview",
                 },
-            },           
+            },
         };
     }
 }

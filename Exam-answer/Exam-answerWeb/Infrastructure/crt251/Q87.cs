@@ -23,12 +23,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Develop an Apex trigger for repeat accounts that inserts a copy of an opportunity for the sales representative when it reaches closed/won stage.",                    
+                    Text = "Develop an Apex trigger for repeat accounts that inserts a copy of an opportunity for the sales representative when it reaches closed/won stage.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Configure a workflow rule for repeat accounts that sends a reminder task to the sales representative to create a new opportunity when it reaches closed/won stage.",                    
+                    Text = "Configure a workflow rule for repeat accounts that sends a reminder task to the sales representative to create a new opportunity when it reaches closed/won stage.",
                 },
                 new AnswerEntity()
                 {

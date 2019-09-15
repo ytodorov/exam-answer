@@ -31,15 +31,15 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a Visualforce page.",                    
+                    Text = "Create a Visualforce page.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create an Action.",                    
+                    Text = "Create an Action.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a related list button.",                    
+                    Text = "Create a related list button.",
                 },
                 new AnswerEntity()
                 {

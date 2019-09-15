@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Count of new lead records created.",                    
+                    Text = "Count of new lead records created.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Number of activities tied to opportunities",                    
+                    Text = "Number of activities tied to opportunities",
                 },
                 new AnswerEntity()
                 {

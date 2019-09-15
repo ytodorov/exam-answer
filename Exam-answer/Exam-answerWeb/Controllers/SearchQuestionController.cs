@@ -10,7 +10,6 @@ namespace Exam_answerWeb.Controllers
 {
     public class SearchQuestionController : Controller
     {
-
         public List<SearchQuestionOldViewModel> Read(string text)
         {
             if (text == null)

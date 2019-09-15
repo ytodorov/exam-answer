@@ -36,12 +36,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Partner users can own account and opportunity records in Salesforce.",            
+                    Text = "Partner users can own account and opportunity records in Salesforce.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Partner users CANNOT receive emails generated through workflow actions.",                    
+                    Text = "Partner users CANNOT receive emails generated through workflow actions.",
                 },
                 new AnswerEntity()
                 {

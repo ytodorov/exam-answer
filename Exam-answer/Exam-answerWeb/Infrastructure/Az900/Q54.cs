@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "In a hybrid cloud.", 
+                    Text = "In a hybrid cloud.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "In the public cloud.", 
+                    Text = "In the public cloud.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "On a Hyper-V host.", 
+                    Text = "On a Hyper-V host.",
                     IsCorrect = false
                 },
             },
@@ -66,7 +65,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Decommission retired assets",
                     Url = "https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission"
                 },
-            },                
+            },
         };
     }
 }

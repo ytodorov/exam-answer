@@ -32,15 +32,15 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create it on the opportunity product using a Visualforce email template.",                    
+                    Text = "Create it on the opportunity product using a Visualforce email template.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create it on the opportunity using a HTML email template.",                    
+                    Text = "Create it on the opportunity using a HTML email template.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create it on the opportunity product using an HTML email template.",                    
+                    Text = "Create it on the opportunity product using an HTML email template.",
                 },
             }
         };

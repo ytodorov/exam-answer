@@ -38,7 +38,7 @@ p, ul {
 }
 
 .green {
-    color: forestgreen;   
+    color: forestgreen;
 }
 /*-------------------------------*/
 
@@ -83,14 +83,12 @@ p, ul {
     color: black;
 }
 
-
 #placeholder.list-item {
     /*background-color: #000000;*/
     color: black;
 }
 
-input.k-checkbox+label
-{
+input.k-checkbox + label {
     user-select: inherit;
 }
 

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,12 +38,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -72,7 +71,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Overview of Azure Activity log",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-overview"
                 },
-            },                
+            },
         };
     }
 }

@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "Which two processes should minimize changes in project scope during the design and build phases, post sign-off, when using a traditional waterfall project methodology?",
-                },                
+                },
                 new ContentEntity()
                 {
                     Text = "Choose 2 answers.",
@@ -29,12 +29,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Map solution design documents to system test scripts.",                    
+                    Text = "Map solution design documents to system test scripts.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Map business requirements to the solution design.",             
-                    IsCorrect = true                     
+                    Text = "Map business requirements to the solution design.",
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

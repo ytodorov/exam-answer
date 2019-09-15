@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "80.", 
+                    Text = "80.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "443.", 
+                    Text = "443.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "445.", 
+                    Text = "445.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "3389.", 
+                    Text = "3389.",
                     IsCorrect = false
                 },
             },
@@ -86,7 +85,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Use an Azure file share with Windows",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows",
                 },
-            },           
+            },
         };
     }
 }

@@ -36,7 +36,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Two sets of opportunity stages.",                    
+                    Text = "Two sets of opportunity stages.",
                 },
                 new AnswerEntity()
                 {

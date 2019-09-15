@@ -36,11 +36,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The link to the Facebook profile is not configured with the administrator password to access detailed information.",                    
+                    Text = "The link to the Facebook profile is not configured with the administrator password to access detailed information.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Universal Containers must purchase the Facebook license to access public information for its users.",                    
+                    Text = "Universal Containers must purchase the Facebook license to access public information for its users.",
                 },
             }
         };

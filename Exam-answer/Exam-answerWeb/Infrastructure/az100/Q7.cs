@@ -21,9 +21,9 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new ContentEntity()
                 {
-                    Text = @"* Two App Services, each with an SSL certificate 
-* A peered virtual network (VNet) 
-* Redis cache deployed in the VNet 
+                    Text = @"* Two App Services, each with an SSL certificate
+* A peered virtual network (VNet)
+* Redis cache deployed in the VNet
 * Standard Load Balancer"
                 },
                  new ContentEntity()

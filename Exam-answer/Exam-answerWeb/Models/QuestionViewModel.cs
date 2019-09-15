@@ -1,8 +1,5 @@
 ﻿using DAL.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Exam_answerWeb.Models
 {
@@ -28,6 +25,6 @@ namespace Exam_answerWeb.Models
 
         public List<AnswerViewModel> AcceptedAnswerLd { get; set; }
 
-        public List<AnswerViewModel> SuggestedAnswerLd { get; set; }        
+        public List<AnswerViewModel> SuggestedAnswerLd { get; set; }
     }
 }

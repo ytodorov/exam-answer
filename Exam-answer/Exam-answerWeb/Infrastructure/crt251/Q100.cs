@@ -28,11 +28,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Enable the Document tab in the Partner Community and enable email alerts for partner users.",                    
+                    Text = "Enable the Document tab in the Partner Community and enable email alerts for partner users.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add the Content related list to the partner contact page layout and enable content delivery.",                    
+                    Text = "Add the Content related list to the partner contact page layout and enable content delivery.",
                 },
                 new AnswerEntity()
                 {

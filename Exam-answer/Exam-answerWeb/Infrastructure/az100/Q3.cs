@@ -31,7 +31,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes",                    
+                    Text = "Yes",
                 },
                 new AnswerEntity()
                 {

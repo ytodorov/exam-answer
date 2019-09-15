@@ -29,11 +29,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "All contacts associated with campaigns will be added to the campaign influence related list.",                    
+                    Text = "All contacts associated with campaigns will be added to the campaign influence related list.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Sales reps can choose which campaigns created within the last 60 days should be added to the campaign influence related list.",                    
+                    Text = "Sales reps can choose which campaigns created within the last 60 days should be added to the campaign influence related list.",
                 },
                 new AnswerEntity()
                 {

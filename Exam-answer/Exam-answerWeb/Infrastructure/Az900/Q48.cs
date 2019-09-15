@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Automatic scaling.", 
+                    Text = "Automatic scaling.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Data compression.", 
+                    Text = "Data compression.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Versioning.", 
+                    Text = "Versioning.",
                     IsCorrect = false
                 },
             },
@@ -115,7 +114,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Compare Azure SQL Database vs. Azure SQL Data Warehouse: Definitions, Differences and When to Use",
                     Url = "https://stackify.com/azure-sql-database-vs-warehouse/"
                 }
-            },                
+            },
         };
     }
 }

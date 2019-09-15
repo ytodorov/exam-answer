@@ -17,7 +17,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "How should NTO set its default access for accounts and contacts?",
-                },              
+                },
             },
             Answers = new List<AnswerEntity>()
             {
@@ -27,12 +27,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Set accounts to public read-only and contacts to controlled by parent.",           
+                    Text = "Set accounts to public read-only and contacts to controlled by parent.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Set accounts to public read-only and contacts to private.",                    
+                    Text = "Set accounts to public read-only and contacts to private.",
                 },
                 new AnswerEntity()
                 {

@@ -1,16 +1,16 @@
 ﻿@{ if (ViewData["prev"] != null || ViewData["next"] != null)
     {
-        <div style="text-align: center;">
-            @{ if (ViewData["id"]?.ToString() != "1")
+    <div style="text-align: center;">
+        @{ if (ViewData["id"]?.ToString() != "1")
                 {
-                    <a href="~/@(ViewData["basePath"].ToString() + ViewData["prev"])" class="k-button">Previous</a>
+            <a href="~/@(ViewData["basePath"].ToString() + ViewData["prev"])" class="k-button">Previous</a>
                 }
-            }
-            @{ if (ViewData["id"]?.ToString() != ViewData["max"]?.ToString())
-                {                    
-                    <a href="~/@(ViewData["basePath"].ToString() + ViewData["next"])" class="k-button">&nbsp;&nbsp;Next&nbsp;&nbsp;</a>
+        }
+        @{ if (ViewData["id"]?.ToString() != ViewData["max"]?.ToString())
+                {
+            <a href="~/@(ViewData["basePath"].ToString() + ViewData["next"])" class="k-button">&nbsp;&nbsp;Next&nbsp;&nbsp;</a>
                 }
-            }
-        </div>
+        }
+    </div>
     }
 }

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Event Hubs.", 
+                    Text = "Azure Event Hubs.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Activity Log.", 
+                    Text = "Azure Activity Log.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Service Health.", 
+                    Text = "Azure Service Health.",
                     IsCorrect = false
                 },
             },
@@ -83,7 +82,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "View activity logs to monitor actions on resources",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit",
                 },
-            },           
+            },
         };
     }
 }

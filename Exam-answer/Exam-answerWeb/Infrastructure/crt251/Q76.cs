@@ -18,7 +18,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "Which two actions are essential for optimizing user adoption?",
-                },               
+                },
                 new ContentEntity()
                 {
                     Text = "Choose 2 answers.",
@@ -32,12 +32,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Communicating the training plan well in advance of training start date.",                    
+                    Text = "Communicating the training plan well in advance of training start date.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Customizing the training curriculum for each specific region.",        
+                    Text = "Customizing the training curriculum for each specific region.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

@@ -28,7 +28,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
              {
                  new AnswerEntity()
                  {
-                     Text = "Schedule a custom forecast report to run weekly and store the results in a custom report folder.",                     
+                     Text = "Schedule a custom forecast report to run weekly and store the results in a custom report folder.",
                  },
                  new AnswerEntity()
                  {

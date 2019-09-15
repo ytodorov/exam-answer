@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -30,22 +29,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "You are prevented from creating Azure SQL Servers in ContosoRG1 only.", 
+                    Text = "You are prevented from creating Azure SQL Servers in ContosoRG1 only.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "You can create Azure SQL servers in ContosoRG1 only.", 
+                    Text = "You can create Azure SQL servers in ContosoRG1 only.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "You can create Azure SQL servers in any resource group within Subscription1.", 
+                    Text = "You can create Azure SQL servers in any resource group within Subscription1.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "You are prevented from creating Azure SQL servers anywhere in Subscription1.", 
+                    Text = "You are prevented from creating Azure SQL servers anywhere in Subscription1.",
                     IsCorrect = false
                 },
             },
@@ -54,19 +53,15 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-
                 },
                 new ExplanationEntity()
                 {
-
                 },
                 new ExplanationEntity()
                 {
-
                 },
                 new ExplanationEntity()
                 {
-
                 },
             },
 
@@ -82,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="",
                     Url = ""
                 }
-            },                
+            },
         };
     }
 }

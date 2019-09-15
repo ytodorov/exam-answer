@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,27 +38,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Command Prompt.", 
+                    Text = "Command Prompt.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Resource Explorer.", 
+                    Text = "Azure Resource Explorer.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Windows PowerShell.", 
+                    Text = "Windows PowerShell.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Windows Defender Firewall.", 
+                    Text = "Windows Defender Firewall.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Network and Sharing Center.", 
+                    Text = "Network and Sharing Center.",
                     IsCorrect = false
                 },
             },
@@ -73,7 +72,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "The Azure CLI is a command-line tool providing a great experience for managing Azure resources. The CLI is designed to make scripting easy, query data, support long-running operations, and more."
-                },                
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -88,7 +87,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Get started with Azure CLI",
                     Url = "https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest"
                 },
-            },           
+            },
         };
     }
 }

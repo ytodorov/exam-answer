@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Protocol to UDP.", 
+                    Text = "Protocol to UDP.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Session persistence to None.", 
+                    Text = "Session persistence to None.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Session persistence to Client IP.", 
+                    Text = "Session persistence to Client IP.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Idle Time-out (minutes) to 20.", 
+                    Text = "Idle Time-out (minutes) to 20.",
                     IsCorrect = false
                 },
             },
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Configure Azure Load Balancer For Sticky Sessions",
                     Url = "https://cloudopszone.com/configure-azure-load-balancer-for-sticky-sessions/",
                 },
-            },           
+            },
         };
     }
 }

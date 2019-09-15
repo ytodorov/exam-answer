@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -12,7 +11,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Order = 82,
             Section = "Understand Security, Privacy, Compliance and Trust",
             Contents = new List<ContentEntity>()
-            {                
+            {
                 new ContentEntity()
                 {
                     Text = "Your Azure environment contains multiple Azure virtual machines.",
@@ -35,12 +34,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.", 
+                    Text = "Yes.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.", 
+                    Text = "No.",
                     IsCorrect = true
                 },
             },
@@ -97,7 +96,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Tutorial: Deploy and configure Azure Firewall using the Azure portal",
                     Url = "https://docs.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal"
                 }
-            },                
+            },
         };
     }
 }

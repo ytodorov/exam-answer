@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Authentication.", 
+                    Text = "Authentication.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Federation.", 
+                    Text = "Federation.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Ticketing.", 
+                    Text = "Ticketing.",
                     IsCorrect = false
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Authentication and authorization in Azure App Service",
                     Url = "https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
                 },
-            },                
+            },
         };
     }
 }

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Defining scalability rules.", 
+                    Text = "Defining scalability rules.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Installing the SaaS solution.", 
+                    Text = "Installing the SaaS solution.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Configuring the SaaS solution.", 
+                    Text = "Configuring the SaaS solution.",
                     IsCorrect = true
                 },
             },
@@ -66,7 +65,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="What is SaaS?",
                     Url = "https://azure.microsoft.com/en-us/overview/what-is-saas/"
                 },
-            },                
+            },
         };
     }
 }

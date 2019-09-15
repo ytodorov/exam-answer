@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Multiple subscriptions.", 
+                    Text = "Multiple subscriptions.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Multiple Azure Active Directory (Azure AD) directories.", 
+                    Text = "Multiple Azure Active Directory (Azure AD) directories.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Multiple regions.", 
+                    Text = "Multiple regions.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Multiple resource groups.", 
+                    Text = "Multiple resource groups.",
                     IsCorrect = false
                 },
             },
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Subscriptions, licenses, accounts, and tenants for Microsoft's cloud offerings",
                     Url = "https://docs.microsoft.com/en-us/office365/enterprise/subscriptions-licenses-accounts-and-tenants-for-microsoft-cloud-offerings"
                 },
-            },                
+            },
         };
     }
 }

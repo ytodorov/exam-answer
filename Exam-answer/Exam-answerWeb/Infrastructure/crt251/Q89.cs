@@ -32,12 +32,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The selected currency is used for the Amount field.",           
+                    Text = "The selected currency is used for the Amount field.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "The selected currency is used for the Amount (Converted) field.",                    
+                    Text = "The selected currency is used for the Amount (Converted) field.",
                 },
                 new AnswerEntity()
                 {

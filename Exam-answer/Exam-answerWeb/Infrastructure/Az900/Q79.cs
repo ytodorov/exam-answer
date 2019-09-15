@@ -1,7 +1,6 @@
-
 using DAL.Entities;
-using System.Collections.Generic;
 using Exam_answerWeb.Extensions;
+using System.Collections.Generic;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -60,27 +59,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Download an automation script.", 
+                    Text = "Download an automation script.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Register Server1.", 
+                    Text = "Register Server1.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a sync group.", 
+                    Text = "Create a sync group.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a container instance.", 
+                    Text = "Create a container instance.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Install the Azure File Sync agent on Server1.", 
+                    Text = "Install the Azure File Sync agent on Server1.",
                     IsCorrect = true
                 },
             },
@@ -112,7 +111,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Deploy Azure File Sync",
                     Url = "https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide",
                 },
-            },           
+            },
         };
     }
 }

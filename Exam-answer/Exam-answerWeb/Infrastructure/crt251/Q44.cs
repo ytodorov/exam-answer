@@ -31,11 +31,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Build a joined report with closed opportunities, forecasting items, and quotas.",                   
+                    Text = "Build a joined report with closed opportunities, forecasting items, and quotas.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Build a custom report with closed forecasting quotas with forecasting items.",                    
+                    Text = "Build a custom report with closed forecasting quotas with forecasting items.",
                 },
                 new AnswerEntity()
                 {

@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Campaign dashboard by industry.",                    
+                    Text = "Campaign dashboard by industry.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Report on leads by source.",                    
+                    Text = "Report on leads by source.",
                 },
                 new AnswerEntity()
                 {

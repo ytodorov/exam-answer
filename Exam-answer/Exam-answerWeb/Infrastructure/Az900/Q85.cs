@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "The AzurePerformanceDiagnostics extension.", 
+                    Text = "The AzurePerformanceDiagnostics extension.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure HDInsight.", 
+                    Text = "Azure HDInsight.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Linux Diagnostic Extension (LAD) 3.0.", 
+                    Text = "Linux Diagnostic Extension (LAD) 3.0.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Analysis Services.", 
+                    Text = "Azure Analysis Services.",
                     IsCorrect = false
                 },
             },
@@ -74,7 +73,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Tutorial: Monitor and update a Linux virtual machine in Azure",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-monitoring",
                 },
-            },           
+            },
         };
     }
 }

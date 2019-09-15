@@ -28,7 +28,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add the Person Account to the Account owner's default team.",                    
+                    Text = "Add the Person Account to the Account owner's default team.",
                 },
                 new AnswerEntity()
                 {

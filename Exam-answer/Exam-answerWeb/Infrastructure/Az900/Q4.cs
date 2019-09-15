@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -75,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="",
                     Url = ""
                 }
-            },                
+            },
         };
     }
 }

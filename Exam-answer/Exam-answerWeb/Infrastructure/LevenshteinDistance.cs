@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Exam_answerWeb.Infrastructure
 {
@@ -64,6 +61,4 @@ namespace Exam_answerWeb.Infrastructure
             return (1.0 - ((double)stepsToSame / (double)Math.Max(source.Length, target.Length)));
         }
     }
-
-    
 }

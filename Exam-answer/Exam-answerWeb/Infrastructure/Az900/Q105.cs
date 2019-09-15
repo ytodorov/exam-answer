@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,27 +38,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "On the peering connections, use remote gateways.", 
+                    Text = "On the peering connections, use remote gateways.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "On the peering connections, allow forwarded traffic.", 
+                    Text = "On the peering connections, allow forwarded traffic.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "On the peering connections, allow gateway transit.", 
+                    Text = "On the peering connections, allow gateway transit.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create route tables and assign the table to subnets.", 
+                    Text = "Create route tables and assign the table to subnets.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a route filter.", 
+                    Text = "Create a route filter.",
                     IsCorrect = false
                 },
             },
@@ -79,7 +78,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Create, change, or delete a virtual network peering",
                     Url = "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints",
                 },
-            },           
+            },
         };
     }
 }

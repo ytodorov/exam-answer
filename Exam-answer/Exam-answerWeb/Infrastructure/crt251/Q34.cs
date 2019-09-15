@@ -27,15 +27,15 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Upload the leads to Data.com to remove the duplicates and select the option to have them automatically imported.",                    
+                    Text = "Upload the leads to Data.com to remove the duplicates and select the option to have them automatically imported.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Upload the leads and click the “Find Duplicates” button for each of the leads to identify potential duplicate lead records.",                    
+                    Text = "Upload the leads and click the “Find Duplicates” button for each of the leads to identify potential duplicate lead records.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Upload the leads using Data Loader and enable the “Find Duplicates” setting to prevent duplicate records.",                   
+                    Text = "Upload the leads using Data Loader and enable the “Find Duplicates” setting to prevent duplicate records.",
                 },
                 new AnswerEntity()
                 {

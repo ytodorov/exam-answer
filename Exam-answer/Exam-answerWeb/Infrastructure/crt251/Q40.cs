@@ -29,11 +29,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use a validation rule on products marked as requiring certification to prevent them from being added to an opportunity.",                  
+                    Text = "Use a validation rule on products marked as requiring certification to prevent them from being added to an opportunity.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Use a criteria-based sharing rule on products marked as requiring certification to only share the products to users who are certified.",                    
+                    Text = "Use a criteria-based sharing rule on products marked as requiring certification to only share the products to users who are certified.",
                 },
                 new AnswerEntity()
                 {

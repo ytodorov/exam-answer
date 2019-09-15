@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "NSG flow logs in Azure Network Watcher.", 
+                    Text = "NSG flow logs in Azure Network Watcher.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Metrics in Application Gateway.", 
+                    Text = "Metrics in Application Gateway.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Connection monitor in Azure Network Watcher.", 
+                    Text = "Connection monitor in Azure Network Watcher.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Diagnostics logs in Application Gateway.", 
+                    Text = "Diagnostics logs in Application Gateway.",
                     IsCorrect = false
                 },
             },
@@ -90,7 +89,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Back-end health and diagnostic logs for Application Gateway",
                     Url = "https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics#metrics",
                 },
-            },           
+            },
         };
     }
 }

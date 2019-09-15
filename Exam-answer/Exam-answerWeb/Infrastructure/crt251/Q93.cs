@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a dashboard component and use a Chatter feed on the account in Salesforce.",                    
+                    Text = "Create a dashboard component and use a Chatter feed on the account in Salesforce.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Embed a chart on the account page and use a custom link to filter by account.",                    
+                    Text = "Embed a chart on the account page and use a custom link to filter by account.",
                 },
                 new AnswerEntity()
                 {

@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "Northern Trail Outfitters' Board of Directors thinks that sales user adoption should be calculated by the number of daily logins.",
-                },                
+                },
                 new ContentEntity()
                 {
                     Text = "Which two measures of sales user adoption should be considered when implementing Sales Cloud?",
@@ -32,12 +32,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Number of neglected opportunities over time by role.",        
+                    Text = "Number of neglected opportunities over time by role.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Completeness of records entered into the new system.",                    
+                    Text = "Completeness of records entered into the new system.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

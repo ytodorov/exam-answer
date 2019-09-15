@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,22 +34,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Automatically migrate the resource to another subscription.", 
+                    Text = "Automatically migrate the resource to another subscription.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Automatically credit your account.", 
+                    Text = "Automatically credit your account.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Send you a coupon code that you can redeem for Azure credits.", 
+                    Text = "Send you a coupon code that you can redeem for Azure credits.",
                     IsCorrect = false
                 },
             },
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="SLA for App Service",
                     Url = "https://azure.microsoft.com/en-in/support/legal/sla/app-service/v1_4/"
                 }
-            },                
+            },
         };
     }
 }

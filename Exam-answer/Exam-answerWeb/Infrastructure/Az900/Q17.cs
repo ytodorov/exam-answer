@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -35,27 +34,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Data Lake.", 
+                    Text = "Azure Data Lake.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Cosmos DB.", 
+                    Text = "Azure Cosmos DB.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure SQL Data Warehouse.", 
+                    Text = "Azure SQL Data Warehouse.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure SQL Database.", 
+                    Text = "Azure SQL Database.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Database for PostgreSQL.", 
+                    Text = "Azure Database for PostgreSQL.",
                     IsCorrect = false
                 },
             },
@@ -69,7 +68,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "Unlock new insights from your data with Azure SQL Data Warehouse, a fully managed cloud data warehouse for enterprises of any size that combines lightning-fast query performance with industry-leading data security. Optimise workloads by elastically scaling your resources in minutes. Get unlimited storage, automated administration and built-in auditing and threat detection. Integrate seamlessly with Azure Active Directory, Azure Data Factory, Azure Data Lake Storage, Azure Databricks and Microsoft Power BI to provide a single holistic modern data warehouse solution for all your analytical workloads."
-                },                
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -84,7 +83,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "https://stackify.com/azure-sql-database-vs-warehouse/",
                     Url = "https://stackify.com/azure-sql-database-vs-warehouse/"
                 },
-            },           
+            },
         };
     }
 }

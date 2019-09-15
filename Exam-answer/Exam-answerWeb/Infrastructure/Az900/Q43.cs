@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a service health alert.", 
+                    Text = "Create a service health alert.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Upgrade your support plan.", 
+                    Text = "Upgrade your support plan.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Modify an Azure policy.", 
+                    Text = "Modify an Azure policy.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a new support request.", 
+                    Text = "Create a new support request.",
                     IsCorrect = true
                 },
             },
@@ -78,7 +77,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="Azure subscription and service limits, quotas, and constraints",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits"
                 },
-            },                
+            },
         };
     }
 }

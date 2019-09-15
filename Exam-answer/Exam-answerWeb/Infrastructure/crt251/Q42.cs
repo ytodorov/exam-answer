@@ -31,7 +31,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create two page layouts and two sales processes; assign them to the respective product lines to collect relevant information.",                    
+                    Text = "Create two page layouts and two sales processes; assign them to the respective product lines to collect relevant information.",
                 },
                 new AnswerEntity()
                 {
@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create two page layouts, one opportunity record type, and one workflow rule to assign the correct page layout to the record type.",                    
+                    Text = "Create two page layouts, one opportunity record type, and one workflow rule to assign the correct page layout to the record type.",
                 },
             }
         };

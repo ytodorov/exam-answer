@@ -27,11 +27,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Download and install a Salesforce universal connector for their smartphones and computers.",                    
+                    Text = "Download and install a Salesforce universal connector for their smartphones and computers.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Download and install the Salesforce for Outlook connector on their smartphones and computers.",                    
+                    Text = "Download and install the Salesforce for Outlook connector on their smartphones and computers.",
                 },
                 new AnswerEntity()
                 {
@@ -40,7 +40,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Copy and paste emails manually to the customer record in Salesforce from their smartphones and computers.",                    
+                    Text = "Copy and paste emails manually to the customer record in Salesforce from their smartphones and computers.",
                 },
             }
         };

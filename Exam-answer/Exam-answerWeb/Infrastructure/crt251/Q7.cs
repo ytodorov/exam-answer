@@ -37,7 +37,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create a custom contact lookup field.",                    
+                    Text = "Create a custom contact lookup field.",
                 },
                 new AnswerEntity()
                 {

@@ -31,11 +31,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
             {
                 new AnswerEntity()
                 {
-                    Text = "Create a trigger to add the sales engineers to their sales representatives account and opportunity teams.",                   
+                    Text = "Create a trigger to add the sales engineers to their sales representatives account and opportunity teams.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Create criteria-based sharing rules to share the accounts and opportunities with sales engineers.",                    
+                    Text = "Create criteria-based sharing rules to share the accounts and opportunities with sales engineers.",
                 },
                 new AnswerEntity()
                 {
@@ -44,7 +44,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Have the sales representatives manually share the accounts and opportunities with their assigned sales engineers.",                    
+                    Text = "Have the sales representatives manually share the accounts and opportunities with their assigned sales engineers.",
                 },
             }
         };

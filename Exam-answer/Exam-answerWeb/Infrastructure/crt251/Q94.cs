@@ -31,11 +31,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "The link to the Facebook profile is NOT configured with the administrator password to access detailed information.",                    
+                    Text = "The link to the Facebook profile is NOT configured with the administrator password to access detailed information.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "The information shown is based on the sales representative's social connection with the contact.",                    
+                    Text = "The information shown is based on the sales representative's social connection with the contact.",
                     IsCorrect = true
                 },
                 new AnswerEntity()

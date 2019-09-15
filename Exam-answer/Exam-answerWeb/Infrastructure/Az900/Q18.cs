@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Service Fabric.", 
+                    Text = "Azure Service Fabric.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Monitor.", 
+                    Text = "Azure Monitor.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure virtual machines.", 
+                    Text = "Azure virtual machines.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Advisor.", 
+                    Text = "Azure Advisor.",
                     IsCorrect = false
                 },
             },
@@ -56,7 +55,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "All data collected by Azure Monitor fits into one of two fundamental types, metrics and logs. Metrics are numerical values that describe some aspect of a system at a particular point in time. They are lightweight and capable of supporting near real-time scenarios. Logs contain different kinds of data organized into records with different sets of properties for each type. Telemetry such as events and traces are stored as logs in addition to performance data so that it can all be combined for analysis."
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -71,7 +70,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure Monitor Documentation",
                     Url = "https://docs.microsoft.com/en-us/azure/azure-monitor/"
                 },
-            },           
+            },
         };
     }
 }

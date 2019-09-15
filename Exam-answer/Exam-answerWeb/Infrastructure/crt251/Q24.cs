@@ -30,11 +30,11 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Acquire the client stakeholder's key performance indicators.",                    
+                    Text = "Acquire the client stakeholder's key performance indicators.",
                 },
                 new AnswerEntity()
                 {
-                    Text = "Establish a stakeholder committee and meeting schedule.",                    
+                    Text = "Establish a stakeholder committee and meeting schedule.",
                 },
             }
         };

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -47,22 +46,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Add the Puppet Agent extension.", 
+                    Text = "Add the Puppet Agent extension.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Change the size to D8s v3.", 
+                    Text = "Change the size to D8s v3.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Add a 500-GB managed disk.", 
+                    Text = "Add a 500-GB managed disk.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Attach an additional network interface.", 
+                    Text = "Attach an additional network interface.",
                     IsCorrect = false
                 },
             },
@@ -82,7 +81,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Resize virtual machines",
                     Url = "https://azure.microsoft.com/en-us/blog/resize-virtual-machines/",
                 },
-            },           
+            },
         };
     }
 }

@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -39,27 +38,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "A virtual network gateway.", 
+                    Text = "A virtual network gateway.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A load balancer.", 
+                    Text = "A load balancer.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "An application gateway.", 
+                    Text = "An application gateway.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "A virtual network.", 
+                    Text = "A virtual network.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "A gateway subnet.", 
+                    Text = "A gateway subnet.",
                     IsCorrect = true
                 },
             },
@@ -77,7 +76,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "VPN gateways can be deployed in Azure Availability Zones. This brings resiliency, scalability, and higher availability to virtual network gateways. Deploying gateways in Azure Availability Zones physically and logically separates gateways within a region, while protecting your on-premises network connectivity to Azure from zone-level failures. "
-                },                
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -92,7 +91,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "What is VPN Gateway?",
                     Url = "https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways",
                 },
-            },           
+            },
         };
     }
 }

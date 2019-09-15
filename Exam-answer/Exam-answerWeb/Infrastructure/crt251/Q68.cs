@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 new ContentEntity()
                 {
                     Text = "Which three actions should a consultant recommend to provide alignment between a new formal sales methodology and Salesforce?",
-                },                
+                },
                 new ContentEntity()
                 {
                     Text = "Choose 3 answers.",
@@ -28,12 +28,12 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 },
                 new AnswerEntity()
                 {
-                    Text = "Consider available sales methodology AppExchange applications.",                    
+                    Text = "Consider available sales methodology AppExchange applications.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Develop a data integration between Salesforce and the sales methodology database.",                    
+                    Text = "Develop a data integration between Salesforce and the sales methodology database.",
                 },
                 new AnswerEntity()
                 {
@@ -44,7 +44,7 @@ namespace Exam_answerWeb.Infrastructure.crt251
                 {
                     Text = "Embed Lightning components within Salesforce to support the sales methodology.",
                     IsCorrect = true
-                },                
+                },
             }
         };
     }

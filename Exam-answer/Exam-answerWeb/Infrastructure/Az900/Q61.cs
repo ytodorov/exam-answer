@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -23,22 +22,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Azure Logic Apps.", 
+                    Text = "Azure Logic Apps.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Machine Learning Studio.", 
+                    Text = "Azure Machine Learning Studio.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Batch.", 
+                    Text = "Azure Batch.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Cosmos DB.", 
+                    Text = "Azure Cosmos DB.",
                     IsCorrect = false
                 },
             },
@@ -70,7 +69,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="What is Azure Machine Learning Studio?",
                     Url = "https://docs.microsoft.com/en-us/azure/machine-learning/studio/what-is-ml-studio"
                 },
-            },                
+            },
         };
     }
 }

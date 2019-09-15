@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Resource groups provide.", 
+                    Text = "Resource groups provide.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Resource Manager provides.", 
+                    Text = "Azure Resource Manager provides.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "Management groups provide.", 
+                    Text = "Management groups provide.",
                     IsCorrect = false
                 },
             },
@@ -60,7 +59,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ExplanationEntity()
                 {
                     Text = "When you take actions through the portal, PowerShell, Azure CLI, REST APIs, or client SDKs, the Azure Resource Manager API handles your request. Because all requests are handled through the same API, you see consistent results and capabilities in all the different tools. All capabilities that are available in the portal are also available through PowerShell, Azure CLI, REST APIs, and client SDKs."
-                },               
+                },
             },
 
             References = new List<ReferenceEntity>()
@@ -75,7 +74,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Azure Resource Manager",
                     Url = "https://azure.microsoft.com/en-us/features/resource-manager/"
                 }
-            },           
+            },
         };
     }
 }

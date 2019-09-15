@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -31,22 +30,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "No change is needed.", 
+                    Text = "No change is needed.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "By using the same Azure Resource Manager template.", 
+                    Text = "By using the same Azure Resource Manager template.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "To the same resource group.", 
+                    Text = "To the same resource group.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "To the same availability zone.", 
+                    Text = "To the same availability zone.",
                     IsCorrect = false
                 },
             },
@@ -91,7 +90,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text ="What is role-based access control (RBAC) for Azure resources?",
                     Url = "https://docs.microsoft.com/en-us/azure/role-based-access-control/overview"
                 }
-            },                
+            },
         };
     }
 }

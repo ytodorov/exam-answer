@@ -1,4 +1,3 @@
-
 using DAL.Entities;
 using System.Collections.Generic;
 
@@ -27,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "The Knowledge Center.", 
+                    Text = "The Knowledge Center.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "Azure Marketplace.", 
+                    Text = "Azure Marketplace.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Azure portal.", 
+                    Text = "The Azure portal.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "The Trust Center.", 
+                    Text = "The Trust Center.",
                     IsCorrect = true
                 },
             },
@@ -71,7 +70,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     Text = "Microsoft Trust Center Home",
                     Url = "https://www.microsoft.com/en-us/trust-center"
                 },
-            },           
+            },
         };
     }
 }
