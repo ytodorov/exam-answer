@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -51,6 +52,16 @@ namespace DAL.Entities
         }
 
         [NotMapped]
+        public string ContentTextUdemy
+        {
+            get
+            {
+                var res = ContentText.Replace(Environment.NewLine, " ");
+                return res;
+            }
+        }
+
+        [NotMapped]
         public string AnswerText
         {
             get
@@ -89,6 +100,18 @@ namespace DAL.Entities
         }
 
         [NotMapped]
+        public string ExplanationTextUdemy
+        {
+            get
+            {
+                var res = ExplanationText.Replace(Environment.NewLine, " ");
+                return res;
+            }
+        }
+
+
+
+        [NotMapped]
         public string ReferenceText
         {
             get
@@ -104,6 +127,22 @@ namespace DAL.Entities
                 string result = sb.ToString().Trim();
 
                 return result;
+            }
+        }
+
+        [NotMapped]
+        public string ReferenceTextUdemy
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in References)
+                {
+                    sb.Append(item.Url);
+                    sb.Append(" ");
+                }
+                var res = sb.ToString();
+                return res;
             }
         }
     }
