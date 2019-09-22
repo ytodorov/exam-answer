@@ -127,7 +127,6 @@ namespace Exam_answerWeb.Infrastructure
             crt251.Questions.Add(Q100.Instance);
 
             crt251.ShowUdemy = true;
-
             crt251.UdemyLinkUrl = "https://www.udemy.com/salesforce-crt-251-sales-cloud-consultant-exam-questions/?couponCode=50_OFF";
             crt251.UdemyLinkMessage = "Salesforce CRT-251: Sales Cloud Consultant - 50% OFF";
             crt251.UdemyMessage =
@@ -175,6 +174,8 @@ namespace Exam_answerWeb.Infrastructure
                 Questions = new List<QuestionEntity>()
             };
 
+
+            az900.ShowUdemy = true;
             az900.UdemyLinkUrl = "https://www.udemy.com/course/exam-az-900-microsoft-azure-fundamentals-exam-questions/?couponCode=50_OFF";
             az900.UdemyLinkMessage = "Exam AZ-900: Microsoft Azure Fundamentals, Exam Question - 50 % OFF";
             az900.UdemyMessage =
