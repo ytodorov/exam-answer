@@ -22,9 +22,9 @@ namespace UnitTests
 
             sb.AppendLine("Question,Question Type (multiple-choice or multi-select),Answer Option 1,Answer Option 2,Answer Option 3,Answer Option 4,Answer Option 5,Answer Option 6,Correct Response,Explanation,Knowledge Area");
 
-            theExamToExportToUdemy.Questions = theExamToExportToUdemy.Questions.Take(1).ToList();
+            var theQuestions = theExamToExportToUdemy.Questions.Skip(50).Take(50).ToList();
 
-            foreach (QuestionEntity question in theExamToExportToUdemy.Questions)
+            foreach (QuestionEntity question in theQuestions)
             {
                 if (!question.Answers.Any(a => a.IsCorrect == true))
                 {
@@ -91,8 +91,6 @@ namespace UnitTests
                 if (!string.IsNullOrEmpty(question.ExplanationText))
                 {
                     sb.Append(question.ExplanationTextUdemy.Replace(",", ""));
-                    sb.Append("<p>1</p>");
-                    sb.Append("<p>2</p>");
                     sb.Append("References: ");
                     sb.Append(question.ReferenceTextUdemy.Replace(",", ""));
                 }

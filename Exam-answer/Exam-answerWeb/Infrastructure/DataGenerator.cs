@@ -175,6 +175,12 @@ namespace Exam_answerWeb.Infrastructure
                 Questions = new List<QuestionEntity>()
             };
 
+            az900.UdemyLinkUrl = "https://www.udemy.com/course/exam-az-900-microsoft-azure-fundamentals-exam-questions/?couponCode=50_OFF";
+            az900.UdemyLinkMessage = "Exam AZ-900: Microsoft Azure Fundamentals, Exam Question - 50 % OFF";
+            az900.UdemyMessage =
+                "If you like what you see, please support the future development of our web site by buying this practice test at Udemy." +
+                " Click this link for a 50% discount. The price is ONLY 12.99!";
+
             var az900Fields = typeof(Az900).GetFields(BindingFlags.Static |
                                                       BindingFlags.Public |
                                                       BindingFlags.NonPublic).ToList();

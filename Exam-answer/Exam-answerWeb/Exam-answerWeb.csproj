@@ -15,6 +15,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Infrastructure\Az900\Q104.cs" />
+    <Compile Remove="Infrastructure\Az900\Q105.cs" />
+    <Compile Remove="Infrastructure\Az900\Q106.cs" />
+    <Compile Remove="Infrastructure\Az900\Q107.cs" />
+    <Compile Remove="Infrastructure\Az900\Q108.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\microsoft\az-100\index.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question1.cshtml" />
     <Content Remove="wwwroot\microsoft\az-100\question10.cshtml" />
