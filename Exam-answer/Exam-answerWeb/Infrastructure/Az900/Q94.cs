@@ -23,19 +23,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet1,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: West US".PadRightEA() + "Resource group: RG2".PadRightEA()
+                    Text = "Name: VNet1,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: West US".PadRightEA() + "Resource group: RG2"
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet2,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: West US".PadRightEA() + "Resource group: RG1".PadRightEA()
+                    Text = "Name: VNet2,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: West US".PadRightEA() + "Resource group: RG1"
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet3,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: East US".PadRightEA() + "Resource group: RG1".PadRightEA()
+                    Text = "Name: VNet3,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: East US".PadRightEA() + "Resource group: RG1"
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: NSG1,".PadRightEA() + "Type: Network security group (NSG)".PadRightEA() + "Azure region: East US".PadRightEA() + "Resource group: RG2".PadRightEA()
+                    Text = "Name: NSG1,".PadRightEA() + "Type: Network security group (NSG)".PadRightEA() + "Azure region: East US".PadRightEA() + "Resource group: RG2"
                 },
                 new ContentEntity()
                 {

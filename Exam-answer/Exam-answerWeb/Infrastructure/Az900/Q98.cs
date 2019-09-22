@@ -1,5 +1,6 @@
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -18,11 +19,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: RG1, Region: East Asia"
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: RG2, Region: East US"
+                    Text = "Name: RG1,".PadRightEA() + "Region: East Asia"
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: RG2,".PadRightEA() + "Region: East US"
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
@@ -87,31 +96,31 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "A resource group can contain resources that are located in different regions.",
+                    Text = "* A resource group can contain resources that are located in different regions.",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "All the resources in your group should share the same lifecycle. You deploy, update, and delete them together. If one resource, such as a database server, needs to exist on a different deployment cycle it should be in another resource group.",
+                    Text = "* All the resources in your group should share the same lifecycle. You deploy, update, and delete them together. If one resource, such as a database server, needs to exist on a different deployment cycle it should be in another resource group.",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Each resource can only exist in one resource group.",
+                    Text = "* Each resource can only exist in one resource group.",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "You can add or remove a resource to a resource group at any time.",
+                    Text = "* You can add or remove a resource to a resource group at any time.",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "You can move a resource from one resource group to another group. ",
+                    Text = "* You can move a resource from one resource group to another group. ",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "A resource group can be used to scope access control for administrative actions.",
+                    Text = "* A resource group can be used to scope access control for administrative actions.",
                 },
                 new ExplanationEntity()
                 {
-                    Text = "A resource can interact with resources in other resource groups. This interaction is common when the two resources are related but don't share the same lifecycle (for example, web apps connecting to a database).",
+                    Text = "* A resource can interact with resources in other resource groups. This interaction is common when the two resources are related but don't share the same lifecycle (for example, web apps connecting to a database).",
                 },
             },
 

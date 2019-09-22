@@ -23,19 +23,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Storage1,".PadRightEA() + "Type: Storage account".PadRightEA(),
+                    Text = "Name: Storage1,".PadRightEA() + "Type: Storage account",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: RG1,".PadRightEA() + "Type: Resource group".PadRightEA(),
+                    Text = "Name: RG1,".PadRightEA() + "Type: Resource group",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Container1,".PadRightEA() + "Type: Blob container".PadRightEA(),
+                    Text = "Name: Container1,".PadRightEA() + "Type: Blob container",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Share1,".PadRightEA() + "Type: File share".PadRightEA(),
+                    Text = "Name: Share1,".PadRightEA() + "Type: File share",
                 },
                 new ContentEntity()
                 {

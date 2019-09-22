@@ -1,5 +1,6 @@
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -18,19 +19,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet1, Address space: 10.11.0.0/16, Subnet: 10.11.0.0/17, Azure Region: West US",
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet2, Address space: 10.11.0.0/17, Subnet: 10.11.0.0/25, Azure Region: West US",
+                    Text = "Name: VNet1,".PadRightEA() + "Address space: 10.11.0.0/16,".PadRightEA() + "Subnet: 10.11.0.0/17,".PadRightEA() + "Azure Region: West US",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet3, Address space: 10.10.0.0/22, Subnet: 10.10.1.0/24, Azure Region: East US",
+                    Text = "Name: VNet2,".PadRightEA() + "Address space: 10.11.0.0/17,".PadRightEA() + "Subnet: 10.11.0.0/25,".PadRightEA() + "Azure Region: West US",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VNet4, Address space: 192.168.16.0/22, Subnet: 192.168.16.0/24, Azure Region: North Europe",
+                    Text = "Name: VNet3,".PadRightEA() + "Address space: 10.10.0.0/22,".PadRightEA() + "Subnet: 10.10.1.0/24,".PadRightEA() + "Azure Region: East US",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet4,".PadRightEA() +"Address space: 192.168.16.0/22,".PadRightEA() +"Subnet: 192.168.16.0/24,".PadRightEA() + "Azure Region: North Europe",
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
                 },
                 new ContentEntity()
                 {

@@ -23,19 +23,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM1,".PadRightEA() + "Azure Region: West Europe".PadRightEA(),
+                    Text = "Name: VM1,".PadRightEA() + "Azure Region: West Europe",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM2,".PadRightEA() + "Azure Region: West Europe".PadRightEA(),
+                    Text = "Name: VM2,".PadRightEA() + "Azure Region: West Europe",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM3,".PadRightEA() + "Azure Region: North Europe".PadRightEA(),
+                    Text = "Name: VM3,".PadRightEA() + "Azure Region: North Europe",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM4,".PadRightEA() + "Azure Region: North Europe".PadRightEA(),
+                    Text = "Name: VM4,".PadRightEA() + "Azure Region: North Europe",
                 },
                 new ContentEntity()
                 {
