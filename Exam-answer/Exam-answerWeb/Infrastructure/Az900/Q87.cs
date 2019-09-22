@@ -1,5 +1,6 @@
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -18,19 +19,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Storage1, Type: Storage account",
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: RG1, Type: Resource group",
+                    Text = "Name: Storage1,".PadRightEA() + "Type: Storage account".PadRightEA(),
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Container1, Type: Blob container",
+                    Text = "Name: RG1,".PadRightEA() + "Type: Resource group".PadRightEA(),
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: Share1, Type: File share",
+                    Text = "Name: Container1,".PadRightEA() + "Type: Blob container".PadRightEA(),
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: Share1,".PadRightEA() + "Type: File share".PadRightEA(),
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
                 },
                 new ContentEntity()
                 {

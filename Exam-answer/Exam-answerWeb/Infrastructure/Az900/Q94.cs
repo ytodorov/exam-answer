@@ -1,5 +1,6 @@
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -15,6 +16,30 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new ContentEntity()
                 {
                     Text = "You have an Azure subscription that contains the resources in the following table.",
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet1,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: West US".PadRightEA() + "Resource group: RG2".PadRightEA()
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet2,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: West US".PadRightEA() + "Resource group: RG1".PadRightEA()
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VNet3,".PadRightEA() + "Type: virtual network".PadRightEA() + "Azure region: East US".PadRightEA() + "Resource group: RG1".PadRightEA()
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: NSG1,".PadRightEA() + "Type: Network security group (NSG)".PadRightEA() + "Azure region: East US".PadRightEA() + "Resource group: RG2".PadRightEA()
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
                 },
                 new ContentEntity()
                 {

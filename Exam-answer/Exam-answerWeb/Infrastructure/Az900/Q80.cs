@@ -1,5 +1,6 @@
 using DAL.Entities;
 using System.Collections.Generic;
+using Exam_answerWeb.Extensions;
 
 namespace Exam_answerWeb.Infrastructure.Questions
 {
@@ -18,19 +19,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM1, Azure Region: West Europe",
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM2, Azure Region: West Europe",
+                    Text = "Name: VM1,".PadRightEA() + "Azure Region: West Europe".PadRightEA(),
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM3, Azure Region: North Europe",
+                    Text = "Name: VM2,".PadRightEA() + "Azure Region: West Europe".PadRightEA(),
                 },
                 new ContentEntity()
                 {
-                    Text = "Name: VM4, Azure Region: North Europe",
+                    Text = "Name: VM3,".PadRightEA() + "Azure Region: North Europe".PadRightEA(),
+                },
+                new ContentEntity()
+                {
+                    Text = "Name: VM4,".PadRightEA() + "Azure Region: North Europe".PadRightEA(),
+                },
+                new ContentEntity()
+                {
+                    Text = "***",
                 },
                 new ContentEntity()
                 {
