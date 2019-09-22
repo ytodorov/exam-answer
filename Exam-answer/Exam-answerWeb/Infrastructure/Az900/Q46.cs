@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "Your company has an Azure subscription that contains the following unused resources:.",
+                    Text = "Your company has an Azure subscription that contains the following unused resources:",
                 },
                 new ContentEntity()
                 {

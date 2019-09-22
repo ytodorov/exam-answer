@@ -62,19 +62,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Allow one user to manage virtual machines in a subscription and another user to manage virtual networks."
+                    Text = "* Allow one user to manage virtual machines in a subscription and another user to manage virtual networks."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Allow a DBA group to manage SQL databases in a subscription"
+                    Text = "* Allow a DBA group to manage SQL databases in a subscription"
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets"
+                    Text = "* Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets"
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Allow an application to access all resources in a resource group"
+                    Text = "* Allow an application to access all resources in a resource group"
                 },
             },
 

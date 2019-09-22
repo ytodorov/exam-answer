@@ -14,11 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Mapped drive.",
+                    Text = "You plan to map a network drive from several computers that run Windows 10 to Azure Storage. You need to create a storage solution in Azure for the planned mapped drive.",
                 },
                 new ContentEntity()
                 {

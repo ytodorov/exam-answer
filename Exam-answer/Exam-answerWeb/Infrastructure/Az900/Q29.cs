@@ -14,11 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You need to ensure that when Azure Active Directory (Azure AD) users connect to Azure AD from the Internet by using an anonymous IP address, the users are.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Prompted automatically to change their password.",
+                    Text = "You need to ensure that when Azure Active Directory (Azure AD) users connect to Azure AD from the Internet by using an anonymous IP address, the users are prompted automatically to change their password.",
                 },
                 new ContentEntity()
                 {

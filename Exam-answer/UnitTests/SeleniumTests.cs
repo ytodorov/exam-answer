@@ -19,7 +19,7 @@ namespace UnitTests
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
             {
-                for (int i = 10; i < 20; i++)
+                for (int i = 1; i < 108; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-900/question{i}");
                 }

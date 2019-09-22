@@ -14,11 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You attempt to create several managed Microsoft SQL Server instances in an Azure environment and receive a message that you must increase your Azure.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Subscription limits.",
+                    Text = "You attempt to create several managed Microsoft SQL Server instances in an Azure environment and receive a message that you must increase your Azure Subscription Limits.",
                 },
                 new ContentEntity()
                 {

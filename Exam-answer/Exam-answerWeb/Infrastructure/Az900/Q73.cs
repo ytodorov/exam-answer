@@ -14,11 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Templates.",
+                    Text = "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.",
                 },
                 new ContentEntity()
                 {
