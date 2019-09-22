@@ -30,7 +30,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "* The NVAs must load balance traffic to two services on the Profuction subnet. The services have different IP addresses.",
+                    Text = "* The NVAs must load balance traffic to two services on the Production subnet. The services have different IP addresses.",
                 },
                 new ContentEntity()
                 {
