@@ -80,26 +80,6 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 {
                     Text = "Verification code from mobile app or hardware token: The Microsoft Authenticator app generates a new OATH verification code every 30 seconds. The user enters the verification code into the sign-in interface. The Microsoft Authenticator app is available for Windows Phone, Android, and iOS.",
                 },
-                new ExplanationEntity()
-                {
-                    Text = "",
-                },
-                 new ExplanationEntity()
-                {
-                    Text = "",
-                },
-                new ExplanationEntity()
-                {
-                    Text = "",
-                },
-                 new ExplanationEntity()
-                {
-                    Text = "",
-                },
-                new ExplanationEntity()
-                {
-                    Text = "",
-                },
             },
 
             References = new List<ReferenceEntity>()

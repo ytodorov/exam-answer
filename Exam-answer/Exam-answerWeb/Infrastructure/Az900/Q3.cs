@@ -68,7 +68,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text = "",
+                    Text = "What is PaaS?",
                     Url = "https://azure.microsoft.com/en-in/overview/what-is-paas/"
                 }
             },

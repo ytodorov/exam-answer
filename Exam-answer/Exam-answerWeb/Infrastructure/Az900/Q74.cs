@@ -5,10 +5,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        /// <summary>
-        /// TO DO
-        /// </summary>
-        public static QuestionEntity Q73Instance = new QuestionEntity()
+        public static QuestionEntity Q107Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
             Order = 197,
@@ -17,11 +14,11 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You have an Azure policy as shown in the following exhibit.",
+                    Text = "You need to move the blueprint files to Azure.",
                 },
                 new ContentEntity()
                 {
-                    Text = "What is the effect of the policy?",
+                    Text = "What should you do?",
                 },
             },
 
@@ -29,22 +26,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "You are prevented from creating Azure SQL Servers in ContosoRG1 only.",
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "You can create Azure SQL servers in ContosoRG1 only.",
+                    Text = "Use Azure Storage Explorer to copy the files.",
                     IsCorrect = true
                 },
                 new AnswerEntity()
                 {
-                    Text = "You can create Azure SQL servers in any resource group within Subscription1.",
+                    Text = "Use the Azure Import/Export service.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "You are prevented from creating Azure SQL servers anywhere in Subscription1.",
+                    Text = "Generate a shared access signature (SAS). Map a drive, and then copy the files by using File Explorer.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Generate an access key. Map a drive, and then copy the files by using File Explorer.",
                     IsCorrect = false
                 },
             },
@@ -53,15 +50,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                },
-                new ExplanationEntity()
-                {
-                },
-                new ExplanationEntity()
-                {
-                },
-                new ExplanationEntity()
-                {
+                    Text = "Azure Storage Explorer is a free tool from Microsoft that allows you to work with Azure Storage data on Windows, macOS, and Linux. You can use it to upload and download data from Azure blob storage."
                 },
             },
 
@@ -69,14 +58,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text = "Move data to and from Azure Blob Storage using Azure Storage Explorer",
+                    Url = "https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer",
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },
         };
     }

@@ -5,7 +5,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q105Instance = new QuestionEntity()
+        public static QuestionEntity Q80Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
             Order = 241,
@@ -14,19 +14,155 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.",
+                    Text = "OVERVIEW:",
                 },
                 new ContentEntity()
                 {
-                    Text = "You hire a temporary vendor. The vendor uses a Microsoft account that has a sign-in of user1@outlook.com.",
+                    Text = "Contoso, Ltd. is a manufacturing company that has offices worldwide. Contoso works with partner organizations to bring products to market. Contoso products are manufactured by using blueprint files that the company authors and maintains.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to ensure that the vendor can authenticate to the tenant by using user1@outlook.com.",
+                    Text = "EXISTING ENVIRONMENT:",
                 },
                 new ContentEntity()
                 {
-                    Text = "What should you do?",
+                    Text = "Currently, Contoso uses multiple types of servers for business operations, including the following:.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* File servers.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Domain controllers.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Microsoft SQL Server servers.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Your network contains an Active Directory forest named contoso.com. All servers and client computers are joined to Active Directory. You have a public-facing application named App1. App1 is comprised of the following three tiers:.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* A SQL database.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* A web front end.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* A processing middle tier.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Each tier is comprised of five virtual machines. Users access the web front end by using HTTPS only.",
+                },
+                new ContentEntity()
+                {
+                    Text = "REQUIREMENTS:",
+                },
+                new ContentEntity()
+                {
+                    Text = "PLANNED CHANGES:",
+                },
+                new ContentEntity()
+                {
+                    Text = "Contoso plans to implement the following changes to the infrastructure:.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Move all the tiers of App1 to Azure.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Move the existing product blueprint files to Azure Blob storage.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Create a hybrid directory to support an upcoming Microsoft Office 365 migration project.",
+                },
+                new ContentEntity()
+                {
+                    Text = "TECHNICAL REQUIREMENTS:",
+                },
+                new ContentEntity()
+                {
+                    Text = "Contoso must meet the following technical requirements:.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Move all the virtual machines for App1 to Azure.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Minimize the number of open ports between the App1 tiers.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Ensure that all the virtual machines for App1 are protected by backups.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Copy the blueprint files to Azure over the Internet.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Ensure that the blueprint files are stored in the archive storage tier.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Ensure that partner access to the blueprint files is secured and temporary.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Prevent user passwords or hashes of passwprds from being stored in Azure.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Use unmanaged standard storage for the hard disks of the virtual machines.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Ensure that when users join devices to Azure Active Directory (Azure AD), the users use a mobile phone to verify their identity.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Minimize administrative effort whenever possible.",
+                },
+                new ContentEntity()
+                {
+                    Text = "USER REQUIREMENTS:",
+                },
+                new ContentEntity()
+                {
+                    Text = "Contoso identifies the following requirements for users:.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Ensure that only users who are part of a group named Pilot can join devices to Azure AD.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Designate a new user named Admin1 as the service admin for the Azure subscription.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Admin1 must receive email alerts regarding service outages.",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Ensure that a new user named User3 can create network objects for the Azure subscription.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You need to implement a backup solution for App1 after the application is moved.",
+                },
+                new ContentEntity()
+                {
+                    Text = "What should you create first?",
                 },
             },
 
@@ -34,23 +170,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "From the Azure portal, add a custom domain name, create a new Azure AD user, and then specify user1@outlook.com as the username.",
+                    Text = "A recovery plan.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "From Azure Cloud Shell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.",
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "From the Azure portal, add a new guest user, and then specify user1@outlook.com as the email address.",
-                    IsCorrect = false
-                },
-                new AnswerEntity()
-                {
-                    Text = "From Windows PowerShell, run the New-AzureADUser cmdlet and specify the \"–UserPrincipalName user1@outlook.com\" parameter.",
+                    Text = "A Recovery Services vault.",
                     IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "An Azure Backup Server.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "A backup policy.",
+                    IsCorrect = false
                 },
             },
 
@@ -58,15 +194,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "UserPrincipalName - contains the UserPrincipalName (UPN) of this user. The UPN is what the user will use when they sign in into Azure AD. The common structure is @, so for Abby Brown in Contoso.com, the UPN would be AbbyB@contoso.com"
+                    Text = "A Recovery Services vault is a logical container that stores the backup data for each protected resource, such as Azure VMs. When the backup job for a protected resource runs, it creates a recovery point inside the Recovery Services vault."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "To create the user, call the New-AzureADUser cmdlet with the parameter values:"
+                    Text = "Scenario:"
                 },
                 new ExplanationEntity()
                 {
-                    Text = "powershell New-AzureADUser -AccountEnabled $True -DisplayName \"Abby Brown\" -PasswordProfile $PasswordProfile -MailNickName \"AbbyB\" - UserPrincipalName \"AbbyB@contoso.com\""
+                    Text = "There are three application tiers, each with five virtual machines."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Move all the virtual machines for App1 to Azure."
+                },
+                new ExplanationEntity()
+                {
+                    Text = "Ensure that all the virtual machines for App1 are protected by backups."
                 },
             },
 
@@ -74,8 +218,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text = "Creating a new user in Azure AD",
-                    Url = "https://docs.microsoft.com/bs-cyrl-ba/powershell/azure/active-directory/new-user-sample?view=azureadps-2.0",
+                    Text = "Back up a virtual machine in Azure",
+                    Url = "https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal",
                 },
             },
         };

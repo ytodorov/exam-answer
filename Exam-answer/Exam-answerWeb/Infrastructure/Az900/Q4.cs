@@ -66,14 +66,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text ="",
-                    Url = ""
+                    Text ="What is elastic computing or cloud elasticity?",
+                    Url = "https://azure.microsoft.com/en-us/overview/what-is-elastic-computing/"
                 },
-                new ReferenceEntity()
-                {
-                    Text ="",
-                    Url = ""
-                }
             },
         };
     }
