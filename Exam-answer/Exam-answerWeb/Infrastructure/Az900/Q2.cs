@@ -54,20 +54,29 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
+                    Text = "Azure doesn't directly bill based on the resource cost. Charges for a resource are calculated by using one or more meters. Meters are used to track a resource’s usage throughout its lifetime. These meters are then used to calculate the bill."
                 },
                 new ExplanationEntity()
                 {
+                    Text = "For example, when you create a single Azure resource, like a virtual machine, it has one or more meter instances created. Meters are used to track the usage of the resource over time. Each meter emits usage records that are used by Azure to calculate the bill."
                 },
                 new ExplanationEntity()
                 {
+                    Text = "For example, a single virtual machine (VM) created in Azure may have the following meters created to track its usage:"
                 },
                 new ExplanationEntity()
                 {
+                    Text = "Compute Hours, IP Address Hours, Data Transfer In, Data Transfer Out, Standard Managed Disk, Standard Managed Disk Operations, Standard IO-Disk, Standard IO-Block Blob Read, Standard IO-Block Blob Write, Standard IO-Block Blob Delete"
                 },
             },
 
             References = new List<ReferenceEntity>()
             {
+                new ReferenceEntity()
+                {
+                    Text = "Understand your Microsoft Azure bill",
+                    Url = "https://docs.microsoft.com/en-us/azure/billing/billing-understand-your-bill"
+                },
                 new ReferenceEntity()
                 {
                     Text = "Pricing calculator",
