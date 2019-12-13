@@ -5,40 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Tag Manager -->
     <script>
-    (function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PDRDKDJ');</script>
     <!-- End Google Tag Manager -->
     @if (ViewData["description"] != null)
     {
-    <meta name="description" content="@ViewData["description"]" />
+        <meta name="description" content="@ViewData["description"]" />
     }
     else
     {
         ViewData["description"] = "Community powered free exam answers with explanations.";
-    <meta name="description" content="@(ViewData["description"])" />
+        <meta name="description" content="@(ViewData["description"])" />
     }
     @if (ViewData["keywords"] != null)
     {
-    <meta name="keywords" content="@ViewData["keywords"]" />
+        <meta name="keywords" content="@ViewData["keywords"]" />
     }
     else
     {
-    <meta name="keywords" content="free, exam, question, answer, explanation, az-100" />
+        <meta name="keywords" content="free, exam, question, answer, explanation, az-100" />
     }
     @if (ViewData["title"] != null)
     {
-    <title>@(ViewData["title"] + " | Exam-Answer")</title>
+        <title>@(ViewData["title"] + " | Exam-Answer")</title>
         ViewData["finalTitle"] = ViewData["title"] + " | Exam-Answer";
     }
     else
     {
-    <title>Exam-Answer</title>
+        <title>Exam-Answer</title>
         ViewData["finalTitle"] = "Exam-Answer";
     }
     @{
@@ -53,8 +53,8 @@
     <meta property="og:description" content="@(ViewData["description"])" />
     @if (ViewData["imageUrl"] != null)
     {
-    <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
-    <meta property="og:image:alt" content="@ViewData["imageAlt"]" />
+        <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
+        <meta property="og:image:alt" content="@ViewData["imageAlt"]" />
     }
 
     @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
@@ -86,6 +86,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <script src="https://kendo.cdn.telerik.com/2019.2.514/js/jquery.min.js"></script>
+    <script data-ad-client="ca-pub-2519209558650417" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body style="display: none">
     <!-- Google Tag Manager (noscript) -->
