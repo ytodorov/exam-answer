@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Entities;
+using Exam_answerWeb.Extensions;
 using Exam_answerWeb.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -143,7 +144,8 @@ namespace Exam_answerWeb
                            return async context =>
                            {
                                var cache = context.RequestServices.GetRequiredService<IMemoryCache>();
-                               var cachedHtml = cache.Get<string>(context.Request.Path.ToString());
+                               bool isMobile = context.IsMobileBrowser();
+                               var cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
                                if (!string.IsNullOrEmpty(cachedHtml))
                                {
                                    await context.Response.WriteAsync(cachedHtml);

@@ -20,6 +20,58 @@ namespace UnitTests
         }
 
         [Fact]
+        public void CheckForSimilarityOfCustomTextTest()
+        {
+            List<ExamEntity> exams = DataGenerator.Initialize(null);
+
+            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("AZ-900"));
+
+            List<QuestionEntity> allquestions = theExam.Questions;
+
+            List<double> distances = new List<double>();
+
+            List<Tuple<QuestionEntity, QuestionEntity, string>> duplicatesLists =
+                 new List<Tuple<QuestionEntity, QuestionEntity, string>>();
+
+            for (int i = 0; i < allquestions.Count; i++)
+            {
+
+                QuestionEntity q1 = allquestions[i];
+
+                string text1 = q1.ContentText.Replace(" ", string.Empty) + q1.AnswerText.Replace(" ", string.Empty);
+
+                string questionText = @"This question requires that you evaluate the underlined text to determine if it is correct.
+When you are implementing a software as a service (SaaS) solution, you are responsible for configuring high availability.
+Instructions: Review the underlined text. If it makes the statement correct, select If the statement is incorrect, select the answer choice that makes the statement correct.
+A.No change is needed.
+B.defining scalability rules
+C.installing the SaaS solution
+D.configuring the SaaS solution
+
+
+";
+                string answerText = string.Empty;
+
+                string text2 = questionText.Replace(" ", string.Empty); // + answerText.Replace(" ", string.Empty);
+
+                string helperTextForDebug = $"{q1.Id + 1}{text1}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{q1.Id + 1}{text2}";
+
+                double distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
+                distances.Add(Math.Round(distance, 2));
+                if (distance > 0.81)
+                {
+                    duplicatesLists.Add(new Tuple<QuestionEntity, QuestionEntity, string>(
+                        q1, q1, distance.ToString()));
+
+                    string textToSee = $"{text1} {Environment.NewLine}{Environment.NewLine} {text2}";
+                }
+
+            }
+            distances = distances.OrderByDescending(d => d).ToList();
+        }
+
+
+        [Fact]
         public void CheckForSimilarityOfQuestionsTest()
         {
             List<ExamEntity> exams = DataGenerator.Initialize(null);
@@ -141,7 +193,7 @@ namespace UnitTests
             }
         }
 
-       
+
 
         [Fact]
         public void Test1()

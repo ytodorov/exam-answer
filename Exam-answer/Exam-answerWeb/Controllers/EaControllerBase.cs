@@ -33,18 +33,6 @@ namespace Exam_answerWeb.Controllers
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            //if (DateTime.Now.Ticks > 1)
-            //{
-            //    context.Result = new ContentResult() { Content = "test", ContentType = "text/html; charset=utf-8" };
-            //    return;
-            //}
-            var cachedHtml = cache.Get<string>(HttpContext.Request.Path.ToString());
-
-            if (!string.IsNullOrEmpty(cachedHtml))
-            {
-                context.Result = new ContentResult() { Content = cachedHtml, ContentType = "text/html; charset=utf-8" };
-                //return;
-            }
             base.OnActionExecuting(context);
         }
 
@@ -54,8 +42,8 @@ namespace Exam_answerWeb.Controllers
             if (viewResult != null)
             {
                 var htmlToCache = viewResult.ToHtml(HttpContext);
-
-                cache.Set<string>(HttpContext.Request.Path.ToString(), htmlToCache);
+                bool isMobile = HttpContext.IsMobileBrowser();
+                cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
             }
             base.OnActionExecuted(context);
         }
