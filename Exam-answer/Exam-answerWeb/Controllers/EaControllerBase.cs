@@ -63,6 +63,8 @@ namespace Exam_answerWeb.Controllers
 
             IActionResult res = QuestionGenericInternal(provider, examCode, questionId);
 
+            ViewData["canonicalUrl"] = "https://www.exam-answer.com" + HttpContext.Request.Path.ToString().TrimEnd('/');
+
             return res;
         }
 

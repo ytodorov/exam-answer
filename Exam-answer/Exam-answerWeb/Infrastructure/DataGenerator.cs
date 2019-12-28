@@ -175,7 +175,7 @@ namespace Exam_answerWeb.Infrastructure
             };
 
 
-            az900.ShowUdemy = true;
+            az900.ShowUdemy = false;
             az900.UdemyLinkUrl = "https://www.udemy.com/course/exam-az-900-microsoft-azure-fundamentals-exam-questions/?couponCode=50_OFF";
             az900.UdemyLinkMessage = "Exam AZ-900: Microsoft Azure Fundamentals, Exam Question - 50 % OFF";
             az900.UdemyMessage =
