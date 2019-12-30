@@ -5,10 +5,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q23Instance = new QuestionEntity()
+        public static QuestionEntity Q24Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 32,
+            Order = 24,
             Section = "Understand Security, Privacy, Compliance and Trust",
             Contents = new List<ContentEntity>()
             {

@@ -5,10 +5,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q4Instance = new QuestionEntity()
+        public static QuestionEntity Q5Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 6,
+            Order = 5,
             Section = "Understand Cloud Concepts",
             Contents = new List<ContentEntity>()
             {

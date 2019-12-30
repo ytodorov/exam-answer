@@ -186,7 +186,12 @@ namespace Exam_answerWeb.Infrastructure
                                                       BindingFlags.Public |
                                                       BindingFlags.NonPublic).ToList();
 
-            az900Fields = az900Fields.OrderBy(a => (a.GetValue(null) as QuestionEntity).Order).ToList();
+            az900Fields = az900Fields.OrderBy(a =>
+            {
+                int order = int.Parse(a.Name.Replace("Q", string.Empty).Replace("Instance", string.Empty));
+                return order; 
+
+            }).ToList();
 
             foreach (var f in az900Fields)
             {

@@ -5,7 +5,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q0Instance = new QuestionEntity()
+        public static QuestionEntity Q1Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.CheckBox,
             Order = 1,

@@ -8,10 +8,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
         /// <summary>
         /// https://www.examtopics.com/exams/microsoft/az-900/view/5/
         /// </summary>
-        public static QuestionEntity Q118Instance = new QuestionEntity()
+        public static QuestionEntity Q112Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 247,
+            Order = 112,
             Section = "",
             Contents = new List<ContentEntity>()
             {

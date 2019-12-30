@@ -6,10 +6,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q97Instance = new QuestionEntity()
+        public static QuestionEntity Q98Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.CheckBox,
-            Order = 230,
+            Order = 98,
             Section = "",
             Contents = new List<ContentEntity>()
             {

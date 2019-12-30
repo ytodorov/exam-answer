@@ -6,10 +6,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q95Instance = new QuestionEntity()
+        public static QuestionEntity Q96Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 228,
+            Order = 96,
             Section = "",
             Contents = new List<ContentEntity>()
             {

@@ -9,10 +9,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
         /// <summary>
         /// TO DO
         /// </summary>
-        public static QuestionEntity Q70Instance = new QuestionEntity()
+        public static QuestionEntity Q71Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 192,
+            Order = 71,
             Section = "",
             Contents = new List<ContentEntity>()
             {

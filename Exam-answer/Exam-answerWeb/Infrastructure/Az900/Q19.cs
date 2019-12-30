@@ -5,10 +5,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q18Instance = new QuestionEntity()
+        public static QuestionEntity Q19Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 24,
+            Order = 19,
             Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
             {

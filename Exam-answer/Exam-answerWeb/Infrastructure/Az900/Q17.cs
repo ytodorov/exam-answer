@@ -5,10 +5,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q16Instance = new QuestionEntity()
+        public static QuestionEntity Q17Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.CheckBox,
-            Order = 22,
+            Order = 17,
             Section = "Understand Core Azure Services",
             Contents = new List<ContentEntity>()
             {

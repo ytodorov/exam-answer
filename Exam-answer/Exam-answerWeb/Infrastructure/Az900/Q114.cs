@@ -8,10 +8,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
         /// <summary>
         /// https://www.examtopics.com/exams/microsoft/az-900/view/6/
         /// </summary>
-        public static QuestionEntity Q120Instance = new QuestionEntity()
+        public static QuestionEntity Q114Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.CheckBox,
-            Order = 249,
+            Order = 114,
             Section = "",
             Contents = new List<ContentEntity>()
             {                

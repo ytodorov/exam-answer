@@ -5,10 +5,10 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q56Instance = new QuestionEntity()
+        public static QuestionEntity Q57Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 155,
+            Order = 57,
             Section = "",
             Contents = new List<ContentEntity>()
             {
