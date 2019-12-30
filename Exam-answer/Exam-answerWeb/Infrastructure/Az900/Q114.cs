@@ -5,32 +5,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        /// <summary>
+        /// https://www.examtopics.com/exams/microsoft/az-900/view/6/
+        /// </summary>
+        public static QuestionEntity Q120Instance = new QuestionEntity()
         {
-            QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            QuestionType = QuestionType.CheckBox,
+            Order = 249,
             Section = "",
             Contents = new List<ContentEntity>()
-            {
+            {                
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
-                },
-                new ContentEntity()
-                {
-                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
-                },
-                 new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "Choose all that apply.",
                 },
             },
 
@@ -38,12 +25,17 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "Azure resources can only access other resources in the same resource group.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.",
+                    Text = "If you delete a resource group, all the resources in the resource group will be deleted.",
+                    IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "A resource group can contain resources from multiple Azure regions.",
                     IsCorrect = true
                 },
             },
@@ -72,14 +64,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
             //    },
             //},
 
-            //References = new List<ReferenceEntity>()
-            //{
-            //    new ReferenceEntity()
-            //    {
-            //        Text = "Tutorial: Host your domain in Azure DNS",
-            //        Url = "https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
-            //    },
-            //},
+            References = new List<ReferenceEntity>()
+            {
+                new ReferenceEntity()
+                {
+                    Text = "Azure Resource Manager overview",
+                    Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+                },
+                new ReferenceEntity()
+                {
+                    Text = "Effective ways to delete resources in a resource group on Azure",
+                    Url = "https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/",
+                },
+            },
         };
     }
 }

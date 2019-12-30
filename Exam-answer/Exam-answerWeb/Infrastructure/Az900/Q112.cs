@@ -5,32 +5,31 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        /// <summary>
+        /// https://www.examtopics.com/exams/microsoft/az-900/view/5/
+        /// </summary>
+        public static QuestionEntity Q118Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            Order = 247,
             Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
+                    Text = "You have 1,000 virtual machines hosted on the Hyper-V hosts in a data center.",
                 },
                 new ContentEntity()
                 {
-                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
+                    Text = "You plan to migrate all the virtual machines to an Azure pay-as-you-go subscription.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
+                    Text = "You need to identify which expenditure model to use for the planned Azure solution.",
                 },
                 new ContentEntity()
                 {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
-                },
-                 new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "Which expenditure model should you identify?",
                 },
             },
 
@@ -38,13 +37,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "Operational.",
+                    IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "Elastic.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.",
-                    IsCorrect = true
+                    Text = "Capital.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Scalable.",
+                    IsCorrect = false
                 },
             },
 
@@ -72,14 +81,14 @@ namespace Exam_answerWeb.Infrastructure.Questions
             //    },
             //},
 
-            //References = new List<ReferenceEntity>()
-            //{
-            //    new ReferenceEntity()
-            //    {
-            //        Text = "Tutorial: Host your domain in Azure DNS",
-            //        Url = "https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
-            //    },
-            //},
+            References = new List<ReferenceEntity>()
+            {
+                new ReferenceEntity()
+                {
+                    Text = "Azure enterprise scaffold: Prescriptive subscription governance",
+                    Url = "https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/appendix/azure-scaffold",
+                },
+            },
         };
     }
 }

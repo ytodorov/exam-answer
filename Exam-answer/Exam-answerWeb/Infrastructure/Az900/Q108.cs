@@ -5,10 +5,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        /// <summary>
+        /// https://www.examtopics.com/exams/microsoft/az-900/view/3/
+        /// </summary>
+        public static QuestionEntity Q114Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            Order = 243,
             Section = "",
             Contents = new List<ContentEntity>()
             {
@@ -26,7 +29,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
+                    Text = "Solution: You create an Azure App Service and Azure Storage accounts.",
                 },
                  new ContentEntity()
                 {

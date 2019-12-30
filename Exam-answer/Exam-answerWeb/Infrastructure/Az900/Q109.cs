@@ -5,32 +5,16 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        public static QuestionEntity Q116Instance = new QuestionEntity()
         {
-            QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            QuestionType = QuestionType.CheckBox,
+            Order = 245,
             Section = "",
             Contents = new List<ContentEntity>()
-            {
+            {               
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
-                },
-                new ContentEntity()
-                {
-                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
-                },
-                 new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "Choose all that apply.",
                 },
             },
 
@@ -38,13 +22,18 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "To achieve a hybrid cloud model, a company must always migrate from a private cloud model.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.",
+                    Text = "A company can extend the capacity of its internal network by using the public cloud.",
                     IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "In a public cloud model, only guest users at your company can access the resources in the cloud.",
+                    IsCorrect = false
                 },
             },
 

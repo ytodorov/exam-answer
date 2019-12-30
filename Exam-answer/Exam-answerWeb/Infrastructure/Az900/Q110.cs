@@ -5,32 +5,23 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        /// <summary>
+        /// https://www.examtopics.com/exams/microsoft/az-900/view/3/
+        /// </summary>
+        public static QuestionEntity Q115Instance = new QuestionEntity()
         {
-            QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            QuestionType = QuestionType.CheckBox,
+            Order = 244,
             Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
+                    Text = "Which cloud deployment solution is used for Azure virtual machines and Azure SQL databases?",
                 },
                 new ContentEntity()
                 {
-                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
-                },
-                new ContentEntity()
-                {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
-                },
-                 new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "Choose all that apply.",
                 },
             },
 
@@ -38,13 +29,33 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "Azure virtual machines: Infrastructure as a service (IaaS).",
+                    IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "Azure virtual machines: Platform as a service (PaaS).",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.",
+                    Text = "Azure virtual machines: Software as a service (SaaS).",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Azure SQL databases: Infrastructure as a service (IaaS).",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Azure SQL databases: Platform as a service (PaaS).",
                     IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "Azure SQL databases: Software as a service (SaaS).",
+                    IsCorrect = false
                 },
             },
 

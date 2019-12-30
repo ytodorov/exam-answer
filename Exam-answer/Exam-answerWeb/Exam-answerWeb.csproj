@@ -19,7 +19,6 @@
     <Compile Remove="Infrastructure\Az900\Q105_checkMe.cs" />
     <Compile Remove="Infrastructure\Az900\Q106_checkMe.cs" />
     <Compile Remove="Infrastructure\Az900\Q107_checkMe.cs" />
-    <Compile Remove="Infrastructure\Az900\Q108.cs" />
     <Compile Remove="Infrastructure\Az900\Q108_checkMe.cs" />
   </ItemGroup>
 

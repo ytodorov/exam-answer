@@ -183,7 +183,7 @@ D.configuring the SaaS solution
 
                     if (question.QuestionType == QuestionType.CheckBox)
                     {
-                        Assert.True(correctQuestionCount.Count > 1);
+                        Assert.True(correctQuestionCount.Count > 0);
                     }
                     else if (question.QuestionType == QuestionType.RadioButon)
                     {

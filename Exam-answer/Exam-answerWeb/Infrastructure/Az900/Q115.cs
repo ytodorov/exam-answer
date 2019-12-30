@@ -5,32 +5,55 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        /// <summary>
+        /// https://www.examtopics.com/exams/microsoft/az-900/view/6/
+        /// </summary>
+        public static QuestionEntity Q121Instance = new QuestionEntity()
         {
-            QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            QuestionType = QuestionType.CheckBox,
+            Order = 250,
             Section = "",
             Contents = new List<ContentEntity>()
-            {
+            {                
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
+                    Text = "Your company has an on-premises network that contains multiple servers.",
                 },
                 new ContentEntity()
                 {
-                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
+                    Text = "The company plans to reduce the following administrative responsibilities of network administrators:",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
+                    Text = "* Backing up application data",
                 },
                 new ContentEntity()
                 {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
+                    Text = "* Replacing failed server hardware",
                 },
-                 new ContentEntity()
+                new ContentEntity()
                 {
-                    Text = "Does this meet the goal?",
+                    Text = "* Managing physical server security",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Updating server operating systems",
+                },
+                new ContentEntity()
+                {
+                    Text = "* Managing permissions to shared documents",
+                },
+                new ContentEntity()
+                {
+                    Text = "The company plans to migrate several servers to Azure virtual machines.",
+                },
+                new ContentEntity()
+                {
+                    Text = "You need to identify which administrative responsibilities will be reduced after the planned migration.",
+                },
+                new ContentEntity()
+                {
+                    Text = "Which two responsibilities should you identify? Each correct answer presents a complete solution.",
                 },
             },
 
@@ -38,13 +61,28 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "Replacing failed server hardware.",
+                    IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "Backing up application data.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.",
+                    Text = "Managing physical server security.",
                     IsCorrect = true
+                },
+                new AnswerEntity()
+                {
+                    Text = "Updating server operating systems.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "Managing permissions to shared documents.",
+                    IsCorrect = false
                 },
             },
 
@@ -76,8 +114,13 @@ namespace Exam_answerWeb.Infrastructure.Questions
             //{
             //    new ReferenceEntity()
             //    {
-            //        Text = "Tutorial: Host your domain in Azure DNS",
-            //        Url = "https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+            //        Text = "Azure Resource Manager overview",
+            //        Url = "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+            //    },
+            //    new ReferenceEntity()
+            //    {
+            //        Text = "Effective ways to delete resources in a resource group on Azure",
+            //        Url = "https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/",
             //    },
             //},
         };

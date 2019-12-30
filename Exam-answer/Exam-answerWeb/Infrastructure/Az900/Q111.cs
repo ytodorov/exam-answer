@@ -5,32 +5,27 @@ namespace Exam_answerWeb.Infrastructure.Questions
 {
     public partial class Az900
     {
-        public static QuestionEntity Q112Instance = new QuestionEntity()
+        /// <summary>
+        /// https://www.examtopics.com/exams/microsoft/az-900/view/4/
+        /// </summary>
+        public static QuestionEntity Q117Instance = new QuestionEntity()
         {
             QuestionType = QuestionType.RadioButon,
-            Order = 242,
+            Order = 246,
             Section = "",
             Contents = new List<ContentEntity>()
             {
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all its data and resources to Azure.",
+                    Text = "You plan to migrate several servers from an on-premises network to Azure.",
                 },
                 new ContentEntity()
                 {
-                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
+                    Text = "You need to identify the primary benefit of using a public cloud service for the servers.",
                 },
                 new ContentEntity()
                 {
-                    Text = "You need to deploy an Azure environment that supports the planned migration.",
-                },
-                new ContentEntity()
-                {
-                    Text = "Solution: You create an Azure App Service and Azure virtual machines that have Microsoft SQL Server installed.",
-                },
-                 new ContentEntity()
-                {
-                    Text = "Does this meet the goal?",
+                    Text = "What should you identify?",
                 },
             },
 
@@ -38,12 +33,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new AnswerEntity()
                 {
-                    Text = "Yes.",
+                    Text = "The public cloud is owned by the public, NOT a private corporation.",
                     IsCorrect = false
                 },
                 new AnswerEntity()
                 {
-                    Text = "No.",
+                    Text = "The public cloud is a crowd-sourcing solution that provides corporations with the ability to enhance the cloud.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "All public cloud resources can be freely accessed by every member of the public.",
+                    IsCorrect = false
+                },
+                new AnswerEntity()
+                {
+                    Text = "The public cloud is a shared entity whereby multiple corporations each use a portion of the resources in the cloud.",
                     IsCorrect = true
                 },
             },
