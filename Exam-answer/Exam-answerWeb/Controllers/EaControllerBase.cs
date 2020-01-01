@@ -42,8 +42,11 @@ namespace Exam_answerWeb.Controllers
             if (viewResult != null)
             {
                 var htmlToCache = viewResult.ToHtml(HttpContext);
-                bool isMobile = HttpContext.IsMobileBrowser();
-                cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+                if (!string.IsNullOrEmpty(htmlToCache))
+                {
+                    bool isMobile = HttpContext.IsMobileBrowser();
+                    cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+                }
             }
             base.OnActionExecuted(context);
         }
