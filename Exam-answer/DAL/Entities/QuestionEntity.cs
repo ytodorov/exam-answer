@@ -109,8 +109,6 @@ namespace DAL.Entities
             }
         }
 
-
-
         [NotMapped]
         public string ReferenceText
         {
@@ -145,5 +143,7 @@ namespace DAL.Entities
                 return res;
             }
         }
+
+        public string AcceptedAnswer { get; set; }
     }
 }

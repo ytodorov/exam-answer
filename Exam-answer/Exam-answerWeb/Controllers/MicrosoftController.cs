@@ -145,14 +145,17 @@ namespace Exam_AnswerWeb.Controllers
 
                 ViewData["hasMicrodata"] = true;
 
+                var descriptionEscaped = description.Replace("\\", "\\\\");
+                var titleEscaped = title.Replace("\\", "\\\\");
+
                 microdataJson.Append(
 $@"
 <script type=""application/ld+json"">
 {{
   ""@context"": ""http://schema.org"",
   ""@type"": ""Question"",
-  ""name"": ""{title}"",
-  ""text"": ""{description}"",
+  ""name"": ""{titleEscaped}"",
+  ""text"": ""{descriptionEscaped}"",
   ""dateCreated"": ""{dateCreatedString}""
 }}
  </script>");

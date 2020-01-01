@@ -115,7 +115,8 @@ Remove-AzureRmResourceLock -Force"
                      Text = "Remove-AzureRmResource",
                      Url = "https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/remove-azurermresource",
                 },
-            }
+            },
+            AcceptedAnswer = "$rg = \"rg1\" Get-AzureRmResourceLock | Where-Object ResourceGroupName -eq \"$rg - name\" | Remove-AzureRmResourceLock -Force"
         };
     }
 }

@@ -141,6 +141,13 @@ namespace Exam_answerWeb.Controllers
 
             allAnswers = allAnswers.Trim();
 
+            if (string.IsNullOrWhiteSpace(allAnswers))
+            {
+                allAnswers = questionVM.AcceptedAnswer;
+            }
+
+            allAnswers = allAnswers.Replace("\\", "\\\\").Replace("\"", "\\\"");
+
             sbAcceptedAnswer.Append($@"{{
         ""@type"": ""Answer"",
         ""author"": ""{author}"",

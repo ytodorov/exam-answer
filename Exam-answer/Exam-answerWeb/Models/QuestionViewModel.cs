@@ -28,5 +28,7 @@ namespace Exam_answerWeb.Models
         public List<AnswerViewModel> SuggestedAnswerLd { get; set; }
 
         public bool ShowDisqus { get; set; } = true;
+
+        public string AcceptedAnswer { get; set; }
     }
 }
