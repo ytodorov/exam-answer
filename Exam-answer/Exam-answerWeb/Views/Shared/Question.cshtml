@@ -1,38 +1,47 @@
 ﻿@model QuestionViewModel
 <h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(Model.Exam.Questions.IndexOf(Model) + 1)</h1>
 <br />
-@if (Context.IsMobileBrowser())
+@if ("AZ-900".Equals(Model.Exam.Code, StringComparison.InvariantCultureIgnoreCase))
 {
     <div style="text-align: center">
-        <script type="text/javascript">
-            atOptions = {
-                'key': '1dd5b5204b7ecb36d11c2771b7865652',
-                'format': 'iframe',
-                'height': 50,
-                'width': 320,
-                'params': {}
-            };
-            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/1dd5b5204b7ecb36d11c2771b7865652/invoke.js"></scr' + 'ipt>');
-        </script>
+        <a target="_blank" href="https://www.amazon.co.uk/gp/product/0135732182/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0135732182&linkCode=as2&tag=examanswer-21&linkId=be5a1ebbba556014ecb2fc0a2bb21397">Exam Ref AZ-900 Microsoft Azure Fundamentals</a>
+        <img src="//ir-uk.amazon-adsystem.com/e/ir?t=examanswer-21&l=am2&o=2&a=0135732182" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
     </div>
+    <br />
 }
 else
 {
-    <div style="text-align: center">
-        <script type="text/javascript">
-            atOptions = {
-                'key': 'b8097f32ebf07637210356eb585ea814',
-                'format': 'iframe',
-                'height': 60,
-                'width': 468,
-                'params': {}
-            };
-            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/b8097f32ebf07637210356eb585ea814/invoke.js"></scr' + 'ipt>');
-        </script>
-    </div>
+    @if (Context.IsMobileBrowser())
+    {
+        <div style="text-align: center">
+            <script type="text/javascript">
+                atOptions = {
+                    'key': '1dd5b5204b7ecb36d11c2771b7865652',
+                    'format': 'iframe',
+                    'height': 50,
+                    'width': 320,
+                    'params': {}
+                };
+                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/1dd5b5204b7ecb36d11c2771b7865652/invoke.js"></scr' + 'ipt>');
+            </script>
+        </div>
+    }
+    else
+    {
+        <div style="text-align: center">
+            <script type="text/javascript">
+                atOptions = {
+                    'key': 'b8097f32ebf07637210356eb585ea814',
+                    'format': 'iframe',
+                    'height': 60,
+                    'width': 468,
+                    'params': {}
+                };
+                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/b8097f32ebf07637210356eb585ea814/invoke.js"></scr' + 'ipt>');
+            </script>
+        </div>
+    }
 }
-
-
 <partial name="_PrevNextPartial" />
 <br />
 <partial name="_ProgressPartial" />
