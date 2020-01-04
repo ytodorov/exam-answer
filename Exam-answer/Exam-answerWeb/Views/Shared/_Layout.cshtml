@@ -99,6 +99,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=438289293607244&autoLogAppEvents=1"></script>
+
     <header>
         <ul id="menu">
             <li>
@@ -163,8 +164,12 @@
     </header>
     <div>
         <main>
-            <div style="text-align: right;height:30px;padding-top: 3px; padding-right: 15px;">
-                <div class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+          
+            <div style="text-align: right;height:30px;padding-top: 3px;">
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                
+                <div style="width:150px;" class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                <div style="display: inline-block; vertical-align:middle" class="addthis_sharing_toolbox"></div>
             </div>
             @RenderBody()
             <br />
@@ -183,13 +188,18 @@
 
         <a target="_blank" href="https://www.amazon.co.uk/gp/product/B073J1XNS2/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B073J1XNS2&linkCode=as2&tag=examanswer-21&linkId=7a63216d62200b3c1336e4d8dc96d9ff"><img border="0" src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=GB&ASIN=B073J1XNS2&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=examanswer-21"></a><img src="//ir-uk.amazon-adsystem.com/e/ir?t=examanswer-21&l=am2&o=2&a=B073J1XNS2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
     </div>
-        <br />
-        <footer>
+    <br />
+    <footer>
+        <div style="text-align: center">
+            &copy; 2020 - exam-answer.com - <a href="/privacy">Privacy</a>
             <input type="hidden" name="IL_IN_TAG" value="2" />
-        </footer>
-        <partial name="_JsScripts" />
-        <script>
+        </div>
+    </footer>
+    <partial name="_JsScripts" />
+    <script>
     @Html.Kendo().DeferredScripts(false)
-        </script>
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-571b2acff4b44bbf"></script>
 </body>
 </html>
