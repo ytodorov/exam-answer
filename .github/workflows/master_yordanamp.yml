@@ -1,0 +1,38 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy ASP.Net Core app to Azure Web App - yordanamp
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.101'
+
+    - name: ListCurrentDirr
+      run: dir
+    
+    - name: Build with dotnet
+      run: dotnet build Exam-answer\Exam-answerWeb\Exam-answerWeb.csproj --configuration Release
+
+    - name: dotnet publish
+      run: dotnet publish Exam-answer\Exam-answerWeb\Exam-answerWeb.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: 'yordanamp'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a2152d67e93a4f48a3a2f1bcc75258b9 }}
+        package: ${{env.DOTNET_ROOT}}/myapp 
