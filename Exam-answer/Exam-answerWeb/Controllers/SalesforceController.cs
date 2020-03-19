@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 
@@ -14,8 +15,9 @@ namespace Exam_AnswerWeb.Controllers
     [Route("salesforce/crt-251")]
     public class SalesforceController : EaControllerBase
     {
-        public SalesforceController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
-            base(examAnswerContext, env, mapper, memoryCache)
+        public SalesforceController(ExamAnswerContext examAnswerContext,
+            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
+            base(examAnswerContext, env, mapper, memoryCache, configuration)
         {
         }
 
@@ -43,6 +45,14 @@ namespace Exam_AnswerWeb.Controllers
                .FirstOrDefault();
 
             ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
+
+            examViewModel.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
+
+
+            examViewModel.PageCanonicalUrl = $"{pageBaseCanonicalUrl}/salesforce/crt-251";
+            examViewModel.PageH1 = "Exam CRT-251: Sales Cloud Consultant";
+            examViewModel.PageDescription = "Prepare for Exam CRT-251: Sales Cloud Consultant. Free demo questions with answers and explanations";
+            examViewModel.PageTitle = "Exam CRT-251: Sales Cloud Consultant | Exam-Answer";
 
             return View($"crt-251/index", examViewModel);
         }

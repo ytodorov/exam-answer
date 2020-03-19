@@ -1,9 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@model Exam_answerWeb.Models.BaseViewModel
 
-<h1>Privacy Policy of exam-answer.com</h1>
+<h1 class="l-hero-title a-title-md center">
+        @Model?.PageH1
+</h1>
+<h2 class="l-hero-caption a-caption mx-auto max-width-3 pt1 mb3 center">
+    @Model?.PageDescription
+</h2>
 
 <p>exam-answer.com operates the https://www.exam-answer.com website, which provides the SERVICE.</p>
 

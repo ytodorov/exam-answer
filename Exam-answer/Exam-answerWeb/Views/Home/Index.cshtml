@@ -1,29 +1,11 @@
-﻿@(Html.Kendo().AutoComplete()
-                .Name("questions")
-                .DataTextField(nameof(SearchQuestionOldViewModel.TextInUI))
-                .MinLength(2)
-                .HtmlAttributes(new { style = "width:100%" })
-                .Placeholder("Instantly search any question here...")
-                .Events(e => e.Select("questionsSelect"))
-                .Template("<a href=\"#: data.Url #\">#: data.TextInUI #</a>")
-                .DataSource(source => source
-                    .Custom()
+﻿@model Exam_answerWeb.Models.BaseViewModel
 
-                    .Group(g => g.Add(nameof(SearchQuestionOldViewModel.ExamName), typeof(string)))
-                    .Transport(transport => transport
-                      .Read(read =>
-                      {
-                      read.Action("Read", "SearchQuestion")
-                          .Data("onAdditionalData");
-                  }))
-
-                    .ServerFiltering(true)).Deferred()
-)
-
-<br />
-<br />
-<br />
-
+<h1 class="l-hero-title a-title-md center">
+       @Model?.PageH1
+</h1>
+<p class="l-hero-caption a-caption mx-auto max-width-3 pt1 mb3 center">
+    @Model?.PageDescription
+</p>
 <div class="k-block">
     <div class="k-header">
         Salesforce: CRT-251
@@ -41,7 +23,7 @@
 
 <br />
 
-<div class="k-block">
+@*<div class="k-block">
     <div class="k-header">
         Microsoft: AZ-100
     </div>
@@ -56,7 +38,7 @@
     </p>
 </div>
 
-<br />
+<br />*@
 
 <div class="k-block">
     <div class="k-header">
@@ -72,57 +54,3 @@
         <a href="~/microsoft/az-900/question1">Start in Exam Model</a>
     </p>
 </div>
-
-<table id="gridExams" style="width:99%;display:none">
-    <colgroup>
-        <col style="width:60px" />
-        <col style="width:200px" />
-        <col style="width:60px" />
-        <col style="width:60px" />
-        <col style="width:60px" />
-    </colgroup>
-    <thead>
-        <tr>
-            <th data-field="make">Code</th>
-            <th data-field="model">Name</th>
-            <th data-field="year">Provider</th>
-            <th data-field="category">Learn Mode</th>
-            <th data-field="airconditioner">Exam Mode</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CRT-251</td>
-            <td>Sales Cloud Consultant</td>
-            <td>Salesforce</td>
-            <td>
-                <a href="~/salesforce/crt-251">Start</a>
-            </td>
-            <td>
-                <a href="~/salesforce/crt-251/question1">Start</a>
-            </td>
-        </tr>
-        <tr>
-            <td>AZ-100</td>
-            <td>Microsoft Azure Infrastructure and Deployment</td>
-            <td>Microsoft</td>
-            <td>
-                <a href="~/microsoft/az-100">Start</a>
-            </td>
-            <td>
-                <a href="~/microsoft/az-100/question1">Start</a>
-            </td>
-        </tr>
-        <tr>
-            <td>AZ-900</td>
-            <td>Microsoft Azure Fundamentals</td>
-            <td>Microsoft</td>
-            <td>
-                <a href="~/microsoft/az-900">Start</a>
-            </td>
-            <td>
-                <a href="~/microsoft/az-900/question1">Start</a>
-            </td>
-        </tr>
-    </tbody>
-</table>

@@ -1,16 +1,26 @@
 ﻿@{ if (ViewData["prev"] != null || ViewData["next"] != null)
     {
-    <div style="text-align: center;">
-        @{ if (ViewData["id"]?.ToString() != "1")
+        <div class="land-see-paging land-see-page-navigation mb4 flex flex-wrap">
+            @{ if (ViewData["id"]?.ToString() != "1")
                 {
-            <a href="~/@(ViewData["basePath"].ToString() + ViewData["prev"])" class="k-button">Previous</a>
+                    <div class="sm-col sm-col-3 col-6 left-align">
+                        <a href="~/@(ViewData["basePath"].ToString() + ViewData["prev"])" class="l-s-prev-page mt2 ml2 inline-block relative">
+                            Prev Question
+                        </a>
+                    </div>
                 }
-        }
-        @{ if (ViewData["id"]?.ToString() != ViewData["max"]?.ToString())
+            }
+            <div class="land-see-story-social flex flex-auto align-top pt1 justify-center">
+            </div>
+            @{ if (ViewData["id"]?.ToString() != ViewData["max"]?.ToString())
                 {
-            <a href="~/@(ViewData["basePath"].ToString() + ViewData["next"])" class="k-button">&nbsp;&nbsp;Next&nbsp;&nbsp;</a>
+                    <div class="sm-col sm-col-3 col-6 right-align">
+                        <a href="~/@(ViewData["basePath"].ToString() + ViewData["next"])" class="l-s-next-page mt2 mr2 inline-block relative">
+                            Next Question
+                        </a>
+                    </div>
                 }
-        }
-    </div>
+            }
+        </div>
     }
 }

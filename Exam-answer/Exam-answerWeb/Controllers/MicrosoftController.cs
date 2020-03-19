@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Linq;
@@ -19,8 +20,9 @@ namespace Exam_AnswerWeb.Controllers
     {
         private const string folderName = "az-100";
 
-        public MicrosoftController(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
-            base(examAnswerContext, env, mapper, memoryCache)
+        public MicrosoftController(ExamAnswerContext examAnswerContext,
+            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
+            base(examAnswerContext, env, mapper, memoryCache, configuration)
         {
         }
 
@@ -74,7 +76,7 @@ namespace Exam_AnswerWeb.Controllers
             string filePath = $"{folderName}/question{intId}";
 
             // Could not find a part of the path 'D:\home\site\wwwroot\bin\Release\netcoreapp2.2\Views\microsoft\az-100'.
-            string path = Path.Combine(env.WebRootPath); //"bin", version, @"netcoreapp2.2\Views\microsoft\az-100");
+            string path = Path.Combine(env.WebRootPath); //"bin", version, @@"netcoreapp2.2\Views\microsoft\az-100");
             string[] files = Directory.GetFiles(path + @"\microsoft\az-100", "*.cshtml", SearchOption.AllDirectories);
 
             string theFile = files.FirstOrDefault(f => f.EndsWith($"{filePath}.cshtml".Replace("/", "\\")));
@@ -83,7 +85,7 @@ namespace Exam_AnswerWeb.Controllers
                 string fileContent = System.IO.File.ReadAllText(theFile);
 
                 string[] lines = System.IO.File.ReadAllLines(theFile);
-                lines = lines.Where(l => !l.Trim().StartsWith("@") && !l.Trim().StartsWith("&")).ToArray();
+                lines = lines.Where(l => !l.Trim().StartsWith("@@") && !l.Trim().StartsWith("&")).ToArray();
 
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < lines.Length; i++)
@@ -101,16 +103,16 @@ namespace Exam_AnswerWeb.Controllers
 
                 string description = substring
                     .Replace("<li class=\"k-state-active\">", string.Empty)
-                    .Replace("<span class=\"k-link k-state-selected\">Question @Model?.Id</span>", string.Empty)
+                    .Replace("<span class=\"k-link k-state-selected\">Question @@Model?.Id</span>", string.Empty)
                     .Replace("<div>", string.Empty)
                     .Replace("</div>", string.Empty)
                     .Replace("<p>", string.Empty)
                     .Replace("</p>", string.Empty)
                     .Replace("<br />", string.Empty)
-                    .Replace("@Html.Raw(Model.H1OpenTag)", string.Empty)
-                    .Replace("@Html.Raw(Model.H1CloseTag)", string.Empty)
-                    .Replace("@Html.Raw(Model.H2OpenTag)", string.Empty)
-                    .Replace("@Html.Raw(Model.H2CloseTag)", string.Empty)
+                    .Replace("@@Html.Raw(Model.H1OpenTag)", string.Empty)
+                    .Replace("@@Html.Raw(Model.H1CloseTag)", string.Empty)
+                    .Replace("@@Html.Raw(Model.H2OpenTag)", string.Empty)
+                    .Replace("@@Html.Raw(Model.H2CloseTag)", string.Empty)
                     .Replace(Environment.NewLine, string.Empty);
 
                 RegexOptions options = RegexOptions.None;
@@ -152,8 +154,8 @@ namespace Exam_AnswerWeb.Controllers
 $@"
 <script type=""application/ld+json"">
 {{
-  ""@context"": ""http://schema.org"",
-  ""@type"": ""Question"",
+  ""@@context"": ""http://schema.org"",
+  ""@@type"": ""Question"",
   ""name"": ""{titleEscaped}"",
   ""text"": ""{descriptionEscaped}"",
   ""dateCreated"": ""{dateCreatedString}""

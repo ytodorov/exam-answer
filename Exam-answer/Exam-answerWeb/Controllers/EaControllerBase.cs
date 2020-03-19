@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,34 +22,26 @@ namespace Exam_answerWeb.Controllers
         protected ExamAnswerContext examAnswerContext;
         protected readonly IHostingEnvironment env;
         protected readonly IMapper mapper;
+        protected readonly IConfiguration configuration;
         private IMemoryCache cache;
 
-        public EaControllerBase(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache)
+        protected string pageBaseCanonicalUrl = string.Empty;
+
+        public EaControllerBase(
+            ExamAnswerContext examAnswerContext,
+            IHostingEnvironment env,
+            IMapper mapper,
+            IMemoryCache memoryCache,
+            IConfiguration configuration
+            )
         {
             this.examAnswerContext = examAnswerContext;
             this.env = env;
             this.mapper = mapper;
             cache = memoryCache;
-        }
+            this.configuration = configuration;
 
-        public override void OnActionExecuting(ActionExecutingContext context)
-        {
-            base.OnActionExecuting(context);
-        }
-
-        public override void OnActionExecuted(ActionExecutedContext context)
-        {
-            var viewResult = context.Result as ViewResult;
-            if (viewResult != null)
-            {
-                var htmlToCache = viewResult.ToHtml(HttpContext);
-                if (!string.IsNullOrEmpty(htmlToCache))
-                {
-                    bool isMobile = HttpContext.IsMobileBrowser();
-                    cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
-                }
-            }
-            base.OnActionExecuted(context);
+            pageBaseCanonicalUrl = configuration.GetValue(typeof(string), "PageBaseCanonicalUrl")?.ToString();
         }
 
         public override ViewResult View(string viewName, object model)
@@ -126,7 +119,8 @@ namespace Exam_answerWeb.Controllers
             string author = HttpUtility.JavaScriptStringEncode("exam-answer.com");
 
             string upvoteCount = HttpUtility.JavaScriptStringEncode("0");
-            string url = HttpUtility.JavaScriptStringEncode($"https://www.exam-answer.com/salesforce/crt-251/question{id}");
+            string canonicalUrl = $"https://www.exam-answer.com/salesforce/crt-251/question{id}";
+            string canonicalUrlEncoded = HttpUtility.JavaScriptStringEncode(canonicalUrl);
 
             List<AnswerViewModel> acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
             List<AnswerViewModel> suggestedAnswers = questionVM.Answers.Where(a => a.IsCorrect != true).ToList();
@@ -155,7 +149,7 @@ namespace Exam_answerWeb.Controllers
         ""@type"": ""Answer"",
         ""author"": ""{author}"",
         ""upvoteCount"": ""{upvoteCount}"",
-        ""url"": ""{url}"",
+        ""url"": ""{canonicalUrlEncoded}"",
         ""dateCreated"": ""{dateCreated}"",
         ""text"": ""{allAnswers}""
                 }}");
@@ -194,7 +188,7 @@ namespace Exam_answerWeb.Controllers
         ""@type"": ""Answer"",
         ""author"": ""{author}"",
         ""upvoteCount"": ""{upvoteCount}"",
-        ""url"": ""{url}"",
+        ""url"": ""{canonicalUrlEncoded}"",
         ""dateCreated"": ""{dateCreated}"",
         ""text"": ""{text}""
                 }}");
@@ -228,7 +222,7 @@ $@"
   ""@type"": ""Question"",
   ""name"": ""{questionText}"",
   ""author"": ""{author}"",
-  ""url"": ""{url}"",
+  ""url"": ""{canonicalUrlEncoded}"",
   ""dateCreated"": ""{dateCreated}"",
   ""text"": ""{questionText}"",
   ""answerCount"": ""{questionVM.Answers.Count}"",
@@ -244,6 +238,13 @@ $@"
             if (intId <= examViewModel.Questions.Count)
             {
                 QuestionViewModel theQuestion = examViewModel.Questions[intId - 1];
+                QuestionEntity questionEntity = examEntity.Questions[intId - 1];
+
+                theQuestion.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
+                theQuestion.PageMicrodata = microdata;
+                theQuestion.PageTitle = title + " | Exam-Answer";
+                theQuestion.PageDescription = questionEntity.ContentText;
+                theQuestion.PageCanonicalUrl = canonicalUrl;
                 var view = View("Question", theQuestion);
 
                 //var htmlToCache = view.ToHtml(HttpContext);

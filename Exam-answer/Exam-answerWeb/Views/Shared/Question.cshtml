@@ -1,107 +1,61 @@
 ﻿@model QuestionViewModel
 <h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(Model.Exam.Questions.IndexOf(Model) + 1)</h1>
-<br />
-@if ("AZ-900".Equals(Model.Exam.Code, StringComparison.InvariantCultureIgnoreCase))
-{
-    <div style="text-align: center">
-        <a target="_blank" href="https://www.amazon.co.uk/gp/product/0135732182/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0135732182&linkCode=as2&tag=examanswer-21&linkId=be5a1ebbba556014ecb2fc0a2bb21397">Exam Ref AZ-900 Microsoft Azure Fundamentals</a>
-        <img src="//ir-uk.amazon-adsystem.com/e/ir?t=examanswer-21&l=am2&o=2&a=0135732182" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-    </div>
-    <br />
-}
-else
-{
-    @if (Context.IsMobileBrowser())
-    {
-        <div style="text-align: center">
-            <script type="text/javascript">
-                atOptions = {
-                    'key': '1dd5b5204b7ecb36d11c2771b7865652',
-                    'format': 'iframe',
-                    'height': 50,
-                    'width': 320,
-                    'params': {}
-                };
-                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/1dd5b5204b7ecb36d11c2771b7865652/invoke.js"></scr' + 'ipt>');
-            </script>
-        </div>
-    }
-    else
-    {
-        <div style="text-align: center">
-            <script type="text/javascript">
-                atOptions = {
-                    'key': 'b8097f32ebf07637210356eb585ea814',
-                    'format': 'iframe',
-                    'height': 60,
-                    'width': 468,
-                    'params': {}
-                };
-                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/b8097f32ebf07637210356eb585ea814/invoke.js"></scr' + 'ipt>');
-            </script>
-        </div>
-    }
-}
 <partial name="_PrevNextPartial" />
-<br />
-<partial name="_ProgressPartial" />
-<br />
+<amp-accordion disable-session-states>
+    <section expanded>
+        <h2>Question @(Model.Exam.Questions.IndexOf(Model) + 1)</h2>
+        <div>
+            <h3>
+                @{
+                    var lines = Model.Contents.FirstOrDefault()?.Text?.Split(Environment.NewLine);
+                }
+                @for (int i = 0; i < lines.Length; i++)
+                {
+                    var line = lines[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-<ul class="panelbar">
-    <li class="k-state-active">
-        <span class="k-link k-state-selected">Question @(Model.Exam.Questions.IndexOf(Model) + 1)</span>
-        @if (Model.Contents?.Count >= 1)
-        {
-            <div>
-
-                <h2>
-                    @{
-                        var lines = Model.Contents.FirstOrDefault()?.Text?.Split(Environment.NewLine);
-                    }
-                    @for (int i = 0; i < lines.Length; i++)
-                    {
-                        var line = lines[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
-
+                    <p class="ampstart-caption pt1 pb1">
                         @Html.Raw(line)
+                    </p>
+                    if (i != lines.Length - 1)
+                    {
+                        <br />
+                    }
+                }
+            </h3>
 
-                        if (i != lines.Length - 1)
+            @{
+                var lastContent = Model.Contents.Skip(1).ToList();
+            }
+            @foreach (var content in lastContent)
+            {
+                <h3>
+                    @{
+                        var lines2 = content.Text.Split(Environment.NewLine);
+                    }
+                    @for (int i = 0; i < lines2.Length; i++)
+                    {
+                        var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
+                        <p class="ampstart-caption pt1 pb1">
+                            @Html.Raw(line)
+                        </p>
+                        if (i != lines2.Length - 1)
                         {
                             <br />
                         }
                     }
-                </h2>
+                </h3>
+            }
+        </div>
+    </section>
+    <section expanded>
+        <h2>Answers</h2>
+        <div>
+            @{
+                string correctId = $"correct{Html.GetNextId()}";
+            }
+            @if (Model.QuestionType == QuestionType.CheckBox)
+            {
 
-                @{
-                    var lastContent = Model.Contents.Skip(1).ToList();
-                }
-                @foreach (var content in lastContent)
-                {
-                    <h2>
-                        @{
-                            var lines2 = content.Text.Split(Environment.NewLine);
-                        }
-                        @for (int i = 0; i < lines2.Length; i++)
-                        {
-                            var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
-
-                            @Html.Raw(line)
-
-                            if (i != lines2.Length - 1)
-                            {
-                                <br />
-                            }
-                        }
-                    </h2>
-                }
-            </div>
-        }
-    </li>
-    @if (Model.QuestionType == QuestionType.CheckBox)
-    {
-        <li class="k-state-active">
-            Answers
-            <div>
-                <br />
                 <ul class="fieldlist">
                     @foreach (var answer in Model.Answers)
                     {
@@ -112,7 +66,7 @@ else
                                 <h3>
                                     <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
 
-                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))" [class]="toggleVariable + ' k-checkbox-label'">
                                         @(answer.Text)
                                     </label>
                                 </h3>
@@ -133,16 +87,9 @@ else
                         }
                     }
                 </ul>
-                <br />
-            </div>
-        </li>
-    }
-    @if (Model.QuestionType == QuestionType.RadioButon)
-    {
-        <li class="k-state-active">
-            Answers
-            <div>
-                <br />
+            }
+            @if (Model.QuestionType == QuestionType.RadioButon)
+            {
                 <ul class="fieldlist">
                     @foreach (var answer in Model.Answers)
                     {
@@ -152,7 +99,7 @@ else
                                 <h3>
                                     <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
 
-                                    <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                                    <label class="k-radio-label" for="@(Html.GetNextId(true))" [class]="toggleVariable + ' k-radio-label'">
                                         @(Html.Raw(answer.Text))
                                     </label>
                                 </h3>
@@ -172,76 +119,44 @@ else
                         }
                     }
                 </ul>
-                <br />
+            }
+            <div class="center">
+                <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox" on="change: AMP.setState({ toggleVariable: event.checked ? 'green' : ''})">
+                <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                    Show correct answer
+                </label>
             </div>
-        </li>
-    }
-    @if (Model.QuestionType == QuestionType.CustomHtml)
-    {
-        <li class="k-state-active">
-            Answers
-            <div>
-                <p>
-                    @foreach (var answer in Model.Answers)
-                    {
-                        @(Html.Raw(answer.Text))
-                    }
-                </p>
-            </div>
-        </li>
-    }
-    @if (Model.Explanations?.Count > 0)
-    {
-        <li>
-            Explanation
-            <div>
+        </div>
+
+    </section>
+    <section>
+        <h2>Explanation</h2>
+        <div>
+            @if (Model.Explanations?.Count > 0)
+            {
+
                 @foreach (var explanation in Model.Explanations)
                 {
-                    <h4>
+                    <p class="ampstart-caption pt1 pb1">
                         @explanation.Text
-                    </h4>
+                    </p>
                 }
-            </div>
-        </li>
-    }
-    @if (Model.References?.Count > 0)
-    {
-        <li>
-            References
-            <div>
+            }
+        </div>
+    </section>
+    <section>
+        <h2>References</h2>
+        <div>
+            @if (Model.References?.Count > 0)
+            {
                 @foreach (var reference in Model.References)
                 {
-                    <h5>
+                    <p class="ampstart-caption pt1 pb1">
                         <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
-                    </h5>
+                    </p>
                 }
-            </div>
-        </li>
-    }
-</ul>
-<br />
-<partial name="~/views/shared/udemy.cshtml" model="@Model?.Exam" />
-<br />
-@if (Model.ShowDisqus)
-{
-    <div id="disqus_thread"></div>
-    <script>
+            }
+        </div>
+    </section>
+</amp-accordion>
 
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-    var disqus_config = function () {
-    this.page.url = '@ViewData["canonicalUrl"]';  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = '@ViewData["canonicalUrl"]'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-
-    (function () { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://examanswer.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-}

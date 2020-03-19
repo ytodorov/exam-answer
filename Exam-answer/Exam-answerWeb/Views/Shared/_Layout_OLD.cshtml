@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PDRDKDJ');</script>
+    <!-- End Google Tag Manager -->
+    <script data-ad-client="ca-pub-2519209558650417" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta title="test" />
+    @if (ViewData["description"] != null)
+    {
+        <meta name="description" content="@ViewData["description"]" />
+    }
+    else
+    {
+        ViewData["description"] = "Community powered free exam answers with explanations.";
+        <meta name="description" content="@(ViewData["description"])" />
+    }
+    @if (ViewData["keywords"] != null)
+    {
+        <meta name="keywords" content="@ViewData["keywords"]" />
+    }
+    else
+    {
+        <meta name="keywords" content="free, exam, question, answer, explanation, az-100" />
+    }
+    @if (ViewData["title"] != null)
+    {
+        <title>@(ViewData["title"] + " | Exam-Answer")</title>
+        ViewData["finalTitle"] = ViewData["title"] + " | Exam-Answer";
+    }
+    else
+    {
+        <title>Exam-Answer</title>
+        ViewData["finalTitle"] = "Exam-Answer";
+    }
+    @{
+        ViewData["canonicalUrl"] = "https://www.exam-answer.com" + Context.Request.Path.ToString().TrimEnd('/');
+    }
+    <link href="@ViewData["canonicalUrl"]" rel="canonical" />
+
+    <meta property="fb:app_id" content="438289293607244" />
+    <meta property="og:url" content="@(ViewData["canonicalUrl"])" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@(ViewData["finalTitle"])" />
+    <meta property="og:description" content="@(ViewData["description"])" />
+    @if (ViewData["imageUrl"] != null)
+    {
+        <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
+        <meta property="og:image:alt" content="@ViewData["imageAlt"]" />
+    }
+
+    @*<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
+
+    @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />*@
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.common-fiori.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.fiori.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.fiori.mobile.min.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
+
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43988280-9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-43988280-9');
+    </script>
+    @*<script src='//platform-api.sharethis.com/js/sharethis.js#property=5c95682cfb6af900122ecbcc&product=social-ab' async='async'></script>*@
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script src="https://kendo.cdn.telerik.com/2019.2.514/js/jquery.min.js"></script>
+    <script async src='//www.modulepush.com/1cd4e48a4d9b85b8a030ccc6f2ee3f01/invoke.js'></script>
+</head>
+<body style="display: none">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRDKDJ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=438289293607244&autoLogAppEvents=1"></script>
+
+    <header>
+        <ul id="menu">
+            <li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li>
+                Salesforce
+                <ul>
+                    <li>
+                        <a href="~/salesforce/crt-251">CRT-251</a>
+                        <ul>
+                            @{
+                                for (int i = 1; i <= 95; i++)
+                                {
+                                    <li>
+                                        <a title="Salesforce / CRT-251 / Question @(i)" href="~/salesforce/crt-251/question@(i)">
+                                            @($"Question {i}")
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Microsoft
+                <ul>
+                    <li>
+                        <a href="~/microsoft/az-100">AZ-100</a>
+                        <ul>
+                            @{
+                                for (int i = 1; i <= 115; i++)
+                                {
+                                    <li>
+                                        <a title="Microsoft / AZ-100 / Question @(i)" href="~/microsoft/az-100/question@(i)">
+                                            @($"Question {i}")
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="~/microsoft/az-900">AZ-900</a>
+                        <ul>
+                            @{
+                                for (int i = 1; i <= 115; i++)
+                                {
+                                    <li>
+                                        <a title="Microsoft / AZ-900 / Question @(i)" href="~/microsoft/az-900/question@(i)">
+                                            @($"Question {i}")
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div>
+        <main>
+
+            <div style="text-align: right;height:30px;padding-top: 3px;">
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+                <div style="width:150px;" class="fb-like" data-href="https://www.exam-answer.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                <div style="display: inline-block; vertical-align:middle" class="addthis_sharing_toolbox"></div>
+            </div>
+            @RenderBody()
+            <br />
+            <partial name="_PrevNextPartial" />
+            @Html.Raw(Html.GetMicrodata())
+        </main>
+    </div>
+    <div id="amzn-assoc-ad-b9f0b4a5-5f80-44a6-b84d-042e9282bd8f"></div>
+    <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=b9f0b4a5-5f80-44a6-b84d-042e9282bd8f"></script>
+    <footer>
+        <div style="text-align: center">
+            &copy; 2020 - exam-answer.com - <a href="/privacy">Privacy</a>
+            <input type="hidden" name="IL_IN_TAG" value="2" />
+        </div>
+    </footer>
+    <partial name="_JsScripts" />
+    <script>
+    @Html.Kendo().DeferredScripts(false)
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-571b2acff4b44bbf"></script>
+</body>
+</html>

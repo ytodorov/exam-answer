@@ -4,7 +4,7 @@
     ViewData["title"] = Model.Title;
     ViewData["description"] = Model.Description;
 }
-<div class="k-block k-info-colored" style="text-align: center;">
+<div class="k-block k-info-colored center">
     <div class="k-header k-info-colored">
         <h1>
             @ViewData["title"]
@@ -14,20 +14,6 @@
         @ViewData["description"]
     </h2>
 </div>
-<style>
-
-    #panels {
-        margin-left: 20px;
-        text-align: center;
-    }
-
-        #panels li {
-            margin-right: 10px;
-            margin-bottom: 10px;
-            list-style: none;
-            float: left;
-        }
-</style>
 @{
     Model.ShowUdemy = false;
     for (int i = 0; i < Model.Questions.Count; i++)
@@ -42,6 +28,6 @@
         }
         Model.Questions[i].ShowDisqus = false;
     <partial name="~/views/shared/question.cshtml" model="@Model.Questions[i]" />
-
+    <br />
     }
 }

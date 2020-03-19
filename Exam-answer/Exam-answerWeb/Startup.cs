@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Entities;
+using DotnetThoughts.AspNetCore;
 using Exam_answerWeb.Extensions;
 using Exam_answerWeb.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -32,7 +33,7 @@ namespace Exam_answerWeb
 
         public IConfiguration Configuration { get; }
 
-        public IHostingEnvironment HostingEnvironment { get; set; }
+        public IWebHostEnvironment HostingEnvironment { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -63,8 +64,10 @@ namespace Exam_answerWeb
 
             // Add MVC services to the services container.
             services
-                .AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+                .AddMvc(options => options.EnableEndpointRouting = false)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+                //.AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services.AddDbContext<ExamAnswerContext>(options => options.UseInMemoryDatabase(databaseName: "ExamAnswerContext"));
 
@@ -77,10 +80,10 @@ namespace Exam_answerWeb
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             HostingEnvironment = env;
-            if (env.IsDevelopment())
+            if (env.EnvironmentName == "Development")
             {
                 //app.UseDeveloperExceptionPage();
             }
@@ -91,6 +94,11 @@ namespace Exam_answerWeb
                 app.UseHsts();
             }
             app.UseStatusCodePagesWithRedirects("/home/error/{0}");
+
+            app.UseExceptionHandler(e =>
+            {
+
+            });
 
             app.UseHttpsRedirection();
 
@@ -109,53 +117,58 @@ namespace Exam_answerWeb
             FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
             provider.Mappings[".webmanifest"] = "application/manifest+json";
 
+            if (env.EnvironmentName != "Development")
+            {
+                app.UseHTMLMinification();
+            }
+
             app.UseStaticFiles(new StaticFileOptions()
             {
                 ContentTypeProvider = provider
             });
 
-            app.Use(
-                       next =>
-                       {
-                           return async context =>
-                           {
-                               Stopwatch stopWatch = new Stopwatch();
-                               stopWatch.Start();
-                               context.Response.OnStarting(
-                                   () =>
-                                   {
-                                       stopWatch.Stop();
-                                       context.Response.Headers.Add("X-ResponseTime-Ms", stopWatch.ElapsedMilliseconds.ToString());
+            //app.Use(
+            //           next =>
+            //           {
+            //               return async context =>
+            //               {
+            //                   Stopwatch stopWatch = new Stopwatch();
+            //                   stopWatch.Start();
+            //                   context.Response.OnStarting(
+            //                       () =>
+            //                       {
+            //                           stopWatch.Stop();
+            //                           context.Response.Headers.Add("X-ResponseTime-Ms", stopWatch.ElapsedMilliseconds.ToString());
 
-                                       // these cannot  be removed because they are not yet added here.
-                                       context.Response.Headers.Remove("x-powered-by");
-                                       context.Response.Headers.Remove("server");
+            //                           // these cannot  be removed because they are not yet added here.
+            //                           context.Response.Headers.Remove("x-powered-by");
+            //                           context.Response.Headers.Remove("server");
 
-                                       return Task.CompletedTask;
-                                   });
+            //                           return Task.CompletedTask;
+            //                       });
 
-                               await next(context);
-                           };
-                       });
+            //                   await next(context);
+            //               };
+            //           });
 
-            app.Use(
-                       next =>
-                       {
-                           return async context =>
-                           {
-                               var cache = context.RequestServices.GetRequiredService<IMemoryCache>();
-                               bool isMobile = context.IsMobileBrowser();
-                               var cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
-                               if (!string.IsNullOrEmpty(cachedHtml))
-                               {
-                                   await context.Response.WriteAsync(cachedHtml);
-                               }
-                               else
-                               {
-                                   await next(context);
-                               }
-                           };
-                       });
+            //app.Use(
+            //           next =>
+            //           {
+            //               return async context =>
+            //               {
+            //                   var cache = context.RequestServices.GetRequiredService<IMemoryCache>();
+            //                   bool isMobile = context.IsMobileBrowser();
+            //                   var cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
+            //                   if (!string.IsNullOrEmpty(cachedHtml))
+            //                   {
+            //                       await context.Response.WriteAsync(cachedHtml);
+            //                   }
+            //                   else
+            //                   {
+            //                       await next(context);
+            //                   }
+            //               };
+            //           });
 
             app.UseOutputCaching();
             app.UseMvc(routes =>

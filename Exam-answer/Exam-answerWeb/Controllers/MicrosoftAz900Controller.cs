@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 
@@ -14,8 +15,9 @@ namespace Exam_AnswerWeb.Controllers
     [Route("microsoft/az-900")]
     public class MicrosoftAz900Controller : EaControllerBase
     {
-        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext, IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache) :
-            base(examAnswerContext, env, mapper, memoryCache)
+        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext,
+            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
+            base(examAnswerContext, env, mapper, memoryCache, configuration)
         {
         }
 
@@ -43,6 +45,13 @@ namespace Exam_AnswerWeb.Controllers
                .FirstOrDefault();
 
             ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
+            examViewModel.PageBaseCanonicalUrl = examViewModel.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
+
+            examViewModel.PageCanonicalUrl = $"{pageBaseCanonicalUrl}/microsoft/az-900";
+            examViewModel.PageH1 = "Exam AZ-900: Microsoft Azure Fundamentals";
+            examViewModel.PageDescription = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations";
+            examViewModel.PageTitle = "Exam AZ-900: Microsoft Azure Fundamentals | Exam-Answer";
+            
 
             return View($"az-900/index", examViewModel);
         }
