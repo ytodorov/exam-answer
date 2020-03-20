@@ -30,7 +30,11 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 </head>
 <body>
-    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-PDRDKDJ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+    @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
+    {
+        <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-PDRDKDJ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+    }
+
     <header class="a-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
         <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="a-navbar-trigger md-hide lg-hide pr2  ">
             ☰

@@ -247,9 +247,10 @@ $@"
                 theQuestion.PageCanonicalUrl = canonicalUrl;
                 var view = View("Question", theQuestion);
 
-                //var htmlToCache = view.ToHtml(HttpContext);
+                var htmlToCache = view.ToHtml(HttpContext);
+                bool isMobile = HttpContext.IsMobileBrowser();
 
-                //cache.Set<string>(HttpContext.Request.Path.ToString(), htmlToCache);
+                cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
 
                 return view;
             }
