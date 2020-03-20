@@ -90,34 +90,41 @@ namespace Exam_answerWeb
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseStatusCodePagesWithRedirects("/home/error/{0}");
 
-            app.UseExceptionHandler(e =>
-            {
+            app.UseDeveloperExceptionPage();
 
-            });
+            // app.UseStatusCodePagesWithRedirects("/home/error/{0}");
+
+            //app.UseExceptionHandler(e =>
+            //{
+
+            //});
 
             app.UseHttpsRedirection();
 
             app.UseCookiePolicy();
 
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-2.2
-            app.UseRewriter(new RewriteOptions()
+            if (env.EnvironmentName != "Development")
+            {
+                //Very problematic. !!!could lead to error: This site can’t be reached
+                app.UseRewriter(new RewriteOptions()
                 .AddRedirect("(.*)/$", "$1", (int)HttpStatusCode.MovedPermanently) // Strip trailing slash
-                .AddRedirectToWww()
+                .AddRedirectToWww() //Very problematic. !!!could lead to error: This site can’t be reached
                 .AddRedirectToHttps()
                 .Add(new RedirectLowerCaseRule())
                 );
+            }
 
             app.UseResponseCompression();
 
             FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
             provider.Mappings[".webmanifest"] = "application/manifest+json";
 
-            if (env.EnvironmentName != "Development")
-            {
-                app.UseHTMLMinification();
-            }
+            //if (env.EnvironmentName != "Development")
+            //{
+            //    app.UseHTMLMinification();
+            //}
 
             app.UseStaticFiles(new StaticFileOptions()
             {
