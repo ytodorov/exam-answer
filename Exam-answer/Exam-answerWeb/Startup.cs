@@ -71,6 +71,14 @@ namespace Exam_answerWeb
 
             services.AddDbContext<ExamAnswerContext>(options => options.UseInMemoryDatabase(databaseName: "ExamAnswerContext"));
 
+            // very importan for AMP
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             //services
             //    .AddDistributedMemoryCache()
             //    .AddSession();
@@ -79,6 +87,8 @@ namespace Exam_answerWeb
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("MyPolicy");
+
             HostingEnvironment = env;
             if (env.EnvironmentName == "Development")
             {
