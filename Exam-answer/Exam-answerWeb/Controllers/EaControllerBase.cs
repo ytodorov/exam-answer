@@ -247,10 +247,10 @@ $@"
                 theQuestion.PageCanonicalUrl = canonicalUrl;
                 var view = View("Question", theQuestion);
 
-                var htmlToCache = view.ToHtml(HttpContext);
-                bool isMobile = HttpContext.IsMobileBrowser();
+                //var htmlToCache = view.ToHtml(HttpContext);
+                //bool isMobile = HttpContext.IsMobileBrowser();
 
-                cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+                //cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
 
                 return view;
             }
@@ -259,5 +259,20 @@ $@"
                 return NotFound();
             }
         }
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            var viewResult = context.Result as ViewResult;
+
+            if (viewResult != null)
+            {
+                var htmlToCache = viewResult.ToHtml(HttpContext);
+                bool isMobile = HttpContext.IsMobileBrowser();
+
+                cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+            }
+            base.OnActionExecuted(context);
+        }
+
+        
     }
 }
