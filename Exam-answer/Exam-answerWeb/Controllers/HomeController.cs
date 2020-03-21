@@ -99,10 +99,10 @@ namespace Exam_answerWeb.Controllers
             return View("GenericError");
         }
 
-        [Route("/.well-known/pki-validation/FC9F18C3634865886ED5E56EFF25A21F.txt")]
+        [Route("/.well-known/pki-validation/37CB460FA42E085F9F1C49F02A1CD992.txt")]
         public string Cert()
         {
-            return "72D484190ADB24E5CA29B64BAFC2BDC32B279758A6E70A2589AE3610CF2AB79F comodoca.com 5c941e16c088d";
+            return "4D4BB2B756DA903C4C7B37E700446258D4D3CEF34CA02E69E6A1C661872141CD comodoca.com 5e75e0d112ab9";
         }
     }
 }
