@@ -267,8 +267,11 @@ $@"
             {
                 var htmlToCache = viewResult.ToHtml(HttpContext);
                 bool isMobile = HttpContext.IsMobileBrowser();
-
-                cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+                var statusCode = HttpContext.Response.StatusCode;
+                if (statusCode == StatusCodes.Status200OK)
+                {
+                    cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+                }
             }
             base.OnActionExecuted(context);
         }

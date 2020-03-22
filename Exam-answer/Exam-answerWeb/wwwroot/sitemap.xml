@@ -12,17 +12,17 @@
   <url>
     <loc>https://www.exam-answer.com/microsoft/az-900</loc>
     <lastmod>2020-03-20T22:54:19+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.exam-answer.com/salesforce/crt-251</loc>
     <lastmod>2020-03-20T22:54:19+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.exam-answer.com/about</loc>
     <lastmod>2020-03-20T22:54:19+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.83</priority>
   </url>
   <url>
     <loc>https://www.exam-answer.com/contact</loc>
@@ -32,17 +32,17 @@
   <url>
     <loc>https://www.exam-answer.com/salesforce/crt-251/question1</loc>
     <lastmod>2020-03-20T22:54:19+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://www.exam-answer.com/microsoft/az-900/question1</loc>
     <lastmod>2020-03-20T22:54:19+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://www.exam-answer.com/privacy</loc>
     <lastmod>2020-03-20T22:54:19+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://www.exam-answer.com/salesforce/crt-251/question2</loc>

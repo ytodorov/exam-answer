@@ -4,6 +4,7 @@ using DotnetThoughts.AspNetCore;
 using Exam_answerWeb.Extensions;
 using Exam_answerWeb.Infrastructure;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -103,12 +104,13 @@ namespace Exam_answerWeb
 
             app.UseDeveloperExceptionPage();
 
-            // app.UseStatusCodePagesWithRedirects("/home/error/{0}");
+            app.UseStatusCodePagesWithRedirects("/error?id={0}");
 
-            //app.UseExceptionHandler(e =>
-            //{
-
-            //});
+            app.UseExceptionHandler(a => a.Run(async context =>
+            {
+                IExceptionHandlerPathFeature feature = context.Features.Get<IExceptionHandlerPathFeature>();
+                Exception exception = feature.Error;
+            }));
 
             app.UseHttpsRedirection();
 

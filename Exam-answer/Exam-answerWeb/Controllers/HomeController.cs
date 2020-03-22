@@ -83,13 +83,21 @@ namespace Exam_answerWeb.Controllers
             return View("GenericError");
         }
 
+        [Route("error")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(string id)
+        
+        
+        
         {
             if (id == "404")
             {
                 HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                return View("NotFound");
+                BaseViewModel baseViewModel = new BaseViewModel();
+                baseViewModel.PageTitle = "Not Found | Exam-Answer";
+                baseViewModel.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
+                baseViewModel.PageCanonicalUrl = $"{pageBaseCanonicalUrl}/error";
+                return View("NotFound", baseViewModel);
             }
             else if (id == "500")
             {
