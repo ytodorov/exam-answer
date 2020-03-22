@@ -7,7 +7,6 @@
     <link rel="canonical" href="@Model?.PageCanonicalUrl">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="@Model?.PageDescription" />
-
     <meta property="fb:app_id" content="438289293607244" />
     <meta property="og:url" content="@(Model?.PageCanonicalUrl)" />
     <meta property="og:type" content="website" />
@@ -18,7 +17,6 @@
         <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
         <meta property="og:image:alt" content="@(Model?.PageTitle)" />
     }
-
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <partial name="_BoilerplateCssPartial.cshtml" />
     <partial name="_AmpCustomCssPartial.cshtml" />
@@ -28,6 +26,9 @@
     <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async=""></script>
     <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    @*<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>*@
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    @*<meta name="amp-script-src" content="sha384-s4tZTpTebuHAvhKCqz7T6Pg0SqAIe1UUW8zuYz9dsDlszfUF-1NR2_4lP-wHtzJK" />*@
 </head>
 <body>
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
@@ -140,8 +141,19 @@
             © Exam Answer, @(DateTime.UtcNow.Year) •
             <a class="text-decoration-none" href="@($"{Model?.PageBaseCanonicalUrl}/privacy")">Privacy Policy</a>
         </small>
-        <div class="center">&nbsp;<amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis></div>
+        <div class="center">
+
+            <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
+        </div>
     </footer>
+    <amp-iframe width="auto"
+                    height="300"
+                    sandbox="allow-scripts"
+                    layout="fixed-height"
+                    src="@(Model.PageBaseCanonicalUrl)/trustlogo">
+            <amp-img layout="fill" src="@(Model.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
+        </amp-iframe>
+
     @Html.Raw(Model?.PageMicrodata)
 </body>
 </html>

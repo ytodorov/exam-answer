@@ -245,6 +245,7 @@ $@"
                 theQuestion.PageTitle = title + " | Exam-Answer";
                 theQuestion.PageDescription = questionEntity.ContentText;
                 theQuestion.PageCanonicalUrl = canonicalUrl;
+                theQuestion.PageMicrodata = microdata;
                 var view = View("Question", theQuestion);
 
                 //var htmlToCache = view.ToHtml(HttpContext);

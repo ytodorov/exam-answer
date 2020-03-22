@@ -54,6 +54,36 @@ namespace Exam_AnswerWeb.Controllers
             examViewModel.PageDescription = "Prepare for Exam CRT-251: Sales Cloud Consultant. Free demo questions with answers and explanations";
             examViewModel.PageTitle = "Exam CRT-251: Sales Cloud Consultant | Exam-Answer";
 
+            examViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
+    {{
+      ""@context"": ""http://schema.org"",
+      ""@type"": ""Webpage"",
+      ""url"": ""{examViewModel.PageCanonicalUrl}"",
+      ""name"": ""{examViewModel.PageTitle}"",
+      ""headline"": ""{examViewModel.PageTitle}"",
+      ""description"": ""{examViewModel.PageDescription}"",
+      ""mainEntityOfPage"": {{
+        ""@type"": ""WebPage"",
+        ""@id"": ""{examViewModel.PageCanonicalUrl}""
+      }},
+      ""publisher"": {{
+        ""@type"": ""Organization"",
+        ""name"": ""{examViewModel.PageCanonicalUrl}"",
+        ""logo"": {{
+          ""url"": ""{examViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+          ""width"": 512,
+          ""height"": 512,
+          ""@type"": ""ImageObject""
+        }}
+      }},
+      ""image"": {{
+        ""@type"": ""ImageObject"",
+        ""url"": ""{examViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+        ""width"": 512,
+        ""height"": 512
+      }}
+    }}";
+
             return View($"crt-251/index", examViewModel);
         }
     }

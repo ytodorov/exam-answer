@@ -23,10 +23,40 @@ namespace Exam_answerWeb.Controllers
             {
                 PageBaseCanonicalUrl = pageBaseCanonicalUrl,
                 PageH1 = "Exam-Answer",
-                PageDescription = "Community powered free exam questions with answers and explanations.",    
+                PageDescription = "Community powered free exam questions with answers and explanations",    
                 PageTitle = "Exam-Answer",
-                PageCanonicalUrl = pageBaseCanonicalUrl,
+                PageCanonicalUrl = pageBaseCanonicalUrl,               
             };
+
+            baseViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
+    {{
+      ""@context"": ""http://schema.org"",
+      ""@type"": ""Webpage"",
+      ""url"": ""{baseViewModel.PageCanonicalUrl}"",
+      ""name"": ""{baseViewModel.PageTitle}"",
+      ""headline"": ""{baseViewModel.PageTitle}"",
+      ""description"": ""{baseViewModel.PageDescription}"",
+      ""mainEntityOfPage"": {{
+        ""@type"": ""WebPage"",
+        ""@id"": ""{baseViewModel.PageCanonicalUrl}""
+      }},
+      ""publisher"": {{
+        ""@type"": ""Organization"",
+        ""name"": ""{baseViewModel.PageCanonicalUrl}"",
+        ""logo"": {{
+          ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+          ""width"": 512,
+          ""height"": 512,
+          ""@type"": ""ImageObject""
+        }}
+      }},
+      ""image"": {{
+        ""@type"": ""ImageObject"",
+        ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+        ""width"": 512,
+        ""height"": 512
+      }}
+    }}";
 
             return View(baseViewModel);
         }
@@ -43,6 +73,36 @@ namespace Exam_answerWeb.Controllers
                 PageTitle = "Privacy | Exam-Answer",
             };
 
+            baseViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
+    {{
+      ""@context"": ""http://schema.org"",
+      ""@type"": ""Webpage"",
+      ""url"": ""{baseViewModel.PageCanonicalUrl}"",
+      ""name"": ""{baseViewModel.PageTitle}"",
+      ""headline"": ""{baseViewModel.PageTitle}"",
+      ""description"": ""{baseViewModel.PageDescription}"",
+      ""mainEntityOfPage"": {{
+        ""@type"": ""WebPage"",
+        ""@id"": ""{baseViewModel.PageCanonicalUrl}""
+      }},
+      ""publisher"": {{
+        ""@type"": ""Organization"",
+        ""name"": ""{baseViewModel.PageCanonicalUrl}"",
+        ""logo"": {{
+          ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+          ""width"": 512,
+          ""height"": 512,
+          ""@type"": ""ImageObject""
+        }}
+      }},
+      ""image"": {{
+        ""@type"": ""ImageObject"",
+        ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+        ""width"": 512,
+        ""height"": 512
+      }}
+    }}";
+
             return View(baseViewModel);
         }
 
@@ -57,8 +117,42 @@ namespace Exam_answerWeb.Controllers
                 PageDescription = "Contact us via email or our Facebook page.",
                 PageTitle = "Contact | Exam-Answer",
             };
+            baseViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
+    {{
+      ""@context"": ""http://schema.org"",
+      ""@type"": ""Webpage"",
+      ""url"": ""{baseViewModel.PageCanonicalUrl}"",
+      ""name"": ""{baseViewModel.PageTitle}"",
+      ""headline"": ""{baseViewModel.PageTitle}"",
+      ""description"": ""{baseViewModel.PageDescription}"",
+      ""mainEntityOfPage"": {{
+        ""@type"": ""WebPage"",
+        ""@id"": ""{baseViewModel.PageCanonicalUrl}""
+      }},
+      ""publisher"": {{
+        ""@type"": ""Organization"",
+        ""name"": ""{baseViewModel.PageCanonicalUrl}"",
+        ""logo"": {{
+          ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+          ""width"": 512,
+          ""height"": 512,
+          ""@type"": ""ImageObject""
+        }}
+      }},
+      ""image"": {{
+        ""@type"": ""ImageObject"",
+        ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+        ""width"": 512,
+        ""height"": 512
+      }}
+    }}";
 
             return View(baseViewModel);
+        }
+        [Route("trustlogo")]
+        public IActionResult TrustLogo()
+        {
+            return View();
         }
 
         [Route("about")]
@@ -72,6 +166,36 @@ namespace Exam_answerWeb.Controllers
                 PageDescription = "Our aim is to provide accurate, up to date exam questions of popular IT exams. Not only that, but we search the Internet to provide an information to our readers why an answer of a question is right or wrong.",
                 PageTitle = "About | Exam-Answer",
             };
+
+            baseViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
+    {{
+      ""@context"": ""http://schema.org"",
+      ""@type"": ""Webpage"",
+      ""url"": ""{baseViewModel.PageCanonicalUrl}"",
+      ""name"": ""{baseViewModel.PageTitle}"",
+      ""headline"": ""{baseViewModel.PageTitle}"",
+      ""description"": ""{baseViewModel.PageDescription}"",
+      ""mainEntityOfPage"": {{
+        ""@type"": ""WebPage"",
+        ""@id"": ""{baseViewModel.PageCanonicalUrl}""
+      }},
+      ""publisher"": {{
+        ""@type"": ""Organization"",
+        ""name"": ""{baseViewModel.PageCanonicalUrl}"",
+        ""logo"": {{
+          ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+          ""width"": 512,
+          ""height"": 512,
+          ""@type"": ""ImageObject""
+        }}
+      }},
+      ""image"": {{
+        ""@type"": ""ImageObject"",
+        ""url"": ""{baseViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+        ""width"": 512,
+        ""height"": 512
+      }}
+    }}";
 
             return View(baseViewModel);
         }
