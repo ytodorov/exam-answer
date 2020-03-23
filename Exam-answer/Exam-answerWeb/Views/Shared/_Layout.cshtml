@@ -147,14 +147,13 @@
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-    <amp-ad width="100vw"
-            height="320"
-            type="adsense"
-            data-ad-client="ca-pub-2519209558650417"
-            data-auto-format="rspv"
-            data-full-width>
-        <div overflow></div>
-    </amp-ad>
+    <amp-embed width="auto"
+               height="@(Context?.IsMobileBrowser() == true ? "250" : "500")"
+               type="zergnet"
+               layout="fixed-height"
+               data-zergid="@(Context?.IsMobileBrowser() == true ? "82865" : "82864")">
+    </amp-embed>
+
     <amp-iframe width="auto"
                 height="300"
                 sandbox="allow-scripts"
