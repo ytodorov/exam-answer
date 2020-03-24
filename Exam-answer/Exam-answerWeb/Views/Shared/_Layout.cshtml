@@ -29,6 +29,7 @@
     @*<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>*@
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     @*<meta name="amp-script-src" content="sha384-s4tZTpTebuHAvhKCqz7T6Pg0SqAIe1UUW8zuYz9dsDlszfUF-1NR2_4lP-wHtzJK" />*@
 </head>
 <body>
@@ -147,17 +148,17 @@
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-    @if (Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.CurrentCultureIgnoreCase) != true)
-    {
-        <amp-ad width="100vw"
-                height="320"
-                type="adsense"
-                data-ad-client="pub-2519209558650417"
-                data-auto-format="rspv"
-                data-full-width>
-            <div overflow></div>
-        </amp-ad>
-    }
+    <amp-iframe width="auto"
+                height="300"
+                sandbox="allow-scripts"
+                layout="fixed-height"
+                src="@(Model.PageBaseCanonicalUrl)/trustlogo">
+        <amp-img layout="fill" src="@(Model.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
+    </amp-iframe>
+    <amp-auto-ads type="adsense"
+                  data-ad-client="ca-pub-2519209558650417">
+    </amp-auto-ads>
+
 
     @Html.Raw(Model?.PageMicrodata)
 </body>
