@@ -147,20 +147,17 @@
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-    <amp-embed width="auto"
-               height="@(Context?.IsMobileBrowser() == true ? "250" : "500")"
-               type="zergnet"
-               layout="fixed-height"
-               data-zergid="@(Context?.IsMobileBrowser() == true ? "82865" : "82864")">
-    </amp-embed>
-
-    <amp-iframe width="auto"
-                height="300"
-                sandbox="allow-scripts"
-                layout="fixed-height"
-                src="@(Model.PageBaseCanonicalUrl)/trustlogo">
-        <amp-img layout="fill" src="@(Model.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
-    </amp-iframe>
+    @if (Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.CurrentCultureIgnoreCase) != true)
+    {
+        <amp-ad width="100vw"
+                height="320"
+                type="adsense"
+                data-ad-client="pub-2519209558650417"
+                data-auto-format="rspv"
+                data-full-width>
+            <div overflow></div>
+        </amp-ad>
+    }
 
     @Html.Raw(Model?.PageMicrodata)
 </body>
