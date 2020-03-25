@@ -29,8 +29,7 @@
     @*<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>*@
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    @*<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>*@
     @*<meta name="amp-script-src" content="sha384-s4tZTpTebuHAvhKCqz7T6Pg0SqAIe1UUW8zuYz9dsDlszfUF-1NR2_4lP-wHtzJK" />*@
 </head>
 <body>
@@ -164,9 +163,9 @@
                 src="@(Model.PageBaseCanonicalUrl)/trustlogo">
         <amp-img layout="fill" src="@(Model.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
     </amp-iframe>
-    <amp-auto-ads type="adsense"
+    @*<amp-auto-ads type="adsense"
                   data-ad-client="ca-pub-2519209558650417">
-    </amp-auto-ads>
+    </amp-auto-ads>*@
 
 
     @Html.Raw(Model?.PageMicrodata)
