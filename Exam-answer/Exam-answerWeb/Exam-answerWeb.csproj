@@ -1251,6 +1251,9 @@
     <Content Update="Views\MicrosoftAz900\az-900\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Views\SalesforceController2\Salesforce-Certified-Field-Service-Lightning-Consultant\index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Views\salesforce\crt-251\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1380,6 +1383,9 @@
     <Content Update="Views\salesforce\crt-251\question1_9.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Views\salesforce\Salesforce-Certified-Field-Service-Lightning-Consultant\index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 
@@ -1426,6 +1432,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az100Text - Copy.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az100Text.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

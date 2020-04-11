@@ -129,34 +129,40 @@
         </div>
 
     </section>
-    <section>
-        <h2>Explanation</h2>
-        <div>
-            @if (Model.Explanations?.Count > 0)
-            {
+    @if (Model?.Explanations?.Count > 0)
+    {
+        <section>
+            <h2>Explanation</h2>
+            <div>
+                @if (Model.Explanations?.Count > 0)
+                {
 
-                @foreach (var explanation in Model.Explanations)
-                {
-                    <p class="ampstart-caption pt1 pb1">
-                        @explanation.Text
-                    </p>
+                    @foreach (var explanation in Model.Explanations)
+                    {
+                        <p class="ampstart-caption pt1 pb1">
+                            @explanation.Text
+                        </p>
+                    }
                 }
-            }
-        </div>
-    </section>
-    <section>
-        <h2>References</h2>
-        <div>
-            @if (Model.References?.Count > 0)
-            {
-                @foreach (var reference in Model.References)
+            </div>
+        </section>
+    }
+    @if (Model.References?.Count > 0)
+    {
+        <section>
+            <h2>References</h2>
+            <div>
+                @if (Model.References?.Count > 0)
                 {
-                    <p class="ampstart-caption pt1 pb1">
-                        <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
-                    </p>
+                    @foreach (var reference in Model.References)
+                    {
+                        <p class="ampstart-caption pt1 pb1">
+                            <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
+                        </p>
+                    }
                 }
-            }
-        </div>
-    </section>
+            </div>
+        </section>
+    }
 </amp-accordion>
-
+<hr />

@@ -1,7 +1,9 @@
 ﻿using DAL.Entities;
 using Exam_answerWeb.Infrastructure.crt251;
 using Exam_answerWeb.Infrastructure.Questions;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -15,7 +17,66 @@ namespace Exam_answerWeb.Infrastructure
 
         public static List<ExamEntity> Initialize(ExamAnswerContext context)
         {
+            var allText = File.ReadAllText("Exams\\az100Text.txt");
+
+            var quesions = allText.Split("###", StringSplitOptions.RemoveEmptyEntries);
+
+            List<QuestionEntity> qeList = new List<QuestionEntity>();
+            foreach (var question in quesions)
+            {
+                var questionsGroups = question.Split($"---", StringSplitOptions.RemoveEmptyEntries);
+
+                var questionContent = questionsGroups[0].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                var questionAnswers = questionsGroups[1].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                //var questionExplanations = questionsGroups[2].Split(Environment.NewLine);
+                //var questionReferences = questionsGroups[3].Split(Environment.NewLine);
+                QuestionEntity qe = new QuestionEntity();
+
+                if (questionContent.FirstOrDefault()?.Equals("C") == true)
+                {
+                    qe.QuestionType = QuestionType.CheckBox;
+                    questionContent = questionContent.Skip(1).ToList();
+                }
+
+                foreach (var content in questionContent)
+                {
+                    ContentEntity contentEntity = new ContentEntity()
+                    {
+                        Text = content,
+                        Order = questionContent.IndexOf(content),
+                    };
+                    qe.Contents.Add(contentEntity);
+                }
+
+                foreach (var answer in questionAnswers)
+                {
+                    AnswerEntity answerEntity = new AnswerEntity()
+                    {
+                        Text = answer,
+                        Order = questionAnswers.IndexOf(answer),
+                    };
+                    if (answer.EndsWith("*"))
+                    {
+                        answerEntity.IsCorrect = true;
+                        answerEntity.Text = answer.TrimEnd('*').Trim();
+                    }
+                    qe.Answers.Add(answerEntity);
+                }
+
+                qeList.Add(qe);
+            }
+
             List<ExamEntity> result = new List<ExamEntity>();
+            ExamEntity scfslc = new ExamEntity()
+            {
+                Provider = "Salesforce",
+                Code = "Salesforce-Certified-Field-Service-Lightning-Consultant",
+                Name = "Salesforce Certified Field Service Lightning Consultant",
+                Questions = qeList,
+            };
+
+            context?.Exams?.Add(scfslc);
+            result.Add(scfslc);
 
             ExamEntity crt251 = new ExamEntity()
             {
@@ -189,7 +250,7 @@ namespace Exam_answerWeb.Infrastructure
             az900Fields = az900Fields.OrderBy(a =>
             {
                 int order = int.Parse(a.Name.Replace("Q", string.Empty).Replace("Instance", string.Empty));
-                return order; 
+                return order;
 
             }).ToList();
 
