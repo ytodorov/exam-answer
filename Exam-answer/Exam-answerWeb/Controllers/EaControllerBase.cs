@@ -206,7 +206,7 @@ namespace Exam_answerWeb.Controllers
 
             foreach (ContentViewModel c in questionVM.Contents)
             {
-                sbQuestionText.Append(c.Text);
+                sbQuestionText.Append($"{c.Text} ");
             }
             string test = HttpUtility.JavaScriptStringEncode("\"test\"");
             string questionText = HttpUtility.JavaScriptStringEncode(sbQuestionText.ToString());
@@ -243,7 +243,30 @@ $@"
                 theQuestion.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
                 theQuestion.PageMicrodata = microdata;
                 theQuestion.PageTitle = title + " | Exam-Answer";
-                theQuestion.PageDescription = questionEntity.ContentText;
+
+                // Page description should be max 160 chars.
+                List<string> words = new List<string>();
+
+                foreach (var content in questionEntity.Contents)
+                {
+                    words.AddRange(content.Text.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList());
+                }
+
+                StringBuilder pageDescription = new StringBuilder();
+
+                foreach (var w in words)
+                {
+                    if (pageDescription.Length + w.Length >= 160)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        pageDescription.Append($"{w} ");
+                    }
+                }
+
+                theQuestion.PageDescription = pageDescription.ToString().Trim(); //questionEntity.ContentText;
                 theQuestion.PageCanonicalUrl = canonicalUrl;
                 theQuestion.PageMicrodata = microdata;
                 var view = View("Question", theQuestion);
