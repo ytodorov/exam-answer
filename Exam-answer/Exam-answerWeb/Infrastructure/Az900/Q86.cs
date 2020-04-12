@@ -54,7 +54,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "The WARNING state indicates one or more issues in VM’s configuration that might lead to backup failures and provides recommended steps to ensure successful backups. Not having the latest VM Agent installed, for example, can cause backups to fail intermittently and falls in this class of issues."
+                    Text = "The WARNING state indicates one or more issues in VM's configuration that might lead to backup failures and provides recommended steps to ensure successful backups. Not having the latest VM Agent installed, for example, can cause backups to fail intermittently and falls in this class of issues."
                 },
                 new ExplanationEntity()
                 {
@@ -62,7 +62,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "The CRITICAL state indicates one or more critical issues in the VM’s configuration that will lead to backup failures and provides required steps to ensure successful backups. A network issue caused due to an update to the NSG rules of a VM, for example, will fail backups as it prevents the VM from communicating with the Azure Backup service and falls in this class of issues."
+                    Text = "The CRITICAL state indicates one or more critical issues in the VM's configuration that will lead to backup failures and provides required steps to ensure successful backups. A network issue caused due to an update to the NSG rules of a VM, for example, will fail backups as it prevents the VM from communicating with the Azure Backup service and falls in this class of issues."
                 },
             },
 

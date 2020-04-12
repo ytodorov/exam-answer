@@ -18,7 +18,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "The company’s migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
+                    Text = "The company's migration plan states that only platform as a service (PaaS) solutions must be used in Azure.",
                 },
                 new ContentEntity()
                 {
@@ -56,7 +56,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Like IaaS, PaaS includes infrastructure—servers, storage and networking—but also middleware, development tools, business intelligence (BI) services, database management systems and more. PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing and updating."
+                    Text = "Like IaaS, PaaS includes infrastructure-servers, storage and networking-but also middleware, development tools, business intelligence (BI) services, database management systems and more. PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing and updating."
                 },
                 new ExplanationEntity()
                 {

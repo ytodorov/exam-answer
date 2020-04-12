@@ -22,7 +22,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "The company’s security policy states that all personal devices and corporate-owned devices must be registered or joined to Azure AD.",
+                    Text = "The company's security policy states that all personal devices and corporate-owned devices must be registered or joined to Azure AD.",
                 },
                 new ContentEntity()
                 {

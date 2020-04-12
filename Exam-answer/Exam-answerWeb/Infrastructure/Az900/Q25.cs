@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "Your company plans to migrate all on-premises data to Azure. You need to identify whether Azure complies with the company’s regional requirements.",
+                    Text = "Your company plans to migrate all on-premises data to Azure. You need to identify whether Azure complies with the company's regional requirements.",
                 },
                 new ContentEntity()
                 {
@@ -54,7 +54,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Compliance: Microsoft helps organizations comply with national, regional, and industry-specific requirements governing the collection and use of individuals’ data."
+                    Text = "Compliance: Microsoft helps organizations comply with national, regional, and industry-specific requirements governing the collection and use of individuals' data."
                 },
             },
 

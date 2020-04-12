@@ -58,7 +58,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ExplanationEntity()
                 {
-                    Text = "Azure Backup provides backup for virtual machines — created through both the classic deployment model and the Azure Resource Manager deployment model — by using custom-defined backup policies in a Recovery Services vault."
+                    Text = "Azure Backup provides backup for virtual machines - created through both the classic deployment model and the Azure Resource Manager deployment model - by using custom-defined backup policies in a Recovery Services vault."
                 },
                 new ExplanationEntity()
                 {

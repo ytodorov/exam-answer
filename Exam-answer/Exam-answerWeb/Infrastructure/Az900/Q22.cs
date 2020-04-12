@@ -18,7 +18,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "The company’s compliance policy states that a server named FinServer must be on a separate network segment.",
+                    Text = "The company's compliance policy states that a server named FinServer must be on a separate network segment.",
                 },
                 new ContentEntity()
                 {
@@ -62,7 +62,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Best practice: Create network access controls between subnets. Routing between subnets happens automatically, and you don’t need to manually configure routing tables. By default, there are no network access controls between the subnets that you create on an Azure virtual network."
+                    Text = "Best practice: Create network access controls between subnets. Routing between subnets happens automatically, and you don't need to manually configure routing tables. By default, there are no network access controls between the subnets that you create on an Azure virtual network."
                 },
                 new ExplanationEntity()
                 {

@@ -90,7 +90,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "* Powerful SQL engine - Take advantage of Microsoft SQL Server, the industry’s top-performing SQL engine, offering comprehensive support for SQL language."
+                    Text = "* Powerful SQL engine - Take advantage of Microsoft SQL Server, the industry's top-performing SQL engine, offering comprehensive support for SQL language."
                 },
                 new ExplanationEntity()
                 {

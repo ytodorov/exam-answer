@@ -18,7 +18,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ContentEntity()
                 {
-                    Text = "The company’s support policy states that the Azure environment must provide an option to access support engineers by phone or email.",
+                    Text = "The company's support policy states that the Azure environment must provide an option to access support engineers by phone or email.",
                 },
                 new ContentEntity()
                 {

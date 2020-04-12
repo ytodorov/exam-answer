@@ -14,7 +14,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ContentEntity()
                 {
-                    Text = "What should you use to evaluate whether your company’s Azure environment meets regulatory requirements?",
+                    Text = "What should you use to evaluate whether your company's Azure environment meets regulatory requirements?",
                 },
             },
 

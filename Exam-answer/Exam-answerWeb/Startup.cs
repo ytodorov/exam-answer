@@ -119,10 +119,10 @@ namespace Exam_answerWeb
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-2.2
             if (env.EnvironmentName != "Development")
             {
-                //Very problematic. !!!could lead to error: This site can’t be reached
+                //Very problematic. !!!could lead to error: This site can't be reached
                 app.UseRewriter(new RewriteOptions()
                 .AddRedirect("(.*)/$", "$1", (int)HttpStatusCode.MovedPermanently) // Strip trailing slash
-                .AddRedirectToWww() //Very problematic. !!!could lead to error: This site can’t be reached
+                .AddRedirectToWww() //Very problematic. !!!could lead to error: This site can't be reached
                 .AddRedirectToHttps()
                 .Add(new RedirectLowerCaseRule())
                 );

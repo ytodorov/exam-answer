@@ -54,7 +54,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Azure Machine Learning is designed for applied machine learning. Use best-in-class algorithms and a simple drag-and-drop interface—and go from idea to deployment in a matter of clicks. "
+                    Text = "Azure Machine Learning is designed for applied machine learning. Use best-in-class algorithms and a simple drag-and-drop interface-and go from idea to deployment in a matter of clicks. "
                 },
             },
 

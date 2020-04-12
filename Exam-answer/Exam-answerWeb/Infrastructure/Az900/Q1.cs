@@ -59,19 +59,19 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Lower costs—no need to purchase hardware or software, and you pay only for the service you use."
+                    Text = "Lower costs-no need to purchase hardware or software, and you pay only for the service you use."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "No maintenance—your service provider provides the maintenance."
+                    Text = "No maintenance-your service provider provides the maintenance."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "Near-unlimited scalability—on-demand resources are available to meet your business needs."
+                    Text = "Near-unlimited scalability-on-demand resources are available to meet your business needs."
                 },
                 new ExplanationEntity()
                 {
-                    Text = "High reliability—a vast network of servers ensures against failure."
+                    Text = "High reliability-a vast network of servers ensures against failure."
                 }
             },
 
