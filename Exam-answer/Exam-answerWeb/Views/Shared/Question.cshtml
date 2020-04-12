@@ -1,9 +1,14 @@
 ﻿@model QuestionViewModel
-<h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(Model.Exam.Questions.IndexOf(Model) + 1)</h1>
+@{
+    int questionNumber = Model.Exam.Questions.IndexOf(Model) + 1;
+}
+<h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(questionNumber)</h1>
 <partial name="_PrevNextPartial" />
 <amp-accordion disable-session-states>
     <section expanded>
-        <h2>Question @(Model.Exam.Questions.IndexOf(Model) + 1)</h2>
+
+        <h2>Question @(questionNumber)</h2>
+
         <div>
             <h3>
                 @{
@@ -65,8 +70,7 @@
                             <li class="correct">
                                 <h3>
                                     <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-
-                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))" [class]="toggleVariable + ' k-checkbox-label'">
+                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))" [class]="toggleVariable@(questionNumber) + ' k-checkbox-label'">
                                         @(answer.Text)
                                     </label>
                                 </h3>
@@ -77,7 +81,6 @@
                             <li>
                                 <h3>
                                     <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-
                                     <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
 
                                         @(answer.Text)
@@ -98,8 +101,7 @@
                             <li class="correct">
                                 <h3>
                                     <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-
-                                    <label class="k-radio-label" for="@(Html.GetNextId(true))" [class]="toggleVariable + ' k-radio-label'">
+                                    <label class="k-radio-label" for="@(Html.GetNextId(true))" [class]="toggleVariable@(questionNumber) + ' k-radio-label'">
                                         @(Html.Raw(answer.Text))
                                     </label>
                                 </h3>
@@ -110,7 +112,6 @@
                             <li>
                                 <h3>
                                     <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-
                                     <label class="k-radio-label" for="@(Html.GetNextId(true))">
                                         @(Html.Raw(answer.Text))
                                     </label>
@@ -121,7 +122,7 @@
                 </ul>
             }
             <div class="center">
-                <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox" on="change: AMP.setState({ toggleVariable: event.checked ? 'green' : ''})">
+                <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox" on="change: AMP.setState({ toggleVariable@(questionNumber): event.checked ? 'green' : ''})">
                 <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
                     Show correct answer
                 </label>

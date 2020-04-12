@@ -119,7 +119,7 @@ namespace Exam_answerWeb.Controllers
             string author = HttpUtility.JavaScriptStringEncode("exam-answer.com");
 
             string upvoteCount = HttpUtility.JavaScriptStringEncode("0");
-            string canonicalUrl = $"https://www.exam-answer.com/salesforce/crt-251/question{id}";
+            string canonicalUrl = $"https://www.exam-answer.com/{examViewModel.Provider?.ToLowerInvariant()}/{examViewModel.Code?.ToLowerInvariant()}/question{id}";
             string canonicalUrlEncoded = HttpUtility.JavaScriptStringEncode(canonicalUrl);
 
             List<AnswerViewModel> acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
