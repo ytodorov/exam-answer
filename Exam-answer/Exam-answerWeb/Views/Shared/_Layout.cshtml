@@ -61,7 +61,7 @@
         </div>
         <nav class="a-sidebar-nav a-nav">
             <ul class="list-reset m0 p0 a-label">
-                <li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/microsoft")">Microsoft</a></li>
+                @*<li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/microsoft")">Microsoft</a></li>*@
                 <li class="a-nav-item a-nav-dropdown relative ">
 
                     <amp-accordion layout="container" disable-session-states="" class="a-dropdown">
@@ -73,7 +73,7 @@
                         </section>
                     </amp-accordion>
                 </li>
-                <li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/salesforce")">Salesforce</a></li>
+                @*<li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/salesforce")">Salesforce</a></li>*@
                 <li class="a-nav-item a-nav-dropdown relative ">
 
                     <amp-accordion layout="container" disable-session-states="" class="a-dropdown">
@@ -81,6 +81,7 @@
                             <header>Salesforce</header>
                             <ul class="a-dropdown-items list-reset m0 p0">
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/crt-251")" class="text-decoration-none">CRT-251</a></li>
+                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/salesforce-certified-field-service-lightning-consultant")" class="text-decoration-none">Salesforce Certified Field Service Lightning Consultant</a></li>
                             </ul>
                         </section>
                     </amp-accordion>
@@ -90,7 +91,7 @@
 
             </ul>
         </nav>
-        <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
+        @*<ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
             <li>
                 <a href="https://www.facebook.com/ExamAnswerCom" target="_blank" class="inline-block p1" aria-label="Link to AMP HTML Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23.6" viewBox="0 0 56 55">
@@ -109,7 +110,7 @@
                     </svg>
                 </a>
             </li>
-        </ul>
+        </ul>*@
 
     </amp-sidebar>
     @RenderBody()

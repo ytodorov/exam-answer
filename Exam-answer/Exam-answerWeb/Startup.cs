@@ -102,7 +102,7 @@ namespace Exam_answerWeb
                 app.UseHsts();
             }
 
-            app.UseDeveloperExceptionPage();
+            // app.UseDeveloperExceptionPage();
 
             app.UseStatusCodePagesWithRedirects("/error?id={0}");
 
@@ -148,17 +148,12 @@ namespace Exam_answerWeb
                        {
                            return async context =>
                            {
-                               Stopwatch stopWatch = new Stopwatch();
-                               stopWatch.Start();
+                               Stopwatch stopWatch = Stopwatch.StartNew();
                                context.Response.OnStarting(
                                    () =>
                                    {
                                        stopWatch.Stop();
                                        context.Response.Headers.Add("X-ResponseTime-Ms", stopWatch.ElapsedMilliseconds.ToString());
-
-                                       // these cannot  be removed because they are not yet added here.
-                                       context.Response.Headers.Remove("x-powered-by");
-                                       context.Response.Headers.Remove("server");
 
                                        return Task.CompletedTask;
                                    });
@@ -173,7 +168,7 @@ namespace Exam_answerWeb
                            return async context =>
                            {
                                var cache = context.RequestServices.GetRequiredService<IMemoryCache>();
-                               bool isMobile = context.IsMobileBrowser();
+                               bool isMobile = false; //context.IsMobileBrowser();
                                var cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
                                if (!string.IsNullOrEmpty(cachedHtml))
                                {
