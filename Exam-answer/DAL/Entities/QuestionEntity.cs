@@ -56,7 +56,7 @@ namespace DAL.Entities
         {
             get
             {
-                var res = ContentText.Replace(Environment.NewLine, " ");
+                string res = ContentText.Replace(Environment.NewLine, " ");
                 return res;
             }
         }
@@ -69,7 +69,7 @@ namespace DAL.Entities
                 StringBuilder sb = new StringBuilder();
                 if (Contents != null)
                 {
-                    foreach (var answer in Answers)
+                    foreach (AnswerEntity answer in Answers)
                     {
                         sb.AppendLine(answer.Text);
                     }
@@ -104,7 +104,7 @@ namespace DAL.Entities
         {
             get
             {
-                var res = ExplanationText.Replace(Environment.NewLine, " ");
+                string res = ExplanationText.Replace(Environment.NewLine, " ");
                 return res;
             }
         }
@@ -117,7 +117,7 @@ namespace DAL.Entities
                 StringBuilder sb = new StringBuilder();
                 if (Explanations != null)
                 {
-                    foreach (var reference in References)
+                    foreach (ReferenceEntity reference in References)
                     {
                         sb.AppendLine(reference.Text);
                     }
@@ -134,12 +134,12 @@ namespace DAL.Entities
             get
             {
                 StringBuilder sb = new StringBuilder();
-                foreach (var item in References)
+                foreach (ReferenceEntity item in References)
                 {
                     sb.Append(item.Url);
                     sb.Append(" ");
                 }
-                var res = sb.ToString();
+                string res = sb.ToString();
                 return res;
             }
         }

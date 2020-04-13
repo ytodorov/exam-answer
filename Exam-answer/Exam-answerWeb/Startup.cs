@@ -167,9 +167,9 @@ namespace Exam_answerWeb
                        {
                            return async context =>
                            {
-                               var cache = context.RequestServices.GetRequiredService<IMemoryCache>();
+                               IMemoryCache cache = context.RequestServices.GetRequiredService<IMemoryCache>();
                                bool isMobile = false; //context.IsMobileBrowser();
-                               var cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
+                               string cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
                                if (!string.IsNullOrEmpty(cachedHtml))
                                {
                                    await context.Response.WriteAsync(cachedHtml);

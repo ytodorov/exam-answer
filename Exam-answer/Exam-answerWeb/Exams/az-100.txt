@@ -1,0 +1,774 @@
+###
+You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.
+You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.
+Solution: From the Azure Active Directory Properties blade, you enable Access management for Azure resources.
+Does this solution meet the goal?
+---
+No
+Yes *
+---
+This solution does meet the goal. The Access management for Azure resources property, located in the Azure Active Directory (Azure AD) tenant's settings, ensures that Azure AD users assigned to the Global Administrator role maintain full control over all subscription resources in the event that the identity is removed from Azure resource-level access lists. In keeping with least-privilege security, Microsoft recommends that you enable this property only when necessary.
+---
+Elevate access for a Global Administrator in Azure Active Directory;https://docs.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin
+Manage access using RBAC and the Azure portal;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal
+Manage app and resource access using Azure Active Directory groups;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups
+Administrator role permissions in Azure Active Directory;https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles
+###
+You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.
+You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.
+Solution: From the subscription's Access control (IAM) blade, you click Add role assignment.
+Does this solution meet the goal?
+---
+No *
+Yes
+---
+This solution does not meet the goal. Azure Active Directory (Azure AD) permissions are distinct from Azure resource permissions. In this case, you should enable the Access management for Azure resources property from the Azure AD tenant's Properties blade. This property, when enabled, ensures that Azure AD users assigned to the Global Administrators role maintain full resource access even if their account is stripped from resource-level access control lists (ACLs). The Add role assignment button is used to make an addition to that scope's ACL. For instance, you may need to add a new Azure administrator to the Owner role for a subscription, resource group, or resource.
+---
+Elevate access for a Global Administrator in Azure Active Directory;https://docs.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin
+Manage access using RBAC and the Azure portal;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal
+Manage app and resource access using Azure Active Directory groups;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups
+###
+You have an Azure subscription named Sub1. Sub1 contains two resource groups named RG1 and RG2.
+You need to ensure that Global Administrators can manage all resources contained in RG1 and RG2.
+Solution: From the Azure Active Directory Roles and administrators blade, you modify the Global administrator role properties.
+Does this solution meet the goal?
+---
+No *
+Yes
+---
+This solution does not meet the goal. To ensure that Global Administrators maintain full access to Azure resources, you need to enable the Access management for Azure resources property from the Azure AD tenant's Properties blade.
+The only properties of the Global Administrators (or any Azure AD) group that can be modified are the name, description, and membership type field. None of these properties accomplishes the scenario requirement.
+---
+Elevate access for a Global Administrator in Azure Active Directory;https://docs.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin
+Manage access using RBAC and the Azure portal;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal
+Manage app and resource access using Azure Active Directory groups;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups
+###
+You create a Windows Server virtual machine (VM) in an Azure resource group named iaas-rg. You plan to generalize the operating system and capture a system for use in future deployments.
+You need to ensure that other administrators make no changes to the virtual machine configuration until you complete the image capture process. You need to enact your solution as quickly as possible.
+What should you do?
+---
+Set a Read only lock at the resource group level. *
+Set a Delete lock at the VM level.
+Edit the RBAC permissions at the resource group level.
+Edit the RBAC permissions at the VM level.
+---
+Because time is of the essence, you should set a Read only lock at the resource group level. Resource locks in Azure allow you to prevent unwanted changes to Azure resources no matter what the user's privilege level is. For example, even subscription Owners would not be able to resize a VM if the resource has a Read only lock applied to it.
+By settings the lock at the VM's parent resource group level, you ensure that other administrators can make no changes to the VM's entire configuration environment, including virtual network interface (vNIC), virtual hard disks (VHDs), and so forth.
+We should not set a Delete lock at the VM level for two reasons. First, the Delete resource lock prevents only delete operations, so administrators would be able to undertake other management actions on the VM. Second, a resource-level lock does not affect related VM assets contained in the same resource group.
+You should not edit the RBAC permissions at either the resource group or the VM level because the scenario states that you need to enact your solution as quickly as possible. Furthermore, by restricting other administrators' RBAC access, you potentially restrict them from undertaking actions on other VMs to which they should have management access.
+---
+Lock resources to prevent unexpected changes;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources
+What is role-based access control (RBAC)?;https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+###
+You manage a Windows Server virtual machine (VM) in Azure named prod-vm1. The VM uses managed disk storage, runs Windows Server 2012 R2, and resides in a resource group named prod-west-rg located in the West US region.
+You need to move prod-vm1 to a resource group named prod-east located in the East US region.
+What should you do?
+---
+Back up prod-vm1 and restore the VM to the prod-east-rg resource group. Delete the original VM instance. *
+Author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group.
+Move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet.
+Use azcopy to copy prod-vm1 to the prod-east-rg resource group.
+---
+You should back up prod-vm1, restore the VM to the prod-east-rg resource group, and then delete the original VM instance. Unfortunately, managed disks are one of the few Azure resources that cannot be moved between resource groups or subscriptions. Because the VM in Azure has so many dependencies, this managed disk restriction means that you are unable to move the entire VM without redeploying the disks and configuration into the new resource group.
+You cannot move prod-vm1 to the prod-east-rg resource group by using the Move-AzureRmResource PowerShell cmdlet because the scenario states that the VM uses managed disk storage. If the VM used unmanaged disk storage, the Move-AzureRmResource command could move the VM to another resource group or even another Azure subscription.
+You cannot use azcopy to copy prod-vm1 to the prod-east-rg resource group. Azcopy is a cross-platform command-line tool with which you can copy or move binary large object (BLOB) data between storage accounts. In this case, the VM in question uses managed disk storage. Moreover, Azcopy cannot migrate VM configuration, only virtual hard disks (VHDs).
+You cannot author an Azure Resource Manager (ARM) template that moves prod-vm1 to the prod-east-rg resource group because it uses managed disk storage.
+---
+Move resources to new resource group or subscription;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-move-resources
+Frequently asked questions about Azure IaaS VM disks and managed and unmanaged premium disks;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq-for-disks
+Transfer data with the AzCopy on Windows;https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy
+Download the template for a VM;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/download-template
+Move-AzureRmResource;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/move-azurermresource
+###
+C
+You deploy an application in a resource group named App-RG01 in your Azure subscription.
+App-RG01 contains the following components:
+* Two App Services, each with an SSL certificate
+* A peered virtual network (VNet)
+* Redis cache deployed in the VNet
+* Standard Load Balancer
+You need to move all resources in App-RG01 to a new resource group named App-RG02.
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+---
+You need to delete SSL certificate from each App Service before moving it to the new resource group. *
+You can move the Load Balancer only within the same subscription.
+You need to disable the peer before moving the VNet. *
+You can move the VNet only within the same subscription. *
+---
+You need to delete the SSL certificate from each App Service before moving it to the new resource group. You cannot move an App Service with an SSL certificate configured. If you want to do that, you need to delete the certificate, move the App Service and then upload the certificate again.
+You cannot move the Load Balancer within the same subscription. A Standard Load Balancer cannot be moved either within the same subscription or between subscriptions.
+You need to disable the peer before moving the VNet. When you want to move a VNet with a peer configured, you need to disable it before moving the VNet. When you move a VNet, you need to move all of its dependent resources.
+You can only move the VNet within the same subscription. When you want to move a VNet, you also need to move all of its dependent resources. In this case, you also need to move the Redis cache, which can be moved only within the same subscription. Because you want to move the resources from App-RG01 to App-RG02, which is in the same subscription, you can move the VNet with no problem.
+---
+Move resources to new resource group or subscription; https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-move-resources
+###
+You deploy a Storage Account named store01 in your Azure subscription.
+You grant the contributor role to some users in store01. The users work on an application that will use the storage account for storing some information.
+The users report that they are not able to list the storage account keys for connecting their application to the storage account.
+You need to identify the root cause of the issue.
+What is the most probable cause?
+---
+You need to grant the users the owner role.
+You configured a ReadOnly lock. *
+You configured a CanNotDelete lock.
+You need to grant the users the Storage Account Key Operator Service role.
+---
+The reason that the users are not able to list the storage account keys is that you configured a ReadOnly lock. Locks are applied to any operation that makes a request to the following URL: https://management.azure.com. When you apply a ReadOnly lock, you can unintentionally block access to other resources. In this case, you are blocking access to the keys because the list operation is handled through POST operations and the returned keys will be used for write operations.
+Configuring a CanNotDelete lock does not affect the list keys operation. The CanNotDelete lock prevents a user from deleting a resource but still allows users to modify and read resources in the resource group.
+You do not need to grant your users with Owner or Storage Account Key Operator Service roles. When you configure a lock in a resource or resource group, this takes precedence over any assigned role, even the Owner role. If you want to remove the lock, you need to have access to the Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Only the Owner and User Access Administrator roles have enough privileges to manage locks. In this scenario, granting the Owner role to your users will enable them to remove the ReadOnly lock on their own.
+---
+Lock resources to prevent unexpected changes;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources
+Built-in roles for Azure resources;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+###
+You are the owner of your organization's Microsoft Azure subscription. You hire a new administrator to help you manage a virtual network that contains nine Windows Server virtual machines (VMs). The deployment is contained in a resource group named prod-rg.
+You need to provide the administrator with least-privilege access only to the prod-rg resource group. The administrator should be allowed to manage all aspects of the Azure VMs. Your solution should minimize management effort.
+What should you do?
+---
+Assign the Allowed virtual machine SKUs Azure Policy at the resource group scope.
+Assign a custom Azure Policy at the management group scope.
+Assign the administrator to the Contributor role at the resource group scope. *
+Assign the administrator to the Virtual Machine Operator role at the virtual machine scope.
+---
+You should assign the administrator to the Contributor role at the resource group scope. The Contributor role-based access control (RBAC) role provides the new administrator with full read/write privileges at that scope. Inheritance ensures that the permissions cascade to the VMs within the prod-rg resource group and minimizes management overhead.
+You should not assign the administrator to the Virtual Machine Operator role at the virtual machine scope. The Virtual Machine Operator role does not grant the administrator full access to all resources contained on the virtual network. Moreover, making multiple RBAC assignments requires much more management effort than making a single role assignment at a parent scope.
+You should not assign the Allowed virtual machine SKUs Azure Policy at the resource group scope. Doing so only restricts the administrator from selecting VM instance stock-keeping units (SKUs) that are defined in the Azure Policy. The scenario states only that the administrator should be able to fully manage existing VMs within the prod-rg resource group.
+You should not assign a custom Azure Policy at the management group scope. Azure Policy is a governance feature that restricts the types of resources administrators can select in Azure Resource Manager. In other words, Azure Policy is fundamentally different from RBAC, which limits the ability for administrators to take particular actions in the first place.
+---
+What is role-based access control (RBAC)?;https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+Classic subscription administrator roles, Azure RBAC roles, and Azure AD administrator roles;https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles
+What is Azure Policy?;https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction
+Create and manage policies to enforce compliance;https://docs.microsoft.com/en-us/azure/azure-policy/create-manage-policy
+###
+You determine that business units have Azure resources spread across different Azure resource groups.
+You need to make sure that resources are assigned to their proper cost centers.
+What should you do?
+---
+Create taxonomic tags and assign them at the resource level. *
+Create taxonomic tags and assign them at the resource group level.
+Deploy the Enforce tag and its value on resource groups Azure Policy.
+Deploy the Enforce tag and its value Azure Policy.
+---
+You should create taxonomic tags and assign them at the resource level. Tags in Azure are key-value string pairs that administrators can associate with Azure resources for logical organization. Identifying cost centers is an excellent use case for tags. Because corporate divisions own Azure resources spread across different Azure resource groups, you have to assign cost center tags at the resource level. Wherever possible, it is best practice to organize related resources into the same resource groups because you can then bulk-assign taxonomic tags to all contained resources in a single operation.
+You should not create taxonomic tags and assign them at the resource group level. The scenario states that business units have resources spread across different resource groups. If you assign a particular cost center tag at the resource group level, then you likely will mis-tag contained resources owned by another business unit.
+You should not deploy the Enforce tag and its value Azure Policy. Doing so enforces the presence of a single specified tag and value pair. In this case, the scenario states that the organization has more than one cost center and therefore needs more than one taxonomic tag.
+You should not deploy the Enforce tag and its value on resource groups Azure Policy for the same reasons. The company has more than one cost center, and the business units have resources spread across multiple resource groups.
+---
+Use tags to organize your Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+Prevent unexpected charges with Azure billing and cost management;https://docs.microsoft.com/en-us/azure/billing/billing-getting-started
+What is Azure Policy?;https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction
+Create and manage policies to enforce compliance;https://docs.microsoft.com/en-us/azure/azure-policy/create-manage-policy
+###
+You are the cloud operations lead for your company's Microsoft Azure subscription. Your team consists of eight administrators who co-manage all Azure-deployed resources.
+The corporate governance team mandates that all future Azure resources be deployed only within certain regions.
+You need to meet the compliance requirement.
+Which Azure feature should you use?
+---
+Taxonomic tags
+Activity Log Analytics
+Role-Based Access Control (RBAC)
+Azure Policy *
+---
+To meet the new compliance requirement, you should deploy Azure Policy. Azure Policy is a governance feature that allows you to enforce requirements at two Azure scopes: the management group and the resource group. For example, you can require that all deployments are constrained to particular regions, or that only certain virtual machine (VM) sizes are allowed.
+You should not use RBAC. RBAC focuses on user actions at different scopes. For example, a user may be restricted with RBAC from creating VMs in any Azure region. By contrast, Azure Policy customizes the properties a user can choose during resource deployment.
+You should not use taxonomic tags. These key-value pairs are useful for organizing Azure resources (for instance, to identify different cost centers). However, tags have no authorization capability on their own.
+You should not use Activity Log Analytics. This management solution aggregates Azure activity log data in a Log Analytics workspace. Specifically, the activity log records control plane activities such as resource creation, but does not enforce authorization.
+---
+What is Azure Policy?;https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction
+What is role-based access control (RBAC)?;https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+Use tags to organize your Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+Collect and analyze Azure activity logs in Log Analytics;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-activity
+###
+You use taxonomic tags to logically organize resources and to make billing reporting easier.
+You use Azure PowerShell to append an additional tag on a storage account named corpstorage99. The code is as follows:
+$r = Get-AzureRmResource -ResourceName "corpstorage99" -ResourceGroupName "prod-rg"
+Set-AzureRmResource -Tag @{Dept="IT"} -ResourceId $r.ResourceId -Force
+The code returns unexpected results.
+You need to append the additional tag as quickly as possible.
+What should you do?
+---
+Refactor the code by using the Azure Command-Line Interface (CLI).
+Call the Add() method on the resource to append the new tag. *
+Deploy the tag by using an Azure Resource Manager template.
+Assign the Enforce tag and its value Azure Policy to the resource group.
+---
+You should call the Add() method on the storage account resource as shown in the second line of this refactored Azure PowerShell code:
+$r = Get-AzureRmResource -ResourceName "corpstorage99" -ResourceGroupName "prod-rg"
+$r.Tags.Add("Dept", "IT")
+Set-AzureRmResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
+Unless you call the Add() method, the Set-AzureRmResource cmdlet will overwrite any existing taxonomic tags on the resource. The Add() method preserves existing tags and includes one or more tags to the resource tag list.
+You should not deploy the tag by using an Azure Resource Manager template. Doing so is unnecessary in this case because the Azure PowerShell is mostly complete as-is. Furthermore, you must find the solution as quickly as possible.
+You should not assign the Enforce tag and its value Azure Policy to the resource group. Azure Policy is a governance feature that helps businesses enforce compliance in resource creation. In this case, the solution involves too much administrative overhead to be a viable option. Moreover, the scenario makes no mention of the need for governance policy in specific terms.
+You should not refactor the code by using the Azure Command-Line Interface (CLI). Either Azure PowerShell or Azure CLI can be used to institute this solution. It makes no sense to change the development language given that you have already completed most of the code in PowerShell.
+---
+Use tags to organize your Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+Set-AzureRmResource;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/set-azurermresource
+What is Azure Policy?;https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction
+Azure CLI;https://docs.microsoft.com/en-us/cli/azure/
+Quickstart: Create and deploy Azure Resource Manager templates by using the Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal
+###
+C
+Your company has an Azure Subscription with several resources deployed. The subscription is managed by a Cloud Service Provider.
+The accounting department is currently granted the billing reader role, so they are able to see cost-related information. They need to get a better understanding of the costs so they can assign them to the correct cost center.
+You need to provide cost center information. Your solution should minimize the administrative effort.
+What two actions should you perform? Each correct answer presents part of the solution.
+---
+Create a tag named CostCenter and assign it to each resource. *
+Instruct the accounting department to use the Cost Analysis blade in the subscription panel.
+Instruct the accounting department to use the Azure Account Center.
+Create a tag named CostCenter and assign it to each resource group. *
+---
+You should create a tag named CostCenter and assign it to each resource group. Creating a tag and assigning it to each resource group allows you to easily identify the cost center associated with each resource group. When you associate a tag with a resource or resource group, you need to provide a value to that tag. You can instruct the accounting department to use the Azure Cost Management tool to review the costs associated with each cost center by filtering by the newly created tag.
+You should also create a tag named CostCenter and assign it to each resource. If you apply a tag to a resource group, that tag is not inherited by the resources in the resource group. You need to manually configure the tag for each resource that you want to include in the cost center. You can automate this action by using a PowerShell or Azure CLI script.
+You should not instruct the accounting department to use either the Cost Analysis blade in the subscription panel or the Azure Account Center. Because your subscription is managed by a Cloud Service Provider, you can get that information from your provider. You can also get this information by using the Azure Cost Management tool.
+---
+Use tags to organize your Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+Prevent unexpected charges with Azure billing and cost management;https://docs.microsoft.com/en-us/azure/billing/billing-getting-started
+Use tags to organize your Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+What is Azure Cost Management?;https://docs.microsoft.com/en-us/azure/cost-management/overview-cost-mgt
+###
+C
+Your company requires all resources deployed in Azure to be assigned to a cost center.
+You use a tag named CostCenter to assign each resource to the correct cost center. This tag has a set of valid values assigned.
+Some of the resources deployed in your subscription already have a value assigned to the CostCenter tag.
+You decide to deploy a subscription policy to verify that all resources in the subscription have a valid value assigned.
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+---
+The Deny effect is not evaluated first. *
+The Append effect modifies the value of an existing field in a resource.
+The Audit effect will create a warning event in the activity log for non-compliant resources. *
+The DeployIfNotExists effect is only evaluated if the request executed by the Resource Provider returns a success status code. *
+---
+The Deny effect is not evaluated first. When a policy is evaluated, the Disabled effect is always evaluated first to decide whether the rule should be evaluated afterwards. The correct order of evaluation of the policy effects is: Disabled, Append, Deny and Audit.
+The Append effect does not modify the value of an existing field in a resource. The Append effect adds additional fields during the creation or update of a resource. If the field already exists in the resource and the values in the resource and the policy are different, then the policy acts as a deny and rejects the request.
+The Audit effect will create a warning event in the activity log for non-compliant resources. The audit effect is evaluated last before the Resource Provider handles a create or update request. You typically use the audit effect when you want to track non-compliant resources.
+The DeployIfNotExists effect is only evaluated if the request executed by the Resource Provider returns a success status code. Once the effect has been evaluated, it is triggered if the resource does not exist or the resource defined by ExistenceCondition is evaluated to false.
+---
+Understand Policy effects;https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects
+Apply tag and its default value;https://docs.microsoft.com/en-us/azure/governance/policy/samples/apply-tag-def-val
+###
+You are the lead architect for your company's Microsoft Azure infrastructure.
+To maintain corporate compliance certifications, you need to ensure that any virtual machines (VMs) are created only in approved Azure regions.
+What should you do?
+---
+Create an Azure management group.
+Enforce conditional access policy in Azure Active Directory (Azure AD).
+Define and deploy a custom Azure Policy template. *
+Define and deploy an Azure Automation Desired State Configuration (DSC) configuration.
+---
+You should define and deploy a custom Azure Policy by using JSON and Azure PowerShell. Azure Resource Manager includes a number of predefined policy templates that cover various governance use cases. However, you can also build a custom template and upload it to Azure to make it available in your subscriptions.
+You should not define and deploy an Azure Automation DSC configuration. Azure Automation DSC prevents configuration drift on newly deployed or existing Azure or on-premises nodes. This scenario requires that you enforce compliance on VM locations at deployment time.
+You should not deploy a management group. A management group is a scope level above the Azure subscription that allows you to assign Azure Policy that affects multiple subscriptions simultaneously. In your case, you need to define a policy in the first place, and then you can optionally scope the new custom policy to a management group.
+
+You should not enforce conditional access policy on Azure Active Directory. This feature affects user accounts, not VMs deployed in Azure. Conditional access allows you to specify requirements for your users to access Azure AD-protected apps. For instance, you might require that users can only authenticate to an app if they are connecting from a corporate IP address.
+---
+Create and manage policies to enforce compliance;https://docs.microsoft.com/en-us/azure/azure-policy/create-manage-policy
+Azure Automation State Configuration Overview;https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview
+What is Azure Policy?;https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction
+Organize your resources with Azure management groups;https://docs.microsoft.com/en-us/azure/azure-resource-manager/management-groups-overview
+What is conditional access in Azure Active Directory?;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal
+###
+Your company is developing a line-of-business (LOB) application that uses the Azure IoT Hub for gathering information from Internet of things (IoT) devices.
+The LOB application uses the IoT Hub Service SDK to read device telemetry from the IoT Hub.
+You need to monitor device telemetry and be able configure alerts based on device telemetry values. Your solution should require the least administrative effort.
+What should you do?
+---
+Enable Azure Monitor resource diagnostics logs on the IoT Hub. *
+Use Azure Resource Health.
+Use Azure Activity Logs.
+Use Azure Application Insights with the LOB application.
+---
+You should enable Azure Monitor resource diagnostics logs on the IoT Hub. Resource-level diagnostics logs allow you to monitor events that happen inside the resource. Each type of resource provides a different type of events. For the IoT Hub, the event category DeviceTelemetry fits your needs.
+You should not use Azure Activity Logs. This service provides information about the actions performed on the resources in a subscription while using Resource Manager. Creating an IoT Hub, listing keys from a storage account, or starting a virtual machine are some examples of the type of activity logging information provided by Activity Logs.
+You should not use Azure Resource Health. This service provides information about the high-level health status of the resource or if there is a regional outage. You would use this service to know if the IoT Hub is running or not.
+You should not use Azure Application Insights with the LOB application. Application Insights provides information about the application performance while the application is running.
+---
+Collect and consume log data from your Azure resources;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs
+Supported services, schemas, and categories for Azure Diagnostic Logs;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema
+What is Application Insights?;https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview
+Azure Resource Health overview;https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview
+###
+C
+Your company has a line-of-business (LOB) application that uses Azure SQL Database for storing transactional information. Your company also has deployed System Center Service Manager.
+You need to configure an alert when the database reaches the 70% of CPU usage. When this alert rises, you need to notify several users by email and by SMS. You also need to automatically create a ticket in the ITSM system. Your solution should require the minimum administrative effort.
+Which two actions should you perform? Each correct answer presents part of the solution.
+---
+Configure one Action Group with three actions: one for email notification, one for SMS notification, and one for ITSM ticket creation. *
+Configure System Center Service Manager with Azure Automation.
+Configure two Action Groups: one Action Group for email and SMS notification and one for ITSM ticket creation.
+Configure an IT Service Management Connector (ITSMC). *
+---
+You should configure an ITSMC. You need configure an ITSM connector for connecting Azure with your System Center Service Manager service. Using this connector, you can create work items in the ITSM system based on alerts.
+You should also configure one Action Group with three actions: one for email notification, one for SMS notification, and one for ITSM ticket creation. Once the alert fires, you need to configure the actions that the alert will perform. You can configure several types of actions for the alert, like Azure App Push, Email, SMS, Voice, Runbooks, Logic Apps, ITSM, or Webhooks. You can add several actions to the same action group.
+You should not configure two Action Groups. Although you can create two separate action groups with different actions and attach them to the same alert, this would require more administrative effort.
+You should not configure System Center Service Manager with Azure Automation. You could configure an Azure Automation Hybrid Worker for running Azure Automation runbooks to create tasks in System Center Service Manager, but this solution would require much more effort.
+---
+Connect Azure to ITSM tools using IT Service Management Connector;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-itsmc-overview
+Auto Assign SCSM Incidents with Azure Automation;https://blogs.technet.microsoft.com/robdavies/2016/07/12/auto-assign-scsm-incidents-with-azure-automation/
+Create and manage action groups in the Azure portal;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-action-groups
+Monitoring and performance tuning;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-monitor-tune-overview
+###
+Your company has an Azure subscription that hosts all services that the company uses in production. The Finance department notices that the bills related to Azure are increasing. The company wants to keep the costs of this Azure subscription under control.
+After reviewing the costs analysis reports you realize that there are several virtual machines that are consuming more resources than expected.
+You need to inform management when the spend for these resources is unusual.
+What should you do?
+---
+Configure the PowerBI content pack for Azure Enterprise.
+Configure a billing alert in the subscription page of the account portal.
+Use the costs-by-service blade in the cost analysis section of the subscription.
+Configure a report schedule in the Cost Management portal. *
+---
+You should configure a report schedule in the Cost Management portal. The Cost Management portal allows you to perform detailed cost analysis of your resources. When running a cost report, you can set the filter for the virtual machines that are consuming more resources than expected. Then you can schedule that report to run periodically and send it to a list of recipients. You can also save it to a JSON or CSV report in a Storage Account. Then you can set three different alert levels for the report, one for the green level, one for the yellow level and one for the red level. You need to set the cost thresholds for levels yellow and red.
+You should not configure a billing alert in the subscription page of the account portal. This allows you to create alerts based on billing totals or monetary credits that apply to the entire subscription. You cannot configure alerts for specific resources in the subscription.
+You should not configure the Power BI content pack for Azure Enterprise. This option allows you to connect your Enterprise Agreement subscription with Power BI for cost analysis. You can create alerts in Power BI if you are using a Power BI Pro license. You also need an Enterprise Agreement subscription.
+You should not use the costs-by-service blade in the cost analysis section of the subscription. You can use this section for reviewing the cost analysis per service, but you cannot configure any alert for the service consumption on this page.
+---
+Tutorial: Review usage and costs;https://docs.microsoft.com/en-us/azure/cost-management/tutorial-review-usage
+Azure Cost Management Documentation;https://docs.microsoft.com/en-us/azure/cost-management/
+Prevent unexpected charges with Azure billing and cost management;https://docs.microsoft.com/en-us/azure/billing/billing-getting-started
+New Power BI content pack for Azure Enterprise users;https://azure.microsoft.com/en-us/blog/new-power-bi-content-pack-for-azure-enterprise-users/
+###
+C
+Your company has a line-of-business (LOB) application that uses Azure SQL Database for storing transactional information. The LOB application also uses Windows and Linux virtual machines for business and presentation application layers.
+Some users are reporting errors in the application.
+You need to be alerted every time that an exception arises in any part of the application. Your solution should require the minimal administrative effort.
+Which two actions should you perform? Each correct answer presents part of the solution.
+---
+Create an alert using a search query that looks for exceptions in Windows servers. *
+Create an alert using a search query that looks for exceptions in business and presentation layer virtual machines.
+Create an alert using a search query that looks for exceptions in application layer servers.
+Create an alert using a search query that looks for exceptions in business layer servers.
+Create an alert using a search query that looks for exceptions in Linux servers. *
+---
+You should create an alert using a search query that looks for exceptions in Windows servers. You need to use Log Analytics or Application Insight resource types and Log signal types. Then you can write a search query that gets all messages from Windows Events that contains the word "Exception".
+You should also create an alert using a search query that looks for exceptions in Linux servers. You use the same configuration as for Windows Events, but you will use Syslog messages.
+You should not create an alert using a search query that looks for exceptions in business and presentation layer virtual machines. When creating an alert, you can only select one target type. This means that you can only get information from Windows Events or Syslog, so you will not be able to query both data sources at the same time.
+You should not create an alert using a search query that looks for exceptions in application layer servers or in the business layer. You need to query for specific log data sources. Application and business layers is a concept of a design pattern for applications that can be compound of Windows, Linux virtual machines, or other Azure services.
+---
+Get started with Log Analytics in the Azure portal;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-portal
+Create, view, and manage alerts using Azure Monitor;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-alerts-unified-usage
+Windows event log data sources in Log Analytics;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-data-sources-windows-events
+Syslog data sources in Log Analytics;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-data-sources-syslog
+###
+You have a Microsoft Azure subscription that has 8 virtual machines (VMs).
+You need to configure monitoring such that when either CPU usage or available memory reaches a threshold value, Azure both notifies administrators via email and creates a new issue in your corporate issue tracker.
+What is the minimum number of Azure alerts and action groups you need to meet these requirements?
+---
+eight alerts and one action group
+two alerts and two action groups
+one alert and one action group *
+one alert and two action groups
+---
+You should create one alert and one action group. A single alert can contain more than one metric-based condition. By contrast, if you needed alert conditions based on Activity Log events, as of this writing a single alert can contain no more than one Activity Log condition.
+A single action group can contain more than one notification or remediation step. An action group is a sequence of actions that Azure takes in response to an alert condition. The Azure ITSM connector links Azure Monitor to your Information Technology Service Management (ITSM) solution to allow Azure to create issue tickets automatically.
+---
+Overview of alerts in Microsoft Azure;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-alerts
+Create and manage action groups in the Azure portal;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-action-groups
+Create, view, and manage metric alerts using Azure Monitor;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/alert-metric
+Alerts on activity log;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-activity-log-alerts
+###
+You have 20 Azure subscriptions. All subscriptions are linked to the same Azure Active Directory (Azure AD) tenant named company.com.
+You plan to generate detailed usage and spend reports across all Azure subscriptions.
+You need to incorporate resource optimization suggestions into your reports.
+What should you do?
+---
+Design metrics charts in Azure Monitor.
+Run interactive queries in Azure Log Analytics.
+Create a Stream Analytics job in the Azure portal.
+Use Cloudyn reports. *
+---
+You should use Cloudyn reports. Cloudyn is a software-as-a-service (SaaS) product integrated into Azure that enables you to track resource expenditures. Cloudyn also offers in-depth guidance to help you reduce your monthly spend. Cloudyn is an extension of Azure Cost Management, Microsoft's native cost management solution in Azure.
+You should not run interactive queries in Azure Log Analytics because the scenario does not state that Azure resources are configured to write their diagnostics data to an Azure Log Analytics workspace. If this were so, then you could indeed use KQL to generate resource cost data. However, Azure Log Analytics does not offer optimization suggestions.
+You should not design metrics charts in Azure Monitor because the metrics charting capability does not support ad-hoc queries. Furthermore, you would use not Azure Monitor but Azure Cost Management or Azure Advisor to retrieve cost optimization advice from the Azure platform directly.
+You should not create a Stream Analytics job in the Azure portal. Azure Stream Analytics is an event-processing engine that uses a Structured Query Language (SQL)-like syntax to filter and process data extracted from Azure Event Hubs or IoT Hubs.
+---
+What is the Cloudyn service?;https://docs.microsoft.com/en-us/azure/cost-management/overview
+What is Azure Cost Management?;https://docs.microsoft.com/en-us/azure/cost-management/overview-cost-mgt
+Analyze Log Analytics data in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview
+Monitoring data collected by Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection
+What is Azure Stream Analytics?;https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction
+###
+You have an Azure resource group named RG1. RG1 contains a Windows Server virtual machine (VM) named VM1.
+You plan to use Azure Monitor to configure an alert rule for VM1.
+You need to configure an alert that notifies you whenever the VM is restarted.
+What should you do?
+---
+Define an action group with an ITSM action type.
+Define an action group with a webhook action type.
+Define a metric-based alert condition.
+Define an Activity Log alert condition. *
+---
+You should define an Activity Log alert condition. The Azure Activity Log tracks all control-plane operations that occur within your subscriptions. You can define Azure alert conditions that fire when a particular Azure Activity log event transpires. In this case, you would add the Restart Virtual Machine signal to your alert condition list.
+You should not define a metric-based alert condition. Metric-based alerts are triggered when diagnostic measurement data exceeds a given threshold. For instance, you might trigger an alert when the VM's average CPU consumption exceeds 75 percent over a 10 minute period.
+You should not define an action group with either a webhook or an IT Service Management (ITSM) action type. Action groups define how Azure responds whenever an alert condition is triggered. In this case you need only a single notification action group to inform you whenever a VM is restarted.
+---
+Create, view, and manage activity log alerts using Azure Monitor;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/alert-activity-log
+Create, view, and manage metric alerts using Azure Monitor;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/alert-metric
+Create and manage action groups in the Azure portal;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---

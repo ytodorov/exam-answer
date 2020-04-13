@@ -1,0 +1,519 @@
+###
+C
+Universal Containers has a large volume of cancellations occurring on their Work Orders.
+The COO wants to manage Work Order cancellations and subsequent follow-ups.
+Which two options should a Consultant recommend? (Choose two.)
+---
+Create a child Work Order for the follow-up Work Order. *
+Re-use the existing Work Order for the follow-up.
+Change the Work Order with a closed status of "Cancelled." *
+Change the Work Order with a status of "New."
+---
+---
+###
+C
+Universal Containers provides 24/7 service support to its customers.
+However, their Field Service Technicians have specified working hours.
+Which two items should the Consultant create? (Choose two.)
+---
+Create operating hours for the Service Resource. *
+Create operating hours for the Optimization Engine.
+Create operating hours for the Service Appointment.
+Create operating hours for the Service Territory. *
+---
+---
+###
+Universal Containers wants to allow Field Technicians to view work progress through the Work Order Line Item card in the Field Service mobile app.
+How can this be supported?
+---
+Create a Report Chart that summarizes Work Order Line Items and add a link to the Lens on the Service Appointment Layout.
+Create a custom Visualforce page, add an external link from the Mobile app to view the page in the mobile browser.
+Add the Work Order Line Items Related List to the Work Order Page Layout and assign the Layout to the Technician's profile. *
+Create a custom Lightning Component that displays Work Order progress and deploy it to Technicians through the Salesforce Mobile app.
+###
+C
+The Dispatcher at Universal Containers would like to schedule Service Appointments from the Dispatcher's Console while taking the Scheduling Policy into consideration.
+Which three options are available to the Dispatcher? (Choose three.)
+---
+Select a Service Appointment from the list, press the "Change Status" action and "Dispatch. " *
+Select a Service Appointment from the list, press the "Candidates" action, and select the best time slot.
+Select a Service Appointment from the list and press the "Schedule" action. *
+Select multiple Service Appointments from the list and bulk schedule them. *
+Select a Service Appointment from the list, press the "Edit" action and allocate the Resource.
+###
+What set of configurations make up Scheduling Policies and let companies adhere to their business constraints and preferences?
+---
+Service Objectives and Work Rules *
+Service Levels and Work Rules
+Service Objectives and Work Types
+Service Contracts and Service Levels
+###
+C
+Which three overview cards does the Field Service mobile app provide as context to Technicians on upcoming Service Appointments? (Choose three.)
+---
+Product Catalog
+Site Details *
+Asset History
+Contact *
+Address *
+###
+C
+Universal Containers has implemented a Knowledge solution for Agents to provide Field Technicians with information necessary to complete assigned work.
+Which two capabilities will now be available? (Choose two.)
+---
+Manage Attached Articles and Search the Knowledge Base. *
+Attach Knowledge Articles to Work Order Line Items Only.
+Attach Articles to Work Orders and Work Order Line Items. *
+Include Quick Actions and Global Actions in Attached Articles.
+###
+Technicians earn certifications that must be renewed periodically to ensure their skills remain up-to-date.
+How can these certifications be managed on the Resource?
+---
+Add the Resource Skill and create Absence once expired.
+Add the Resource Skill and track certification using reminder.
+Add the Resource Skill and set the End Date. *
+Add the Resource Skill and remove from the Service Territory once expired.
+###
+C
+Universal Containers would like to enforce a 48-hour SLA to ensure that Technicians perform certain follow-up activities after they leave a customer site.
+The starting point of the SLA is when the Work Order Status is set to "Technician Wrap Up. " The Technician is required to provide confirmation that wrap up is completed.
+Which three configurations should a Consultant implement to ensure this can be achieved? (Choose three.)
+---
+Create custom fields to capture that the Wrap Up Activities have been completed.
+Create a Process to call a Flow that completes the Milestone when the Wrap Up is complete.
+Create a Milestone which has entry criteria for Status = Technician Wrap Up. *
+Create an Entitlement Process which has entry criteria for Status = Technician Wrap Up. *
+Create a Workflow to close the Milestone when the Wrap Up is complete. *
+###
+Upon arrival for a Service Appointment, the Field Service Technician reports that a team of people is required to resolve the issue.
+How can the Dispatcher ensure that the required staff is assigned to the project?
+---
+Assign the existing Work Order to a Crew.
+Assign the existing Service Appointment to a Crew.
+Assign the existing Work Order to each staff member.
+Create a new Service Appointment and assign a Crew. *
+###
+Dispatchers at Universal Containers want to ensure the Resource being assigned to a Work Order has the correct training.
+What should a Consultant implement to accomplish this requirement?
+---
+Define Work Types, Define Work Order Status, Set up Resource Skills
+Define Skills, Set up Skill Requirements, and Set up Resource Skills *
+Set up Skill Requirements, Define Work Types, Set up Routing Rules
+Set up Service Locations, Set up Location Skills, Define Work Types
+###
+Universal Containers wants to process mobile payments.
+How can this requirement be met?
+---
+Attach a picture of the credit card.
+Add a custom field to store the credit card number.
+Install an AppExchange package. *
+Create a custom payments object.
+###
+C
+Universal Containers provides installation, repair, and consulting services. When Technicians complete the work, they need to provide different reports for the installation, repair, and consulting services.
+Which two configurations should a Consultant recommend to meet this requirement? (Choose two.)
+---
+Product Templates
+Service Report Templates *
+Assets
+Work Types *
+###
+Universal Containers is looking to implement Entitlement Management to meet the following requirements:
+1) Any employee from the customer account is eligible for support.
+2) Specific purchased products are eligible for support.
+What Objects should be set up for Entitlement Management?
+---
+Accounts and Service Contracts
+Contacts and Service Contracts
+Accounts and Assets *
+Contacts and Assets
+###
+A Field Technician from Universal Containers arrived onsite for an appointment, and unfortunately the customer was not present.
+UC wants to ensure they can track these customer no-show events for future process improvement.
+What process should a Consultant recommend to handle this situation?
+---
+Set the existing Service Appointment status to Cannot Complete; Create a new Service Appointment against the same Work Order for the follow-up trip. *
+Set the existing Service Appointment status to Complete; Create a new Work Order and Service Appointment for the follow-up trip.
+Set the existing Service Appointment status to In Progress; Create a new Work Order and Service Appointment for the follow-up trip.
+Set the existing Service Appointment status to Cannot Complete; Create a new Work Order Line Item for the follow-up trip.
+###
+C
+Universal Containers has an initiative to increase customer satisfaction by committing preferred resources to accounts and providing prompt service.
+Which two Scheduling Policies would assist to meet this initiative? (Choose two.)
+---
+Soft Boundaries *
+High Intensity
+Emergency Policy
+Customer First *
+###
+Universal Containers provides prompt service and has multiple service levels for different customers. Over 50% of Service Appointments are created on the same day they need to be completed. As a result, a Technician's daily schedule can change multiple times throughout the day.
+What method of dispatching should a Consultant recommend implementing?
+---
+Automatically schedule unscheduled services to available Resources.
+Automatically change the status to Dispatched of all Service Appointments.
+Automatically Dispatch Service Appointments using Drip Feed.
+Automatically run Optimization Background Job every hour. *
+###
+Universal Containers utilizes two contractors, Contractor 1 and Contractor 2, to perform repair work. Contractor 1 has provided service longer for Universal Containers and is considered to have more repair work expertise than Contractor 2.
+How should a Consultant configure this expertise for Contractor 1 versus Contractor 2?
+---
+Assign Contractor 1 as a Preferred Resource.
+Assign Contractor 1 and 2 different capacities for repair work.
+Assign Contractor 2 as an Excluded Resource.
+Assign Contractor 1 and 2 different Skill Levels for repair Work Type. *
+###
+Universal Containers sells products that are made up of serialized components. Field Technicians often need to work on a specific component.
+How should a Consultant recommend tracking customer purchases so Work Orders can be assigned to a component?
+---
+Use Orders and Order Products.
+Use Work Orders and define a hierarchy.
+Use Products and Product Families. *
+Use Assets and define a hierarchy.
+###
+Universal Containers' (UC) Technician is completing a service appointment, but is unable to finish one of the tasks defined on the Work Order Line Items because of insufficient inventory.
+Assuming UC is using the standard Work Order and Line Item status picklist values, how should the work be recorded?
+---
+Mark all Work Order Line Items as "Cannot Complete," including the incomplete Work Order Line Item; mark the parent Work Order as "In Progress."
+Mark all completed Work Order Line Items as "Completed." Mark the incomplete Work Order Line Item as "Cannot Complete," and enter details in the Description field. Mark the parent Work Order as "Cancelled."
+Mark all completed Work Order Line Items as "Completed." Mark the incomplete Work Order Line Item as "Cannot Complete" and enter details in the Description field. Mark the parent Work Order as "Closed."
+Mark all completed Work Order Line Items as "Completed." Mark the incomplete Work Order Line Item as "Cannot Complete" and enter details in the Description field. Mark the parent Work Order as "Cannot Complete." *
+###
+Universal Containers does not want the lunch break to interfere with existing scheduled work.
+How should a Consultant configure the Scheduling Policy to ensure a 30-minute lunch break that begins every day after 1pm?
+---
+Create Resource Absences every day.
+Create a recurring Service Appointment.
+Use appropriate Resource Operating Hours.
+Use the Resource Availability Rule. *
+###
+Universal Containers` customers typically like to be by the same Technician that completed the initial installation.
+How should a Consultant implement this rule?
+---
+Add the Account as one of the Resource Skills.
+Add the Resource as a Preferred Resource. *
+Add the Resource as a Required Resource.
+Add all other Resources as Excluded Resources.
+###
+Universal Containers is expecting the amount of work to increase significantly over the next three weeks. They have decided to engage a new third-party Contract to help with the additional work.
+How should a Consultant recommend configuring the new Contractor?
+---
+Create a Capacity-based Resource and delete that Resource after three weeks.
+Create a Resource and give them 24-hour availability for the next three weeks.
+Create a Capacity-based Resource and give them Capacity for the next three weeks. *
+Create a Capacity-based Resource and give them 24-hour availability for the next three weeks.
+###
+Universal Containers is receiving increased complaints about incomplete Work Orders.
+What option should a Consultant recommend to improve this situation?
+---
+Send an email CSAT survey.
+Decrease Resource Rank Score.
+Change the Scheduling Rules.
+Implement Signature Capture. *
+###
+Universal Containers' (UC) Technicians often report seeing competitors' assets when on-site. UC would like to run a report on which of their customers have competitive assets.
+How should a Consultant recommend meeting this requirement using the Field Service mobile app?
+---
+Manually create a competitor's Asset Record on the Field Service mobile app.
+Use a Quick Action to create a competitor's Asset Record on the Field Service mobile app. *
+Use a Macro to create a competitor's Asset Record on the Field Service mobile app.
+Use a Quick Action to create a Note to explain the competitor's Asset and attach it to the Work Order.
+###
+Universal Containers wants to provide Dispatchers with Account and Asset details when they hover over each Service Appointment.
+How should a Consultant recommend implementing this feature?
+---
+Add Fields on the Page Layout.
+Configure Field Sets on the Service Appointment. *
+Use Lookup Fields.
+Create CSS in the Dispatcher's Console.
+###
+Universal Containers is deploying Field Service Lightning in Europe, where pricing varies by country.
+What Price Book structure is recommended?
+---
+Utilize a custom Price Book specific to each country. *
+Utilize the standard Price Book with pricing rules applied.
+Utilize a custom Price Book with pricing rules applied.
+Utilize a standard Price Book specific to each country.
+###
+Universal Containers wants their Field Technicians to indicate if any of their Service Appointments are at risk of not being completed on time. They would like for this to be achieved on a mobile device using a Quick Action.
+What should a Consultant recommend to achieve this requirement?
+---
+Update the Service Appointment Status field. *
+Update the Service Appointment field "In Jeopardy."
+Update the Service Appointment Chatter feed.
+Reschedule the Service Appointment for later.
+###
+C
+Universal Containers (UC) wants to better understand their service business and Field Service Technician teams' schedules. A Consultant suggested UC start to forecast and plan. Which two abilities does forecasting and planning provide? (Choose two.)
+---
+Proactively adjust to demand fluctuations. *
+More consistently meet customer response times. *
+More accurately assign Work Orders based on skills.
+Proactively adjust Service Contracts.
+###
+C
+Universal Containers wants to ensure that inventory needed for repair jobs is tracked and managed so Technicians have the material for their jobs.
+Which two ways should a Consultant recommend tracking these inventory requirements in Salesforce? (Choose two.)
+---
+Products Required for Work Orders *
+Products Required for Service Appointments
+Products Required for Work Order Line Items *
+Products Required for Service Resources
+###
+Universal Containers would like to report on the volume of products installed within a specific timeframe.
+What solution will help meet the customer's requirement?
+---
+Utilize a Work Order related list on Asset.
+Utilize a custom "Installation Date" field on Asset.
+Utilize Field History Tracking on Asset.
+Utilize the standard "Installation Date" field on Asset. *
+###
+Universal Containers wants to track the work that is performed on the customer's install base.
+What object relationship should the Consultant focus on to meet this requirement?
+---
+Products to Accounts
+Assets to Products
+Work Orders to Assets
+Work Orders to Products *
+###
+Universal Containers would like to provide Field Service Technicians the ability to capture details and customer approval on completed work so that the details can be compiled and sent to the customer electronically.
+What should a Consultant recommend to meet this requirement?
+---
+Create a Process Builder to generate a report.
+Use the standard Service Report. *
+Use the standard Work Order email template.
+Create a custom report.
+###
+Universal Containers wants to help their dispatchers determine the length of time a Work Order should last.
+What should the Consultant implement to help achieve this goal?
+---
+Work Types with an Estimated Duration. *
+Work Orders with Operating Hours.
+Operating Hours for Customer Accounts.
+Work Types with Service Level Agreement.
+###
+C
+Universal Containers wants to ensure that only Field Technicians with a specialized certification are sent Work Orders of a specific type.
+In which two ways can a Consultant ensure the correct Resources are assigned to Work Orders? (Choose two.)
+---
+Assign Skills and Skill Levels to Resources. *
+Implement Assignment Rules and Work Orders.
+Implement Work Types and Skill Assignments. *
+Assign Skills and Skill Levels to Users.
+###
+Universal Containers wants to ensure that Service Appointments are only assigned to Active Resources.
+What configuration should a Consultant recommend for the Scheduling Policy?
+---
+Match Boolean *
+Match Fields
+Preferred Resources
+Required Resources
+###
+Universal Containers wants to give Field Technicians the ability to create follow-up appointments if they are unable to complete a Work Order due to missing inventory.
+What should a Consultant implement to meet this requirement?
+---
+Implement a Quick Action to create a new Service Appointment on the existing Work Order. *
+Implement a Quick Action to create a new Work Order Line Item on the existing Work Order.
+Implement a Macro to generate Service Appointments on the existing Work Order.
+Implement a Custom Button to Create a Service Appointment on the existing Work Order.
+###
+C
+Universal Containers provides multiple service types (i.e., Installation, Maintenance, Break/Fix, etc.).
+Each service requires a variety of skills and certifications in order for a resource to excel.
+Which two configurations should a Consultant implement to meet this requirement? (Choose two.)
+---
+Select the relevant Work Types for each Resource.
+Use Work Types with Required Skills. *
+Assign the appropriate Skills to Resources. *
+Create Multiple Work Orders Line Items per service.
+###
+C
+Universal Containers would like to engage contractors and customers directly in their Field Service solution.
+Which three options will provide read, write, and edit access to Work Order objects? (Choose three.)
+---
+Chatter File Connect
+Partner Community license *
+Customer Community Plus license *
+Customer Community license *
+Chatter Customer Group
+###
+Universal Containers has enabled Field Service Lightning and is looking to enable Entitlements for Work Orders.
+What should a Consultant take into consideration?
+---
+Managing page layouts and milestone trackers can be done in the Salesforce mobile app.
+Creating Entitlements for Cases and Work Orders must be separated. *
+Managing page layouts and validation rules can be done in Salesforce Lightning.
+Creating Entitlements for Work Orders requires Lightning to be enabled.
+###
+C
+A Field Service Technician wants to view a list of parts consumed during a given time period.
+The Technician will then use the data to replenish inventory on the truck. Which three steps should a Consultant recommend to track the number of parts consumed? (Choose three.)
+---
+Build a report to view Products Consumed on Work Order Line Items. *
+Build a report to view Inventory Transactions. *
+Build a report to view Products Consumed on Work Orders. *
+Build a report using the Service Appointment Inventory module.
+Build a report using the Work Order inventory module.
+###
+Universal Containers wants the Ability for their Field Technicians to log sales opportunities associated with their Work Orders.
+What configuration should a Consultant implement so Field Technicians can easily achieve this through the Field Service mobile app?
+---
+Quick Action on Opportunity to Create Work Order
+Quick Action on Opportunity to Create Work Order Line Item
+Quick Action on Work Order to create Opportunity *
+Quick Action on Work Order Line Items to create Opportunity
+###
+Universal Containers wants to measure their adherence to specific SLAs for all Work Orders.
+In which order should a Consultant implement the setup to achieve this requirement?
+---
+Set Up Milestones, Create Entitlement records, Set Up Entitlement Process for Work Orders.
+Set Up Entitlement Process for Work Orders, Set Up Milestones, Create Entitlement records. *
+Create Entitlement records, Set Up Entitlement Process for Wok Orders, Set Up Milestones.
+Set Up Milestones, Set Up Entitlement Process for Wok Orders, Create Entitlement records.
+###
+C
+Universal Containers (UC) wants to generate Work Orders from their Customer Service Cases. UC would like the Work Order to be linked to the Case and have the Customer Service Representative select a pre-defined template for the Work Order within the Service Console.
+Which tow items should a Consultant recommend in order to achieve this? (Choose two.)
+---
+Use Record Types to achieve pre-defined templates.
+Add the Work Order Quick Action on the Case. *
+Add the Work Order Quick Action on the Account.
+Use Work Types to achieve pre-defined templates. *
+###
+Universal Containers (UC) wants to track all customer work requests. UC has no requirement to track where the work originated from, but does need the requests tied to the customer's account.
+What should a Consultant recommend to track these work requests?
+---
+Work Orders and Cases *
+Cases, Work Orders, and Tasks
+Work Orders Only
+Cases Only
+###
+Universal Containers wants Service Managers to quickly identify location and status changes in the lifecycle of a specific component in a customer's install base.
+What should a Consultant recommend to track the lifecycle?
+---
+Utilize custom fields for change tracking on Assets.
+Utilize Field History Tracking on Assets. *
+Utilize lifecycle Object tracking on Assets.
+Utilize a Work Order related list on Assets.
+###
+C
+Universal Containers wants to reduce their mean-time-to-service.
+Which three Field Service processes should a Consultant recommend to accomplish this goal? (Choose three.)
+---
+Adjust Scheduling Policy *
+Knowledge Base *
+Dispatching *
+Customer Entitlements
+Scheduling
+###
+C
+A Client Service Representative (CSR) receives a call from a customer on Saturday. The CSR determines that the customer is covered, but the coverage is about to expire.
+Which two upsell activities should the CSR consider? (Choose two.)
+---
+Open a Case and send email with new Service offerings. *
+Open a Case and inform Customer of weekend service pricing. *
+Open a Case and renewal Opportunity for the Sales team.
+Open a Case and create a Work Order for the Dispatch Team.
+###
+Universal Containers (UC) is using Field Service and has customer meetings at UC's offices.
+When booking meetings, they would like them to begin on the hour, every hour, between 9am-5am.
+How can this be achieved?
+---
+Use Customer Operating Hours.
+Use Exact Appointments on the Work Types. *
+Use Territory-specific Operating Hours.
+Use Multiple Operating Hours with Slots for each hour.
+###
+C
+Universal Containers has noticed that with every new product release there is a rise in customer reported Cases and a decrease in first-time fix-rate.
+Which two recommendations should a Consultant make? (Choose two.)
+---
+Publish pre-release documentation on the Customer Community. *
+Publish training documentation in a closed Chatter group.
+Increase training to Sales Representatives.
+Increase training to Field Service Technicians. *
+###
+C
+In the Dispatch Console, when viewing the Map, which three data elements can be presented to the Dispatcher? (Choose three)
+---
+Google Traffic Data *
+Service Appointment Dependencies
+Resource's Home Base *
+Service Appointments *
+Resources Travel Speed
+###
+Universal Containers wants to invoice its customers for the parts used when performing repairs on installed Assets.
+What should a Consultant recommend to track the price of the parts consumed?
+---
+Use Products and Price Books to track the price. *
+Use Opportunity Line Items and Price Books to track the price.
+Use a custom object to model the Work Order pricing and price.
+Use Assets and Products to track the price.
+###
+C
+Universal Containers wants to track the total associated price when servicing Work Orders for Customers.
+Which two of the following should a Consultant recommend? (Choose two.)
+---
+Use Work Order and Work Order Line Items. *
+Use a custom object to model the Work Order pricing.
+Use the Einstein Pricing Configurator.
+Set up Products and Price Books. *
+###
+C
+Universal Containers performs service on field assets that require a sequence of work tasks.
+A Consultant has recommended Work Order Line Items to manage the tasks and assets/parts necessary to manage the work.
+Which two of the following must be considered as part of this solution to ensure Work Orders are properly completed? (Choose two.)
+---
+Use of Work Order Line Items that automatically inherit the hierarchy of Assets attached to Work Order.
+Use of a parent-child Work Order Line Item to create a Work Order Line Item hierarchy. *
+Use of Work Order Line Items to link to a specific Asset within the Asset Hierarchy that represents the BoM. *
+Use of Standard Reports to view Parent and Work Order Lines Items within Work Orders by Customer.
+###
+Universal Containers wants their Technicians to record an Asset Number using a barcode scanner when completing Work Orders.
+What field type should be configured to capture this information?
+---
+Barcode
+Date
+Formula
+Text *
+###
+Universal Containers has a Partner Community. Work Orders are assigned to these partners. Partners are not interacting with Service Appointments or Service Resources.
+How would a Partner user update the Work Order record from a mobile Device?
+---
+Field service mobile app
+Salesforce mobile app *
+Work Order records cannot be updated on a mobile device
+Salesforce Touch
+###
+Universal Containers has Role-based Technicians and Managers who handle Service Appointments.
+Many times, Technicians arrive on-site but are unable to gain access to the customer's equipment.
+In this scenario, only the Manager has permission to cancel the Service Appointment.
+Who should a Consultant recommend adhering to this business process?
+---
+Assign Permission Sets that allow Status Transitions.
+Allow Status Transitions based on Role.
+Limit Status Transitions based on Profile. *
+Configure Status Transitions based on Resource Type.
+###
+Universal Containers is tracking customer issues in their call center. Sometimes this requires a Technician to be on-site at the customer's location.
+What set of steps should a Consultant recommend to dispatch the Technician?
+---
+Create Case, Create Service Appointment, Create Work Order, Dispatch Service Appointment.
+Create Work Order, Create Case, Dispatch Work Order, Create Service Appointment.
+Create Service Appointment, Create Work Order, Create Case, Dispatch Service Appointment.
+Create Case, Create Work Order, Create Service Appointment, Dispatch Service Appointment. *
+###
+Universal Containers wants Field Technicians to capture customer authorization via a signature through Salesforce mobile app.
+What should a Consultant recommend?
+---
+Create a Quick Action on the Service Appointment to launch a Visualforce signature page.
+Create an Approval Process from the Service Appointment for the customer's Authorization.
+Create a Checkbox on the Service Appointment that will capture the customer's Authorization. *
+Create a custom text field to capture the customer's signature on Salesforce mobile app.
+###
+Universal Containers maintains their service level agreements at the customer level only.
+How can a consultant ensure agents can verify coverage?
+---
+Set up Entitlement Process, set up Service Contracts, display the related List on the Contact Page Layout.
+Create Milestones, set up Entitlement Process, display the related List on the Work Order Page Layout.
+Create Milestones, set up Entitlement Process, display the related List on the Account Page Layout. *
+Create Contract Line Items, set up Entitlement Process, display the related List on the Asset Page Layout.

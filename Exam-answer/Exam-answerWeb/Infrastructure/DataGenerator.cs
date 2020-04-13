@@ -15,30 +15,34 @@ namespace Exam_answerWeb.Infrastructure
     {
         public static List<ExamEntity> AllExams;
 
-        public static List<ExamEntity> Initialize(ExamAnswerContext context)
+        private static List<QuestionEntity> GetQuestions(string path)
         {
-            var allText = File.ReadAllText("Exams\\az100Text.txt");
+            string allText = File.ReadAllText(path);
 
-            var quesions = allText.Split("###", StringSplitOptions.RemoveEmptyEntries);
+            var quesions = allText.Split("###", StringSplitOptions.RemoveEmptyEntries).ToList(); ;
 
             List<QuestionEntity> qeList = new List<QuestionEntity>();
-            foreach (var question in quesions)
-            {
-                var questionsGroups = question.Split($"---", StringSplitOptions.RemoveEmptyEntries);
+            foreach (string question in quesions)
+            {                
+                string[] questionsGroups = question.Split($"---", StringSplitOptions.RemoveEmptyEntries);
 
-                var questionContent = questionsGroups[0].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
-                var questionAnswers = questionsGroups[1].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
-                //var questionExplanations = questionsGroups[2].Split(Environment.NewLine);
-                //var questionReferences = questionsGroups[3].Split(Environment.NewLine);
+                List<string> questionContent = questionsGroups[0].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                if (questionContent.Count == 0)
+                {
+                    continue;
+                }
+                List<string> questionAnswers = questionsGroups[1].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                List<string> questionExplanations = questionsGroups[2].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                List<string> questionReferences = questionsGroups[3].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
                 QuestionEntity qe = new QuestionEntity();
-
+                qe.Order = quesions.IndexOf(question);
                 if (questionContent.FirstOrDefault()?.Equals("C") == true)
                 {
                     qe.QuestionType = QuestionType.CheckBox;
                     questionContent = questionContent.Skip(1).ToList();
                 }
 
-                foreach (var content in questionContent)
+                foreach (string content in questionContent)
                 {
                     ContentEntity contentEntity = new ContentEntity()
                     {
@@ -48,7 +52,84 @@ namespace Exam_answerWeb.Infrastructure
                     qe.Contents.Add(contentEntity);
                 }
 
-                foreach (var answer in questionAnswers)
+                foreach (string answer in questionAnswers)
+                {
+                    AnswerEntity answerEntity = new AnswerEntity()
+                    {
+                        Text = answer,
+                        Order = questionAnswers.IndexOf(answer),
+                    };
+                    if (answer.EndsWith("*"))
+                    {
+                        answerEntity.IsCorrect = true;
+                        answerEntity.Text = answer.TrimEnd('*').Trim();
+                    }
+                    qe.Answers.Add(answerEntity);
+                }
+
+                foreach (string explanation in questionExplanations)
+                {
+                    ExplanationEntity explanationEntity = new ExplanationEntity()
+                    {
+                        Text = explanation,
+                        Order = questionExplanations.IndexOf(explanation),
+                    };
+                    qe.Explanations.Add(explanationEntity);
+                }
+
+                foreach (string reference in questionReferences)
+                {
+                    List<string> parts = reference.Split(";").ToList();
+                    ReferenceEntity referenceEntity = new ReferenceEntity()
+                    {
+                        Text = parts[0],
+                        Url = parts[1],
+                        Order = questionReferences.IndexOf(reference),
+                    };
+                    qe.References.Add(referenceEntity);
+                }
+
+                qeList.Add(qe);
+            }
+
+            return qeList;
+        }
+
+        public static List<ExamEntity> Initialize(ExamAnswerContext context)
+        {
+
+            string allText = File.ReadAllText("Exams\\Salesforce-Certified-Field-Service-Lightning-Consultant.txt");
+
+            var quesions = allText.Split("###", StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            List<QuestionEntity> qeList = new List<QuestionEntity>();
+            foreach (string question in quesions)
+            {
+                string[] questionsGroups = question.Split($"---", StringSplitOptions.RemoveEmptyEntries);
+
+                List<string> questionContent = questionsGroups[0].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                List<string> questionAnswers = questionsGroups[1].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                //var questionExplanations = questionsGroups[2].Split(Environment.NewLine);
+                //var questionReferences = questionsGroups[3].Split(Environment.NewLine);
+                QuestionEntity qe = new QuestionEntity();
+                qe.Order = quesions.IndexOf(question);
+                if (questionContent.FirstOrDefault()?.Equals("C") == true)
+                {
+                    qe.QuestionType = QuestionType.CheckBox;
+                    questionContent = questionContent.Skip(1).ToList();
+                }
+
+                foreach (string content in questionContent)
+                {
+                    ContentEntity contentEntity = new ContentEntity()
+                    {
+                        Text = content,
+                        Order = questionContent.IndexOf(content),
+                    };
+                    qe.Contents.Add(contentEntity);
+                }
+
+                foreach (string answer in questionAnswers)
                 {
                     AnswerEntity answerEntity = new AnswerEntity()
                     {
@@ -67,6 +148,7 @@ namespace Exam_answerWeb.Infrastructure
             }
 
             List<ExamEntity> result = new List<ExamEntity>();
+
             ExamEntity scfslc = new ExamEntity()
             {
                 Provider = "Salesforce",
@@ -203,24 +285,24 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Microsoft",
                 Code = "AZ-100",
                 Name = "Microsoft Azure Infrastructure and Deployment",
-                Questions = new List<QuestionEntity>()
+                Questions = GetQuestions("Exams\\az-100.txt"),
             };
 
-            az100.Questions.Add(Az100.Q1Instance);
-            az100.Questions.Add(Az100.Q2Instance);
-            az100.Questions.Add(Az100.Q3Instance);
-            az100.Questions.Add(Az100.Q4Instance);
-            az100.Questions.Add(Az100.Q5Instance);
-            az100.Questions.Add(Az100.Q6Instance);
-            az100.Questions.Add(Az100.Q7Instance);
-            az100.Questions.Add(Az100.Q8Instance);
-            az100.Questions.Add(Az100.Q9Instance);
-            az100.Questions.Add(Az100.Q10Instance);
-            az100.Questions.Add(Az100.Q11Instance);
-            az100.Questions.Add(Az100.Q12Instance);
-            az100.Questions.Add(Az100.Q13Instance);
-            az100.Questions.Add(Az100.Q14Instance);
-            az100.Questions.Add(Az100.Q15Instance);
+            //az100.Questions.Add(Az100.Q1Instance);
+            //az100.Questions.Add(Az100.Q2Instance);
+            //az100.Questions.Add(Az100.Q3Instance);
+            //az100.Questions.Add(Az100.Q4Instance);
+            //az100.Questions.Add(Az100.Q5Instance);
+            //az100.Questions.Add(Az100.Q6Instance);
+            //az100.Questions.Add(Az100.Q7Instance);
+            //az100.Questions.Add(Az100.Q8Instance);
+            //az100.Questions.Add(Az100.Q9Instance);
+            //az100.Questions.Add(Az100.Q10Instance);
+            //az100.Questions.Add(Az100.Q11Instance);
+            //az100.Questions.Add(Az100.Q12Instance);
+            //az100.Questions.Add(Az100.Q13Instance);
+            //az100.Questions.Add(Az100.Q14Instance);
+            //az100.Questions.Add(Az100.Q15Instance);
 
             context?.Exams?.Add(az100);
             result.Add(az100);
@@ -243,7 +325,7 @@ namespace Exam_answerWeb.Infrastructure
                 "If you like what you see, please support the future development of our web site by buying this practice test at Udemy." +
                 " Click this link for a 50% discount. The price is ONLY 12.99!";
 
-            var az900Fields = typeof(Az900).GetFields(BindingFlags.Static |
+            List<FieldInfo> az900Fields = typeof(Az900).GetFields(BindingFlags.Static |
                                                       BindingFlags.Public |
                                                       BindingFlags.NonPublic).ToList();
 
@@ -254,9 +336,9 @@ namespace Exam_answerWeb.Infrastructure
 
             }).ToList();
 
-            foreach (var f in az900Fields)
+            foreach (FieldInfo f in az900Fields)
             {
-                var qe = f.GetValue(null) as QuestionEntity;
+                QuestionEntity qe = f.GetValue(null) as QuestionEntity;
                 az900.Questions.Add(qe);
             }
             //var values = from type in someAssembly.GetTypes()

@@ -18,7 +18,7 @@ namespace Exam_answerWeb.Extensions
                 string uaString = httpContext.Request.Headers["User-Agent"].ToString();
 
                 // get a parser with the embedded regex patterns
-                var uaParser = Parser.GetDefault();
+                Parser uaParser = Parser.GetDefault();
 
                 // get a parser using externally supplied yaml definitions
                 // var uaParser = Parser.FromYaml(yamlString);

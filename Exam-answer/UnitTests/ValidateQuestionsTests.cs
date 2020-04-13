@@ -16,7 +16,7 @@ namespace UnitTests
         public ValidateQuestionsTests()
         {
             ExamsToCheck = DataGenerator.Initialize(null);
-            ExamsToCheck = ExamsToCheck.Where(e => !e.Code.Equals("AZ-100", StringComparison.CurrentCultureIgnoreCase)).ToList();
+            //ExamsToCheck = ExamsToCheck.Where(e => !e.Code.Equals("AZ-100", StringComparison.CurrentCultureIgnoreCase)).ToList();
         }
 
         [Fact]
@@ -127,19 +127,19 @@ D.configuring the SaaS solution
         {
             foreach (ExamEntity exam in ExamsToCheck)
             {
-                foreach (var question in exam.Questions)
+                foreach (QuestionEntity question in exam.Questions)
                 {
                     Assert.False(string.IsNullOrWhiteSpace(question.ContentText));
                 }
             }
         }
 
-        [Fact]
+        [Fact(Skip = "only for test")]
         public void AllQuestionsShouldHaveExplanationsTest()
         {
-            var exam = ExamsToCheck.FirstOrDefault(f => f.Code == "AZ-900");
+            ExamEntity exam = ExamsToCheck.FirstOrDefault(f => f.Code == "AZ-900");
 
-            foreach (var question in exam.Questions)
+            foreach (QuestionEntity question in exam.Questions)
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.ExplanationText));
             }
@@ -150,7 +150,7 @@ D.configuring the SaaS solution
         {
             foreach (ExamEntity exam in ExamsToCheck)
             {
-                foreach (var question in exam.Questions)
+                foreach (QuestionEntity question in exam.Questions)
                 {
                     Assert.False(string.IsNullOrWhiteSpace(question.AnswerText));
                 }
@@ -162,7 +162,7 @@ D.configuring the SaaS solution
         {
             foreach (ExamEntity exam in ExamsToCheck)
             {
-                foreach (var question in exam.Questions)
+                foreach (QuestionEntity question in exam.Questions)
                 {
                     Assert.True(question.ContentText.Length < 4000);
                     Assert.True(question.AnswerText.Length < 4000);
@@ -177,9 +177,9 @@ D.configuring the SaaS solution
         {
             foreach (ExamEntity exam in ExamsToCheck)
             {
-                foreach (var question in exam.Questions)
+                foreach (QuestionEntity question in exam.Questions)
                 {
-                    var correctQuestionCount = question.Answers.Where(a => a.IsCorrect.GetValueOrDefault()).ToList();
+                    List<AnswerEntity> correctQuestionCount = question.Answers.Where(a => a.IsCorrect.GetValueOrDefault()).ToList();
 
                     if (question.QuestionType == QuestionType.CheckBox)
                     {

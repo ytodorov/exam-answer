@@ -1,0 +1,81 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You are asked to deploy a virtual machine (VM) in your Azure subscription. This VM must be configured with a static IP address for connectivity to some legacy applications.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You need to configure the VM to support a static IP address.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                What are two ways to achieve your goal? Each correct answer presents a complete solution.
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Use the Add-AzureRmVMNetworkInterface PowerShell cmdlet.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Use the New-AzureRmNetworkInterface PowerShell cmdlet when creating the VM.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Use the Azure Portal to set the static ip address after the VM has been created.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Use the Set-AzureRmNetworkInterface PowerShell cmdlet.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                When configuring a static IP address for an Azure VM, there are three supported options for doing so. One option is to use the New-AzureRmNetworkInterface with the -PrivateIPAddress switch. The second is to set the IP address after the VM has been created in the Azure Portal. A third option is to use the Azure CLI and the az network nic create command.
+            </p>
+            <p>
+                You should not use the Add-AzureRmVMNetworkInterface cmdlet. This cmdlet is used to add a network interface to an existing VM but does not have options for configuring static IP addresses.
+            </p>
+            <p>
+                You should not use the Set-AzureRmNetworkInterface cmdlet. This cmdlet can be used to set a static IP address, but it must be used in conjunction with other cmdlets to complete the action.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-static-private-ip-arm-pportal" target="_blank" rel="noopener">Configure private IP addresses for a virtual machine using the Azure portal</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-static-private-ip-arm-ps" target="_blank" rel="noopener">Configure private IP addresses for a virtual machine using PowerShell</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-static-private-ip-arm-cli" target="_blank" rel="noopener">Configure private IP addresses for a virtual machine using the Azure CLI</a>
+            </p>
+        </div>
+    </li>
+</ul>

@@ -22,7 +22,7 @@ namespace UnitTests
 
             sb.AppendLine("Question,Question Type (multiple-choice or multi-select),Answer Option 1,Answer Option 2,Answer Option 3,Answer Option 4,Answer Option 5,Answer Option 6,Correct Response,Explanation,Knowledge Area");
 
-            var theQuestions = theExamToExportToUdemy.Questions.Skip(50).Take(50).ToList();
+            List<QuestionEntity> theQuestions = theExamToExportToUdemy.Questions.Skip(50).Take(50).ToList();
 
             foreach (QuestionEntity question in theQuestions)
             {

@@ -42,8 +42,8 @@ namespace UnitTests
         {
             for (int i = 0; i < questions.Count; i++)
             {
-                var question = questions[i];
-                var currOrder = i + 1;
+                QuestionEntity question = questions[i];
+                int currOrder = i + 1;
 
                 StringBuilder sb = new StringBuilder();
 
@@ -64,7 +64,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Contents = new List<ContentEntity>()
             {{");
 
-                foreach (var content in question.Contents)
+                foreach (ContentEntity content in question.Contents)
                 {
                     sb.Append(
                     $@"
@@ -83,7 +83,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Answers = new List<AnswerEntity>()
             {{");
 
-                foreach (var answer in question.Answers)
+                foreach (AnswerEntity answer in question.Answers)
                 {
                     sb.Append(
                 $@"
@@ -103,7 +103,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             Explanations = new List<ExplanationEntity>()
             {{");
 
-                foreach (var explanation in question.Explanations)
+                foreach (ExplanationEntity explanation in question.Explanations)
                 {
                     sb.Append(
                 $@"
@@ -121,7 +121,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             References = new List<ReferenceEntity>()
             {{");
 
-                foreach (var reference in question.References)
+                foreach (ReferenceEntity reference in question.References)
                 {
                     sb.Append(
                     $@"
@@ -150,22 +150,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
         {
             List<QuestionEntity> questions = new List<QuestionEntity>();
 
-            var files = Directory.GetFiles("AZ-900", "*.txt").OrderBy(s => s).ToList();
+            List<string> files = Directory.GetFiles("AZ-900", "*.txt").OrderBy(s => s).ToList();
 
-            var savedDuplicates = File.ReadAllText("AZ-900\\az-900Duplicates.txt");
-            var splitsStrings = savedDuplicates.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            string savedDuplicates = File.ReadAllText("AZ-900\\az-900Duplicates.txt");
+            List<string> splitsStrings = savedDuplicates.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
             List<int> saveDuplicatesOrders = new List<int>();
-            foreach (var s in splitsStrings)
+            foreach (string s in splitsStrings)
             {
                 saveDuplicatesOrders.Add(int.Parse(s));
             }
 
             List<int> questionsDuplicatesOrders = new List<int>();
 
-            foreach (var path in files)
+            foreach (string path in files)
             {
-                var lines = File.ReadAllLines(path).ToList();
+                List<string> lines = File.ReadAllLines(path).ToList();
 
                 lines = lines.Where(l => !string.IsNullOrEmpty(l?.Trim())).ToList();
 
@@ -173,7 +173,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
                 for (int i = 0; i < lines.Count; i++)
                 {
-                    var currLine = lines[i];
+                    string currLine = lines[i];
                     if (currLine.StartsWith("QUESTION "))
                     {
                         indexes.Add(i);
@@ -193,9 +193,9 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
                 for (int i = 0; i < indexes.Count - 1; i++)
                 {
-                    var currentIndex = indexes[i];
-                    var nextIndex = indexes[i + 1];
-                    var questionLines = lines.Skip(currentIndex).Take(nextIndex - currentIndex).ToList();
+                    int currentIndex = indexes[i];
+                    int nextIndex = indexes[i + 1];
+                    List<string> questionLines = lines.Skip(currentIndex).Take(nextIndex - currentIndex).ToList();
 
                     // Catch parsing errors here
                     if (questionLines.Count > 100)
@@ -206,22 +206,22 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
                     for (int currIndexLine = 0; currIndexLine < questionLines.Count; currIndexLine++)
                     {
-                        var currLine = questionLines[currIndexLine];
+                        string currLine = questionLines[currIndexLine];
                         if ("Explanation".Equals(currLine, StringComparison.InvariantCultureIgnoreCase))
                         {
                             questionLines[currIndexLine] = "Explanation:";
                         }
                     }
 
-                    var answer1 = questionLines.FirstOrDefault(f => f.Trim().StartsWith("A."));
+                    string answer1 = questionLines.FirstOrDefault(f => f.Trim().StartsWith("A."));
 
-                    var indexOfFirstAnswer = questionLines.IndexOf(answer1);
+                    int indexOfFirstAnswer = questionLines.IndexOf(answer1);
 
-                    var linesWithContent = questionLines.Skip(1).Take(indexOfFirstAnswer - 1).ToList();
+                    List<string> linesWithContent = questionLines.Skip(1).Take(indexOfFirstAnswer - 1).ToList();
 
                     QuestionEntity questionEntity = new QuestionEntity();
 
-                    foreach (var lineWithContent in linesWithContent)
+                    foreach (string lineWithContent in linesWithContent)
                     {
                         questionEntity.Contents.Add(new ContentEntity()
                         {
@@ -240,7 +240,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
 
                     if (!string.IsNullOrEmpty(answer1))
                     {
-                        var answerText1 = answer1.Replace("A. ", string.Empty).Trim();
+                        string answerText1 = answer1.Replace("A. ", string.Empty).Trim();
                         answerText1 = FormatTextToBeFirstCapitalEndInPeriod(answerText1);
 
                         bool isCorrect1 = correctAnswers.Any(c => c.ToString() == "A");
@@ -250,7 +250,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     string answer2 = questionLines.FirstOrDefault(f => f.StartsWith("B."));
                     if (!string.IsNullOrEmpty(answer2))
                     {
-                        var answerText2 = answer2.Replace("B. ", string.Empty).Trim();
+                        string answerText2 = answer2.Replace("B. ", string.Empty).Trim();
                         answerText2 = FormatTextToBeFirstCapitalEndInPeriod(answerText2);
 
                         bool isCorrect2 = correctAnswers.Any(c => c.ToString() == "B");
@@ -260,7 +260,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     string answer3 = questionLines.FirstOrDefault(f => f.StartsWith("C."));
                     if (!string.IsNullOrEmpty(answer3))
                     {
-                        var answerText3 = answer3.Replace("C. ", string.Empty).Trim();
+                        string answerText3 = answer3.Replace("C. ", string.Empty).Trim();
                         answerText3 = FormatTextToBeFirstCapitalEndInPeriod(answerText3);
 
                         bool isCorrect3 = correctAnswers.Any(c => c.ToString() == "C");
@@ -270,7 +270,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     string answer4 = questionLines.FirstOrDefault(f => f.StartsWith("D."));
                     if (!string.IsNullOrEmpty(answer4))
                     {
-                        var answerText4 = answer4.Replace("D. ", string.Empty).Trim();
+                        string answerText4 = answer4.Replace("D. ", string.Empty).Trim();
                         answerText4 = FormatTextToBeFirstCapitalEndInPeriod(answerText4);
 
                         bool isCorrect4 = correctAnswers.Any(c => c.ToString() == "D");
@@ -280,7 +280,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     string answer5 = questionLines.FirstOrDefault(f => f.StartsWith("E."));
                     if (!string.IsNullOrEmpty(answer5))
                     {
-                        var answerText5 = answer5.Replace("E. ", string.Empty).Trim();
+                        string answerText5 = answer5.Replace("E. ", string.Empty).Trim();
                         answerText5 = FormatTextToBeFirstCapitalEndInPeriod(answerText5);
 
                         bool isCorrect5 = correctAnswers.Any(c => c.ToString() == "E");
@@ -290,7 +290,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     string answer6 = questionLines.FirstOrDefault(f => f.StartsWith("F."));
                     if (!string.IsNullOrEmpty(answer6))
                     {
-                        var answerText6 = answer6.Replace("F. ", string.Empty).Trim();
+                        string answerText6 = answer6.Replace("F. ", string.Empty).Trim();
                         answerText6 = FormatTextToBeFirstCapitalEndInPeriod(answerText6);
 
                         bool isCorrect6 = correctAnswers.Any(c => c.ToString() == "F");
@@ -311,8 +311,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
                     }
                     questionEntity.Order = questions.Count + 1;
 
-                    var references = questionLines.FirstOrDefault(f => f.Trim().StartsWith("References:"));
-                    var indexOfReferences = -1;
+                    string references = questionLines.FirstOrDefault(f => f.Trim().StartsWith("References:"));
+                    int indexOfReferences = -1;
                     if (references != null)
                     {
                         indexOfReferences = questionLines.IndexOf(references);
@@ -331,8 +331,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
                         }
                     }
 
-                    var explanation = questionLines.FirstOrDefault(f => f.Trim().StartsWith("Explanation:"));
-                    var indexOfExplanation = -1;
+                    string explanation = questionLines.FirstOrDefault(f => f.Trim().StartsWith("Explanation:"));
+                    int indexOfExplanation = -1;
                     if (explanation != null)
                     {
                         indexOfExplanation = questionLines.IndexOf(explanation);
@@ -405,7 +405,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
             distances = distances.OrderByDescending(d => d).ToList();
             questionsDuplicatesOrders = questionsDuplicatesOrders.Distinct().OrderBy(s => s).ToList();
             StringBuilder sbDuplicatesToSave = new StringBuilder();
-            foreach (var d in questionsDuplicatesOrders)
+            foreach (int d in questionsDuplicatesOrders)
             {
                 sbDuplicatesToSave.Append($"{d},");
             }

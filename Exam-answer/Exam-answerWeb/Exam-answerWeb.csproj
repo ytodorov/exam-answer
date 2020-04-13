@@ -15,7 +15,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\MicrosoftController.cs" />
     <Compile Remove="Infrastructure\Az900\Q104_checkMe.cs" />
     <Compile Remove="Infrastructure\Az900\Q105_checkMe.cs" />
     <Compile Remove="Infrastructure\Az900\Q106_checkMe.cs" />
@@ -1020,8 +1019,10 @@
 
 
   <ItemGroup>
-    <Content Update="Views\microsoft\az-100\index.cshtml">
+    <Content Update="Views\microsoftAz100\az-100\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Views\microsoft\az-100\question3_9.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1233,19 +1234,19 @@
     <Content Update="Views\microsoft\az-100\question2_9.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\microsoft\az-100\zCheckBoxes.cshtml">
+    <Content Update="Views\microsoftAz100\az-100\zcheckboxes.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\microsoft\az-100\zDropDown.cshtml">
+    <Content Update="Views\microsoftAz100\az-100\zDropDown.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\microsoft\az-100\zRadio.cshtml">
+    <Content Update="Views\microsoftAz100\az-100\zradio.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\microsoft\az-100\zSortable.cshtml">
+    <Content Update="Views\microsoftAz100\az-100\zSortable.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\microsoft\az-100\zYesNo.cshtml">
+    <Content Update="Views\microsoftAz100\az-100\zYesNo.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\MicrosoftAz900\az-900\index.cshtml">
@@ -1401,6 +1402,9 @@
 
 
   <ItemGroup>
+    <None Update="Exams\az-100.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Exams\AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1437,7 +1441,7 @@
     <None Update="Exams\az100Text - Copy.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Exams\az100Text.txt">
+    <None Update="Exams\Salesforce-Certified-Field-Service-Lightning-Consultant.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,84 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You have a resource group named APP-RG that consists of several resources.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You are asked to add a storage account to the resource group. You decide to deploy the new storage account by using an ARM template and the New-AzureRmResourceGroupDeployment cmdlet. This template does not contain any linked or nested templates.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                After the deployment finishes successfully, you realize that all the resources in the resource group have been replaced by the new storage account.
+            </p>
+            <p>
+                Why did this happen?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You used the -mode complete parameter with the New-AzureRmResourceGroupDeployment cmdlet.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The template contains the mode parameter with the value of incremental.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            You did not use the -mode parameter with the New-AzureRmResourceGroupDeployment cmdlet.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            The template contains the mode parameter with the value of complete.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                The resources in the resource group have been replaced by the new storage account because you used the -mode complete parameter with the New-AzureRmResourceGroupDeployment cmdlet. This cmdlet has two deployment modes, incremental and complete. When you use the complete mode, all resources in the resource group that are not included in the template are deleted.
+            </p>
+            <p>
+                This did not happen because you did not use the -mode parameter with the New-AzureRmResourceGroupDeployment cmdlet. When you do not use the -mode parameter, you are using the default incremental deployment mode. In this mode, any resource that is not present in the template is maintained in the resource group. If a resource in the resource group is present in the template, if any parameter in the template differs from the values in the resource group, that value is updated in the resource present in Azure. You should use this mode when deploying the template.
+            </p>
+            <p>
+                Since the template that you are using does not contains any linked or nested templates, the mode parameter should not be present in the template with either value. This parameter is part of the deployment resource type and is typically used with nested or linked templates. Deployment modes, complete and incremental, behave the same way as in the New-AzureRmResourceGroupDeployment cmdlet.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy" target="_blank" rel="noopener">Deploy resources with Resource Manager templates and Azure PowerShell</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/templates/microsoft.resources/deployments" target="_blank" rel="noopener">Microsoft.Resources/deployments template reference</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment" target="_blank" rel="noopener">New-AzureRmResourceGroupDeployment</a>
+            </p>
+        </div>
+    </li>
+</ul>

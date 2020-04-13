@@ -1,0 +1,105 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                Your company deploys a line-of-business (LOB) application. This application is installed on three separate virtual machines (VMs).
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                You receive some performance alerts on one of the VMs. After some troubleshooting, you identify a deficiency in the IO of the storage system.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                You need to add an additional new empty data disk to the existing VM. You decide to use an unmanaged disk.
+            </p>
+            <p>
+                Which PowerShell cmdlet should you use?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            New-AzureRmDiskConfig
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add-AzureRmVhd
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Add-AzureRmVMDataDisk
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            New-AzureRmDisk
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            New-AzureRmVMDataDisk
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should use the Add-AzureRmVMDataDisk cmdlet to add a new data disk to your existing VM. This cmdlet gets as a parameter the name of the VM to which you want to add the new virtual disk. You can also configure the size, location, caching, and type of virtual disk that you will add. If you use the ManagedDiskId parameter, you can add a managed disk to the VM. If you omit this parameter, you will use unmanaged disks instead.
+            </p>
+            <p>
+                You should not use the New-AzureRmDiskConfig cmdlet. You use this cmdlet for creating an object that represents the disk configuration of the VM.
+            </p>
+            <p>
+                You should not use the New-AzureRmDisk cmdlet. This cmdlet creates a new managed virtual disk but does not attach it to the VM. After using the cmdlet, you need to add the virtual disk to the VM using the Add-AzureRmVMDataDisk cmdlet with the CreateOption Attach parameter. You decided to use an unmanaged virtual disk, so you cannot use this cmdlet.
+            </p>
+            <p>
+                You should not use the Add-AzureRmVhd cmdlet. This cmdlet uploads a virtual hard disk (VHD) file from an on-premises computer to Azure. This cmdlet is not useful for adding a new virtual disk to your VM.
+            </p>
+            <p>
+                You should not use the New-AzureRmVMDataDisk cmdlet. This cmdlet creates a managed virtual data disk for a VM, but it does not add the virtual disk to the VM.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvmdatadisk" target="_blank" rel="noopener">New-AzureRmVMDataDisk</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/add-azurermvhd" target="_blank" rel="noopener">Add-AzureRmVhd</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/add-azurermvmdatadisk" target="_blank" rel="noopener">Add-AzureRmVMDataDisk</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermdisk" target="_blank" rel="noopener">New-AzureRmDisk</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermdiskconfig" target="_blank" rel="noopener">New-AzureRmDiskConfig</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/attach-disk-ps" target="_blank" rel="noopener">Attach a data disk to a Windows VM using PowerShell</a>
+            </p>
+        </div>
+    </li>
+</ul>

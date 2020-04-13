@@ -1,0 +1,90 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You deploy Azure Recovery Services in your Azure Subscription. You are making a backup of all the virtual machines (VMs) in this subscription.
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                Some of the VMs in the subscription were deployed using custom images. You also have encrypted VMs.
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                Due to your company's disaster recovery plan, you need to be able to recover VMs.
+            </p>
+            <p>
+                Choose all that apply:
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You can use the replace existing option with encrypted VMs
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            When you restore a VM, you can customize the VM configuration using PowerShell.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            You can only restore VMs that have single NICs.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                            Restoring VMs created using custom images using the replace existing option is unsupported.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You cannot use the replace existing option with encrypted VMs. If you need to recover an encrypted VM, you need to use the restore disks option. Then you need to create a new VM from restored disks.
+            </p>
+            <p>
+                When you restore a VM, you can customize the VM configuration using PowerShell. When you restore a VM using the create virtual machine option, the new VM is created using a Quick Create option provided by the portal. If you need to change this default configuration, you can do it by using PowerShell for the restoration process. You can also perform a restore from backup disks and create a new VM from these disks.
+            </p>
+            <p>
+                You can also restore VMs that have multiple NICs. You can backup and restore VMs that have special network configurations like VMs with multiple NICs, VMs with multiple reserved IP addresses, or load-balanced VMs. You need to perform some additional steps when you want to restore these types of VMs.
+            </p>
+            <p>
+                Restoring VMs created using custom images using the replace existing option is unsupported. You cannot use the replace existing restore type with encrypted VMs, VMs that have been created from custom images, generalized VM, or VMs configured with unmanaged disks. If you want to restore these types of VMs, you need to use the create virtual machine or restore backed-up disks options.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms" target="_blank" rel="noopener">Use the Azure portal to restore virtual machines</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-encryption" target="_blank" rel="noopener">Back up and restore encrypted virtual machines with Azure Backup</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction" target="_blank" rel="noopener">Plan your VM backup infrastructure in Azure</a>
+            </p>
+            <p>
+                <a href="https://azure.microsoft.com/en-us/resources/templates/201-vm-os-disk-and-data-disk-existing-vnet/" target="_blank" rel="noopener">Create VM from existing VHDs and connect it to existing VNET</a>
+            </p>
+        </div>
+    </li>
+</ul>

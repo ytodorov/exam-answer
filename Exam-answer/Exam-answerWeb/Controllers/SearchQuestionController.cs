@@ -19,7 +19,7 @@ namespace Exam_answerWeb.Controllers
 
             List<QuestionEntity> allQuestions = DataGenerator.AllExams.SelectMany(e => e.Questions).ToList();
 
-            var result = allQuestions
+            List<QuestionEntity> result = allQuestions
                 .Where(q => q.ContentText.Contains(text, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
             int maxLengthTextInUi = 100;
@@ -28,9 +28,9 @@ namespace Exam_answerWeb.Controllers
 
             List<SearchQuestionOldViewModel> list = new List<SearchQuestionOldViewModel>();
 
-            foreach (var question in result)
+            foreach (QuestionEntity question in result)
             {
-                var sqvm = new SearchQuestionOldViewModel();
+                SearchQuestionOldViewModel sqvm = new SearchQuestionOldViewModel();
                 int index = question.ContentText.IndexOf(text, StringComparison.InvariantCultureIgnoreCase);
                 if (index + maxLengthTextInUi > question.ContentText.Length)
                 {
@@ -41,7 +41,7 @@ namespace Exam_answerWeb.Controllers
                     sqvm.TextInUI = question.ContentText.Substring(index, maxLengthTextInUi);
                 }
 
-                var realOrder = question.Exam.Questions.OrderBy(qs => qs.Order).ToList().IndexOf(question) + 1;
+                int realOrder = question.Exam.Questions.OrderBy(qs => qs.Order).ToList().IndexOf(question) + 1;
 
                 sqvm.Url = $"{baseUrl}/{question.Exam.Provider}/{question.Exam.Code}/question{realOrder}";
                 sqvm.Url = sqvm.Url.ToLowerInvariant();

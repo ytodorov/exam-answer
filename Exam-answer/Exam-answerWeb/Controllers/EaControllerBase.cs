@@ -247,14 +247,14 @@ $@"
                 // Page description should be max 160 chars.
                 List<string> words = new List<string>();
 
-                foreach (var content in questionEntity.Contents)
+                foreach (ContentEntity content in questionEntity.Contents)
                 {
                     words.AddRange(content.Text.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList());
                 }
 
                 StringBuilder pageDescription = new StringBuilder();
 
-                foreach (var w in words)
+                foreach (string w in words)
                 {
                     if (pageDescription.Length + w.Length >= 160)
                     {
@@ -269,7 +269,7 @@ $@"
                 theQuestion.PageDescription = pageDescription.ToString().Trim(); //questionEntity.ContentText;
                 theQuestion.PageCanonicalUrl = canonicalUrl;
                 theQuestion.PageMicrodata = microdata;
-                var view = View("Question", theQuestion);
+                ViewResult view = View("Question", theQuestion);
 
                 //var htmlToCache = view.ToHtml(HttpContext);
                 //bool isMobile = HttpContext.IsMobileBrowser();
@@ -285,13 +285,13 @@ $@"
         }
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            var viewResult = context.Result as ViewResult;
+            ViewResult viewResult = context.Result as ViewResult;
 
             if (viewResult != null)
             {
-                var htmlToCache = viewResult.ToHtml(HttpContext);
+                string htmlToCache = viewResult.ToHtml(HttpContext);
                 bool isMobile = HttpContext.IsMobileBrowser();
-                var statusCode = HttpContext.Response.StatusCode;
+                int statusCode = HttpContext.Response.StatusCode;
                 if (statusCode == StatusCodes.Status200OK)
                 {
                     cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);

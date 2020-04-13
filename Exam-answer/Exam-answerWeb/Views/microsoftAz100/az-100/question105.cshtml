@@ -1,0 +1,105 @@
+﻿<ul class="panelbar">
+    <li class="k-state-active">
+        <span class="k-link k-state-selected">Question @Model?.Id</span>
+        <div>
+            <p>
+                @Html.Raw(Model.H1OpenTag)
+                You need to configure public IP addressing for four infrastructure virtual machines (VMs) that reside on an Azure virtual network (VNet).
+                @Html.Raw(Model.H1CloseTag)
+            </p>
+            <p>
+                @Html.Raw(Model.H2OpenTag)
+                Your solution must meet the following technical and business requirements:
+                @Html.Raw(Model.H2CloseTag)
+            </p>
+            <p>
+                * Minimize the VMs' attack surface
+                <br />
+                * Minimize administrative/maintenance complexity
+                <br />
+                * Minimize cost
+            </p>
+            <p>
+                What should you do?
+            </p>
+        </div>
+    </li>
+    <li class="k-state-active">
+        Answers
+        <div>
+            <p>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign a public IP address to each VM virtual network interface card (vNIC) and use Just-in-Time (JIT) VM Access to reach the VMs.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign a public IP address to an Azure Virtual Private Network (VPN) Gateway and use a public load balancer to reach the VMs.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign a public IP address to each VM and use network security groups (NSGs) to reach the VMs.
+                        </label>
+                    </li>
+                    <li class="correct">
+                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                            Assign a public IP address to a public load balancer and use Network Address Translation (NAT) to reach the VMs.
+                        </label>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        Explanation
+        <div>
+            <p>
+                You should assign a public IP address to a public load balancer and use NAT to reach the VMs. This configuration accomplishes all the scenario goals and adds some additional ones:
+            </p>
+            <p>
+                * Minimizes the number of Azure public IP addresses required                <br />
+                $nsg = Get-AzureRmNetworkSecurityGroup -ResourceGroupName "RG01" -Name "NSG01"
+                <br />
+                * Obfuscates any management ports on the VMs
+                <br />
+                * Load balances traffic across the VMs if they are identically configured
+            </p>
+            <p>
+                You should not assign a public IP address to an Azure VPN Gateway and use a public load balancer to reach the VMs. Doing so requires far more infrastructure, cost, and management overhead than what is required to satisfy the requirements.
+            </p>
+            <p>
+                You should not assign a public IP address to each VM vNIC and use JIT VM Access to reach the VMs. JIT VM Access is a paid Azure Security Center feature that protects VM management ports. However, assigning a public IP address to the VMs potentially exposes other ports to the public Internet.
+            </p>
+            <p>
+                You should not assign a public IP address to each VM and use NSGs to reach the VMs. Deploying public IP addresses needlessly exposes the VMs to the Internet. Moreover, NSG configuration grows complex quickly when you bind them at the vNIC level.
+            </p>
+        </div>
+    </li>
+    <li>
+        References
+        <div>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-ip-addresses-overview-arm" target="_blank" rel="noopener" tabindex="190">IP address types and allocation methods in Azure</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview" target="_blank" rel="noopener" tabindex="190">What is Azure Load Balancer?</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways" target="_blank" rel="noopener" tabindex="190">What is VPN Gateway?</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses" target="_blank" rel="noopener" tabindex="190">Add, change, or remove IP addresses for an Azure network interface</a>
+            </p>
+            <p>
+                <a href="https://docs.microsoft.com/en-us/azure/virtual-network/security-overview" target="_blank" rel="noopener" tabindex="190">Security groups</a>
+            </p>
+        </div>
+    </li>
+</ul>
