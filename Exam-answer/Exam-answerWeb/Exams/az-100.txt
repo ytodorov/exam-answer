@@ -88,7 +88,7 @@ App-RG01 contains the following components:
 * Redis cache deployed in the VNet
 * Standard Load Balancer
 You need to move all resources in App-RG01 to a new resource group named App-RG02.
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+Choose all that apply:
 ---
 You need to delete SSL certificate from each App Service before moving it to the new resource group. *
 You can move the Load Balancer only within the same subscription.
@@ -231,7 +231,7 @@ Your company requires all resources deployed in Azure to be assigned to a cost c
 You use a tag named CostCenter to assign each resource to the correct cost center. This tag has a set of valid values assigned.
 Some of the resources deployed in your subscription already have a value assigned to the CostCenter tag.
 You decide to deploy a subscription policy to verify that all resources in the subscription have a valid value assigned.
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+Choose all that apply:
 ---
 The Deny effect is not evaluated first. *
 The Append effect modifies the value of an existing field in a resource.
@@ -405,89 +405,486 @@ Create, view, and manage activity log alerts using Azure Monitor;https://docs.mi
 Create, view, and manage metric alerts using Azure Monitor;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/alert-metric
 Create and manage action groups in the Azure portal;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups
 ###
+C
+You have a website hosted in Azure App Services that is used globally within your company. The website contains a mixture of dynamic and static content.
+You are asked to put a Content Delivery Network (CDN) in place to optimize the experience for the end users.
+You need to configure the CDN and web app to optimize both dynamic and static content where possible.
+What two actions should you perform? Each correct answer presents part of the solution.
 ---
+Implement general web delivery on the CDN.
+Implement custom caching rules on the CDN. *
+Implement cross origin sharing (CORS) on the website.
+Implement dynamic site acceleration (DSA) on the CDN. *
 ---
+You should implement Dynamic Site Acceleration (DSA) on the CDN. DSA adds support for route optimization, TCP optimizations, object prefetch, and adaptive image compression, all of which provide improved performance for dynamically generated content.
+You should also implement custom caching rules on the CDN to identify the difference between static and dynamic content. DSA cannot cache content because by nature it is dynamic. In this case, if you implement DSA on the CDN, you need to implement custom caching rules to identify the source of static content, which can be cached within the CDN.
+You should not implement general web delivery on the CDN. This will result in caching the static web content but not affect the dynamically generated content.
+You should not implement CORS on the website. This allows scripting elements such as JavaScript to interact with the backend platforms in your environment.
 ---
+Dynamic Site Acceleration via Azure CDN;https://docs.microsoft.com/en-us/azure/cdn/cdn-dynamic-site-acceleration
+Optimize Azure CDN for the type of content delivery;https://docs.microsoft.com/en-us/azure/cdn/cdn-optimization-overview
+Control Azure CDN caching behavior with caching rules;https://docs.microsoft.com/en-us/azure/cdn/cdn-caching-rules
+Using Azure CDN with CORS;https://docs.microsoft.com/en-us/azure/cdn/cdn-cors
 ###
+C
+You are configuring the XML file specifying the data paths to use. This file will configure the export job to control the data exported. Your file currently looks like this:
+<?xml version="1.0" encoding="utf-8"?> 
+<BlobList> 
+<BlobPath>pictures/animals/kangaroo.jpg</BlobPath> 
+<BlobPathPrefix>/vhds/</BlobPathPrefix> 
+<BlobPathPrefix>/movies/dramas</BlobPathPrefix> 
+</BlobList> 
+What will be exported based on the current XML file?
+Choose all that apply:
 ---
+You are configuring the XML file specifying the data paths to use. *
+Everything in the vhds folder will be exported.
+Everything in the dramas folder will be exported.
+Files in the vhds folder but not the subfolders will be exported. *
+Everything in the movies folder beginning with dramas will be exported. *
 ---
+The Azure import export service has an executable process that can be used to configure the import and export jobs. This process is WAImportExport.exe and can take an XML file as input. Looking at the file supplied and what will happen is as follows.
+The <BlobPath> option is used top specify the exact path to a blob file, in this case kangaroo.jpg. This file will be exported.
+The <BlobPathPrefix> option indicates a couple of different scenarios. /vhds/ has a trailing slash, which means that everything inside the folder vhds will be exported, without exclusion. All files and folders will be exported.
+The /movies/dramas path does not have a trailing slash. This syntax means that everything in the movies folder prefixed by the word dramas will be exported. In this case any file and folder starting with dramas as a prefix will be exported.
 ---
+Use the Azure Import/Export service to export data from Azure Blob storage;https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-from-blobs
 ###
+C
+Your company has developed a web application that serves dynamic and static content to users. The application is deployed in several Azure Web Apps in different Azure regions to achieve the best performance.
+The Support department for the web application receives complains from users about poor performance of the application.
+You review the performance of all components of the application and determine that you need to deploy a Content Delivery Network (CDN).
+You need to configure a CDN for achieving the best performance.
+What are two ways that you can configure the CDN? Each correct answer presents a complete solution.
 ---
+Configure a single Azure CDN Premium from Verizon endpoint, configure dynamic site acceleration, and configure caching rules.
+Configure a single Azure CDN Standard from Akamai endpoint, configure dynamic site acceleration, and configure caching rules. *
+Configure a single Azure CDN Standard Microsoft endpoint, configure dynamic site acceleration, and configure caching rules.
+Configure a single Azure CDN Standard from Verizon endpoint, configure dynamic site acceleration, and configure caching rules. *
 ---
+You should configure a single Azure CDN Standard from Akamai or Azure CDN Standard from Verizon endpoint, configure dynamic site acceleration (DSA), and configure caching rules. Dynamic site acceleration improves the performance when delivering dynamic content to end users. For static content, you can create cache rules only for the static content. Enabling caching rules for dynamic content may negatively impact dynamic content. Alternatively, you could create two different CDN endpoints, one endpoint optimized with DSA and another endpoint optimized for static content.
+You should not configure a single Azure CDN Premium from Verizon endpoint, configure dynamic site acceleration, and configure caching rules. Although you can use this hybrid approach with Azure CDN Premium from Verizon endpoints, caching is configured using a rules engine instead of caching rules.
+You should not configure a single Azure CDN Standard Microsoft endpoint, configure dynamic site acceleration, and configure caching rules. This type of CDN endpoint does not allows dynamic site acceleration features.
 ---
+Dynamic site acceleration via Azure CDN;https://docs.microsoft.com/en-us/azure/cdn/cdn-dynamic-site-acceleration
+Compare Azure CDN product features;https://docs.microsoft.com/en-us/azure/cdn/cdn-features
+Control Azure CDN caching behavior with caching rules;https://docs.microsoft.com/en-us/azure/cdn/cdn-caching-rules
+Override HTTP behavior using the Azure CDN rules engine;https://docs.microsoft.com/en-us/azure/cdn/cdn-rules-engine
 ###
+Your company has line-of-business (LOB) application deployed in Azure. This LOB application creates a large amount of information that is stored in a storage account.
+To optimize the costs for storage, the LOB application changes the storage tier from hot to archive for those blobs that will not be needed anymore.
+You are requested to get the information that the LOB application archived. You decide to create an Azure Export job for getting the archived information.
+When creating the export job, you are not able to see the storage account in the list of storage accounts where the data resides.
+Why are you not able to see the storage account in the list?
 ---
+You are using a General Purpose V2 storage account. *
+You are using a General Purpose V1 storage account.
+You are using Azure Files storage.
+You are using a Page Blob.
 ---
+You cannot see the storage account in the list because you are using a General Purpose V2 storage account. Only this kind of storage account has different three types of storage tiers: hot, cool, and archive. General Purpose V2 storage accounts are not supported for the Azure Import/Export Service.
+General Purpose V1 and Page Blobs storage accounts are supported origins of information when configuring an Export job.
+You are not using Azure Files. The LOB application changes the storage tier from hot to archive. This feature is only available on General Purpose V2 storage accounts. Azure Files is not a valid origin of information when configuring an Export job.
 ---
+Use the Azure Import/Export service to export data from Azure Blob; storagehttps://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-from-blobs
+Azure Import/Export system requirements;https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-requirements
+Azure Blob storage: Premium (preview), Hot, Cool, and Archive storage tiers;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers
 ###
+C
+Your on-premises datacenter has a mixture of servers running Windows Server 2012 R2 Datacenter edition and Windows Server 2016 Datacenter edition.
+You need to configure Azure Sync Service between the Azure Files service and the servers in the datacenter.
+Which two activities must you complete to ensure that the service will operate successfully on your servers? Each correct answer presents part of the solution.
 ---
+Disable Internet Explorer Enhanced Security for Admins and Users. *
+Ensure that the PowerShell version deployed to the servers is at minimum version 5.1. *
+Ensure that for fileserver clusters, Azure Active Directory Connect is deployed to at least one server in the cluster.
+Disable Internet Explorer Enhanced Security for Admins only.
+Ensure that the Windows Identity Framework is deployed to all servers.
 ---
+To enable Azure File Sync, you must disable Internet Explorer Enhanced Security for all admin and user accounts.
+Azure File Sync requires a minimum PowerShell version of 5.1. Windows Server 2016 supports that as the minimum default version, but it may have to be installed on Windows Server 2012 R2 servers.
+The Windows Identity Foundation and Azure Active directory connect do not need to be installed on the file servers in the environment. Azure Active Directory Connect is used to synchronize on-premises identities to Azure Active Directory (Azure AD) and so is needed in the overall environment, but not on the file servers.
 ---
+Deploy Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide
+What is Windows Identity Foundation?;https://msdn.microsoft.com/en-us/library/ee748475.aspx
+What is hybrid identity?;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity
 ###
+C
+You are configuring the Azure File Sync service to synchronize data from your Windows Server failover cluster to Azure Files. Your Windows Server failover cluster is currently configured to support the Scale-Out file server for application data operational mode. The Failover Cluster is set up with data deduplication. The server endpoint is located on the system drive.
+The Azure Files Sync service fails to operate on the failover cluster.
+You need to rectify the situation.
+What two actions should you perform? Each correct answer presents part of the solution.
 ---
+Configure the cluster to support clustered shared volumes.
+Move the server endpoint off the system volume.
+Disable the deduplication feature of the Windows clustered file server. *
+Configure the cluster to support File Server for General Use. *
 ---
+With the Azure File Sync service, only certain cluster configuration types are supported. The File Server for General Use type must be configured on the Windows failover cluster. Scale-Out file server is not supported.
+The deduplication feature of the Windows clustered file server must also not be enabled because this is incompatible with the Azure Sync Service.
+Clustered shared volumes must not be enabled because these are incompatible with the Azure Sync Service.
+The server endpoint being mounted to the system volume is not a problem in this scenario. This would only be a problem if cloud tiering was a requirement or if rapid name space restore was needed. Neither is relevant to the question, so moving the endpoint from the system volume would have no effect here.
 ---
+Planning for an Azure File Sync deployment;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
 ###
+Your company has a file server that stores important information. The operating system for this file server is Windows Server 2012 R2 Standard Edition. The information is stored in a separate volume from the system volume. To improve security, the volume that stores corporate information is encrypted using BitLocker.
+Your company wants to centralize the storage of information and improve the flexibility for accessing the information. You decide to use Azure File Sync for achieving this goal.
+You configure an Azure File share and the appropriate firewall rules for allowing access from your company offices.
+After configuring the Sync group, you receive an error about the cloud endpoint creation.
+What is the most likely cause of the error?
 ---
+You forgot to register the file server with Azure File Sync.
+Windows Server 2012 R2 Standard Edition is not supported by the Azure File Sync service.
+You are using firewall rules in the storage account. *
+You are trying to sync an encrypted volume.
 ---
+You are getting the error while creating the cloud endpoint because you are using firewall rules in the storage account. This is not a supported configuration. You cannot use firewall rules or virtual networks with the storage account that will host the synced data from for on-premises file servers.
+You are not getting the error because you forgot to register the file server with Azure File Sync. You can download and install the Azure Storage Sync agent in the file server after configuring the cloud endpoint. Once you install the agent, you need to register the file server with the Azure File Sync service before you can create a server endpoint.
+You are not getting the error because you are using Windows Server 2012 R2 Standard Edition. Windows Server 2012 R2 Standard and Datacenter editions as well as Windows Server 2016 Standard and Datacenter editions are supported operating systems for working with the Azure File Sync service.
+You are not getting the error because you are trying to sync an encrypted volume. Using encrypted disks with BitLocker is a supported configuration.
 ---
+Planning for an Azure File Sync deployment;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
+Deploy Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide
 ###
+C
+Your company deploys an Azure File Sync service. This service syncs with an on-premises file server located on your office. The server stores the information synced with Azure in a volume different from the system volume. The file server has an antivirus solution installed.
+You notice that some infrequently accessed files are downloaded to the file server. After monitoring file system access, you determine that no user is accessing to the affected files.
+You need to troubleshoot what is happening with those files.
+What are two ways of meeting your goal? Each correct answer presents a complete solution.
 ---
+Run the Set-AzureRmStorageSyncServerEndpoint -Id serverendpointid -CloudTiering true -VolumeFreeSpacePercent 60 PowerShell cmdlet.
+Run the Test-NetConnection -ComputerName storage-account-name.file.core.windows.net -Port 443 PowerShell cmdlet.
+Run the fltmc command at an elevated command prompt.
+Review the Application event log. *
+Review the Services\Microsoft\FileSync\Agent event log. *
 ---
+You should review the Application or Services\Microsoft\FileSync\Agent event logs. These diagnostics and operational event logs gathers information about sync, recall, and tiering issues. Since you notice that infrequent accessed files are being downloaded to the file server, this means that you have enabled cloud tiering for this server. When cloud tiering is enabled, the Azure File Sync file system filter replaces the actual file with a pointer to the file in the Azure File share where all the data is stored. When a user access to a tiered file, the file is transparently downloaded to the server. This issue could happen when an antivirus solution is not aware of the offline NTFS attribute in the file. This attribute is set to allow third-party applications to identify tiered files.
+You should not run the fltmc command at an elevated command prompt. You use the fltmc command to list all filesystem filters loaded in the file server. If the StorageSync.sys and StorageSyncGuard.sys file system filter drivers are not loaded, tiered files are not recalled and downloaded again to the file server. This is not the observed behavior.
+You should not run the Test-NetConnection -ComputerName storage-account-name.file.core.windows.net -Port 443 PowerShell cmdlet. You use the Test-NetConnection cmdlet to check the connectivity with a computer. If you use the Fully Qualified Domain Name, you are also checking the DNS resolution. You can check the connectivity to a TCP port if you use the -Port parameter.
+You should not run the Set-AzureRmStorageSyncServerEndpoint -Id serverendpointid -CloudTiering true -VolumeFreeSpacePercent 60 PowerShell cmdlet. You use this cmdlet to enable cloud tiering on a server endpoint. You have already enable cloud tiering on this server.
 ---
+Troubleshoot Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-troubleshoot
+Planning for an Azure File Sync deployment;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
+FLTMC.exe;https://ss64.com/nt/fltmc.html
 ###
+C
+You have a Windows Server 2012 R2 file server deployed in your on-premises infrastructure. You want to deploy a file server hybrid solution. You decide to use Azure File Sync.
+Choose all that apply:
 ---
+You can use cloud tiering with server endpoints on the system volume.
+The Data tiering free space policy apply to each server endpoint individually.
+For tiered files, the media file type will be partially downloaded as needed. *
+The free space policy takes precedence over any other policy. *
+You can sync files in a mount point inside a server endpoint.
 ---
+You cannot use cloud tiering with server endpoints on the system volume. You can create endpoints on the system volume, but those files will not be tiered. This means that all files in the server endpoint will be synced with the configured cloud endpoint.
+The Data tiering free space policy does not apply to each server endpoint individually. You can configure a policy for each server endpoint individually, but the most restrictive free space policy applies to the entire volume. This means that if you configure two server endpoints in the same volume with two distinct policies, for example 20% and 40%, the 40% of free space policy will be applied. The free space tiering policy forces the sync system to start tiering, or moving data to the cloud, when the free space limit is reached. When the sync system tiers a file, it creates a pointer in the file system, and the actual data is moved to Azure. You can still list the tiered file, but the real data is no longer stored on your local disk.
+For tiered files, the media file type will be partially downloaded as needed. When you try to access to a tiered file, it automatically downloads the entire file transparently. The exception is for those file types than can be read even if the data has not been completely downloaded, like media files or zip files.
+The free space policy takes precedence over any other policy. You can configure date and free space policies on the same server endpoint, but the free space policy will always have precedence over the date policy. This means that if you configure a 60-day date policy and a 50% free space policy for the same server endpoint, and the volume reaches 50% of free space, the sync system will tier the files that have been unmodified for more time (coolest files), even if they were modified fewer than 60 days ago.
+You cannot sync files in a mount point inside a server endpoint. You can use a mount point as a server endpoint, but you cannot have mount points inside a server endpoint. In this case, all files in the server endpoint will be synced except those files stored inside each mountpoint in the endpoint.
 ---
+Planning for an Azure File Sync deployment;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
+Cloud Tiering Overview;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-cloud-tiering
 ###
+C
+You have several Windows Server 2012 R2 file servers deployed in your on-premises infrastructure. You want to deploy a file server hybrid solution. You decide to use Azure File Sync with some of your file servers.
+You configure two Azure File Storage accounts for this purpose. You are configuring the Azure File Sync.
+Choose all that apply:
 ---
+You can use more than one Azure file share in the same sync group.
+A server can sync with multiple sync groups.
+Changes made directly on the file share can take up to 24 to be synced. *
+Pre-seeding is the best approach for doing the first synchronization.
 ---
+You cannot use more than one Azure file share in the same sync group. An Azure file share is represented by a cloud endpoint. You can only have one cloud endpoint per sync group. You can add as many server endpoints as you want. You should think of sync groups as the replication hub in the sync process.
+A server can sync with multiple sync groups. You can configure as many server endpoints as you need in a single server and each endpoint can be synced with different sync groups. This means that you can have the same server synced with a different sync group as long as you use different server endpoints. Remember that you cannot use NAS or mounted shares as server endpoints, and tiering will be applied only to those endpoints that are not stored in a system volume.
+Changes made directly on the file share can take up to 24 to be synced. You can make changes directly on an Azure file share that is a member of a sync group, but you should bear in mind that this change will not be effective until the change is discovered by the Azure File Sync change detection job that runs every 24 hours. This means that, in the worst case, a change made directly on the Azure file share can take up to 24 to be synced.
+Pre-seeding is not the best approach for doing the first synchronization. When you onboard with Azure File Sync you typically prefer to have a zero-downtime synchronization. You can achieve this by using only one server that hosts the dataset that you will sync and perform the first synchronization with this server. Once this first synchronization is done, you can add any additional server to the sync group. If you use pre-seeding, you need to manually copy all the datasets to the Azure file share using a mechanism like SMB copy or Robocopy. If you decide to use this method, you need to ensure that you can afford the downtime and that there will not be any changes to the dataset.
 ---
+Deploy Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide?tabs=powershell
 ###
+C
+You have an Azure subscription that contains a storage account.
+Your on-premises environment includes six file servers that host a total of 12 file shares.
+You need to meet the following technical requirements:
+* Requirement 1: Reduce the storage footprint of the on-premises file servers.
+* Requirement 2: Provide fault tolerance for the on-premises file shares.
+* Requirement 3: Secure the hybrid cloud connection with IPSec.
+You plan to configure Azure File Sync.
+Choose all that apply:
 ---
+Azure File Sync meets technical requirement 1. *
+Azure File Sync meets technical requirement 2. *
+Azure File Sync meets technical requirement 3.
 ---
+Azure File Sync meets technical requirement 1. Azure File Sync reduces the storage footprint of the on-premises file servers. Cloud tiering is an Azure File Sync feature that generates a heat map of on-premises file share data and archives infrequently accessed files to the cloud endpoint, thus freeing up local disk storage on your file servers.
+Azure File Sync meets technical requirement 2. Azure File Sync provides fault tolerance for the on-premises file shares. If a file server goes offline, you can easily restore its file shares to another file server simply by reconfiguring your Azure File Sync sync group.
+Azure File Sync does not meet technical requirement 3. Azure File Sync does not secure the hybrid cloud connection with IPSec. Instead, Azure File Sync communicates over Transmission Control Protocol (TCP) 443 using Secure Sockets Layer (SSL). By contrast, IPSec is used with Azure site-to-site virtual private network (VPN) connections.
 ---
+Planning for an Azure File Sync deployment;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
+Deploy Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal
+Create a Site-to-Site connection in the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
 ###
+C
+You have a Microsoft Azure subscription that contains a storage account.
+Your on-premises environment includes six file servers that host a total of 12 file shares. These file shares are consolidated in a Distributed File System Replication (DFS-R) configuration.
+You plan to deploy Azure File Sync to centralize the distributed file shares in Azure and to enable cloud tiering. You configure Azure File Sync as follows:
+* Two Storage Sync Service instances with 6 file servers in each instance
+* Four Sync Groups
+* Two cloud endpoints
+Choose all that apply:
 ---
+All servers in the topology can sync with each other
+The topology requires six registered servers. *
+You need to decommission the DFS-R environment before enabling Azure File Sync
 ---
+All servers in the topology cannot sync with each other because your topology includes two Storage Sync Service instances. Only servers registered within a single Storage Sync Service instance and Sync Group can sync with each other.
+The topology requires six registered servers. You need to install the Azure File Sync agent on every local file server and register each with its respective Sync Group.
+You do not need to decommission the DFS-R environment before enabling Azure File Sync because Azure File Sync supports DFS-R environments.
 ---
+Planning for an Azure File Sync deployment;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-planning
+Deploy Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal
 ###
+You are asked to configure an Azure storage account to be accessible from only one specific Virtual Network in an Azure Virtual Network (VNet). It must not be accessible from any other network or region in use across your company's Azure subscription.
+You need to implement this requirement.
+What should you do?
 ---
+Add a network security group.
+Create a VNet service endpoint. *
+Deploy Azure Traffic Manager.
+Activate the Secure transfer required option.
 ---
+You should implement a VNet service endpoint. Service endpoints are used to limit the network access to a specific set of resources. To meet the requirement, you can implement a storage endpoint on an Azure Resource Manager deployed storage account to restrict the access to a specific VNet and exclude access from all other resources including the Internet and on-premises connected resources.
+You should not add a network security group. This is used to limit the access to the resources within a VNet by implementing rules such as IP filters and role based access control. It cannot restrict access to a storage account by itself.
+You should not deploy Azure Traffic Manager. This is used to control the flow of network traffic into and out of Azure networks. It cannot restrict access to a storage account by itself.
+You should not activate the Secure transfer required option. This feature forces all the traffic into and out of the storage account to be secured over HTTPS instead of allowing fallback to HTTP.
 ---
+Virtual Network Service Endpoints;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+Traffic Manager;https://docs.microsoft.com/en-us/azure/traffic-manager/
+Require secure transfer in Azure Storage;https://docs.microsoft.com/en-gb/azure/storage/common/storage-require-secure-transfer
 ###
+C
+You manage several Windows Server virtual machines (VMs) located in a virtual network (VNet) named prod-vnet. These VMs are used internally by development staff and are not accessible from the Internet.
+You need to provide your development staff with secure access to object and table data to support their Azure-based applications. The storage account data reside in Azure, but must not be exposed to the Internet.
+What two actions should you perform? Each correct answer presents part of the solution.
 ---
+Configure a service endpoint. *
+Deploy a blob storage account.
+Deploy an Azure File Sync sync group.
+Configure a point-to-site (P2S) virtual private network (VPN).
+Deploy a general-purpose storage account. *
+Configure an Azure Content Delivery Network (CDN)profile.
 ---
+You should deploy a general-purpose storage account, and then configure a service endpoint. A general-purpose storage account consists of four services, two of which are called for in the scenario:
+* Binary large object (blob) object storage
+* Table (key-value pair) storage
+* Queue (messaging) storage
+* File (Server Message Block (SMB) file share) storage
+Service endpoints allow you to bind certain Azure services, including storage accounts and Azure SQL Databases, to a VNet in order to restrict their access. In this scenario, you would create a service endpoint on prod-vnet to allow the Microsoft.Storage resource provider access. You would then complete the configuration by associating the storage account with the target VNet.
+You should not deploy a blob storage account because a blob storage account has only one service and the scenario requires both object and table storage to support your developers. The blob storage account includes access tiers that save costs on cool and cold storage (archival) for block blobs such as documents or media files.
+You should not deploy an Azure File Sync sync group. Azure File Sync is a mechanism to offer tiered and synchronized storage for on-premises Server Message Block (SMB) file shares. This feature meets none of the scenario's requirements.
+You should not configure a CDN profile. CDN profiles are used in conjunction with Azure App Service web applications to deliver static website assets to worldwide customers with low latency.
+You should not configure a P2S VPN. A P2S VPN is appropriate when you need to give individual users a secure connection to an Azure VNet. In this case you are concerned with providing secure access from the VNet to a storage account.
 ---
+Introduction to Azure Storage;https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction
+
+Virtual Network Service Endpoints;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview
+
+What is a content delivery network on Azure?;https://docs.microsoft.com/en-us/azure/cdn/cdn-overview
+
+About Point-to-Site VPN;https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about
+
+Deploy Azure File Sync;https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal
 ###
+You create a binary large object (blob) storage account named reportstorage99 that contains archival reports from past corporate board meetings.
+
+A board member requests access to a specific report. The member does not have an Azure Active Directory (Azure AD) user account. Moreover, he has access only to a web browser on his Google Chromebook device.
+
+You need to provide the board member with least-privilege access to the requested report while maintaining security compliance and minimizing administrative overhead.
+
+What should you do?
 ---
+Create an Azure AD account for the board member and grant him role-based access control (RBAC) access to the storage account.
+Deploy a point-to-site virtual private network (VPN)connection on the board member's Chromebook and grant the board member role-based access control (RBAC) access to the report.
+Copy the report to an Azure File Service share and provide the board member with a PowerShell connection script.
+Generate a shared access signature (SAS) token for the report and share the Uniform Resource Locator (URL) with the board member. *
 ---
+You should generate an SAS token for the report and share the URL with the board member. SAS enables you to define time-limited read-only or read-write access to Azure storage account resources. It is important that you set the time restriction properly because the SAS includes no authentication. Any person with access to the URL can access the target resource(s) within the token's lifetime.  In this case, you both minimize administrative effort as well as maintain security compliance because the SAS token points only to a single file, not the entire blob container that hosts the requested report.
+
+You should not create an Azure AD account for the board member and grant him RBAC access to the storage account. First, it requires significant management overhead to create and manage Azure AD accounts, even for external (guest) users. Second, SAS and not RBAC is the way Azure provides screened access to individual storage account resources. You can use RBAC roles only at the storage account scope.
+
+You should not copy the report to an Azure File Service share and provide the board member with a PowerShell connection script. Here you create security and governance problems by creating multiple copies of the source report, as well as producing unnecessary administrative complexity.
+
+You should not deploy a point-to-site (P2S) VPN connection on the board member's Chromebook and grant the board member RBAC access to the report. The scenario stipulates that the board member is limited to using a web browser on his Chromebook. Furthermore, the Azure P2S VPN client is supported only on Windows, macOS, and endorsed Linux distributions. Chrome OS is not supported.
 ---
+
+Using shared access signatures (SAS);https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1
+
+Manage access for external users using RBAC;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-external-users
+
+What is Azure Files?;https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction
+
+About Point-to-Site VPN;https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about
 ###
+The development team asks you to provision an Azure storage account for their use.
+
+To remain in compliance with IT security policy, you need to ensure that the new Azure storage account meets the following requirements:
+
+* Data must be encrypted at rest.
+* Access keys must facilitate automatic rotation.
+* The company must manage the access keys.
+
+What should you do?
 ---
+Require secure transfer for the storage account.
+Enable Storage Service Encryption (SSE) on the storage account.
+Create a service endpoint between the storage account and a virtual network (VNet).
+Configure the storage account to store its keys in Azure Key Vault. *
 ---
+You should configure the storage account to store its keys in Azure Key Vault. Azure Key Vault provides a mechanism to store secrets, such as storage account keys, user credentials, and digital certificates, securely in the Microsoft Azure cloud. You can access the underlying Representational State Transfer (REST) application programming interface (API) to rotate or retrieve the secrets in your source code.
+
+You should not enable SSE on the storage account for two reasons. First, SSE is enabled automatically on all Azure storage accounts and encrypts all storage account data at rest. Second, SSE in its native form uses Microsoft-managed access keys, which violates the scenario constraint for customer-managed keys.
+
+You should not require secure transfer for the storage account. Secure transfer forces all REST API calls to use HTTPS instead of HTTP. This feature has nothing to do with either access keys or their management and rotation.
+
+You should not create a service endpoint between the storage account and a VNet. A service endpoint allows you limit traffic to a storage account from resources residing on an Azure VNet.
 ---
+Storage Service Encryption using customer-managed keys in Azure Key Vault;https://docs.microsoft.com/en-us/azure/storage/common/storage-service-encryption-customer-managed-keys
+Azure Storage Service Encryption for Data at Rest;https://docs.microsoft.com/en-us/azure/storage/common/storage-service-encryption
+Require secure transfer in Azure Storage;https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer
+Virtual Network Service Endpoints;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview
 ###
+C
+Your company is developing a .NET application that stores part of the information in an Azure Storage Account. The application will be installed on end user computers.
+
+You need to ensure that the information stored in the Storage Account is accessed in a secure way. You ask the developers to use a shared access signature (SAS) when accessing the information in the Storage Account. You need to make the required configurations on the storage account to follow security best practices.
+
+Choose all that apply:
 ---
+You need to configure a stored access policy. *
+You should set the SAS start time to now.
+You should validate data written using SAS. *
+One option for revoking a SAS is by deleting a stored access policy. *
 ---
+You need to configure a stored access policy. When you use SAS, you have two different options. You can either use ad-hoc SAS or configure a stored access policy. By using ad-hoc SAS, you specify the start time, expiration time, and permission in the URI. If someone copies this URI, they will have the same level of access as the corresponding user. This means that this type of SAS can be used by anyone in the world. By configuring a stored access policy, you define the start time, expiration time, and permissions in the policy and then associate a SAS with the policy. You can associate more than one SAS with the same policy.
+
+You should not set the SAS start time to now. When you set the start time of a SAS to now, there can be subtle differences in the clock of the servers that host the Storage Account. These differences could lead to an access problem for a few minutes after the configuration. If you need your SAS to be available as soon as possible, you should set the start time 15 minutes before the current time, or you can just not set the start time. Not setting the start time parameter means that the SAS will be active immediately.
+
+You should validate data written using SAS. The information written to the storage account when the user uses a SAS can cause problems, such as communication issues or corruption. Because of this, it is a best practice to validate the data written to the storage account after it is written and before the information is used by any other service or application.
+
+You can revoke a SAS by deleting a stored access policy. If you associate a SAS with a stored access policy, the start time, expiration time, and permission are inherited from the policy. If you remove the policy, you are invalidating the SAS and thus making it unusable. Keep in mind that if you remove a stored access policy with associated SAS and then create another stored access policy with the exact same name as the original policy, the associated SAS will be enabled again.
 ---
+
+Using shared access signatures (SAS);https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1
 ###
+Your company wants to configure a storage account.
+
+You need to ensure that the storage is available in case of failure of an entire datacenter. You also need to move the data to different access tiers depending on the frequency of access. Your solution needs to be the most cost-effective.
+
+What type of storage should you configure?
 ---
+Read-Access Geo Redundant Storage (RA-GRS)
+Geo Redundant Storage (GRS)
+Local Redundant Storage (LRS)
+Zone Redundant Storage (ZRS) *
 ---
+You should configure a storage account with ZRS replication. This type of replication makes a synchronous copy of the data between three different availability zones in the same region. Each availability zone is autonomous from the others and has separate networking and utility features. Because you also need to be able to move data between different access tiers based on the data access frequency, you need to configure a General Purpose v2 storage account. This is the most cost-effective solution.
+
+You should not configure the storage account with LRS replication. This type of replication makes a copy of the data between different storage scale units inside the same datacenter. This type of replication is not resilient to a datacenter failure.
+
+You should not configure the storage account with GRS or RA-GRS. This type of replication makes your data available in case of a datacenter or regional failure. This type of replication makes your data resilient to a datacenter failure but is not the most cost-effective solution.
 ---
+
+Azure Storage replication;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
 ###
+C
+You have performed a lift and shifted migration of several Windows Servers to Azure Infrastructure as a Service (IaasS).
+
+You need to configure the servers to support Azure Backup.
+
+What are two ways of achieving your goal? Each correct answer presents a complete solution.
 ---
+Execute the Backup-AzureRmBackupItem PowerShell cmdlet.
+Install the Azure VM Agent on the migrated VMs. *
+Install the Azure VM Backup Agent on the migrated VMs. *
+Enable Backup via the Backup Blade in the Azure VM Configuration Panel.
 ---
+When you lift and shift VMs from on premises to Azure IaaS, the VMs do not have the prerequisites to setup backup operations in Azure. Before you can setup backup operations, you have to perform one of two actions.
+
+You can install the Azure VM Agent on the migrated VMs. This will also deploy the Azure VM Backup Agent on the VMs by default. You can also manually deploy the Azure VM Backup Agent on the migrated VMs. Both options will result in a VM that can be configured for Azure VM Backup protection.
+
+You should not enable Backup via the Backup Blade in the Azure VM Configuration Panel. This option cannot be used unless the VM already have the Backup Agent deployed first.
+
+You should not execute the Backup-AzureRmBackupItem cmdlet. This cmdlet can run a non-policy based backup activity but also requires the Azure Backup Agent to have been deployed on the VM being targeted for backup.
 ---
+
+Back up a Windows Server or client to Azure using the Resource Manager deployment model;https://docs.microsoft.com/en-us/azure/backup/backup-configure-vault
+
+Back up VMs to Recovery Services vault;https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm
+
+Backup-AzureRmBackupItem;https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/backup-azurermbackupitem
 ###
+You are tasked with managing the corporate Microsoft Azure subscription. Presently, a site-to-site virtual private network (VPN) connects the company's on-premises network infrastructure to a virtual network (VNet) named prod-vnet.
+
+You need to implement a backup strategy for nine virtual machines (VMs) located on prod-vnet.
+
+What should you do first?
 ---
+Define an Azure Site Recovery (ASR) recovery plan.
+Deploy Azure Backup Server in your on-premises environment.
+Create a Recovery Services vault. *
+Install the VM Backup extension on the Azure-based VMs.
 ---
+The first thing you should do is create a Recovery Services vault in Azure. The Recovery Services vault is a Microsoft-managed disaster backup repository that is used both by Azure VM Backup and Azure Site Recovery (ASR).
+
+You do not need to install the VM Backup extension on the Azure-based VMs. Azure automatically distributes the VM extension to any VMs that you associate with a Recovery Services vault.
+
+You should not deploy Azure Backup Server in your on-premises environment. Azure Backup Server is a specialized edition of System Center Data Protection Manager (DPM) and is used to back up on-premises workloads to Azure.
+
+You should not define an ASR recovery plan. ASR is a migration and data replication feature, and is not used for a basic backup and restore disaster recovery (DR) scenario.
 ---
+Back up Azure virtual machines to Recovery Services vault;https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm
+
+Prepare to back up Azure VMs;https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare
+
+Install and upgrade Azure Backup Server;https://docs.microsoft.com/en-us/azure/backup/backup-azure-microsoft-azure-backup
+
+Create and customize recovery plans;https://docs.microsoft.com/en-us/azure/site-recovery/site-recovery-create-recovery-plans
 ###
+You back up all Azure-based virtual machines (VMs) to a Recovery Services vault. One of these VMs is a Windows Server 2016 domain member server named app1 that hosts an internally developed line of business (LOB) web application.
+
+A developer informs you that she needs to review three-month-old log files stored on app1. You need to retrieve these files as efficiently as possible.
+
+What should you do?
 ---
+Download the appropriate virtual hard disk (VHD) files from the Recovery Services vault to your administrative workstation.
+Retrieve the files from the appropriate backed-up virtual hard disks (VHDs) by using Azure Storage Explorer.
+Mount the virtual hard disks (VHDs) from the relevant VM backup as drives on your administrative workstation. *
+Make a Remote Desktop Protocol (RDP) connection to app1 and use the Previous Versions feature to restore the requested log files.
 ---
+To retrieve the old log files as efficiently as possible, you should use Azure File Recovery to mount the backed-up VHDs as drives on your administrative workstation. The process works like this:
+
+* In the Recovery Services vault, start File Recovery.
+* Select the appropriate recovery point.
+* Download and run the provided PowerShell script. The script mounts the operating system and data VHDs as local drives on your administrative system.
+* Retrieve the necessary files from the app1 file system.
+* Disconnect the network drive mappings.
+
+You should not download the appropriate VHD files from the Recovery Services vault to your administrative workstation. Azure File Recovery makes this step unnecessary. Likewise, you should not have to restore the VHDs or the entire VM to an alternate location in order to recover individual files from its file system.
+
+You should not retrieve the files from the appropriate backed-up VHDs by using Azure Storage Explorer. Storage Explorer is a cross-platform desktop application that makes it easy to interact with Azure storage accounts. Recovery Services vaults do not expose their contents to Storage Explorer.
+
+You should not make an RDP connection to app1 and use the Previous Versions feature to restore the requested log files. First, you need to work as efficiently as possible. Second, there is no guarantee that the server's current run state has three months' worth of log files.
 ---
+
+Recover files from Azure virtual machine backup;https://docs.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm
+
+Recovery Services vaults overview;https://docs.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview
+
+Get started with Storage Explorer;https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows
+
+Tip: Create and Restore Shadow Copies on Windows Server 2008;https://technet.microsoft.com/en-us/library/dd637757.aspx
 ###
 ---
 ---

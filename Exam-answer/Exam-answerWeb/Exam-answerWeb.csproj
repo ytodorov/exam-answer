@@ -1438,9 +1438,6 @@
     <None Update="Exams\AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Exams\az100Text - Copy.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Exams\Salesforce-Certified-Field-Service-Lightning-Consultant.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -40,6 +40,14 @@ namespace UnitTests
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/crt-251/question{i}");
                 }
             }
+
+            using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
+            {
+                for (int i = 1; i < 41; i++)
+                {
+                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-900/question{i}");
+                }
+            }
         }
 
         // [Fact]
