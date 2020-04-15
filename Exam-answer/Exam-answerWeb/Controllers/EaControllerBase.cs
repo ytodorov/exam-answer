@@ -89,6 +89,11 @@ namespace Exam_answerWeb.Controllers
                 ViewData["imageUrl"] = "images/az-900.png";
                 ViewData["imageAlt"] = $"{examViewModel.Provider}, {examViewModel.Code}: {examViewModel.Name}";
             }
+            else if (examViewModel.Code?.Equals("AZ-100", StringComparison.InvariantCultureIgnoreCase) == true)
+            {
+                ViewData["imageUrl"] = "images/az-100.png";
+                ViewData["imageAlt"] = $"{examViewModel.Provider}, {examViewModel.Code}: {examViewModel.Name}";
+            }
 
             string cd = Environment.CurrentDirectory;
 

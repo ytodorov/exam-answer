@@ -886,117 +886,823 @@ Get started with Storage Explorer;https://docs.microsoft.com/en-us/azure/vs-azur
 
 Tip: Create and Restore Shadow Copies on Windows Server 2008;https://technet.microsoft.com/en-us/library/dd637757.aspx
 ###
+You have an Azure resource group named RG1. RG1 contains a Linux virtual machine (VM) named VM1.
+
+You need to automate the deployment of 20 additional Linux VMs. The new VMs should be based upon VM1's configuration.
+
+Solution: From the virtual machine's Automation script blade, you click Deploy.
+
+Does this solution meet the goal?
 ---
+No
+Yes *
 ---
+The solution meets the goal. Every deployment in Azure is described in a template in JavaScript Object Notation (JSON) format. You can access the underlying template from the Automation script blade of the VM resource, and can then deploy multiple new instances of a resource by modifying the template parameters. Optionally, you can store customized Azure Resource Manager templates directly in the Azure portal from the Templates blade.
 ---
+
+Deploy resources with Resource Manager templates and Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal
+
+Download the template for a VM;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/download-template
+
+Create a Windows virtual machine from a Resource Manager template;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template
 ###
+You have an Azure resource group named RG1. RG1 contains a Linux virtual machine (VM) named VM1.
+
+You need to automate the deployment of 20 additional Linux VMs. The new VMs should be based upon VM1's configuration.
+
+Solution: From the Templates blade, you click Add.
+
+Does this solution meet the goal?
 ---
+No
+Yes *
 ---
+The solution meets the goal. The Templates blade in the Azure portal enables you to store JavaScript Object Notation (JSON) documents that automate Azure resource deployment. In this case, you could store the Linux VM properties in a template and deploy the 20 additional VMs simply by editing the template parameter values for each additional VM.
 ---
+
+Deploy resources with Resource Manager templates and Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal
+
+Download the template for a VM;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/download-template
+
+Create a Windows virtual machine from a Resource Manager template;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template
+
+Quickstart: Create and deploy Azure Resource Manager templates by using the Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal
 ###
+You have an Azure resource group named RG1. RG1 contains a Linux virtual machine (VM) named VM1.
+
+You need to automate the deployment of 20 additional Linux VMs. The new VMs should be based upon VM1's configuration.
+
+Solution: From the resource group's Policies blade, you click Assign policy.
+
+Does this solution meet the goal?
 ---
+No *
+Yes
 ---
+This solution does not meet the goal. To automate the deployment of the 20 additional VMs, you should access the virtual machine's underlying JavaScript Object Notation (JSON) template and deploy the new resources by using the template and custom deployment parameters. By contrast, Azure Policy is a governance product that makes it easier for Azure administrators to constrain deployments to meet organizational requirements. For example, you could deploy an Azure policy that requires all resource deployments to occur within only company-authorized geographic locations.
 ---
+
+Deploy resources with Resource Manager templates and Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal
+
+Download the template for a VM;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/download-template
+
+Create a Windows virtual machine from a Resource Manager template;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template
+
+What is Azure Policy?;https://docs.microsoft.com/en-us/azure/governance/policy/overview
 ###
+You manage a Windows Server 2016 virtual machine (VM) named VM1.
+
+You need to configure an additional public IPv4 address for VM1.
+
+Solution: From the VM's Networking blade, you click Attach network interface.
+
+Does this solution meet the goal?
+
+Complete the Case Study
 ---
+No *
+Yes
 ---
+This solution does not meet the goal. You can configure multiple public and private IP addresses to an Azure VM by modifying the IP configuration of its bound virtual network interface card. Because a network interface card can have more than one IP configuration, in this case you should add a second configuration and configure a new static IP address to that new configuration. Simply attaching another network interface does not guarantee that the additional interface has a public IP address associated with it.
 ---
+
+Add network interfaces to or remove network interfaces from virtual machines;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm
+
+Assign multiple IP addresses to virtual machines using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-multiple-ip-addresses-portal
+
+Add, change, or remove IP addresses for an Azure network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses
 ###
+You manage a Windows Server 2016 virtual machine (VM) named VM1.
+
+You need to configure an additional public IPv4 address for VM1.
+
+Solution: From the network interface's IP configurations blade, you click Add.
+
+Does this solution meet the goal?
 ---
+No
+Yes *
 ---
+This solution meets the goal. You configure IP addresses for Azure VMs by modifying the IP configuration(s) of one or more associated virtual network interfaces. Each network interface has a single IP configuration, but you can include additional configurations with additional public and private IP addresses if the VM has more complex virtual network addressing or routing requirements. Azure allows both Windows Server and Linux VMs to have more than one virtual network card and therefore reside on multiple subnets within the same virtual network.
 ---
+
+Add network interfaces to or remove network interfaces from virtual machines;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm
+
+Assign multiple IP addresses to virtual machines using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-multiple-ip-addresses-portal
+
+Add, change, or remove IP addresses for an Azure network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses
 ###
+You manage a Windows Server 2016 virtual machine (VM) named VM1.
+
+You need to configure an additional public IPv4 address for VM1.
+
+Solution: From the virtual machine's Extensions blade, you click Add.
+
+Does this solution meet the goal?
 ---
+No *
+Yes
 ---
+This solution does not meet the goal. To add another public IP address to the VM, you should add a second IP configuration to the network interface associated with VM1 and configure a public IP address. By contrast, VM extensions are software agents that broaden the capabilities of Windows Server and Linux VMs running in Azure. Extensions are not related to IP address assignment.
 ---
+
+Add network interfaces to or remove network interfaces from virtual machines;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm
+
+Assign multiple IP addresses to virtual machines using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-multiple-ip-addresses-portal
+
+Add, change, or remove IP addresses for an Azure network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses
+
+Virtual machine extensions and features for Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/features-windows
 ###
+Your company has two Azure subscriptions, subsA and subsB, for different lines of business. Each subscription has its own Azure Active Directory (Azure AD) tenant assigned.
+
+You have a virtual machine (VM) deployed in the subsA subscription, in a resource group named RG-A1. You attempt to move the VM to another resource group named RG-B2 that is configured in the subsB subscription.
+
+While you are trying to move the VM, you get an error.
+
+You need to identify the cause of the error so you can move the VM.
+
+What is the most likely cause?
 ---
+The subscriptions are in different Azure AD tenants. *
+The VM is a classic VM.
+The VM has managed disks configured.
+The destination resource group is in a different subscription.
 ---
+You cannot move the VM because the subscriptions are in different Azure AD tenants. One of the prerequisites for being able to move a resource between different subscriptions or resource groups is that the source and destination subscriptions need to exist in the same Azure AD tenant. You need to transfer the ownership of one of the subscriptions to the other Azure AD tenant before you will be able to move the VM.
+
+You can move classic VMs between resource groups or subscriptions. Moving this type of VM has some restrictions. The cloud service associated with the VM needs to be moved with the VM, and all VMs in a cloud service need to be moved together. However, moving classic VMs is still technically possible.
+
+It is true that you cannot move a VM if it has managed disks configured, but in this situation, you cannot make the move because of the different Azure AD tenants, not the managed disks.
+
+You can move resources between resources groups in different subscriptions. As long as the source and destination subscriptions exist within the same Azure AD tenant, and the destination resource group exists prior to the move, this operation is allowed.
 ---
+Move resources to new resource group or subscription;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-move-resources
+Move a Windows VM to another Azure subscription or resource group;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/move-vm
 ###
+Your company has an Azure subscription with some virtual machines (VMs) deployed. One of these VMs is used by the development team for testing purposes.
+
+You receive a call from the development team stating that they are not able to access the VM. After doing some troubleshooting and resetting the Remote Desktop Protocol (RDP) configuration, you decide to redeploy the VM.
+
+You need to use PowerShell to redeploy the VM.
+
+Which cmdlet should you use?
 ---
+Set-AzureRmVM *
+New-AzureRmVMConfig
+Remove-AzureRmVM
+Restart-AzureRmVM
+Update-AzureRmVM
 ---
+You should use the Set-AzureRmVM cmdlet with the -Redeploy switch. You need to provide the resource group name and the VM name that you want to redeploy.
+
+You should not use the Update-AzureRmVM cmdlet. You use this cmdlet for updating the state of a VM to the values stored in a VM object that you can usually get using the Get-Azure RmVM cmdlet.
+
+You should not use the Restart-AzureRmVM cmdlet. This cmdlet will restart the VM. Restarting a VM does not redeploy it to a new host.
+
+You should not use the New-AzureRmVMConfig cmdlet. This cmdlet is intended for a creating new VM object configuration that you can use with other cmdlets.
+
+You should not use the Remove-AzureRmVM cmdlet. You typically use this cmdlet when you want to remove a VM from Azure.
 ---
+
+Set-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/set-azurermvm
+
+Restart-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/restart-azurermvm
+
+Remove-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/remove-azurermvm
+
+Update-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/update-azurermvm
+
+New-AzureRmVMConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvmconfig
 ###
+C
+You have a Windows Server 2012 R2 virtual machine (VM) that is experiencing connectivity issues. You are not able to connect to the VM using Remote Desktop (RDP).
+
+You need to move the VM to a different node inside the Azure infrastructure.
+
+Which two commands can you use? Each correct answer presents a complete solution.
 ---
+az vm redeploy *
+az vm deallocate
+New-AzureRmVM
+Update-AzureRmVM
+Set-AzureRmVM *
+az vm convert
 ---
+You can use either the az vm redeploy command or the Set-AzureRmVm cmdlet to redeploy a VM. When you redeploy a VM, Azure tries to gracefully shutdown the VM and move it to another node inside the Azure Infrastructure. Azure copies all the current settings for the VM to the new location. This operation helps when you are experiencing connectivity issues with your VM and you are not able to connect to the VM using RDP or SSH.
+
+You should not use the az vm deallocate Azure CLI command. This command shuts down the VM and disconnects all compute resources from the VM. You are not billed for deallocated VMs.
+
+You should not use the az vm convert Azure CLI command. You use this command when you want to convert unmanaged disks in a VM to managed disks.
+
+You should not use the Update-AzureRmVM cmdlet. This cmdlet updates the state of a VM. You use this cmdlet when you want to update the properties of the VM. This cmdlet does not redeploy the VM.
+
+You should not use the New-AzureRmVM cmdlet. This cmdlet creates a new VM but does not redeploy an existing VM to a new node in the Azure infrastructure.
 ---
+
+az vm;https://docs.microsoft.com/en-us/cli/azure/vm
+
+Set-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/set-azurermvm
+
+Redeploy Windows virtual machine to new Azure node;https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/redeploy-to-new-node-windows
+
+Net-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvm
+
+Update-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/update-azurermvm
 ###
+Your company purchases a new application and is planning to deploy it in Azure. The application requires Windows Server 2016. It also requires high-availability, so it will be deployed using a scalability set.
+
+You are asked to prepare the virtual machine (VM) to automatically deploy all needed requirements for the application to run. You decide to use a custom script extension.
+
+Before deploying the custom script, you test it and ensure that the script runs with no errors in the local environment. You store the script and some dependencies needed for the application in a blob storage account.
+
+While you are testing automatic deployment, you realize that the custom script is not running.
+
+What is the reason for the custom script not running?
 ---
+The operation is taking more than 90 minutes.
+You need to add an entry in the Network Security Group (NSG). *
+You need to configure a proxy server for the custom script.
+You need to sign the script.
 ---
+Your custom script is failing to run because you need to add an entry in the NSG. By default, communication with external systems are restricted. If you store your script in any external resource, like Azure Storage, Github, or a local server, you need to configure the firewall/NSG.
+
+Your custom script is not failing to run because you need to sign the script. You can invoke your custom script by using the following command:
+
+powershell -ExecutionPolicy Unrestricted -File your-custom-script.ps1
+
+Your script is failing to run because the resource manager is not able to access to it due to communication restrictions.
+
+Your custom script is not failing to run because the operation is taking more than 90 minutes. The issue is that the script is not able to run at all because the resource manager is not able to access it due to communication restrictions.
+
+Your custom script is not failing to run because you need to configure a proxy server for the custom script. A custom script does not support proxy settings. If you need to use a proxy for connecting to an external resource, you can use third-party applications like curl.
+
 ---
+
+Custom Script Extension for Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows
+
+Tutorial - Deploy applications to a Windows virtual machine in Azure with the Custom Script Extension;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-automate-vm-deployment
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
 ###
+Last month you deployed an Ubuntu Linux server virtual machine (VM) named linux1 to a virtual network (VNet) in Azure.
+
+Today, you need to perform emergency remote management of linux1 from your Windows 10 Enterprise Edition workstation. Your solution must minimize both setup time and administrative effort.
+
+What should you do?
 ---
+Connect to the VM by using Secure Shell (SSH) and Azure Cloud Shell. *
+Connect to the VM by using Secure Shell (SSH) and Windows Subsystem for Linux.
+Connect to the VM by using Remote Desktop Protocol (RDP) and PowerShell Core 6.0.
+Connect to the VM by using Remote Desktop Protocol (RDP) and Remote Desktop Connection.
 ---
+You should connect to the VM by using SSH and Azure Cloud Shell. SSH is the default protocol for remote Linux server management. Azure Cloud Shell is a browser-based command shell that gives you access to SSH and a variety of other Azure management tools. In this situation time is of the essence. Therefore, logging into the Azure portal, starting a Cloud Shell, and making an SSH-based connection to linux1 meets all scenario requirements.
+
+You should not connect to the VM by using SSH and Windows Subsystem for Linux. The feature is available in Windows 10 Pro, Education, or Enterprise, and allows you to run native Linux commands directly on Windows. However, Windows Subsystem for Linux is not installed by default, and taking the time to install and configure the feature violates the scenario requirements for minimized setup time and administrative overhead.
+
+You should not connect to the VM by using RDP and Remote Desktop Connection. While it is true that you can install an RDP server on Linux VMs running in Azure, this is not a default configuration and requires too much time and management effort.
+
+You should not connect to the VM by using RDP and PowerShell Core 6.0. PowerShell Core 6.0 is available on Linux VMs deployed in Azure from the Azure Marketplace. However, the two in-box PowerShell remote management protocols are Web Services-Management (WS-Man) and SSH, not RDP.
 ---
+
+Overview of Azure Cloud Shell;https://docs.microsoft.com/en-us/azure/cloud-shell/overview
+
+Windows 10 Installation Guide;https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
+How to connect and log on to an Azure virtual machine running Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/connect-logon
+
+PowerShell Remoting Over SSH;https://docs.microsoft.com/en-us/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core?view=powershell-6
 ###
+Your company's Azure environment consists of the following resources:
+
+* 4 virtual networks (VNets)
+* 48 Windows Server and Linux virtual machines (VMs)
+* 6 general purpose storage accounts
+
+You need to design a universal monitoring solution that enables you to query across all diagnostic and telemetry data emitted by your resources.
+
+What should you do first?
 ---
+Activate resource diagnostic settings.
+Create a Log Analytics workspace. *
+Install the Microsoft Monitoring Agent.
+Enable Network Watcher.
 ---
+You should create a Log Analytics workspace. Azure Log Analytics is the central resource monitoring platform in Azure. The Log Analytics workspace is the data warehouse to which associated resources send their telemetry data. Azure Log Analytics has its own query language with which you can generate reports that stretch across all your Azure deployments and management solutions.
+
+You should not install the Microsoft Monitoring Agent (MMA). This agent is indeed required to associate Windows physical and virtual servers (on-premises and in Azure). However, Log Analytics automatically deploys the MMA to your Azure virtual machines when you onboard them to your Log Analytics workspace.
+
+You should not enable Network Watcher. Network Watcher is a virtual network diagnostics platform. While you can link Network Watcher to Azure Log Analytics, you still need to create the Log Analytics workspace first.
+
+You should not activate resource diagnostic settings. Before Microsoft developed Log Analytics, administrators were required to configure diagnostic settings on a per-resource level. This is no longer necessary because Microsoft Monitoring Agent configures nodes to send their diagnostics logs to a Log Analytics workspace.
 ---
+
+Create a Log Analytics workspace in the Azure portal;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-create-workspace
+
+Analyze Log Analytics data in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview
+
+Connect Windows computers to the Log Analytics service in Azure;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-agent-windows
+
+Create an Azure Network Watcher instance;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-create
+
+Collect and consume log data from your Azure resources;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs
 ###
+Your company's Azure environment consists of two virtual networks (VNets) arranged in the following topology:
+
+* prod-vnet: 9 virtual machines (VMs)
+* dev-vnet: 9 virtual machines (VMs)
+
+The VMs in the prod-vnet should run continuously. The VMs in dev-vnet are used only between 7:00 A.M. and 7:00 P.M. local time.
+
+You need to automate the shutdown and startup of the dev-vnet VMs to reduce the organization's monthly Azure spend.
+
+Which Azure feature should you use?
 ---
+Azure Auto-Shutdown
+Azure Change Tracking
+Azure Automation Desired State Configuration (DSC)
+Azure Automation runbook *
 ---
+You should create an Azure Automation runbook. Azure Automation is a management solution that allows you to publish PowerShell or Python scripts in Azure and optionally schedule Azure to run them automatically. In this case, best practice is to write a PowerShell workflow script that automates VM startup and shutdown, and then bind the script to two Azure Automation schedules: one to describe shutdown time, and the other to describe startup time.
+
+You should not use Azure Automation Desired State Configuration (DSC). DSC is a PowerShell feature that prevents configuration drift on your Azure and/or on-premises servers. For example, you could deploy a DSC configuration that prevents server services from stopping.
+
+You should not use Azure Auto-Shutdown. This feature, part of Azure DevTest Labs, allows you to schedule Azure VMs to shut down at the same time every day or night. However, this feature does not provide for automated VM startup.
+
+You should not use Azure change tracking. Change tracking is an IT service management (ITSM) feature that is part of Azure Automation service and records all configuration changes to your Azure VM resources.
 ---
+
+My first PowerShell Workflow runbook;https://docs.microsoft.com/en-us/azure/automation/automation-first-runbook-textual
+
+Azure Automation State Configuration Overview;https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview
+
+Azure Virtual Machine auto-shutdown;https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/09/12/azure-virtual-machine-auto-shutdown/
+
+Track changes in your environment with the Change Tracking solution;https://docs.microsoft.com/en-us/azure/automation/automation-change-tracking
+
+About Azure DevTest Labs;https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-overview
 ###
+Your media production company recently moved all its infrastructure into Azure.
+
+Every 14 days you run a batch to render several thousand video clips into various media formats for customers. At the moment the batch job is run on a single H-series virtual machine (VM).
+
+You need to design a scalable compute solution. The solution must meet the following technical and business requirements:
+
+* Must use VM instance sizes smaller than H series
+* Must support automatic scale out and scale in based on CPU metrics
+* Must minimize deployment time
+* Must minimize administrative overhead
+
+What should you do?
 ---
+Deploy a virtual machine scale set (VMSS). *
+Create an Azure Data Factory pipeline.
+Configure an auto-scaling rule on the existing VM.
+Author an Azure Resource Manager (ARM) template that creates additional VMs.
 ---
+You should deploy a virtual machine scale set (VMSS). Scale sets represent the only way to horizontally scale Azure VMs automatically. A scale set is a collection of two or more identically configured Windows Server or Linux VMs that provide full, centralized control over their lifecycle. Scale sets support up to 1,000 instances when you use VM images in the Azure Marketplace.
+
+You cannot configure an auto-scaling rule on the existing VM. Scale sets are the only way to horizontally autoscale Azure VMs. By contrast, Azure App Service apps can be configured individually with auto-scaling rules based on time, date, or CPU metric.
+
+You should not create an Azure Data Factory pipeline. Azure Data Factory is a cloud-based data orchestration engine similar in function to SQL Server Integration Services (SSIS). Therefore, Data Factory is not appropriate for this scenario.
+
+You should not author an ARM template that creates additional VMs. While you can indeed use ARM templates to automate the deployment and removal of VMs, doing so violates the scenario constraints of minimized setup time and management overhead.
 ---
+
+What are virtual machine scale sets?;https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
+
+Autoscaling;https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+
+Get started with Autoscale in Azure;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-autoscale-get-started
+
+Introduction to Azure Data Factory;https://docs.microsoft.com/en-us/azure/data-factory/introduction
+
+Deploy resources with Resource Manager templates and Azure PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy
+
 ###
+
+You have a Microsoft Azure subscription named Sub1.
+
+You deploy a Windows Server 2016 virtual machine (VM) named VM1 to Sub1.
+
+You need to change the availability set assignment for VM1.
+
+What should you do?
 ---
+Redeploy VM1 from a recovery point. *
+Move VM1 to a different availability zone.
+Migrate VM1 to another Azure region.
+Assign VM1 to the new availability set.
 ---
+You should redeploy VM1 from a recovery point. In Azure, you can assign a VM to an availability set only during initial deployment. Therefore, to reassign the VM to another availability set in this case, you would need to perform the following actions:
+
+1. Take a backup of the current VM.
+2. Delete the current VM.
+3. Deploy a new VM based on the most recent restore point to the correct availability set
+
+You should not move VM1 to a different availability zone because availability zones are mutually exclusive from availability sets.
+
+You should not assign VM1 to the new availability set because, as previously discussed, this is not a supported action in the Azure service fabric.
+
+You should not migrate VM1 to another Azure region because by definition members of the same availability set must reside in the same region.
 ---
+
+Change the availability set for a Windows VM;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/change-availability-set
+
+What are Availability Zones in Azure?;https://docs.microsoft.com/en-us/azure/availability-zones/az-overview
+
+Manage the availability of Windows virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/manage-availability
 ###
+You have an Azure resource group named RG1. RG1 contains four virtual machines (VMs) and their associated resources.
+
+You need to generate resource usage reports by using interactive queries.
+
+What should you use?
 ---
+Azure Monitor
+Azure Alerts
+Azure Log Analytics *
+Azure Service Bus
 ---
+You should use the Log Search feature of Azure Log Analytics to run interactive queries and to build reports based on VM diagnostics data resident in your Azure Log Analytics workspace. Log Search uses Kusto Query Language (KQL), a new query language based on Structured Query Language (SQL), Splunk Processing Language (SPL), and PowerShell.
+
+You should not use Azure Monitor because Monitor does not support interactive queries itself. Instead, Monitor allows you to:
+
+* Enable diagnostics logging
+* Plot resource metrics
+* Configure alerts
+
+The Log Search functionality in Azure Monitor is actually a shortcut to Log Search in your Azure Log Analytics workspace.
+
+You should not use Azure alerts. Alerts in Azure Monitor can be based on resource metrics (for example, CPU utilization of a VM) or Activity Log alerts (for instance, whenever a VM is powered off or restarted).
+
+You should not use Azure Service Bus. Azure Service Bus is an enterprise-class messaging platform that supports microservice application architectures. It is not related to resource monitoring.
+
 ---
+
+Viewing and analyzing data in Log Analytics;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/portals
+
+Get started with queries in Log Analytics;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-queries
+
+Azure Monitor overview;https://docs.microsoft.com/en-us/azure/azure-monitor/overview
+
+Overview of alerts in Microsoft Azure;https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-alerts
+
+What is Azure Service Bus?;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
 ###
+You have a Microsoft Azure subscription that has four virtual machines (VMs) located in the East US region.
+
+You configure the four VMs identically to act as web servers.
+
+You need to ensure that traffic is distributed equally across the four web servers. You also need to protect the web servers against the most common web application security risks. Your solution must minimize expense.
+
+What should you do?
 ---
+Deploy a virtual machine scale set.
+Deploy Azure Application Gateway. *
+Deploy a Traffic Manager profile.
+Deploy an Azure Content Delivery Network (CDN) profile.
 ---
+You should deploy Azure Application Gateway. Application Gateway is a software load balancer that is specialized for web workloads. In addition to providing load balancing services, Application Gateway also includes a web application firewall (WAF) that protects back-end pool web servers against the most common web application vulnerabilities.
+
+You should not deploy a virtual machine scale set because this solution requires the deployment of additional VMs. Moreover, a scale set offers no native protection against web application vulnerabilities.
+
+You should not deploy a Traffic Manager profile because the scenario states that the web servers reside in the same geographic area. Traffic Manager is a Domain Name System (DNS)-based load balancer that works across multiple Azure regions.
+
+You should not deploy an Azure Content Delivery Network (CDN) profile. A CDN makes user access to static web resources faster by geo-distributing those resources. CDN is unrelated to this scenario.
 ---
+
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
+
+Web application firewall (WAF);https://docs.microsoft.com/en-us/azure/application-gateway/waf-overview
+
+What is Traffic Manager?;https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview
+
+What are virtual machine scale sets?;https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
+
+What is a content delivery network on Azure?;https://docs.microsoft.com/en-us/azure/cdn/cdn-overview
 ###
+You have a Linux virtual machine (VM) named VM1 that runs in Azure. VM1 has the following properties:
+
+* Size: Standard_D4s_v3
+* Number of virtual CPUs: 2
+* Storage type: Premium
+* Number of data disks: 6
+* Public IP address: Standard SKU
+
+You attempt to resize the VM to the Standard_D2s_v3 size, but the resize operation fails.
+
+Which VM property is the most likely cause of the failure?
 ---
+Storage type
+Number of virtual CPUs
+Public IP address
+Number of data disks *
 ---
+In this case, the VM resize failure is caused by the VM's current number of data disks. The Standard_D4s_v3 instance size supports up to 8 data disks, but the Standard D2s_v3 instance size supports only up to 4 data disks. Therefore, you will be unable to make the VM size reduction unless you detach the extra data disks from the VM.
+
+The number of virtual central processing units (vCPUs) is not a problem because Standard_D4s_v3 supports 4 vCPUs and Standard_D2s_v3 supports 2 vCPUs.
+
+The storage type is not a problem because both instance sizes support premium disk storage.
+
+The public IP address resource is not a problem because this resource is associated at the network interface level and not the VM level.
 ---
+
+Sizes for Windows virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes
+
+General purpose virtual machine sizes;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general
+
+Azure Managed Disks Overview;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/managed-disks-overview
+
+IP address types and allocation methods in Azure;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-ip-addresses-overview-arm
 ###
+C
+You use Azure VM Backup to back up all Windows Server and Linux VMs in Azure to a Recovery Services vault.
+
+One of your colleagues informs you that he accidentally deleted corp-archive-vm1. You inspect Azure Monitor and verify that the server has been backed up every night for the past two months even though it has been powered off the entire time.
+
+You need to restore the VM to its original location as quickly as possible.
+
+What two actions should you perform? Each correct answer presents part of the solution.
 ---
+Select the most recent application-consistent restore point.
+Restore the corp-archive-vm1 disks and ARM template and redeploy the VM using Azure PowerShell.
+Select the most recent crash-consistent restore point. *
+Restore corp-archive-vm1 by creating a new VM. *
 ---
+You should select the most recent crash-consistent restore point. A crash-consistent restore point is an Azure VM backup that is not guaranteed to boot and/or experience data loss. This is the only restore point possible when an Azure VM is backed up while it is powered off.
+
+You should then restore corp-archive-vm1 by creating a new VM. Azure VM Backup allows you to restore only the VM's disks, the entire VM as a new resource, or individual files from the VM's disks. In this situation you need to put the deleted VM back online as quickly as possible, so letting Azure VM Backup restore a new VM by using the restore point makes the most sense.
+
+You should not select the most recent application-consistent restore point. This type of restore point is not available because the VM had been backed up while powered off. An application-consistent restore point is available when a Windows Server in Azure is backed up and the Shadow Copy Service (VSS) writer can guarantee the restored VM will boot up with no data loss or data corruption.
+
+You should not restore the corp-archive-vm1 disks and ARM template and redeploy the VM using Azure PowerShell. Doing so violates the time constraint in the scenario.
 ---
+
+Use the Azure portal to restore virtual machines;https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms
+
+Restore a disk and create a recovered VM in Azure;https://docs.microsoft.com/en-us/azure/backup/tutorial-restore-disk
+
+Plan your VM backup infrastructure in Azure;https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction
+
+Create VM from existing VHDs and connect it to existing VNET;https://azure.microsoft.com/en-us/resources/templates/201-vm-os-disk-and-data-disk-existing-vnet/
 ###
+You manage an Azure Windows Server virtual machine (VM) that hosts several SQL Server databases.
+
+You need to configure backup and retention policies for the VM. The backup policy must include transaction log backups.
+
+What should you do?
 ---
+Configure a point-in-time snapshot from the Disks Azure portal blade.
+Configure point-in-time and long-term retention policies from the SQL Servers Azure portal blade.
+Configure a continuous delivery deployment group from the Virtual Machine Azure portal blade.
+Configure a SQL Server in Azure VM backup policy from the Recovery Services Azure portal blade. *
 ---
+You should configure a SQL Server in Azure VM backup policy from the Recovery Services Azure portal blade. The Azure Recovery Services vault has three default policy templates:
+
+* Azure Virtual Machine
+* Azure File Share
+* SQL Server in Azure VM
+
+Because you need to back up both the SQL Server databases as well as transaction logs, you should create a SQL Server in Azure VM backup policy. These policies also enable you to specify backup retention durations at the daily, weekly, monthly, and yearly scopes.
+
+You should not configure point-in-time and long-term retention policies from the SQL Servers Azure portal blade. These backup and retention policies are available for the Azure SQL Database platform-as-a-service (PaaS) offering, and not for Azure virtual machines hosting SQL Server databases.
+
+You should not configure a continuous delivery deployment group from the Virtual Machine Azure portal blade. This feature is unrelated to VM backup and  recovery, and allows you to integrate a VM in a Visual Studio Team Services (VSTS) continuous integration/continuous deployment (CI/CD) workflow.
+
+You should not configure a point-in-time snapshot from the Disks Azure portal blade. The snapshot functionality in Azure does not have formal policy associated with it, nor does it back up VM configuration.
+
 ---
+
+Prepare to back up Azure VMs;https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare
+
+Back up Azure VMs with the Azure Backup Service;https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm
+
+Automated Backups;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-automated-backups
+
+Publish an ASP.NET Web App to an Azure VM from Visual Studio;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/publish-web-app-from-visual-studio
+
+Create a snapshot;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/snapshot-copy-managed-disk
 ###
+C
+You deploy Azure Recovery Services in your Azure Subscription. You are making a backup of all the virtual machines (VMs) in this subscription.
+
+Some of the VMs in the subscription were deployed using custom images. You also have encrypted VMs.
+
+Due to your company's disaster recovery plan, you need to be able to recover VMs.
+
+Choose all that apply:
 ---
+You can use the replace existing option with encrypted VMs
+When you restore a VM, you can customize the VM configuration using PowerShell. *
+You can only restore VMs that have single NICs.
+Restoring VMs created using custom images using the replace existing option is unsupported. *
 ---
+You cannot use the replace existing option with encrypted VMs. If you need to recover an encrypted VM, you need to use the restore disks option. Then you need to create a new VM from restored disks.
+
+When you restore a VM, you can customize the VM configuration using PowerShell. When you restore a VM using the create virtual machine option, the new VM is created using a Quick Create option provided by the portal. If you need to change this default configuration, you can do it by using PowerShell for the restoration process. You can also perform a restore from backup disks and create a new VM from these disks.
+
+You can also restore VMs that have multiple NICs. You can backup and restore VMs that have special network configurations like VMs with multiple NICs, VMs with multiple reserved IP addresses, or load-balanced VMs. You need to perform some additional steps when you want to restore these types of VMs.
+
+Restoring VMs created using custom images using the replace existing option is unsupported. You cannot use the replace existing restore type with encrypted VMs, VMs that have been created from custom images, generalized VM, or VMs configured with unmanaged disks. If you want to restore these types of VMs, you need to use the create virtual machine or restore backed-up disks options.
 ---
+
+Use the Azure portal to restore virtual machines;https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms
+
+Back up and restore encrypted virtual machines with Azure Backup;https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-encryption
 ###
+Your company has a custom line-of-business (LOB) application that uses several Azure resources. All resources assigned to the LOB application are in the same resource group. After the first deployment of the LOB application, the company adds more features to the application. You also add more resources to the resource group in different additional deployments.
+
+You need to create a template to redeploy the resources needed for the LOB application.
+
+What should you do?
 ---
+Use the Get-AzureRmResourceGroupDeployment cmdlet.
+Use the Save-AzureRmResourceGroupDeploymentTemplate cmdlet.
+Use the Export-AzureRmResourceGroup cmdlet. *
+Use the Get-AzureRmResourceGroupDeploymentOperation cmdlet.
 ---
+You should use the Export-AzureRmResourceGroup cmdlet. When you use this cmdlet, you get all resources in a resource group and save it as a template. This like a snapshot of the configuration of the resource group. This template has many values hard-coded directly in the template.
+
+You should not use the Save-AzureRmResourceGroupDeploymentTemplate cmdlet. This cmdlet allows you to create a template from a deployment that is in the deployment history of a resource group. Since you have made several modifications to the resource group by adding more resources in additional deployments, the deployments in the deployment history do not contain the whole group of resources needed for the LOB application.
+
+You should not use the Get-AzureRmResourceGroupDeployment cmdlet. This cmdlet returns the deployment history for a resource group.
+
+You should not use the Get-AzureRmResourceGroupDeploymentOperation cmdlet. This cmdlet returns all the operations performed during a deployment. This is useful if you need to troubleshoot a failed deployment.
 ---
+
+Export Azure Resource Manager templates with PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template-powershell
+
+Get-AzureRmResourceGroupDeploymentOperation;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/get-azurermresourcegroupdeploymentoperation
+
+Get-AzureRmResourceGroupDeployment;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/get-azurermresourcegroupdeployment
 ###
+You have an ARM template for creating a Windows virtual machine. You got this template from an existing resource group with a single virtual machine, using the automation script option.
+
+You want to reuse this template for other deployments. You need all the resources in the resource group to be on the same location.
+
+What should you do?
 ---
+Edit the parameters file and add a new parameter named location of type string with the default value of [resourceGroup().location].
+Edit the template file and update each location parameter with the value [resourceGroup().location]. *
+Use the New-AzureRmResourceGroup cmdlet with the location parameter to create a resource group in the desired location. Then use the New-AzureRmResourceGroupDeployment cmdlet using the newly created resource group.
+Use the Azure portal and create a resource group in the desired location. Then use the New-AzureRmResourceGroupDeployment cmdlet using the newly created resource group.
 ---
+You should edit the template file and update each location parameter with the value [resourceGroup().location]. The resourceGroup() function gets the resource group object that will be used for deploying the template. This way, all resources in the template will use the same location as the resource group. You need to ensure that all resources are supported in the location that you are using for the resource group.
+
+You should not edit the parameters file and add a new parameter named location of type string with the default value of [resourceGroup().location]. This is the first step for centralizing the location value in the template, but you also need to update the location parameter in the template file with the value [parameters('location')].
+
+You should not use the Azure portal and create a resource group in the desired location and then use the New-AzureRmResourceGroupDeployment cmdlet using the newly created resource group. If the resource group is deployed in a location different than the configured in the template file, the resources will be deployed in different locations. You need to modify the location parameter in the template file to the value [resourceGroup().location] to inherit the location from the parent resource group.
+
+You should not use the New-AzureRmResourceGroup cmdlet with the location parameter to create a resource group in the desired location and then use the New-AzureRmResourceGroupDeployment cmdlet using the newly created resource group. If the resource group is deployed in a location different than the configured in the template file, the resources will be deployed in different locations. You need to modify the location parameter in the template file to the value [resourceGroup().location] to inherit the location from the parent resource group.
 ---
+Resources section of Azure Resource Manager templates;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-templates-resources
+
+Resource functions for Azure Resource Manager templates;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions-resource
+
+Deploy resources with Resource Manager templates and Azure PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy
 ###
+C
+Your company is planning to deploy a new application in its Azure subscription. The application consists of several Linux virtual machines (VMs).
+
+You are asked to deploy the needed VMs for this new application. The VMs will run version 18.04-LTS of Ubuntu server. You decide to create an ARM template for the deployment.
+
+You need to ensure that the VM image can automatically update after the initial deployment. You also need to use VM images from the marketplace.
+
+Which two ARM parameters should you configure? Each correct answer presents part of the solution.
 ---
+osType
+vmSize
+sku *
+offer *
+version
 ---
+You should configure the sku and offer parameters. The sku parameter is used for setting the major release version of the operating system distribution. You use the offer parameter for setting the name of the images created by the publisher. For this situation, you need to set sku to 18.04-LTS and offer to UbuntuServer.
+
+You should not use the version parameter. You typically use this parameter for setting the version of the image of the selected sku. You can use the version number using the format Major.Minor.Build or use the keyword latest. If you set this parameter to latest, you will always use the latest available version at deployment time, but the image will not be update when a new version becomes available.
+
+You should not use the vmSize parameter. This parameter is used to set the amount of hardware resources assigned to the VM. It is not related to the operating system used in the VM.
+
+You should not use the osType parameter. You use this parameter to specify the operating system installed on the osDisk when you use a user-image or specialized virtual hard disk (VHD) to deploy the VM.
 ---
+Microsoft.Compute/virtualMachines template reference;https://docs.microsoft.com/en-us/azure/templates/microsoft.compute/virtualmachines
 ###
+You have a resource group named APP-RG that consists of several resources.
+
+You are asked to add a storage account to the resource group. You decide to deploy the new storage account by using an ARM template and the New-AzureRmResourceGroupDeployment cmdlet. This template does not contain any linked or nested templates.
+
+After the deployment finishes successfully, you realize that all the resources in the resource group have been replaced by the new storage account.
+
+Why did this happen?
 ---
+You used the -mode complete parameter with the New-AzureRmResourceGroupDeployment cmdlet. *
+The template contains the mode parameter with the value of incremental.
+You did not use the -mode parameter with the New-AzureRmResourceGroupDeployment cmdlet.
+The template contains the mode parameter with the value of complete.
 ---
+The resources in the resource group have been replaced by the new storage account because you used the -mode complete parameter with the New-AzureRmResourceGroupDeployment cmdlet. This cmdlet has two deployment modes, incremental and complete. When you use the complete mode, all resources in the resource group that are not included in the template are deleted.
+
+This did not happen because you did not use the -mode parameter with the New-AzureRmResourceGroupDeployment cmdlet. When you do not use the -mode parameter, you are using the default incremental deployment mode. In this mode, any resource that is not present in the template is maintained in the resource group. If a resource in the resource group is present in the template, if any parameter in the template differs from the values in the resource group, that value is updated in the resource present in Azure. You should use this mode when deploying the template.
+
+Since the template that you are using does not contains any linked or nested templates, the mode parameter should not be present in the template with either value. This parameter is part of the deployment resource type and is typically used with nested or linked templates. Deployment modes, complete and incremental, behave the same way as in the New-AzureRmResourceGroupDeployment cmdlet.
 ---
+
+Deploy resources with Resource Manager templates and Azure PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy
+
+Microsoft.Resources/deployments template reference;https://docs.microsoft.com/en-us/azure/templates/microsoft.resources/deployments
+
+New-AzureRmResourceGroupDeployment;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment
 ###
+C
+You deploy a line of business (LOB) application. All resources that are part of the LOB application are deployed in a resource group named APP-RG.
+
+The resources that are part of the LOB application were added in different phases.
+
+You need to export the current configuration of the resources in APP-RG to an ARM template. You will later use this template for deploying the LOB application infrastructure in different environments for testing or development purposes.
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
 ---
+You need to export the ARM template from the latest deployment.
+Each deployment contains only the resources that have been added in that deployment. *
+The parameters file contains the values used during the deployment. *
+The template contains needed scripts for deploying the template. *
 ---
+You do not need to export the ARM template from the latest deployment. In this scenario, the LOB application was deployed in several phases. The latest deployment will export only the latest resources added to the application. If you want to export the ARM template with all needed resources for the LOB application, you need to export the ARM template from the resource group.
+
+Each deployment contains only the resources that have been added in that deployment. When you export an ARM template from a deployment, the template only contains the resources created during that deployment.
+
+The parameters file contains the values used during the deployment. The parameters file is a JSON file that stores all the parameters used in the ARM template. You can use this file to reuse the template in different deployments, just changing the values of the parameters file. If you use this file in templates created from resource groups, you need to make significant edits to the template before you can effectively use the parameters file.
+
+The template contains needed scripts for deploying the template. When you download an ARM template from a deployment or a resource group, the downloaded package contains seven files: the ARM template, the parameters file, an Azure CLI script, a PowerShell script, a Ruby script and a .NET class for deploying the template.
 ---
+
+Export an Azure Resource Manager template from existing resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template
 ###
+C
+You need to deploy several virtual machines (VMs) in your Azure Subscription. All VMs will be deployed in the resource group RG01 based on an ARM template that is stored in GitHub.
+
+You need to automate this operation.
+
+Which two commands can you use? Each correct answer presents a complete solution
 ---
+New-AzureRmVM
+az group deployment create *
+az vm create
+New-AzureRmResourceGroupDeployment *
 ---
+You could use the az group deployment create Azure CLI command. This command creates a new deployment using the template provided in the -template-uri parameter. In this case, you need to use the URL that points to GitHub where you stored the ARM template that you want to use to deploy the new VMs.
+
+You could also use the New-AzureRmResourceGroupDeployment cdmlet. This cmdlet creates a new deployment using the template provided in the -TemplateUri paramenter.
+
+You should not use az vm create or New-AzureRmVM. You use these commands to create a new VM from custom or marketplace images, but not from ARM templates.
 ---
+
+Quickstart: Create a Linux virtual machine in Azure with PowerShell;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell
+
+Quickstart: Create a Linux virtual machine with the Azure CLI;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli
+
+How to create a Linux virtual machine with Azure Resource Manager templates;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template
+
+az group deployment;https://docs.microsoft.com/en-us/cli/azure/group/deployment
+
+New-AzureRmResourceGroupDeployment;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment
 ###
+Your company deploys a line-of-business (LOB) application. This application is installed on three separate virtual machines (VMs).
+
+You receive some performance alerts on one of the VMs. After some troubleshooting, you identify a deficiency in the IO of the storage system.
+
+You need to add an additional new empty data disk to the existing VM. You decide to use an unmanaged disk.
+
+Which PowerShell cmdlet should you use?
 ---
+New-AzureRmDiskConfig
+Add-AzureRmVhd
+Add-AzureRmVMDataDisk *
+New-AzureRmDisk
+New-AzureRmVMDataDisk
 ---
+You should use the Add-AzureRmVMDataDisk cmdlet to add a new data disk to your existing VM. This cmdlet gets as a parameter the name of the VM to which you want to add the new virtual disk. You can also configure the size, location, caching, and type of virtual disk that you will add. If you use the ManagedDiskId parameter, you can add a managed disk to the VM. If you omit this parameter, you will use unmanaged disks instead.
+
+You should not use the New-AzureRmDiskConfig cmdlet. You use this cmdlet for creating an object that represents the disk configuration of the VM.
+
+You should not use the New-AzureRmDisk cmdlet. This cmdlet creates a new managed virtual disk but does not attach it to the VM. After using the cmdlet, you need to add the virtual disk to the VM using the Add-AzureRmVMDataDisk cmdlet with the CreateOption Attach parameter. You decided to use an unmanaged virtual disk, so you cannot use this cmdlet.
+
+You should not use the Add-AzureRmVhd cmdlet. This cmdlet uploads a virtual hard disk (VHD) file from an on-premises computer to Azure. This cmdlet is not useful for adding a new virtual disk to your VM.
+
+You should not use the New-AzureRmVMDataDisk cmdlet. This cmdlet creates a managed virtual data disk for a VM, but it does not add the virtual disk to the VM.
 ---
+
+New-AzureRmVMDataDisk;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvmdatadisk
+
+Add-AzureRmVhd;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/add-azurermvhd
+
+Add-AzureRmVMDataDisk;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/add-azurermvmdatadisk
+
+New-AzureRmDisk;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermdisk
+
+New-AzureRmDiskConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermdiskconfig
+
+Attach a data disk to a Windows VM using PowerShell;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/attach-disk-ps
 ###
 ---
 ---
