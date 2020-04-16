@@ -1704,174 +1704,1333 @@ New-AzureRmDiskConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm
 
 Attach a data disk to a Windows VM using PowerShell;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/attach-disk-ps
 ###
+C
+You are configuring a Network Security Group (NSG). The default NSG rules are already in place.
+
+You need to configure the NSG to support only the following the types of traffic into the subnet from the Internet.
+
+* Remote Desktop Management
+* Secured HTTPS traffic
+* Unsecured HTTP traffic
+
+Which three ports should you configure in the NSG configuration? Each correct answer presents part of the solution.
 ---
+3389 *
+53
+443 *
+80 *
+21
 ---
+You should configure port 3389 for Remote Desktop Protocol (RDP) connections, port 443 for Secured HTTP (HTTPS) connections, and port 80 for unsecured HTTP connections.
+
+You should not configure the NSG to support ports 21 or 53. Port 21 is for File Transfer Protocol (FTP) and port 53 is for Domain Name System (DNS).
+
+The default NSG rules are already set so there is no requirement to configure anything beyond these rules.
 ---
+New-AzureRMNetworkSecurityRuleConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermnetworksecurityruleconfig
+
+New-AzureRMNetworkSecurityGroup;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermnetworksecuritygroup
+
+Port Assignments for Well Known Ports;https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc959828(v=technet.10)
 ###
+You design a virtual network (VNet) topology with the following characteristics:
+
+* web subnet: 3 web front-end virtual machines (VMs)
+* app subnet: 3 application server VMs
+* data subnet: 3 database server VMs
+
+The client requires that inter-subnet network traffic be strictly controlled with network security groups (NSGs).
+
+You need to design a solution that minimizes NSG rule creation and maintenance.
+
+What should you do?
 ---
+Enable the built-in rules in each NSG. False
+Define application security groups (ASGs) that align to each application tier. *
+Bind a route table to each subnet.
+Employ the VirtualNetwork NSG service tag in each NSG.
 ---
+You should define ASGs that align to each application tier. ASGs allow you to target inbound or outbound NSG security rules to workloads. For instance, you could create an ASG that includes the three web servers, a second ASG for the three application servers, and a third ASG that includes the three database servers. You then reference the ASG tags in your NSG rules. This simplifies network administration in Azure and makes rule maintenance more straightforward. For example, if you add a fourth web server to the VNet subnet, then all you have to do is include that new server to your ASG definition.
+
+You should not enable the built-in rules in each NSG because none of these rules meets the requirements. The three Azure-provided default NSG rules do the following:
+
+* Allow all inbound and outbound VNet traffic.
+* Allow an Azure load balancer to send health probes through the NSG.
+* Deny any traffic for which a prior rule does not match.
+
+You should not employ the VirtualNetwork NSG service tag in each NSG. Service tags do make it easier to write NSG security rules and thereby control traffic. However, the best application of service tags for this use case is to create ASGs that map to the client's three infrastructure-as-a-service (IaaS) workloads.
+
+You should not bind a route table to each subnet. Route tables are used in conjunction with network virtual appliances (NVAs) to customize inter-subnet routing. However, the tables on their own increase complexity and represent an incomplete configuration.
 ---
+
+Application Security Groups now generally available in all Azure regions;https://azure.microsoft.com/en-us/blog/applicationsecuritygroups/
+
+Tutorial: Filter network traffic with a network security group using the Azure Portal;https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+
+Tutorial: Route network traffic with a route table using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal
+
 ###
+You hosts a line-of-business (LOB) web application in a virtual network (VNet) in Azure. A site-to-site virtual private network (S2S VPN) connection links your on-premises environment with the Azure VNet.
+
+You plan to use a network security group (NSG) to restrict inbound traffic into the VNet to the following IPv4 address ranges:
+
+* 192.168.2.0/24
+* 192.168.4.0/24
+* 192.168.8.0/24
+
+Your solutions must meet the following technical requirements:
+
+* Limit rule scope only to the three IPv4 address ranges.
+* Minimize the number of NSG rules.
+* Minimize future administrative maintenance effort.
+
+What should you do?
 ---
+Pass the three IPv4 address ranges into the NSG rule as a comma-separated list. *
+Pass the IPv4 address range 192.168.0.0/22 into the NSG rule.
+Define an application security group (ASG) that includes the three IPv4 address ranges.
+Define an NSG rule that includes the VirtualNetwork service tag.
 ---
+You should pass the three IPv4 address ranges into the NSG rule as a comma-separated list. NSGs in Azure allow you to specify individual IP addresses or address ranges either individually or as a comma-separated list. This reduces the number of NSG rules you would otherwise have to create to meet your use case.
+
+You should not pass the IPv4 address range 192.168.0.0/22 into the NSG rule. Doing so would include other IPv4 network addresses besides the four included in the scenario requirements. Route summarization, also called supernetting, refers to identifying multiple contiguous IPv4 network addresses under a single, larger, network address.
+
+You should not define an ASG that includes the three IPv4 address ranges. In fact, ASGs are bound to the IP address configurations of virtual machines (VMs) running in Azure, not on-premises network address ranges.
+
+You should not define an NSG rule that includes the VirtualNetwork service tag. Service tags (and ASGs) represent keyword identifiers that make it easier to reference multiple hosts and/or networks in NSG rules. In this case, you need to write a rule that allows inbound connections from on-premises IPv4 address ranges, not the VNet itself.
 ---
+
+Create, change, or delete a network security group;https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group
+
+Tutorial: Filter network traffic with a network security group using the Azure Portal;https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+
+Supernetting;https://social.technet.microsoft.com/Forums/ie/en-US/265451b3-0cc8-49b3-90b5-95228c546a02/supernetting
 ###
+You deploy a virtual network (VNet) named VNET01. You deploy several virtual machines (VMs) connected to VNET01.
+
+You configure a new service on VM01, which is one of the VMs connected to VNET01.
+
+You need to allow inbound traffic to TCP port 992. You decide to create a network security group named NSG01 and attach it to the primary NIC of VM01.
+
+Which PowerShell cmdlet should you use?
 ---
+Set-AzureRmNetworkInterface *
+Set-AzureRmVirtualNetworkSubnetConfig
+Set-AzureRmNetworkSecurityRuleConfig
+Set-AzureRmNetworkSecurityGroup
 ---
+You should use the Set-AzureRmNetworkInterface cmdlet. This cmdlet modifies the NIC configured for a VM. To make this association, you should use a script similar to the following:
+
+$nic = Get-AzureRmNetworkInterface -ResourceGroupName "RG01" -Name "primary NIC of VM01"
+$nsg = Get-AzureRmNetworkSecurityGroup -ResourceGroupName "RG01" -Name "NSG01"
+$nic.NetworkSecurityGroup = $nsg
+$nic | Set-AzureRmNetworkInterface
+
+You should not use the Set-AzureRmVirtualNetworkSubnetConfig cmdlet. This cmdlet is used to associate an NSG to a VNet.
+
+You should not use the Set-AzureRmNetworkSecurityGroup cmdlet. You use this cmdlet when you need to save the changes that you made to an object that represents an NSG, for example, when you add an additional security rule.
+
+You should not use the Set- AzureRmNetworkSecurityRuleConfig cmdlet. You use this cmdlet when you need to save the changes that you made to an object that represents a security rule. For example, you would use it when you want to change the access for a security rule from Allow to Deny.
 ---
+
+Create, change, or delete a network security group;https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group
+
+Set-AzureRmNetworkInterface;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermnetworkinterface
+
+Create, change, or delete a network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface
+
+Set-AzureRmVirtualNetworkSubnetConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermvirtualnetworksubnetconfig
+
+Set-AzureRmNetworkSecurityGroup;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermnetworksecuritygroup
+
+Set-AzureRmNetworkSecurityRuleConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermnetworksecurityruleconfig
 ###
+C
+You deploy a virtual network (VNet) named VNET01. VNET01 also has multiple subnets configured.
+
+You have several virtual machines (VMs) connected to VNET01 subnets. You configure three network security groups (NSGs) named NSG01, NSG02 and NSG03. NSG01 is attached to VNET01. NSG02 and NSG03 are attached to different VMs.
+
+Users experience some connectivity issues when they connect to the services hosted on the VMs.
+
+You need to troubleshoot these connectivity issues. You need to identify the security rules that affect each VM.
+
+Which two commands should you use in your script? Each correct answer presents a complete solution.
 ---
+az network nic show-effective-route-table
+Get-AzureRmEffectiveNetworkSecurityGroup *
+Get-AzureRmNetworkSecurityGroup
+az network nic list
+az network nic list-effective-nsg *
+Get-AzureRmNetworkProfile
 ---
+You need to list which effective security rules affect the traffic flow of the VMs. You can review the effective security rules by using the az network nic list-effective-nsg Azure CLI command or the Get-AzureRmEffectiveNetworkSecurityGroup PowerShell cmdlet. By using either, you could also review the effective security rules that the Azure portal uses. Also, both commands would allow you to review the effective security rules under support + troubleshooting section on each NIC for each VM.
+
+You should not use the Get-AzureRmNetworkSecurityGroup cmdlet. This cmdlet gets an NSG object. You would use this object to make changes to the NSG.
+
+You should not use the Get-AzureRmNetworkProfile cmdlet. You should use this cmdlet to retrieve a top-level network profile.
+
+You should not use the az network nic show-effective-route-table command. This command is useful for getting the effective routing rules applied to a network interface, which also affect the communication flow.
+
+You should not use the az network nic list command. You should use this command to list all the NICs in a resource group.
 ---
+
+az network nic;https://docs.microsoft.com/en-us/cli/azure/network/nic
+
+Get-AzureRmEffectiveNetworkSecurityGroup;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermeffectivenetworksecuritygroup
+
+Get-AzureRmNetworkSecurityGroup;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermnetworksecuritygroup
+
+Get-AzureRmNetworkProfile;https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermnetworkprofile
+
+Create, change, or delete a network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface
 ###
+C
+You are asked to deploy a virtual machine (VM) in your Azure subscription. This VM must be configured with a static IP address for connectivity to some legacy applications.
+
+You need to configure the VM to support a static IP address.
+
+What are two ways to achieve your goal? Each correct answer presents a complete solution.
 ---
+Use the Add-AzureRmVMNetworkInterface PowerShell cmdlet.
+Use the New-AzureRmNetworkInterface PowerShell cmdlet when creating the VM. *
+Use the Azure Portal to set the static ip address after the VM has been created. *
+Use the Set-AzureRmNetworkInterface PowerShell cmdlet.
 ---
+When configuring a static IP address for an Azure VM, there are three supported options for doing so. One option is to use the New-AzureRmNetworkInterface with the -PrivateIPAddress switch. The second is to set the IP address after the VM has been created in the Azure Portal. A third option is to use the Azure CLI and the az network nic create command.
+
+You should not use the Add-AzureRmVMNetworkInterface cmdlet. This cmdlet is used to add a network interface to an existing VM but does not have options for configuring static IP addresses.
+
+You should not use the Set-AzureRmNetworkInterface cmdlet. This cmdlet can be used to set a static IP address, but it must be used in conjunction with other cmdlets to complete the action.
 ---
+
+Configure private IP addresses for a virtual machine using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-static-private-ip-arm-pportal
+
+Configure private IP addresses for a virtual machine using PowerShell;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-static-private-ip-arm-ps
+
+Configure private IP addresses for a virtual machine using the Azure CLI;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-static-private-ip-arm-cli
 ###
+C
+You are asked to configure Azure virtual machine (VM) connectivity between two virtual networks (VNets) in the same Azure Resource Group.
+
+The solution must support an application that requires connectivity using IPv6 and may not fall back to IPv4 for compliance reasons within the application being hosted. The application must also support IPv6 clients on the public Internet.
+
+You need to implement these requirements.
+
+What three actions should you perform?  Each correct answer presents part of the solution.
 ---
+Add a Network Security Group (NSG) to the subnets hosting the VMs to block IPv4 connectivity.
+Add one Azure Load Balancer in the resource group.
+Add an IPv6 endpoint to each VM supporting the application. *
+Add a public IPv6 IP address to the Internet facing Azure Load Balancer. *
+Add an Azure Load Balancer for each VNet in the resource group. *
 ---
+Within Azure IPv6 is supported but is limited to certain restrictions and requires carful configuration and planning. In this case you should add an IPv6 endpoint to each VM in the application because IPv6 address are not added by default and must be explicitly defined.
+
+You should also deploy two load balancers. In Azure networking IPv6 to IPv6 communication is not supported, so you have to configure routing to first pass to a load balancer, which can communicate to another load balancer to complete the connectivity.
+
+You also need to add a public IPv6 address to one of the load balancers to support connectivity to the Internet based IPv6 based machines.
+
+You should not add an NSG to subnets hosting the VMs to block IPv4 connectivity. Cross VNet connectivity is not possible without the use of a load balancer. In this case because the load balancer will route the traffic, you do not need to consider IPv4 blocking here.
+
+You should not add one Azure Load Balancer to the resource group because this will not support connectivity between to disparate VNets over IPv6.
 ---
+
+Deploy an Internet-facing load-balancer solution with IPv6 using a template;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-ipv6-internet-template
+
+Overview of IPv6 for Azure Load Balancer;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-ipv6-overview
+
+Using load-balancing services in Azure;https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-load-balancing-azure
+
+Add, change, or remove IP addresses for an Azure network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses
 ###
+You need to configure public IP addressing for four infrastructure virtual machines (VMs) that reside on an Azure virtual network (VNet).
+
+Your solution must meet the following technical and business requirements:
+
+* Minimize the VMs' attack surface
+* Minimize administrative/maintenance complexity
+* Minimize cost
+
+What should you do?
 ---
+Assign a public IP address to each VM virtual network interface card (vNIC) and use Just-in-Time (JIT) VM Access to reach the VMs.
+Assign a public IP address to an Azure Virtual Private Network (VPN) Gateway and use a public load balancer to reach the VMs.
+Assign a public IP address to each VM and use network security groups (NSGs) to reach the VMs.
+Assign a public IP address to a public load balancer and use Network Address Translation (NAT) to reach the VMs. *
 ---
+You should assign a public IP address to a public load balancer and use NAT to reach the VMs. This configuration accomplishes all the scenario goals and adds some additional ones:
+
+* Minimizes the number of Azure public IP addresses required
+* Obfuscates any management ports on the VMs
+* Load balances traffic across the VMs if they are identically configured
+
+You should not assign a public IP address to an Azure VPN Gateway and use a public load balancer to reach the VMs. Doing so requires far more infrastructure, cost, and management overhead than what is required to satisfy the requirements.
+
+You should not assign a public IP address to each VM vNIC and use JIT VM Access to reach the VMs. JIT VM Access is a paid Azure Security Center feature that protects VM management ports. However, assigning a public IP address to the VMs potentially exposes other ports to the public Internet.
+
+You should not assign a public IP address to each VM and use NSGs to reach the VMs. Deploying public IP addresses needlessly exposes the VMs to the Internet. Moreover, NSG configuration grows complex quickly when you bind them at the vNIC level.
 ---
+
+IP address types and allocation methods in Azure;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-ip-addresses-overview-arm
+
+What is Azure Load Balancer?;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+
+What is VPN Gateway?;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways
+
+Add, change, or remove IP addresses for an Azure network interface;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-addresses
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
 ###
+You need to assign a static private IPv4 address for a Windows Server virtual machine (VM) named corp-vm1 running in a virtual network (VNet) named corp-vnet.
+
+What should you do?
 ---
+Connect to corp-vm1 by using Remote Desktop Protocol (RDP) and edit the VM's virtual network connection properties.
+Edit the address range of corp-vnet.
+Modify the IP configuration of the virtual network interface associated with corp-vm1. *
+Connect to corp-vm1 by using WinRM and run the Set-NetIPAddress PowerShell cmdlet.
 ---
+You should modify the IP configuration of the virtual network interface associated with corp-vm1. TCP/IP configuration for VMs takes place from the virtual network interface card (vNIC) level, not the VM level. A vNIC can have one or more IP configurations that define static or dynamic public and private IPv4 addresses.
+
+You cannot edit the address range of corp-vnet. Instead, you can add a second range, and then delete the original range. However, this can be accomplished only if you have first removed any subnets that use the first address range.
+
+You should not connect to corp-vm1 by using RDP and edit the VM's virtual network connection properties. All VM networking must be configured from outside the virtual machine's operating system environment. If you change the networking settings from within the VM, the VM will likely lose Internet connectivity and you will be required to reset the VM's configuration.
+
+You should not connect to corp-vm1 by using WinRM and run the Set-NetIPAddress PowerShell cmdlet. It is crucial that you configure all TCP/IP properties from outside the VM at the Azure Resource Manager level.
 ---
+
+Create, change, or delete a virtual network;https://docs.microsoft.com/en-us/azure/virtual-network/manage-virtual-network
+
+Add, change, or delete a virtual network subnet;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet
+
+Virtual networks and virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/network-overview
+
+Set-NetIPAddress;https://docs.microsoft.com/en-us/powershell/module/nettcpip/set-netipaddress?view=win10-ps
+
+Running Remote Commands;https://docs.microsoft.com/en-us/powershell/scripting/core-powershell/running-remote-commands?view=powershell-6
+
+How to reset network interface for Azure Windows VM;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/reset-network-interface
 ###
+One of your colleagues deployed a new virtual network (VNet) named corp-vnet that has the following properties:
+
+* Address range: 172.16.0.0/16
+* Front-end subnet: 172.16.2.0/24
+* Mid-tier subnet: 172.16.3.0/24
+* Back-end subnet: 172.16.4.0/24
+
+To avoid a conflict with your on-premises IPv4 address space, you need to change the corp-vnet address space to 192.168.0.0/16 and redefine the subnet IDs immediately, before your colleague attempts to migrate virtual machines (VMs) to the new VNet.
+
+What should you do?
 ---
+Remove and redeploy corp-vnet. *
+Delete the three subnet resources from corp-vnet.
+Add the 192.168.0.0/16 address space to corp-vnet.
+Edit the corp-vnet address range to 192.168.0.0/16.
 ---
+You should remove and redeploy corp-vnet. Azure VNet address ranges cannot be modified. Furthermore, deleting an address range requires first removing any associated subnets. Therefore, in this case it makes the most sense simply to remove the entire VNet and redeploy it.
+
+You should not add the 192.168.0.0/16 address space to corp-vnet. Azure VNets do indeed support more than one non-overlapping IPv4 address space. However, doing so does nothing to resolve the problem outlined in the scenario.
+
+You should not delete the three subnet resources from corp-vnet. Performing this action is a necessary first step to delete the address range, but as previously discussed, it is most time-efficient simply to delete the entire VNet and redeploy it by using the Azure portal or another management tool.
+
+You should not edit the corp-vnet address range to 192.168.0.0/16. This operation is not supported in Azure Resource Manager.
 ---
+
+Quickstart: Create a virtual network using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal
+
+Create, change, or delete a virtual network;https://docs.microsoft.com/en-us/azure/virtual-network/manage-virtual-network
+
+Add, change, or delete a virtual network subnet;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet
 ###
+C
+Your company's Microsoft Azure infrastructure team asks you for help in designing a traffic control solution for their deployment.
+
+The deployment consists of a single virtual network (VNet) that has the following topology:
+
+* edge subnet: Linux-based network virtual appliance (NVA) running enterprise firewall software with IP forwarding enabled
+* data1 subnet: 4 Windows Server virtual machines (VMs)
+* data2 subnet: 4 Ubuntu Linux VMs
+
+You need to recommend a solution to the infrastructure team so that all outbound Azure VM traffic must pass through the NVA on the edge subnet.
+
+What two actions should you perform? Each correct answer presents part of the solution.
 ---
+Create a network security group (NSG) with an outbound rule.
+Create a route table with a next-hop IP address. *
+Deploy two internal load balancers between the three subnets.
+Bind the resource to each subnet. *
+Bind the resource to each VM virtual network interface card (vNIC).
 ---
+You should create a route table with a next-hop IP address. The route table resource allows you to override the Azure-provided system routes that automatically route traffic into, within, and out of an Azure VNet. A route table contains a "next hop" default route that Azure uses when VMs within a subnet attempt to reach resources beyond that subnet. The available next hop types are:
+
+* Virtual appliance
+* Internet
+* Virtual network
+* Virtual network gateway
+
+You should also bind the route table resource to each subnet. In this scenario, you would create a route table that defines a next hop to your NVA, and then bind the single route table to every subnet in the VNet.
+
+You should not create an NSG with an outbound rule. NSGs are software firewall resources used to selectively allow or block inbound and/or outbound traffic. You cannot define next hop routing with NSGs.
+
+You should not bind the resource to each VM vNIC. Route tables can be bound only to the subnet resource. By contrast, NSGs can be bound to subnet and/or vNIC resources.
+
+You should not deploy two internal load balancers between the three subnets. Load balancers are used to distribute user requests equitably among two or more back-end VMs and are not used to enforce next hop routing logic.
 ---
+Tutorial: Route network traffic with a route table using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal
+
+Use network virtual appliances on a virtual network;https://docs.microsoft.com/en-us/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+
+What is Azure Load Balancer?;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+
+Virtual network traffic routing;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview
 ###
+C
+A virtual machine (VM) named VM01 is deployed in a resource group named RG01. This VM is connected to a virtual network (VNet) named VNET01.
+
+You plan to connect VM01 to an additional VNet named VNET02.
+
+You need to create an additional NIC on VM01 and connect it to VNET02.
+
+Which two Azure CLI commands should you use? Each correct answer presents part of the solution.
 ---
+az network nic create *
+az vm nic add *
+az network nic update
+az vm nic set
 ---
+You should use the az network nic create command. Using this command, you can create the additional NIC that you want to add to VM01. You need to use the subnet and vnet-name parameter to connect the NIC to the correct VNet. You can optionally configure a static IP address by using the private-ip-address parameter.
+
+You should then use the az vm nic add command. This command will attach the new NIC to VM01. You need to provide the name of the recently created NIC to attach it to VM01.
+
+You should not use the az vm nic set command. This command is useful for setting a NIC as the primary NIC of the VM.
+
+You should not use the az network nic update command. You can use this command to change the settings of existing NICs.
 ---
+
+az network nic;https://docs.microsoft.com/en-us/cli/azure/network/nic
+
+az vm nic;https://docs.microsoft.com/en-us/cli/azure/vm/nic
 ###
+C
+You are deploying a group of new virtual machines (VMs) in your Azure Subscription. These new VMs are part of the frontend layer of a new application that your company is publishing.
+
+You plan to configure an Azure Load Balancer for these new VMs. You decide to configure a Standard Load Balancer.
+
+You need to configure the public IP address that you will assign to the load balancer.
+Choose all that apply:
 ---
+You can only use a standard SKU public IP with Standard Load Balancers. *
+Standard SKU public IP addresses allow inbound communication by default.
+You can only use the static allocation method with standard SKU public IP addresses. *
+You can specify the IP address of a public IP resource.
 ---
+You can only use a standard SKU public IP with Standard Load Balancers. Standard Load Balancers have been designed with security in mind. This means that you need to manually authorize any inbound connection. The Standard SKU public IP address is the only SKU that has this configuration by default.
+
+Standard SKU public IP addresses do not allow inbound communication by default. You need to manually create and assign a network security group (NSG) that allows inbound communication with the standard SKU public IP address. If you need to allow all inbound traffic by default, you need to use a basic SKU public IP address.
+
+You can only use the static allocation method with standard SKU public IP addresses. When you configure a public IP address, there are two different allocation methods: static or dynamic. Static allocation method reserves and assigns a public IP address when the public IP resource object is created in Azure.
+
+You cannot specify the IP address of a public IP resource. Even if you use the static allocation method for a public IP, you cannot manually specify the IP address assigned to your public IP resource object. This address is picked from a pool of public addresses and assigned to your resource.
 ---
+
+IP address types and allocation methods in Azure;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-ip-addresses-overview-arm
+
+Azure Load Balancer Standard overview;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview
 ###
+You are asked to connect a virtual network (VNet) to a private DNS zone to support new application namespaces in the new private zone. The VNet already has virtual machines (VMs) assigned to it and has existing private DNS zones assigned.
+
+You need to complete this task.
+
+What should you do first?
 ---
+Set the existing VMs to support the new DNS zone via the Windows Server IP Configuration DNS settings app.
+Add the new private DNS zone to the existing VNet. *
+Remove the existing VMs from the VNet.
+Setup a new VNet, assign the private DNS zone to this VNet, and move the existing VMs to it.
 ---
+To complete this task, you should just add the new private DNS zone to the existing VNet. When adding a new private DNS zone to an existing VNet that already has private zones assigned, you do not need to complete any other task other than add the zone.
+
+You do not need to remove the existing VMs from the VNet. This would have been a requirement if the VNet did not already have private DNS zones linked to it.
+
+Setting up a new VNet, assigning the private DNS zone to this VNet, and moving the existing VMs to it would satisfy the connectivity to the new private DNS zone, but the existing linked private zones would be lost.
+
 ---
+
+Tutorial: Host your domain in Azure DNS;https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns
+
+Use Azure DNS for private domains;https://docs.microsoft.com/en-us/azure/dns/private-dns-overview
+
 ###
+You deployed two virtual networks (VNets) that have the following properties:
+
+* dev-vnet-west (West US region)
+* prod-vnet-east (East US region)
+
+You configure global VNet peering to link to dev-vnet-west and prod-vnet-east VNets.
+
+You need to ensure that virtual machines (VMs) in either VNet can resolve fully qualified domain names (FQDNs) of any other VM in Azure.
+
+What should you do?
 ---
+Use Azure-provided DNS in each VNet.
+Deploy DNS servers in each VNet and add their private IP addresses to the DNS servers list.
+Add service endpoints to each VNet.
+Create a private zone in Azure DNS. *
 ---
+You should create a private zone in Azure DNS. Peered VNets are unable to support host name resolution between themselves. Therefore, you must use an external DNS solution. Azure DNS allows you to create private, non-publicly routable DNS zones that are bound to one or more VNets. The VMs in either VNet would therefore register their host records with the private Azure DNS zone, and the service handles name resolution as usual.
+
+You should not use Azure-provided DNS in each VNet. Azure-provided DNS can resolve VM hostnames and FQDNs only within a single VNet. Moreover, the FQDNs point to the Microsoft-owned cloudapp.net DNS domain, which is likely not ideal for your use case.
+
+You should not deploy DNS servers in each VNet and add their private IP addresses to the DNS servers list. This configuration is incomplete. You would also need to configure each DNS server to forward queries to the DNS server in the peered VNet.
+
+You should not add service endpoints to each VNet. Service endpoints allow you to tie particular Azure services, such as storage accounts and Azure SQL databases, to a VNet.
 ---
+
+Name resolution for resources in Azure virtual networks;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances
+
+Use Azure DNS for private domains;https://docs.microsoft.com/en-us/azure/dns/private-dns-overview
+
+Virtual network traffic routing;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview
+
+Virtual Network Service Endpoints;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview
 ###
+A client asks you to assist in moving a public website and Domain Name System (DNS) domain from the current host into Azure.
+
+You help the client migrate the website to an Azure App Service web application. You also create a zone in Azure DNS for the client's company.com domain.
+
+You now need to configure DNS so that user requests to company.com resolve to the Azure App Service app.
+
+What should you do next?
 ---
+Create a CNAME record for company.com in Azure DNS.
+Delegate the company.com zone to Azure DNS. *
+Configure Azure DNS as a secondary name server.
+Create an A record for company.com in Azure DNS.
 ---
+You should delegate the company.com zone to Azure DNS at the client's registrar. Azure DNS is not the registrar, so this step is necessary to ensure that DNS lookups for company.com are redirected to Azure DNS, which will serve as the domain's source of authority from now on.
+
+You should not create a host (A) record for company.com in Azure DNS until you have delegated the zone to Azure DNS at the original registrar. This new resource record will ensure that calls to company.com (the so-called "naked" domain) resolve to the correct Azure App Service web application.
+
+You should not create an alias (CNAME) record for company.com in Azure DNS for two reasons. First, as previously described, you need to complete the zone delegation before you populate the Azure DNS zone. Second, a CNAME record is used to map an additional host name to an existing A record. In this scenario, you need to handle only the company.com root domain name.
+
+You should not configure Azure DNS as a secondary name server because the client's goal is to manage DNS from within Azure and Azure DNS does not support zone transfers.
 ---
+
+Tutorial: Create DNS records in a custom domain for a web app;https://docs.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain
+
+Delegation of DNS zones with Azure DNS;https://docs.microsoft.com/en-us/azure/dns/dns-domain-delegation
+
+Azure DNS FAQ;https://docs.microsoft.com/en-us/azure/dns/dns-faq
+
+Overview of DNS zones and records;https://docs.microsoft.com/en-us/azure/dns/dns-zones-records
 ###
+You have an Azure resource group named RG1. RG1 contains two virtual networks (VNets) with the following attributes:
+
+* VNet1: East US region; 4 Windows Server virtual machines (VMs)
+* VNet2: West US region; 8 Linux VMs
+
+You need to configure host name resolution for all VMs within RG1. Your solution must meet the following technical requirements:
+
+* VMs within each VNet should be able to resolve each other's fully qualified domain names (FQDNs).
+* VMs in VNet1 should be able to resolve the host names of VMs in VNet2.
+* VMs in VNet2 should be able to resolve the host names of VMs in VNet1.
+
+What should you do?
 ---
+Enable Azure-provided name resolution.
+Create a private zone in Azure DNS. *
+Deploy a VNet-to-VNet virtual private network (VPN) connection.
+Define a peering between VNet1 and VNet2.
 ---
+You should create a private zone in Azure DNS. Within a virtual network, Azure-provided name resolution enables all VMs within a VNet to resolve each other's host names with no additional configuration required. However, Azure-provided name resolution does not work between VNets because VNets are, by design, isolated network communications boundaries.
+
+In this case, you define a private zone in Azure DNS and link both VNets to that zone so the VMs can resolve each other's host names to their corresponding private IP addresses.
+
+You should not define a peering between VNet1 and VNet2. As previously stated, Azure-provided name resolution does not function across VNet boundaries, even with a peering.
+
+You should not deploy a VNet-to-VNet virtual private network (VPN) connection. Although this solution would allow cross-VNet name resolution, it fails to meet the scenario requirement for minimized cost and complexity.
 ---
+
+Name resolution for resources in Azure virtual networks;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances
+
+Use Azure DNS for private domains;https://docs.microsoft.com/en-us/azure/dns/private-dns-overview
+
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+
+Configure a VNet-to-VNet VPN gateway connection using the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal
 ###
+You configure the companycs.com zone in Azure DNS. You have an A record set named app that points to an App Service that hosts a web application.
+
+You need to make this application available by using the webapp.companycs.com domain name. This new domain name needs to point to the public IP address of the App Service.
+
+You need to ensure that the DNS record for this new domain name is updated or deleted automatically in case the app.companycs.com DNS record is modified or deleted.
+
+Which type of record set should you create?
 ---
+An alias record set *
+CNAME record set
+CNAME alias record set
+A record set
 ---
+You should create an A alias record set. An A alias record set is a special type of record set that allows you to create an alternative name for a record set in your domain zone or for resources in your subscription. This is different from a CNAME record type because the alias record set will be updated or deleted in case the target record set is modified or deleted. You can only create an A alias record set that points to another A record set or an Azure resource.
+
+You should not use a CNAME alias record set. The custom domain name for your web application is represented by an A record set. A CNAME alias record set can only point to another CNAME record set. Moreover, the value returned by a CNAME alias record set is a domain name. You are required to create a DNS record that returns an IPv4 address. This means that you need an A alias record set.
+
+You should not use an A record set. This record set type will not be automatically updated or deleted if the app.companycs.com record is modified or deleted.
+
+You should not use a CNAME record set. This record set type will not be automatically updated or modified if the app.companycs.com record is modified or deleted. You are also required to create a DNS record that returns an IPv4 address. This means that you need an A alias record set.
 ---
+
+Azure DNS alias records overview;https://docs.microsoft.com/en-us/azure/dns/dns-alias
 ###
+Your company acquires another business that also uses Azure to deploy virtual machines (VMs) to run business applications for their users. You are tasked with ensuring that your existing applications hosted in Azure can connect securely to the newly acquired company's applications and data hosted in their existing Azure subscription.
+
+You need to configure this environment.
+
+What should you do?
 ---
+Enable VNet Peering.
+Create a virtual network gateway in both subscriptions.
+Enable a Site-to-Site VPN connection. *
+Enable a Point-to-Point VPN connection.
 ---
+You should enable a Site-to-Site VPN connection between virtual networks (VNets) in the two subscriptions. Site to Site VPN supports connectivity between VNets in different subscriptions.
+
+You should not use a Point-to-Point VPN connection. A Point-to-Point VPN connection can support connectivity from one endpoint to another, but it does not allow multiple connections for different applications within a multiple server or services endpoint to use the same VPN endpoint.
+
+You should not enable VNet Peering. Virtual network peering allows resources from two different network segments to connect  as if they were on the same segment. This is not supported across different subscriptions.
+
+You should not create a virtual network gateway in both subscriptions. Performing this activity will set up the prerequisites for configuring connectivity, but the gateways themselves do not support connectivity without additional configuration work.
 ---
+
+Configure a VNet-to-VNet VPN gateway connection using the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal
+
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
 ###
+Your company acquires another business. The acquired business has Azure resources located in a sovereign Azure cloud.
+
+You are asked to configure network connectivity between your company's Azure network and the Azure network of the acquired company.
+
+You need to implement this connectivity.
+
+What should you do?
 ---
+Enable a VNet-to-VNet VPN gateway.
+Configure VNet Peering
+Configure a Point-to-Point VPN.
+Configure a Site-to-Site VPN. *
 ---
+To make a network connection from a public Azure subscription to a sovereign cloud Azure subscription, you must use a Site-to-Site VPN. It is the only option that supports connectivity across the sovereign boundary and provides full virtual network (VNet) connectivity.
+
+You should not enable a VNet-to-VNet VPN gateway or VNet Peering. These options are only supported within the same subscription.
+
+You should not configure a Point-to-Point VPN connection. While this is supported across subscriptions, this option only supports single application or VM connectivity, not full network connectivity.
 ---
+
+Configure a VNet-to-VNet VPN gateway connection using the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal
+
+Configure a VNet-to-VNet VPN gateway connection using PowerShell;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps
+
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
 ###
+You have several Windows Server and Ubuntu Linux virtual machines (VMs) distributed across two virtual networks (VNets):
+
+* prod-vnet-west (West US region)
+* prod-vnet-east (East US region)
+
+You need to allow VMs in either VNet to connect and to share resources by using only the Azure backbone network. Your solution must minimize cost, complexity, and deployment time.
+
+What should you do?
 ---
+Configure peering between prod-vnet-west and prod-vnet-west. *
+Create a private zone in Azure DNS.
+Deploy a VNet-to-VNet virtual private network (VPN).
+Add a service endpoint to each VNet.
 ---
+You should configure peering between prod-vnet-west and prod-vnet-west. Peering enables VMs located on two different Azure VNets to be grouped logically together and thereby connect and share resources. Traditional VNet peering involves two VNets located in the same region. However, global VNet peering, generally available in summer 2018, supports VNets distributed across any Azure public region.
+
+You should not deploy a VNet-to-VNet VPN. First, global VNet peering means that you are no longer required to use a VPN gateway to link VNets located in different Azure regions. Second, the scenario requires that you minimize cost and complexity.
+
+You should not create a private zone in Azure DNS. This action would be necessary for resources in peered VNets to resolve each other's DNS host names. However, the scenario makes no requirement for private host name resolution.
+
+You should not add a service endpoint to each VNet. Service endpoints allow you to limit access to certain Azure resources, such as storage accounts and Azure SQL databases, to resources located on a single VNet. Thus, this feature cannot be used to link two VNets as the scenario mandates.
 ---
+
+Global VNet Peering now generally available;https://azure.microsoft.com/en-us/blog/global-vnet-peering-now-generally-available/
+
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+
+Configure a VNet-to-VNet VPN gateway connection using the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal
+
+Azure DNS Private Zones scenarios;https://docs.microsoft.com/en-us/azure/dns/private-dns-scenarios
+
+Virtual Network Service Endpoints;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview
 ###
+You use an Azure Resource Manager (ARM) template to deploy a virtual network (VNet) that contains two Windows Server virtual machines (VMs).
+
+You need to verify connectivity between the newly deployed VMs. Your tests include the following requirements:
+
+* Determine whether line-of-business (LOB) traffic is allowed between the VMs.
+* Isolate any network security group(s) that may block valid inter-VM network traffic.
+* Minimize cost, time, and troubleshooting complexity.
+
+What should you do first?
 ---
+Run the Test-NetConnection PowerShell cmdlet from your administrative workstation.
+Configure an Azure Automation runbook to perform a packet capture on the target VNet.
+Deploy the Network Performance Monitor (NPM) management solution.
+Enable Network Watcher in the target Azure region. *
 ---
+To run all desired tests efficiently, you should first enable Network Watcher in the target Azure region. Network Watcher includes two tools that are directly relevant to your troubleshooting scenario:
+
+* IP flow verify: Tests point-to-point connectivity between Azure VMs and identifies any network security group (NSG) rules at play
+* Security group view: Displays the effective NSG rules applied to a VNet subnet and/or a VM's VNet interface
+
+You should not deploy the Network Performance Monitor (NPM) management solution. First, this solution fails to meet the scenario requirements of minimal administrative overhead, complexity, and cost. Second, NPM monitors the health of VNets and subnets. It does not have the point-to-point connectivity check tools offered by Network Watcher.
+
+You should not run the Test-NetConnection PowerShell cmdlet from your administrative workstation. While this cmdlet is useful to test connectivity between Azure VMs, it provides no insights into NSG rules that may prevent a connection.
+
+You should not configure an Azure Automation runbook to perform a packet capture on the target VNet. Network Watcher does integrate with Azure Automation, but this solution involves far more complexity than simply using the native Network Watcher tools.
 ---
+
+What is Azure Network Watcher?;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview
+
+Create an Azure Network Watcher instance;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-create
+
+Test-NetConnection;https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection?view=win10-ps
+
+Starting a runbook in Azure Automation;https://docs.microsoft.com/en-us/azure/automation/automation-starting-a-runbook
+
+Network Performance Monitor solution in Azure;https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-network-performance-monitor
 ###
+C
+Your company has an Azure subscription with an Azure Active Directory (Azure AD) tenant. Your company wants to deploy a system that allows users to have a unified experience across all their Windows devices. The security policies of your company require that all user and application data must be encrypted before moving to the cloud and also be encrypted at rest when stored in the cloud.
+
+All computers in your company runs different versions of Windows 7, Windows 8.1, and Windows 10. Your company has an Active Directory Domain Service (AD DS) domain on the local infrastructure. All the computers in the company are joined to the AD DS domain.
+
+You need to deploy Enterprise State Roaming. Your solution needs to require the lowest possible costs.
+
+Which two prerequisites do you need to meet before configuring Enterprise State Roaming? Each correct answer presents part of the solution.
 ---
+Deploy Active Directory Federation Services (AD FS).
+Purchase Azure AD Premium P1 licenses. *
+Deploy Azure AD Connect. *
+Purchase Azure AD Basic licenses.
+Update all Windows 7 and Windows 8.1 computers to Windows 10.
 ---
+You should purchase Azure AD Premium P1 licenses. You can enable Enterprise State Roaming on any Azure AD Premium license or Enterprise Mobility + Security (EMS) license. In this case, the Premium P1 license has the lower costs.
+
+You should also configure Azure AD Connect. Since all computers in the company are joined to an AD DS domain, you need to deploy Azure AD Connect. This connector allows you to synchronize objects in your on-premises AD DS domain with an Azure AD tenant.
+
+You should not purchase an Azure AD Basic license. This license level does not allow you to enable the Enterprise State Roaming feature.
+
+You should not deploy AD FS. This is not a requirement for deploying the Enterprise State Roaming feature in hybrid scenarios. Azure AD Connect is the required component for hybrid synchronization scenarios.
+
+You should not update all Windows 7 and Windows 8.1 computers to Windows 10. All of these versions are supported for Enterprise State Roaming.
 ---
+
+Tutorial: Configure hybrid Azure Active Directory joined devices manually;https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-manual-steps
+
+Azure Active Directory pricing;https://azure.microsoft.com/en-us/pricing/details/active-directory/
+
+Enable Enterprise State Roaming in Azure Active Directory;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-windows-enterprise-state-roaming-enable
 ###
+C
+Your company has an Office 365 tenant for communications and collaboration. The company has also an Azure subscription with an Azure Active Directory (Azure AD) Premium tenant. The company also has an on-premises Active Directory Domain Services (AD DS) domain.
+
+The security policies of your company allow access to cloud applications from employee-owned devices. The security policies require that access to any Office 365 application from a mobile device be limited to users who have enrolled and registered their devices in the corporate Azure AD tenant. The policy applies only to iOS or Android devices.
+
+You need create a conditional access policy to implement the security policy for Microsoft Office 365 Exchange Online to meet the requirements.
+
+Which four conditions should you configure? Each correct answer presents part of the solution.
 ---
+Device state
+Device platform *
+Require approved client app
+Require device to be marked as compliant
+Users and groups *
+Location
+Client apps *
+Sign-in risk
+Cloud apps *
 ---
+You should configure the following conditions:
+
+* Users and groups
+* Cloud apps
+* Device platform
+* Client apps
+
+The Users and groups condition must always be present when you configure a conditional access policy. With this condition you control the user or group of users that the policy will affect.
+
+You need to configure the Cloud apps condition to affect only Microsoft Office 365 Exchange Online. You could also add other Microsoft Office 365 web app applications or third-party applications that are connected to Azure AD or use the Azure AD Application Proxy.
+
+You need to apply the Device platform condition so the policy affects only Android and iOS devices. You can use this condition to control the device platform that will be affected by the policy. Other device platforms are Windows Phone, Windows, or macOS.
+
+You should use the Client apps condition to control which client application can access to the application. For this specific case, you should select mobile apps and desktop clients.
+
+You should not use a Sign-in risk condition. This condition evaluates the likelihood that the sign-in attempt is being performed by a non-legitimate user. The calculation of this likelihood value is performed during the sign-in process.
+
+You should not use a Device state condition. This condition is used to control access based on whether the device has been marked as compliant or whether it is a device joined to hybrid Azure AD.
+
+You should not use a Location condition. You use this condition when you want to restrict access to your cloud apps from specific regions or countries.
+
+You should not use Require device to be marked as compliant. This is a grant option, not a condition. This option will allow access to the cloud app only to managed devices.
+
+You should not use Require approved client app. This is a grant option, not a condition. This option grants access only to those applications that have been approved by Microsoft.
 ---
+
+What are conditions in Azure Active Directory conditional access?;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-conditions
+
+What are access controls in Azure Active Directory conditional access?;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-controls
+
+Azure Active Directory conditional access settings reference;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-technical-reference
 ###
+C
+Your company has an Azure subscription with an Azure Active Directory (Azure AD) tenant. Your company uses this Azure AD tenant for managing access to the resources deployed in Azure.
+
+Your company has a security policy that states that all users must have only the required privileges to do their job. This policy also requires that all privileges be reviewed every month and any incorrect permission assignments must be corrected.
+
+You decide to use Azure AD access review. Access review has not been used before.
+
+You need to configure Azure AD access review. Your solution must require the least administrative effort.
+
+What two actions should you perform? Each correct answer represents part of the solution.
 ---
+Configure a monthly frequency with 14 days for the duration setting. *
+Configure a quarterly frequency with 30 days for the duration setting.
+Use the Default Program. *
+Configure a yearly frequency with 30 days for the duration setting.
+Create a new program.
 ---
+You should use the Default Program. A program is a way of organizing access reviews and controls. The Default Program is always present in access review. Since this is the first usage of access review, it is OK to use this default program. If you require additional programs for other compliance issues or business goals, you can create new programs.
+
+You should configure a control with a monthly frequency with 14 days for the duration setting. Configuring the frequency to monthly will run the access review every month. The duration setting is the amount of time that each review is open to the reviewers to provide their input.
+
+You should not create a new program. This requires more administrative effort and is not required since this is the first usage of the access review.
+
+You should not configure quarterly or yearly frequency. You need the access review to be performed every month. The duration setting does not set the frequency of the access review, but the time frame that a reviewer can make modifications to the access review. For a monthly frequency, the maximum duration setting allowed is 27 days to avoid overlapping with next access review.
 ---
+
+Manage programs and their controls;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-manage-programs-controls
+
+Create an access review of group members or application access with Azure AD;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-azure-ad-controls-create-access-review
 ###
+Your company's local environment consists of a single Active Directory Domain Services (AD DS) domain.
+
+You plan to offer your users single sign-on (SSO) access to Azure-hosted software-as-a-service (SaaS) applications that use Azure Active Directory (Azure AD) authentication. The tenant's current domain name is companycom.onmicrosoft.com.
+
+You need to configure Azure AD to use company.com, the organization's owned public domain name.
+
+What should you do?
 ---
+Add a DNS verification record at the domain registrar. *
+Run Azure AD Connect from a domain member server and specify the custom installation option.
+Add a company.com user principal name (UPN) suffix to the AD DS domain.
+Remove the companycom.onmicrosoft.com domain name from the Azure AD tenant.
 ---
+You should add a Domain Name System (DNS) verification record at the domain registrar. This step is required to verify to Microsoft that you own the public DNS domain name in question. You perform the validation by creating either a text (TXT) or mail exchanger (MX) record in your DNS zone file at the registrar's website, using Microsoft-provided values. You can delete the verification record after Azure validates the domain for use with Azure AD.
+
+You should not remove the companycom.onmicrosoft.com domain name from the Azure AD tenant. In fact, you cannot remove this domain name because Azure uses it to identify your directory uniquely across the entire Microsoft Azure global ecosystem.
+
+You should not add a company.com user principal name (UPN) suffix to the AD DS domain. If you use a non-routable DNS domain in AD DS, then you may indeed be required to perform this action. However, the scenario does not specify what AD DS domain name is currently defined.
+
+You should not run Azure AD Connect from a domain member server and specify the custom installation option. Configuring the proper public and private DNS domain names is one of the prerequisite steps that needs to be completed before you run the Azure AD Connect wizard for the first time.
 ---
+
+How to: Add your custom domain name using the Azure Active Directory portal;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain
+
+What is Azure Active Directory?;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis
+
+Prepare a non-routable domain for directory synchronization;https://docs.microsoft.com/en-us/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization
+
+Getting started with Azure AD Connect using express settings;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-get-started-express
 ###
+You have a single Active Directory Domain Services (AD DS) domain operating at the Windows Server 2016 domain functional level. Account synchronization is configured between AD DS and your corporate Azure Active Directory (Azure AD) tenant. All user workstations run Windows 10 Enterprise Edition.
+
+The support desk informs you that they regularly receive support requests from users who changed their Azure AD password and are no longer able to log onto the local AD DS domain.
+
+You need to configure the environment to allow users to change their password either locally or in the cloud, and have the passwords remain in sync.
+
+What should you do?
 ---
+Configure Azure AD Join for all Windows 10 workstations.
+Enable Azure AD conditional access.
+Upgrade Azure AD to a premium pricing tier. *
+Deploy Active Directory Federation Services (AD FS) in the local AD DS domain.
 ---
+You should upgrade Azure AD to a premium pricing tier. You need either the Premium P1 or Premium P2 stock-keeping unit (SKU) to enable both self-service password reset as well as password writeback from Azure AD to AD DS. Azure AD Basic Edition supports the former, but not the latter, feature. You upgrade your Azure AD edition by logging into the Office 365 Admin Center (portal.office.com), and clicking Purchase services from the navigation menu.
+
+You should not enable Azure AD conditional access. This feature enables you to write policy that constrains which users, and from which locations, can authenticate to Azure AD-connected applications. Azure AD conditional access is not related to password reset and/or writeback.
+
+You should not configure Azure AD Join for all Windows 10 workstations. Windows 10 Enterprise Edition computers can be joined to Azure AD to support Microsoft Intune-based device management. However, you still need to upgrade your Azure AD edition to meet the requirements.
+
+You should not deploy Active Directory Federation Services (AD FS) in the local AD DS domain. AD FS facilitates token-based authentication across different identity providers and is unrelated to the issues of password reset and writeback.
 ---
+
+How it works: Azure AD self-service password reset;https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-howitworks
+
+Azure Active Directory pricing;https://azure.microsoft.com/en-us/pricing/details/active-directory/
+
+What is device management in Azure Active Directory?;https://docs.microsoft.com/en-us/azure/active-directory/devices/overview
+
+Azure AD Connect and federation;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectfed-whatis
+
+Active Directory Federation Services;https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services
+
 ###
+Your company has an Azure Active Directory (Azure AD) tenant federated with its on-premises Active Directory Domain Services (AD DS) domain. This domain is named companycs.com.
+
+Your company recently purchased another company named CompanyBD. CompanyBD has its own AD DS domain named companybd.net. This domain is not federated with an Azure AD tenant.
+
+You need to integrate the companybd.net domain with your Azure AD tenant. You decide to federate this new domain.
+
+You attempt to federate the companybd.net domain with Azure AD by using the following cmdlet:
+
+Convert-MsolDomaintoFederated -DomainName companybd.net
+
+You get the following error:
+
+Convert-MsolDomaintoFederated: The federation service identifier specified in the Active Directory Federation Services 2.0 server is already in use. Please correct this value in the AD FS 2.0 Management console and run the command again.
+
+What is the most likely reason for getting this error?
 ---
+The value for the IssuerUri parameter is companycs.com.
+The value for the IssuerUri parameter is adfs.companybd.net.
+The value for the IssuerUri parameter is adfs.companycs.com. *
+The value for the IssuerUri parameter is companybd.net.
 ---
+You are getting this error because the value of the IssuerUri is adfs.companycs.com. This is the default value for this parameter when you configure the federation between the top-level domain and Azure AD. You got this value because you did not use the -SupportMultipleDomain parameter when you used the Copnvert-MsolDomaintoFederated cmdlet the first time. You need to change the value of IssuerUri to companycs.com to be able to add an additional top-level domain. At this point, you should delete the Microsoft Office 365 Identity Platform entry in the Relying Party Trust in the AD FS Management console and use the Update-MSOLFederatedDomain -DomainName companycs.com -SupportMultipleDomain command. This will recreate the trust relationship with the correct value for the IssuerUri parameter.
+
 ---
+
+Multiple Domain Support for Federating with Azure AD;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-multiple-domains
 ###
+C
+You are the administrator of the Azure Active Directory (Azure AD) tenant and the Active Directory Domain Services (AD DS) on-premises domain in your company. Your company uses Office 365 as well as other third-parties cloud services. Your company uses Windows 8.1 and Windows 10 domain client computers.
+
+Your company wants to allow all employees to use their own devices to access the company's resources, using a Bring Your Own Device (BYOD) approach.
+
+You need to ensure that your company's assets are still protected while allowing the employees to use their own devices. You also need to keep your current device management capabilities. You plan to deploy Azure AD Join. You should ensure that your solution allows Single Sign-On (SSO).
+
+Which two tools should you deploy? Each correct answer presents part of the solution.
 ---
+Azure AD Connect
+System Center Configuration Manager *
+Active Directory Federation Services *
+Upgrade all domain client computers to Windows 10
 ---
+You should deploy Active Directory Federation Services (AD FS). You need to implement SSO, but you still need to allow your users to access third-parties cloud services. Deploying AD FS allows you to manage all the authentication methods in your on-premises AD DS domain, while establishing trust relationships with cloud services for authenticating your users.
+
+Also, you should deploy System Center Configuration Manager (SCCM). This solution allows you to manage your on-premises workstations. You should also deploy a Mobile Device Management (MDM) solution such as Windows Intune. This way, you can manage Azure AD joined devices with the MDM solution and your on-premises workstations with SCCM.
+
+You should not deploy Azure AD Connect. In this scenario, you need to implement SSO so users can access third-parties cloud services. You can only achieve this by using AD FS, not Azure AD Connect.
+
+You should not upgrade all domain client computers to Windows 10. Although having Windows 10 installed on all your workstations is a best-practice, this is not a requirement in an Azure AD Join hybrid deployment. You can use Windows down-level devices such as Windows 7 and 8.1 or Windows Server 2008 R2 through 2012 R2.
 ---
+
+How to plan your hybrid Azure Active Directory join implementation;https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-plan
+
+How to: Plan your Azure AD join implementation;https://docs.microsoft.com/en-us/azure/active-directory/devices/azureadjoin-plan
 ###
+C
+Your company is evaluating a hybrid identity management strategy for authenticating users accessing application hosted in Azure.
+
+You have the following requirements:
+
+* Users must be able to login to the Azure hosted applications using the same username and password as they use on-premises.
+* Minimum additional infrastructure is needed to support the sign on mechanism.
+* User accounts revoked on premises must be instantly revoked in Azure.
+ *A cloud based solution should be in place in the event of disaster recovery being invoked. This cloud based solution will not have the same restriction on instant user revocation.
+
+You need to implement the identity management strategy.
+
+Which two identity management solutions should you choose? Each correct answer presents part of the solution.
 ---
+Cloud authentication
+Active Directory Federation Services (ADFS)
+Azure AD Connect with Password Synchronization *
+Azure AD Pass-through Authentication *
 ---
+You should use Azure AD Pass-through Authentication to allow the support for instant account revocation and fall back to a cloud identity provider in the case of disaster recovery. When Azure AD Pass-through Authentication is not available, you can have it fall back to leveraging Azure AD Connect with Password Sync to support login.
+
+You do not require ADFS in this scenario. Although it would support instant account revocation, it does not have a disaster recovery option for fall back to another provider.
+
+Using cloud authentication would not meet the requirements. Cloud identities are not connected to on premises and cannot be revoked on premises. Cloud authentication also offers no failback capability in the event of a disaster.
 ---
+
+Choose the right authentication method for your Azure Active Directory hybrid identity solution;https://docs.microsoft.com/en-us/azure/security/azure-ad-choose-authn
+
+What is Azure Active Directory?;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis
 ###
+You implement Azure Active Directory (Azure AD) Connect to synchronize your on premises Active Directory objects to Azure AD. You discover that the Domain Users group is not available for assigning permissions to applications in Azure.
+
+You need to resolve the issue using the least administrative effort.
+
+What should you do?
 ---
+Move the Domain Users group to an Organizational Unit in Active Directory that is configured for synchronization.
+Modify the IsCriticalSystemObject property of the group to False.
+Create a new Active Directory group and add all domain users to the group. Synchronize this group with Azure AD. *
+Set the repsTo property on the Domain Users group to the Azure AD Tenant ID.
 ---
+The Domain Users group has a property called IsCriticalSystemObject and any user or group with this property does not sync to Azure AD by design. Therefore, you should create a new group in Active Directory and add all the users from the domain to that group. This can then be used to grant permission to applications in Azure AD after that group is synchronized.
+
+You should not move the Domain Users group to an Organizational Unit that is configured for synchronization. Doing this will not synchronize the account because the well-known groups do not synchronize by default.
+
+You should not modify the IsCriticalSystemObject property of the group. This property is set by design to prevent replication of well-known objects to Azure AD. Such well-known objects are the default Active Directory groups and accounts such as the Domain Administrator account.
+
+You should not set a value on the RepsTo property in Active Directory. This property stores the server names that the directory will replicate to for the object. It has no bearing on replication to Azure AD.
 ---
+
+Is-Critical-System-Object attribute;https://docs.microsoft.com/en-gb/windows/desktop/ADSchema/a-iscriticalsystemobject
+
+Reps-To attribute;https://docs.microsoft.com/en-gb/windows/desktop/ADSchema/a-repsto
+
+Hybrid identity and Microsoft identity solutions;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect
 ###
+C
+You configure federated authentication on your Azure subscription for multiple applications. As a part of that work, you enable Home Realm Discovery and set the policy as shown in the exhibit.
+
+The majority of your users can successfully access the application, but several users report that they are unable to sign in.
+
+You need to resolve the problem.
+
+What are two ways to resolve the problem? Each correct answer presents a complete solution.
 ---
+Change the AllowCloudPasswordValidation value to False.
+Change the PreferredDomain value to the domain of the users who cannot login.
+Disable Home Realm Discovery. *
+Add the users who cannot login to the federated.example.edu domain. *
 ---
+You should either add the users to the federated.example.edu domain or disable Home Realm Discovery to allow users to login to any domain.
+
+Home Realm Discovery redirects users to a specific federated login endpoint to accelerate the Azure login process. When multiple domains are in play, users may be blocked from logging in if the configuration is not correct. In this example users cannot login to Azure, but the policy indicates that Home Realm Discovery is enabled with a preferred domain of federated.example.edu. Because a preferred domain is specified, it means that every user of the application must be able to login to that domain. Cleary they cannot at this point. One possible solution is to add these users to the federated.example.edu domain to enable them to log in. A second solution would be to disable Home Realm Discovery to allow users to log in to any domain.
+
+You should not change the AllowCloudPasswordValidation property to false. This will not allow a non-preferred domain user from logging in if a preferred domain is set. It only allows a user with a synchronized password hash to login directly to an Azure AD endpoint.
+
+You should not change the PreferredDomain property to the domain that the users who cannot login are from, This will fix the problem for the users who cannot log in, but will subsequently block access for the users who can currently log in.
 ---
+
+
+Configure Azure Active Directory sign in behavior for an application by using a Home Realm Discovery policy;https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal
 ###
+Your company's  local environment consists of a single Active Directory Domain Services (AD DS) domain. The company purchases a Microsoft Office 365 E5 subscription, and you plan to configure directory synchronization between AD DS and Azure Active Directory (Azure AD) to support single sign-on (SSO) for your users.
+
+You need to ensure that improperly formatted domain user names will not cause synchronization errors.
+
+What should you do?
 ---
+Run the Synchronization Rules Editor.
+Run the Synchronization Service Manager.
+Run Azure AD Connect in custom mode.
+Run the IdFix tool. *
 ---
+You should download and run the free Microsoft Directory Synchronization Error Remediation (IdFix) tool on a domain member server or workstation prior to configuring directory synchronization between AD DS and Azure AD. IdFix can isolate and even remediate common errors reported by Azure AD Connect, including improperly formatted domain user names.
+
+You should not run Azure AD Connect in custom mode. This operation actually configures directory synchronization or identity federation. It does not proactively identify potential errors and offer to remediate them for you.
+
+You should not run the Synchronization Service Manager. This tool and the Synchronization Rules Editor are included when you install Azure AD Connect on the domain controller or member server that will host the directory synchronization service. Synchronization Service Manager is used to customize the synchronization schedule. It can only be run after directory synchronization is enabled.
+
+You should not run the Synchronization Rules Editor. The tool can be run only post-deployment of directory synchronization. Also, the tool is used to customize the user and group attributes synchronized between on-premises and cloud environments, not to proactively address synchronization errors.
 ---
+
+Install and run the Office 365 IdFix tool;https://support.office.com/en-us/article/install-and-run-the-office-365-idfix-tool-f4bd2439-3e41-4169-99f6-3fabdfa326ac
+
+Azure AD Connect sync: Understand and customize synchronization;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-whatis
+
+Introduction to the Azure AD Connect Synchronization Service Manager UI;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-service-manager-ui
+
+Azure AD Connect sync: Make a change to the default configuration;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-change-the-configuration
 ###
+One of your colleagues used Azure AD Connect to synchronize all Active Directory domain user and group accounts to your Azure Active Directory (Azure AD) tenant. As a result, authorized domain users have single sign-on (SSO) access to internally developed software-as-a-service (SaaS) apps that rely on Azure AD authentication.
+
+You need to reconfigure directory synchronization to exclude domain service accounts and user identities that should not have access to the SaaS application.
+
+What should you do?
 ---
+Run the Synchronization Rules Editor.
+Stop the synchronization service.
+Configure conditional access in Azure AD.
+Re-run Azure AD Connect. *
 ---
+You should re-run Azure AD Connect in order to perform organizational unit (OU) filtering and thereby customize the Active Directory identities that are replicated to Azure AD. You do not need to uninstall and reinstall Azure AD Connect to make changes to your identity synchronization topology. You just need to re-run the Azure AD Connect wizard, which offers the following options:
+
+* Viewing current configuration
+* Customizing synchronization properties
+* Refreshing the directory schema
+* Configuring staging mode
+* Changing user sign-in
+
+In this case, you would choose Customizing synchronization properties to configure OU filtering.
+
+You should not run the Synchronization Rules Editor. This tool allows you to view and potentially remap Active Directory schema attributes with Azure AD properties.
+
+You should not configure conditional access in Azure AD. Conditional access is an Azure AD security feature whereby you can define policy to restrict which Azure AD users are authorized to access cloud-based or on-premises applications. You need to restrict Active Directory accounts are synchronized to Azure AD.
+
+You should not stop the synchronization service. Doing so does not address the issue of changing which Active Directory accounts are synchronized to Azure AD.
 ---
+
+Azure AD Connect sync: Running the installation wizard a second time;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-installation-wizard
+
+Azure AD Connect sync: Configure filtering;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-configure-filtering
+
+Azure AD Connect sync: Make a change to the default configuration;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-change-the-configuration
+
+Introduction to the Azure AD Connect Synchronization Service Manager UI;https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnectsync-service-manager-ui
+
+What is conditional access in Azure Active Directory?;https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal
 ###
+Your company recently purchased an Office 365 subscription. Your company has an on-premises Active Directory Domain Services (AD DS) domain. You configure smartcard authentication support for some specific users.
+
+You want to ensure that users can access all Office 365 applications without typing their password. You also want to ensure that they use the same password for the AD DS company domain and Office 365.
+
+You need to deploy a solution that meets all the company's requirements.
+
+Which solution should you deploy?
 ---
+Active Directory Federation Services (AD FS) and Seamless Single Sign-On (SSO)
+Active Directory Federation Services (AD FS). *
+Azure AD Connect with pass-through authentication and Seamless Single Sign-On (SSO)
+Azure AD Connect with pass-through authentication
+Azure AD Connect with password hash synchronization
+Azure AD Connect with password hash synchronization and Seamless Single Sign-On (SSO)
 ---
+You should deploy AD FS. You need your users to be able to use all Office 365 applications without typing the password every time they need to use the application. This means that you need to implement a Single Sign-On (SSO) solution. You have also configured smartcard authentication support. This is the only solution that enables SSO and also allows smartcard authentication with Office 365 applications for your users.
+
+You should not deploy Active Directory Federation Services (AD FS) and Seamless SSO. Seamless SSO is an Azure AD Connect feature that is not supported by AD FS.
+
+You should not deploy Azure AD Connect with password hash synchronization or pass-through authentication and Seamless SSO. None of these options allows users with a smartcard to authenticate to Office 365 applications.
+
+You should not deploy Azure AD Connect with password hash synchronization or pass-through authentication. These options do not provide SSO on their own. You would need to enable Seamless SSO on Azure AD Connect to support SSO. These options do not meet the requirement of authenticating users with smartcards either.
+
 ---
+
+What is hybrid identity?;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity
+
+Azure Active Directory Seamless Single Sign-On: Quick start;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sso-quick-start
 ###
+C
+You are asked to connect your new Office 365 subscription with your on-premises Active Directory Domain Services (AD DS) domain. You configure Azure AD Connect and enable Seamless Single Sign-On (SSO).
+
+You need to configure Group Policy Object (GPO) support for SSO.
+
+Which two policies or settings should you configure? Each correct answer presents part of the solution.
 ---
+Allow updates to status bar via script for Internet Zone
+Allow updates to status bar via script for Intranet Zone *
+Turn on Notification bar notification for intranet content
+Internet Zone Template
+Site to Zone Assignment List *
+Intranet Zone Template
 ---
+You should configure the Site to Zone Assignment List setting. You need to configure this setting to establish the URL to which Kerberos tickets are forwarded when the user tries to sign on to Office 365 applications. You need to configure https://autologon.microsoftazuread-sso.com as an Intranet zone, because Kerberos tickets are not sent to cloud endpoints.
+
+You should also configure the Allow updates to status bar via script policy for the Intranet Zone. When the user tries to access an Office 365 application, Seamless SSO uses JavaScript scripts to run all requests in the background. These JavaScript scripts also need to update the status bar of the user's browser. You need to configure this setting for the Intranet Zone because you need your clients to send Kerberos tickets.
+
+You should not configure the Internet Zone Template or Intranet Zone Template policies. These policies are useful to configure the security level for each zone for the domain users.
+
+You should not configure the Allow updates to status bar via script policy for the Internet Zone. This policy will allow JavaScript scripts downloaded from the Internet Zone to update the status bar. In this scenario, the Seamless SSO's URL is treated as an Intranet Zone's URL.
+
+You should not turn on the Notification bar policy for intranet content. This policy has no effect on the Seamless SSO feature.
 ---
+
+Azure Active Directory Seamless Single Sign-On: Quick start;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sso-quick-start
 ###
+You configure Azure AD Connect to synchronize your on-premises Active Directory Domain Services (AD DS) domain with your Office 365 subscription. You enable the password hash synchronization feature. Then, you sync all user accounts that are assigned to an employee. You also configure group-based filtering.
+
+A user indicates that she cannot log in to Office 365 applications. However, she is able to log in successfully through her company's workstations.
+
+You need to troubleshoot the password synchronization process.
+
+After some investigation, you realize that this user has been moved to another job position in the company.
+
+What is the most likely cause of the login problem?
 ---
+The user object has been disabled.
+The user object has selected the User must change password at next logon setting.
+You have configured the cloudFiltered attribute.
+The user object has been moved to another security group. *
 ---
+The most likely cause of the problem is that the user object has been moved to another security group. You only sync user accounts that are assigned to an employee. You manage these users by using AD DS security groups. If you accidentally move a user out of the security group that you have configured to synchronize to Azure AD, that user is removed from the Azure AD tenant and will not be able to log in. You need to move the affected user account back to the correct security group for Azure AD Connect to synchronize it again with Azure AD tenant.
+
+The user object being selecting the User must change password at next logon setting would not make the user unable to log in. This setting would make the password not synchronized with the Azure AD tenant. Temporary passwords are not synced. In this scenario, the user was able to correctly log in to her company's workstation. She was not asked to change her password.
+
+The user object being disabled would not make the user unable to log in. Azure AD Connect will not synchronize disabled objects. In this scenario, the user was able to log in to her computer, which means that the user object was not disabled.
+
+Configuring the cloudFiltered attribute would not make the user unable to login. In this scenario, you are using group-based filtering. Attribute filtering is a more granular technique to filter the objects that will be added to the metaverse and then synced with Azure AD tenant. If the cloudFilterted attribute is present in an object, that object will not be synced with Azure AD.
+
 ---
+
+Troubleshoot password hash synchronization with Azure AD Connect sync;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/tshoot-connect-password-hash-synchronization
+
+Azure AD Connect sync: Configure filtering;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-configure-filtering
 ###
+You are asked to create a new set of Azure Active Directory (Azure AD) security groups that represent the entire hierarchy of a manager's team. This is to include people managed by the manager but not people managed by the manager's own team. For example if Bob manages Tom and Tom manages Fred. The group must include Tom but not Fred. The group should also update dynamically as people change managers over time.
+
+You need to implement the request using the least amount of administrative effort.
+
+What should you do?
 ---
+Create new groups using the Direct Reports rule. *
+Create new Azure AD groups for each manager and use a custom script to detect ManagerID attribute changes and modify the group membership accordingly.
+Construct dynamic groups in Azure AD using a ruleset including the ManagerID property.
+Create multiple Azure AD groups and add the members with the same ManagerID attribute value to each group.
 ---
+You should create new groups using the Direct Reports rule. This rule creates a dynamic group including members who have the same ManagerID attribute.
+
+You should not create multiple Azure AD groups and add members with the same ManagerID attribute. This will initially be successful but does not satisfy the auto updating requirement as managers change.
+
+You should not create Azure AD groups for each manager and use a custom script to update the groups on attribute changes. This would solve the requirement of keeping the group up to date on changes but would require more administrative effort to implement.
+
+You should not construct dynamic groups in Azure AD based on the ManagerID attribute. This attribute is only available with the Direct Reports rule.
 ---
+
+Dynamic membership rules for groups in Azure Active Directory;https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-dynamic-membership
 ###
+Your company has an Azure subscription configured with an Azure Active Directory (Azure AD) tenant. This tenant is used for managing user information. Your company has also a line-of-business (LOB) application that uses the Azure AD tenant for getting information from users.
+
+You are asked to update the mobile attribute of all tenant users.
+
+You need to perform this task using the least administrative effort.
+
+What should you do?
 ---
+Use the Set-AzureADUser cmdlet. *
+Use the Set-MsolUser cmdlet.
+Use the Invoke-RestMethod cmdlet to call the Graph API.
+Use the Set-ADUser cmdlet.
 ---
+You should use Set-AzureADUser cmdlet. This cmdlet allows you to modify the properties of a user in Azure AD. You can use this cmdlet in a script to perform a bulk modification on your tenant.
+
+You should not use the Invoke-RestMethod cmdlet to call the Graph API. You use Invoke-RestMethod for making HTTP requests. You could use this cmdlet for calling the users' endpoint in the Graph API and then make a bulk modification, but this would require much more effort.
+
+You should not use the Set-MsolUser cmdlet. This cmdlet is used for modifying Office 365 user properties. Although this cmdlet will modify the properties on the Azure AD tenant associated with the Office 365 subscription, your company does not have an Office 365 subscription, so you should not use this cmdlet.
+
+You should not use the Set-ADUser cmdlet. You use this cmdlet for modifying the properties of an Active Directory Domain Services (AD DS) user. Since your Azure AD tenant is not connected with an AD DS domain, this cmdlet would not work for your environment.
 ---
+
+Configure user account properties with Office 365 PowerShell;https://docs.microsoft.com/en-us/office365/enterprise/powershell/configure-user-account-properties-with-office-365-powershell
+
+Set-ADUser;https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-aduser
+
+Set-MsolUser;https://docs.microsoft.com/en-us/powershell/module/msonline/set-msoluser
+
+Set-AzureADUser;https://docs.microsoft.com/en-us/powershell/module/azuread/set-azureaduser
+
+Invoke-RestMethod;https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod
 ###
+Due to a recent corporate reorganization, team members in the Accounting department are now part of the Finance department.
+
+You need to change the Department property for 36 Azure AD user accounts. Your solution must minimize administrative effort and make future bulk updates easier to perform.
+
+What should you do?
 ---
+Write a Desired State Configuration (DSC) script and deploy it using Azure Automation.
+Write a PowerShell script using the AzureAD module. *
+Write a PowerShell Azure Function using the AzureRM.Profile module.
+Write a PowerShell workflow using the MSOnline module and a comma-separated value (CSV) file containing the relevant usernames.
 ---
+You should write a PowerShell script using the AzureAD module. Your script should call Connect-AzureAD to authenticate as an administrator, enumerate a list of appropriate group members, and then use a looping construct to update the Department property for the group members. For instance, your script may look like the following:
+
+Connect-AzureAD
+$groupName = Get-AzureADGroup -SearchString 'Accounting'
+$users = Get-AzureADGroupMember -ObjectId $groupName.ObjectId
+foreach ($u in $users) {
+   Set-AzureADUser -ObjectId $u.Mail -Department 'Finance'
+}
+
+Going beyond this scenario's requirements, you will likely need to rename the Accounting group to Finance as well for consistency's sake.
+
+You should not write a PowerShell workflow using the MSOnline module and a CSV file containing the relevant usernames. First, MSOnline is a legacy Azure Active Directory module and Microsoft strongly encourages customers to use the AzureAD module instead. Second, importing a CSV file is an excellent way to bulk-add new objects into AzureAD but is not appropriate for this bulk update scenario.
+
+You should not write a DSC script and deploy it using Azure Automation. DSC is used to prevent configuration drift in target systems, not to perform bulk updates to a directory service.
+
+You should not write a PowerShell Azure Function using the AzureRM.Profile module. The AzureRM.Profile module contains cmdlets concerning authentication and user context, not Azure Active Directory itself.
 ---
+
+Azure Active Directory - Bulk Updating User Profile Attributes Using PowerShell;http://ericphan.net/blog/2017/9/26/azure-active-directory-bulk-updating-user-profile-attributes-using-powershell
+
+AzureAD;https://docs.microsoft.com/en-us/powershell/module/Azuread/
+
+MSOnline;https://docs.microsoft.com/en-us/powershell/module/msonline/
+
+AzureRM.Profile;https://docs.microsoft.com/en-us/powershell/module/azurerm.profile/
+
+Using PowerShell Modules in Azure Functions;https://blogs.msdn.microsoft.com/powershell/2017/02/24/using-powershell-modules-in-azure-functions/
+
+Azure Automation State Configuration Overview;https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview
+
 ###
+You hire another administrator who will be responsible for managing all infrastructure-as-a-service (IaaS) deployments in your Azure subscription.
+
+You create a new Azure Active Directory (Azure AD) user account for the new hire. You need to configure the new user account to meet the following requirements:
+
+* Read/write access to all Azure IaaS deployments
+* Read-only access to Azure AD
+* No access to Azure subscription metadata
+
+Your solution must also minimize your access maintenance in the future.
+
+What should you do?
 ---
+Assign the user the Virtual Machine Operator role at the subscription level.
+Assign the user the Global administrator directory role.
+Assign the user the Contributor role at the resource group level. *
+Assign the user the Owner role at the resource level.
 ---
+You should assign the user the Contributor role at the resource group level. Least privilege security means granting users only the scope and degree of access they require, and no more. The Contributor built-in role-based access control (RBAC) role grants the new employee full read/write access at that scope, but does not grant the user any privileges either at the subscription or Azure AD levels.
+
+You should not assign the user the Global administrator directory role. This role assignment allows the new employee full access to Azure AD, which violates the scenario's technical requirements. Also, Azure AD directory roles govern what a user can do within Azure AD and have nothing to do with regard to other Azure service permissions.
+
+You should not assign the user the Owner role at the resource level. The Owner role is most privileged, and its assignment must be strictly controlled. Furthermore, making multiple role assignments at the resource level makes for more difficult and complex administration in the future.
+
+You should not assign the user the Virtual Machine Operator role at the subscription level. This built-in role grants users only the ability to monitor and restart virtual machines (VMs), which is far less privilege than the new hire requires to perform full management of the company's Azure IaaS deployments.
+
 ---
+
+Administrator role permissions in Azure Active Directory;https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles
+
+Manage access using RBAC and the Azure portal;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal
+
+What is role-based access control (RBAC)?;https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+
+Azure Resource Manager overview;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview
 ###
+Your company has an Azure Active Directory (Azure AD) tenant named companycs.com, for managing all users that need to access the resources deployed in their Azure subscription.
+
+You need to grant access to an external consultant to some of the resources deployed in your subscription. This external consultant will use her own email address as her username. The company of the external consultant does not use Office 365 or any other Azure AD tenant.
+
+Which PowerShell cmdlet should you use?
 ---
+New-AzureADMSInvitation *
+New-MsolUser
+New-AzureADUser
+New-ADUser
 ---
+You should use the New-AureADMSInvitation cmdlet. You use this cmdlet to create guest users in your Azure AD tenant. In this scenario, you need to create a guest user because the external consultant will use her own email address as the username to log in to your tenant. You need to create guest users to grant access to users that do not exist on your Azure AD tenant, regardless of whether they use Office 365 or have another Azure AD tenant configured.
+
+You should not use the New-AzureADUser cmdlet. This cmdlet is used to create a new user in your Azure AD tenant. In this scenario, using this cmdlet will create a new user that will use companycs.com as part of their username.
+
+You should not use the New-ADUser cmdlet. You typically use this cmdlet to create new users in your on-premises AD DS domain. If your on-premises AD DS domain and your Azure AD tenant were synced, any new user would appear on your Azure AD tenant. However, they would be internal users, not guests.
+
+You should not use the New-MsolUser cmdlet. You use this cmdlet to create a new user in an Office 365 subscription.
 ---
-###
----
----
----
+
+Creating a new user in Azure AD;https://docs.microsoft.com/en-us/powershell/azure/active-directory/new-user-sample
+
+Quickstart: Add a guest user with PowerShell;https://docs.microsoft.com/en-us/azure/active-directory/b2b/b2b-quickstart-invite-powershell
+
+New-AzureADMSInvitation;https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureadmsinvitation
+
+New-MsolUser;https://docs.microsoft.com/en-us/powershell/module/msonline/new-msoluser
+
+New-ADUser;https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-aduser
+
+New-AzureADUser;https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureaduser
