@@ -257,6 +257,11 @@ $@"
                     words.AddRange(content.Text.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList());
                 }
 
+                foreach (AnswerEntity answer in questionEntity.Answers)
+                {
+                    words.AddRange(answer.Text.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList());
+                }
+
                 StringBuilder pageDescription = new StringBuilder();
 
                 foreach (string w in words)

@@ -15,7 +15,7 @@ namespace Exam_answerWeb.Infrastructure
     {
         public static List<ExamEntity> AllExams;
 
-        private static List<QuestionEntity> GetQuestions(string path)
+        private static List<QuestionEntity> GetQuestions(string path, int startOrder = 0)
         {
             string allText = File.ReadAllText(path);
 
@@ -35,7 +35,7 @@ namespace Exam_answerWeb.Infrastructure
                 List<string> questionExplanations = questionsGroups[2].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
                 List<string> questionReferences = questionsGroups[3].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
                 QuestionEntity qe = new QuestionEntity();
-                qe.Order = quesions.IndexOf(question);
+                qe.Order = startOrder + 1 + quesions.IndexOf(question);
                 if (questionContent.FirstOrDefault()?.Equals("C") == true)
                 {
                     qe.QuestionType = QuestionType.CheckBox;
@@ -288,22 +288,6 @@ namespace Exam_answerWeb.Infrastructure
                 Questions = GetQuestions("Exams\\az-100.txt"),
             };
 
-            //az100.Questions.Add(Az100.Q1Instance);
-            //az100.Questions.Add(Az100.Q2Instance);
-            //az100.Questions.Add(Az100.Q3Instance);
-            //az100.Questions.Add(Az100.Q4Instance);
-            //az100.Questions.Add(Az100.Q5Instance);
-            //az100.Questions.Add(Az100.Q6Instance);
-            //az100.Questions.Add(Az100.Q7Instance);
-            //az100.Questions.Add(Az100.Q8Instance);
-            //az100.Questions.Add(Az100.Q9Instance);
-            //az100.Questions.Add(Az100.Q10Instance);
-            //az100.Questions.Add(Az100.Q11Instance);
-            //az100.Questions.Add(Az100.Q12Instance);
-            //az100.Questions.Add(Az100.Q13Instance);
-            //az100.Questions.Add(Az100.Q14Instance);
-            //az100.Questions.Add(Az100.Q15Instance);
-
             context?.Exams?.Add(az100);
             result.Add(az100);
 
@@ -316,7 +300,7 @@ namespace Exam_answerWeb.Infrastructure
                 Description = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations.",
                 Questions = new List<QuestionEntity>()
             };
-
+                        
 
             az900.ShowUdemy = false;
             az900.UdemyLinkUrl = "https://www.udemy.com/course/exam-az-900-microsoft-azure-fundamentals-exam-questions/?couponCode=50_OFF";
@@ -341,45 +325,8 @@ namespace Exam_answerWeb.Infrastructure
                 QuestionEntity qe = f.GetValue(null) as QuestionEntity;
                 az900.Questions.Add(qe);
             }
-            //var values = from type in someAssembly.GetTypes()
-            //             from field in type.GetFields(BindingFlags.Static |
-            //                                          BindingFlags.Public |
-            //                                          BindingFlags.NonPublic)
-            //             where field.IsInitOnly &&
-            //                   field.FieldType == typeof(QuestionEntity)
-            //             select (QuestionEntity)field.GetValue(null);
 
-            //az900.Questions.Add(Az900.Q1Instance);
-            //az900.Questions.Add(Az900.Q2Instance);
-            //az900.Questions.Add(Az900.Q3Instance);
-            //az900.Questions.Add(Az900.Q4Instance);
-            //az900.Questions.Add(Az900.Q5Instance);
-            //az900.Questions.Add(Az900.Q6Instance);
-            //az900.Questions.Add(Az900.Q7Instance);
-            //az900.Questions.Add(Az900.Q8Instance);
-            //az900.Questions.Add(Az900.Q9Instance);
-            //az900.Questions.Add(Az900.Q10Instance);
-            //az900.Questions.Add(Az900.Q11Instance);
-            //az900.Questions.Add(Az900.Q12Instance);
-            //az900.Questions.Add(Az900.Q13Instance);
-            //az900.Questions.Add(Az900.Q14Instance);
-            //az900.Questions.Add(Az900.Q15Instance);
-            //az900.Questions.Add(Az900.Q16Instance);
-            //az900.Questions.Add(Az900.Q17Instance);
-            //az900.Questions.Add(Az900.Q18Instance);
-            //az900.Questions.Add(Az900.Q19Instance);
-            //az900.Questions.Add(Az900.Q20Instance);
-            //az900.Questions.Add(Az900.Q21Instance);
-            //az900.Questions.Add(Az900.Q22Instance);
-            //az900.Questions.Add(Az900.Q23Instance);
-            //az900.Questions.Add(Az900.Q24Instance);
-            //az900.Questions.Add(Az900.Q25Instance);
-            //az900.Questions.Add(Az900.Q26Instance);
-            //az900.Questions.Add(Az900.Q27Instance);
-            //az900.Questions.Add(Az900.Q28Instance);
-            //az900.Questions.Add(Az900.Q29Instance);
-            //az900.Questions.Add(Az900.Q30Instance);
-            //az900.Questions.Add(Az900.Q31Instance);
+            az900.Questions.AddRange(GetQuestions("Exams\\az-900.txt", az900.Questions.Count));
 
             context?.Exams?.Add(az900);
             result.Add(az900);
@@ -388,49 +335,6 @@ namespace Exam_answerWeb.Infrastructure
 
             AllExams = result;
             return result;
-            //var allquestions = crt251.Questions;
-
-            //List<double> distances = new List<double>();
-
-            //for (int i = 0; i < allquestions.Count; i++)
-            //{
-            //    for (int j = i + 1; j < allquestions.Count; j++)
-            //    {
-            //        QuestionEntity q1 = allquestions[i];
-            //        QuestionEntity q2 = allquestions[j];
-
-            //        StringBuilder sb1 = new StringBuilder();
-            //        foreach (var content in q1.Contents)
-            //        {
-            //            sb1.AppendLine(content.Text);
-            //        }
-            //        foreach (var answer in q1.Answers)
-            //        {
-            //            sb1.AppendLine(answer.Text);
-            //        }
-
-            //        StringBuilder sb2 = new StringBuilder();
-            //        foreach (var content in q2.Contents)
-            //        {
-            //            sb2.AppendLine(content.Text);
-            //        }
-            //        foreach (var answer in q2.Answers)
-            //        {
-            //            sb2.AppendLine(answer.Text);
-            //        }
-
-            //        string text1 = sb1.ToString();
-
-            //        string text2 = sb2.ToString();
-
-            //        var distance = LevenshteinDistance.CalculateSimilarity(text1, text2);
-            //        distances.Add(distance);
-            //        if (distance > 0.6)
-            //        {
-            //        }
-            //    }
-            //}
-            //distances = distances.OrderByDescending(d => d).ToList();
         }
     }
 }

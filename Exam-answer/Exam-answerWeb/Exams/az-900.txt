@@ -1,0 +1,203 @@
+###
+You have an Azure environment that contains 10 web apps. To which URL should you connect to manage all the Azure resources?
+---
+https://admin.azure.com
+https://admin.azurewebsites.com
+https://admin.microsoft.com
+https://portal.azure.com *
+https://portal.azurewebsites.com
+https://portal.microsoft.com
+https://www.azure.com
+https://www.azurewebsites.com
+https://www.microsoft.com
+---
+---
+###
+You plan to extend your company’s network to Azure. The network contains a VPN appliance that uses an IP address of 131.107.200.1.
+You need to create an Azure resource that identifies the VPN appliance.
+Which Azure resource should you create?
+---
+Virtual networks
+Load balancers
+Virtual network gateways
+DNS zones
+Traffic Manager profiles
+Network Watcher
+Application network gateways *
+CDN profiles
+ExpressRoute circuits
+---
+---
+###
+C
+Choose all that apply:
+---
+If you have Azure resources deployed to every region, you can implement availability zones in all regions.
+Only virtual machines that run Windows Server can be created in availability zones.
+Availability zones are used to replicate data and applications to multiple regions.
+None of the above *
+---
+---
+###
+C
+Choose all that apply:
+---
+Data that is copied to an Azure Storage account is maintained automatically in at least three copies. *
+All data that is copied to an Azure Storage account is backed up automatically to another Azure data center.
+An Azure Storage account can contain up to 2 TB of data and up to one million files.
+Choose all that apply:
+---
+---
+###
+C
+Several support engineers plan to manage Azure by using the computers shown in the following table:
+Computer 1 - Windows 10
+Computer 2 - Ubuntu
+Computer 3 - MacOS Mojave
+You need to identify which Azure management tools can be used from each computer.
+Choose three:
+---
+Computer 1 - The Azure CLI and Azure portal
+Computer 1 - The Azure portal and Azure PowerShell
+Computer 1 - The Azure CLI and Azure PowerShell
+Computer 1 - The Azure CLI, the Azure portal and Azure PowerShell *
+Computer 2 - The Azure CLI and Azure portal
+Computer 2 - The Azure portal and Azure PowerShell
+Computer 2 - The Azure CLI and Azure PowerShell
+Computer 2 - The Azure CLI, the Azure portal and Azure PowerShell *
+Computer 3 - The Azure CLI and Azure portal
+Computer 3 - The Azure portal and Azure PowerShell
+Computer 3 - The Azure CLI and Azure PowerShell
+Computer 3 - The Azure CLI, the Azure portal and Azure PowerShell *
+---
+---
+PowerShell now Open Source AND Cross-Platform! Linux, macOS, Windows;https://buildazure.com/2016/08/18/powershell-now-open-source-and-cross-platform-linux-macos-windows/
+###
+C
+You plan to deploy a critical line-of-business application to Azure.
+The application will run on an Azure virtual machine.
+You need to recommend a deployment solution for the application. The solution must provide a guaranteed availability of 99.99 percent.
+What is the minimum number of virtual machines and the minimum number of availability zones you should recommend for the deployment?
+---
+Minimum number of virtual machines: 1
+Minimum number of virtual machines: 2 *
+Minimum number of virtual machines: 3
+Minimum number of availability zones: 1
+Minimum number of availability zones: 2 *
+Minimum number of availability zones: 3
+---
+---
+What are Availability Zones in Azure?;https://docs.microsoft.com/en-us/azure/availability-zones/az-overview
+###
+C
+Choose all that apply:
+---
+Azure Advisor provides recommendations on how to improve the security of an Azure Active Directory (Azure AD) environment.
+Azure Advisor provides recommendations on how to reduce the cost of running Azure virtual machines. *
+Azure Advisor provides recommendations on how to configure the network settings on Azure virtual machines.
+Choose all that apply:
+---
+---
+###
+C
+Choose all that apply:
+---
+All the Azure resources deployed to a single resource group must share the same Azure region.
+If you assign a tag to a resource group, all the Azure resources in that resource group are assigned to the same tag.
+If you set permissions ti a resource group, all the Azure resources in that resource group inherit the permissions. *
+---
+---
+###
+You plan to implement an Azure database solution.
+You need to implement a database solution that meets the following requirements:
+Can add data concurrently from multiple regions
+Can store JSON documents
+Which database service should you deploy?
+---
+Azure Cosmos DB. *
+Azure Database for MySQL servers.
+SQL Servers.
+SQL data warehouse.
+Azure Database for PostgreSQL servers.
+---
+Today's applications are required to be highly responsive and always online. To achieve low latency and high availability, instances of these applications need to be deployed in datacenters that are close to their users. Applications need to respond in real time to large changes in usage at peak hours, store ever increasing volumes of data, and make this data available to users in milliseconds.
+
+Azure Cosmos DB is Microsoft's globally distributed, multi-model database service. With a click of a button, Cosmos DB enables you to elastically and independently scale throughput and storage across any number of Azure regions worldwide. You can elastically scale throughput and storage, and take advantage of fast, single-digit-millisecond data access using your favorite API including: SQL, MongoDB, Cassandra, Tables, or Gremlin. Cosmos DB provides comprehensive service level agreements (SLAs) for throughput, latency, availability, and consistency guarantees, something no other database service offers.
+---
+Welcome to Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/introduction
+###
+You need to view a list of planned maintenance events that can affect the availability of an Azure subscription.
+Which blade should you use from the Azure portal?
+---
+Advisor
+Security Center
+Cost Management + Billing
+Help + support *
+---
+---
+###
+C
+Choose all that apply:
+---
+To achieve a hybrid cloud model, a company must always migrate from a private cloud model.
+A company can extend the capacity of its internal network by using the public cloud. *
+In a public cloud model, only guest users at your company can access the resources in the cloud.
+---
+---
+###
+What is guaranteed in an Azure Service Level Agreement (SLA)?
+---
+Uptime
+Feature availability *
+Bandwidth
+Performance
+---
+---
+SLA summary for Azure services;https://azure.microsoft.com/en-us/support/legal/sla/summary/
+###
+This question requires that you evaluate the UPPER-CASED text surrounded by ***  to determine if it is correct.
+An Azure service is available to all Azure customers when it is in *** PUBLIC PREVIEW ***.
+Instructions: Review the underlined text. If it makes the statement correct, select "No change is needed". If the statement is incorrect, select the answer choice that makes the statement correct.
+---
+No change is needed. *
+Private preview
+Development
+An Enterprise Agreement (EA) subscription
+---
+---
+Supplemental Terms of Use for Microsoft Azure Previews;https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+###
+This question requires that you evaluate the UPPER-CASED text surrounded by ***  to determine if it is correct.
+You can create an Azure support request from support.microsoft.com.
+Instructions: Review the underlined text. If it makes the statement correct, select "No change is needed." If the statement is incorrect, select the answer choice that makes the statement correct.
+---
+No change is needed.
+The Azure portal *
+The Knowledge Center
+The Security & Compliance admin center
+---
+Azure enables you to create and manage support requests, also known as support tickets. You can create and manage requests in the Azure portal, which is covered in this article. You can also create and manage requests programmatically, using the Azure support ticket REST API.
+---
+How to create an Azure support request;https://docs.microsoft.com/en-us/azure/azure-portal/supportability/how-to-create-azure-support-request
+###
+Your company has 10 offices. You plan to generate several billing reports from the Azure portal. Each report will contain the Azure resource utilization of each office.
+Which Azure Resource Manager feature should you use before you generate the reports?
+---
+Tags *
+Templates
+Locks
+Policies
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---

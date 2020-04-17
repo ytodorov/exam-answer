@@ -1405,6 +1405,9 @@
     <None Update="Exams\az-100.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Exams\az-900.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Exams\AZ-900\gratisexam.com-Microsoft.Braindumps.AZ-900.v2019-05-23.by.Francesco.62q.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
