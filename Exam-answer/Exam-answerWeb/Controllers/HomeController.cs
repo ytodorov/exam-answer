@@ -23,9 +23,9 @@ namespace Exam_answerWeb.Controllers
             {
                 PageBaseCanonicalUrl = pageBaseCanonicalUrl,
                 PageH1 = "Exam-Answer",
-                PageDescription = "Community powered free exam questions with answers and explanations",    
+                PageDescription = "Community powered free exam questions with answers and explanations",
                 PageTitle = "Exam-Answer",
-                PageCanonicalUrl = pageBaseCanonicalUrl,               
+                PageCanonicalUrl = pageBaseCanonicalUrl,
             };
 
             baseViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
@@ -210,9 +210,9 @@ namespace Exam_answerWeb.Controllers
         [Route("error")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(string id)
-        
-        
-        
+
+
+
         {
             if (id == "404")
             {
@@ -236,9 +236,5 @@ namespace Exam_answerWeb.Controllers
         {
             return "4D4BB2B756DA903C4C7B37E700446258D4D3CEF34CA02E69E6A1C661872141CD comodoca.com 5e75e0d112ab9";
         }
-
-
-
-
     }
 }

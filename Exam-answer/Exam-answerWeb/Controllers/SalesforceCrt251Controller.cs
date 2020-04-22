@@ -12,10 +12,10 @@ using System.Linq;
 
 namespace Exam_AnswerWeb.Controllers
 {
-    [Route("microsoft/az-900")]
-    public class MicrosoftAz900Controller : EaControllerBase
+    [Route("salesforce/crt-251")]
+    public class SalesforceCrt251Controller : EaControllerBase
     {
-        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext,
+        public SalesforceCrt251Controller(ExamAnswerContext examAnswerContext,
             IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
             base(examAnswerContext, env, mapper, memoryCache, configuration)
         {

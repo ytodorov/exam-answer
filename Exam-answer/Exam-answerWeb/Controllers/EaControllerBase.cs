@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -47,6 +48,74 @@ namespace Exam_answerWeb.Controllers
         public override ViewResult View(string viewName, object model)
         {
             return base.View(viewName, model);
+        }
+
+        protected ExamViewModel GetExamViewModelFromHttpContext()
+        {
+            // HttpContext.Request.Path = /salesforce/salesforce-certified-field-service-lightning-consultant
+
+            var parts = HttpContext.Request.Path.ToString().Split('/', StringSplitOptions.RemoveEmptyEntries);
+            var provider = parts[0];
+            var code = parts[1];
+
+            ExamEntity examEntity = examAnswerContext.Exams
+               .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
+                   e.Code.Equals(code, StringComparison.InvariantCultureIgnoreCase))
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.Contents)
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.Answers)
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.Explanations)
+
+               .Include(e => e.Questions)
+               .ThenInclude(q => q.References)
+
+               .AsNoTracking()
+
+               .FirstOrDefault();
+
+            ExamViewModel examViewModel = mapper.Map<ExamViewModel>(examEntity);
+
+            examViewModel.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
+
+            examViewModel.PageCanonicalUrl = $"{pageBaseCanonicalUrl}/{provider}/{code}";
+
+            examViewModel.PageMicrodata = $@"<script type=""application/ld+json"">
+    {{
+      ""@context"": ""http://schema.org"",
+      ""@type"": ""Webpage"",
+      ""url"": ""{examViewModel.PageCanonicalUrl}"",
+      ""name"": ""{examViewModel.Title}"",
+      ""headline"": ""{examViewModel.Title}"",
+      ""description"": ""{examViewModel.Description}"",
+      ""mainEntityOfPage"": {{
+        ""@type"": ""WebPage"",
+        ""@id"": ""{examViewModel.PageCanonicalUrl}""
+      }},
+      ""publisher"": {{
+        ""@type"": ""Organization"",
+        ""name"": ""{examViewModel.PageCanonicalUrl}"",
+        ""logo"": {{
+          ""url"": ""{examViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+          ""width"": 512,
+          ""height"": 512,
+          ""@type"": ""ImageObject""
+        }}
+      }},
+      ""image"": {{
+        ""@type"": ""ImageObject"",
+        ""url"": ""{examViewModel.PageCanonicalUrl}/android-chrome-512x512.png"",
+        ""width"": 512,
+        ""height"": 512
+      }}
+    }}";
+
+            return examViewModel;
+
         }
 
         [Route("question{id}")]
@@ -117,7 +186,7 @@ namespace Exam_answerWeb.Controllers
 
             StringBuilder microdataJson = new StringBuilder();
 
-            string dateCreated = "2019-03-27T15:01Z";
+            string dateCreated = "2020-03-27T15:01Z";
 
             ViewData["hasMicrodata"] = true;
 

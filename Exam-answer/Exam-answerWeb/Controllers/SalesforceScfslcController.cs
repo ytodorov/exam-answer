@@ -12,17 +12,17 @@ using System.Linq;
 
 namespace Exam_AnswerWeb.Controllers
 {
-    [Route("microsoft/az-900")]
-    public class MicrosoftAz900Controller : EaControllerBase
+    [Route("salesforce/salesforce-certified-field-service-lightning-consultant")]
+    public class SalesforceScfslcController : EaControllerBase
     {
-        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext,
+        public SalesforceScfslcController(ExamAnswerContext examAnswerContext,
             IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
             base(examAnswerContext, env, mapper, memoryCache, configuration)
         {
         }
-
+             
         public IActionResult Index()
-        {
+        {           
             var examViewModel = GetExamViewModelFromHttpContext();
 
             return View($"_ExamPartial", examViewModel);

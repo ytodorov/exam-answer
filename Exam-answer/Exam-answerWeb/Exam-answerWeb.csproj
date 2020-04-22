@@ -1387,6 +1387,9 @@
     <Content Update="Views\salesforce\Salesforce-Certified-Field-Service-Lightning-Consultant\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Views\Shared\_ExamPartial.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 

@@ -154,6 +154,8 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Salesforce",
                 Code = "Salesforce-Certified-Field-Service-Lightning-Consultant",
                 Name = "Salesforce Certified Field Service Lightning Consultant",
+                PageTitle = "Salesforce Certified Field Service Lightning Consultant",
+                PageDescription = "Prepare for Salesforce Certified Field Service Lightning Consultant. Free demo questions with answers and explanations.",
                 Questions = qeList,
             };
 
@@ -165,6 +167,8 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Salesforce",
                 Code = "CRT-251",
                 Name = "Sales Cloud Consultant",
+                PageTitle = "Exam CRT-251: Sales Cloud Consultant",
+                PageDescription = "Prepare for Exam CRT-251: Sales Cloud Consultant. Free demo questions with answers and explanations.",
                 Questions = new List<QuestionEntity>()
             };
 
@@ -285,6 +289,8 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Microsoft",
                 Code = "AZ-100",
                 Name = "Microsoft Azure Infrastructure and Deployment",
+                PageTitle = "Exam AZ-100: Microsoft Azure Infrastructure and Deployment",
+                PageDescription = "Prepare for Exam AZ-100: Microsoft Azure Infrastructure and Deployment. Free demo questions with answers and explanations.",
                 Questions = GetQuestions("Exams\\az-100.txt"),
             };
 
@@ -296,8 +302,8 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Microsoft",
                 Code = "AZ-900",
                 Name = "Microsoft Azure Fundamentals",
-                Title = "Exam AZ-900: Microsoft Azure Fundamentals",
-                Description = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations.",
+                PageTitle = "Exam AZ-900: Microsoft Azure Fundamentals",
+                PageDescription = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations.",
                 Questions = new List<QuestionEntity>()
             };
                         

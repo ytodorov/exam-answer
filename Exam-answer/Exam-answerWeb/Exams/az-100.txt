@@ -428,12 +428,12 @@ Using Azure CDN with CORS;https://docs.microsoft.com/en-us/azure/cdn/cdn-cors
 ###
 C
 You are configuring the XML file specifying the data paths to use. This file will configure the export job to control the data exported. Your file currently looks like this:
-<?xml version="1.0" encoding="utf-8"?> 
-<BlobList> 
-<BlobPath>pictures/animals/kangaroo.jpg</BlobPath> 
-<BlobPathPrefix>/vhds/</BlobPathPrefix> 
-<BlobPathPrefix>/movies/dramas</BlobPathPrefix> 
-</BlobList> 
+&lt;?xml version="1.0" encoding="utf-8"?&gt; 
+&lt;BlobList&gt; 
+&lt;BlobPath&gt;pictures/animals/kangaroo.jpg&lt;/BlobPath&gt; 
+&lt;BlobPathPrefix&gt;/vhds/&lt;/BlobPathPrefix&gt; 
+&lt;BlobPathPrefix&gt;/movies/dramas&lt;/BlobPathPrefix&gt; 
+&lt;/BlobList&gt; 
 What will be exported based on the current XML file?
 Choose all that apply:
 ---
@@ -444,8 +444,8 @@ Files in the vhds folder but not the subfolders will be exported. *
 Everything in the movies folder beginning with dramas will be exported. *
 ---
 The Azure import export service has an executable process that can be used to configure the import and export jobs. This process is WAImportExport.exe and can take an XML file as input. Looking at the file supplied and what will happen is as follows.
-The <BlobPath> option is used top specify the exact path to a blob file, in this case kangaroo.jpg. This file will be exported.
-The <BlobPathPrefix> option indicates a couple of different scenarios. /vhds/ has a trailing slash, which means that everything inside the folder vhds will be exported, without exclusion. All files and folders will be exported.
+The &lt;BlobPath&gt; option is used top specify the exact path to a blob file, in this case kangaroo.jpg. This file will be exported.
+The &lt;BlobPathPrefix&gt; option indicates a couple of different scenarios. /vhds/ has a trailing slash, which means that everything inside the folder vhds will be exported, without exclusion. All files and folders will be exported.
 The /movies/dramas path does not have a trailing slash. This syntax means that everything in the movies folder prefixed by the word dramas will be exported. In this case any file and folder starting with dramas as a prefix will be exported.
 ---
 Use the Azure Import/Export service to export data from Azure Blob storage;https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-from-blobs
@@ -486,7 +486,7 @@ You cannot see the storage account in the list because you are using a General P
 General Purpose V1 and Page Blobs storage accounts are supported origins of information when configuring an Export job.
 You are not using Azure Files. The LOB application changes the storage tier from hot to archive. This feature is only available on General Purpose V2 storage accounts. Azure Files is not a valid origin of information when configuring an Export job.
 ---
-Use the Azure Import/Export service to export data from Azure Blob; storagehttps://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-from-blobs
+Use the Azure Import/Export service to export data from Azure Blob Storage;https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-data-from-blobs
 Azure Import/Export system requirements;https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-requirements
 Azure Blob storage: Premium (preview), Hot, Cool, and Archive storage tiers;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers
 ###

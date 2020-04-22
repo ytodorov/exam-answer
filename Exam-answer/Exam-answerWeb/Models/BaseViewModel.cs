@@ -2,7 +2,25 @@
 {
     public class BaseViewModel
     {
-        public string PageTitle { get; set; }
+        private string pageTitle;
+        public string PageTitle
+        {
+            get
+            {
+                if (pageTitle?.Trim()?.EndsWith("Exam-Answer", System.StringComparison.InvariantCultureIgnoreCase) == true)
+                {
+                    return pageTitle;
+                }
+                else
+                {
+                    return $"{pageTitle} | Exam-Answer";
+                }
+            }
+            set
+            {
+                pageTitle = value;
+            }
+        }
 
         public string PageDescription { get; set; }
 
@@ -20,10 +38,26 @@
 
         public string PageImageAlt { get; set; }
 
-        public string PageH1 { get; set; }
-
-
-
+        private string pageH1;
+        public string PageH1
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(pageH1))
+                {
+                    return pageH1;
+                }
+                else
+                {
+                    var titleWithoutExamAnswer = pageTitle?.Replace("| Exam-Answer", string.Empty)?.Trim();
+                    return titleWithoutExamAnswer;                         
+                }
+            }
+            set
+            {
+                pageH1 = value;
+            }
+        }
 
         public int Id { get; set; }
 

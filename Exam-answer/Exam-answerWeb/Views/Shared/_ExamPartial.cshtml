@@ -1,0 +1,31 @@
+﻿@model ExamViewModel
+
+<div class="k-block k-info-colored" style="text-align: center;">
+    <div class="k-header k-info-colored">
+        <h1>
+            @Model.PageH1
+        </h1>
+    </div>
+    <h2>
+        @Model.PageDescription
+    </h2>
+</div>
+@{
+    Model.ShowUdemy = false;
+    for (int i = 0; i < Model.Questions.Count; i++)
+    {
+        if (i % 5 == 0 && i < 25)
+        {
+            <amp-ad width="100vw" height="320"
+                    type="adsense"
+                    data-ad-client="ca-pub-2519209558650417"
+                    data-ad-slot="6605505176"
+                    data-auto-format="rspv"
+                    data-full-width="">
+                <div overflow=""></div>
+            </amp-ad>
+        }
+        Model.Questions[i].ShowDisqus = false;
+        <partial name="~/views/shared/question.cshtml" model="@Model.Questions[i]" />
+    }
+}
