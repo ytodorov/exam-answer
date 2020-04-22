@@ -15,9 +15,7 @@ namespace Exam_AnswerWeb.Controllers
     [Route("salesforce/salesforce-certified-field-service-lightning-consultant")]
     public class SalesforceScfslcController : EaControllerBase
     {
-        public SalesforceScfslcController(ExamAnswerContext examAnswerContext,
-            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
-            base(examAnswerContext, env, mapper, memoryCache, configuration)
+        public SalesforceScfslcController(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
              

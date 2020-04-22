@@ -15,32 +15,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Exam_answerWeb.Controllers
 {
     public class EaControllerBase : Controller
     {
         protected ExamAnswerContext examAnswerContext;
-        protected readonly IHostingEnvironment env;
         protected readonly IMapper mapper;
         protected readonly IConfiguration configuration;
-        private IMemoryCache cache;
+        private readonly IMemoryCache cache;
 
         protected string pageBaseCanonicalUrl = string.Empty;
 
-        public EaControllerBase(
-            ExamAnswerContext examAnswerContext,
-            IHostingEnvironment env,
-            IMapper mapper,
-            IMemoryCache memoryCache,
-            IConfiguration configuration
-            )
+        public EaControllerBase(IServiceProvider serviceProvider)
         {
-            this.examAnswerContext = examAnswerContext;
-            this.env = env;
-            this.mapper = mapper;
-            cache = memoryCache;
-            this.configuration = configuration;
+            this.examAnswerContext = serviceProvider.GetService<ExamAnswerContext>();
+            this.mapper = serviceProvider.GetService<IMapper>();
+            cache = serviceProvider.GetService<IMemoryCache>();
+            this.configuration = serviceProvider.GetService<IConfiguration>();
 
             pageBaseCanonicalUrl = configuration.GetValue(typeof(string), "PageBaseCanonicalUrl")?.ToString();
         }
@@ -227,30 +220,7 @@ namespace Exam_answerWeb.Controllers
         ""dateCreated"": ""{dateCreated}"",
         ""text"": ""{allAnswers}""
                 }}");
-            //if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
-            //{
-            //    sbAcceptedAnswer.Append(",");
-            //}
 
-            //    foreach (var aa in acceptedAnswers)
-            //    {
-            //        string text = HttpUtility.JavaScriptStringEncode(aa.Text);
-
-            //        sbAcceptedAnswer.Append($@"{{
-            //""@type"": ""Answer"",
-            //""author"": ""{author}"",
-            //""upvoteCount"": ""{upvoteCount}"",
-            //""url"": ""{url}"",
-            //""dateCreated"": ""{dateCreated}"",
-            //""text"": ""{text}""
-            //        }}");
-            //        if (acceptedAnswers.IndexOf(aa) != acceptedAnswers.Count - 1)
-            //        {
-            //            sbAcceptedAnswer.Append(",");
-            //        }
-
-            //        break;
-            //    }
             sbAcceptedAnswer.AppendLine("]");
 
             sbSuggestedAnswer.AppendLine("[");
@@ -345,15 +315,10 @@ $@"
                     }
                 }
 
-                theQuestion.PageDescription = pageDescription.ToString().Trim(); //questionEntity.ContentText;
+                theQuestion.PageDescription = pageDescription.ToString().Trim();
                 theQuestion.PageCanonicalUrl = canonicalUrl;
                 theQuestion.PageMicrodata = microdata;
                 ViewResult view = View("Question", theQuestion);
-
-                //var htmlToCache = view.ToHtml(HttpContext);
-                //bool isMobile = HttpContext.IsMobileBrowser();
-
-                //cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
 
                 return view;
             }
@@ -364,9 +329,7 @@ $@"
         }
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            ViewResult viewResult = context.Result as ViewResult;
-
-            if (viewResult != null)
+            if (context.Result is ViewResult viewResult)
             {
                 string htmlToCache = viewResult.ToHtml(HttpContext);
                 bool isMobile = HttpContext.IsMobileBrowser();

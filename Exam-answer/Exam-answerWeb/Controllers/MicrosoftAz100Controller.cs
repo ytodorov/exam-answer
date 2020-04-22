@@ -19,9 +19,7 @@ namespace Exam_AnswerWeb.Controllers
     [Route("microsoft/az-100")]
     public class MicrosoftAz100Controller : EaControllerBase
     {
-        public MicrosoftAz100Controller(ExamAnswerContext examAnswerContext,
-            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
-            base(examAnswerContext, env, mapper, memoryCache, configuration)
+        public MicrosoftAz100Controller(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
 

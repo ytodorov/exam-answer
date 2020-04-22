@@ -5,15 +5,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Net;
 
 namespace Exam_answerWeb.Controllers
 {
-    public class HomeController : EaControllerBase //EaControllerBase
+    public class HomeController : EaControllerBase
     {
-        public HomeController(ExamAnswerContext examAnswerContext,
-            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
-            base(examAnswerContext, env, mapper, memoryCache, configuration)
+        public HomeController(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -217,10 +216,12 @@ namespace Exam_answerWeb.Controllers
             if (id == "404")
             {
                 HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                BaseViewModel baseViewModel = new BaseViewModel();
-                baseViewModel.PageTitle = "Not Found | Exam-Answer";
-                baseViewModel.PageBaseCanonicalUrl = pageBaseCanonicalUrl;
-                baseViewModel.PageCanonicalUrl = $"{pageBaseCanonicalUrl}/error";
+                BaseViewModel baseViewModel = new BaseViewModel
+                {
+                    PageTitle = "Not Found | Exam-Answer",
+                    PageBaseCanonicalUrl = pageBaseCanonicalUrl,
+                    PageCanonicalUrl = $"{pageBaseCanonicalUrl}/error"
+                };
                 return View("NotFound", baseViewModel);
             }
             else if (id == "500")

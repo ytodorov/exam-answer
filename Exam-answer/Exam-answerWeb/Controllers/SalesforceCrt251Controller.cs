@@ -15,9 +15,7 @@ namespace Exam_AnswerWeb.Controllers
     [Route("salesforce/crt-251")]
     public class SalesforceCrt251Controller : EaControllerBase
     {
-        public SalesforceCrt251Controller(ExamAnswerContext examAnswerContext,
-            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
-            base(examAnswerContext, env, mapper, memoryCache, configuration)
+        public SalesforceCrt251Controller(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
 

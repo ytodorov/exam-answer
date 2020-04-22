@@ -110,6 +110,7 @@ namespace Exam_answerWeb
             {
                 IExceptionHandlerPathFeature feature = context.Features.Get<IExceptionHandlerPathFeature>();
                 Exception exception = feature.Error;
+                var result = await Task.FromResult(0);
             }));
 
             app.UseHttpsRedirection();

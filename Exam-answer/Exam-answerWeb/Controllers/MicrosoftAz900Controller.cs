@@ -15,9 +15,7 @@ namespace Exam_AnswerWeb.Controllers
     [Route("microsoft/az-900")]
     public class MicrosoftAz900Controller : EaControllerBase
     {
-        public MicrosoftAz900Controller(ExamAnswerContext examAnswerContext,
-            IHostingEnvironment env, IMapper mapper, IMemoryCache memoryCache, IConfiguration configuration) :
-            base(examAnswerContext, env, mapper, memoryCache, configuration)
+        public MicrosoftAz900Controller(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
 
