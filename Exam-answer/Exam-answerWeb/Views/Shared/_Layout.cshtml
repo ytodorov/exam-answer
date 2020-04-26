@@ -26,11 +26,8 @@
     <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async=""></script>
     <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    @*<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>*@
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    @*<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>*@
-    @*<meta name="amp-script-src" content="sha384-s4tZTpTebuHAvhKCqz7T6Pg0SqAIe1UUW8zuYz9dsDlszfUF-1NR2_4lP-wHtzJK" />*@
 </head>
 <body>
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
@@ -47,8 +44,6 @@
         </a>
         <nav class="a-headerbar-nav a-nav  xs-hide sm-hide">
             <ul class="list-reset center m0 p0 flex justify-center nowrap">
-                @*<li class="a-nav-item "><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-900")" class="text-decoration-none block">Microsoft AZ-900</a></li>
-                <li class="a-nav-item "><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/crt-251")" class="text-decoration-none block">Salesforce CRT-251</a></li>*@
                 <li class="a-nav-item "><a href="@($"{Model?.PageBaseCanonicalUrl}/about")" class="text-decoration-none block">About</a></li>
                 <li class="a-nav-item "><a href="@($"{Model?.PageBaseCanonicalUrl}/contact")" class="text-decoration-none block">Contact</a></li>
             </ul>
@@ -61,9 +56,7 @@
         </div>
         <nav class="a-sidebar-nav a-nav">
             <ul class="list-reset m0 p0 a-label">
-                @*<li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/microsoft")">Microsoft</a></li>*@
                 <li class="a-nav-item a-nav-dropdown relative ">
-
                     <amp-accordion layout="container" disable-session-states="" class="a-dropdown">
                         <section expanded="">
                             <header>Microsoft</header>
@@ -74,9 +67,7 @@
                         </section>
                     </amp-accordion>
                 </li>
-                @*<li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/salesforce")">Salesforce</a></li>*@
                 <li class="a-nav-item a-nav-dropdown relative ">
-
                     <amp-accordion layout="container" disable-session-states="" class="a-dropdown">
                         <section expanded="">
                             <header>Salesforce</header>
@@ -91,29 +82,16 @@
                 <li class="a-nav-item l-s-sidebar-nav-item a-title-sm bold"><a class="a-nav-link" href="@($"{Model?.PageBaseCanonicalUrl}/contact")">Contact</a></li>
 
             </ul>
-        </nav>
-        @*<ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
-            <li>
-                <a href="https://www.facebook.com/ExamAnswerCom" target="_blank" class="inline-block p1" aria-label="Link to AMP HTML Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23.6" viewBox="0 0 56 55">
-                        <title>https://www.facebook.com/ExamAnswerCom</title>
-                        <path d="M47.5 43c0 1.2-.9 2.1-2.1 2.1h-10V30h5.1l.8-5.9h-5.9v-3.7c0-1.7.5-2.9 3-2.9h3.1v-5.3c-.6 0-2.4-.2-4.6-.2-4.5 0-7.5 2.7-7.5 7.8v4.3h-5.1V30h5.1v15.1H10.7c-1.2 0-2.2-.9-2.2-2.1V8.3c0-1.2 1-2.2 2.2-2.2h34.7c1.2 0 2.1 1 2.1 2.2V43" class="a-icon a-icon-fb">
-                        </path>
-                    </svg>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:contact@@exam-answer.com?Subject=Hello%20Exam-Answer" target="_blank" class="inline-block p1" aria-label="Send mail to contact@@exam-answer.com">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18.4" viewBox="0 0 56 43">
-                        <title>Send mail to contact@@exam-answer.com</title>
-                        <path d="M10.5 6.4C9.1 6.4 8 7.5 8 8.9v21.3c0 1.3 1.1 2.5 2.5 2.5h34.9c1.4 0 2.5-1.2 2.5-2.5V8.9c0-1.4-1.1-2.5-2.5-2.5H10.5zm2.1 2.5h30.7L27.9 22.3 12.6 8.9zm-2.1 1.4l16.6 14.6c.5.4 1.2.4 1.7 0l16.6-14.6v19.9H10.5V10.3z" class="a-icon a-icon-email">
-                        </path>
-                    </svg>
-                </a>
-            </li>
-        </ul>*@
-
+        </nav>   
     </amp-sidebar>
+    <amp-ad width="100vw" height="90"
+            type="adsense"
+            data-ad-client="ca-pub-2519209558650417"
+            data-ad-slot="6605505176"
+            data-auto-format="rspv"
+            data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
     @RenderBody()
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
@@ -150,14 +128,6 @@
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-    <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-2519209558650417"
-            data-ad-slot="7303740684"
-            data-auto-format="rspv"
-            data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
     <amp-iframe width="auto"
                 height="300"
                 sandbox="allow-scripts"
@@ -166,8 +136,8 @@
         <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
     </amp-iframe>
     @*<amp-auto-ads type="adsense"
-                  data-ad-client="ca-pub-2519209558650417">
-    </amp-auto-ads>*@
+                      data-ad-client="ca-pub-2519209558650417">
+        </amp-auto-ads>*@
 
 
     @Html.Raw(Model?.PageMicrodata)
