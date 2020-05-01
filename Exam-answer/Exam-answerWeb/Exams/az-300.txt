@@ -1,0 +1,1506 @@
+###
+You need to recommend a solution that will monitor Azure subscription activity and send alerts to a non-Azure system for processing.
+
+Notification of alerts sent to the external system must be automated.
+
+Which mechanism should you recommend?
+---
+Azure Stream Analytics
+Azure Event Hubs
+Power BI
+Webhook *
+---
+You should recommend using a webhook. Azure alerts use HTTP POST to send the alert contents in JSON format to a webhook URI that you provide when you create the alert. Azure posts one entry per request when an alert is activated.
+
+You should not recommend Power BI. This service is used to present and analyze both historical and live data. The external system would need to retrieve the data from Power BI.
+
+You should not recommend Azure Event Hubs. Although this service is used to ingest data, you would need an additional component to send data to an external system.
+
+You should not recommend Azure Stream Analytics. This service is used to process large amounts of data on the fly and to perform complex data analytics and aggregations.
+---
+Monitor Subscription Activity with the Azure Activity Log;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/platform-logs-overview
+
+Webhook actions for log alert rules;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-log-webhook
+
+Connect to Azure Audit Logs with Power BI;https://docs.microsoft.com/en-us/power-bi/service-connect-to-services
+
+Stream the Azure Activity Log to Event Hubs;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-export
+
+Stream data as input into Stream Analytics;https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-define-inputs
+###
+You are taking over as the IT administrator for an Azure subscription. You want a simple, efficient, and free way to view and manage all the blobs in the subscription.
+
+You need to download the most appropriate tool.
+
+Which tool should you use?
+---
+Visual Studio Ultimate
+Visual Studio Code
+Storage Explorer *
+Storage Emulator
+---
+You should use Storage Explorer. This tool is free and simple to use. It allows you to manage different types of Azure storage accounts, including blobs, tables, and queues.
+
+You should not use Visual Studio Ultimate. This is a fully-featured integrated development environment (IDE) that allows you to write code for applications and websites. Although you can use the built-in Azure Cloud Explorer tool to view blobs, Storage Explorer is easier to use.
+
+You should not use Visual Studio Code. This is a light-weight IDE that allows you to write code for applications and websites. It does not provide a built-in user interface for managing blobs.
+
+You should not use Storage Emulator. This tool allows you to emulate Azure storage accounts. It does not connect to real Azure storage accounts.
+---
+Azure Storage Explorer;https://azure.microsoft.com/en-us/features/storage-explorer/
+
+Use the Azure storage emulator for development and testing;https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator
+
+What are the differences between Visual Studio Code and Visual Studio;https://stackoverflow.com/questions/30527522/what-are-the-differences-between-visual-studio-code-and-visual-studio
+
+Manage the resources associated with your Azure accounts in Visual Studio Cloud Explorer;https://docs.microsoft.com/en-us/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2019
+###
+A blob associated with an Azure Blob storage account contains data that is accessed several times per day.
+
+You plan to add a new blob to the Blob storage account. The data in the new blob will be viewed infrequently but must be available immediately when accessed.
+
+You must configure the storage tier for the new blob. The solution must minimize storage costs.
+
+What should you do?
+---
+Set the storage tier for the new blob to Cool. *
+Set the storage tier for the new blob to Archive.
+Set the default storage tier for the account to Cool.
+Set the default storage tier for the account to Hot.
+---
+You should set the storage tier for the new blob to Cool. Cool storage is intended for data that is accessed infrequently and stored for 30 days or more. Cool storage has a similar time-to-access as Hot data. Although it has a slightly lower availability compared to Hot data, storage costs are lower.
+
+You should not set the storage tier for the new blob to Archive. Although Archive storage is the least expensive, it also has several hours of retrieval latency.
+
+You should not set the default storage tier for the account to Hot. Only the original blob in the storage account is accessed frequently. If the tier for the account is set to Hot, this applies to the new blob as well.
+
+You should not set the default storage tier for the account to Cool. This is appropriate only for the new blob. If the tier for the account is set to Cool, this applies to the original blob as well.
+---
+
+Azure Blob storage: Premium (preview), Hot, Cool, and Archive storage tiers;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers?tabs=azure-portal
+###
+You are planning to deploy 15 identical virtual machines (VMs) to Azure. All 15 VMs must be based on the settings of a local on-premises computer.
+
+You need to choose the best strategy for deploying the VMs.
+
+What should you do?
+---
+Create an Extensible Markup Language (XML) file that describes a single VM. Use Azure CLI to deploy a template to Azure.
+Create a VM in Azure. Use PowerShell to copy that VM 14 times.
+Create a JavaScript Object Notation (JSON) file that describes a single VM. Use PowerShell to deploy a template to Azure. *
+Create a VM in Azure. Use Azure CLI to copy that VM 14 times.
+---
+You should create a JSON file that describes a single VM. This file is referred to as an Azure Resource Manager (ARM) template in Azure. You should then use deployment commands to deploy the template to Azure. One tool that you can use is PowerShell. Once the template is deployed, you can use it to create actual VMs.
+
+You should not create an XML file to describe a single VM. ARM templates must be written in JSON syntax.
+
+You should not create the VM in Azure and then use PowerShell or Azure CLI to copy it. ARM templates provide a way to describe a VM before you create it.
+---
+
+Quickstart: Create and deploy Azure Resource Manager templates by using the Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal
+###
+You need to deploy a virtual machine (VM) to Azure from a third-party online template.
+
+Which PowerShell cmdlet should you use?
+---
+New-AzureRmResourceGroupDeployment *
+New-AzureVM
+New-AzureQuickVM
+New-AzureRmVMConfig
+---
+You should use New-AzureRmResourceGroupDeployment. This cmdlet allows you to use Azure Resource Manager (ARM) templates to create Azure resources. In this scenario, it allows you to create a VM from an ARM template.
+
+You should not use New-AzureQuickVM or New-AzureVM. Both cmdlets allows you to create a VM from an Azure template, not from a third-party online template.
+
+You should not use New-AzureRmVMConfig. This cmdlet creates a VM configuration, not an actual VM.
+
+---
+
+Quickstart: Create and deploy Azure Resource Manager templates by using the Azure portal;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal
+
+Deploy resources with Resource Manager templates and Azure PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell
+
+New-AzureVM;https://docs.microsoft.com/en-us/powershell/module/servicemanagement/azure/new-azurevm?view=azuresmps-4.0.0
+
+New-AzureRmVMConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvmconfig?view=azurermps-6.13.0
+
+New-AzureQuickVM;https://docs.microsoft.com/en-us/powershell/module/servicemanagement/azure/new-azurequickvm?view=azuresmps-4.0.0
+###
+You manage two on-premises networks, each located in a separate branch office. You must connect both networks to Azure while controlling costs.
+
+Which type of connection should you choose?
+---
+Point-to-site VPN
+Multi-protocol label switching (MPLS) network
+Multi-site VPN *
+ExpressRoute connection
+---
+You should choose a multi-site VPN. This accomplishes the goal of connecting the branch offices to Azure while controlling costs.
+
+You should not choose an ExpressRoute connection. ExpressRoute connects an on-premises network to a virtual network via wide area network (WAN). Although this solution provides a fast, secure connection, it is not a low-cost option.
+
+You should not choose an MPLS network. This is also not a low-cost option.
+
+You should not choose a point-to-site connection. This option connects one or more machines and a site via the Internet and is not an appropriate solution for connecting branch offices.
+---
+
+ExpressRoute connectivity models;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-connectivity-models
+
+Add a Site-to-Site connection to a VNet with an existing VPN gateway connection;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal
+###
+You are the Azure administrator for a web API that uses the Free plan.
+
+You need to monitor the web API to determine whether or not you should change the plan to Basic.
+
+Which metric should you monitor?
+---
+Average Response Time
+Thread Count
+Requests
+CPU Time *
+---
+You should monitor CPU time. This represents the number of CPU minutes used by the web API. For the Free plan, a web app or web API is allowed 60 CPU minutes per day. By monitoring this metric, you can decide whether or not to scale up the web API.
+
+You should not monitor Average Response Time. This represents the average number of milliseconds used to serve a single request. An App Service Plan can affect the response time, but it is not feasible to use the response time to determine whether or not to scale up an app due to other factors. For example, the average response time can increase due to the number of simultaneous requests made, such as during peak times.
+
+You should not monitor Requests. This represents the total number of HTTP requests made to the web API. An App Service Plan does not limit the number of requests made to a web API.
+
+You should not monitor Thread Count. This represents the total number of working threads used to service requests. An App Service Plan does not limit the number of threads used by a web API.
+---
+
+Monitor apps in Azure App Service;https://docs.microsoft.com/en-us/azure/app-service/web-sites-monitor
+
+App Service Pricing;https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
+###
+Your company has on-premises Domain Name System (DNS) servers that are authoritative for its domain. You create a directory in Azure Active Directory (Azure AD). You want to create a custom domain for this directory that matches your company's domain.
+
+You need to configure the environment so that you can have Azure verify the custom domain.
+
+What should you do?
+---
+Add a CNAME record at your company's domain registrar.
+Add a CNAME record to your company's DNS servers.
+Add a TXT record at your company's domain registrar.
+Add a TXT record to your company's DNS servers. *
+---
+You should add a TXT record to your company's DNS servers. When you ask Azure to verify a custom domain, it issues DNS queries for TXT records. Because your company has on-premises DNS servers that are authoritative for its domain, Azure sends the DNS queries to your company's DNS servers. If the TXT entry in Azure matches the TXT entry in your company's DNS servers, verification succeeds.
+
+You should not add a TXT record to your company's domain registrar. You should do this only if the registrar is authoritative or the domain.
+
+You should not add CNAME records. CNAME records are alias records that allow you to forward requests from a domain name to another domain name or server.
+---
+
+Add your custom domain name using the Azure Active Directory portal;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain
+
+Directory portal Configuring a custom domain name for an Azure cloud service;https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-custom-domain-name-portal
+###
+C
+You plan to use Azure AD join in a federated environment. You need to ensure that the identity provider supports WS-* protocols to ensure that Azure AD join works natively.
+
+Which two protocols must be supported? Each correct answer presents part of the solution.
+---
+WS-Fed *
+WS-Policy
+WS-Reliability
+WS-Trust *
+---
+You should make sure that the identity provider supports the WS-Fed protocol. This protocol is required to join a device to Azure AD.
+
+You should also make sure that the identity provider supports the WS-Trust protocol. This protocol is required to sign in to an Azure AD joined device. Both of these protocols are needed if Azure AD join is intended to work natively.
+
+You should not make sure that the identity provider supports the WS-Reliability protocol. This protocol guarantees reliable messaging in Web Services applications. WS-Reliability was superseded by WS-ReliableMessaging.
+
+You should not make sure that the identity provider supports the WS-Policy protocol. This protocol describes the capabilities and constraints of the security policies on communication endpoints.
+---
+
+How to: Plan your Azure AD join implementation;https://docs.microsoft.com/en-us/azure/active-directory/devices/azureadjoin-plan
+
+###
+Your company uses Azure Active Directory (AD). You find that the service account defined on the Azure AD Connector cannot contact Azure AD because the password has expired.
+
+You need to provide Azure AD Global admin credentials.
+
+Which cmdlet should you use?
+---
+Get-PasswordSyncLogStatus
+Set-ADSyncAADPasswordResetConfiguration
+Set-FullPasswordSync
+Add-ADSyncAADServiceAccount *
+---
+You should use the Add-ADSyncAADServiceAccount cmdlet to provide Azure AD Global admin credentials. You need to pass the connector name and the credentials of the administrator.
+
+You should not use the Set-ADSyncAADPasswordResetConfiguration cmdlet to provide Azure AD Global admin credentials. This cmdlet is used to disable and enable password writeback.
+
+You should not use the Set-FullPasswordSync cmdlet to provide Azure AD Global admin credentials. This cmdlet resets the password sync state information, which forces a full sync the next time the service is started.
+
+You should not use the Get-PasswordSyncLogStatus cmdlet to provide Azure AD Global admin credentials. This cmdlet is used to retrieve the current logging level for the Password Sync feature of the Azure Active Directory Sync tool.
+---
+
+Azure AD Connect sync: How to manage the Azure AD service account;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-azureadaccount
+
+###
+You are the IT administrator for your company. Your company hosts Active Directory (AD). You want to also use Azure AD.
+
+You need to configure your environment so that password hash synchronization can be used for authentication.
+
+What should you do?
+---
+Create a site link on an Azure virtual machine (VM).
+Create a site link bridge on an on-premises server.
+Install Azure AD Connect on an on-premises server. *
+Install AD Domain Services on an Azure virtual machine (VM).
+---
+You should install Azure AD Connect on an on-premises server. This tool allows you to synchronize password hashes from a domain controller to Azure AD.
+
+You should not install AD Domain Services on an Azure VM. This does not allow synchronization from an on-premises AD infrastructure. It simply places a domain controller in the cloud instead of on-premises.
+
+You should not create a site link on an Azure VM. A site link is an AD object that allows replication across on-premises domain controllers.
+
+You should not create a site link bridge on an on-premises server. A site link bridge is an AD object that represents a collection of site links, which allow replication across on-premises domain controllers.
+
+---
+Getting started with Azure AD Connect using express settings;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-express
+
+What is hybrid identity?;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity
+
+Join a Windows Server virtual machine to a managed domain;https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-windows-vm
+
+Active Directory Replication Concepts;https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/replication/active-directory-replication-concepts
+###
+You implement Azure Active Directory (Azure AD) Connect so you can synchronize accounts in your on-premises AD with those in Azure AD. You decide to synchronize only a specific organizational unit.
+
+You receive the following error during the first synchronization:
+
+"Number of deletions exceeds the default threshold of 500 objects".
+
+You need to successfully synchronize the accounts.
+
+Which cmdlet should you use?
+---
+Disable-ADSyncExportDeletionThreshold *
+Enable-ADSyncExportDeletionThreshold -ThresholdPercentage 10
+Enable-ADSyncExportDeletionThreshold -DeletionThreshold 1000
+Get-ADSyncExportDeletionThreshold
+---
+You should run the Disable-ADSyncExportDeletionThreshold cmdlet. This cmdlet disables the deletion protection and allows the synchronization to complete without errors. When you install Azure AD Connect, it prevents accidental deletes by default. The default configuration does not allow an export with more than 500 deletes. This feature is designed to protect from accidental configuration changes and changes to the on-premises directory that would affect many users and other objects.
+
+You should not run the Enable-ADSyncExportDeletionThreshold -DeletionThreshold 1000 cmdlet. It changes the threshold from the default value (500) to 1000 elements. When the number of elements is reached, an error occurs.
+
+You should not run the Enable-ADSyncExportDeletionThreshold -ThresholdPercentage 10 cmdlet. It changes the threshold from the default value (500 elements) to percentage values. When the number of elements is reached, an error occurs.
+
+You should not run the Get-ADSyncExportDeletionThreshold cmdlet. It is used to display the current threshold value.
+---
+Azure AD Connect sync: Prevent accidental deletes;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-feature-prevent-accidental-deletes
+###
+You need to enable encryption for a running Windows Infrastructure-as-a-Service (IaaS) virtual machine (VM).
+
+Which PowerShell cmdlet should you use?
+---
+ConvertTo-AzVMManagedDisk
+Set-AzDiskDiskEncryptionKey
+Set-AzVMDataDisk
+Set-AzVMDiskEncryptionExtension *
+---
+You should use the Set-AzVMDiskDiskEncryptionExtension cmdlet. This cmdlet is used to enable encryption on a running VM by installing the disk encryption extension. This cmdlet is used to enable encryption for a Windows or supported Linux VM. You should create a snapshot of the VM before enabling encryption.
+
+You should not use the Set-AzVMDataDisk cmdlet. This cmdlet is used to modify properties for a VM data disk but does not include properties related to encryption.
+
+You should not use the Set-AzDiskDiskEncryptionKey cmdlet. This cmdlet sets the disk encryption key properties on a disk but does not enable encryption.
+
+You should not use the ConvertTo-AzVMManagedDisk cmdlet. This cmdlet is used to convert a VM with blob-based disks to a VM with managed disks.
+---
+Azure Disk Encryption for virtual machines and virtual machine scale sets;https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss
+
+Enable Azure Disk Encryption for Windows IaaS VMs;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-overview
+
+Set-AzVMDiskEncryptionExtension;https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azvmdiskencryptionextension?view=azps-3.8.0
+
+Set-AzVMDataDisk;https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azvmdatadisk?view=azps-3.8.0
+
+Set-AzDiskDiskEncryptionKey;https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azdiskdiskencryptionkey?view=azps-3.8.0
+
+Update-AzDisk;https://docs.microsoft.com/en-us/powershell/module/az.compute/update-azdisk?view=azps-3.8.0
+###
+An Azure resource group was initially deployed from an Azure Resource Manager (ARM) template. Resources have since been added and modified manually through Azure portal.
+
+You need to create a new template based on the current state of the resource group.
+
+Which PowerShell cmdlet should you use?
+---
+Save-AzureRmResourceGroupDeploymentTemplate
+Export-AzureRmResourceGroup *
+Save-AzureRmDeploymentTemplate
+New-AzureRmResourceGroupDeployment
+---
+You should use the Export-AzureRmResourceGroup cmdlet. This cmdlet captures a specified resource group and saves it as a template to a JSON file. This gives you a way to create a template based on the current resources in a resource group. You also have the option of exporting a running resource group as a template from Azure portal.
+
+You should not use the Save-AzureRmResourceGroupDeploymentTemplate cmdlet. This saves a resource group deployment, not the current resource group, to a file. You must specify both the deployment name and resource group name.
+
+You should not use the Save-AzureRmDeploymentTemplate cmdlet. This saves an existing deployment template to a new template file.
+
+You should not use the New-AzureRmResourceGroupDeployment cmdlet. This cmdlet is used to apply a template to an existing resource group, not create a new template file.
+---
+
+Announcing template export feature in Azure Resource Manager;https://azure.microsoft.com/en-us/blog/export-template/
+
+Save-AzureRmResourceGroupDeploymentTemplate;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/save-azurermresourcegroupdeploymenttemplate?view=azurermps-6.13.0
+
+Export-AzureRmResourceGroup;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/export-azurermresourcegroup?view=azurermps-6.13.0
+
+New-AzureRmResourceGroupDeployment;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment?view=azurermps-6.13.0
+
+Save-AzureRmDeploymentTemplate;https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/save-azurermdeploymenttemplate?view=azurermps-6.13.0
+###
+C
+You are the IT administrator for an automobile dealership on the west coast of the United States. The dealership wants to take advantage of Microsoft Azure by first moving its website to the cloud. The dealership wants to use the lowest cost solution possible.
+
+Business Requirements
+One of the problems the dealership has been facing is website downtime. The dealership typically provides maintenance every Sunday and Wednesday at 2:00 A.M. Eastern Time. However, because the dealership wants to attract customers all over the world, it wants to ensure that the website is always available. During peak seasons, the dealership notices that the website responds slower. The dealership wants this bottleneck eliminated.
+
+Technical Requirements
+The website is currently hosted at the dealership's domain registrar. The dealership wants move the site to Azure on Windows Server virtual machines (VMs). Users must be able to use the same domain name to reach the website. The website must be hosted in only one Azure region. The VMs must use a four-gigabyte (GB) solid state drive (SSD). The dealership expects there be less hands-on maintenance and administration once the infrastructure is moved to Azure.
+
+You need to create the VM and assign it to the availability set named WebSiteAvailabilitySet.
+
+Which commands should you use? Select correct placeholder values.
+
+$set = Get-AzureRmAvailabilitySet -ResourceGroupName WebSiteResoureGroup -Name WebSiteAvailabilitySet 
+$vm = PLACEHOLDER 1
+-VMName "DealershipWebServer" -VMSize "PLACEHOLDER 2" -AvailabilitySetId 
+"PLACEHOLDER 3"
+"PLACEHOLDER 4" -ResourceGroupName WebSiteResourceGroup 
+"PLACEHOLDER 5"
+---
+PLACEHOLDER 1: New-AzureRmVM
+PLACEHOLDER 1: New-AzureRmVMConfig *
+PLACEHOLDER 2: 4 GiB
+PLACEHOLDER 2: Standard_B1s *
+PLACEHOLDER 3: $set
+PLACEHOLDER 3: $set.id *
+PLACEHOLDER 3: WebSiteAvailabilitySet
+PLACEHOLDER 4: $vm |
+PLACEHOLDER 4: New-AzureRmVM *
+PLACEHOLDER 4: New-AzureRmVMConfig
+PLACEHOLDER 5: -Location "westus"
+PLACEHOLDER 5: -Location "westus" -VM $vm *
+---
+You should use the following commands:
+
+$set = Get-AzureRmAvailabilitySet
+       -ResourceGroupName WebSiteResoureGroup
+       -Name WebSiteAvailabilitySet
+
+$vm = New-AzureRmVMConfig
+       -VMName "DealershipWebServer"
+       -VMSize "Standard_B1s"
+       -AvailabilitySetId $set.Id
+
+New-AzureRmVM -ResourceGroupName WebSiteResourceGroup
+       -Location "westus" -VM $vm
+
+The first command uses Get-AzureRmAvailabilitySet to retrieve the availability set named WebSiteAvailabilitySet and store it in a variable named $set.
+
+The second command uses New-AzureRmVMConfig to create a VM configuration that sets the VM name to DealershipWebServer and the size to a B-series size named Standard_B1s. This is a Standard offering with a 4-GB SSD. This command also places the VM in the availability set retrieved by the first command. It stores the result in a variable named $vm.
+
+The third command uses New-AzureRmVM to actually create the VM. It uses the configuration stored in the $vm variable to create the VM, and it places the VM in the West United States region.
+
+You should not call New-AzureRmVM before New-AzureRmVMConfig. New-AzureRmVMConfig allows you to create the VM configuration, while New-AzureRmVM uses that configuration to create the VM.
+
+You should not specify 4 GiB as the value for the -VMSize parameter. The value must be in the form <Offering>_<VM Size>.
+
+You should not specify $set or WebSiteAvailabilitySet as the value of the -AvailabilitySetId parameter. The value must be the ID of an availability set.
+
+You should not call New-AzureRmVM without specifying a value for the -VM parameter. Otherwise an empty VM is created.
+
+You should not call New-AzureRmVMConfig last. This command is used to create a VM configuration, not to create the actual VM.
+---
+
+New-AzureRmVM;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvm?view=azurermps-6.13.0
+
+New-AzureRmVMConfig;https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/new-azurermvmconfig?view=azurermps-6.13.0
+###
+C
+You are the IT administrator for an automobile dealership on the west coast of the United States. The dealership wants to take advantage of Microsoft Azure by first moving its website to the cloud. The dealership wants to use the lowest cost solution possible.
+
+Business Requirements
+One of the problems the dealership has been facing is website downtime. The dealership typically provides maintenance every Sunday and Wednesday at 2:00 A.M. Eastern Time. However, because the dealership wants to attract customers all over the world, it wants to ensure that the website is always available. During peak seasons, the dealership notices that the website responds slower. The dealership wants this bottleneck eliminated.
+
+Technical Requirements
+The website is currently hosted at the dealership's domain registrar. The dealership wants move the site to Azure on Windows Server virtual machines (VMs). Users must be able to use the same domain name to reach the website. The website must be hosted in only one Azure region. The VMs must use a four-gigabyte (GB) solid state drive (SSD). The dealership expects there be less hands-on maintenance and administration once the infrastructure is moved to Azure.
+
+You need to eliminate the bottleneck during peak seasons.
+
+Which two Azure resources should you create? Each correct answer presents part of the solution.
+---
+Service Fabric cluster
+Load balancer *
+Scale set *
+API Management gateway
+Traffic Manager profile
+---
+You should create a scale set. A scale set contains one or more identical VMs. It can be configured to automatically scale out more VMs as the CPU threshold increases.
+
+You should also create a load balancer. A load balancer distributes traffic evenly across a set of VMs.
+
+You should not create a Service Fabric cluster. Service Fabric allows you to scale out micro-services. In this scenario, you need to scale out VMs.
+
+You should not create a Traffic Manager profile. Traffic Manager distributes traffic across Azure regions. It uses DNS to determine the nearest Azure datacenter to which external traffic should be routed.
+
+You should not create an API Management gateway. API Management allows API developers to publish and secure web APIs.
+---
+
+What are virtual machine scale sets?;https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
+
+Overview of Azure Service Fabric;https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview
+
+What is API Management?;https://docs.microsoft.com/en-us/azure/api-management/api-management-key-concepts
+###
+You are the IT administrator for an automobile dealership on the west coast of the United States. The dealership wants to take advantage of Microsoft Azure by first moving its website to the cloud. The dealership wants to use the lowest cost solution possible.
+
+Business Requirements
+One of the problems the dealership has been facing is website downtime. The dealership typically provides maintenance every Sunday and Wednesday at 2:00 A.M. Eastern Time. However, because the dealership wants to attract customers all over the world, it wants to ensure that the website is always available. During peak seasons, the dealership notices that the website responds slower. The dealership wants this bottleneck eliminated.
+
+Technical Requirements
+The website is currently hosted at the dealership's domain registrar. The dealership wants move the site to Azure on Windows Server virtual machines (VMs). Users must be able to use the same domain name to reach the website. The website must be hosted in only one Azure region. The VMs must use a four-gigabyte (GB) solid state drive (SSD). The dealership expects there be less hands-on maintenance and administration once the infrastructure is moved to Azure.
+
+You need configure Azure to automatically notify the owner of the dealership when peak season appears to have started. The solution must minimize expense and difficulty to implement.
+
+What should you do?
+---
+Use Machine Learning to create a model that examines historical memory usage and send an email when consumption is high.
+Use Monitor to capture the average CPU percentage over time and create an alert when a CPU threshold is exceeded. *
+Create a Function that uses a timed trigger to monitor CPU usage and send a text message when a CPU threshold is exceeded.
+Create a WebJob that uses a timed trigger to monitor memory usage and invoke WebHook when consumption is high.
+---
+You should use Monitor to create an alert when a CPU threshold is exceeded. With Monitor, you first choose a resource to monitor. In this scenario, the resource is a VM. You then choose a condition to monitor. In this scenario, when peak season starts, the website's response time is slower. This means that the CPU is doing more work than usual. Therefore, you should create a condition that monitors CPU percentage. You then choose an action. You can configure an action to e-mail the owner of the dealership when the CPU percentage exceeds a specific threshold.
+
+You should not use Machine Learning. With Machine Learning, you import historical data into a model to predict future outcomes. You cannot monitor VM metrics like CPU usage and memory consumption.
+
+You should not create a Function. This requires you to create an App Service resource. Also, you would need to manually write code to monitor CPU usage on the VM and send the text message.
+
+You should not create a WebJob. This requires you to create an App Service resource. Also, you would need to manually write code to monitor memory consumption on the VM and invoke the WebHook. You would also need to code the WebHook to send the message to the owner.
+---
+How to monitor virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/monitor
+
+What is automated machine learning?;https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml
+
+Azure Functions triggers and bindings concepts;https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings
+
+Run Background tasks with WebJobs in Azure App Service;https://docs.microsoft.com/en-us/azure/app-service/webjobs-create
+###
+C
+You are the IT administrator for an automobile dealership on the west coast of the United States. The dealership wants to take advantage of Microsoft Azure by first moving its website to the cloud. The dealership wants to use the lowest cost solution possible.
+
+Business Requirements
+One of the problems the dealership has been facing is website downtime. The dealership typically provides maintenance every Sunday and Wednesday at 2:00 A.M. Eastern Time. However, because the dealership wants to attract customers all over the world, it wants to ensure that the website is always available. During peak seasons, the dealership notices that the website responds slower. The dealership wants this bottleneck eliminated.
+
+Technical Requirements
+The website is currently hosted at the dealership's domain registrar. The dealership wants move the site to Azure on Windows Server virtual machines (VMs). Users must be able to use the same domain name to reach the website. The website must be hosted in only one Azure region. The VMs must use a four-gigabyte (GB) solid state drive (SSD). The dealership expects there be less hands-on maintenance and administration once the infrastructure is moved to Azure.
+---
+Assign a DNS name label. *
+Assign a public static IP address.
+Add an inbound port rule. *
+Add an extension.
+Add an outbound port rule.
+---
+You should add an inbound port rule to the VM. This rule should allow traffic over an HTTP port, which by default is port 80. (For HTTPS, the port is 443.)
+
+You should also add a DNS name label to the VM. This is a host (A) record that resolves to the public IP address assigned to the VM. The public IP address is dynamic by default, and this does not cost any more money. At the domain registrar, you can create a CNAME record that points your website domain name to Azure at [dnsnamelabel].[region].cloudapp.azure.net.
+
+You should not add a VM extension. A VM extension is a small application that provides post deployment tasks. For example, an extension can automatically install anti-virus software whenever a VM is deployed through script.
+
+You should not add an outbound port rule to the VM. The VM should allow all outbound traffic by default.
+
+You should not assign a public static IP address to the VM. This causes the IP address assigned to it to always remain the same. However, this is not necessary and it costs more money. You can use a CNAME record at the domain registrar and a DNS name label in Azure.
+---
+
+Tutorial: Map an existing custom DNS name to Azure Web Apps;https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain
+
+Create a virtual machine with a static public IP address using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-deploy-static-pip-arm-portal
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+
+Virtual machine extensions and features for Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/features-windows
+###
+You are the IT administrator for a small law firm. The company has one lawyer and one legal assistant. The company has two Windows 10 Professional desktop computers and a Linux server that hosts a web-based case management system.
+
+Existing Infrastructure
+The two desktop computers and the Linux server are connected by a network hub. The hub itself is connected to a router, which connects directly to the Internet via cable. No inbound ports are open on the router. The desktop computers host client applications that connect to the case management system at IP address 10.10.10.10 over TCP port 24000.
+
+Business Requirements
+The owner of the firm wants it to transition to a virtual firm. The lawyer and the assistant must be able to work from home by connecting to the Windows 10 desktop computers from any device. The owner wants you to move the existing infrastructure to Azure and make the system work as if it were in the physical office. However, the owner wants to use the minimum amount of resources and the least expensive options.
+
+Technical Requirements
+The two computers and server should be imported into Azure as virtual machines (VMs). The VMs for the lawyer and assistant should be always available, even during periods of upgrades or maintenance. As more cases are imported into the case management system, the disk attached to the Linux VM should automatically resize to ensure that it always has 20 percent of free space.
+
+You create two Windows 10 virtual machines for the lawyer and legal assistant. You must ensure that the lawyer and legal assistant can connect to their desktop computers from any location and from any device.
+
+What should you do?
+---
+Move each VM into its own subnet.
+Place the two VMs in the same availability set.
+Add an inbound port rule to each VM. *
+Assign a static public IP address to each VM.
+---
+You should add an inbound port rule to each VM. An inbound port rule specifies the port that must be open for the VM. In this scenario, you can open a Remote Desktop Protocol (RDP) port to allow the lawyer and legal assistant to remotely connect to the VMs.
+
+You should not place the two VMs in the same availability set. An availability set allows one VM to be responsive when another VM is down for maintenance or some unexpected event. It does not allow users to connect to a VM remotely.
+
+You should not move each VM into its own subnet. This increases resource management. Both VMs can be part of the same subnet.
+
+You should not assign a static public IP address to each VM. This is not necessary, and it will add to the monthly cost. You can continue to use the dynamic public IP address that is assigned to each VM by default.
+---
+
+Create a virtual machine with a static public IP address using Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-deploy-static-pip-arm-portal
+
+Manage the availability of Windows virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/manage-availability
+
+How to open ports to a virtual machine with the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal
+
+Virtual networks and virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/network-overview
+###
+You are the IT administrator for a small law firm. The company has one lawyer and one legal assistant. The company has two Windows 10 Professional desktop computers and a Linux server that hosts a web-based case management system.
+
+Existing Infrastructure
+The two desktop computers and the Linux server are connected by a network hub. The hub itself is connected to a router, which connects directly to the Internet via cable. No inbound ports are open on the router. The desktop computers host client applications that connect to the case management system at IP address 10.10.10.10 over TCP port 24000.
+
+Business Requirements
+The owner of the firm wants it to transition to a virtual firm. The lawyer and the assistant must be able to work from home by connecting to the Windows 10 desktop computers from any device. The owner wants you to move the existing infrastructure to Azure and make the system work as if it were in the physical office. However, the owner wants to use the minimum amount of resources and the least expensive options.
+
+Technical Requirements
+The two computers and server should be imported into Azure as virtual machines (VMs). The VMs for the lawyer and assistant should be always available, even during periods of upgrades or maintenance. As more cases are imported into the case management system, the disk attached to the Linux VM should automatically resize to ensure that it always has 20 percent of free space.
+
+You need to meet the availability demands for Windows computers.
+
+What should you do?
+---
+Implement vertical auto-scaling.
+Create one availability set for each VM. *
+Implement horizontal auto-scaling.
+Create one availability set for both VMs.
+---
+You should create one availability set for each VM. An availability set allows you to group VMs for availability. For example, the first availability set can contain the Windows 10 computer for the assistant, with additional VM instances for failover support. The second availability set can contain the Windows 10 computer for the lawyer, with additional VM instances for failover support.
+
+You should not create one availability set for both VMs. This would cause the lawyer's VM to be used when the assistant's VM is being upgraded, and vice versa.
+
+You should not implement horizontal auto-scaling. Horizontal auto-scaling allows more VMs to be created as load on a particular VM increases. It does not provide failover support.
+
+You should not implement vertical auto-scaling. Vertical auto-scaling allows more resources to be added to a VM as load on a particular VM increases. It does not provide failover support.
+
+---
+
+Manage the availability of Windows virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/manage-availability
+
+Overview of autoscale with Azure virtual machine scale sets;https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview
+
+Automatically scale a virtual machine scale set in the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal
+###
+C
+You are the IT administrator for a small law firm. The company has one lawyer and one legal assistant. The company has two Windows 10 Professional desktop computers and a Linux server that hosts a web-based case management system.
+
+Existing Infrastructure
+The two desktop computers and the Linux server are connected by a network hub. The hub itself is connected to a router, which connects directly to the Internet via cable. No inbound ports are open on the router. The desktop computers host client applications that connect to the case management system at IP address 10.10.10.10 over TCP port 24000.
+
+Business Requirements
+The owner of the firm wants it to transition to a virtual firm. The lawyer and the assistant must be able to work from home by connecting to the Windows 10 desktop computers from any device. The owner wants you to move the existing infrastructure to Azure and make the system work as if it were in the physical office. However, the owner wants to use the minimum amount of resources and the least expensive options.
+
+Technical Requirements
+The two computers and server should be imported into Azure as virtual machines (VMs). The VMs for the lawyer and assistant should be always available, even during periods of upgrades or maintenance. As more cases are imported into the case management system, the disk attached to the Linux VM should automatically resize to ensure that it always has 20 percent of free space.
+
+You need to ensure that the Linux virtual machine (VM) automatically expands its disk size when it is running low on space.
+
+What two actions should you perform? Each correct answer presents part of the solution.
+---
+Install a script on the VM that monitors the disk space and sends a notification to Azure. *
+Create an Azure Function that uses an HTTP trigger. *
+Configure Azure Monitor with an alert rule.
+Run an Azure PowerShell command from the VM.
+Run an Azure CLI command from the VM.
+---
+You should install a script on the VM that monitors the disk space and sends a notification to Azure. This script can be written in the language of your choice. The type of notification should be an HTTP request.
+
+You should also create an Azure Function that uses an HTTP trigger. When this trigger is invoked, it should stop the VM, expand the disk, and then restart the VM.
+
+You should not configure Azure Monitor with an alert rule. Azure Monitor can monitor a VM for free disk space and an alert rule can trigger an alert. However, the alert is only shown in the Azure portal, so no action is triggered based on the alert. If you do this, the Linux VM disk will not be expanded.
+
+You should not run an Azure PowerShell or Azure CLI command from the VM. Although both types of commands can be used to expand a disk, they should be run from a separate computer or VM instance.
+---
+
+Expand virtual hard disks on a Linux VM with the Azure CLI;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/expand-disks
+
+How to monitor virtual machines in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/monitor
+
+Azure Monitor data platform;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-platform
+###
+C
+You need to create an alert for a virtual machine named VM1 that will be fired when the VM's CPU utilization is greater than 95 percent for at least 10 minutes. You also need to add an action group named AG1 to this alert.
+
+What should you do? Select correct placeholder values.
+
+az monitor metrics alert PLACEHOLDER 1 -n A1 -g RG1 -- PLACEHOLDER 2 "avg Percentage CPU > 95"
+-- PLACEHOLDER 3 10m -- PLACEHOLDER 4 AG1
+---
+PLACEHOLDER 1: create *
+PLACEHOLDER 1: list 
+PLACEHOLDER 1: show
+PLACEHOLDER 2: condition *
+PLACEHOLDER 2: condition description
+PLACEHOLDER 2: scopes
+PLACEHOLDER 3: action
+PLACEHOLDER 3: evaluation-frequency
+PLACEHOLDER 3: window-size *
+PLACEHOLDER 4: action *
+PLACEHOLDER 4: condition
+PLACEHOLDER 4: name
+---
+You should use the following command:
+
+az monitor metrics alert create -n A1 -g RG1 --condition "avg Percentage CPU > 95"
+
+--window-size 10m --action AG1
+
+You should use the az monitor metrics alert create command to create a metric-based alert rule. The list and show commands list alert rules and show a specific alert rule.
+
+You should use the condition parameter to specify the condition that triggers the rule. The scopes option defines an action group associated with an alert, and the description option provides a free-text description of the rule.
+
+You should use the window-size option to define a time window in which the value of the condition is aggregated. You should not use the evaluation-frequency option to define a time window in which the value of the condition is aggregated. This option is used to define the frequency at which measured values are calculated. The action option defines an action group associated with an alert.
+
+You should use the action option to define an action group associated with the alert. The name option assigns a name to the rule. The condition parameter specifies the condition that triggers the rule.
+---
+az monitor metrics alert;https://docs.microsoft.com/en-us/cli/azure/monitor/metrics/alert?view=azure-cli-latest
+###
+C
+You need to provide information from Azure Log Analytics for the following sources:
+
+* Windows event log and Syslog
+* Application insights about traces, requests, and page views
+* Performance metrics
+
+You need to deliver all data from the event log and Syslog. You must deliver only matched data for application insights and performance metrics.
+
+Which operators are required in the Log Analytics query for the data that you need to deliver?
+
+Select correct placeholder values.
+
+Windows event log PLACEHOLDER 1
+Syslog PLACEHOLDER 2
+Application insights PLACEHOLDER 3
+Performance metrics PLACEHOLDER 4
+---
+PLACEHOLDER 1: union *
+PLACEHOLDER 1: inner join
+PLACEHOLDER 1: inner unique join
+PLACEHOLDER 2: union *
+PLACEHOLDER 2: inner join
+PLACEHOLDER 2: inner unique join
+PLACEHOLDER 3: union
+PLACEHOLDER 3: inner join *
+PLACEHOLDER 3: inner unique join
+PLACEHOLDER 4: union
+PLACEHOLDER 4: inner join *
+PLACEHOLDER 4: inner unique join
+---
+You should use the union operator to deliver all data from the Windows event log and Syslog. The operator takes all rows from first source and appends all data from the second source. The structure of the sources must be identical.
+
+You should use the inner join operator to deliver only matched data from application insights and performance metrics. The inner join operator returns matching records from both sources.
+
+You should not use the inner join operator to deliver all data from the event log and Syslog. The inner join operator requires that sources have columns that can be used as keys to perform matching.
+
+You should not use the inner unique join operator to deliver all data from the event log and Syslog. The inner unique join operator requires that sources have columns that can be used as keys to perform matching. The inner unique join operator removes duplicates.
+
+You should not use the union operator to deliver only matched data from application insights and performance metrics. The union operator takes all rows from the first source and appends all data from the second source. The structure of the sources must be identical.
+
+You should not use the inner unique join operator to deliver only matched data from application insights and performance metrics. The inner unique join operator removes duplicates.
+---
+Analyze Log Analytics data in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview
+###
+C
+You need to retrieve data from Log Analytics on virtual machines (VMs) hosted on Azure. You must write a Log Analytics query that meets the following requirements:
+
+* Find VMs that have failed to send a heartbeat signal within the previous hour
+* Summarize the data by operating system type
+
+How should you complete the query? Select correct placeholder values.
+
+Heartbeat
+| where PLACEHOLDER 1
+| summarize distinct_computers= PLACEHOLDER 2 (Computer) by OSType
+---
+PLACEHOLDER 1: now() - TimeGenerated > 1h
+PLACEHOLDER 1: TimeGenerated > ago(1h) *
+PLACEHOLDER 1: TimeGenerated > now(1h)
+PLACEHOLDER 2: Count
+PLACEHOLDER 2: Dcount *
+PLACEHOLDER 2: Dcountif
+---
+You should use the following command:
+
+Heartbeat
+|where TimeGenerated > ago(1h)
+|summarize distinct_computers=Dcount(Computer) by OSType
+
+You should use the TimeGenerated > ago(1h) condition to find all heartbeats that have been generated within the last hour. The ago(1h) function is a shortcut of the now(-1h) function and has the same meaning.
+
+You should not use the TimeGenerated > now(1h) condition to find all heartbeats that have been generated within last hour. The now(1h) function would find events older than one hour.
+
+You should not use the now()-TimeGenerated > 1h condition to find all heartbeats that have been generated within last hour. The now()-TimeGenerated > 1h function would find events older than one hour.
+
+You should use the Dcount function to calculate the distinct number of computers that have sent a heartbeat signal within the last hour.
+
+You should not use the count function to calculate the distinct number of computers that have sent a heartbeat signal within the last hour. The count function would sum all the heartbeat signals.
+
+You should not use the Dcountif function to calculate the distinct number of computers that have sent a heartbeat signal within the last hour. This function is used to add a filter to the counting process. For example, you could count only computers running Linux.
+---
+Azure Monitor log queries;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/query-language
+###
+C
+You monitor security events collected from virtual machines (VMs) hosted on Azure.
+
+You prepare a static table that consists of the security event codes. You need to show the description of the event and how many times it occurred on the VM. If an event code is not present, zero should be displayed.
+
+Select correct placeholder values.
+
+Recuirement: Join to use to match data from the events with static table: Query option: PLACEHOLDER 1
+Recuirement: Function to use to count the number of events: Query option: PLACEHOLDER 2
+---
+PLACEHOLDER 1: Innerunique
+PLACEHOLDER 1: Leftanti
+PLACEHOLDER 1: Leftouter *
+PLACEHOLDER 2: Count *
+PLACEHOLDER 2: DCount
+PLACEHOLDER 2: DCountIf
+---
+You should use a Leftouter join to match data from the events with the static table. For this type of join, all records in the left table and matching records in the right table are included in the results. Unmatched output properties contain nulls.
+
+You should not use the Innerunique join type to match data from the events with the static table. This is the default join mode. The values of the matched column on the left table are found, and duplicate values are removed. Then, the set of unique values is matched against the right table.
+
+You should not use the Leftanti join type to match data from the events with the static table. Records from the left side that do not have matches on the right side are included in the results. The results table has only columns from the left table.
+
+You should use the Count aggregation function. This function returns a count of the security events.
+
+You should not use the DCount aggregation function to count the number of security events. The DCount function is used to calculate the distinct count values and remove duplicates from the dataset. In this case, you would observe only one event per VM.
+
+You should not use the DCountIf aggregation function to count the number of security events. The DCountIf function is used to calculate the distinct count values and remove duplicates from the dataset. In this case, you would observe only one event per VM.
+---
+
+Azure Monitor log queries;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/query-language
+
+Joins in Azure Monitor log queries;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/joins
+###
+C
+You are the IT administrator for an Azure subscription. You create a Log Analytics workspace that you want to use to monitor all the virtual machines (VMs) in the subscription that have not been responsive today.
+
+You need to create the query.
+
+How should you create the query? To answer, select the appropriate code segments from the drop down menus.
+
+PLACEHOLDER 1
+| where TimeGenerated > ago(7d)
+| summarize PLACEHOLDER 2 by Computer
+| where PLACEHOLDER 3 < ago(1d)
+---
+PLACEHOLDER 1: Heartbeat *
+PLACEHOLDER 1: max(TimeGenerated)
+PLACEHOLDER 1: TimeGenerated
+PLACEHOLDER 2: Heartbeat
+PLACEHOLDER 2: max(TimeGenerated) *
+PLACEHOLDER 2: max_TimeGenerated
+PLACEHOLDER 2: TimeGenerated
+PLACEHOLDER 3: Heartbeat
+PLACEHOLDER 3: max_TimeGenerated *
+PLACEHOLDER 3: TimeGenerate
+---
+You should use the following query:
+
+Heartbeat
+| where TimeGenerated > ago(7d)
+| summarize max(TimeGenerated) by Computer
+| where max_TimeGenerated < ago(1d)
+
+This query searches the Heartbeat table for all events, TimeGenerated, that were generated more than seven days ago. It summarizes those events by the maximum time, max(TimeGenerated). It then filters those events where the maximum time generated, max_TimeGenerated, is less than one day.
+---
+Analyze log data in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview
+###
+C
+You are the Azure administrator for an online personal training company. You create a blob storage account to store training videos. Only you should be able to manage the storage account.
+
+The storage account has a container that personal trainers use to upload their videos. Only personal trainers that your company approves should be able to upload video files.
+
+Choose all that apply:
+---
+You should create a shared access signature. *
+You should set the access level of the blob container to Public.
+You should share the storage account key with the personal trainers.	
+---
+You should create a shared access signature. This is a URI that contains access rights to an Azure resource.
+
+You should not set the access level of the blob container to Public. This allows anyone to access the container, including anonymous users. You should instead set the access level to Private. By doing this and giving out the shared access signature, you can control who has access to the blob container.
+
+You should not share the storage account key with the personal trainers. This allows the personal trainers to manage the storage account, including the ability to delete other trainers' videos.
+---
+Using shared access signatures (SAS);https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview
+###
+C
+You are a Cloud Solutions Architect for a mobile application development company. The company has worldwide users that require consistently high performance.
+
+You now want to drop the dependency on physical datacenter storage. You plan to create a new storage solution for the enterprise that uses Azure Storage for disaster recovery, high availability, and performance.
+Choose all that apply:
+---
+You should use Premium Storage for global replication.
+If your app needs a lower recovery time objective (RTO), you should use a second regional deployment. *
+You can use HTTP and HTTPS to authorize blob and queue operations with an OAuth token.	
+---
+You should not use Premium Storage for global replication. Premium Storage is available only for locally redundant storage (LRS) replication. Also, Premium Storage is not available for all regions.
+ 
+Recovery time objective (RTO) is the maximum acceptable time that an application can be unavailable after an incident. For example, if your RTO is 50 minutes, you can restore the application to a running state within 50 minutes after the start of an incident. However, if you have a very low RTO, you might keep a second regional deployment continually running an active/passive configuration on standby to protect against a regional outage.
+ 
+You cannot authorize the Azure Storage from HTTP. To authorize blob and queue operations with an OAuth token, you must use HTTPS.
+---
+
+Azure Storage redundancy;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
+Use an Azure AD identity to access Azure Storage with CLI or PowerShell (Preview);https://docs.microsoft.com/en-us/azure/storage/common/authorize-active-directory-powershell?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json
+
+Designing resilient applications for Azure;https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/overview
+###
+C
+You are determining which type of Azure storage replication is appropriate for your storage account.
+
+You must consider the features of each replication option and choose the most appropriate one: locally-redundant storage (LRS), zone-redundant storage (ZRS), geo-redundant storage (GRS), or read-access geo-redundant storage (RA-GRS).
+
+Which replication options should you use to provide the features listed in the answer area? Choose all that apply:
+---
+Projects against hardware failures, but not region-wide unavailability: LRS *
+Projects against hardware failures, but not region-wide unavailability: GRS
+Projects against hardware failures, but not region-wide unavailability: RA-GRS
+Projects against hardware failures, but not region-wide unavailability: ZRS
+Can be used with premium performance storage accounts: LRS *
+Can be used with premium performance storage accounts: GRS
+Can be used with premium performance storage accounts: RA-GRS
+Can be used with premium performance storage accounts: ZRS
+Provides default replication for Azure storage accounts: LRS
+Provides default replication for Azure storage accounts: GRS
+Provides default replication for Azure storage accounts: RA-GRS *
+Provides default replication for Azure storage accounts: ZRS
+---
+LRS maintains three copies of your data within a single datacenter in a single region. This type of replication does not protect your data from failure of a single data center or region, but it protects you from hardware failures. 
+
+Premium storage supports only locally redundant storage (LRS). 
+
+RA-GRS replicates your data to another datacenter in a secondary region and provides read-only access to the data in the secondary location. This replication option is the default option for new storage accounts. 
+---
+
+Azure Storage redundancy;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
+Locally redundant storage (LRS): Low-cost data redundancy for Azure Storage;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+###
+C
+You create an Azure storage account that is used to store financial records. These records are accessed frequently. In the event of a data center outage, you want to ensure that the records can still be retrieved, even if they cannot be modified. All applications use REST APIs to access the financial records.
+
+You need to choose the most appropriate, least expensive configuration.
+How should you configure the storage account? Choose all that apply:
+---
+Which access tier should you use? - Cool
+Which access tier should you use? - Hot *
+Which replication strategy should you use? - LRS
+Which replication strategy should you use? - GRS
+Which replication strategy should you use? - RS - GRS *
+Which performance tier should you use? - Standard *
+Which performance tier should you use? - Premium
+---
+You should use the Hot access tier. This tier is feasible for storage accounts that are accessed frequently.
+
+You should use the RA-GRS replication strategy. With this strategy, if a failure occurs at a datacenter, data is replicated to another datacenter in another region, and it is available for read-only access.
+
+You should use the Standard performance tier. This tier uses magnetic drives to store data at low cost.
+
+You should not use the Cool access tier. This tier is feasible for storage accounts that are not accessed frequently.
+
+You should not use LRS. This replication strategy only copies data within a datacenter. It is feasible for scenarios such as power supply failure or disk failure.
+
+You should not use GRS. This replication strategy copies data to other regions. However, the data is not available to be read unless Microsoft initiates a failover to that region.
+
+You should not use the Premium performance tier. This tier uses solid state drives at a higher cost. These storage accounts can only be used with virtual machine (VM) disks.
+---
+Azure Storage redundancy;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
+Azure Blob storage: Premium (preview), Hot, Cool, and Archive storage tiers;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers?tabs=azure-portal
+###
+You are the IT administrator for an Azure subscription that contains 20 virtual machines (VMs).
+
+You need to write a Log Analytics query to determine which VMs have not been responsive within the past hour.
+
+How should you complete the query? 
+---
+Heartbeat | where TimeGenerated > ago(1h) *
+
+Heartbeat | where TimeGenerated < ago(1h)
+
+Perf | where Heartbeat > ago(1h)
+
+Perf | where Heartbeat < ago(1h)
+---
+You should use the following query:
+
+Heartbeat | where TimeGenerated > ago(1h)
+
+This query finds all computers that have had a heartbeat within the past hour. Computers send a heartbeat to let Azure know that they are responsive. The ago(1h) means the timestamp is one hour ago. If TimeGenerated is greater than that timestamp, the heartbeat occurred within the past hour.
+
+You should not use Perf as a source. This source looks at performance counters. In this scenario, you need to search the Heartbeat source, not performance counters.
+
+You should not use the following query:
+
+Heartbeat | where TimeGenerated < ago(1h)
+
+This query finds all computers that have sent a heartbeat before one hour ago.
+---
+Get started with Azure Monitor log queries;https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-queries
+###
+C
+You are the IT administrator for your company. Your company has a main office in California and a branch office in Amsterdam. Only employees work at the main and branch offices. Contractors can work remotely from anywhere in the world.
+
+An Azure subscription contains a virtual network (VNet) that contains resources to which all employees and contractors must access. Only the main office has a VPN server.
+
+You need to choose a connection type to ensure that each group of workers can access the full network.
+
+Which connection types should you use? Choose all that apply:
+---
+Use site-to-site for contractors.
+Use point-to-site for employees in California.	
+Use ExpressRoute for employees in Amsterdam. *
+---
+You should not use site-to-site for contractors. This connection type allows you to connect to on-premises datacenters by using VPN. It requires that each datacenter host a VPN server. You should instead use site-to-site for the employees in California.
+
+You should not use point-to-site for employees in California. This connection type allows workers to connect to an Azure VNet over the public network. You should use point-to-site for contractors who work remotely.
+
+You should use ExpressRoute for employees in Amsterdam. This connection type allows you to create a private connection between Azure and an on-premises network. It does not require the on-premises location to host a VPN server.
+---
+
+Configure ExpressRoute and Site-to-Site coexisting connections (classic);https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-coexist-classic
+
+ExpressRoute FAQ;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-faqs
+###
+C
+You create a VPN gateway using the Resource Manager deployment model and want to verify the connection.
+
+How can you verify the connection?
+---
+You can use the az network vpn-connection show Azure CLI command to verify connectivity. *
+You can use the Get-AzureVNetConnection PowerShell cmdlet to verify connectivity.	
+In the Azure portal, you can navigate to the gateway and click Connection to verify connectivity. *
+---
+You can use the az network vpn-connection show Azure CLI command to show connection status for a gateway created using the Resource Manager deployment model. When the connection is established, its status shows Connected.
+
+You cannot use the Get-AzureVNetConnection PowerShell cmdlet to verify connectivity. The Get-AzureVNetConnection cmdlet is used to show the connection status for a classic VPN gateway. To show the status of a gateway created using the Resource Manager deployment model, you must use the Get-AzureRmVirtualNetworkGatewayConnection PowerShell cmdlet.
+
+In the Azure portal, you can navigate to the gateway and click Connection to verify connectivity for a Resource Manager VPN gateway. You can also click the connection to open Essentials, which shows more information about the connection.
+---
+
+Verify a VPN Gateway connection;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-verify-connection-resource-manager
+###
+C
+You have three virtual networks (VNets) named VNET1, VNET2 and VNET3. The VNets have the following subnets:
+
+*VNET1: Subnet11, Subnet12
+*VNET2: Subnet21
+*VNET3: Subnet31, Subnet32
+
+You perform the following actions:
+
+*Add peering from VNET1 to VNET2
+*Add peering from VNET2 to VNET3
+*Add peering from VNET3 to VNET2
+
+You need to identify network connectivity between subnets.
+
+Which network connectivity should you identify for each subnet? Choose all that apply:
+---
+Subnet11 has connectivity with: Subnet12 only *
+Subnet11 has connectivity with: Subnet12 and Subnet21 only
+Subnet11 has connectivity with: Subnet12, Subnet21 and Subnet31 only
+Subnet11 has connectivity with: Subnet12, Subnet21, Subnet31 and Subnet32
+Subnet21 has connectivity with: Subnet11 only
+Subnet21 has connectivity with: Subnet11 and Subnet12 only
+Subnet21 has connectivity with: Subnet31 and Subnet32 only *
+Subnet21 has connectivity with: Subnet11, Subnet12, Subnet31 and Subnet32
+---
+Virtual network (VNet) peering enables you to connect VNets. Peered VNets appear as one for connectivity purposes. You must add peering to both VNets that you want to connect. If you add peering to only one VNet, peering is in the Initiated state, and VNets will not have connectivity.
+
+Subnet11 has network connectivity with Subnet12 only. Those two subnets are on the same VNet. Subnets on the same VNet always have full network connectivity.
+
+Subnet11 does not have network connectivity with Subnet21. Subnet11 is on VNET1, and Subnet21 is on VNET2. You have only added peering between VNET1 and VNET2 in one direction. For this reason, peering is in the Initiated state and the two VNets do not have connectivity. Because the VNets are not connected, Subnet11 does not have connectivity with Subnet21.
+
+Subnet21 has network connectivity with Subnet31 and Subnet32 only. Subnet21 is on a different VNet than Subnet31 and Subnet32. You add peering from VNET2 to VNET3 and from VNET3 to VNET2. Because the VNets are connected, the subnets on VNET2 have full connectivity to subnets on VNET3.
+
+You added peering from VNET1 to VNET2, but you did not add peering from VNET2 to VNET1. Because the peering was only added to one of the VNets, there is no network connectivity between VNET1 and VNET2 and Subnet21 does not have connectivity with Subnet11 and Subnet12.
+---
+
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+
+Create, change, or delete a virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering
+###
+You create two Azure virtual machines (VMs) named vm1 and vm2, and then you add them to a virtual network. The private IP addresses for vm1 and vm2 are 10.1.0.10 and 10.1.0.11, respectively. You connect to vm1 by using Remote Desktop from your laptop computer.
+
+You run the following PowerShell cmdlet on vm1:
+
+ping 10.1.0.11
+
+You receive an error message that the request timed out.
+
+You must ensure that the ping command is successful.
+
+You need to run a PowerShell cmdlet on vm2.
+
+How should you complete the cmdlet? 
+---
+New-NetFirewallRule -DisplayName "Ping" -Protocol ICMPv4 *
+New-NetFirewallRule -DisplayName "Ping" -Protocol TCP -LocalPort 3389
+New-NetIPsecRule -InboundSecurity Require -RemoteAddress 10.1.0.10
+New-NetIPsecRule -InboundSecurity Require -RemoteAddress 127.0.0.1
+---
+You should run the following cmdlet on vm2:
+
+New-NetFirewallRule -DisplayName "Ping" -Protocol ICMPv4
+
+This cmdlet creates a firewall rule that allows inbound Internet Control Message Protocol (ICMP) traffic to reach vm2. This is necessary because the ping command uses ICMP to communicate.
+
+You should not run the following cmdlet on vm2:
+
+New-NetFirewallRule -DisplayName "Ping" -Protocol TCP -LocalPort 3389
+
+This cmdlet opens TCP port 3389 on vm2. This is the default port for Remote Desktop. The problem is that the ping command is not successful. Also, all of the parts for that cmdlet are not available.
+
+You should not run the following cmdlet on vm2:
+
+New-NetIPsecRule -InboundSecurity Require -RemoteAddress 10.1.0.10
+
+The New-NetIPsecRule cmdlet allows you to configure an IPsec rule. IPsec is a collection of protocols that allow secure communication across IP networks. The problem in this scenario is related to ping, not IPsec.
+---
+
+How to open ports to a virtual machine with the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal
+
+Quickstart: Create a virtual network using the Azure portal;https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal
+
+New-NetIPsecRule;https://docs.microsoft.com/en-us/powershell/module/netsecurity/new-netipsecrule?view=win10-ps
+###
+C
+You need to change the public IP address for an Azure virtual machine (VM) named sn2-prod-091 to 13.65.243.111.
+
+How should you complete the command? Choose all that apply:
+---
+Get-AzureVM *
+Set-AzureStaticVNetIP *
+Update-AzureVM *
+Add-AzureRmVMNetworkInterface
+New-AzureRmVMConfig
+---
+You should call the Get-AzureVM cmdlet to retrieve an instance to the Azure VM. Next you should call the Set-AzureStaticVNetIP cmdlet to set the public static IP address of the virtual adapter assigned to that VM. Finally, you should call Update-AzureVM to update the changes.
+
+You should not call Add-AzureRmVMNetworkInterface. This cmdlet adds a new virtual network interface to a VM.
+
+You should not call New-AzureRmVMConfig. This cmdlet creates a configuration that can be used to update a VM. However, it does not actually update the VM.
+---
+
+How to reset network interface for Azure Windows VM;https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/reset-network-interface
+###
+C
+You plan to perform an Azure Active Directory (Azure AD) Access Review because you have found a higher number of users than you expected in certain groups and roles.
+
+You need to review the security group members, Azure AD roles, and Azure resource roles.
+
+Where will you create reviews for the different groups? Choose all that apply:
+---
+Security group members: Azure AD Access reviews *
+Security group members: Azure AD enterprise apps
+Security group members: Azure AD PIM
+Azure AD roles: Azure AD Access reviews
+Azure AD roles: Azure AD enterprise apps
+Azure AD roles: Azure AD PIM *
+Azure resource roles: Azure AD Access reviews
+Azure resource roles: Azure AD enterprise apps
+Azure resource roles: Azure AD PIM *
+---
+The review for security group members should be created in Azure AD Access reviews. This can be done from the access panel in Azure. To use the access reviews, you need to have an Azure AD Premium P2 license and an Enterprise Mobility + Security E5 license.
+
+The review for Azure AD roles and Azure resource roles should be created in Azure AD Privileged Identity Management (PIM). This can be done from the Azure portal. Azure PIM is a service that enables you to manage, control, and monitor access to important resources in your organization.
+
+Azure AD enterprise apps is used for reviews of users assigned to connected apps.
+---
+
+What are Azure AD Access Reviews;https://docs.microsoft.com/en-us/azure/active-directory/governance/access-reviews-overview
+
+What is Azure AD Privileged Identity Management?;https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure
+###
+C
+You have an Azure Active Directory (Azure AD) tenant named Adatum.com that includes the following users:
+
+• User1, who is a member of a group named Group1.
+• User2, who is a member of a group named Group2.
+
+The following Windows 10 computers are joined to Adatum.com:
+
+• Computer1, which is a member of a group named GroupA.
+• Computer2, which is a member of a group named GroupA.
+• Computer3, which is a member of a group named GroupB.
+
+Enterprise State Roaming in Adatum.com is enabled for Group1 and GroupA only. Choose all that apply:
+---
+If User1 modifies the desktop background on Computer1, User1 will have the modified background when he is signed in to Computer2. *
+If User1 modifies the desktop background on Computer1, User1 will have the modified background when he is signed in to Computer3. *
+If User2 modifies the desktop background on Computer1, User2 will have the modified background when he is signed in to Computer2.	
+If User2 modifies the desktop background on Computer1, User2 will have the modified background when he is signed in to Computer3.	
+---
+Enterprise State Roaming (ESR) can be enabled only for users. If device accounts are in a group for which you enable ESR, device accounts are ignored.
+
+If User1 modifies the desktop background on Computer1, User1 will have the modified background when he is signed in to Computer2. ESR is enabled for Group1, which User1 is member of. Desktop background is one of the settings that is roamed by ESR. Because ESR is enabled for User1, the modified desktop background will be visible on all Windows 10 computers on which User1 signs in. That means that the modified desktop will be used also when User1 signs in to Computer3.
+
+If User2 modifies the desktop background on Computer1, User2 will not have the modified background when he is signed in to Computer2. ESR is not enabled for User2 (or for Group2, which User2 is member of). This means that if User2 performs customization at one computer, those customizations will not roam and will not be used when User2 signs in to a different computer.
+---
+
+What is enterprise state roaming?;https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-overview
+
+Enable Enterprise State Roaming in Azure Active Directory;https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-enable
+###
+C
+You plan to enable Azure Active Directory (AD) Identity Protection for your company. The configuration must include the following:
+
+* A role that allows full access to Identity Protection but without resetting passwords for users
+* A policy that will analyze user sign-in and learn typical user behavior
+
+Which role and policy will meet these requirements? Choose all that apply:
+---
+Role: Global Administrator
+Role: Security Administrator *
+Role: Security Reader
+Policy: MFA registration policy
+Policy: Sign-in risk policy
+Policy: User risk policy *
+---
+You should recommend the Security administrator role. This role provides full access to Identity Protection but cannot reset user passwords.
+
+You should not recommend the Global administrator role. This role has a full access to Identity Protection but can reset user passwords.
+
+You should not recommend the Security reader role. This role has read-only access to Identity Protection and cannot configure policies or reset passwords.
+
+You should recommend a user risk policy. With this type of policy, Azure AD analyzes each user's sign-in so it can detect suspicious actions (risk events) related to the sign-in. After a particular learning period, the system can learn typical user behavior.
+
+You should not recommend an MFA registration policy. This type of policy provides a second layer of security to user sign-ins and transactions, but it does not analyze user sign-ins and learn typical user behavior.
+
+You should not recommend a sign-in policy. This type of policy is used to define a response for a specific sign-in risk level. It does not analyze user sign-in or learn typical user behavior.
+---
+
+Azure AD Identity Protection;https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/
+
+How To: Configure risk policies in Azure Active Directory identity protection (refreshed);https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+###
+C
+Your company has a hybrid solution that uses an on-premises Active Directory (AD) infrastructure and Azure AD. You want to enable password writeback so that whenever users change their passwords in Azure, the change is reflected on-premises.
+
+You need to perform the required tasks to support password writeback.
+
+Which tasks do you need to perform? For each of the following tasks, select Yes if the task should be performed. Choose all that apply:
+---
+Assign the Azure AD Premium 1 license to your AD tenant. *
+Install Azure AD Connect on an on-premises server. *
+Deploy Azure AD Passthrough Authentication.
+---
+You should assign the Azure AD Premium 1 license to your AD tenant. This is the minimum license required to install Azure AD Connect. Azure AD Connect allows you to synchronize password hashes from a domain controller to Azure AD.
+
+You should install Azure AD Connect on an on-premises server. This tool allows you to synchronize password hashes from a domain controller to Azure AD. You must install this tool to enable password writeback.
+
+You should not deploy Azure AD Passthrough Authentication. This allows users to sign in to Azure AD with the same password as they use with an on-premises directory. This is not required to enable password writeback.
+---
+
+How-to: Configure password writeback;https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr-writeback
+
+Getting started with Azure AD Connect using express settings;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-express
+
+What is hybrid identity?;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity
+###
+C
+You plan to use Azure Active Directory (AD) Connect as a solution that spans from your on-premises directory to cloud servers.
+
+The on-premises Active Directory contains approximately 200,000 objects. The solution must meet the following requirements:
+
+* Use Azure Multi-Factor Authentication (MFA)
+* Ensure that no password hashes are stored in the cloud
+* Support smartcard authentication
+
+You need to choose the installation type, version, and hybrid identity option. Choose all that apply:
+---
+You should use password hash synchronization from on-premises to Azure AD for single sign-on.
+You should choose the custom installation type. *
+You should install the full version of SQL Server for the AD Connect database. *
+---
+You should not use password hash synchronization from on-premises to Azure AD for single sign-on. This would be appropriate for Office 365 hybrid scenarios. You also should not recommend pass-through authentication. Although it ensures that no passwords will be stored in the cloud, it does not support smartcard authentication. You should, instead, use federation from on-premises to Azure AD for single sign-on because it allows cloud multi-factor authentication, ensures that no password hashes are stored in the cloud, and supports smartcard authentication.
+
+You should choose the custom installation type because you need to enable cloud multi-factor authentication solutions and you have more than 100,000 objects in the on-premises AD. In-place upgrade performs the upgrade from DirSync or Azure AD Sync. Express installation should be used only when you have less than 100,000 objects in the on-premises AD. You also must have an enterprise administrator account that you can use for the installation.
+
+You should install the full version of SQL Server for the Azure AD Connect database because you have more than 100,000 objects in the on-premises AD. For a smaller number of objects, you can use the default database installation, which is LocalDb. You cannot install SQL Server Express for the Azure AD Connect database because you have more than 100,000 objects in the on-premises AD. The SQL Server Express version has a data size limitation and can use only 1 GB RAM.
+---
+
+Prerequisites for Azure AD Connect;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-prerequisites
+
+Select which installation type to use for Azure AD Connect;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-select-installation
+###
+Your company plans to use a custom image based on an existing Azure Windows virtual machine (VM) to provision new VMs in multiple regions.
+
+You need to prepare the VM so it can be used to create a custom image.
+
+Which three commands should you run first in sequence?
+---
+1. New-AzImageConfig 2. New-AzImage 3. New-AzVm
+1. Sysprep 2. Set-AzVm 3. Stop-AzVm
+1. Sysprep 2. Stop-AzVm 3. Set-AzVm *
+1. New-AzVm 2. Stop-AzVm 3. Set-Az-Vm
+---
+You need to start by running the following commands in order:
+
+1. Sysprep
+2. Stop-AzVm
+3. Set-VzVm
+
+A custom image is similar to an Azure marketplace image. The primary difference is that you create the image yourself from an existing VM. The result is a reusable image that can be used to create as many VMs as you want.
+
+You start by running the Sysprep command to remove personal information and generalize the image. You then use the Stop-AzVm cmdlet to deallocate the VM. Finally, you need to identify the VM as generalized to Azure using the Set-AzVm command.
+
+Once you have prepared the image, you run Get-AzVM to retrieve the image and load it into a variable, New-AzImageConfig to create the image configuration by specifying the image location, and finally New-AzImage to create the image, specifying the image name and location.
+
+At this point, you can use the New-AzVm to create new VMs from the image.
+---
+Tutorial: Create a custom image of an Azure VM with Azure PowerShell;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-custom-images
+
+Tutorial: Create and Manage Windows VMs with Azure PowerShell;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-manage-vm
+
+Create a VM from a managed image;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/create-vm-generalized-managed
+
+Create a managed image of a generalized VM in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource
+###
+C
+A company is using a template to provision a new virtual machine (VM) in the RG03 resource group using PowerShell.
+
+You need to ensure the following:
+
+* The new VM is deployed.
+* Resources already in the resource group are not affected.
+
+How should you complete the PowerShell script? Select correct placeholder values.
+
+PLACEHOLDER 1 -Mode PLACEHOLDER 2
+-Name NewVMDeployment -ResourceGroupName RG03
+-TemplateFile c:\MyTemplates\newvm.json
+---
+PLACEHOLDER 1: New-AzResourceGroup
+PLACEHOLDER 1: New-AzResourceGroupDeployment *
+PLACEHOLDER 1: Set-AzResourceGroup
+PLACEHOLDER 2: Complete
+PLACEHOLDER 2: Incremental *
+---
+You should complete the PowerShell script as follows:
+
+New-AzResourceGroupDeployment -Mode Incremental
+  -Name NewVMDeployment -ResourceGroupName RG03
+  -TemplateFile c:\MyTemplates
+ewvm.json
+
+The New-AzResourceGroupDeployment cmdlet is used to add a deployment to an existing resource group. You need to specify the incremental mode to add the new VM without changing the existing resources. You can use incremental mode to apply changes to existing resources, but you need to include all of that resource's parameters in the template.
+
+You should not run the New-AzResourceGroup cmdlet. This is used to create a new resource group, not deploy resources to an existing group.
+
+You should not run the Set-AzResourceGroup cmdlet. The cmdlet lets you modify resource group properties by to adding, changing, or deleting Azure tags applied to the resource group. It does not let you manage resources in the resource group.
+
+You should not choose the Complete mode. This would cause any resources not included in the template to be deleted.
+---
+Azure Resource Manager deployment modes;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes
+
+Deploy resources with Resource Manager templates and Azure PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell
+
+New-AzResourceGroup;https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroup?view=azps-3.8.0
+
+New-AzResourceGroupDeployment;https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-3.8.0
+
+Set-AzResourceGroup;https://docs.microsoft.com/en-us/powershell/module/az.resources/set-azresourcegroup?view=azps-3.8.0
+###
+C
+Your company is researching ways to improve data security for Windows and Linux Infrastructure-as-a-Service (IaaS) virtual machines (VM)s. You need to determine if Azure Disk Encryption (ADE) can meet the company's requirements.  Choose all that apply:
+---
+ADE is supported for Basic, Standard, and Premium tier VMs.		
+You must encrypt the OS volume before you can encrypt any data volumes on a Windows VM. *
+You can use the an on-premises key management service to safeguard encryption keys.
+---
+ADE is not supported for Basic tier VMs. It is supported for Standard, and Premium tier VMs. ADE supports Windows Server 2008 and later and a subset of Azure Linux images. Custom Linux images are not supported.
+
+You must encrypt the boot volume before you can encrypt any data volumes on a Windows VM. ADE does not let you encrypt a data volume unless you first encrypt the OS volume. This is different for Linux VMs, which let you encrypt data without first encrypting the OS volume.
+
+You cannot use an on-premises key management service to safeguard encryption keys. You are required to use Azure Key Management service. Azure Key Management service is a prerequisite for implementing ADE.
+---
+
+Azure Disk Encryption for IaaS VMs;https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss
+
+Azure Disk Encryption prerequisites;https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss
+
+Azure Disk Encryption for IaaS VMs FAQ;https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss
+###
+C
+Your company is deploying new virtual machines (VMs) and associated resources using Azure Resource Manager templates. The company wants to use PowerShell cmdlets to provision the resources from a template deployed to your local computer.
+
+You need to complete the PowerShell script to accomplish this.
+
+How should you complete the PowerShell script? Select correct placeholder values.
+
+PLACEHOLDER 1 PLACEHOLDER 2 RG02 -Location "North Central US"
+PLACEHOLDER 3 PLACEHOLDER 4 RG02
+-TemplateFile c:\\MyTemplates\\newazure.json
+---
+PLACEHOLDER 1: New-AzResourceGroup *
+PLACEHOLDER 1: New-AzResourceGroupDeployment
+PLACEHOLDER 2: -Name *
+PLACEHOLDER 2: -ResourceGroupName
+PLACEHOLDER 3: New-AzResourceGroup
+PLACEHOLDER 3: New-AzResourceGroupDeployment *
+PLACEHOLDER 4: -Name
+PLACEHOLDER 4: -ResourceGroupName *
+---
+You should complete the PowerShell script as follows:
+
+New-AzResourceGroup -Name RG02 -Location "North Central US"
+New-AzResourceGroupDeployment -ResourceGroupName RG02
+-TemplateFile c:\\MyTemplates\\newazure.json
+
+You need to first create the resource group and then deploy the resources from the template to the resource group.
+
+You should use the New-AzResourceGroup cmdlet to create the resource group. You should use the -Name parameter to specify the resource group name and -Location to specify the regional location. The cmdlet does not support the -ResourceGroupName parameter.
+
+After you create the resource group, you should use the New-AzResourceGroupDeployment cmdlet to deploy the resources. The -ResourceGroupName parameter is used to identify the resource group, and the -TemplateFile parameter is used to locate the template file to use. The -Name and -Location parameters are not supported by the cmdlet.
+---
+
+Deploy resources with Resource Manager templates and Azure PowerShell;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell
+
+Azure Resource Manager overview;https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview
+
+New-AzResourceGroup;https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroup?view=azps-3.8.0
+
+New-AzResourceGroupDeployment;https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-3.8.0
+###
+You have two storage account keys: key1 and key2. Your apps and services use key1, and you maintain key2 as a backup key.
+
+You are concerned that both keys may have been compromised. You want to use the Azure portal to regenerate them without interrupting access to the storage account.
+
+Which four actions should you perform in sequence?
+---
+1. Regenerate key2 using the Azure portal. 2. Update connection strings in all relevant apps and services to use key2. 3. Verify that all apps and services are running correctly using the new key. 4. Regenerate key1 using the Azure portal. *
+1. Update connection strings in all relevant apps and services to use key2. 2. Verify that all apps and services are running correctly using the new key. 3. Regenerate key1 using the Azure portal. 4. Regenerate key2 using the Azure portal.
+1. Verify that all apps and services are running correctly using the new key. 2. Regenerate key1 using the Azure portal. 3. Regenerate key2 using the Azure portal. 4. Update connection strings in all relevant apps and services to use key2.
+1. Regenerate key1 using the Azure portal. 2. Regenerate key2 using the Azure portal. 3. Update connection strings in all relevant apps and services to use key2. 4. Verify that all apps and services are running correctly using the new key
+---
+You need to perform the following steps in order:
+
+1. Regenerate key2 using the Azure portal.
+2. Update connection strings in all relevant apps and services to use key2.
+3. Verify that all apps and services are running correctly using the new key.
+4. Regenerate key1 using the Azure portal.
+
+You first regenerate key2 because the apps and services are currently using key1 to gain access to stored data, and you do not want to interrupt their access. Next, you change the storage key to key2 in those apps and services and then verify that they can gain access to storage. This is important because the apps and services will not be able to use the previous primary key after it is regenerated.
+
+Finally, you regenerate key1.
+---
+Manage storage account settings in the Azure portal;https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal
+
+Azure Storage security guide;https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations
+###
+You need to give a user temporary read and write permissions to a blob by using an ad hoc shared access signature (SAS).
+
+Which six actions should you perform in sequence? 
+---
+1. Open Azure Storage Explorer. 2. Connect to your Azure Storage account. 3. Create a blob container. 4. Upload the blob to the blob container. 5. Get an SAS for the blob and specify start/expiry time and permissions. 6. Use HTTPS to distribute the URL to the user. *
+1. Connect to your Azure Storage account. 2. Create a blob container. 3. Upload the blob to the blob container. 4. Get an SAS for the blob and specify start/expiry time and permissions. 5. Use HTTPS to distribute the URL to the user. 6. Open Azure Storage Explorer.
+1. Create a blob container. 2. Upload the blob to the blob container. 3. Get an SAS for the blob and specify start/expiry time and permissions. 4. Use HTTPS to distribute the URL to the user. 5. Open Azure Storage Explorer. 6. Connect to your Azure Storage account.
+1. Upload the blob to the blob container. 2. Get an SAS for the blob and specify start/expiry time and permissions. 3. Use HTTPS to distribute the URL to the user. 4. Open Azure Storage Explorer. 5. Connect to your Azure Storage account. 6. Create a blob container.
+---
+You need to perform the following steps in order:
+
+1. Open Azure Storage Explorer.
+2. Connect to your Azure Storage account.
+3. Create a blob container.
+4. Upload the blob to the blob container.
+5. Get an SAS for the blob and specify start/expiry time and permissions.
+6. Use HTTPS to distribute the URL to the user.
+
+You use Azure Storage Explorer to manage your storage account as well as upload and download blobs, files, and other resources. After you open Azure Storage Explorer, you connect to your storage account. Next, you create a blob container for the blob you will grant access to, and then you upload the blob. Blobs are always uploaded into a container so they can be more easily organized.
+
+You generate a SAS for the blob simply by right-clicking, selecting Get Shared Access Signature, and then specifying start/expiry time and permissions. Finally, you use HTTPS to distribute the SAS to the user. Using HTTP can leave your resources vulnerable to attack.
+
+You should not create a resource group. This is a necessary step when creating VMs in Azure, but it is not part of the procedure to create an SAS by using Azure Storage Explorer.
+
+You should not create a stored access policy for the container. In this scenario, you are creating an ad hoc SAS, and the start time, expiry time, and permissions are specified in the SAS URI. With a stored access policy, the start time, expiry time, and permissions are defined in the policy. An SAS associated with the policy inherits those constraints.
+---
+
+Using shared access signatures (SAS);https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview
+
+Quickstart: Use Azure Storage Explorer to create a blob in object storage;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-storage-explorer
+
+Create and Manage Windows VMs with Azure PowerShell;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-storage-explorer
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---

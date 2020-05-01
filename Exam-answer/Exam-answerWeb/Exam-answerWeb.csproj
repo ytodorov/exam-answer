@@ -1408,6 +1408,9 @@
     <None Update="Exams\az-100.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Exams\az-300.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Exams\az-900.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -284,6 +284,19 @@ namespace Exam_answerWeb.Infrastructure
 
             result.Add(crt251);
 
+            ExamEntity az300 = new ExamEntity()
+            {
+                Provider = "Microsoft",
+                Code = "AZ-300",
+                Name = "Microsoft Azure Architect Technologies",
+                PageTitle = "Exam AZ-300: Microsoft Azure Architect Technologies",
+                PageDescription = "Prepare for Exam AZ-300: Microsoft Azure Architect Technologies. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\az-300.txt"),
+            };
+
+            context?.Exams?.Add(az300);
+            result.Add(az300);
+
             ExamEntity az100 = new ExamEntity()
             {
                 Provider = "Microsoft",
