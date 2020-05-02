@@ -2442,57 +2442,410 @@ You should not specify Developers as the value of the --assignee-object-id param
 ---
 az role assignment;https://docs.microsoft.com/en-us/cli/azure/role/assignment?view=azure-cli-latest
 ###
+You are developing a web application that will serve as a search engine for the science department at your school. You plan to host the application in Azure. A console application acts as a web crawler. It crawls the web servers on the school's network every 12 hours to build a local table of keywords and links. This table is used by the web application. You plan to host the web application in an Azure App Service.
+
+You need to ensure that the web crawler continues to work while the web application is in Azure without increasing costs.
+
+What should you do?
 ---
+Deploy it as a Docker Container instance.
+Convert it to a web application.
+Deploy it as a WebJob. *
+Convert it to an Azure Function.
 ---
+You should deploy it as a WebJob. A WebJob allows you to run a program in the context of a web application. The program can be written in Java, JavaScript, Python, PHP, Bash, Powershell, or any .NET language. You can configure the WebJob to use a schedule as a trigger, allowing the console application to run every 12 hours. WebJobs are free.
+
+You should not convert it to an Azure Function. Although an Azure Function can use a schedule as a trigger, the cost increases compared to a WebJob.
+
+You should not convert it to a web application. There is no easy way to cause a web application to run on a scheduled basis.
+
+You should not deploy it as a Docker Container instance. Although you can run a Docker Container instance on a schedule, the cost increases compared to a WebJob.
 ---
+
+Run Background tasks with WebJobs in Azure App Service;https://docs.microsoft.com/en-us/azure/app-service/webjobs-create
+
+Deploy a Docker/Go web app in Web App for Containers;https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-docker
+
+Azure Functions triggers and bindings concepts;https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings
 ###
+You are developing a web application that will serve as a search engine for the science department at a school. You plan to host the application in Azure.
+
+A console application acts as a web crawler. It browses the web servers on the school's network every 12 hours to build a local table of keywords and links. This table is used by the web application. You plan to host the web application in Azure App Service.
+
+You need to make sure that the web crawler continues to work while the web application is in Azure without increasing costs.
+
+What should you do?
 ---
+Convert it to an Azure Function.
+Convert it to a web application.
+Deploy it as a WebJob. *
+Deploy it as a Docker container instance.
 ---
+You should deploy the web crawler as a WebJob. A WebJob allows you to run a program in the context of a web application. The program can be written in Java, JavaScript, Python, PHP, Bash, PowerShell, or any .NET language. You can configure the WebJob to use a schedule as a trigger, which allows the console application to run every 12 hours. Also, WebJobs involves no additional cost.
+
+You should not convert it to an Azure Function. Although an Azure Function can use a schedule as a trigger, it increases the cost, unlike a WebJob.
+
+You should not convert it to a web application. There is no easy way to cause a web application to run on a scheduled basis.
+
+You should not deploy it as a Docker container instance. Although you can run a Docker container instance on a schedule, it increases the cost, unlike a WebJob.
 ---
+
+Run Background tasks with WebJobs in Azure App Service;https://docs.microsoft.com/en-us/azure/app-service/webjobs-create
+
+Deploy a Docker/Go web app in Web App for Containers;https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-docker
+
+Azure Functions triggers and bindings concepts;https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings
 ###
+You are using the WebJobs SDK to create an Azure WebJob. You write the following code (line numbers are included for reference only):
+
+01 static void Main(string[] args)
+02 {
+03   var config = new JobHostConfiguration();
+04   var host = new JobHost(config);
+05 
+06 }
+
+You need to complete the code at line 05 so that the WebJob can be manually triggered.
+
+Which code should you add at line 05?
 ---
+host.Call(typeof(ServicePoint).GetMethod("SetTcpKeepAlive"));
+host.RunAndBlock(); *
+host.Start();
+host.Call(typeof(ServicePointManager).GetMethod("FindServicePoint"));
 ---
+You should call host.RunAndBlock. This method starts the WebJob and blocks the current thread so that it can keep running.
+
+You should not call host.Start. This method starts the WebJob, but it does not block the current thread. This causes it to stop as soon as the Main method returns.
+
+You should not call host.Call. This method allows you to have the WebJob call an external method.
+
 ---
+
+
+Get started with the Azure WebJobs SDK for event-driven background processing;https://docs.microsoft.com/en-us/azure/app-service/webjobs-sdk-get-started
+
+How to use the Azure WebJobs SDK for event-driven background processing;https://docs.microsoft.com/en-us/azure/app-service/webjobs-sdk-how-to
 ###
+You create an Azure web app.
+
+You need to view HTML documents that provide information about HTTP errors associated with the app.
+
+Which logs should you view?
 ---
+Web server logs
+Failed trace requests
+Detailed error logs *
+Application diagnostics logs
 ---
+You should view detailed error logs. This is an HTML document that provides information about HTTP errors.
+
+You should not view application diagnostics logs. This is either a space-separated value or comma-separated value file that lists the date, process identifier, event level, and message.
+
+You should not view web server logs. These logs are formatted using the W3C extended log format.
+
+You should not view failed trace requests. These are XML files that show trace information.
 ---
+
+Enable diagnostics logging for apps in Azure App Service;https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs
 ###
+You are creating an ASP.NET Core web API that you want to host in Azure.
+
+You need to have the API automatically generate JavaScript Object Notation (JSON) and user-friendly documentation.
+
+Which technology should you use?
 ---
+Docker
+Swagger *
+Gulp
+AngularJS
 ---
+You should use Swagger. This technology automatically generates JSON and user-friendly documentation for web APIs.
+
+You should not use Gulp. Gulp is a JavaScript build toolkit that allows you to stream client-side code.
+
+You should not use AngularJS. AngularJS is a JavaScript framework that allows you to bind application data to HTML elements.
+
+You should not use Docker. Docker allows you to automate deployment of containers.
 ---
+ASP.NET Core web API help pages with Swagger / OpenAPI;https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1
+
+What is Docker?;https://docs.microsoft.com/en-us/dotnet/architecture/microservices/container-docker-introduction/docker-defined
+
+AngularJS Introduction;https://www.w3schools.com/angular/angular_intro.asp
+
+Use Gulp in ASP.NET Core;https://docs.microsoft.com/en-us/aspnet/core/client-side/using-grunt?view=aspnetcore-3.1
 ###
+You use Visual Studio to create an ASP.NET web app named billing and enable Docker Compose support. You publish the app to Docker Hub. You then sign into Azure and create a Windows container app for the web app.
+
+You need to view the progress of the app as it is starting up.
+
+What should you do?
 ---
+
+Visit http://billing.azurewebsites.net/api/logstream. *
+Run the following Azure CLI command: az container show --name billing
+Visit http://billing.scm.azurewebsites.net/api/deployments.
+Run the following PowerShell cmdlet: Get-AzureRmContainerGroup -Name billing
 ---
+You should visit http://billing.azurewebsites.net/api/logstream. This endpoint provides progress information for web app container instances.
+
+You should not run the following Azure CLI command: az container show --name billing. This command shows the status of a container instance's provisioning state. It does not show its entire progress.
+
+You should not run the following PowerShell cmdlet: Get-AzureRmContainerGroup -Name billing. This cmdlet shows the status of a container instance's provisioning state. It does not show its entire progress.
+
+You should not visit http://billing.scm.azurewebsites.net/api/deployments. This endpoint returns a JSON view of a web app deployment.
 ---
+
+Run a custom Windows container in Azure (Preview);https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-windows-container
+
+Quickstart: Run a container application in Azure Container Instances with the Azure CLI;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart
 ###
+You recently created a Web App for Containers instance named prodWeb that uses a Docker image. The name of the resource group is Production.
+
+You need to change the instance to use the new image company1/testapp.
+
+Which command should you use?
 ---
+az webapp config container set -n prodWeb -g Production -c company1/testapp *
+az webapp create -n prodWeb -g Production -c company1/testapp
+az webapp deployment source config -n prodWeb -g Production c company1/testapp
+az webapp deployment container config -n prodWeb -g Production c company1/testapp
 ---
+You should use the following command:
+
+az webapp config container set -n prodWeb -g Production -c company1/testapp
+
+This command changes the image for an existing container.
+
+You should not use the following command:
+
+az webapp deployment container config -n prodWeb -g Production c company1/testapp
+
+This command enables continuous deployment for a container instance.
+
+You should not use the following command:
+
+az webapp create -n prodWeb -g Production -c company1/testapp
+
+This command creates a new container instance.
+
+You should not use the following command:
+
+az webapp deployment source config -n prodWeb -g Production c company1/testapp
+
+This command configures a GIT deployment.
 ---
+Manage Web App for Containers using Azure CLI;https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-cli
 ###
+You pull a Dockerfile from an online repository. You build a container image from this file, and you want to add it to an Azure Container Registry named mytestreg. The name of image is my-test-app.
+
+You need to deploy the image to the registry.
+
+Which command should you run from your developer computer?
 ---
+docker run -p mytestreg my-test-app
+az container create --name mytestreg --image my-test-app
+docker push mytestreg.azurecr.io/my-test-app *
+az acr create --name mytestreg\my-test-app
 ---
+You should use the following command:
+
+docker push mytestreg.azurecr.io/my-test-app
+
+This command pushes the image named my-test-app to an Azure login server named mytestreg.azurecr.io.
+
+You should not use the following command:
+
+docker run -p mytestreg my-test-app
+
+This command runs a container locally. In this scenario, you need to deploy the container image.
+
+You should not use the following command:
+
+az acr create --name mytestreg\my-test-app
+
+The az acr create command creates an Azure Container Registry.
+
+You should not use the following command:
+
+az container create --name mytestreg --image my-test-app
+
+The az container create command creates a container instance in Azure.
 ---
+
+Tutorial: Deploy an Azure container registry and push a container image;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr
+
+Tutorial: Create a container image for deployment to Azure Container Instances;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app
+
+Tutorial: Deploy a container application to Azure Container Instances;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-deploy-app
 ###
+C
+You want to create a simple container image that runs on Windows with Internet Information Services (IIS). The base image is named windows/iis.
+
+The image should install Internet Information Services (IIS) and all the Node modules present in the packages.json file. Once installed, the image should load the Index.js file. Both files are in a subdirectory named app on your development computer. The files should be deployed to C:\app on the container.
+
+You need to create the Dockerfile.
+
+How should you complete the commands? Select correct placeholder values.
+
+PLACEHOLDER 1 windows/iis
+PLACEHOLDER 2 mkdir -p C:\app
+PLACEHOLDER 3 app C:/app
+PLACEHOLDER 4 C:/app
+PLACEHOLDER 5 npm install
+PLACEHOLDER 6 node index.js
 ---
+PLACEHOLDER 1 : CMD
+PLACEHOLDER 1 : COPY
+PLACEHOLDER 1 : FROM *
+PLACEHOLDER 1 : RUN
+PLACEHOLDER 1 : WORKDIR
+PLACEHOLDER 2 : CMD
+PLACEHOLDER 2 : COPY
+PLACEHOLDER 2 : FROM
+PLACEHOLDER 2 : RUN *
+PLACEHOLDER 2 : WORKDIR
+PLACEHOLDER 3 : CMD
+PLACEHOLDER 3 : COPY *
+PLACEHOLDER 3 : FROM
+PLACEHOLDER 3 : RUN
+PLACEHOLDER 3 : WORKDIR
+PLACEHOLDER 4 : CMD
+PLACEHOLDER 4 : COPY
+PLACEHOLDER 4 : FROM
+PLACEHOLDER 4 : RUN
+PLACEHOLDER 4 : WORKDIR *
+PLACEHOLDER 5 : CMD
+PLACEHOLDER 5 : COPY
+PLACEHOLDER 5 : FROM
+PLACEHOLDER 5 : RUN *
+PLACEHOLDER 5 : WORKDIR
+PLACEHOLDER 6 : CMD *
+PLACEHOLDER 6 : COPY
+PLACEHOLDER 6 : FROM
+PLACEHOLDER 6 : RUN
+PLACEHOLDER 6 : WORKDIR
 ---
+You should first run FROM windows/iis. The FROM command specifies the container image from which the newly created image is based. In this scenario, it is a Microsoft Windows image with IIS.
+
+Next you should run RUN mkdir -p C:\app. This creates a directory named app on the C: drive on the container.
+
+Next you should run COPY ./app/* C:\app. This copies the files from the app subdirectory on your development computer to the C:\app directory on the container.
+
+Next you should run WORKDIR c:\app. This changes the working directory to C:\app on the container.
+
+Next you should run RUN npm install. This installs the Node modules from the package.json file in the current directory, which is C:\app.
+
+Next you should run CMD node Index.js. This runs the Node server and loads Index.js.
 ---
+
+Tutorial: Create a container image for deployment to Azure Container Instances;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app
+
+Dockerfile on Windows;https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile
 ###
+You obtain a Docker container image from a third-party source.
+
+You need to push the image to an Azure Container Registry that you created.
+
+What should you do first?
 ---
+Create a load balancer.
+Deploy an Azure virtual machine (VM).
+Assign the Owner role to the Owner security group.
+Tag the image with the login server. *
 ---
+You should tag the image with the login server. This is required before you can push the image.
+
+You should not deploy an Azure VM. A container image runs in a container. It does not require a VM.
+
+You should not assign the Owner role to the appropriate security group. Owner role assignment is not required to deploy a Docker container image.
+
+You should not create a load balancer. A load balancer distributes load to a pool of VMs. This is not required for a Docker container image.
+
 ---
+
+Tutorial: Deploy an Azure container registry and push a container image;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr
+
+What is Azure Load Balancer?;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+
+Built-in roles for Azure resources;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+
+What is Azure Container Instances?;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview
 ###
+You recently moved a critical production workload to Azure Kubernetes Service (AKS). A second AKS cluster is used for other application workloads.
+
+You want to collect performance metrics directly from the AKS cluster that is used for the critical workloads.
+
+Which four actions should you perform in sequence?
 ---
+1. From the Azure portal, enable monitoring for the cluster. 2. Create a Log Analytics workspace. 3. Add Azure Monitor for Containers to the workspace. 4. View charts on the Insights page of the AKS cluster. *
+1. Create a Log Analytics workspace. 2. From the Azure portal, enable monitoring for the cluster. 3. Retrieve entries from the activity log. 4. Run a query on the cluster in Log Analytics.
+1. From the Azure portal, enable monitoring for the cluster. 2. Retrieve entries from the activity log. 3. Run a query on the cluster in Log Analytics. 4. View charts on the Insights page of the AKS cluster.
+1. Retrieve entries from the activity log. 2. Run a query on the cluster in Log Analytics. 3. View charts on the Insights page of the AKS cluster. 4. Add Azure Monitor for Containers to the workspace.
 ---
+You should perform the following steps in order:
+
+1. From the Azure portal, enable monitoring for the cluster.
+2. Create a Log Analytics workspace.
+3. Add Azure Monitor for Containers to the workspace.
+4. View charts on the Insights page of the AKS cluster.
+
+You must first enable monitoring for the target cluster. You must then create a new Log Analytics workspace or select and existing one. Next, you add Azure Monitor for Containers to the workspace. This allows the collection of performance data from the nodes in the cluster. Although you can use Azure Monitor to view performance data on all clusters, you can also view this data directly from the cluster.
+
+After you have enabled monitoring for a cluster, you do not need to run queries to see detailed performance data.
+
+Because you are gathering metrics instead of logs, you do not need to obtain data from the activity log.
 ---
+How to onboard Azure Monitor for containers;https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-onboard
+
+Understand AKS cluster performance with Azure Monitor for containers;https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-analyze
 ###
+You use the following commands to create a container in Azure:
+
+az group create --name sampleResourceGroup --location eastus
+az container create --resource-group sampleResourceGroup --name sampleContainer --image microsoft/aci-helloworld --dns-name-label aci-demo --ports 80
+
+You need to navigate to the application hosted in the container.
+
+Which URL should you use?
 ---
+eastus.aci-demo-azurecontainer.io
+aci-demo.azurecontainer.eastus.io
+eastus.azurecontainer.aci-demo.io
+aci-demo.eastus.azurecontainer.io *
 ---
+You should navigate to aci-demo.eastus.azurecontainer.io. The container application's URL format is [container-image].[resource-location].azurecontainer.io.
 ---
+
+Quickstart: Run a container application in Azure Container Instances with the Azure CLI;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart
 ###
+C
+You use the following Azure CLI command to create an Azure container instance:
+
+az container create --resource-group testgroup --name testcontainer --image microsoft/aci-helloworld
+
+You need to be able to browse to the container's URL.
+
+Which two parameters must you set?
 ---
+--environment-variables
+--protocol
+--dns-name-label *
+--ports *
+--os-type
 ---
+You should set the --dns-name-label parameter. This parameter is necessary so that Azure can resolve the DNS name to the IP address that hosts the container instance.
+
+You should set the --ports parameter. This parameter is necessary so that you can have Azure open the appropriate TCP port.
+
+You do not need to set the --environment-variables parameter. This parameter allows you to set environment variables for container instances, which is unnecessary in this scenario.
+
+You do not need to set the --os-type parameter. This parameter specifies the operating system for the container instance. The type of operating system is irrelevant in this scenario.
+
+You do not need to set the --protocol parameter. This parameter specifies either TCP or UDP. When browsing from a web browser, the protocol is automatically TCP.
 ---
+az container;https://docs.microsoft.com/en-us/cli/azure/container?view=azure-cli-latest
 ###
 ---
 ---

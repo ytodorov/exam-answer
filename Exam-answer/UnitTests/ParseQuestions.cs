@@ -11,6 +11,64 @@ namespace UnitTests
 {
     public class ParseQuestions
     {
+        public List<ExamEntity> ExamsToCheck { get; set; }
+
+        public ParseQuestions()
+        {
+            ExamsToCheck = DataGenerator.Initialize(null);
+            //ExamsToCheck = ExamsToCheck.Where(e => !e.Code.Equals("AZ-100", StringComparison.CurrentCultureIgnoreCase)).ToList();
+        }
+
+        [Fact]
+        public void GenerateSitemap()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            string baseAddress = "https://www.exam-answer.com";
+
+            sb.Append($@"<?xml version=""1.0"" encoding=""UTF-8""?>
+<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">");
+
+            sb.Append(@$"
+<url>
+  <loc>{baseAddress}</loc>
+</url>");
+
+            sb.Append(@$"
+<url>
+  <loc>{baseAddress}/contact</loc>
+</url>");
+
+            sb.Append(@$"
+<url>
+  <loc>{baseAddress}/about</loc>
+</url>");
+
+            foreach (var exam in ExamsToCheck)
+            {
+                sb.Append(@$"
+<url>
+  <loc>{baseAddress}/{exam.Provider}/{exam.Code}</loc>
+</url>");
+            }
+
+            foreach (var exam in ExamsToCheck)
+            {
+                for (int i = 1; i <= exam.Questions.Count; i++)
+                {
+                    sb.Append(@$"
+<url>
+  <loc>{baseAddress}/{exam.Provider}/{exam.Code}/question{i}</loc>
+</url>");
+                }
+            }
+
+            sb.Append(@"
+</urlset>");
+
+            var res = sb.ToString().ToLowerInvariant();
+        }
+
         [Fact]
         public void ReadPdf()
         {
