@@ -1441,6 +1441,1155 @@ Quickstart: Use Azure Storage Explorer to create a blob in object storage;https:
 
 Create and Manage Windows VMs with Azure PowerShell;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-storage-explorer
 ###
+You have three application virtual machines (VMs) hosted in one region in Azure. You plan to prepare a strategy that will create backups for all data from the VMs. The backup will occur every day at 1 A.M. on each VM. You must ensure that the data is protected upon configuring the solution. In addition, the solution must minimize administrative effort.
+
+Which three actions should you perform in sequence? 
+---
+1. Create a Recovery Services vault. 2. Define a backup policy to protect the VMs. 3. Perform the initial backup. *
+1. Create a storage account for files. 2. Define a backup policy to protect the VMs. 3. Perform the initial backup.
+1. Create a Recovery Services vault. 2. Define a separate backup policy on each VM. 3. Perform the initial backup.
+1. Create a storage account for files. 2. Define a separate backup policy on each VM. 3. Perform the initial backup.
+---
+You need to perform the following steps in order:
+
+1. Create a Recovery Services vault.
+2. Define a backup policy to protect the VMs.
+3. Perform the initial backup.
+
+You first create a Recovery Services vault to contain the backup data and the backup policy. You then define the backup policy, which defines when and how often recovery points are taken, to protect the VMs.
+
+You should not define a separate backup policy for each VM. To minimize administrative effort, you should create only one policy to apply to all VMs. You then perform an initial backup. This is a disaster recovery best practice to trigger the first backup so that your data is protected.
+
+Unless you plan to perform backups manually, you should not create a storage account for files. Recovery Services manages the files internally.
+---
+Use Azure portal to back up multiple virtual machines;https://docs.microsoft.com/en-us/azure/backup/tutorial-backup-vm-at-scale
+###
+C
+You plan to migrate the virtual machine (VM) running Windows Server 2012 from Amazon Web Services (AWS) to Azure.
+
+You decide to perform the migration by using Azure Site Recovery (ASR).
+
+You need to prepare the migration.
+
+Which three steps should you perform first? Each correct answer presents part of the solution.
+---
+Set up an Azure network. *
+Prepare a vault. *
+Turn on replication.
+Create a storage account. *
+Set the recovery point to latest processed.
+---
+You should create an Azure storage account. Images of replicated machines are held in Azure Storage. Azure VMs are created from storage when you failover from on-premises to Azure.
+
+You should prepare a vault to store all recovery points in Azure Recovery Services. This allows you to configure recovery points to meet the recovery time objective (RTO).
+
+You should set up an Azure network. When Azure VMs are created after the migration (failover), they are joined to this Azure network.
+
+You should not set the recovery point to last processed during preparation steps. The recovery point configuration is done during testing of the failover. The last-processed option means that the VM fails over to the latest recovery point that was processed by Site Recovery.
+
+You should not turn on replication during the preparation steps. This can be done after the configuration is prepared and sources and targets are configured.
+---
+Migrate Amazon Web Services (AWS) VMs to Azure;https://docs.microsoft.com/en-us/azure/site-recovery/migrate-tutorial-aws-azure
+###
+Your office has an on-premises Hyper-V host computer. It contains a virtual machine (VM) named VM1 that is used as a file server.
+
+You need to replicate VM1 to Azure.
+
+What should you do?
+---
+Install the Site Recovery Provider on the Hyper-V host computer. *
+Install the Recovery Services agent on VM1.
+Install the Site Recovery Provider on VM1.
+Install the Recovery Services agent on the Hyper-V host computer.
+---
+You should install the Site Recovery Provider on the Hyper-V host computer. Site Recovery Provider is used by Azure Site Recovery. You must install Site Recovery Provider on the Hyper-V host on which the VM is running to be able to replicate VM1 to Azure (actual configuration of the replication is performed in the Azure portal).
+
+You should not install the Recovery Services agent on the Hyper-V host computer. Recovery Services agent is used by Azure Backup to back up files and folders to Azure. You cannot use it to replicate VMs to Azure.
+
+You should not install the Recovery Services agent on VM1. Recovery Services agent is used for backing up files and folders to Azure. You cannot use it to replicate a VM to Azure.
+
+You should not install the Site Recovery Provider on VM1. Site Recovery Provider is used for replicating VMs to Azure, but you must install it on the Hyper-V host computer, not the VM.
+---
+
+Hyper-V to Azure disaster recovery architecture;https://docs.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-architecture
+
+Set up disaster recovery of on-premises Hyper-V VMs to Azure;https://docs.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-tutorial
+###
+You are the cloud administrator for an Azure subscription. Your on-premises network includes a Hyper-V virtual machine (VM) that hosts a SQL Server.
+
+You need to configure Azure Site Recovery to migrate the VM to Azure.
+
+Which five actions should you perform in sequence?
+---
+1. Create a Recovery Services vault. 2. Set the Protection goal to migrate from on-premises to Azure. 3. Create a Hyper-V. 4. Install the Site Recovery Provider on the Hyper-V host. 5. Register the Hyper-V host in the vault. *
+1. Set the Protection goal to migrate from on-premises to Azure. 2. Install the Site Recovery Provider on the Hyper-V host. 3. Create a Hyper-V site. 4. Create a Recovery Services vault. 5. Install the Site Recovery Provider on the Azure VM.
+1.Install the Site Recovery Provider on the Hyper-V host. 2. Create a Hyper-V site. 3. Create a Recovery Services vault. 4. Install the Site Recovery Provider on the Azure VM. 5. Create an Azure VM with the same operating system as the local VM.
+1. Create a Hyper-V site. 2. Create a Recovery Services vault. 3. Install the Site Recovery Provider on the Azure VM. 4. Create an Azure VM with the same operating system as the local VM. 5. Register the Hyper-V host in the vault.
+---
+You should perform the following actions in order:
+
+1. Create a Recovery Services vault.
+2. Set the Protection goal to migrate from on-premises to Azure.
+3. Create a Hyper-V.
+4. Install the Site Recovery Provider on the Hyper-V host.
+5. Register the Hyper-V host in the vault.
+
+You should first create a Recovery Services vault. This is simply a storage instance that stores backups and VMs that are replicated to Azure by using Azure Site Recovery. You should next set the Protection goal to migrate from on-premises to Azure. You should then create a Hyper-V site, install the Site Recovery Provider on the Hyper-V host and finally you should register the Hyper-V host in the vault.
+
+You should not create an Azure VM. When you set up Azure Site Recovery, VMS that you replicate to Azure will be created automatically. you should not create them manually.
+
+You should not install Site Recovery Provider on an Azure VM. This component should be installed on a Hyper-V host, from which VMs will be replicated to Azure.
+---
+Migrate on-premises machines to Azure;https://docs.microsoft.com/en-us/azure/site-recovery/migrate-tutorial-on-premises-azure
+
+Recovery Services vault overview;https://docs.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview
+###
+C
+You plan to move an Azure virtual machine (VM) to another region by using Azure Site Recovery (ASR). You are not a subscription administrator.
+
+You need permissions to do the following:
+
+* Create a VM in an Azure resource group.
+* Perform ASR operations.
+
+Which roles provide the required permissions? Select two.
+---
+Task: Create a VM in an Azure resource group. Permission: Virtual Machine Contributor *
+Task: Create a VM in an Azure resource group. Permission: Virtual Machine Administrator Login
+Task: Perform ASR operations. Permission: Site Recovery Contributor *
+Task: Perform ASR operations. Permission: Sire Recovery Operator
+---
+You should have the Virtual Machine Contributor role to create a VM in an Azure resource group. This role allows you to manage VMs. It does not allow access to the VM.
+
+You should not use the Virtual Administrator Login role to create a VM in an Azure resource group. This role allows you to view virtual machines in the portal and log in as administrator.
+
+You should not use the Virtual Machine User Login role to create a VM in an Azure resource group. This role allows you to view VMs in the portal and log in as a regular user.
+
+You should have the Site Recovery Contributor role to perform ASR operations. This role has all permissions required to manage ASR operations in a Recovery Services vault. This role is intended for disaster recovery administrators who can enable and manage disaster recovery for applications or entire organizations.
+
+You should not use the Site Recovery Operator role to perform ASR operations.  This role has permissions to execute and manage Failover and Failback operations. This role is intended for disaster recovery operators who can failover VMs or applications when instructed by application owners and IT administrators.
+
+You should not use the Site Recovery Reader role to perform ASR operations. This role has permissions to view all Site Recovery management operations. It is intended for IT monitoring executives who can monitor the current state of protection and raise support tickets if required.
+---
+
+Move Azure VMs to another region;https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-migrate
+
+Manage Site Recovery access with role-based access control (RBAC);https://docs.microsoft.com/en-us/azure/site-recovery/site-recovery-role-based-linked-access-control
+
+Built-in roles for Azure resources;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+###
+An Azure Logic app accesses data from an on-premises SQL Server database. The database administrator recently changed the password that is used to connect to the database.
+
+You need to update your Logic app so that it can connect to the database with the new password.
+
+Which Azure option should you modify?
+---
+Workflow settings
+API connections *
+Access keys
+Properties
+---
+You should modify API connections. This option allows you to update the connection to an on-premises data gateway, which is a component that allows you to connect an Azure Logic app to an on-premises database.
+
+You should not modify Workflow settings. This option allows you to configure access control to the Logic app, such as which IP addresses are allowed to access the app. It does not allow you to change connections to on-premises databases.
+
+You should not modify the Properties setting. This option specifies the endpoint information that you can use to manage the Logic app from PowerShell or Azure CLI. It does not allow you to change connections to on-premises databases.
+
+You should not modify the Access keys setting. This option allows you to generate access keys that you can use to access Logic apps from code. It does not allow you to change connections to on-premises databases.
+---
+
+Connect to on-premises data sources from Azure Logic Apps;https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-gateway-connection
+
+What is Azure Logic Apps?;https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview
+###
+C
+An Azure function responds to GET requests at the URL http://shipping.azurewebsites.net/api/HttpTriggerJS1.
+
+You need to modify the setting so that the function responds to requests at http://shipping/azurewebsites.net/Rate
+
+Choose all that apply:
+---
+Change the routePrefix value to a slash (/) in the host.json file. *	
+Change the route template to /Rate. *
+Change the Request parameter name to Rate.
+---
+You should change the routePrefix value to a slash (/) in the host.json file. By default, this value is /api. This means that all functions in this function app have a URL that begin with http://shipping.azurewebsites.net/api. By changing the routePrefix value to /, you allow all functions to have a URL that begin with http://shipping.azurewebsites.net.
+
+You should change the route template to /Rate. This is the path for the actual function. This means that the function in this scenario will be reachable at http://shipping/azurewebsites.net/Rate.
+
+You should not change the Request parameter name to Rate. This Request parameter name represents the parameter to the method that represents the function. By default, this parameter is named req.
+---
+Create a serverless API using Azure Functions;https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-serverless-api
+###
+C
+You are the cloud administrator for your organization. The development department wants to use Azure Service Bus to send messages whenever an order is placed. Two client applications are responsible for receiving those messages after they are sent.
+
+You need to create the minimum number of Azure resources required to meet the development department's needs.
+
+How should you allocate resources? Choose three:
+---
+Question: How many namespaces should you create? Answer: 0
+Question: How many namespaces should you create? Answer: 1 *
+Question: How many namespaces should you create? Answer: 2
+Question: How many topics should you create? Answer: 0
+Question: How many topics should you create? Answer: 1 *
+Question: How many topics should you create? Answer: 2
+Question: How many queues should you create? Answer: 0 *
+Question: How many queues should you create? Answer: 1
+Question: How many queues should you create? Answer: 2
+---
+You should create one namespace. A Service Bus namespace serves as the container for queues and topics. At least one namespace is required to use Service Bus messaging.
+
+You should create one topic. A Service Bus topic allows multiple subscribers to receive messages that are sent to it. In this scenario, the two client applications act as subscribers to the same topic.
+
+You should not create any queues. Messages in a Service Bus queue can be accessed with only one application. Once the message is retrieved, it disappears.
+---
+Get started with Service Bus topics;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions
+
+What is Azure Service Bus?;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
+
+Service Bus queues, topics, and subscriptions;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions
+###
+You plan to deploy an application that will be analyzing financial transactions.
+
+You need to recommend a messaging service that will allow you to find duplicate transactions while processing the data.
+
+Which messaging service should you create?
+---
+Event Hub
+Service Bus *
+Azure Queue
+Event Grid
+---
+You should use Service Bus to find duplicate transactions in the incoming data. Service Bus is a brokered messaging system. It stores data in a queue until the subscriber is ready to receive the message.
+
+You should not use Event Hub to find duplicate transactions in the incoming data. Azure Event Hub is a big data streaming platform that enables capturing, retaining, and replaying telemetry and event stream data. The data may come from a variety of sources.
+
+You should not use Event Hub to find duplicate transactions in the incoming data. Event Grid is a fully managed event service that enables event-driven, reactive programming following a publish-subscribe model. Publishers post events without expectations about which events are being handled. Subscribers can choose which events they want to handle.
+
+You should not use Azure Queue to find duplicate transactions in the incoming data. Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world via authenticated calls using HTTP or HTTPS.
+---
+
+Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
+
+Duplicate detection;https://docs.microsoft.com/en-us/azure/service-bus-messaging/duplicate-detection
+###
+C
+You have an Azure service bus named ServiceBus1 in a resource group named RG1.
+
+You create a queue named queue1 in ServiceBus1.
+ 
+You find that a client application is reading and removing messages from queue1, but is failing to process them.
+
+You need to prevent messages from being removed from queue1. Queue1 should still be able to receive messages.
+
+What should you do? Select correct placeholder values.
+
+$q = Get-AzureRmServiceBusQueue -ResourceGroup RG1 `
+-NamespaceName ServiceBus1 -QueueName queue1
+
+$q.Status = PLACEHOLDER 1
+
+PLACEHOLDER 2 -ResourceGroup RG1 `
+-NamespaceName ServiceBus1 -QueueName queue1 -QueueObj $q
+---
+PLACEHOLDER 1: "SendDisabled" *
+PLACEHOLDER 1: "Disabled"
+PLACEHOLDER 1: "Active"
+PLACEHOLDER 1: "ReceiveDisabled"
+PLACEHOLDER 2: Set-AzureRmServiceBusQueue *
+PLACEHOLDER 2: Set-AzureRmServiceBusSubscription
+PLACEHOLDER 2: Set-AzureRmServiceBusTopic
+PLACEHOLDER 2: Stop-AzureRmServiceBusMigration
+---
+You should use the following code:
+
+$q = Get-AzureRmServiceBusQueue -ResourceGroup RG1 `
+-NamespaceName ServiceBus1 -QueueName queue1
+
+$q.Status = "SendDisabled"
+
+Set-AzureRmServiceBusQueue -ResourceGroup RG1 `
+-NamespaceName ServiceBus1 -QueueName queue1 -QueueObj $q
+
+You should set the state of the queue to SendDisabled. The SendDisabled state means that the messages cannot be removed from the queue, while it can still receive the messages.
+
+You should not set the state of the queue to Active. This means that the queue is active and all operations, including adding and removing messages, are permitted.
+
+You should not set the state of the queue to Disabled. This means that the queue is suspended and none of the operations on the queue are permitted.
+
+You should not set the state of the queue to ReceiveDisabled. This means that the queue is partially suspended. You can still remove the messages from the queue, but the queue is not allowed to receive new messages.
+
+You should use the Set-AzureRmServiceBusQueue cmdlet to set a new status for the existing queue. First, you must set the status to the proper value and then you can modify the queue.
+
+You should not use the Set-AzureRmServiceBusSubscription cmdlet to set a new status for the existing queue. This cmdlet is used to update the description of a Service Bus subscription in the specified namespace.
+
+You should not use the Set-AzureRmServiceBusTopic cmdlet to set a new status for the existing queue. This cmdlet is used to update the description of a Service Bus topic in the specified namespace.
+
+You should not use the Stop-AzureRmServiceBusMigration cmdlet to set a new status for the existing queue. This cmdlet is used to terminate the migration between standard to premium namespace.
+---
+
+Suspend and reactivate messaging entities (disable);https://docs.microsoft.com/en-us/azure/service-bus-messaging/entity-suspend
+
+Service Bus queues, topics, and subscriptions;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions
+###
+You are running SQL Server on a virtual machine (VM) in Azure.
+
+You need to create an outbound load balancing rule.
+
+Which command should you use?
+---
+az network private-endpoint
+az network nic
+az network local-gateway
+az network lb *
+---
+You should use the az network lb command to create an outbound rule. You can specify various parameters, which as protocol, ports, or a list of frontend IP configuration names.
+
+You should not use the az network nic command to create an outbound rule. This command is used to create, update, or delete a network interface. A network interface allows an Azure VM to communicate with the Internet, Azure, and on-premises resources.
+
+You should not use the az network local-gateway command to create an outbound rule. This command is used to create, update, or delete a local VPN gateway. The local network gateway typically refers to your on-premises location.
+
+You should not use the az network private-endpoint command to create an outbound rule. This command is used to manage interface endpoints.
+---
+Load Balancer outbound rules;https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-outbound-rules-overview
+
+Configure load balancing and outbound rules in Standard Load Balancer using Azure CLI;https://docs.microsoft.com/en-us/azure/load-balancer/configure-load-balancer-outbound-cli
+
+az network lb;https://docs.microsoft.com/en-us/cli/azure/network/lb?view=azure-cli-latest
+
+az network nic;https://docs.microsoft.com/en-us/cli/azure/network/nic?view=azure-cli-latest
+
+az network local-gateway;https://docs.microsoft.com/en-us/cli/azure/network/local-gateway?view=azure-cli-latest
+
+az network private-endpoint;https://docs.microsoft.com/en-us/cli/azure/network/private-endpoint?view=azure-cli-latest
+###
+C
+The DevOps team deploys five virtual machines (VMs) to Azure that host a web application in Internet Information Services (IIS). The team wants you to create a load balancer that routes traffic to the VMs that are available.
+
+The development team creates a web page named HealthCheck.aspx that, when responding with a 200 request, indicates that the VM is available for servicing web requests. If a VM fails to respond after four consecutive checks, the VM should be considered unavailable.
+
+You need to use PowerShell to create a Load Balancer configuration that checks the health of the VMs.
+
+How should you complete the cmdlet?
+
+PLACEHOLDER 1
+-Name "checkVmHealth"
+-PLACEHOLDER 2 healthcheck.aspx
+-Protocol http
+-Port 80
+-IntervalInSeconds 15
+-PLACEHOLDER 3 4
+---
+PLACEHOLDER 1: New-AzureRmLoadBalancerProbeConfig *
+PLACEHOLDER 1: New-AzureRmLoadBalancerFrontendIpConfig
+PLACEHOLDER 2: RequestPath *
+PLACEHOLDER 2: WhatIf
+PLACEHOLDER 3: ProbeCount *
+PLACEHOLDER 3: Confirm 
+---
+You should use the following PowerShell cmdlet:
+
+New-AzureRmLoadBalancerProbeConfig
+-Name "checkVmHealth"
+-RequestPath healthcheck.aspx
+-Protocol http
+-Port 80
+-IntervalInSeconds 15
+-ProbeCount 4
+
+The New-AzureRmLoadBalancerProbeConfig cmdlet creates a health probe. A health probe is a configuration that specifies how Azure Load Balancer determines whether or not a VM is available. The -RequestPath parameter specifies the path to an HTTP resource that determines availability, which is HealthCheck.aspx in this scenario. The -ProbeCount parameter specifies the number of consecutive failures that must occur before the VM is considered unavailable, which is four in this scenario.
+
+You should not use the New-AzureRmLoadBalancerFrontendIpConfig cmdlet. This cmdlet creates a front-end IP configuration, which simply specifies the public IP address of the Load Balancer. It does not perform a health check.
+
+You should not specify the WhatIf parameter. This parameter is part of the New-AzureRmLoadBalancer cmdlet. It simply displays what would happen if the cmdlet is run successfully.
+
+You should not specify the Confirm parameter. This parameter is part of the New-AzureRmLoadBalancer cmdlet. It simply prompts for confirmation before creating a Load Balancer.
+---
+###
+You are starting a new job as an Azure cloud administrator. The previous administrator leaves you a note with the following PowerShell cmdlets:
+
+$publicIP = New-AzureRmPublicIpAddress
+  -ResourceGroupName "resourceGroup11"
+  -Location "EastUS"
+  -AllocationMethod "Static"
+  -Name "myPublicIP"
+
+New-AzureRmLoadBalancerFrontendIpConfig
+  -Name "nat"
+  -PublicIpAddress $publicIP
+
+You need to determine what these cmdlets do.
+
+What should you conclude?
+---
+They create a firewall configuration that uses round robin to send inbound traffic to an Azure Load Balancer.
+They create a load balancer configuration that uses Network Address Translation (NAT) to send inbound traffic to a set of virtual machines (VMs). *
+They create a firewall configuration that uses round robin to send outbound traffic to an Azure Load Balancer.
+They create a load balancer configuration that uses Network Address Translation (NAT) to send outbound traffic to a set of Service Bus endpoints.
+---
+The cmdlets create a load balancer configuration that uses NAT to send inbound traffic to a set of virtual machines (VMs). The New-AzureRmPublicIpAddress cmdlet creates a public IP address. The New-AzureRmLoadBalancerFrontendIpConfig cmdlet creates a Load Balancer configuration that specifies the front-end public IP address.
+
+You should not conclude that the cmdlets create an outbound traffic configuration. New-AzureRmLoadBalancerFrontendIpConfig creates an inbound configuration.
+
+You should not conclude that the cmdlets send inbound traffic to a Load Balancer. New-AzureRmLoadBalancerFrontendIpConfig creates an inbound configuration from a Load Balancer to a backend pool.
+---
+###
+C
+You create an Azure Application Gateway that represents the front-end for a pool of two Azure backend virtual machines (VMs). One VM hosts images for a web application, while the other VM hosts videos. You create a path map and a backend listener.
+
+You need to associate the path map with the backend listener.
+
+How should you create the PowerShell cmdlet? Select correct placeholder values.
+
+ $gateway = Get-AzureRmApplicationGateway 
+ -ResourceGroupName myResourceGroupAG
+ -Name myAppGateway
+ 
+ $backendlistener = Get-AzureRmApplicationGatewayHttplistener
+ -ApplicationGateway $gateway
+ -Name backenclastener
+ 
+ $config = Get-AzureRmApplicationGatewayUrlPathMapConfig
+  -PLACEHOLDER 1
+  -Name urlpathmap
+  
+  PLACEHOLDER 2
+  -ApplicationGateway $gateway
+  -Name rule2
+  -RuleType PathBasedRouting
+  PLACEHOLDER 3
+  -UrlPathMap $config
+---
+PLACEHOLDER 1: ApplicationGateway $gateway *
+PLACEHOLDER 1: HttpListener $backendListener
+PLACEHOLDER 2: Add-AzureRmApplicationGatewayRequestRoutingRule *
+PLACEHOLDER 2: New-AzureRmApplicationGatewayPathRuleConfig
+PLACEHOLDER 3: Set-AzureRmApplicationGateway *
+PLACEHOLDER 3: Get-AzureRmApplicationGatewayUrlPathMapConfig
+---
+You should use the following cmdlet to get a reference to the path map:
+
+$config = Get-AzureRmApplicationGatewayUrlPathMapConfig
+  -ApplicationGateway $gateway
+  -Name urlpathmap
+
+This cmdlet stores the path map into a variable named $config.
+
+You should use the following cmdlet to associate the path map with the backend listener of the application gateway:
+
+Add-AzureRmApplicationGatewayRequestRoutingRule
+  -ApplicationGateway $gateway
+  -Name rule2
+  -RuleType PathBasedRouting
+  -HttpListener $backendlistener
+  -UrlPathMap $config
+
+The RuleType parameter specifies that the rule should use path-based routing. The HttpListener parameter specifies a reference to the backend HTTP listener. The UrlPathMap parameter specifies a reference to the path map that you stored in the $config variable.
+
+You should use Set-AzureRmApplicationGateway to update the Application Gateway with the changes.
+
+You should not use the following cmdlet to get a reference to the path map:
+
+$config = Get-AzureRmApplicationGatewayUrlPathMapConfig
+  -HttpListener $backendListener
+  -Name urlpathmap
+
+You must specify a reference to the Application Gateway, not a reference to the backend listener.
+
+You should not use New-AzureRmApplicationGateway. This cmdlet creates a new Application Gateway. In this scenario, the Application Gateway already exists.
+---
+
+Route web traffic based on the URL using Azure PowerShell;https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-url-route-powershell
+###
+C
+You need to configure an application gateway for your company websites.
+
+Two web applications must be hosted on the same application gateway instance. Each website has the following requirements:
+
+* Must be directed to its own backend pool.
+* Must have its own domain.
+* Must be hosted on its own virtual machine (VM).
+
+Choose all that apply:
+---
+You must create a virtual network for each application.		
+The application gateway must have two request routing rules. *
+Each web application must have its own HTTP listener. *
+---
+You do not need to create a virtual network for each application. You should create only one virtual network for the applications. The virtual network acts as a container for all objects that you need to create.
+
+You should create two request routing rules. Because each application has its own VM, traffic must be redirected to each of them.
+
+You should include an HTTP listener for each web application that specifies a host name, protocol, frontend IP configuration, and frontend port. The HTTP listeners
+---
+Application Gateway Documentation;https://docs.microsoft.com/en-us/azure/application-gateway/
+###
+You are an Azure architect at an oil and gas company. The company's field engineers must often work at remote locations.
+ 
+You must design a solution that allows the engineers to connect securely to a virtual network without using a VPN device.
+ 
+Which type of connectivity should you recommend?
+---
+Multisite
+VNet-to-VNet
+Site-to-Site
+Point-to-Site *
+---
+You should recommend Point-to-Site connectivity to ensure a secure connection from a client machine to a virtual network without using an external device.
+
+You should not recommend VNet-to-VNet connectivity because a client would need a VPN device to connect to a virtual network.
+
+You should not recommend a Site-to-Site connection. This type of connection requires a VPN device that is located onsite. The device must have a public IP address that does not use NAT.
+
+You should not recommend a multisite connection. Multiple connections must use a route-based VPN.
+---
+
+About Point-to-Site VPN;https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about
+
+What is VPN Gateway?;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways#a-namep2sapoint-to-site-vpn-over-sstp
+###
+Your company has an Azure virtual network (VNet) and an on-premises network. Your Internet Service Provider offers Multiprotocol Label Switching (MPLS). You create an ExpressRoute circuit.
+
+You need to determine the next step you should perform to connect the Azure VNet to your on-premises network.
+
+What should you do next?
+---
+Create a link between the circuit and the VNet.
+Create a VNet gateway. *
+Create a peering.
+Create a static public IP address in Azure.
+---
+You should next create a VNet gateway. A VNet gateway allows you to send traffic between an Azure VNet and the on-premises VNet.
+
+You should not create a link between the circuit and the VNet next. You must first create a VNet gateway. After the VNet gateway is created, you should create the link.
+
+You should not create a peering. When you use an ISP that offers MPLS, the ISP configures peering for you.
+
+You should not create a static public IP address in Azure. The purpose of ExpressRoute is to offer secure private networking. Therefore, a static public IP address is not required.
+
+---
+
+Create and modify an ExpressRoute circuit;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-circuit-portal-resource-manager
+
+Create and modify peering for an ExpressRoute circuit;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-routing-portal-resource-manager
+
+About virtual network gateways for ExpressRoute;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways
+###
+Your company has an Azure virtual network (VNet) and an on-premises network. Your Internet Service Provider (ISP) only offers Layer 2 connectivity services.
+
+You need to connect the Azure VNet to your on-premises network by using a private connection.
+
+Which four actions should you perform in sequence?
+---
+1. Create an ExpressRoute circuit. 2. Create a peering. 3. Create an ExpressRoute VNet gateway. 4. Create a link between the circuit and the VNet. *
+1. Create a link between the circuit and the VNet. 2. Create an Application Gateway. 3. Create a static public IP address in Azure. 4.Create a peering.
+1. Create an Application Gateway. 2. Create a static public IP address in Azure. 3. Create a peering. 4. Create an ExpressRoute circuit.
+1. Create a static public IP address in Azure. 2. Create a peering. 3. Create an ExpressRoute circuit. 4. Create an ExpressRoute VNet gateway.
+---
+You should perform the following actions in order:
+
+1. Create an ExpressRoute circuit.
+2. Create a peering.
+3. Create an ExpressRoute VNet gateway.
+4. Create a link between the circuit and the VNet.
+
+You should first create an ExpressRoute circuit. This represents a connection between Azure and your ISP.
+
+You should next create a peering. This is the required next step when your ISP only offers Layer 2 connectivity services. You should next create an ExpressRoute VNet gateway, and finally create a link between the circuit and the VNet.
+
+You should not create a static public IP address in Azure. The purpose of ExpressRoute is to offer secure private networking. Therefore, a static public IP address is not required.
+
+You should not create an Application Gateway. An Application Gateway allows you to create a firewall for a pool of backend servers.
+---
+
+Create and modify an ExpressRoute circuit;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-circuit-portal-resource-manager
+
+Create and modify peering for an ExpressRoute circuit;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-routing-portal-resource-manager
+
+About virtual network gateways for ExpressRoute;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways
+
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
+
+Connect a virtual network to an ExpressRoute circuit using the portal;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager
+###
+C
+You are an Azure Solution Architect at a large energy company. You are configuring a point-to-site VPN.
+
+You create an Azure VpnGw2 gateway and need to configure it to support specific cryptographic algorithms for a mixed environment consisting of Windows and Mac devices.
+Choose all that apply:
+---
+You can use the Azure portal to enable IKEv2. *
+Your IPSec/IKE policy must include all IPSec and IKE algorithms. *
+You can apply both a custom and a default policy to a connection to add specific algorithms.		
+MacOSX can connect only via Secure Socket Tunneling Protocol (SSTP).		
+You can use internal private key infrastructure (PKI) (self-signed) root certificates. *
+---
+You can enable RADIUS or IKEv2 on already deployed gateways by using either PowerShell or the Azure portal. The gateway SKU VpnGw2 supports both RADIUS and IKEv2.
+
+Your IPSec/IKE policy must specify all algorithms and parameters for both IKE (Main Mode) and IPSec (Quick Mode). Partial policy specifications are not supported.
+
+You can define a custom policy to use a key strength other than that used in the default policy.
+
+You cannot apply both a custom and a default policy to a connection. To use algorithms that are not included in the default policy, you must define and apply a custom policy that includes all IKE and IPSec algorithms in addition to specific algorithms to be added. When you apply a custom policy to a connection, it replaces the default policy.
+
+When you configure both SSTP and IKEv2 in a mixed environment consisting of Windows and Mac devices, the Windows VPN attempts an IKEv2 tunnel first and falls back to SSTP if the IKEv2 connection is not successful. MacOSX connects only via IKEv2.
+
+Only self-signed root certificates can be used. You can upload 20 root certificates for point-to-site connectivity.
+
+You can use your enterprise PKI solution (your internal PKI), Azure PowerShell, MakeCert, or OpenSS to create certificates.
+---
+
+
+VPN Gateway FAQ;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-vpn-faq
+
+Connect an on-premises network to a Microsoft Azure virtual network;https://docs.microsoft.com/en-us/office365/enterprise/connect-an-on-premises-network-to-a-microsoft-azure-virtual-network
+
+About cryptographic requirements and Azure VPN gateways;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-compliance-crypto
+###
+Your company has only one location, but it will soon open a second facility.
+
+You need to create a site-to-site VPN to establish a secure connection with the new facility.
+
+Which five actions should you perform in sequence? 
+---
+1. Create the virtual network. 2. Create the gateway subnet. 3. Create the virtual network gateway. 4. Configure the on-premises VPN device. 5. Connect the virtual network gateway and on-premises VPN device. *
+1. Create the virtual network gateway. 2. Create the gateway subnet. 3. Connect the virtual network gateway and on-premises VPN device. 4. Configure the on-premises VPN device. 5. Create the virtual network. 
+1. Create the gateway subnet. 2. Connect the virtual network gateway and on-premises VPN device. 3. Configure the on-premises VPN device. 4. Create the virtual network.  5. Generate the certificates.
+1. Connect the virtual network gateway and on-premises VPN device. 2. Configure the on-premises VPN device. 3. Create the virtual network. 4. Generate the certificates. 5. Specify the tunnel type: SSTP or IKEv2.
+---
+You should perform the following Actions in order:
+
+1. Create the virtual network.
+2. Create the gateway subnet.
+3. Create the virtual network gateway.
+4. Configure the on-premises VPN device.
+5. Connect the virtual network gateway and on-premises VPN device.
+
+You should create a virtual network and make sure there is an IP address range specifically for this virtual network.
+
+You should then create a gateway subnet, which is part of the IP address range to be used by your virtual network.
+
+Next, you should create a virtual network gateway, which establishes a public IP address.
+
+Next, you should configure a VPN device for your on-premises network.
+
+Finally, you should create the connection between your virtual network gateway and your VPN device.
+
+You should not generate certificates when creating a site-to-site VPN. This is necessary only when creating a point-to-site VPN connection.
+
+You should not specify the tunnel type when creating a site-to-site VPN. This is necessary only when creating a point-to-site VPN connection. Site-to-site VPN connections use the IPsec and IKE protocols instead of SSTP and IKEv2.
+---
+
+Create a Site-to-Site connection in the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+
+Configure a Point-to-Site connection to a VNet using native Azure certificate authentication: Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal
+###
+Your company has an Azure virtual network (VNet) and an on-premises network. You want to connect the Azure VNet to the on-premises network by using a private connection through your company's Internet Service Provider (ISP). All the servers and virtual machines (VMs) on both networks are used as application servers.
+
+You need to create the most appropriate gateway in Azure.
+
+Which type of gateway should you create?
+---
+Policy-based VPN gateway
+Application gateway
+Route-based VPN gateway
+ExpressRoute gateway *
+---
+You should create an ExpressRoute gateway. This allows you to create a private connection between Azure and your on-premises network through your ISP.
+
+You should not use a route-based VPN gateway. This is a dynamic routing gateway that connects directly to your company over the public Internet.
+
+You should not use a policy-based VPN gateway. This is a static routing gateway that connects directly to your company over the public Internet.
+
+You should not create an Application gateway. This type of gateway allows you to create a firewall for a pool of backend servers.
+---
+About virtual network gateways for ExpressRoute;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways
+
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
+
+What is VPN Gateway;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways
+###
+Your team is using role-based access control (RBAC) to manage access to Azure resources.
+
+You need to programmatically retrieve the team's most recent 100 events.
+
+Which cmdlet should you use?
+---
+Get-AzureRmDiagnosticSetting
+Get-AzureRmLog *
+Get-AzureRmLogProfile
+Get-AzureRmMetric
+---
+You should use the Get-AzureRmLog cmdlet to retrieve the last 100 events. You should use the MaxRecord parameter with this command. You can also filter the events by start and end time and display detailed information.
+
+You should not use the Get-AzureRmLogProfile cmdlet to retrieve the last 100 events. This cmdlet is used for retrieving information about the log profile.
+
+You should not use the Get-AzureRmMetric cmdlet to retrieve the last 100 events. This cmdlet is used for retrieving information about all metrics values connected to a specified resource.
+
+You should not use the Get-AzureRmDiagnosticSetting cmdlet to retrieve the last 100 events. This cmdlet gets the categories and time grains that are logged for a resource. (A time grain is the aggregation interval of a metric.)
+---
+
+Get-AzureRmLog;https://docs.microsoft.com/en-us/powershell/module/azurerm.insights/get-azurermlog?view=azurermps-6.13.0
+
+Get-AzureRmLogProfile;https://docs.microsoft.com/en-us/powershell/module/azurerm.insights/get-azurermlogprofile?view=azurermps-6.13.0
+
+Get-AzureRmMetric;https://docs.microsoft.com/en-us/powershell/module/azurerm.insights/get-azurermmetric?view=azurermps-6.13.0
+
+Get-AzureRmDiagnosticSetting;https://docs.microsoft.com/en-us/powershell/module/azurerm.insights/get-azurermdiagnosticsetting?view=azurermps-6.13.0
+###
+C
+You must create a custom role that allows these operations:
+
+* Read data from a blob but not write data to the blob
+* Display a list of containers
+
+To define the role, you must assign permissions to these operations.
+
+What permissions should you use? 
+
+PLACEHOLDER 1: Read data from a blob
+PLACEHOLDER 2: Exclude write data to a blob
+PLACEHOLDER 3: Display a list of containers
+
+Select correct placeholder values.
+---
+PLACEHOLDER 1: NotDataActions
+PLACEHOLDER 1: DataActions *
+PLACEHOLDER 1: Actions
+PLACEHOLDER 1: NotActions
+PLACEHOLDER 2: NotDataActions *
+PLACEHOLDER 2: DataActions
+PLACEHOLDER 2: Actions
+PLACEHOLDER 2: NotActions
+PLACEHOLDER 3: NotDataActions
+PLACEHOLDER 3: DataActions
+PLACEHOLDER 3: Actions *
+PLACEHOLDER 3: NotActions
+---
+You should use the DataActions permission element to allow reading data from a blob because this is a data-related operation. The DataActions permission specifies the data operations that the role allows to be performed to the data within that object.
+
+You should use the NotDataActions permission element to exclude writing data to the blob. The NotDataActions permission specifies the data operations that are excluded from the allowed DataActions. The access granted by the role is computed by subtracting the NotDataActions operations from the DataActions operations. The NotActions permission element is used for management operations. The NotActions permission specifies the management operations that are excluded from the allowed Actions. You should use the NotActions permission if the set of operations that you want to allow is more easily defined by excluding restricted operations. The access granted by a role is computed by subtracting the NotActions operations from the Actions operations.
+
+You should use the Actions permission element to allow displaying a list of containers because this operation is related to management instead of data. The Actions permission specifies the management operations that the role allows to be performed. It is a collection of operation strings that identify securable operations of Azure resource providers.
+---
+
+
+Understand role definitions;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-definitions
+
+Built-in roles for Azure resources;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+###
+A member of the development team needs to have the ability to create Azure resources. However, the developer should not be allowed to grant resource access to other users.
+
+You need to assign the appropriate role to the developer.
+
+Which role should you assign?
+---
+Contributor *
+Owner
+Reader
+User Access Administrator
+---
+You should assign the Contributor role to the developer. This role allows the developer to create all types of Azure resources, without the ability to grant resource access to other users.
+
+You should not assign the Owner role to the developer. This role allows the developer to have full access to Azure, including granting resource access to other users.
+
+You should not assign the Reader role to the developer. This role only allows the developer to view resources, not create them.
+
+You should not assign the User Access Administrator role to the developer. This role allows the developer to grant resource access to other users.
+---
+
+What is role-based access control (RBAC) for Azure resources?;https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+###
+You have a custom role in a file named CustomRole.json.
+
+You need to add this role to Azure by using Azure CLI.
+
+Which command should you use?
+---
+az role definition create --role-definition CustomRole.json *
+az role create --role-definition CustomRole.json
+az role create CustomRole.json
+az role definition create CustomRole.json
+---
+You should use the following command:
+
+az role definition create --role-definition CustomRole.json
+
+The az role definition create command creates the role. The --role-definition parameter specifies the name of the role definition JSON file.
+
+You should not use the following command:
+
+az role create --role-definition CustomRole.json
+
+This command is missing the definition token.
+
+You should not use the following command:
+
+az role definition create CustomRole.json
+
+This command is missing the --role-definition parameter.
+
+You should not use the following command:
+
+az role create CustomRole.json
+
+This command is missing the definition token and --role-definition parameter.
+---
+
+Create custom roles using Azure CLI;https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli
+###
+You want to add a security group named Development to the Website Contributor built-in role.
+
+You need to use Azure CLI.
+
+Which command should you use?
+---
+az role definition create --resource-group "Development" --role "Website Contributor"
+az role definition create --assignee "Development" --role "Website Contributor"
+az role assignment create --assignee "Development" --role "Website Contributor" *
+az role assignment create --resource-group "Development" --role "Website Contributor"
+---
+You should use the following command:
+
+az role assignment create --assignee "Development" --role "Website Contributor"
+
+This command adds the group development to the role Website Contributor. The --assignee parameter specifies the user name or group. The --role parameter specifies the role.
+
+You should not use the following command:
+
+az role definition create --resource-group "Development" --role "Website Contributor"
+
+This command creates a role, not a role assignment.
+
+You should not use the following command:
+
+az role definition create --assignee "Development" --role "Website Contributor"
+
+This command creates a role, not a role assignment.
+
+You should not use the following command:
+
+az role assignment create --resource-group "Development" --role "Website Contributor"
+
+The --resource-group parameter specifies the name of a resource group, not a security group.
+---
+az role assignment;https://docs.microsoft.com/en-us/cli/azure/role/assignment?view=azure-cli-latest
+###
+C
+Your company requires only single sign-on when employees access resources from the corporate network. Approximately 12 third-party contractors work remotely in various groups throughout the company and access the corporate network by using a virtual private network (VPN).
+
+You want to require multi-factor authentication (MFA) policies for those users by defining a conditional access policy.
+
+What three actions should you perform? Each correct answer presents part of the solution.
+---
+For Access Controls, click Block and select Require multi-factor authentication.
+For Locations, include All trusted locations.
+For Access Controls, click Grant and select Require multi-factor authentication. *
+For Users and Groups, include each individual user. *
+For Cloud Apps, include All Cloud Apps. *
+---
+For Users and Groups, you should include each individual user. Because this policy applies to only a limited number of users and because they work in different groups throughout the company, it is practical to designate individual users.
+
+For Access Controls, you should click Grant and select Require multi-factor authentication. This allows access to users who successfully authenticate by using multi-factor authentication.
+
+For Cloud Apps, you should include All Cloud Apps. Even though the policy does not designate specific apps, the cloud apps condition is required in conditional access policies.
+
+For Access Controls, you should not click Block and select Require multi-factor authentication. The purpose of the policy is to grant access to users who successfully authenticate.
+
+For Locations, you should not include All trusted locations. The conditional access policy applies to individual users and is not based on location.
+---
+
+What is conditional access in Azure Active Directory?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+
+How to: Require MFA for access from untrusted networks with conditional access;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/untrusted-networks
+###
+C
+Your company uses Azure Multi-Factor Authentication (MFA) in the cloud to safeguard its assets.
+
+A member of your development team at a remote location normally uses her cell phone to authenticate. She calls you from her land line to inform you that her mobile phone has been lost or stolen, and she cannot log in to her corporate account. She does not have an alternate verification method set up for her account.
+
+Because the developer is working on a critical assignment, you must enable her to gain access to corporate resources as soon as possible.
+
+Choose all that apply:
+---
+You can create a one-time bypass that temporarily grants a user access without two-step authentication.		
+You can clear the user's MFA settings and have her specify her land line as a new contact method. *
+You can tell the user to click Use a different verification option and use that method
+---
+You cannot create a one-time bypass that temporarily grants a user access without two-step authentication. This feature is available only with MFA Server, not MFA in the cloud.
+
+You can clear the user's MFA settings and have her specify her land line as a new contact method. Both mobile and non-mobile phones can be used for MFA authentication. When authenticating via land line, the user completes sign-in by answering the call and pressing the pound key (#) on the phone keypad.
+
+You cannot tell the user to click Use a different verification option and use that method. This option is available only if the user has previously set up an alternate verification method for her account.
+---
+
+Which version of Azure MFA is right for my organization?;https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+
+Configure Azure Multi-Factor Authentication settings;https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings
+###
+Your company has an Azure Active Directory (AD) tenant.
+
+You need to ensure that users receive a verification text message on their phones before they can log in to Azure.
+
+What should you do?
+---
+Enable Multifactor Authentication (MFA). *
+Install Microsoft Authenticator on an Azure virtual machine (VM).
+Install Active Directory Federation Services (AD FS).
+Enable Self-Service Password Reset (SSPR).
+---
+You should enable MFA. This allows you to configure settings so that users receive text messages, phone calls, or app notifications for verification during sign-in attempts.
+
+You should not install AD FS. AD FS is a single sign-on solution. It does not ensure that users receive text messages before logging on to Azure AD.
+
+You should not enable SSPR. SSPR allows users to reset their passwords without IT involvement.
+ 
+You should not install Microsoft Authenticator on an Azure VM. Microsoft Authenticator is an app that runs on mobile devices to provide MFA.
+
+---
+
+Configure Azure Multi-Factor Authentication settings;https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings
+
+What are authentication methods?;https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-methods
+
+Tutorial: Complete an Azure AD self-service password reset pilot roll out;https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr
+###
+You are configuring Multi-Factor Authentication (MFA) for your company's Azure Active Directory (AD) tenant.
+
+You need to allow users to receive a verification notification on their phones when they attempt to log in to Azure.
+
+What should you do?
+---
+Create a Notification Hub.
+Create a Service Bus Relay.
+Have the users download the Azure app on their phones.
+Have the users download the Microsoft Authenticator app on their phones. *
+---
+You should have the users download Microsoft Authenticator. This app allows users to receive notifications on their phones when they log in to Azure.
+
+You should not have the users download Azure. This app allows IT administrators to manage resources from their mobile devices.
+
+You should not create a Notification Hub. This resource allows you to send custom notifications from applications to mobile devices. Azure allows you to send login notifications by using MFA and Microsoft Authenticator.
+
+You should not create a Service Bus Relay. This resource allows you to send messages from Azure to on-premises web services.
+---
+
+Set up my account for two-step verification;https://docs.microsoft.com/en-us/azure/active-directory/user-help/multi-factor-authentication-end-user-first-time
+
+Azure mobile app;https://azure.microsoft.com/en-us/features/azure-portal/mobile-app/
+
+What is Azure Relay?;https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-what-is-it
+
+What is Azure Notification Hubs?;https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-overview
+###
+You are configuring Multi-Factor Authentication (MFA) for your company's Azure Active Directory (AD) tenant.
+
+You need to restrict the devices from which users can log in to Azure.
+
+What should you do?
+---
+Create a virtual network (VNet) with all private IP addresses.
+Create a virtual network (VNet) with all public IP addresses.
+Configure Trusted IP settings. *
+Install the Microsoft Authenticator app on each user's device.
+---
+You should configure Trusted IP settings. This feature allows you to control the IP addresses from which users can log in to Azure.
+
+You should not install the Microsoft Authenticator app on each user's device. This allows users to receive notification of login attempts, but it does not control which devices are allowed to authenticate.
+
+You should not create a VNet with all private IP addresses. Private addresses are used to communicate within the network, not over the Internet. This option is not relevant to restricting devices from Azure.
+ 
+You should not create a VNet with all public IP addresses. Public addresses are used to communicate over the Internet. This option is not relevant to restricting devices from Azure.
+---
+Configure Azure Multi-Factor Authentication settings;https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings
+###
+C
+You create a custom role named App Service Contributor in your Azure subscription. 
+
+All company developers are members of the Developers Azure Active Directory (AD) group, which is shown in the answer area.
+
+You need to use Azure CLI to assign the App Service Contributor role to the developers.
+
+Which command should you run? 
+
+az PLACEHOLDER 1 assignment create \
+--role "App Service Contributor" \
+--PLACEHOLDER 2 "5da75e7e-8d19-4f68-8ff1-c9f14298cb5d"
+
+Select correct placeholder values.
+---
+PLACEHOLDER 1: account
+PLACEHOLDER 1: configure
+PLACEHOLDER 1: group
+PLACEHOLDER 1: role *
+PLACEHOLDER 2: assignee
+PLACEHOLDER 2: assignee-object-id *
+PLACEHOLDER 2: group
+PLACEHOLDER 2: Developers
+---
+You should use the following cmdlet:
+
+az role assignment create \
+--role "App Service Contributor" \
+--assignee-object-id "5da75e7e-8d19-4f68-8ff1-c9f14298cb5d"
+
+The az role assignment create command assigns a role to a user, service principal, or group. The --role parameter specifies the name of the role. The --assignee-object-id parameter specifies the object ID associated with a security group.
+
+You should not use the --assignee parameter. You should use this parameter when you specify the email alias for a user.
+
+You should not specify Developers as the value of the --assignee-object-id parameter. You must specify the object ID associated with the Developers security group.
+---
+az role assignment;https://docs.microsoft.com/en-us/cli/azure/role/assignment?view=azure-cli-latest
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
 ---
 ---
 ---
