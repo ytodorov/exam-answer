@@ -2847,141 +2847,1047 @@ You do not need to set the --protocol parameter. This parameter specifies either
 ---
 az container;https://docs.microsoft.com/en-us/cli/azure/container?view=azure-cli-latest
 ###
+C
+You create a web API that will be accessed by a web application and two different mobile applications. You want to secure the web API by using OAuth 2.0.
+
+You need to determine which applications to register in Azure Active Directory (Azure AD).
+
+Choose all that apply:
 ---
+Web API	*
+Mobile applications	*
+Web application *
 ---
+You should register all applications in Azure AD. Both client applications and web APIs are required to be registered to support OAuth 2.0 in an AD tenant.
 ---
+
+Protect an API by using OAuth 2.0 with Azure Active Directory and API Management;https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad
 ###
+You deploy an application to an Azure virtual machine (VM). You use Secure Shell (SSH) to connect to the VM.
+
+You need to get an access token using the assigned VM's managed identity.
+
+To which IP address should you issue a web request?
 ---
+169.254.169.254 *
+10.10.10.10.
+192.168.0.1
+127.0.0.1
 ---
+You should issue a web request to 169.254.169.254. Specifically, the entire URL is http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com. This is the URL you should use on all VMs.
+
+You should not issue a web request to any other IP address. Only 169.254.169.254 is available for issuing identity tokens on VMs.
 ---
+
+Use a Windows VM system-assigned managed identity to access Resource Manager;https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm
 ###
+You have an Azure API Management gateway named mycompany. You are adding OAuth 2.0 authentication to secure the gateway's APIs.
+
+The client ID for the application is 49aef0d1-502a-4f31-9cde-616fa2ccffb6. The tenant ID for your Azure Active Directory (AD) tenant is aa9463cb-b2f1-45be-adcd-ee892279b196.
+
+You need to specify the URL endpoint so that developers can authenticate with your company's AD tenant.
+
+Which URL should you specify?
 ---
+https://login.microsoftonline.com/aa9463cb-b2f1-45be-adcd-ee892279b196/oauth2/authorize *
+https://49aef0d1-502a-4f31-9cde-616fa2ccffb6.azure-api.net
+https://mycompany.azurewebsites.net/aa9463cb-b2f1-45be-adcd-ee892279b196/oauth2/authorize
+https://mycompany.azure-api.net/authenticate/49aef0d1-502a-4f31-9cde-616fa2ccffb6
 ---
+You should use the following URL:
+
+https://login.microsoftonline.com/aa9463cb-b2f1-45be-adcd-ee892279b196/oauth2/authorize
+
+This URL represents the authorization endpoint that allows developers to authenticate with your company's AD tenant. It is in the format https://login.microsoft.com/{tenant id}/oauth2/authorize.
+
+You should not use any other URL. The other URLs do not allow authentication against an AD tenant.;https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-oauth2
 ---
+How to authorize developer accounts using OAuth 2.0 in Azure API Management;https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-oauth2
 ###
+You create a Linux Azure virtual machine (VM) and enable the system-assigned identity. You want to use Managed Service Identity to allow the VM to access the Azure Resource Manager application programming interface (API).
+Which three actions should you perform in sequence? 
 ---
+1. Grant to the VM the Reader role for all resource groups. 2. Run the Invoke-WebRequest PowerShell cmdlet to retrieve an access token. 3. Call Azure Resource Manager using the access token. *
+1. Call Azure Resource Manager using the access token. 2. Grant to the VM the Reader role for all resource groups. 3. Grant to your account the Virtual Machine Contributor role.
+1. Grant to the VM the Reader role for all resource groups. 2. Grant to your account the Virtual Machine Contributor role. 3. Run the az identity create CLI command to specify the name of the identity.
+1. Grant to your account the Virtual Machine Contributor role. 2. Run the az identity create CLI command to specify the name of the identity. 3. Run the Invoke-WebRequest PowerShell cmdlet to retrieve an access token.
 ---
+You need to perform the following steps in order:
+
+1. Grant to the VM the Reader role for all resource groups.
+2. Run the Invoke-WebRequest PowerShell cmdlet to retrieve an access token.
+3. Call Azure Resource Manager using the access token.
+
+You should grant to the VM the Reader role for all resource groups. This ensures that the VM can access resources in all resource groups. You must grant the Reader role before taking action to retrieve an access token.
+
+Next, you should run the Invoke-WebRequest cmdlet to retrieve an access token. You extract the access token from the response, and then, finally, you call Azure Resource Manager using the access token.
+
+You should not run the az identity create CLI command to specify the name of the system identity. You should run this command when you want to set the name of a user identity, not a system identity.
+
+You should not grant to your account the Virtual Machine Contributor role. This role is required to create a VM with the system-assigned identity enabled. However, because the VM is already created with the system assigned identity enabled, your account already has the required permissions.
 ---
+Use a Windows VM system-assigned managed identity to access Resource Manager;https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm
+
+Configure managed identities for Azure resources on an Azure VM using Azure CLI;https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm
 ###
+You create a web API that is hosted in Azure.
+
+You need to protect the API by using OAuth 2.0 authentication with your company's Azure Active Directory (AD) tenant.
+
+Which additional Azure resource should you create?
 ---
+Key vault
+Network Security Group (NSG)
+Application Gateway
+API Management instance *
 ---
+You should create an API Management instance. This is required for allowing a client application to use OAuth 2.0 authentication with an Azure AD tenant.
+
+You should not create a key vault. A key vault allows you to store secrets, keys, and certificates. It is not required for using OAuth 2.0.
+
+You should not create an NSG. An NSG allows you to filter traffic to and from Azure resources. It is not required for using OAuth 2.0.
+
+You should not create an Application Gateway. An Application Gateway allows you to create a load balancer to backend web applications. It is not required for using OAuth 2.0.
 ---
+
+Protect an API by using OAuth 2.0 with Azure Active Directory and API Management;https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad
+
+What is Azure Key Vault?;https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts
+
+Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
 ###
+C
+An Azure key vault named measureup exists in your company's cloud subscription. You want to store a password in the key vault. The password is S3449PT!@90Q. The name of the entry should be ApplicationPassword. The password should not be stored as plain text.
+
+You need to use PowerShell to store the password in the key vault.
+
+How should you complete the cmdlets? Select correct placeholder values.
+
+$value = PLACEHOLDER 1 'S3449PT!@90Q' -PLACEHOLDER 2 -Force
+PLACEHOLDER 3 -VaultName 'measureup' -Name 'ApplicationPassword' -PLACEHOLDER 4 $value
 ---
+PLACEHOLDER 1: ConvertTo-SecureString *
+PLACEHOLDER 1: AsPlainText 
+PLACEHOLDER 1: Set-AzureKeyVaultSecret
+PLACEHOLDER 1: SecretValue 
+PLACEHOLDER 1: Add-AzureKeyVaultKey
+PLACEHOLDER 2: ConvertTo-SecureString
+PLACEHOLDER 2: AsPlainText *
+PLACEHOLDER 2: Set-AzureKeyVaultSecret
+PLACEHOLDER 2: SecretValue 
+PLACEHOLDER 2: Add-AzureKeyVaultKey
+PLACEHOLDER 3: ConvertTo-SecureString
+PLACEHOLDER 3: AsPlainText 
+PLACEHOLDER 3: Set-AzureKeyVaultSecret *
+PLACEHOLDER 3: SecretValue 
+PLACEHOLDER 3: Add-AzureKeyVaultKey
+PLACEHOLDER 4: ConvertTo-SecureString
+PLACEHOLDER 4: AsPlainText 
+PLACEHOLDER 4: Set-AzureKeyVaultSecret
+PLACEHOLDER 4: SecretValue *
+PLACEHOLDER 4: Add-AzureKeyVaultKey
 ---
+You should use the following cmdlets:
+
+$value = ConvertTo-SecureString 'S3449PT!@90Q' -AsPlainText -Force
+Set-AzureKeyVaultSecret -VaultName 'measureup' -Name 'ApplicationPassword' -SecretValue $value
+
+The ConvertTo-SecureString cmdlet converts a plain text value into a secure (encrypted) string. This meets the requirement of the password not being stored as plain text. The first parameter to this cmdlet is the string to convert. The -AsPlainText parameter indicates that the string to convert it plain text. The -Force parameter must be used when -AsPlainText is used to verify that you understand the implications of using -AsPlainText.
+
+The Set-AzureKeyVaultSecret cmdlet stores the password in the key vault with the name specified as the -Name parameter. The -SecretValue parameter specifies the secret. In this scenario, the secret is the encrypted password.
+
+You should not use Add-AzureKeyVaultKey. This cmdlet generates a software or hardware key and saves it in a key vault. In this scenario, you need to store a known secret, not generate a key.
 ---
+What is Azure Key Vault?;https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts
+
+Quickstart: Set and retrieve a secret from Azure Key Vault using PowerShell;https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-powershell
+
+Set-AzureKeyVaultSecret;https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret?view=azurermps-6.13.0
+
+Add-AzureKeyVaultKey;https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/add-azurekeyvaultkey?view=azurermps-6.13.0
 ###
+C
+The following secret identifier exists in an Azure key vault: https://measureup.vault.azure.net/secrets/billingApiKey/a23df1a2eb5cb4a3696348504f74704c8
+
+You need to use Azure CLI to retrieve the value for the secret.
+
+Which command should you use? Select correct placeholder values.
+
+az keyvault secret show --name PLACEHOLDER 1 --vault-name PLACEHOLDER 2
 ---
+PLACEHOLDER 1: a23df1a2eb5cb4a3696348504f74704c8
+PLACEHOLDER 1: billingApiKey *
+PLACEHOLDER 1: measureup
+PLACEHOLDER 2: a23df1a2eb5cb4a3696348504f74704c8
+PLACEHOLDER 2: billingApiKey
+PLACEHOLDER 2: measureup *
 ---
+You should use the following command:
+
+az keyvault secret show --name billingApiKey --vault-name measureup
+
+This command sets the --name parameter to billingApiKey, which represents the name of the secret. It also sets the --vault-name parameter to measureup, which represents the name of the key vault. The secret identifier URL is always in the format https://{key vault name}.vault.azure.net/secrets/{secret name}/{secret version}.
 ---
+Quickstart: Set and retrieve a secret from Azure Key Vault by using a .NET web app;https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-net
 ###
+You use the following command to store a connection string in Azure Key Vault:
+
+az keyvault secret set --vault-name "measureup" --name "connectionString" --value " server=10.10.10.100;database=prodSql;user id=webapp;password=4$gg65"
+
+Developers need to retrieve the connection string.
+
+Which URL should they use?
 ---
+https://measureup.vault.azure.net/value/connectionString
+https://measureup.vault.azure.net/keys/connectionString
+https://measureup.vault.azure.net/secrets/connectionString *
+https://measureup.vault.azure.net/connectionStrings/prodSql
 ---
+The developers should use the following URL:
+
+https://measureup.vault.azure.net/secrets/connectionString
+
+This URL uses the format https://{key vault}.vault.azure.net/secrets/{secret name} to retrieve a secret from the vault.
 ---
+Quickstart: Set and retrieve a secret from Azure Key Vault by using a .NET web app;https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-net
 ###
+C
+Your company has an on-premises infrastructure and an Azure cloud infrastructure. Data in Azure resides in Azure blob storage.
+
+You need to access this data so that it cannot be compromised while in transit.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
 ---
+Create a Service Bus relay.
+Access the REST endpoint using HTTPS/TLS. *
+Create an Application Gateway instance.
+Deploy a VPN Gateway. *
 ---
+You should access the REST endpoint representing the blob storage container over HTTPS/TLS. This ensures that a middleman attack cannot occur.
+
+You should also deploy a VPN Gateway. This allows you to send encrypted traffic between Azure and an on-premises network.
+
+You should not create an Application Gateway instance. This allows you to create a load balancer to distribute traffic to a cluster of backend virtual machines (VMs).
+
+You should not create a Service Bus relay. This resource allows external applications to call on-premises services through Azure.
 ---
+Azure Data Security and Encryption Best Practices;https://docs.microsoft.com/en-us/azure/security/fundamentals/data-encryption-best-practices
+
+What is VPN Gateway?;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways
+
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
+
+What is Azure Relay?;https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-what-is-it
 ###
+C
+You plan to create a Windows Server 2019 Azure virtual machine (VM) for processing sensitive data. Other applications and operating systems should not be able to access or view the sensitive data.
+
+You need to decide which security feature to use and which type of Azure VM to create.
+
+What should you use? Select correct placeholder values.
+
+Feature to use: PLACEHOLDER 1
+Azure virtual machine type to use PLACEHOLDER 2
 ---
+PLACEHOLDER 1: Secure Enclave *
+PLACEHOLDER 1: Windows Defender Application Guard (WDAG)
+PLACEHOLDER 1: Windows Defender Application Control (WDAC)
+PLACEHOLDER 2: DC-series *
+PLACEHOLDER 2: E-series
+PLACEHOLDER 2: F-series
+PLACEHOLDER 2: G-series
+PLACEHOLDER 2: Ls-series
 ---
+You should use the secure enclave security feature. A secure enclave is a protected memory region that appears as a black box to the containing process and the other processes that are running on the machine. Enclaves are the perfect solution for processing sensitive data because you cannot view the data or code inside the enclave from the outside. Only the DC-series of Azure VMs supports secure enclave. The other Azure VM types do not support secure enclave.
+
+You should not select Data Execution Prevention (DEP). DEP can be described as a set of hardware and software technologies that conduct additional memory checks to help to prevent malicious attacks.
+
+You should not select Windows Defender Application Guard (WDAG). WDAG is a security tool built into Microsoft Edge that isolates browser sessions from the desktop in a VM to prevent any malicious activity from reaching the desktop.
+
+You should not select Windows Defender Application Control (WDAC). WDAC can reduce security threats by limiting the applications that users are allowed to run and the code running in the System Core (kernel).
 ---
+
+Virtual Machine series;https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/
+
+Azure confidential computing;https://azure.microsoft.com/en-us/blog/azure-confidential-computing/
 ###
+An Azure Cosmos DB database is used to track inventory for a company. Queries are most often based on date received, serial number, or both.
+
+You need to horizontally partition data to optimize both read and write operations.
+
+What should you do?
 ---
+Use a partition key based on serial number.
+Use a synthetic partition key based on the date and a random suffix.
+Use a synthetic partition key based on the date and a precalculated suffix based on serial number. *
+Use a partition key based on date.
 ---
+You should use a synthetic partition key based on the date and a precalculated suffix based on serial number. A Cosmos DB partitions data into logical horizontal partitions based on partition keys. The best practice is to use a partition key that has a large number of unique values. This helps distribute data and the workload evenly across partitions.
+
+Using a key based on the date and a precalculated suffix based on serial number meets the goal of spreading data across multiple logical partitions, which helps to optimize write performance. Using the values that are primarily used for queries helps to improve read performance.
+
+You should not use a synthetic partition key based on the date and a random suffix. This would spread the data across multiple partitions but does not help with data reads because you do not know the value used when generating the key.
+
+You should not use either just the date or just the serial number. Using just the date means that you would have more entries in each partition and would help with queries based on date only, not serial number. A partition key based on serial number would distribute the data but would not help optimize reads using a date in the query.
 ---
+
+Partitioning in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview
+
+Partitioning and horizontal scaling in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
+
+Create a synthetic partition key;https://docs.microsoft.com/en-us/azure/cosmos-db/synthetic-partition-keys
 ###
+C
+Your company plans to use an Azure Cosmos SQL DB for data storage. The company plans to use partitioning to meet application performance goals.
+
+You need to verify Cosmos DB partitioning features to ensure that it will meet the company's requirements.
+
+Choose all that apply:
 ---
+A single logical partition can contain no more than 10 GB of data. *
+Microsoft guarantees a throughput of 1000 request units per second (RU/s) for a partitioned container.		
+Partitioning is automatic and managed transparently by Azure Cosmos DB. *
+Transactions using stored procedures or triggers can be performed against a single partition only. *
 ---
+A single logical partition can contain no more than 10 GB of data. This is an enforced upper storage limit that cannot be overridden.
+
+Microsoft guarantees a throughput of 400, not 1000, RU/s for a partitioned container. RUs are used as a way to express a normalized cost of database operations and can be used for throughput comparisons. RU calculations are based on CPU, I/O operations (IOPS), and memory. For example, the cost to read a 1 KB item is 1 RU.
+
+Partitioning is automatic and managed transparently by Azure Cosmos DB. You do not get directly involved with either logical or physical partitioning. Logical partitioning is the horizontal partitioning of the data in a Cosmos DB container. Cosmos DB can scale horizontally by spreading logical partitions across multiple servers. Logical partitioning is based on your defined partition key. Physical partitioning determines where the data is physically stored and uses a hash of the partition key to distribute logical partitions over physical partitions.
+
+Transactions using stored procedures or triggers can be performed against a single partition only. This can be a key factor when determining the value or values to use when defining a partition key. Only those items with the same partition key value are part of the same logical partition. Also, queries are more efficient when run across a single partition, but are supported over multiple partitions.
 ---
+
+Partitioning in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview
+
+Partitioning and horizontal scaling in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
+
+Create a synthetic partition key;https://docs.microsoft.com/en-us/azure/cosmos-db/synthetic-partition-keys
+
+Request Units in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/request-units
 ###
+Your company creates an Azure Cosmos DB in Azure Portal. The database must be a graph database with the ability to model and traverse relationships between entities in the database.
+
+You need to recommend the appropriate Cosmos DB API to use.
+
+Which API should you use?
 ---
+API for MongoDB
+Casandra API
+SQL API
+Table API
+Gremlin API *
 ---
+You should choose the Gremlin API. This is the API used to build a graph database. In Azure portal, the API is identified as Gremlin (graph). When using this API, in addition to having an Azure subscription, you must install Visual Studio 2017 and enable Azure development.
+
+The APIs supported by Azure Cosmos DB are:
+
+* Azure Cosmos DB's API for MongoDB - Used when migrating from a MongoDB and supports the MongoDB wire protocol and connections by MongoDB client drivers
+* Cassandra API - Used to create a data store for use with apps written for Apache Cassandra with compatibility with existing applications and support for the Cassandra Query Language (CQL)
+* Gremlin API - Used when creating graph databases for modeling and traversing relationships between entities
+* SQL API - Default Cosmos DB API that supports building a non-relational document database that supports SQL syntax queries
+* Table API - Provides premium database support for applications written for Azure Table storage
+
+None of these APIs, with the exception of the Gremlin API, can be used to build a graph database.
+
+If you need to support multiple APIs, you must create a separate database with a unique account name for each.
 ---
+
+Azure Cosmos DB Documentation;https://docs.microsoft.com/en-us/azure/cosmos-db/
+
+Frequently asked questions about different APIs in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/faq
+
+Introduction to Azure Cosmos DB: Gremlin API;https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction
+
+Azure Cosmos DB Gremlin graph support;https://docs.microsoft.com/en-us/azure/cosmos-db/gremlin-support
+
+Introduction to Azure Cosmos DB database and the SQL API;https://www.mssqltips.com/sqlservertip/5331/introduction-to-azure-cosmos-db-database-and-the-sql-api/
 ###
+You need to determine the results of a query against an Azure Cosmos DB that uses the SQL data model. You execute the following query:
+
+SELECT *
+    FROM Invoices i
+    WHERE i.id =1
+
+What should you expect the query to produce?
 ---
+A table structured as rows and columns
+JSON-formatted data *
+XML-formatted data 
+A syntax error
 ---
+You should expect JSON-formatted data. SELECT queries against a Cosmos SQL database return data in a JSON format.
+
+You should not expect XML-formatted data. None of the APIs supported by Cosmos DB default to returning data formatted as XML.
+
+You should not expect a table structured as rows and columns. You would expect this result when using the Table API.
+
+You should not expect a syntax error. The SQL API uses standard SQL syntax and the query does not include any syntax errors.
 ---
+
+SQL query examples for Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-getting-started
+
+Azure Cosmos DB: Designing your data structure;https://social.technet.microsoft.com/wiki/contents/articles/39421.azure-cosmos-db-designing-your-data-structure.aspx
+
+SQL language reference for Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-getting-started
+
+Tutorial: Query Azure Cosmos DB by using the Table API;https://docs.microsoft.com/en-us/azure/cosmos-db/tutorial-query-table
+
+Introduction to Azure Cosmos DB database and the SQL API;https://www.mssqltips.com/sqlservertip/5331/introduction-to-azure-cosmos-db-database-and-the-sql-api/
 ###
+A static resource database for a public multiplayer game site is hosted in a Cosmos DB that uses the SQL data model.
+
+You need to guarantee the highest possible availability and lowest latency for data reads.
+
+Which consistency level should you use?
 ---
+Consistent prefix
+Strong
+Bounded staleness
+Eventual *
+Session
 ---
+Eventual consistency is recommended for applications that require the highest availability and lowest latency. Eventual consistency does not guarantee the ordering of reads, but this is not an issue for a static database because it will not be receiving new data writes.
+
+Supported consistency levels are:
+
+* Strong - Reads always return the most recent committed version of an item.
+* Bounded staleness - Reads might lag behind writes based on configured update versions (K) or time (t).
+* Session - Scoped to a client session, and reads honor consistency guarantees including the consistent-prefix, monotonic reads, monotonic writes, read-your-writes, and write-follows-reads guarantees.
+* Consistent prefix - Updates that are returned contain some prefix of all the updates, and reads never see out-of-order writes.
+* Eventual - There is no ordering guarantee for reads, and replicas eventually converge.
+
+Service level agreements (SLAs) for Azure Cosmos DB guarantee that 100 percent of read requests meet the consistency guarantee for the consistency level you choose.
 ---
+
+Consistency levels in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels
+
+Consistency levels and Azure Cosmos DB APIs;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels-across-apis
+
+Choose the right consistency level;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels-choosing
+
+Consistency, availability, and performance tradeoffs;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels-tradeoffs
 ###
+You need to ensure client consistency with read-your-writes and write-follows-reads guarantees. The solution should maximize read throughput while minimizing latency for read and write operations.
+
+Which Azure Cosmos DB consistency should you choose?
 ---
+Bounded staleness
+Strong
+Consistent prefix
+Eventual
+Session *
 ---
+You should choose Session consistency. Session consistency provides the consistency levels needed at a client or device session context.
+
+Supported consistency levels are:
+
+* Strong - Reads always return the most recent committed version of an item.
+* Bounded staleness - Reads might lag behind writes based on configured update versions (K) or time (t).
+* Session - Scoped to a client session, and reads honor consistency guarantees including the consistent-prefix, monotonic reads, monotonic writes, read-your-writes, and write-follows-reads guarantees.
+* Consistent prefix - Updates that are returned contain some prefix of all the updates, and reads never see out-of-order writes.
+* Eventual - There is no ordering guarantee for reads, and replicas eventually converge.
+
+Session consistency also has lower request units per second (RU/s) costs than Strong or Bounded staleness consistency.
 ---
+
+Consistency levels in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels
+
+Consistency, availability, and performance tradeoffs;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels-tradeoffs
+
+Choose the right consistency level;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels-choosing
+
+High availability with Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/high-availability
 ###
+A company's operations are supported by an Azure Cosmos DB. The database is configured for single master replication across the North Central US and South Central US regions. The database is configured with Staleness bound consistency as its default consistency.
+
+You need to determine how this impacts your company's recovery objectives in case of a catastrophic regional failure.
+
+What is the guaranteed recovery time objective (RTO) for this configuration?
 ---
+0 minutes
+< 1 day
+< 15 minutes *
+< 1 week
 ---
+The RTO for this configuration is < 15 minutes. The same value applies for Session, Consistent Prefix, and Eventual consistency for single master replication over multiple regions. It also applies to Strong consistency with single or multi-master replication.
+
+RTO and recovery point objective (RPO) are key considerations in calculating recovery. RTO refers to maximum time a resource may be down after a catastrophic failure. RPO is related to allowable data loss and is the age of backups that must be recovered to restore data.
+
+Supported consistency levels are:
+
+* Strong - Reads always return the most recent committed version of an item.
+* Bounded staleness - Reads might lag behind writes based on configured update versions (K) or time (t).
+* Session - Scoped to a client session, and reads honor consistency guarantees including the consistent-prefix, monotonic reads, monotonic writes, read-your-writes, and write-follows-reads guarantees.
+* Consistent prefix - Updates that are returned contain some prefix of all the updates, and reads never see out-of-order writes.
+* Eventual - There is no ordering guarantee for reads, and replicas eventually converge.
+
+RPO for the scenario configuration is based on the K and t values.
+
+Multi-master replication over multiple regions provides an RTO of 0 minutes for all consistencies except Strong.
+
+When deployed in a single region, the RTO is < 1 week for any consistency.
 ---
+Consistency levels in Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels
+
+Consistency, availability, and performance tradeoffs;https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels-tradeoffs
+
+High availability with Azure Cosmos DB;https://docs.microsoft.com/en-us/azure/cosmos-db/high-availability
+
+How to fit RPO and RTO into your backup and recovery plans;https://searchstorage.techtarget.com/feature/What-is-the-difference-between-RPO-and-RTO-from-a-backup-perspective
 ###
+A company wants to set up an elastic pool to support 20 single SQL databases that are managed as part of the same SQL database server. Database Transaction Unit (DTU) utilization is as follows:
+
+* Average DTU utilization per database - 18
+* Peak DTU utilization per database - 47
+* Number of concurrently peaking databases - 2
+
+You need to determine the size of the elastic DTU (eDTU) pool you need to configure.
+
+Which pool size should you configure?
 ---
+360
+400 *
+300
+100
 ---
+You should configure a 400 eDTU pool. The following are used to calculate the pool size:
+
+Number of databases X average DTU per database
+Number of currently peaking databases X peak DTU
+
+The larger value of the two is used to determine the eDTU pool.
+
+20 (databases) X 18 (average DTU) = 360
+2 (concurrent peaks) X 47 (peak DTU) = 94
+
+The larger value, 360, is used. The nearest fit from the supported eDTU pool sizes is 400.
+
+You should not choose 100 or 200. Neither is sufficient to support the pool requirements.
+
+You should not choose 360. This is not supported as a pool size.
 ---
+Resources limits for elastic pools using the DTU-based purchasing model;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools
+
+Service tiers in the DTU-based purchase model;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers-dtu
+
+Elastic pools help you manage and scale multiple Azure SQL databases;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elastic-pool
+
+New-AzureRmSqlElasticPool;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/new-azurermsqlelasticpool?view=azurermps-6.13.0
 ###
+You add a new Azure SQL Database single database to an existing database server.
+
+You need to add the database to an existing elastic pool.
+
+Which PowerShell cmdlet should you use?
 ---
+Set-AzureRmSqlDatabase *
+Set-AzureRmSqlElasticPool
+Set-AzureRmSqlDatabaseSecondary
+Set-AzureRmSqlInstance
 ---
+You should use the Set-AzureRmSqlDatabase cmdlet. This cmdlet modifies the properties of an existing database, which includes adding the database to an elastic pool. You would run a command similar to the following:
+
+Set-AzSqlDatabase -ResourceGroupName RGDB1 -ServerName DBServe1
+ -DatabaseName DB12 -ElasticPoolName MyPool
+
+You should not use the Set-AzureRmSqlElasticPool cmdlet. This cmdlet lets you modify elastic pool properties, such as pool size, minimum DTUs, and maximum DTUs. It does not let you add databases to or remove databases from the pool.
+
+You should not use the Set-AzureRmSqlDatabaseSecondary cmdlet. This cmdlet is not used to manage elastic pools. It is used to switch a secondary database to be the primary database to initiate failover in a fault tolerant configuration.
+
+You should not use the Set-AzureRmSqlInstance cmdlet. This cmdlet is used to set properties for an Azure SQL Database Managed Instance. A managed instance cannot be part of an elastic pool.
 ---
+
+Elastic pools help you manage and scale multiple Azure SQL databases;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elastic-pool
+
+Use PowerShell to create elastic pools and move databases between elastic pools;https://docs.microsoft.com/en-us/azure/sql-database/scripts/sql-database-move-database-between-pools-powershell
+
+Set-AzureRmSqlElasticPool;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqlelasticpool?view=azurermps-6.13.0
+
+Set-AzureRmSqlDatabase;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqldatabase?view=azurermps-6.13.0
+
+Set-AzureRmSqlDatabaseSecondary;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqldatabasesecondary?view=azurermps-6.13.0
+
+Set-AzureRmSqlInstance;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqlinstance?view=azurermps-6.13.0
 ###
+C
+You are creating an elastic pool for databases on SQL Database server DBServ01. The pool must meet the following requirements:
+
+* Ensure pool support for two databases peaking concurrently at 70 Database Transaction Units (DTUs).
+* Ensure that a maximum of as near to 75 DTUs as possible can be consumed by a database.
+* Minimize the DTUs that are guaranteed to all databases in the pool.
+* Minimize pool costs and configuration.
+
+You need to create the pool. Select correct placeholder values.
+
+New-AzureRmSqlElasticPool -ResourceGroupName "RGDB01" -ServerName "DBServ01"
+-ElasticPoolName "MyPool01" -Edition "Premium" -Dtu PLACEHOLDER 1
+-DatabaseDtuMin PLACEHOLDER 2 -DatabaseDtuMax PLACEHOLDER 3
 ---
+PLACEHOLDER 1: 75
+PLACEHOLDER 1: 125
+PLACEHOLDER 1: 250 *
+PLACEHOLDER 1: 500
+PLACEHOLDER 2: 0 *
+PLACEHOLDER 2: 10
+PLACEHOLDER 2: 25
+PLACEHOLDER 2: 75 
+PLACEHOLDER 3: 25
+PLACEHOLDER 3: 75 *
+PLACEHOLDER 3: 125
+PLACEHOLDER 3: 250
 ---
+You should complete the PowerShell cmdlet as follows:
+
+New-AzureRmSqlElasticPool -ResourceGroupName "RGDB01" -ServerName "DBServ01"
+-ElasticPoolName "MyPool01" -Edition "Premium" -Dtu 250
+-DatabaseDtuMin 0 -DatabaseDtuMax 75
+
+The pool needs to support 140 DTUs to support concurrent peaks. For a premium elastic pool, you need to choose a 250 DTU pool. That is the smallest supported pool size that meets your needs. A 75 DTU pool size is not supported, 125 DTUs is too small, and 500 DTUs is more than needed.
+
+The -DatabaseDtuMin property sets the minimum DTUs that are guaranteed to each database in the pool. The smallest value that is supported is 0. Values of 25 and 75 are larger than needed. A value of 10 is not supported in a premium pool, but it is supported in a standard pool.
+
+The -DatabaseDtuMax sets the maximum DTUs that a database in the pool can consume. A value of 75 is supported for a premium pool. A value of 25 would be too low, and 125 and 250 are more than necessary.
 ---
+
+Elastic pools help you manage and scale multiple Azure SQL databases;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elastic-pool
+
+New-AzureRmSqlElasticPool;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/new-azurermsqlelasticpool?view=azurermps-6.13.0
+
+Resources limits for elastic pools using the DTU-based purchasing model;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools
 ###
+A company is migrating its on-premises datacenter to Azure. The solution should:
+
+* Support migration without database changes
+* Provide for company control over maintenance and update schedules
+* Provide for control over the recovery model
+
+You need to identify the appropriate database solution.
+
+What solution should you choose?
 ---
+Azure SQL Database Managed Instance
+Azure SQL Database Elastic Pool
+Azure SQL Database Single Database
+SQL Server on Azure Virtual Machine (VM) *
 ---
+You should choose SQL Server on Azure VM. This is a Infrastructure-as-a-Service (IaaS) model that gives you complete control over the database server. This solution uses standard SQL Server editions that run on standard hardware, so no database changes are necessary. Because this is an IaaS deployment, the company has complete control over database engine management, including maintenance, update schedules, and the recovery model that is used.
+
+You should not choose single database, elastic pool, or managed instance solutions. These are all Platform-as-a-Service (PaaS) models where the company has limited control over the database engine. Activities such as maintenance and updates are under Microsoft's schedule and control.
+
+A single database or an elastic pool made up of single instance databases does not meet the requirements. These kinds of deployments are best matched to the development and deployment of cloud-based applications.
+
+A managed instance deployment can often support the migration from an on-premises deployment with little or no database changes, but it does not meet the company management requirements. It provides near 100% compatibility with an on-premises SQL server.
 ---
+Choose the right SQL Server option in Azure;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-paas-vs-sql-server-iaas
 ###
+C
+A company is migrating its on-premises database to Azure. You use the following commands to create the database:
+
+New-AzureRmSqlInstance
+New-AzureRmSqlInstanceDatabase
+
+You need to determine the features of this deployment. Choose all that apply:
 ---
+This deployment is limited to using the vCore purchasing model only. *
+The database can be moved to an existing elastic pool.		
+Migration can be completed with little or no changes to the on-premises database. *
+Microsoft is responsible for database engine updates and maintenance. *
 ---
+The commands are used to create an Azure SQL Database Managed Instance, which is a platform-as-a-service (PaaS) SQL database deployment. It is near 100% compatible with on-premises SQL Server editions and lets you use your existing SQL Server licenses to reduce migration costs.
+
+Managed instance is limited to using the vCore purchasing model only. This purchasing model lets you choose compute and storage resources independently for your deployment. This is different from Azure SQL Database Single Instance and Elastic Pool deployments, which support both vCore and DTU purchasing options.
+
+The database cannot be moved into an existing elastic pool, nor can a new elastic pool be created for the database. Elastic pools are supported for Azure SQL Database Single Instance deployments.
+
+Because of the compatibility between on-premises instances and managed instances, migration can be completed with little or no changes to the on-premises database. This model is often used for migration from an on-premises datacenter.
+
+Because this is a PaaS deployment, Microsoft is responsible for the updates and maintenance of the database. These also occur on Microsoft's schedule.
 ---
+
+Choose the right SQL Server option in Azure;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-paas-vs-sql-server-iaas
+
+New-AzureRmSqlInstance;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/new-azurermsqlinstance?view=azurermps-6.13.0
+
+New-AzureRmSqlInstanceDatabase;https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/new-azurermsqlinstancedatabase?view=azurermps-6.13.0
+
+Use SQL Database advanced data security with virtual networks and near 100% compatibility;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance
+
+vCore service tiers, Azure Hybrid Benefit, and migration;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers-vcore?tabs=azure-portal
 ###
+C
+A company is moving the database that is used to support an important application to an Azure SQL Database Managed Instance.
+
+You need to review the source code of the application to identify potential incompatibilities.
+
+Choose all that apply:
 ---
+Filestream data types are supported for temporary tables.		
+Bulk insert operations are limited to importing from Azure Blob storage only. *
+Standard query operations, including SELECT, UPDATE, and DELETE, are supported. *		
+Commands that are executed using xp_cmdshell return JSON-formatted data instead of nvarchar(255) type data.
 ---
+Filestream data types are not supported for any type of database tables, including temporary tables. The filestream data type is not supported on Managed Instance databases, and filegroups cannot contain filestream data. Attempts to restore from backups that include filestream data will fail.
+
+Bulk insert operations are limited to importing from Azure Blob storage only. Operations that use the BULK INSERT or OPENROWSET commands must include a DATASOURCE parameter that identifies the data source. A managed instance cannot access file shares or Windows folders. The same is true for restore operations, which must also specify Azure Blob storage as their data source.
+
+Standard query operations, including SELECT, UPDATE, and DELETE, are supported. There is near 100% compatibility between on-premises SQL Server editions and Azure SQL Database Managed Instance. This means that few changes are usually needed during migration.
+
+Azure SQL Database Managed Instance databases do not support executing commands through xp_cmdshell. In addition, sp_execute_external_scripts and extended stored procedures are not supported.
 ---
+
+Azure SQL Database Managed Instance T-SQL differences from SQL Server;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-transact-sql-information
+
+Use SQL Database advanced data security with virtual networks and near 100% compatibility;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance
 ###
+You create and save a text file that contains Transact-SQL (T-SQL) statements to create a new table.
+
+You need to execute the script.
+
+Which PowerShell cmdlet should you use?
 ---
+Write-SqlTableData
+Invoke-Sqlcmd *
+Invoke-ASCmd
+Invoke-ProcessTable
 ---
+You should use the Invoke-Sqlcmd cmdlet. You can use this cmdlet to execute a literal T-SQL command string or the contents of a text file that contains T-SQL commands.
+
+You should not use the Write-SqlTableData cmdlet. This cmdlet is used to write data directly to an existing table, not to create a new table.
+
+You should not use the Invoke-ASCmd cmdlet. This cmdlet is used to execute queries or statements against a Microsoft SQL Server Analysis Services instance. It is not used to execute standard database queries.
+
+You should not use the Invoke-ProcessTable cmdlet. This cmdlet is used to process Analysis Services tables against a specified RefreshType.
 ---
+
+Invoke-Sqlcmd;https://docs.microsoft.com/en-us/powershell/module/sqlserver/invoke-sqlcmd?view=sqlserver-ps
+
+How to Create a Table in Azure SQL Database;https://dataplatformlabs.com/how-to-create-a-table-in-azure-sql-database/
+
+Write-SqlTableData;https://docs.microsoft.com/en-us/powershell/module/sqlserver/write-sqltabledata?view=sqlserver-ps
+
+Invoke-ASCmd;https://docs.microsoft.com/en-us/powershell/module/sqlserver/invoke-ascmd?view=sqlserver-ps
+
+Invoke-ProcessTable;https://docs.microsoft.com/en-us/powershell/module/sqlserver/invoke-processtable?view=sqlserver-ps
 ###
+C
+You create a Windows Communication Foundation (WCF) service that allows internal applications to calculate shipping rates from three shipping providers. The service is hosted on the corporate network, and it is accessible over TCP port 4800. Your company's firewall only allows inbound traffic over TCP port 8080.
+
+You need to expose this service to applications outside the corporate network.
+
+What two actions should you perform? Each correct answer presents part of the solution.
 ---
+Create an API Management gateway in Azure.
+Create an Application Gateway in Azure.
+Create a relay binding to the WCF service endpoint configuration. *
+Create a Service Bus namespace in Azure. *
 ---
+You should create a Service Bus namespace in Azure. A Service Bus namespace is a container for messaging. In this scenario, you need to allow external applications to send messages to Azure, which can then forward the messages to your corporate network over a TCP connection.
+
+You should also add a TCP relay binding to the WCF service endpoint configuration. Because applications cannot connect directly to the service because of the firewall, a relay binding allows the service to open a bidirectional connection to Azure. When Azure receives messages, it forwards those messages over the connection.
+
+You should not create an API Management gateway in Azure. An API Management gateway allows you to publish and secure web APIs. It does not provide relay binding to WCF services.
+
+You should not create an Application Gateway in Azure. An Application Gateway is a load balancer that allows you to route traffic to different virtual machines (VMs) or backend servers based on IP address, port, and route pattern. However, you cannot force traffic to bypass a corporate firewall.
 ---
+What is Azure Service Bus?;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
+
+What is Azure Relay?;https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-what-is-it
+
+How to use Azure Relay WCF relays with .NET;https://docs.microsoft.com/en-us/azure/service-bus-relay/service-bus-relay-tutorial
+
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
 ###
+You create an Azure web API that must send push notifications to Internet-of-Things (IoT) devices in the East United States region. You deploy both a production web API and a test web API. You want to be able to test push notifications through both web APIs. You plan to use Azure Notification Hubs to implement push notifications.
+
+You need to determine the minimum number of namespaces and hubs to create.
+
+How many namespaces and hubs should you create?
 ---
+One namespace and one hub
+Two namespaces and two hubs
+Two namespaces and one hub
+One namespace and two hubs *
 ---
+You should create one namespace and two hubs. A hub represents a push resource for one app. In this scenario, one hub should represent the production web API, while the other hub should represent the test web API. A namespace represents a collection of hubs for a specific region.
 ---
+
+Push notifications with Azure Notification Hubs: Frequently asked questions;https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-faq
 ###
+Your office uses Azure for cloud computing. Your team consists of over 40 IT administrators across the country. Each IT administrator has permission to create virtual machines (VMs) in Azure.
+
+You need to receive an e-mail whenever a VM is added or changed. The solution must be the most cost-effective and easy to implement.
+
+What should you do?
 ---
+Create a Logic app that uses the Event Grid connector. *
+Create a Service Bus namespace and implement a relay binding.
+Create a Function app that uses the HTTP trigger.
+Create a Notification Hub namespace and implement a push notification.
 ---
+You should create a Logic app that uses the Event Grid connector. A Logic app allows you to automate business processes. The Event Grid connector allows the Logic app to run whenever a resource event is added to Event Grid. In this scenario, a resource event is the VM addition or change. You can have the Logic app automatically e-mail you when this happens.
+
+You should not create a Function app that uses the HTTP trigger. A Function app provides a serverless architecture that allows you to run code on a trigger. The HTTP trigger requires you to run the function by making an HTTP request. This would require you to manually monitor Azure for changes and then make the HTTP request. Event Grid is a better solution.
+
+You should not create a Notification Hub namespace and implement a push notification. This allows a backend application to send notifications to Internet-connected devices. This is not suitable in this scenario.
+
+You should not create a Service Bus namespace and implement a relay binding. This allows you to forward Internet messages to a backend network. This is not suitable for this scenario.
+
 ---
+Tutorial: Monitor virtual machine changes with Azure Event Grid and Logic Apps;https://docs.microsoft.com/en-us/azure/event-grid/monitor-virtual-machine-changes-event-grid-logic-app
+
+Azure Functions HTTP triggers and bindings;https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook
 ###
+C
+You manage an ecommerce site that is hosted in Azure App Service. You need to use Azure to allow multiple applications to be notified whenever a new order is placed.
+
+How should you complete the code? Select correct placeholder values.
+
+static async Task SendMessage(string connectionString, string entityPath, byte[] message)
+{
+    var client = new PLACEHOLDER 1(connectionString, entityPath);
+    await client.SendAsync(PLACEHOLDER 2);
+}
 ---
+PLACEHOLDER 1: QueueClient
+PLACEHOLDER 1: TopicClient *
+PLACEHOLDER 2: message
+PLACEHOLDER 2: new Message(message) *
 ---
+You should use the following code:
+
+static async Task SendMessage(string connectionString, string entityPath, byte[] message)
+{
+    var client = new TopicClient(connectionString, entityPath);
+    await client.SendAsync(new Message(message));
+}
+
+This code creates an instance of TopicClient, which allows you to send messages to a Service Bus topic. A Service Bus topic allows client subscriptions, which allows multiple applications to receive messages that are sent to the topic. The SendAsync method accepts a Message instance, which represents the message being sent.
+
+You should not create an instance of QueueClient. This class represents a Service Bus queue, which allows only one client to retrieve a message. Once the message is retrieved, it is removed from the queue.
+
+You should not pass a byte as a parameter to the SendAsync method. You must wrap the byte in a Message instance.
 ---
+
+Service Bus queues, topics, and subscriptions;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions
+
+Get started with Service Bus topics;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions
 ###
+C
+You create a Service Bus namespace named company1 with a topic named orders. The topic contains subscriptions that are shown in the exhibit.
+
+You need to determine what happens when the code in the exhibit is run.
+
+Exhibit:
+Service bus Topic Overview Page:
+
+Name: orderEmailer, Status Active, Message count: 10
+Name: orderProcessor, Status Active, Message count: 10
+
+Code:
+
+static void RetrieveMessage(string connectionString, string entityPath) 
+{ 
+ var client = new SubscriptionClient(connectionString, entityPath, "orderEmailer"); 
+ client. RegisterMessageHandler(async (msg, token) => 
+ { 
+ await client.CompleteAsync(msg.SystemProperties.LockToken); 
+ }, new MessageHandlerOptions((args) => 
+ { 
+ return Task.CompletedTask; 
+ }));
+} 
+
+Choose all that apply:
 ---
+SubscriptionClient.CompleteAsync is called 10 times. *
+One message is removed from the orderProcessor subscription.		
+Ten messages are removed from the orderEmailer subscription. *
 ---
+SubscriptionClient.CompleteAsync is called 10 times. When you use SubscriptionClient to retrieve messages from a Service Bus topic, all the messages in the associated subscription are retrieved and removed. The RegisterMessageHandler method is responsible for assigning a delegate that gets called whenever a message is available for retrieving. In this scenario, that delegate is an anonymous method that calls SubscriptionClient.CompleteAsync. Because there are 10 messages, the anonymous method is called 10 times, resulting in SubscriptionClient.CompleteAsync being called 10 times.
+
+No message is removed from the orderProcessor subscription. The SubscriptionClient constructor accepts as its third parameter the name of the subscription for which messages should be retrieved. Only messages in that subscription are retrieved and removed.
+
+Ten messages are removed from the orderEmailer subscription. When you use SubscriptionClient to retrieve messages from a Service Bus topic, all the messages in the associated subscription are retrieved and removed. The RegisterMessageHandler method is responsible for assigning a delegate that gets called whenever a message is available for retrieving. Because there are 10 messages, 10 are retrieved and removed.
 ---
+
+Service Bus queues, topics, and subscriptions;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions
+
+Get started with Service Bus topics;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions
 ###
+C
+You want to use Azure Notification Hubs to deliver notifications from a cloud web service to a mobile app. You want to be able to send notifications to both the production version of the app and the development version of the app.
+
+You need to determine the number of hubs, namespaces, and access policies to create.
+
+Select correct placeholder values.
+
+How many namespaces should you create? Answer: Placeholder 1
+How many hubs should you create? Answer: Placeholder 2
+How many access policies should you create? Answer: Placeholder 3
 ---
+Placeholder 1: 1 *
+Placeholder 1: 2
+Placeholder 1: 3
+Placeholder 2: 1
+Placeholder 2: 2 *
+Placeholder 2: 3
+Placeholder 3: 1 *
+Placeholder 3: 2
+Placeholder 3: 3
 ---
+You should create one namespace. Namespaces should have one-to-one mappings with apps. In this scenario, there is only one app, so you should create one namespace.
+
+You should create two hubs. Hubs should have one-to-one mappings with different versions or implementations of apps. In this scenario, there is a production version and a development version. Therefore, you should create two hubs.
+
+You should create one access policy. An access policy represents the connection string and access key for an Azure resource. The cloud web service uses the access policy to access the resource, which in this case is Notification Hubs.
 ---
+
+Push notifications with Azure Notification Hubs: Frequently asked questions;https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-faq
 ###
+C
+Your company is implementing a messaging solution for the cloud. The solution must allow client applications to submit URLs to videos that must be converted from Windows Media Video to MPEG-2.
+
+A pool of cloud services is responsible for converting the videos. A video must be converted only once. The URLs must be sent to the cloud at endpoint https://measureup.servicebus.windows.net.
+
+You need to use Azure CLI to create the appropriate Azure resource.
+
+How should you complete the commands? Select correct placeholder values.
+
+az PLACEHOLDER 1 PLACEHOLDER 2 create
+--name measureup
+--resource-group services --location eastus
+
+az PLACEHOLDER 3 PLACEHOLDER 4 create
+--name converter
+--resource-group services
+--namespace-name measureup
 ---
+PLACEHOLDER 1: eventhub
+PLACEHOLDER 1: namespace
+PLACEHOLDER 1: queue
+PLACEHOLDER 1: servicebus *
+PLACEHOLDER 2: eventhub
+PLACEHOLDER 2: namespace *
+PLACEHOLDER 2: queue
+PLACEHOLDER 2: servicebus
+PLACEHOLDER 3: eventhub
+PLACEHOLDER 3: namespace
+PLACEHOLDER 3: queue
+PLACEHOLDER 3: servicebus *
+PLACEHOLDER 4: eventhub
+PLACEHOLDER 4: namespace
+PLACEHOLDER 4: queue *
+PLACEHOLDER 4: servicebus
 ---
+You should use the following commands:
+
+az servicebus namespace create
+--name measureup
+--resource-group services --location eastus
+
+az servicebus queue create
+--name converter
+--resource-group services
+--namespace-name measureup
+
+The first command creates a Service Bus namespace named measureup. Service Bus allows you to send messages that are processed by other applications. You should use measureup as the namespace because the container URL to which you want to send messages is https://measureup.servicebus.windows.net. A namespace is a collection of queues or topics.
+
+The second command creates the actual queue. A queue is where messages are sent to be processed by a single application. The --namespace-name parameter specifies the namespace under which the queue should be created.
+
+You should not use the az eventhub namespace create command. This command creates an Azure Event Hubs namespace. Although both Event Hubs and Service Bus use the same URL format, they are different in terms of usage. Service Bus is used for sending messages, while Event Hubs is used for sending events, such as telemetry data.
+
+You should not use the az servicebus queue create as the first command. Queue can receive and send messages and can be created only after the service bus already exists.
 ---
+
+Quickstart: Use the Azure CLI to create a Service Bus queue;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-cli
+
+Quickstart: Create an event hub using Azure CLI;https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-quickstart-cli
+
+Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
 ###
+You deploy an e-commerce site as an Azure web app. You notice that every weekend your site has four times as many users and response time slows.
+
+You need to implement a horizontal scaling solution at the lowest cost and with the least amount of effort.
+
+What should you do?
 ---
+Enable the Azure Monitor auto-scale feature. *
+Deploy an Azure Function and take advantage of automatic scaling.
+Implement a custom scaling solution with a WebJob.
+Migrate the web app to a virtual machine (VM) scale set.
 ---
+You should enable the Azure Monitor auto-scale feature. This allows you to scale the web app onto additional VMs only on weekends.
+
+You should not migrate the web app to a VM scale set. This is more expensive than Azure Monitor.
+
+You should not implement a custom scaling solution with a WebJob. This requires more effort than Azure Monitor.
+
+You should not deploy an Azure Function and take advantage of automatic scaling. This causes the function to scale, but not the web app itself.
 ---
+Autoscaling;https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
 ###
+C
+Your company has a mobile app that accesses an Azure SQL Database. You want to ensure that the app is developed to handle temporary Azure service interruptions due to connectivity issues. You must ensure that whenever a connection fails, a new attempt is made, up to four times. A variable named connectionString represents the connection string to Azure SQL Database.
+
+You need to complete the code.
+
+How should you complete the code? Select correct placeholder values.
+
+var x = PLACEHOLDER 1;
+using (var conn = new PLACEHOLDER 2(PLACEHOLDER 3))
+{
+    conn.Open();
+}
 ---
+PLACEHOLDER 1: 4
+PLACEHOLDER 1: RetryPolicy<SqlDatabaseTransientErrorDetectionStrategy>(4) *
+PLACEHOLDER 2: SqlConnection
+PLACEHOLDER 2: ReliableSqlConnection *
+PLACEHOLDER 3: connectionString
+PLACEHOLDER 3: connectionString, 4 *
 ---
+You should use the following code:
+
+var x = new RetryPolicy<SqlDatabaseTransientErrorDetectionStrategy>(4);
+using (var conn = new ReliableSqlConnection(connectionString, x))
+{
+    conn.Open();
+}
+
+The first statement creates a RetryPolicy instance that represents how retries should occur in the event of a connection failure. The class accepts a generic type parameter that specifies the transient detection strategy. In this scenario, it specifies the SqlDatabaseTransientErrorDetectionStrategy class. The constructor accepts a parameter that specifies the number of retries, which is four in this scenario.
+
+The next statement creates an instance of ReliableSqlConnection, passing to it the connection string and the RetryPolicy instance. This represents a connection to the database with the retry policy.
+
+You should not set the variable x to 4. You should set this to a RetryPolicy instance.
+
+You should not create an instance of SqlConnection. This class does not support retry policies.
 ---
+Transient Fault Handling (Building Real-World Cloud Apps with Azure);https://docs.microsoft.com/en-us/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 ###
+You create an Azure Function that must connect to a Cosmos DB. Cosmos DB is replicated to the following regions that support read and write:
+
+West Europe
+North Europe
+West US
+West US 2
+You need to use a singleton pattern to create a connection to the Cosmos DB.
+
+How many connections to Cosmos DB should the Azure Function establish?
 ---
+4
+3
+1 *
+2
 ---
+The singleton pattern is a widely used software design pattern that limits the instantiation of a class to one object. This is helpful when you need exactly one object to coordinate system actions. Because you want to use the singleton pattern to create connection to the Cosmos DB, you should establish a single connection.
+
+You should not establish two, three or four connections to Cosmos DB, because in that case you would not follow the singleton pattern.
 ---
+
+Singleton orchestrators in Durable Functions (Azure Functions);https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-singletons?tabs=csharp
 ###
 ---
 ---
