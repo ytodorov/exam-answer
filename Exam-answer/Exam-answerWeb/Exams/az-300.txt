@@ -3889,6 +3889,799 @@ You should not establish two, three or four connections to Cosmos DB, because in
 
 Singleton orchestrators in Durable Functions (Azure Functions);https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-singletons?tabs=csharp
 ###
+C
+You are the administrator of the ACME banking group. You are responsible for adding your company's custom domain to the Azure tenant. Which of the following configuration is supported when creating the records at the registrar level?
+---
+TXT Record + Alias + Destination + TTL *
+TXT Record + Alias + TTL
+MX Record + Alias + Destination +TTL
+MX Record + Alias + Destination + TTL + Priority *
+---
+When using TXT records, you need to configure the following at your registrar: TXT record (type), Alias (@), Destination (Microsoft generated code) and TTL (Time To Live standard). When using MX records, you need to configure the following: MX record (type), Alias (@), Destination (Microsoft generated code), TTL (Time to Live standard), Priority (Microsoft auto-generated)
+---
+Add your custom domain name using the Azure Active Directory portal;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain
+###
+You are the administrator of the ACME banking group. You are responsible for the daily operations regarding Identities on Azure. You notice that there are several requests daily to reset their passwords. Upon delving deeper, you find that the on-premises passwords and Azure/Office365 passwords are not the same and that is causing the main confusion. You need to ensure that passwords are synced from your local Active Directory to Azure and that users can change passwords in Azure, which should update the local Active Directory password and vice versa. How would you accomplish this goal most cost-effectively?
+---​
+Implement AD Connect with a P2 license
+Configure single sign-on
+Implement AD connect with a P1 license *
+Deploy Self Service Reset Portal
+---
+Implement AD Connect with AAD P1 license is correct, as this is the most cost-effective license, which enabled password writeback to on-premises AD. Single Sign-On will not suffice, as the identities are still considered separate. Deploying the Self Service Reset Portal (SSRP) will not suffice, as this will not merge the two identities. Implementing AD Connect with the AAD P2 license will suffice; however, this is not the most cost-effective manner as the same can be achieved by using the AAD P1 license.
+---
+Azure Active Directory pricing;https://azure.microsoft.com/en-in/pricing/details/active-directory/
+###
+You are the administrator of the ACME banking group. You are responsible for billing and administration for all subscriptions in Azure. ACME plans to deploy several Web App for the marketing department. You need to show the cost graph for the past 6 months on the subscription you want to suggest. Which option from the Azure portal should use?
+---
+Overview Tab
+​
+Payment Methods
+
+​
+Invoices *
+​
+Partner Information
+---
+Invoices are correct, as you can view the cost per month in histogram format for the past 6 months. Partner information will not suffice as this is used to add a Partner ID. The overview tab will show the overall details of all Azure services for that subscription and not a broken-down view. Payment methods will not suffice, as this is where you choose how to pay for your Azure consumption.
+
+
+---
+View and download your Microsoft Azure invoice;https://docs.microsoft.com/en-us/azure/cost-management-billing/understand/download-azure-invoice
+###
+You are the architect of the ACME shipping group. You are responsible for designing a storage solution for a new application that requires storing a list of client details in Azure. The solution needs to enable the administrators to filter the client details. Which Azure storage service should you use?
+
+
+---
+
+Blob Storage
+​
+File Storage
+​
+Table Storage *
+​
+Queue Storage
+---
+Table Storage is correct as its structured storage providing a key/attribute store for storing client details. Blob Storage will not suffice as it used to store blob objects, azure disks and not suitable for structured data. File Storage will not suffice as this is used for file shares. Queue Storage will not suffice as this is used for storing message queues
+
+
+---
+Table Storage;https://azure.microsoft.com/en-us/services/storage/tables/
+###
+C
+You are the administrator of the ACME banking group. You are in the process of automating the virtual machine creation process via ARM templates in PowerShell. Which of the following is required to successfully create an ARM template, choose all that applies?
+
+
+---
+​
+Template *
+​
+Parameters *
+​
+CLI
+​
+Variables
+---
+Templates and parameters are correct, as these files are needed when automating a VM installation. The template file is used to store the overall structure (think schema) as well as the variables used. Parameters file links all the information required in order to deploy to your VM to your VNet, resource group, location, disk types, etc. CLI is not directly required as we should make use of the Template and Parameters file and then use PowerShell for deployment. Variables are a section in the main template file.
+---
+Understand the structure and syntax of ARM templates;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-syntax
+###
+You are the administrator of the ACME banking group. You are in the process of automating the virtual machine creation process via ARM templates in JSON format. You need to configure the VM to automatically allow RDP traffic when this template is used. Under which variable can you edit the access rules?
+
+
+---
+"NetworkInterfaceName"
+​
+"NetworkSecurityGroupName"
+​
+"NetworkSecurityGroupRules" *
+​
+"PublicIPAddressType"
+---
+"NetworkSecurityGroupRules" is correct, this is the equivalent to configuring the NSG rules to allow RDP access via the Network Security Group linked to this VM. "NetworkInterfaceName" is incorrect as this is only the name of the network interface. "NetworkSecurityGroupName" Is incorrect as it only references the NSG name, not the rules within it. "PublicIPAddressType" is incorrect as this is the public IP type, which can be dynamic or static.
+
+
+---
+Understand the structure and syntax of ARM templates;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-syntax
+###
+You are the administrator of the ACME banking group. You have an Azure virtual machine called "Tax_Returns" which has Azure backup enabled. The branch manager has accidentally deleted an important file and request that you recover that file. Which recovery method will be the fastest without disrupting the current VM and does not require additional resources to be created?
+
+
+---
+Restore VM
+​
+File Recovery *
+​
+Restore VHD
+​
+Azure Site Recovery Failover
+---
+File recovery is correct. We can restore download the script to create an SMB link to browse and recover the file. Restore VM will not suffice, as this will take some time and require additional resources to be created. Restore VHD will not suffice, as this will require some time and resources to mount. Azure Site Recovery will not suffice, as the deleted file will replicate to the other region, this is the distinct difference between backup and failover.
+
+
+---
+Instant File Recovery from Cloud using Azure Backup;https://azure.microsoft.com/en-us/blog/instant-file-recovery-from-cloud-backups-using-azure-backup/
+###
+You are the architect of the ACME shipping group. You are tasked to design a failover strategy for your Azure VMs, which reside in West Europe. You decide to use Azure Site Recovery and need to guide the administrator on the high-level configuration. In which region should the recovery services vault be created?
+
+
+---
+West Europe *
+​
+North Europe
+---
+West Europe is correct, as the recovery service vault has to be in the same region as the virtual machines.
+
+
+---
+Create a Recovery Services vault;https://docs.microsoft.com/bs-cyrl-ba/azure/backup/backup-create-rs-vault
+###
+You are the architect of the ACME shipping group. You are responsible for designing remote connectivity for selected users to all virtual machines on the Azure virtual network. The connection needs to be secure and minimal effort on the user’s side to connect each time. The solution should not include any on-premises hardware and be cost-effective. What connectivity solution should be used?
+
+
+---
+​
+Virtual Network Peering
+​
+Point-to-Site VPN *
+​
+Site-to-site VPN
+​
+Express route
+---
+Point to Site VPN is correct as this connection does not require hardware on-premises and minimal effort to connect each time. Site-to-Site VPN will not suffice as this connection required on-premises hardware. Virtual Network Peering will not suffice as this is used to connect virtual networks in Azure with each other. Express route will not suffice as this is used to connect large sites to Azure directly with low latency and high bandwidth.
+
+
+---
+About Point-to-Site VPN;https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about
+###
+You are the architect of the ACME shipping group. You are responsible for designing remote connectivity between 4 of your branches and your main virtual network in Azure. The connection needs to be secure and no additional intervention to connect from the remote branches to Azure and vice versa. Additional remote branches are also to be connected to Azure in the future, however, there is no need for the remote branches to communicate with each other directly. What connectivity solution should be used?
+
+
+---
+​
+Virtual Network Peering
+​
+Point-to-Site VPN
+​
+Site-to-site VPN *
+​
+Express route
+---
+Site-to-Site VPN is correct as this solution is correct and supports up to 30 simultaneous connections as well as no user intervention to access the other sites. Point-to-Site VPN will not suffice as this is used for remote users to connect individually to the Azure VNets. Virtual Network Peering will not suffice as this is used to connect virtual networks in Azure with each other. Express route will not suffice as this is considerably costlier than Site-to-Site VPN. Express route will not suffice as this is used to connect large sites to Azure directly with low latency and high bandwidth.
+
+
+---
+Create a Site-to-Site connection in the Azure portal;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+###
+You are the architect of the ACME shipping group. You are responsible for designing remote connectivity between your head office and your virtual network in Azure. The connection needs to be private, high speed and low latency. The bandwidth requirement is also very large, estimated at 25Gbps. What connectivity solution should be used?
+
+
+---
+​
+Virtual Network Peering
+​
+Point-to-Site VPN
+​
+Site-to-site VPN
+​
+Express route *
+---
+Express route is correct as this is used to connect large sites to Azure directly with low latency and high bandwidth. Site-to-Site VPN will not suffice as the connection speed supports up to 1 Gbps per tunnel. Virtual Network Peering will not suffice as this is used to connect virtual networks in Azure with each other. Point-to-Site VPN will not suffice as this is used for remote users to connect individually to the Azure VNets.
+
+
+---
+Azure ExpressRoute;https://azure.microsoft.com/en-us/services/expressroute/
+###
+You are the administrator of the ACME banking group. You are responsible for managing identities and their roles within the organization. You need to delegate the minimum access to the new IT support engineer to reset user passwords in AAD. Which RBAC role should you assign to the support engineer?
+
+
+---
+User Administrator
+​
+Password Administrator *
+
+​
+Global Administrator
+
+​
+Service Administrator
+---
+Password administrator is correct as this role allows passwords to be reset for non-admin accounts and helpdesk admins. Global administrator will not suffice as this role grants access to all aspects for Azure AD and Microsoft services that are in Azure. User administrator will not suffice as this role allows management of all aspects of users, groups and admin password resets. Service administrator will not suffice as this role provides read access to health information and manage support requests.
+
+
+---
+https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles;https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles
+###
+You are the administrator of the ACME banking group. You are responsible for managing identities and their roles within the organization. You have been tasked to supply a specific guest account the minimal rights to the firewall VM in the IT resource group. The guest account should only be able to view and reboot the firewall VM. Which custom Role-Based Access Control (RBAC) permission should the new role have?
+
+
+---
+​
+Microsoft.Compute/virtualMachines/restart/action *
+​
+Microsoft.Compute/virtualMachines/start/action
+​
+Microsoft.ClassicCompute/virtualMachines/*Reader role
+​
+Microsoft.Compute/virtualMachines/deallocate/action
+---
+Microsoft.Compute/virtualMachines/restart/action * is correct as this provides the restart ability. Microsoft.Compute/virtualMachines/start/action will not suffice as this will only allow starting the VM. Microsoft.ClassicCompute/virtualMachines/*Reader role will not suffice as this will only allow viewing the VM. Microsoft.Compute/virtualMachines/deallocate/action will not suffice as this will only allow the stop functionality and release the compute resources.
+
+
+---
+https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles;https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles
+###
+You are the administrator of the ACME banking group. Your company makes use of Microsoft Teams as a communication tool. Every time a new user joins the company HR manually creates a new post welcoming the users. You are tasked to automate this process by implementing a low-cost solution without having to write code for the solution to work. What technology should you implement based on the requirements?
+
+
+---
+Function App
+​
+Logic App *
+​
+Event Grid
+​
+Service Bus
+---
+Logic App is correct as this can be used to create workflows without having to write code (i.e. when a new user is created post a new chat in MS Teams welcoming them). Functions will not suffice as they are more focused on executing code without having to use IaaS and this requires to write code. Event Grid will not suffice as this is more focused on serverless events like events from blob storage, resource groups, and even custom events. Service bus will not suffice as is used where messaging between platforms is decoupled, an example would be interbank transfers as the banks do not have to be integrated on know about each other, hence this will not suffice as Teams is responsible for the messaging in this scenario.
+---
+https://docs.microsoft.com/en-us/azure/logic-apps/;https://docs.microsoft.com/en-us/azure/logic-apps/
+###
+You are the architect of the ACME shipping group. You are responsible for designing a solution which should automatically monitor events and action-specific events. You are tasked to design a solution that should automatically notify you via email when a new resource is created or deleted in the "Production" resource group. Which technology should you use to create and send events?
+
+
+---
+Event Hub
+​
+Event Grid *
+​
+Resource Lock
+​
+Service Bus
+---
+Event grid is correct as this is can be used to create events when resources are deleted or created within a resource group. Once the event is created, you can configure a function trigger or logic app to send an email notification. Event hubs are used to ingest and process real-time data streams from apps or devices. Resource lock will not suffice, as the requirement is to be notified when a resource is created/deleted, not to prevent it from happening. Service bus will not suffice this is primarily used to send messages between applications that are decoupled.
+
+
+---
+Event Grid;https://azure.microsoft.com/en-us/services/event-grid/
+
+
+###
+You are the administrator of the ACME banking group. You are responsible for managing all virtual machines on Azure. The security team requests that all Linux VMs must use an authentication method other than passwords. Which authentication method should be used?
+
+
+---
+SSH Public Key Authentication *
+​
+Use Root Access
+​
+Azure Key Vault Secret
+---
+SSH authentication is correct as this will use a key on your local machine with the password to authenticate.  Root access will not suffice as this is not recommended and you will still need to enter the root password. Azure key vault secret will not suffice as this still uses a password to authenticate, even if it is stored in a secure place.
+
+
+---
+Quick steps: Create and use an SSH public-private key pair for Linux VMs in Azure;https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys
+###
+You are the architect for the ACME shipping group. You are responsible for designing the integration of 2 existing applications at a high level, one app is running on-premises and the other running in Azure. The integration requires a secure connection between the two apps directly, without exposing other resources on-premises or in Azure. Which technology would be the best fit?
+
+---
+​
+Point-to-Site VPN
+​
+Site-to-Site VPN
+​
+Azure Relay *
+
+​
+NSG Rules
+---
+Azure relay service is correct as this is far less intrusive, this is used to securely connect hybrid applications which can be scoped to a single application endpoint on a single machine. This connection is seen as peer-to-peer without exposing other elements as VPN would. Site-to-Site VPN will not suffice as this would not create a direct link between the two apps without exposing other resources. Point-to-Site will not suffice as the Azure portion must be linked to a VNet which exposes other resources.  NSG’s are used to allow and block traffic, it cannot be used to link hybrid environments, only manage basic firewall rules once the connection is already configured.
+
+
+---
+What is Azure Relay?;https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-what-is-it
+###
+You are the architect of the ACME shipping group. You are responsible for designing a notification system that will be used to send promotional content via push notifications to millions of devices. The design should cater to all popular platforms like Android, iOS, and Windows. You are also planning to use this solution with shared access secrets. Which of the following technologies would best fit the design?
+
+
+---
+​
+Event Hub
+​
+Service Bus
+​
+Event Grid
+​
+Notification Hub *
+---
+Notification Hub is correct as this supports the sending of large amounts of data to the popular devices via PUSH notifications as well as make use of shared access secrets. Event Hub will not suffice as this is used to collect millions of events per second for processing, not sending the notifications. Service bus will not suffice, as this is a messaging service and not a notification service. Service bus is used for apps that make use of transactions, ordering, and duplicate detection as well as apps that require handling of high-value messages that cannot be lost. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure.
+
+
+---
+Notification Hubs;https://azure.microsoft.com/en-us/services/notification-hubs/
+###
+You are the architect of the ACME shipping group. You are responsible for designing a messaging system that will be used when users purchase goods, as such the messaging system needs to be reliable. Which of the following technologies would be the best for the design?
+
+
+---
+Event Hub
+​
+Service Bus *
+​
+Event Grid
+​
+Notification Hub
+---
+Service bus is correct as this is used as a reliable messaging service. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale. Event Hub will not suffice as this is used to collect millions of events per second for processing. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure.
+
+
+---
+###
+You are the architect of the ACME shipping group. You are responsible for designing autoscaling solutions. You have a VM whose sole purpose is to run a specific job every 8 hours. Which autoscaling pattern would be the best fit?
+
+
+---
+​
+Off and On *
+​
+Adding Resources
+
+​
+Unpredictable by CPU
+​
+Predictable
+---
+Off and On is correct, as this autoscaling pattern should be used to start and stop a VM when not in use. Adding resources pattern will not suffice, as there is not a huge load consistently on the machine. Unpredictable autoscaling will not suffice as this pattern is used for example when the CPU threshold is above 95% for 5 minutes and needs to add more resources, which in this case is not needed. Predictable will not suffice as this is primarily used when you know or suspect when resources will be maxed out, an example of predictable autoscaling would be to add resources before the Superbowl adverts go live and you predict a surge in traffic.
+
+Overview of common autoscale patterns;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-common-scale-patterns
+---
+###
+You are the architect of the ACME shipping group. You are responsible for designing autoscaling solutions. You have a web server which runs at a load of 70-90% most of the time. Which autoscaling pattern would be the best fit?
+
+
+---
+Off and On
+​
+Unpredictable by CPU
+​
+Adding Resources *
+
+​
+Predictable
+---
+Adding resources is correct as you can scale this solution manually. Off and On autoscaling will not suffice as this solution is already working full time at a high capacity, shutting it down will not improve anything. Unpredictable autoscaling will not suffice as this pattern is used for example when the CPU threshold is above 95% for 5 minutes and you did not predict it, however, the current load is consistently running around 70-90%. Predictable autoscaling will not suffice as this is primarily used when you know or suspect when resources will be maxed out, however in this scenario resources are already maxed out and needs immediate attention.
+
+
+---
+Overview of autoscale in Microsoft Azure Virtual Machines, Cloud Services, and Web Apps;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-overview
+###
+You are the architect of the ACME shipping group. You are responsible for designing autoscaling solutions. The marketing team is currently running several small advertisement campaigns and you are unsure how this will affect the traffic to the current webserver, which is running in full production mode 24x7. Which autoscaling pattern would be the best fit?
+---
+Unpredictable by CPU *
+​
+Off and On
+​
+Predictable
+​
+Adding resources
+---
+Unpredictable autoscaling is correct, as this solution will enable you to auto-scale when the parameters you configure are met. Adding resources autoscaling will not suffice as you are unsure of when to add additional resources and not sure how much more resources. Predictable autoscaling will not suffice as you are unsure if and when the resources need autoscaling. Off and On autoscaling will not suffice, as this resource needs to run 24x7.
+
+
+---
+Overview of autoscale in Microsoft Azure Virtual Machines, Cloud Services, and Web Apps;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-overview
+###
+You are the architect of the ACME shipping group. You are responsible for designing autoscaling solutions. You are preparing for Black Friday sale, which in history brings loads of additional traffic to the current webserver, which is running in full production mode 24x7. Which autoscaling pattern would be the best fit?
+
+
+---
+Off and On
+​
+Unpredictable by CPU
+​
+Adding resources
+​
+Predictable *
+---
+Predictable autoscaling is correct, as you know there will be a huge spike in traffic as per recent years. Off and On is not an option, as you cannot turn off a 24x7-production system. Adding resources autoscaling will not suffice as you are unsure of when to add additional resources and not sure how much more resources. Unpredictable autoscaling is not ideal you are aware that the traffic load will increase, however, this might be considered a second option.
+---
+Overview of autoscale in Microsoft Azure Virtual Machines, Cloud Services, and Web Apps;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-overview
+###
+You are the administrator of the ACME banking group. You are responsible for designing a notification system that will send a confirmation email to users when they purchased a new service. The solution also requires to make use of distribution lists as well as collecting real-time metrics of who blocked email engagement. Which of the following technologies would best fit the design?
+
+
+---
+​
+SendGrid *
+​
+Notification Hub
+​
+Service Bus
+​
+Event Grid
+---
+SendGrid is correct, as this is an email solution that provides email functionality via distribution groups as well as metric gathering. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure. Service bus will not suffice, as this is a messaging service and not a notification service.
+
+
+---
+SendGrid on Microsoft Azure;https://sendgrid.com/partners/azure/
+###
+You are the architect of the ACME shipping group. You are responsible for designing a solution that tracks all IoT data from all shipping containers worldwide. You are concerned about the load the traffic will put on the backend systems. You need to decide which technology will be able to ingest these large amounts of data and temporary store and process them. Which of the following technologies would be the best for the design?
+
+
+---
+Event Grid
+​
+Event Hub *
+​
+Notification Hub
+​
+Service Bus
+---
+Event Hub is correct as this allows large quantities of events to be ingested, processed and temporarily stored. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale. Service bus will not suffice as this is a messaging service and not an ingestion and processing service.
+---
+
+###
+You are the administrator of the ACME banking group. You are responsible for maintaining certificates in Azure Key Vault. Is it possible to do auto-renewal of certificates before they expire?
+
+
+---
+TRUE *
+​
+FALSE
+---
+True is correct. It is possible to renew certificates in the Key Vault automatically before they expire.
+
+
+---
+Update Certificate - Update Certificate;https://docs.microsoft.com/en-us/rest/api/keyvault/updatecertificate/updatecertificate
+###
+You are the administrator of the ACME banking group. You are responsible for security on the Azure SQL database called SQL_DB_Main. You have been tasked to ensure that all data in transit should be encrypted as well as that database administrators are not able to view sensitive information in the database. Which encryption technology should be used?
+
+
+---
+
+Transparent Data Encryption (TDE)
+​
+Always Encrypted *
+---
+Always encrypted is correct, as this ensures encryption happens during transport and that the encryption keys are never revealed to the database engine. Transparent Data Encryption will not suffice as this is database-level encryption, which means data is protected at rest.
+
+
+---
+https://docs.microsoft.com/en-us/azure/sql-database/sql-database-always-encrypted;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-always-encrypted
+###
+You are the administrator of the ACME banking group. You are responsible for security on the Azure SQL database called SQL_DB_Main. The requirement from the auditors is that all data in the database needs to be encrypted as rest. Which encryption technology should be used?
+
+
+---
+​
+Transparent Data Encryption (TDE) *
+​
+Always Encrypted
+---
+Transparent Data Encryption is correct as it is intended to add a layer of security to protect data at rest from offline access to raw files or backups. Always Encrypted is used for encrypted in transit and prevent database admins from viewing sensitive data in the database.
+
+
+---
+Transparent data encryption for SQL Database and Azure Synapse;https://docs.microsoft.com/en-us/azure/sql-database/transparent-data-encryption-azure-sql?tabs=azure-portal
+###
+You are the architect for the ACME shipping group. You are responsible for designing a secure solution for one of the new applications that have very sensitive intellectual property code and data going to run on it. Which technology would be best suited?
+
+
+---
+Azure Confidential Compute with the F-Series VMs
+​
+Azure Confidential Compute with the L-series VMs
+​
+Azure Confidential Compute with the M-Series VMs
+​
+Azure Confidential Compute with the DC-series VMs *
+---
+Azure Confidential Compute (ACC) is only supported on the DC-Series VMs, Azure Confidential Compute allows code and data in the processor to be secured when running. Azure Confidential Compute is not supported on any other VM series except DC-series.
+
+
+---
+###
+You are the administrator of the ACME banking group. You are responsible for managing the key vault in Azure. You need to create a new certificate in the ACMEvault with a key size of 2018 and that cannot be reused via an API call, which should be called ACMEcertificate. Which statement below is correct?
+
+
+---
+POST https://ACMEvault.vault.azure.net/certificates/{ACMEcertificate}/create?api-version=7.0 *
+​
+POST http://ACMEvault.vault.azure.net/certificates/{ACMEcertificate}/create?api-version=7.0
+​
+GET https://ACMEvault.vault.azure.net/certificates/{ACMEcertificate}/create?api-version=7.0
+​
+SET https://ACMEvault.vault.azure.net/certificates/{ACMEcertificate}/create?api-version=7.0
+---
+POST {https://ACMEvault.vault.azure.net}/certificates/{ACMEcertificate}/create?api-version=7.0 is correct as this follows the correct way to create a new certificate. Here is the way the statement is used in general: POST {vaultBaseUrl}/certificates/{certificate-name}/create?api-version=7.0. It uses HTTPS by default, GET and SET are incorrect when creating a new certificate.
+
+
+---
+https://docs.microsoft.com/en-us/rest/api/keyvault/createcertificate/createcertificate;https://docs.microsoft.com/en-us/rest/api/keyvault/createcertificate/createcertificate
+###
+C
+You are the administrator of the ACME banking group. You are responsible for managing the key vault in Azure. You need to delete an existing certificate in the ACMEvault called ACMEcertificate via an API call. This certificate must not be recoverable after deletion. Select which 2 API statements below are required?
+
+
+---
+DELETE https://ACMEvault.vault.azure.net/certificates/ACMEcertificate/create?api-version=7.0 *
+
+​
+DELETE http://ACMEvault.vault.azure.net/certificates/ACMEcertificate/create?api-version=7.0
+
+​
+DELETE https://ACMEvault.vault.azure.net/deletedcertificates/ACMEcertificate/create?api-version=7.0 *
+
+​
+DELETE http://ACMEvault.vault.azure.net/deletedcertificates/ACMEcertificate/create?api-version=7.0
+---
+1 and 3 is correct as we need to do a soft delete of the certificate, once done we need to purge the deleted certificate so that it cannot be restored. 2,4 are incorrect as the vault address is using HTTP instead of HTTPS.
+
+
+---
+Delete Certificate - Delete Certificate;https://docs.microsoft.com/en-us/rest/api/keyvault/deletecertificate/deletecertificate
+###
+You are the administrator of the ACME banking group. You are responsible for managing the key vault in Azure called ACMEvault. You have decommissioned a production server that has its password stored in the key vault labeled "FinanceAdmin". You need to remove the password from the vault by using an API call. Which API call is correct?
+
+
+---
+REMOVE https://ACMEvault.vault.azure.net/secrets/FinanceAdmin?api-version=7.0
+​
+PURGE https://ACMEvault.vault.azure.net/secrets/FinanceAdmin?api-version=7.0
+​
+DELETE https://ACMEvault.vault.azure.net/secrets/FinanceAdmin?api-version=7.0 *
+​
+RECOVER https://ACMEvault.vault.azure.net/secrets/FinanceAdmin?api-version=7.0
+---
+DELETE is the correct operation name as it references the correct vault and secret name. REMOVE not a valid operation name. PURGE is used to remove the password irreversibly, almost the same as emptying the recycle bin on your desktop. RECOVER will not suffice as this is used to recover a deleted secret on soft-delete enabled vaults.
+
+
+---
+Delete Secret - Delete Secret;https://docs.microsoft.com/en-us/rest/api/keyvault/deletesecret/deletesecret
+###
+You are the architect of the ACME shipping group. You are responsible for designing the migration for a production Web app from on-premises to publish code in Azure. The Web App requires to be linked to your company’s domain name as well as have 5 staging slots. The solution needs to be backed up daily as well. Which if of the following App Service Plan tiers will suffice and be the most cost-effective?
+
+
+---
+​
+Production1 Version 2 (P1V2)
+​
+Development 1 (D1)
+​
+Standard 1 (S1) *
+​
+Basic 1 (B1)
+---
+Standard Tier 1 plan is correct as it caters for custom domain names, has 5 staging slots, supports daily backup as well as being the most cost-effective solution. D1 plan only supports custom domains and not the other technical requirements. B1 plan supports custom domain names and manual scaling, however not the other technical requirements like backup and staging slots. P1V2 will suffice from a technical perspective however its not the most cost-effective solution compared to S1.
+
+
+---
+
+###
+You are the architect of the ACME shipping group. You are responsible for designing the migration for a production Web app from on-premises to publish code in Azure. The Web App requires to be linked to your company’s domain name and scale manually with a dedicated instance. Daily backups and staging slots are not a requirement. Which if of the following App Service Plan tiers will suffice and be the most cost-effective?
+
+
+---
+Production1 Version 2 (P1V2)
+​
+Development 1 (D1)
+​
+Standard 1 (S1)
+​
+Basic 1 (B1) *
+---
+The B1 plan is correct, as this is the most cost-effective solution that provides custom domains and manual scalability. P1v2, D1, and S1 supports autoscaling and custom domains, however its not the most cost-effective solution.
+
+
+---
+###
+You are the administrator of the ACME banking group. You want to deploy an application as code to Azure for testing. The only requirement is that this solution does not incur any costs while in testing mode. Which if of the following App Service Plan tiers will suffice and be the most cost-effective?
+
+
+---
+Development 1 (D1)
+​
+Standard 1 (S1)
+​
+Basic 1 (B1)
+
+​
+F1 *
+---
+The F1 plan is correct, as this is the free version of the App service Plan, however, limited in functionality. D1,B1 and S1 tiers all will incur costs, even if they have more functionalities.
+
+
+---
+###
+You are the architect of the ACME shipping group. You are responsible for designing the migration for a production Web app from on-premises to publish code in Azure. The Web App handles very sensitive information and therefore needs to run on an isolated network. The App also requires at least 4.5 GB of memory to run and needs to scale when needed. Which if of the following App Service Plan tiers will suffice and be the most cost-effective?
+
+
+---
+Production 3 Version 2 (P3V2)
+​
+Isolated 1 (I1)
+
+​
+Isolated 2 (I2) *
+
+​
+Isolated (I3)
+---
+The I2 plan is correct as this supports the single-tenant system with the option to run the Web App on your virtual network and supports 7GB of memory, I2 is also the most cost-effective. I1 supports the technical requirements however it only has 3.5GB of memory. I3 supports all the requirements however, it's not the most cost-effective option. P3V2 does not support the single-tenant system and isolated networks.
+
+
+---
+
+###
+C
+You are the administrator of the ACME banking group. You want to deploy your Web App code to Azure. Which of the following applications does Azure support with regards to continuous deployment, select all supported solutions.
+
+
+---
+Bitbucket *
+​
+GitHub *
+​
+Azure Repos *
+​
+OneDrive
+​
+DropBox
+​
+FTP
+---
+Bitbucket, GitHub and Azure repo's are supported for continuous deployment. OneDrive, Dropbox and FTP does support deployment however not continuous integration.
+
+
+---
+Azure Repos Documentation;https://docs.microsoft.com/en-us/azure/devops/repos/?view=azure-devops
+###
+You are the administrator of the ACME banking group. You have a multi-container Web App running in production, however, you need to run a continuous job on the Web App to clean up a directory. Which of the following should you configure?
+
+
+---
+​
+Create a continuous Multi-Instance WebJob
+​
+Create a continuous Single-Instance WebJob as a Continuous Type *
+​
+Create a triggered Single-Instance WebJob as a Continuous Type
+​
+Create a triggered Multi-Instance WebJob as a Continuous Type
+---
+Creating a continuous Single-Instance WebJob is correct as this needs to be a continuous and a single instance, it is not recommended to use multi-instance to cleanup directories as they do the same job at the same time. The type should not be triggered as the requirement is continuous.
+
+
+---
+Run background tasks with WebJobs in Azure App Service;https://docs.microsoft.com/bs-latn-ba/azure/app-service/webjobs-create
+###
+You are the architect of the ACME shipping group. You are responsible for designing a Kubernetes cluster for future workloads and need to provide guidance to the technical team. Which of the following cannot be changed once a Kubernetes cluster is created?
+
+
+---
+Node Size *
+​
+Node Count
+​
+RBAC Enablement
+
+​
+HTTP Application Routing
+---
+Node size cannot be changed once the Kubernetes cluster is created. Node count, enabling RBAC and HTTP application routing settings can all be changed after the cluster is created.
+
+
+---
+Quotas, virtual machine size restrictions, and region availability in Azure Kubernetes Service (AKS);https://docs.microsoft.com/en-us/azure/aks/quotas-skus-regions
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
 ---
 ---
 ---

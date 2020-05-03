@@ -19,6 +19,8 @@ namespace Exam_answerWeb.Infrastructure
         {
             string allText = File.ReadAllText(path);
 
+            allText = allText.Replace(char.ConvertFromUtf32(8203), string.Empty);
+
             var quesions = allText.Split("###", StringSplitOptions.RemoveEmptyEntries).ToList(); ;
 
             List<QuestionEntity> qeList = new List<QuestionEntity>();
@@ -32,8 +34,16 @@ namespace Exam_answerWeb.Infrastructure
                     continue;
                 }
                 List<string> questionAnswers = questionsGroups[1].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                if (questionAnswers.Any(s => s == "Off and On"))
+                {
+
+                }
+                questionAnswers = questionAnswers.Where(s => !string.IsNullOrEmpty(s.Trim())).ToList();
                 List<string> questionExplanations = questionsGroups[2].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                questionExplanations = questionExplanations.Where(s => !string.IsNullOrEmpty(s.Trim())).ToList();
                 List<string> questionReferences = questionsGroups[3].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+                questionReferences = questionReferences.Where(s => !string.IsNullOrEmpty(s.Trim())).ToList();
+
                 QuestionEntity qe = new QuestionEntity();
                 qe.Order = startOrder + 1 + quesions.IndexOf(question);
                 if (questionContent.FirstOrDefault()?.Equals("C") == true)
