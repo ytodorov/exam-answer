@@ -2959,14 +2959,14 @@ Security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-
 What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
 ###
 C
-An Azure key vault named measureup exists in your company's cloud subscription. You want to store a password in the key vault. The password is S3449PT!@90Q. The name of the entry should be ApplicationPassword. The password should not be stored as plain text.
+An Azure key vault named exam-answer exists in your company's cloud subscription. You want to store a password in the key vault. The password is S3449PT!@90Q. The name of the entry should be ApplicationPassword. The password should not be stored as plain text.
 
 You need to use PowerShell to store the password in the key vault.
 
 How should you complete the cmdlets? Select correct placeholder values.
 
 $value = PLACEHOLDER 1 'S3449PT!@90Q' -PLACEHOLDER 2 -Force
-PLACEHOLDER 3 -VaultName 'measureup' -Name 'ApplicationPassword' -PLACEHOLDER 4 $value
+PLACEHOLDER 3 -VaultName 'exam-answer' -Name 'ApplicationPassword' -PLACEHOLDER 4 $value
 ---
 PLACEHOLDER 1: ConvertTo-SecureString *
 PLACEHOLDER 1: AsPlainText 
@@ -2992,7 +2992,7 @@ PLACEHOLDER 4: Add-AzureKeyVaultKey
 You should use the following cmdlets:
 
 $value = ConvertTo-SecureString 'S3449PT!@90Q' -AsPlainText -Force
-Set-AzureKeyVaultSecret -VaultName 'measureup' -Name 'ApplicationPassword' -SecretValue $value
+Set-AzureKeyVaultSecret -VaultName 'exam-answer' -Name 'ApplicationPassword' -SecretValue $value
 
 The ConvertTo-SecureString cmdlet converts a plain text value into a secure (encrypted) string. This meets the requirement of the password not being stored as plain text. The first parameter to this cmdlet is the string to convert. The -AsPlainText parameter indicates that the string to convert it plain text. The -Force parameter must be used when -AsPlainText is used to verify that you understand the implications of using -AsPlainText.
 
@@ -3009,7 +3009,7 @@ Set-AzureKeyVaultSecret;https://docs.microsoft.com/en-us/powershell/module/azure
 Add-AzureKeyVaultKey;https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/add-azurekeyvaultkey?view=azurermps-6.13.0
 ###
 C
-The following secret identifier exists in an Azure key vault: https://measureup.vault.azure.net/secrets/billingApiKey/a23df1a2eb5cb4a3696348504f74704c8
+The following secret identifier exists in an Azure key vault: https://exam-answer.vault.azure.net/secrets/billingApiKey/a23df1a2eb5cb4a3696348504f74704c8
 
 You need to use Azure CLI to retrieve the value for the secret.
 
@@ -3019,35 +3019,35 @@ az keyvault secret show --name PLACEHOLDER 1 --vault-name PLACEHOLDER 2
 ---
 PLACEHOLDER 1: a23df1a2eb5cb4a3696348504f74704c8
 PLACEHOLDER 1: billingApiKey *
-PLACEHOLDER 1: measureup
+PLACEHOLDER 1: exam-answer
 PLACEHOLDER 2: a23df1a2eb5cb4a3696348504f74704c8
 PLACEHOLDER 2: billingApiKey
-PLACEHOLDER 2: measureup *
+PLACEHOLDER 2: exam-answer *
 ---
 You should use the following command:
 
-az keyvault secret show --name billingApiKey --vault-name measureup
+az keyvault secret show --name billingApiKey --vault-name exam-answer
 
-This command sets the --name parameter to billingApiKey, which represents the name of the secret. It also sets the --vault-name parameter to measureup, which represents the name of the key vault. The secret identifier URL is always in the format https://{key vault name}.vault.azure.net/secrets/{secret name}/{secret version}.
+This command sets the --name parameter to billingApiKey, which represents the name of the secret. It also sets the --vault-name parameter to exam-answer, which represents the name of the key vault. The secret identifier URL is always in the format https://{key vault name}.vault.azure.net/secrets/{secret name}/{secret version}.
 ---
 Quickstart: Set and retrieve a secret from Azure Key Vault by using a .NET web app;https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-net
 ###
 You use the following command to store a connection string in Azure Key Vault:
 
-az keyvault secret set --vault-name "measureup" --name "connectionString" --value " server=10.10.10.100;database=prodSql;user id=webapp;password=4$gg65"
+az keyvault secret set --vault-name "exam-answer" --name "connectionString" --value " server=10.10.10.100;database=prodSql;user id=webapp;password=4$gg65"
 
 Developers need to retrieve the connection string.
 
 Which URL should they use?
 ---
-https://measureup.vault.azure.net/value/connectionString
-https://measureup.vault.azure.net/keys/connectionString
-https://measureup.vault.azure.net/secrets/connectionString *
-https://measureup.vault.azure.net/connectionStrings/prodSql
+https://exam-answer.vault.azure.net/value/connectionString
+https://exam-answer.vault.azure.net/keys/connectionString
+https://exam-answer.vault.azure.net/secrets/connectionString *
+https://exam-answer.vault.azure.net/connectionStrings/prodSql
 ---
 The developers should use the following URL:
 
-https://measureup.vault.azure.net/secrets/connectionString
+https://exam-answer.vault.azure.net/secrets/connectionString
 
 This URL uses the format https://{key vault}.vault.azure.net/secrets/{secret name} to retrieve a secret from the vault.
 ---
@@ -3750,20 +3750,20 @@ Push notifications with Azure Notification Hubs: Frequently asked questions;http
 C
 Your company is implementing a messaging solution for the cloud. The solution must allow client applications to submit URLs to videos that must be converted from Windows Media Video to MPEG-2.
 
-A pool of cloud services is responsible for converting the videos. A video must be converted only once. The URLs must be sent to the cloud at endpoint https://measureup.servicebus.windows.net.
+A pool of cloud services is responsible for converting the videos. A video must be converted only once. The URLs must be sent to the cloud at endpoint https://exam-answer.servicebus.windows.net.
 
 You need to use Azure CLI to create the appropriate Azure resource.
 
 How should you complete the commands? Select correct placeholder values.
 
 az PLACEHOLDER 1 PLACEHOLDER 2 create
---name measureup
+--name exam-answer
 --resource-group services --location eastus
 
 az PLACEHOLDER 3 PLACEHOLDER 4 create
 --name converter
 --resource-group services
---namespace-name measureup
+--namespace-name exam-answer
 ---
 PLACEHOLDER 1: eventhub
 PLACEHOLDER 1: namespace
@@ -3785,15 +3785,15 @@ PLACEHOLDER 4: servicebus
 You should use the following commands:
 
 az servicebus namespace create
---name measureup
+--name exam-answer
 --resource-group services --location eastus
 
 az servicebus queue create
 --name converter
 --resource-group services
---namespace-name measureup
+--namespace-name exam-answer
 
-The first command creates a Service Bus namespace named measureup. Service Bus allows you to send messages that are processed by other applications. You should use measureup as the namespace because the container URL to which you want to send messages is https://measureup.servicebus.windows.net. A namespace is a collection of queues or topics.
+The first command creates a Service Bus namespace named exam-answer. Service Bus allows you to send messages that are processed by other applications. You should use exam-answer as the namespace because the container URL to which you want to send messages is https://exam-answer.servicebus.windows.net. A namespace is a collection of queues or topics.
 
 The second command creates the actual queue. A queue is where messages are sent to be processed by a single application. The --namespace-name parameter specifies the namespace under which the queue should be created.
 
