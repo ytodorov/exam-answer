@@ -28,8 +28,13 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
 </head>
-<body>
+<body>    
+    <amp-auto-ads type="adsense"
+                  data-ad-client="ca-pub-2519209558650417">
+    </amp-auto-ads>
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
         <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
@@ -85,14 +90,14 @@
             </ul>
         </nav>
     </amp-sidebar>
-    <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-2519209558650417"
-            data-ad-slot="6605505176"
-            data-auto-format="rspv"
-            data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
+    @*<amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-2519209558650417"
+                data-ad-slot="6605505176"
+                data-auto-format="rspv"
+                data-full-width="">
+            <div overflow=""></div>
+        </amp-ad>*@
     @RenderBody()
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
@@ -129,14 +134,14 @@
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-    <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-2519209558650417"
-            data-ad-slot="6605505176"
-            data-auto-format="rspv"
-            data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
+    @*<amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-2519209558650417"
+                data-ad-slot="6605505176"
+                data-auto-format="rspv"
+                data-full-width="">
+            <div overflow=""></div>
+        </amp-ad>*@
     <amp-iframe width="auto"
                 height="300"
                 sandbox="allow-scripts"
@@ -144,11 +149,6 @@
                 src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
         <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
     </amp-iframe>
-    @*<amp-auto-ads type="adsense"
-                      data-ad-client="ca-pub-2519209558650417">
-        </amp-auto-ads>*@
-
-
     @Html.Raw(Model?.PageMicrodata)
 </body>
 </html>
