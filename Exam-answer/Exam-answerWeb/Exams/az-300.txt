@@ -4578,6 +4578,830 @@ Node size cannot be changed once the Kubernetes cluster is created. Node count, 
 ---
 Quotas, virtual machine size restrictions, and region availability in Azure Kubernetes Service (AKS);https://docs.microsoft.com/en-us/azure/aks/quotas-skus-regions
 ###
+C
+You are the administrator for the Contoso financial group. You are responsible for managing all identities within Azure. You have deployed MFA to all users in the organization successfully. Recently you have been informed that several users are getting the MFA request without them singing into resources, you think it might be fraud attempts. What action can you take to mitigate this threat? Select all that apply.
+
+
+---
+Allow users to submit fraud alerts *
+​
+Automatically block users who report fraud *
+---
+All of the above are correct. You should configure fraud alerts and allow users to submit them. Also, you should consider automatically blocking the users who report fraud as their credentials have been compromised. It is also important to note that those users that are blocked they change their passwords as a priority.
+
+
+---
+Configure Azure Multi-Factor Authentication settings;https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings
+###
+C
+You are the administrator of the Contoso financial group. You are responsible for managing notifications for all resources in the "finance_clients" Resource Group. You need to create an action group. Which of the following action types are supported when creating an action group?
+
+
+---
+Logic App *
+​
+Webhook *
+​
+ITSM *
+​
+Automation Runbook *
+​
+Azure Function *
+
+​
+Email/SMS/Push/Voice *
+---
+The following are supported for action types when creating an action group: Logic App, Webhook, ITSM, Automation Runbook, Azure Function, Email/SMS/Push/Voice.
+
+
+---
+Create and manage action groups in the Azure portal;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups
+###
+You are the administrator of the Contoso financial group.  You are responsible for monitoring all resources within the "Customer Facing" Subscription which consists of 10 Resource Groups. You need to configure diagnostic settings for all possible resources which you are responsible for. Which of the following can be used to display diagnostics status for all resources to ensure you can get an overall view of resources you are responsible for?
+
+
+---
+​
+Diagnostics settings in the Resource Group tab
+​
+Diagnostics settings in the Azure Monitor tab *
+​
+Diagnostics settings in the Subscriptions tab
+​
+Diagnostic settings for each individual resource
+---
+Diagnostics settings in the Azure Monitor tab are correct as this option allows us to view diagnostics status for all resources in a specific subscription. Diagnostics settings in the Resource Group tab will not suffice, as this will only show the diagnostics status of the resources it has, there are 10 Resource Groups linked to the Subscription in question. Diagnostics settings in the Subscriptions tabs do not exist. Diagnostics settings for each resource can be used however you will not have the ability to view the status for all resources and might miss important resources (human error).
+---
+Azure Monitor overview;https://docs.microsoft.com/en-us/azure/azure-monitor/overview
+###
+C
+You are the administrator for the Contoso financial group. You are responsible for managing all costs related to the "Production_Systems" subscription. Recently you have noticed that the cost of the subscription has been increasing steadily and need to investigate what are the top 5 resources by cost monthly. Which of the below will enable you to view these resources by cost? Select all that applies.
+
+
+---
+Cost Management and Billing > "Production_Systems" > Cost analysis *
+​
+Cost Management and Billing > "Production_Systems" > Invoices *
+​
+Cost Management and Billing > "Production_Systems" > Overview
+​
+Cost Management and Billing > "Production_Systems" > Payment methods
+---
+Cost analysis and invoices will enable you to view the top 5 resources by cost for a specific timeframe (month). Overview is incorrect as this will only show the overall cost and will not always show the top 5 resources if there are lots of resources, this view also shows the forecast spending rate. Payment methods are incorrect as this is used to update payment methods like credit card information for pay as you go customers.
+---
+Azure Cost Management + Billing;https://azure.microsoft.com/en-in/services/cost-management/
+###
+You are the administrator of the Contoso financial group. You are responsible for a virtual machine in Azure called "Finance_Recon". This VM has been migrated from on-premises to Azure and since the migration, the application seems to be unstable at times and the process crashes. You need to configure logging to view the memory dump files. Which logging method below should you enable?
+
+---
+​
+Diagnostic Settings > Logs > Application Critical
+​
+Diagnostic Settings > Logs > System Verbose
+​
+Diagnostic Settings > Logs > Application Verbose
+​
+Diagnostic Settings > Crash dumps *
+---
+Crash dumps are correct, as this will enable you to view the contents of the memory for troubleshooting purposes. Application Critical logs will not suffice, as this will not report on what happened in memory, this will only show general error messages. System verbose will not suffice, as this will log everything relevant to the system (think windows system logs). Application verbose logs will also not suffice as this will not have insights into what happened to the process in memory, it would rather have logs regarding the application in detail (verbose = everything).
+
+
+---
+Microsoft Azure Support diagnostic information and memory dump collection;https://azure.microsoft.com/en-us/support/legal/support-diagnostic-information-collection/
+###
+You are the administrator of the Contoso financial group. You have deployed a WebApp and it is running fine, however, you want to be able to go back in time and redeploy this version of the WebApp in case something goes wrong. Will creating a baseline for this resource suffice? TRUE OR FALSE
+
+
+---
+​
+TRUE *
+​
+FALSE
+---
+True is correct, as this is possible to create a baseline and backup the template and parameters file with your scripting language of choice (CLI, PowerShell, .Net, Ruby) to your library and redeploy it whenever it is needed.
+
+
+---
+Web Apps - Backup;https://docs.microsoft.com/en-us/rest/api/appservice/webapps/backup
+###
+You are the architect of Contoso airliners. You have been tasked to design an alerting system for all resources in Resource Group called "Local_flights_RG". The alerting system should notify all users in the "Local_Flight_Admins" action group via email when a resource is created or updated. Which of the following rules are correct?
+
+
+---
+​
+Resource = All virtual machines, Condition = "Create/Update configuration", Action group = "Local_Flight_Admins", Enable rule upon creation = Yes
+​
+Resource = "Local_Flights_RG", Condition = "Create/Update configuration", Action group = "Local_Flight_Admins", Enable rule upon creation = Yes *
+​
+Resource = "Local_Flights_RG", Condition = "Create/Update configuration", Action group = "Local_Flight_Admins", Enable rule upon creation = No
+---
+Resource = "Local_Flights_RG", Condition = "Create/Update configuration", Action group = "Local_Flight_Admins", Enable rule upon creation = Yes is correct, as this references the correct resource, which in this case is all the resources within the "Local_flights_RG" Resource Group. Condition is set to alert on when the configuration is changed or created, correct action group referenced (the assumption is that the existing action group is configured to email the correct admins" and the rule needs to be enabled when created for it to be active.
+
+Overview of alerts in Microsoft Azure;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview
+---
+###
+You are the architect of Contoso airliners. You have been tasked to design the storage for a new application. The application requires storage that is going to be accessed infrequently and must be available across several datacenters. Which storage type should be used with optimal cost-benefit in mind?
+
+
+---
+​
+General purpose V1 with hot tier access
+​
+General purpose V2 with hot tier access
+​
+General purpose v2 with cool tier access *
+​
+Premium SSD storage
+---
+General-purpose V2 cool tier access is correct, as this is ideal for storage of data that is accessed infrequently which makes it cost-effective and supports availability across datacenters. General-purpose V2 hot tier is used for data that is accessed regularly which makes it slightly more expensive than cool tier storage and it also supports availability across datacenters. Premium SSD will not suffice as this storage option only supports Local Redundant Storage. General-purpose V1 does not support hot/cool tier access.
+
+
+---
+Storage account overview;https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
+###
+You are the administrator of the Contoso financial group. You are responsible for all storage accounts in Azure. You have been tasked to share limited access to the Blob files in the storage account "Company_function" with another company for a limited time. The other company should only be able to list and read the data in the blob storage. The other company’s administrator is familiar with Azure Storage Explorer and wants you to share secure access with him by using this tool. Which information should you configure and give the administrator?
+
+
+---
+Create Shared Access Signature for "Company_function" and configure the following: start and expiry time, read and write permissions, service access to Blobs. Send the administrator the SAS URI to be used in Storage Explorer
+
+​
+Create Shared Access Signature for "Company_function" and configure the following: start and expiry time, read and list permissions, service access to Blobs. Send the administrator the SAS URI to be used in Storage Explorer *
+
+​
+Create Shared Access Signature for "Company_function" and configure the following: read and list permissions, service access to Blobs. Send the administrator the SAS URI to be used in Storage Explorer
+
+​
+Provide the administrator with the storage name and key
+---
+You need to create a Shared Access Signature for "Company_function" and configure start and expiry time as this is part of the time limitation request, list and read permissions are the least intrusive and blob storage is correct. The administrator should be able to use the SAS URI to configure access in Storage Explorer in their side. Option 1 is incorrect as there are write permissions assigned. Option 3 is incorrect as there is no time limitation set. Option 4 is incorrect as sending a storage name and key will not provide limited access as required.
+
+
+---
+Grant limited access to Azure Storage resources using shared access signatures (SAS);https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview
+###
+You are the administrator of the Contoso financial group. You are responsible for all storage accounts in Azure. You have a storage account called "Production workloads" and is currently making use of Local Redundant Storage. You have been tasked to ensure that the data stored in this storage account should be available when one Data Center goes down with minimal cost involved. What replication setting should you choose in the storage account to make this happen?
+---
+​
+Keep the storage as LRS
+​
+Upgrade to Zone Redundant Storage (ZRS) *
+​
+Upgrade to Geo-Redundant storage (GRS)
+​
+Upgrade to Read access geo redundant storage (RA-GRS)
+---
+Zone Redundant Storage (ZRS) is correct as this will send a copy of your data to another data center in that region, this is the best option when considering the cost. Staying at LRS is incorrect as there are 3 copies of your data stored within the same data center when it goes down so does your data. GRS will work however its more expensive than ZRS, the same goes for RA-GRS.
+---
+Azure Storage redundancy;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+###
+You are the administrator of the Contoso financial group. You are responsible for managing all virtual machine workloads in the "Production_VMs" Resource Group. You have lately been using ARM templates to deploy VMs and you find it to be much more convenient. You have a basic JSON template which you use to deploy Linux VMs, however, you want to change the JSON script to use a Windows Server 2016 image instead. Under which of the following variables do you need to update the configuration to support the required image?
+
+
+---
+"properties"
+​
+"storageProfile"
+​
+"imageReference" *
+​
+"imageLocater"
+---
+"imageReference" is correct as this is where you need to specify what image you want to use as well as provide more detail like the publisher, offer, SKU and version. "properties" is incorrect as this is where you specify the hardware profile. "storageProfile" is incorrect as this is where you specify the details around the OS disk-like what type of disk it should be i.e. managed or unmanaged disk. "imageLocater" command does not exist.
+---
+What are ARM templates?;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
+###
+You are the administrator of the Contoso financial group. You are responsible for all infrastructure in the Resource Group labeled "Production_Systems". You have been tasked to identify workloads that are underutilized or overspecified. Which of the tools below can you use to accomplish this?
+
+
+---
+Azure Security Center
+​
+Monitor
+​
+Advisor *
+---
+Advisor is correct, as this will enable you to view all resources that are underutilized or "over specced". Security Center is incorrect as this mainly focusses on security. Monitor is incorrect, as this tool is used to collect and analyze resource telemetry.
+
+
+---
+Azure Advisor;https://azure.microsoft.com/en-us/services/advisor/
+###
+C
+You are the administrator of the Contoso financial group. You are responsible for all storage accounts in Azure. You have a specific storage account called "Finance_Storage" which is where sensitive documentation is stored. You need to ensure that this storage account is not accessible to everyone on the local networks as well as over the internet. Which of the following should you configure? Select all that apply.
+
+
+---
+Allow Access option set to selected internal networks *
+​
+Allow Access option set to all networks
+​
+Add IP address ranges to the firewall *
+​
+Use Shared Access Signatures *
+---
+You need to allow access to only selected internal networks and not share this storage account to all virtual networks. You should add public IP’s to the firewall to allow only specific users/organizations. Shared Access Signatures should also be used to limit access to specific services within the storage account like (Blob, tables, queues). Do not allow access to be set to all networks in this scenario as there is sensitive information involved.
+
+
+---
+Security recommendations for Blob storage;https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations
+###
+You are the administrator of the Contoso financial group. You are in the process of automating the virtual machine creation process via ARM templates in JSON format. You need to configure the VM to automatically allow SSH traffic when this template is used. Under which variable can you edit the access rules?
+
+
+---
+​
+"NetworkSecurityGroupName"
+​
+"PublicIPAddressType"
+​
+"NetworkInterfaceName"
+​
+"NetworkSecurityGroupRules" *
+---
+"NetworkSecurityGroupRules" is correct, this is the equivalent to configuring the NSG rules to allow SSH access via the Network Security Group linked to this VM. "NetworkInterfaceName" is incorrect as this is only the name of the network interface. "NetworkSecurityGroupName" Is incorrect as it only references the NSG name, not the rules within it. "PublicIPAddressType" is incorrect as this is the public IP type, which can be dynamic or static.
+
+
+---
+Microsoft.Network networkSecurityGroups template reference;https://docs.microsoft.com/en-us/azure/templates/microsoft.network/2019-11-01/networksecuritygroups
+###
+You are the architect of Contoso airliners. You have been tasked to design the integration of 2 networks running in Azure. The first network is allocated to the West Europe region and is named "Finance" which has an address space of 10.0.0.0/24. The second network is called "Payments" also located in the West Europe region and has an address space of 10.50.0.0/24 where it also has a VPN gateway (Application Gateway) associated with it which links back to the on-premises environment which has an address space of 192.168.1.0/24. You are required to design a solution that will enable the "Payments" VNet VMs to communicate with the "Finance" VNet. However, the "Finance" VNet should be able to send traffic to the on-premises network as well. Which configuration should you choose?
+
+
+---
+Peer the "Finance" VNet with the "Payments" VNet and vice versa and configure: "Allow forwarded Traffic", Enable "Allow gateway transit" on the "Payments" VNet, Enable "use remote gateways" on the "Finance" VNet *
+​
+Peer the "Finance" VNet with the "Payments" VNet and vice versa and configure: "Allow forwarded Traffic", Enable "Allow gateway transit" on the "Finance" VNet, Enable "use remote gateways" on the "Payments" VNet
+​
+Peer the "Finance" VNet with the on-premises network
+
+​
+Peer the "Payments" VNet with the on-premises network
+---
+You need to peer the 2 Azure VNets with each other ("Payments" and "Finance"), you also need to configure forward traffic so that it allows traffic from another network into this VNet. You need to enable "Allow gateway transit" on the "Payments" VNet as this is the VNet which has the VPN gateway. You need to enable "use remote gateways" on the "Finance" VNet as the traffic needs to be able to go through the gateway (VPN gateway) of the other "remote network" which in this case is the "Payments" VNet. Once this is done, traffic from both VNets will be able to go through to the on-premises network and vice versa.
+
+---
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+###
+You are the administrator of the Contoso financial group. You are responsible for networking of all VMs in the "Production" Resource Group. You recently created 2 different subnets, 10.0.2.0/24 and 10.0.1.0/24 on the main network which has an address space of 10.0.0.0/16. You move one VM named "Red" in the 10.0.2.0/24 subnet and the other VM named "blue" to the 10.0.1.0/24 subnet. You notice that the VMs can still communicate with each other even though they are on different subnets, how do you stop the VMs from communicating with minimal costs incurred?
+
+
+---
+​
+Implement User Defined Routing (UDR)
+​
+Implement a Network Security Group and block traffic to and from the VMs *
+​
+Use static routing tables on the VMs
+​
+Implement a Next Generation Firewall
+---
+Implementing an NSG and blocking traffic to and from each VM is correct as this is possible and does not incur any additional costs. UDR will not suffice, as this is used to force all specific traffic to a specific node on the network. Static routing tables on the VMs will not suffice as this is not the recommended way to handle the flow of traffic. Implementing an NGFW will suffice however, it will incur additional costs.
+
+
+---
+Network security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
+###
+C
+You are the administrator of the Contoso financial group. You are responsible for managing all custom domain names on your tenant. Your company has recently bought another company and acquired a new domain name. You need to add this domain name to Azure Active Directory, which of the following record types are supported when adding a new domain in AAD?
+
+
+---
+CName
+​
+TXT *
+​
+MX *
+​
+A
+​
+AAAA
+---
+When adding custom domain names via Azure, you can only use TXT or MX records to validate the domain. Once validated it will show up as "verified" and is then ready to be used.
+
+
+---
+Add your custom domain name using the Azure Active Directory portal;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain
+###
+You are the administrator of the Contoso financial group. You are responsible for managing the identities in Azure. You have been tasked to block all users from using browsers to sign in to Exchange Online. Select which technologies will be able to accomplish this goal?
+
+
+---
+​
+Conditional Access *
+
+​
+Privilege Identity Management
+​
+Multi-Factor Authentication
+​
+Identity Protection
+---
+Conditional Access is correct, as this allows rules to be created that specifies specific criteria when signing in which can then grant access, request additional authentication or even decline the request when logging in from a platform that is denied. Privilege Identity management will not suffice as this enables users to activate additional roles with their identity like Global Admin. MFA will not suffice as this only provides a second authentication factor. Identity Protection will not suffice as this is mainly associated with risky sign-ins and not based on specific criteria like what browser has been used to login to Exchange Online.
+
+
+---
+What is Conditional Access?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+###
+C
+You are the administrator of the Contoso financial group. You are responsible for managing the identities in Azure. Whilst monitoring login events you notice that some of the traveling sales staff log in to Exchange online from around the world. You need to add a second layer of authentication for the sales staff when they are trying to log in from random countries across the world. Select all the technologies that will be able to accomplish this goal.
+
+
+---
+Privilege Identity Management
+​
+Conditional Access *
+
+​
+Identity Protection *
+​
+Multi-Factor Authentication
+---
+Conditional Access is correct, as this allows rules to be created that specifies specific criteria like where selected users usually sign in from when they sign in from another location they should be met with an MFA challenge to complete their login. Privilege Identity management will not suffice as this enables users to activate additional roles with their identity like Global Admin. MFA by itself will not suffice as there are limited options, either enabled, enforced or disabled and no automatic intelligence associated with it. Identity Protection will also work as this is mainly associated with risky sign-ins and can request the user to authenticate via MFA as well.
+
+
+---
+Building a Conditional Access policy;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policies
+###
+C
+Select which programming languages are supported by Web Apps?
+
+---
+ASP.NET *
+​
+JAVA *
+​
+PHP *
+​
+Node.js *
+---
+All of the above is correct. ASP.NET, JAVA, PHP and Node.js are all supported languages by Web Apps
+---
+App Service overview;https://docs.microsoft.com/en-us/azure/app-service/overview
+###
+You are the architect of the Contoso airline group. You are responsible for designing the migration for a production Web app from on-premises to Azure. You decide to publish this as an Azure Web App.  The Web App needs to make use of an existing domain that is already linked to your Azure tenant. The Web App name requires 5 staging slots and needs to be backed up 3 times per day. Which if of the following App Service Plan tiers will suffice and be the most cost-effective?
+
+
+---
+​
+Production1 Version 2 (P2V2)
+​
+Isolated 1 (I1)
+​
+Standard 1 (S1) *
+​
+Free 1 (F1)
+---
+Standard Tier 1 plan is correct as it caters for custom domain names, has 5can handle up to 5 staging slots, supports up to 10 daily backups daily as well as being the most cost-effective solution. Isolated 1 plan will not suffice as this is an expensive option due to the single-tenant system it uses and isolated network support. The F1 (free tier) will not suffice as this is the free tier and does not support any of the technical requirements. P2V2 is not ideal, as even though it supports all the technical features, it is not the most cost-effective solution due to it having more staging slots and daily backups.
+
+
+---
+Azure App Service plan overview;https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans
+###
+You are the architect for the Contoso airline group. You are responsible for designing the migration for a "Pre-production" Web app from on-premises to Azure. You decide to publish this as an Azure Web App.  The only requirement is that the Web App needs to make use of the company’s domain. The Web App will be treated as a LAB test and therefore no backup or scaling is required. Which if of the following App Service Plan tiers will suffice and be the most cost-effective?
+
+
+---
+Shared  (D1) *
+
+​
+Basic 1 (B1)
+​
+Standard 1 (S1)
+​
+F1
+---
+The Shared (D1) tier is correct, as this is the most cost-effective solution that has the option to make use of custom domains. B1 tier will suffice from a technical perspective however, it is more expensive as it boasts other features like manual scalability. S1 tier will also suffice from a technical perspective however, it is more expensive due to additional (unwanted) features. F1 tier will not suffice, as it does not provide the ability to add a custom domain.
+
+
+---
+Azure App Service plan overview;https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans
+###
+You are the administrator of the Contoso financial group. You are responsible for managing a Kubernetes Cluster (AKS). You need to define role-based permissions. Is it possible to use RBAC for AKS?
+
+
+---
+​
+TRUE *
+​
+FALSE
+---
+True is correct. Azure Kubernetes Cluster (AKS) supports RBAC integration
+
+
+---
+Tutorial: Configure role-based access control (RBAC) roles in Azure Kubernetes Service (AKS) using Ansible;https://docs.microsoft.com/en-us/azure/ansible/ansible-aks-configure-rbac
+
+
+###
+You are the administrator of the Contoso financial group. You have a multi-container Web App running in production, however, you need to run a script on the Web App to clean up a directory every Sunday at 22:00. Which of the following should you configure?
+
+
+---
+​
+Create a continuous Multi-Instance WebJob
+​
+Create a continuous Single-Instance WebJob as a Continuous Type
+​
+Create a triggered Single-Instance WebJob *
+
+​
+Create a triggered Multi-Instance WebJob
+---
+Creating a Triggered Single-Instance WebJob is correct, as this is triggered to run by a specific time/day, it is not recommended to use multi-instance to cleanup directories as they do the same job at the same time. The type should not be continuous as the requirement is to schedule the job to run once a week instead of continually.
+
+
+---
+Run background tasks with WebJobs in Azure App Service;https://docs.microsoft.com/en-us/azure/app-service/webjobs-create
+###
+C
+You are the architect of the Contoso airline group. You are responsible for designing a Web App for future workloads and need to guide the technical team. You plan to run the Web App on the Standard 1 (S1) Application Service Plan. Which of the following can be changed once a Web App is created? Select all that applies.
+
+
+---
+Scale Up *
+​
+Scale out *
+​
+Custom domains *
+​
+SSL bindings *
+
+---
+Scale Up is possible as you can move to a larger plan i.e. S1 to P1V1. Scale-out it possible as you can configure the instance count alongside autoscaling. Custom domains can be added or removed. SSL bindings can also be added or removed at will once the Web App is created.
+
+
+---
+App Service plans;https://azure.microsoft.com/en-us/pricing/details/app-service/plans/
+###
+You are the administrator of the Contoso financial group. You are responsible for security on the Azure SQL database called Finance_DB_Main. You have been tasked to ensure that the database and its data is secure at rest via encryption. However, the solution should be flexible enough to support geo-replication and geo-restore. Which encryption technology method should you use?
+
+
+---
+​
+Transparent Data Encryption (TDE) *
+​
+Always Encrypted
+​
+Azure Key vault
+---
+Transparent Data Encryption is correct, as this allows the data stored on the disk to be encrypted and it supports geo-replication and geo-restore. Always Encrypted will not suffice as this is focused on transport encryption (data in transit is encrypted).  Azure key vault will not suffice, as this is a vault where you can store passwords and certificates, not a specific database encryption tool.
+
+
+---
+Transparent data encryption for SQL Database and Azure Synapse;https://docs.microsoft.com/en-us/azure/sql-database/transparent-data-encryption-azure-sql?tabs=azure-portal
+###
+You are the administrator of the Contoso financial group. You are responsible for security and automation within the "Production_Finance" Resource Group.  You are required to automate creating a new VM with a username and password. However, it is deemed a security risk to add the credentials in plain text in the ARM template. What options do you have?
+
+
+---
+​
+Use basic credentials and change manually afterwards
+​
+Don’t use credentials when creating the VM
+​
+Make use of a secure string in the template *
+---
+Make use of a secure string is correct, as you can reference the password in the Azure Key Vault without having to use cleartext. Do not use cleartext or credentials when it can be avoided at all costs. You always need credentials when creating a resource via the ARM template to login to the VM.
+
+
+---
+ARM template best practices;https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-best-practices
+###
+You are the architect of the Contoso airline group. You are responsible for designing a secure solution for a new application that requires its secret to be updated monthly for security reasons. Which technology can be integrated with the application as part of the design without having to redeploy the app monthly?
+
+
+---
+​
+RBAC
+​
+Key Vault *
+​
+Custom deployment templates
+​
+Create a service account and change the password monthly
+---
+Key Vault is correct, as this can be used to integrate with your Application to change secrets without having to redeploy the App monthly. RBAC will not suffice as this is used to access the App via the portal and not specifically secret, the same goes for creating a service account in Azure AD. Deploying a custom template will not suffice as the App will still be required to be deployed every month with the new secret.
+---
+Azure Key Vault basic concepts;https://docs.microsoft.com/en-us/azure/key-vault/basic-concepts
+###
+You are the administrator of the Contoso financial group. You are responsible for managing the key vault in Azure. You need to recover a certificate that has been deleted in the CONTOSOvault, which is called "FinanceAdmin" via an API call to the Key Vault. Which statement below is correct?
+
+
+---
+POST https://CONTOSOvault.vault.azure.net/deletedsecrets/FinanceAdmin/recover?api-version=7.0 *
+​
+GET https://CONTOSOvault.vault.azure.net/deletedsecrets/FinanceAdmin/recover?api-version=7.0
+​
+GET http://CONTOSOvault.vault.azure.net/deletedsecrets/FinanceAdmin/recover?api-version=7.0
+​
+POST http://CONTOSOvault.vault.azure.net/deletedsecrets/FinanceAdmin/recover?api-version=7.0
+---
+POST https://CONTOSOvault.vault.azure.net/deletedsecrets/FinanceAdmin/recover?api-version=7.0 is correct, as this follows the correct way to recover a deleted certificate in the Azure Key Vault via API call. Here is the way the statement is used in general: POST {vaultBaseUrl}/deletedsecrets/{secret-name}/recover?api-version=7.0. It uses HTTPS by default, GET is incorrect when recovering a deleted certificate.
+
+
+---
+Azure Key Vault basic concepts;https://docs.microsoft.com/en-us/azure/key-vault/basic-concepts
+###
+You are the administrator of the Contoso financial group. You are responsible for managing the key vault in Azure. You need to update a certificate that has become stale in the CONTOSOvault, which is called "WebsiteCertificate" via an API call to the Key Vault. Which statement below is correct?
+
+
+---
+PATCH https://CONTOSOvault.vault.azure.net/certificates/WebsiteCertificate/3d31d7b36c942ad83ef36fc?api-version=7.0 *
+​
+POST https://CONTOSOvault.vault.azure.net/certificates/WebsiteCertificate/3d31d7b36c942ad83ef36fc?api-version=7.0
+​
+PATCH http://CONTOSOvault.vault.azure.net/certificates/WebsiteCertificate/3d31d7b36c942ad83ef36fc?api-version=7.0
+​
+POST http://CONTOSOvault.vault.azure.net/certificates/WebsiteCertificate/3d31d7b36c942ad83ef36fc?api-version=7.0
+---
+PATCH https://CONTOSOvault.vault.azure.net/certificates/WebsiteCertificate/3d31d7b36c942ad83ef36fc?api-version=7.0 is correct, as this follows the correct way to update a specific certificate in the Azure Key Vault via API call. Here is the way the statement is used in general: PATCH {vaultBaseUrl}/certificates/{certificate-name}/{certificate-version}?api-version=7.0. using HTTP will not suffice as the Key Vaults use HTTPS by default and POST is not the correct action.
+
+
+---
+Azure Key Vault basic concepts;https://docs.microsoft.com/en-us/azure/key-vault/basic-concepts
+###
+You are the architect of the Contoso airline group. You are responsible for designing a notification system for a new application. The new application requires to be able to send and receive email messages via a REST API call. This solution also needs to be scalable. Which of the following technologies would best fit the design?
+
+
+---
+Notification Hub
+​
+SendGrid *
+​
+Service Bus
+​
+Event Grid
+---
+SendGrid is correct, as this is an email solution that provides email functionality with the ability to send and receive mail, it is also scalable and offers REST API functionality. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure. Service bus will not suffice, as this is a messaging service and not a notification service.
+
+
+---
+How to Send Email Using SendGrid with Azure;https://docs.microsoft.com/en-us/azure/sendgrid-dotnet-how-to-send-email
+###
+You are the architect for the Contoso airline group. You are responsible for designing an application with event-based architecture in mind. You want to do event routing whenever a new image is uploaded to a blob storage container via the app, you want to send the trigger to a serverless function which will analyze the image uploaded. Which of the following technologies would best fit the design?
+
+---
+Event Hub
+​
+Notification Hub
+​
+Service Bus
+​
+Event Grid *
+---
+Event Grid is correct, as this is used to get the events from the storage account in question which will then trigger the serverless function. Event Hub will not suffice as this is used to collect millions of events per second for processing, not sending the notifications. Service bus will not suffice as this is a messaging service, Service bus is used for apps that make use of transactions, ordering and duplicate detection as well as apps that require handling of high-value messages that cannot be lost. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale to mobile devices.
+
+
+---
+What is Azure Event Grid?;https://docs.microsoft.com/en-us/azure/event-grid/overview
+###
+You are the architect of the Contoso airline group. You are responsible for designing a big data solution. This design needs to focus on the ingestion portion. You expect millions of events per second to be ingested and processed. You need to decide which technology will be able to ingest these large amounts of data and temporary store and process them. Which of the following technologies would be the best for the design?
+
+
+---
+Event Grid
+​
+Event Hub *
+​
+Notification Hub
+​
+Service Bus
+---
+Event Hub is correct, as this allows large quantities of events to be ingested, processed and temporarily stored. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale. Service bus will not suffice, as this is a messaging service and not an ingestion and processing service.
+
+
+---
+Azure Event Hubs — A big data streaming platform and event ingestion service;https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about
+###
+You are the architect of the Contoso airline group. You are responsible for designing a notification system that will be used to send promotional content via push notifications to millions of subscribed devices. The design should cater to all popular platforms like Android, iOS, and Windows. Which of the following technologies would best fit the design?
+
+
+---
+Event Hub
+​
+Notification Hub *
+​
+Service Bus
+​
+Event Grid
+
+---
+Notification Hub is correct, as this supports the sending of large amounts of data to the popular devices via PUSH notifications. Event Hub will not suffice as this is used to collect millions of events per second for processing, not sending the notifications. Service bus will not suffice, as this is a messaging service and not a notification service. Service bus is used for apps that make use of transactions, ordering, and duplicate detection as well as apps that require handling of high-value messages that cannot be lost. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure.
+
+
+---
+What is Azure Notification Hubs?;https://docs.microsoft.com/bs-latn-ba/azure/notification-hubs/notification-hubs-push-notification-overview
+###
+You are the architect of the Contoso airline group. You are responsible for designing a messaging system that will be used when users buy airplane tickets from the mobile application. This messaging system needs to be reliable as this will handle financial transactions, as such the messaging platform needs to check for duplicate transactions. Which of the following technologies would be the best for the design?
+
+
+---
+Notification Hub
+​
+Event Hub
+​
+Event Grid
+​
+Service Bus *
+---
+Service bus is correct, as this is used as a reliable messaging service that is in an environment where messages are of high importance and therefore cannot be duplicated. Notification Hub will not suffice as this is used to send PUSH notifications on a large scale. Event Hub will not suffice as this is used to collect millions of events per second for processing. Event Grid would not suffice as this is used to provide developers access to the events generated by cloud infrastructure.
+
+
+---
+What is Azure Service Bus?;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
+###
+You are the architect of the Contoso airline group. You are responsible for designing a solution that will integrate an on-premises application with an Azure-based application. You need to expose the on-premises application to the Azure application securely without having to configure firewall connections, however, the solution also needs to be implemented in the least intrusive manner possible. Which technology would be the best fit?
+
+
+---
+Point-to-Site VPN
+​
+Site-to-Site VPN
+​
+Azure relay *
+​
+NSG rules
+---
+Azure relay service is correct, as this is far less intrusive, this is used to securely connect hybrid applications which can be scoped to a single application endpoint on a single machine. This connection is seen as peer-to-peer without exposing other elements as VPN would. Site-to-Site VPN will not suffice as this would not create a direct link between the two apps without exposing other resources. Point-to-Site will not suffice as the Azure portion must be linked to a VNet which exposes other resources.  NSG’s are used to allow and block traffic, it cannot be used to link hybrid environments, only manage basic firewall rules once the connection is already configured.
+
+
+---
+What is Azure Relay?;https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-what-is-it
+###
+You are the architect of the Contoso airline group. You are responsible for designing autoscaling solutions. You have a server that runs at a CPU load of 90-95% 7 days a week. Which autoscaling pattern would be the best fit?
+
+
+---
+Off and On
+​
+Unpredictable by CPU
+​
+Adding Resources *
+
+​
+Predictable
+---
+Adding resources is correct, as you can scale this solution manually as you can see that the load is high all the time. Off and On autoscaling will not suffice as this solution is already working full time at a high capacity, shutting it down will not improve anything. Unpredictable autoscaling will not suffice as this pattern is used for example when the CPU threshold is stable most of the time and then spikes randomly to 95%  CPU load for more than the threshold you provided (example of 10 minutes), Predictable autoscaling will not suffice as this is primarily used when you know when resources will be maxed out, however in this scenario resources are already maxed out and needs immediate attention.
+
+
+---
+Autoscaling;https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+###
+You are the architect of the Contoso airline group. You are responsible for designing autoscaling solutions. You have a VM which is used to assist with the payroll. This VM is required to run for 24 hours once a month and utilizes around 60% of its CPU and memory resources at its peak. Which autoscaling pattern would be the best fit?
+
+
+---
+​
+Off and On *
+​
+Adding resources
+​
+Unpredictable by CPU
+​
+Predictable
+---
+Off and On is correct, as this autoscaling pattern should be used to start and stop a VM when not in use. Adding resources pattern will not suffice as there is not a huge load consistently on the machine. Unpredictable autoscaling will not suffice as this pattern is used for example when the CPU or memory threshold hits a threshold you specify it can add more resources, which in this case is not needed. Predictable will not suffice as this is primarily used when you know or suspect when resources will be maxed out, an example of predictable autoscaling would be to add resources when the VM is going to be used in several payroll runs across different countries over the financial year-end period.
+
+
+---
+Autoscaling;https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+###
+You are the architect of the Contoso airline group. You are responsible for designing autoscaling solutions. You are preparing for a huge sale which in history brings loads of additional traffic to the current webserver which is running in full production mode 24x7 at around 50% load in general. Can the predictable autoscaling pattern work in this scenario? True or False.
+
+
+---
+​
+TRUE *
+​
+FALSE
+---
+True is correct, as you know there will be a huge spike in traffic as per recent years. You are predicting that this will happen again and use this pattern to avoid downtime or overloaded systems.
+
+
+---
+Autoscaling;https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
 ---
 ---
 ---
