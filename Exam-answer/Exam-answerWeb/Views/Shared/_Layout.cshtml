@@ -31,7 +31,7 @@
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
     </script>
 </head>
-<body>    
+<body>
     <amp-auto-ads type="adsense"
                   data-ad-client="ca-pub-2519209558650417">
     </amp-auto-ads>
@@ -99,6 +99,15 @@
             <div overflow=""></div>
         </amp-ad>*@
     @RenderBody()
+    <br />
+    <a title="Online security starts with a click. Advanced security. Internet freedom. Complete privacy." href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902" target="_blank" rel="noopener">
+        <amp-img alt="Online security starts with a click. Advanced security. Internet freedom. Complete privacy."
+                 src="/images/paid-banners-Q1-affiliate-728x90-usd.png"
+                 width="728"
+                 height="90"
+                 layout="responsive">
+        </amp-img>
+    </a>
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
             <li>
@@ -149,6 +158,7 @@
                 src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
         <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
     </amp-iframe>
+
     @Html.Raw(Model?.PageMicrodata)
 </body>
 </html>

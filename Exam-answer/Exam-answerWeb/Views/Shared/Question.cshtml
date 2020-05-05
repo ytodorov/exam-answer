@@ -1,6 +1,28 @@
 ﻿@model QuestionViewModel
 @{
     int questionNumber = Model.Exam.Questions.IndexOf(Model) + 1;
+
+    for (int i = 0; i < Model.Contents.Count; i++)
+    {
+        var content = Model.Contents[i];
+        if (content.Text.Contains(" VPN ", StringComparison.CurrentCultureIgnoreCase))
+        {
+            content.Text = content.Text.Replace(" VPN ",
+                $@"<a style=""color: deepskyblue"" class=""underline"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
+                StringComparison.InvariantCultureIgnoreCase);
+        }
+    }
+
+    for (int i = 0; i < Model.Explanations.Count; i++)
+    {
+        var explanation = Model.Explanations[i];
+        if (explanation.Text.Contains(" VPN ", StringComparison.CurrentCultureIgnoreCase))
+        {
+            explanation.Text = explanation.Text.Replace(" VPN ",
+        $@"<a class=""inline-block pt1 underline caps"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
+        StringComparison.InvariantCultureIgnoreCase);
+        }
+    }
 }
 <h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(questionNumber)</h1>
 <partial name="_PrevNextPartial" />
@@ -40,6 +62,7 @@
                     @for (int i = 0; i < lines2.Length; i++)
                     {
                         var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
+
                         <p class="ampstart-caption pt1 pb1">
                             @Html.Raw(line)
                         </p>
