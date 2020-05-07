@@ -28,13 +28,9 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
 </head>
 <body>
-    <amp-auto-ads type="adsense"
-                  data-ad-client="ca-pub-2519209558650417">
-    </amp-auto-ads>
+
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
         <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
@@ -90,16 +86,24 @@
             </ul>
         </nav>
     </amp-sidebar>
-    @*<amp-ad width="100vw" height="320"
-                type="adsense"
-                data-ad-client="ca-pub-2519209558650417"
-                data-ad-slot="6605505176"
-                data-auto-format="rspv"
-                data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>*@
     @RenderBody()
     <br />
+    @*<amp-iframe width="728"
+                    height="90"
+                    title="Google map pin on Googleplex, Mountain View CA"
+                    layout="responsive"
+                    sandbox="allow-scripts allow-same-origin allow-popups"
+                    frameborder="0"
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ2eUgeAK6j4ARbn5u_wAGqWA&key=AIzaSyBemmeTeU5AQAx6RY_H00xU2QcXYnazf8Q">
+        </amp-iframe>*@
+    <amp-ad width="100vw" height="320"
+            type="adsense"
+            data-ad-client="ca-pub-2519209558650417"
+            data-ad-slot="6605505176"
+            data-auto-format="rspv"
+            data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
     <a title="Online security starts with a click. Advanced security. Internet freedom. Complete privacy." href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902" target="_blank" rel="noopener">
         <amp-img alt="Online security starts with a click. Advanced security. Internet freedom. Complete privacy."
                  src="/images/paid-banners-Q1-affiliate-728x90-usd.png"
@@ -139,18 +143,10 @@
             <a class="text-decoration-none" href="@($"{Model?.PageBaseCanonicalUrl}/privacy")">Privacy Policy</a>
         </small>
         <div class="center">
-
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-    @*<amp-ad width="100vw" height="320"
-                type="adsense"
-                data-ad-client="ca-pub-2519209558650417"
-                data-ad-slot="6605505176"
-                data-auto-format="rspv"
-                data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>*@
+
     <amp-iframe width="auto"
                 height="300"
                 sandbox="allow-scripts"
