@@ -5282,161 +5282,928 @@ True is correct, as you know there will be a huge spike in traffic as per recent
 ---
 Autoscaling;https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
 ###
+You are the administrator of the ACME banking group. You are responsible for monitoring the web application called "MoneyApp" in the Production subscription. You need to configure all notifications for when the web app stops and sends an email to an existing action group called "AdminActionGroup". What will be the name of the Alert target, target hierarchy, and alert criteria?
+
+
 ---
+Alert Target = All App Services, Target Hierarchy = Production > MoneyApp> Alert criteria = "Stop web app" *
+
+​
+Alert Target = All App Services, Target Hierarchy = Production > MoneyApp, Alert criteria = "Start web app"
+
+​
+Alert Target = All App Services, Target Hierarchy = Production > MoneyApp, Alert criteria = "Restart web app"
+
+​
+Alert Target = All App Services, Target Hierarchy = Production > MoneyApp, Alert criteria = "All admin operations"
 ---
+Alert target is where you choose the web applicationTarget hierarchy is where you choose the web app within the subscriptionAlert criteria is what you want to monitor, basically the trigger you want to be notified upon.
+
+
 ---
+Overview of alerts in Microsoft Azure;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview
 ###
+You are the administrator of the ACME banking group. You are responsible for reporting on the costs of each subscription every month. You notice that last month you have an unusually high bill for one of the subscriptions called "Production" with tags called "ProdMoney". You need to delve deeper to find a breakdown of costs per tag to see what resource was the most expensive. Under which tab will you find the additional information?
+
+
 ---
+​
+Cost management and billing > Production > Billing > Invoices
+
+​
+Cost management and billing > Production > Cost management > Cost Analysis *
+
+​
+Cost management and billing > Production > Overview > Events
 ---
+Cost analysis is the only option that allows you to filter by tags. Invoices show a breakdown of costs but not by tags. Events are not cost-related, it is where you can configure reactive apps.
+
+
 ---
+Common cost analysis uses;https://docs.microsoft.com/en-us/azure/cost-management-billing/costs/cost-analysis-common-uses
 ###
+You are the architect of the ACME shipping group. You are responsible for designing the storage for a new application. The application requires storage that needs to be accessed frequently and must be available across several datacenters. Which storage type should be used?
+
+
 ---
+General purpose V1 with hot tier access
+
+​
+Premium SSD storage
+
+​
+General purpose V2 with hot tier access *
+
+​
+General purpose v2 with cool tier access
 ---
+General purpose V2 hot tier access is correct. General purpose V2 cool tier is used for data that is accessed infrequently. Premium SSD storage only supports LRS. General purpose V1 does not support hot/cool tier access.
+
+
 ---
+Azure Blob storage: hot, cool, and archive access tiers;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers?tabs=azure-portal
 ###
+You are the administrator of the ACME shipping group. You are responsible for managing the storage account keys, which is linked to Resource Group "partner keys". Key 1 is in use with applications within your organization, however, you have a suspicion that Key 1 has been leaked and needs to be regenerated without affecting the production applications. What steps should you follow?
+
+
 ---
+​
+Regenerate key 1 and distribute it to the applications
+
+​
+Provide key 2 to the applications which currently used key 1 and regenerate key 1 *
 ---
+By providing the 2nd key first the production environment won’t be affected whilst regenerating the first key. If you regenerate the first key while it is in use all applications using this key will be affected.
+
+
 ---
+Grant limited access to Azure Storage resources using shared access signatures (SAS);https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview
 ###
+You are the architect of the ACME shipping group. You are responsible for the design of a scalable web application. The application load varies dramatically, especially towards the end of the month where the load usually spikes to 10x the usual load and then goes back to normal. Which of the following Azure availability and/or scalability solutions will meet this requirement and be cost-effective to implement?
+
+
 ---
+Availability set
+
+​
+Internal load balancer
+
+​
+Virtual Machine Scale Set (VMSS) *
+
+​
+Public load balancer
 ---
+Virtual Machine Scale Sets (VMSS) is correct, as this allows the application to scale automatically (increase and decrease) based on load criteria which can be configured. Availability sets will not work as these are used for redundancy purposes and not auto-scaling. Internal load balancers will not work as they are used to distribute load across VMs which are already created. Public load balancers will not work as they are used to map a public IP address and port across internal VMs, which are already created.
+
+
 ---
+What are virtual machine scale sets?;https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
 ###
+You are the architect of the ACME shipping group. You are responsible for designing the integration between two internal applications that are running on 2 different virtual networks. The two applications require to send data back and forth regularly. Which connectivity solution should be used?
+
+
 ---
+​
+User Defined Routing (UDR)
+
+​
+Virtual Network Peering (VNet peering) *
+
+​
+Network Security Group Rules (NSG rules)
 ---
+VNet peering is correct, as this is the solution required to connect resources on the VNets to each other as several VNets can be linked to each other. User Defined Routing (UDR) will not work without VNet peering as this is used as a routing table between resources. Network Security Groups will not accomplish this task as NSG’s allow/block traffic and does not establish a connection between VNets, However NSG rules should be viewed to ensure that traffic between the VNets is not blocked if you have a long list of deny rules.
+
+
 ---
+Virtual network peering;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
 ###
+You are the architect of the ACME shipping group. You are responsible for improving an existing network design from a security perspective. Currently, there are 3 VMs on a virtual network that is behind a network security group that communicates on several ports including RDP, SSH, HTTPS, and several custom ports. You need to force all traffic to go through a central point to ensure the traffic is valid and secure. Which technology would you recommend implementing?
+
+
 ---
+​
+Next Generation Firewall (NGFW) with user defined routing (UDR) *
+
+​
+Web Application Firewall (WAF)
+
+​
+Azure DNS
+
+​
+Implement a second network security group
 ---
+Next Generation Firewall (NGFW) with User Defined Routing (UDR) is the best way to achieve this as the public IPs will sit on the NGFW with additional security measures. UDR will ensure that all traffic to and from the VMs will go through the NGFW. Web Application Firewall will not suffice as this does not support RDP/SSH. Azure DNS will not suffice as this is used to map a public IP address to a domain name. Adding a second Network Security Group will not suffice as there are already one in place, adding another one will not be able to validate traffic and confirm it is secure.
+
+
 ---
+Virtual network traffic routing;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview
 ###
+You are the administrator of the ACME banking group. You are responsible for security events regarding identities in Azure. You need to ensure that when users sign into Azure remotely from countries that ACME does not conduct business there are additional security measures taken automatically. For example, they need to use MFA to complete their login. Which technology should you implement to accomplish this goal?
+
+
 ---
+​
+Azure Security Center
+
+​
+Privilege Identity Management
+
+​
+Multi-Factor Authentication
+
+​
+Identity Protection *
 ---
+Identity Protection is correct, as it will assess and assign a risk level to each sign in. When a user signs in from another country that is out of the ordinary it can be configured to automatically challenge that sign in with a second authentication method by Multi-Factor Authentication. Azure Security Center is incorrect as this will not enable you to configure sign-in risk policies, ASC focuses more on identities that are related to Azure resource access. Privilege Identity management will not suffice as this enables users to activate additional roles in their identity. will not suffice as this is based on MFA by itself will not suffice as you there are limited options, either enabled, enforced or disabled and also no automatic intelligence associated with it.
+
+
 ---
+What is Azure Active Directory Identity Protection?;https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
 ###
+You are the administrator of the ACME banking group. You are responsible for security events regarding identities in Azure. You are tasked to secure all guest user identities by only allowing logging in via Windows and blocking sign-ins from Android and iOS. When logging in the guest users must also use MFA by default. Which technology should you implement to accomplish this goal?
+
+
 ---
+​
+Conditional Access *
+
+​
+Privilege Identity Management
+
+​
+Multi-Factor Authentication
+
+​
+Identity Protection
 ---
+Conditional Access is correct, as this allows rules to be created that specifies specific criteria when signing in which can then grant access, request additional authentication or even decline the request when logging in from a platform that is denied. Privilege Identity management will not suffice as this enables users to activate additional roles with their identity like Global Admin. MFA by itself will not suffice as there are limited options, either enabled, enforced or disabled and no automatic intelligence associated with it. Identity Protection will not suffice, as this is mainly associated with risky sign-ins and not blocking users from logging in via specific rule sets created.
+
+
 ---
+What is Conditional Access?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
 ###
+You are the administrator of the ACME banking group. You are responsible for all identities on your tenant and there are too many identities to manually review access to enterprise applications and role assignments. You decide to use create Azure AD Access Reviews. When is it applicable to use access reviews? Select the relevant purposes below.
+
+
 ---
+Too many users in privileges roles
+
+​
+Automation is infeasible
+
+​
+When a group is used for a new purpose
+
+​
+Maintaining a policy's exception list
+
+​
+Business critical data access
+
+​
+Reviews recur periodically
+
+​
+All of the above *
 ---
+All of the above is correct. Too many users in privileged roles: It’s a good idea to check how many users have administrative access, how many of them are Global Administrators. When automation is infeasible: You can create rules for dynamic membership on security groups. When a group is used for a new purpose: If you have a group that is going to be synced to Azure AD. Business critical data access: for certain resources, it might be required to ask people outside of IT to regularly sign off and give a justification on why they need access for auditing purposes. To maintain a policy’s exception list to avoid oversight of policy. Ask group owners to confirm they still need guests in their groups: Employee access might be automated with some on-prem IAM, but not invited guests. Have reviews recur periodically: You can set up recurring access reviews of users at set frequencies such as weekly, monthly, quarterly or annually, and the reviewers will be notified at the start of each review.
+
+
 ---
+What are Azure AD access reviews?;https://docs.microsoft.com/en-us/azure/active-directory/governance/access-reviews-overview
 ###
+You are the administrator of the Contoso financial group. You have been tasked to move an application to Azure. You choose to make use of a function app. However, this application should not run continually, and therefore requires an application plan accordingly. Which of the below plans will be meet the criteria as well as be the most cost-efficient?
+
+
 ---
+​
+App Service plan
+
+​
+Consumption plan *
 ---
+Consumption plan is correct, as you will only be billed when the function is running. App Service plan is incorrect as the function will run on dedicated virtual machines and therefore allow the app to always run.
+
+
 ---
+Azure Functions scale and hosting;https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale
 ###
+C
+Which Azure load-balancing solution can direct traffic to any internal or external endpoint, and is not restricted to Azure hosted applications? Select all that applies.
+
+
 ---
+Virtual Machine Scale Sets
+
+​
+Azure Load Balancer
+
+​
+Azure Traffic Manager *
+
+​
+Application Gateway *
 ---
+Traffic manager is correct, as it supports any IP endpoint. Application gateway is correct as it can send HTTP and HTTPs traffic to any IP endpoint. Azure Load Balancer will not suffice as it directs traffic only on virtual networks. VMSS does not direct traffic, rather it may be a result of load balancing.
+
+
 ---
+What is Traffic Manager?;https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview
+What is Azure Application Gateway?;https://docs.microsoft.com/en-us/azure/application-gateway/overview
 ###
+C
+You are the administrator of the Contoso financial group. You are responsible for managing all incoming traffic to a load balancer. The load balancer has 3 VMs in the backend pool and listens on port 80 on the front end and port 80 on the back end, there is also a health probe configured for port 80. You have been informed that you need to add an additional application to the load balancer with its custom IP with the same backend pool servers. The new application also makes use of port 80. How should you approach this, select all that applies?
+
+
 ---
+Add an additional front-end public IP *
+
+​
+Add a new load balancer rule for port 80 front end and port 8080 backend port *
+
+​
+Link the new load balancer rule to the existing backend pool *
+
+​
+Create a new health probe for port 8080 *
+
+​
+Use the existing health probe
+
+​
+Create a new backend pool
 ---
+You need to add an additional public IP to the front-end load balancing rule to manage the new traffic based on IP address. You need to use port 80 for incoming traffic and can use port 8080 for backend port as to not overlap the existing rule ports. You should also use the existing backend pool as this is a requirement. You should also create a new health probe for port 8080 to monitor its health. You do not have to create a new backend pool. You should also not use the existing health probe as it is running on different backend ports.
+
+
 ---
+Azure Application Gateway documentation;https://docs.microsoft.com/en-us/azure/application-gateway/
 ###
+You are the architect of Contoso airliners. You have been tasked to design an automated alerting system. The system needs to automatically send an email when one of the delivery drivers are starting a route and will not deliver a parcel on time due to traffic congestion. What technology should you implement based on the requirements?
+
+
 ---
+​
+Function App
+
+​
+Logic App *
+
+​
+Event Grid
+
+​
+Service Bus
 ---
+Logic App is correct, as this can be used to create workflows to determine the time it would take to travel from one destination to another and notify when the travel limit is exceeded. Event Grid will not suffice as this is more focused on infrastructure events like events from blob storage, resource groups, and even custom events. Service bus will not suffice as is used where messaging between platforms are decoupled and not real logic built into it. Function App will not suffice as it is code triggered by an event whereas a logic app is a workflow triggered by an event.
+
+
 ---
+Overview - What is Azure Logic Apps?;https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview
 ###
+You are the administrator of the Contoso financial group. You have an Azure virtual machine called “Finance” which has Azure backup enabled and running. The virtual machine has crashed the day before the payroll run and needs to be resorted ASAP. Which recovery method will be the fastest even if it results in temporarily additional costs?
+
+
 ---
+File Recovery
+
+​
+Restore VM *
+
+​
+Restore VHD
+
+​
+Azure Site Recovery Failover
 ---
+Restore VM is correct, as this will enable you to restore the data to a new VM to be up and running within minutes. File recovery will not suffice as all the date needs to be restored to a production environment, just selected files. Restore VHD is more of an manual process and not ideal, still needs a VM to be linked to. Site recovery failover will not suffice as the replicated VM might have some issues as well, the safest bet is to restore the VM.
+
+
 ---
+What is the Azure Backup service?;https://docs.microsoft.com/en-us/azure/backup/backup-overview
 ###
+You are the administrator of the Contoso financial group. You have been tasked to move an application to Azure. You choose to make use of a function app. The estimated maximum function app timeout is 1 hour. Which plan should you choose?
+
+
 ---
+​
+App Service plan *
+
+​
+Consumption plan
 ---
+App Service plan is correct, as this supports unlimited application timeout time whereas the Consumption plan has a function timeout limit set to a maximum of 10 minutes.
 ---
+Azure Functions scale and hosting;https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale
 ###
+You are the architect of the Contoso airline group. You are responsible for designing a solution that will automate the process of assigning Resource Tags to newly created virtual machines. What solution should be used alongside Azure automation?
+
+
 ---
+Event Hub
+
+​
+Event Grid *
+
+​
+Service Bus
+
+​
+Notification Hub
 ---
+Event Grid is correct, as this will allow you to be notified when a new VM is created which can then be used in the orchestration of the new Resource Tags that will be assigned. Event Hub will not suffice as this is used to ingest and process real-time data streams from apps or devices. Service bus will not suffice this is primarily used to send messages between applications that are decoupled. Notification Hub will not suffice as this supports the sending of large amounts of data to the popular devices via PUSH notifications.
+
+
 ---
+What is Azure Event Grid?;https://docs.microsoft.com/en-us/azure/event-grid/overview
 ###
+You are the architect of the Contoso airline group. You are responsible for designing a remote connectivity solution There is a virtual team of 10 users who are spread across different regions who needs access to specific resources on the “Production_VNet”. The connection needs to be secure and minimal effort on the user’s side to connect each time. No additional hardware is available on the remote user’s side. This solution needs to be cost-effective and secure. What connectivity solution should be used?
+
+
 ---
+Virtual Network Peering
+
+​
+Point-to-Site VPN *
+
+​
+Site-to-site VPN
+
+​
+Express route
 ---
+Point to Site VPN is correct, as this connection does not require hardware on premises and minimal effort to connect each time. Site-to-Site VPN will not suffice as this connection required on-premises hardware. Virtual Network Peering will not suffice as this is used to connect virtual networks in Azure with each other. Express route will not suffice as this is used to connect large sites to Azure directly with low latency and high bandwidth.
+
+
 ---
+About Point-to-Site VPN;https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about
 ###
+You are the administrator of the Contoso financial group. You are responsible for all role permissions in the “Production_Systems” Resource Group. You have received a request to grant a fellow employee permission to the “financial_billings” VM. The fellow employee is the system owner for that VM and therefore requires full access to it, however, that user should not be able to assign other users and roles to the VM. Which RBAC role do you assign to her?
+
+
 ---
+Contributor role on the Resource Group level
+
+​
+Owner Role on the VM level
+
+​
+Owner Role on the Resource Group level
+
+​
+Contributor Role on the VM level *
 ---
+Contributor Role on the VM level is correct, as the contributor rule provides full access to VM and its settings, the only limitation is that the user will not be able to assign other users to the VM or change roles. RBAC should be done on the VM level as there might be other resources in the Resource Group and you do not want to give full control to another user’s resources (the rule of least access applies). The owner role will not suffice, as this will enable the user to assign additional users with roles to the VM.
+
+
 ---
+Classic subscription administrator roles, Azure roles, and Azure AD roles;https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles
 ###
+You are the architect of the Contoso airline group. You are responsible for designing remote connectivity between your head office and your virtual network in Azure. The connection needs to be secure, high speed and low latency. The bandwidth requirement is also very large, estimated at 48Gbps and should be able to be integrated into the current WAN solution. What connectivity solution should be used?
+
+
 ---
+Virtual Network Peering
+
+​
+Point-to-Site VPN
+
+​
+Site-to-site VPN
+
+​
+Express route *
 ---
+Express route is correct, as this is used to connect large sites to Azure directly with low latency and high bandwidth, this solution also integrated with the current WAN solution. Site-to-Site VPN will not suffice as the connection speed supports up to 1 Gbps per tunnel. Virtual Network Peering will not suffice as this is used to connect virtual networks in Azure with each other. Point-to-Site VPN will not suffice as this is used for remote users to connect individually to the Azure VNets and not made for linking large sites to Azure.
+
+
 ---
+ExpressRoute overview;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction
 ###
+You are the architect of the ACME shipping group. You are responsible for designing a solution which includes 4 virtual machines with the following requirements:
+
+· 2 VMs requires a private and public IP address, these VMs are part of the production system
+
+· 2 VMs require only private IP addresses for Labs, these VMs are part of the Lab/testing system
+
+· Production VMs require the same inbound/outbound security group rules
+
+· Lab/testing VMs require the same inbound/outbound security group rules
+
+Based on the above requirements, what is the minimum number of Network Interface Cards (NIC’s) that are required in total?
 ---
+​
+2
+
+​
+4 *
+
+​
+8
+
+​
+16
 ---
+4 is correct as each VM requires its own network interface card (NIC), each NIC supports private and public IPs.
+
+
 ---
+Add network interfaces to or remove network interfaces from virtual machines;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm
 ###
+You are the architect of the ACME shipping group. You are responsible for designing a solution which includes 4 virtual machines (VMs) with the following requirements:
+
+· 2 VMs requires a private and public IP address, these VMs are part of the production system
+
+· 2 VMs require only private IP addresses for Labs, these VMs are part of the Lab/testing system
+
+· Production VMs require the same inbound/outbound security group rules
+
+· Lab/testing VMs require the same inbound/outbound security group rules
+
+Based on the above requirements, what is the minimum number of Network Security Groups (NSG’s) that are required in total?
+
+
 ---
+2x Network Security Groups (NSG's) *
+
+​
+4x Network Security Groups (NSG's)
+
+​
+8x Network Security Groups (NSG's)
+
+​
+16x Network Security Groups (NSG's)
 ---
+2 is correct as the virtual machines are split between production and Lab/testing, the requirement is that the VMs of each system (production and Lab/testing) share Network Security Group (NSG) rulesets, thus only 2 are required.
+
+
 ---
+Network security groups;https://docs.microsoft.com/en-us/azure/virtual-network/security-overview
 ###
+You are the architect of the ACME banking group. You have been tasked to assist with a design for a web application that is using Azure Webb App service. You have the following requirements:
+
+· Should have backup and restore capabilities
+
+· Support custom domains
+
+· Minimize costs as far as possible
+
+Which of the following App service plan will adhere to the requirements?
+
+
 ---
+Free Tier
+
+​
+Shared Tier
+
+​
+Basic Tier
+
+​
+Standard Tier *
+
+​
+Premium Tier
+
+​
+Isolated Tier
 ---
+Standard tier is correct as this supports backup/restore, custom domains and is the most cost-effective tier which supports the technical requirements.
+
+
 ---
+App Service plans;https://azure.microsoft.com/en-us/pricing/details/app-service/plans/
 ###
+C
+You are the architect of the ACME banking group. You have been tasked to assist with a design for a web application that is using Azure Webb App service. You have the following requirements:
+
+· Supports VNET integration
+
+· Support custom domains
+
+Which of the following App service plan tiers will adhere to the requirements? Select all that apply.
 ---
+Free Tier
+
+​
+Shared Tier
+
+​
+Basic Tier
+
+​
+Standard Tier *
+
+​
+Premium Tier *
+
+​
+Isolated Tier *
 ---
+The Standard, Premium, and Isolated tiers all support VNET integration and custom domains.
+
+
 ---
+App Service plans;https://azure.microsoft.com/en-us/pricing/details/app-service/plans/
 ###
+You are the architect of the ACME banking group. You have been tasked to assist with a design for a web application that is using Azure Webb App service. You have the following requirements:
+
+· Supports auto-scaling
+
+· Support custom domains
+
+· Minimize costs as far as possible
+
+You decide to assign the Premium App Service plan tier.
+
+Does this adhere to the requirements?
 ---
+True
+
+​
+False *
 ---
+False is correct, even though the Premium tier supports auto-scaling, it is not the most cost-effective solution. The App service tier that adheres to all the requirements would be the Standard App Service Tier.
+
+
 ---
+App Service plans;https://azure.microsoft.com/en-us/pricing/details/app-service/plans/
 ###
+True or False: Azure storage accounts automatically encrypts data at rest.
 ---
+True *
+
+​
+False
 ---
+True is correct, All storage accounts in Azure are encrypted by using Storage Service Encryption (SSE) for data at rest.
 ---
+Storage account overview;https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 ###
+True or False: Azure virtual machine disks are automatically encrypted.
 ---
+True
+
+​
+False *
 ---
+False is correct, you need to manually go and encrypt your VM disks, this can be done by using Azure CLI or Azure PowerShell.
+
+
 ---
+Azure Disk Encryption for Windows VMs;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-overview
 ###
+You are the architect of the ACME banking group. You have been tasked to ensure all identities within the Azure tenant for ACME.com tenant is secured by multi-factor authentication. You notice there are the following baseline policies:
+
+· Baseline policy: Require MFA for admins
+
+· Baseline policy: Block legacy authentication
+
+· Baseline policy: End-user protection
+
+· Baseline policy: Require MFA for Service Management
+
+
+
+You need to block Exchange ActiveSync. Which of the following policies do you enable?
 ---
+​
+Baseline policy: Require MFA for admins
+
+​
+Baseline policy: Block legacy authentication
+
+​
+Baseline policy: End-user protection
+
+​
+Baseline policy: Require MFA for Service Management
+
+​
+None of the above *
 ---
+None of the above is correct as you need to create a custom conditional access policy to block Exchange ActiveSync. Block legacy authentication is incorrect as this is the baseline conditional access policy which will block all legacy authentication for all users. Require MFA for Service Management is incorrect as this will require MFA for any user accessing the Azure portal, Azure PowerShell or Azure CLI. Require MFA for admins is incorrect as this forces the privileged accounts to make use of MFA. End-user protection is incorrect as this requires all users to register for MFA within 14 days.
+
+
 ---
+What are baseline policies?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-baseline-protection
 ###
+You are the architect of the ACME banking group. You have been tasked to ensure all identities within the Azure tenant for ACME.com tenant is secured by multi-factor authentication. You notice there are the following baseline policies:
+
+· Baseline policy: Require MFA for admins
+
+· Baseline policy: Block legacy authentication
+
+· Baseline policy: End-user protection
+
+· Baseline policy: Require MFA for Service Management
+
+
+
+You need to prevent users from using IMAP and POP3 when authenticating. Which of the following policies do you enable?
 ---
+​
+Baseline policy: Require MFA for admins
+
+​
+Baseline policy: Block legacy authentication *
+
+​
+Baseline policy: End-user protection
+
+​
+Baseline policy: Require MFA for Service Management
+
+​
+None of the above
 ---
+Block legacy authentication is correct as this is the baseline conditional access policy which will block all legacy authentication for all users. Require MFA for Service Management is incorrect as this will require MFA for any user accessing the Azure portal, Azure PowerShell or Azure CLI. Require MFA for admins is incorrect as this forces the privileged accounts to make use of MFA. End-user protection is incorrect as this requires all users to register for MFA within 14 days.
+
+
 ---
+What are baseline policies?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-baseline-protection
 ###
+You are the architect of the ACME banking group. You have been tasked to ensure all identities within the Azure tenant for ACME.com tenant is secured by multi-factor authentication. You notice there are the following baseline policies:
+
+· Baseline policy: Require MFA for admins
+
+· Baseline policy: Block legacy authentication
+
+· Baseline policy: End-user protection
+
+· Baseline policy: Require MFA for Service Management
+
+
+
+You need to ensure MFA is prompted when authenticating to Azure PowerShell. Which of the following policies do you enable?
 ---
+Baseline policy: Require MFA for admins
+
+​
+Baseline policy: Block legacy authentication
+
+​
+Baseline policy: End-user protection
+
+​
+Baseline policy: Require MFA for Service Management *
+
+​
+None of the above
 ---
+Baseline policy: Require MFA for Service Management is correct as this will require MFA for any user accessing the Azure portal, Azure PowerShell or Azure CLI. End-user protection is incorrect as this requires all users to register for MFA within 14 days. Block legacy authentication is incorrect as this is used to block legacy authentication methods like POP and IMAP. Require MFA for admins is incorrect as this forces the privileged accounts to make use of MFA.
+
+
 ---
+What are baseline policies?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-baseline-protection
 ###
+You are the architect of the ACME banking group. You have been tasked to manage role-based access control (RBAC) within the ACME.com Azure tenant. Within the ACME.com tenant, there are two subscriptions: one for production labeled “Prod_US” and one non-prod labeled “Sandbox”. ACME has the following requirements:
+
+Requirement 1: You need to assign RBAC access to a third party so that they have to view the resources within the production subscription only.
+
+Requirement 2: You need to assign RBAC access internally to the Azure team so that they are only allowed to manage backups but not remove any backups.
+
+Requirement 3: You need to assign RBAC access to the Dev manager so that he can manage user access to resources.
+
+Requirement 4: You need to assign RBAC access to the lead Azure engineer to ensure he has the correct permissions to test failover operations quarterly.
+
+What RBAC role should you assign for requirement 1?
 ---
+Reader role on the Prod_US subscription *
+
+​
+User Access Administrator role on the Prod_US subscription
+
+​
+Reader role on the Sandbox subscription
+
+​
+User Access Administrator role on the Sandbox subscription
 ---
+Reader role on the Prod_US subscription is correct as the requirement is to only view all resources within the production subscription. User Access Administrator is incorrect because this will role allows you to manage user access to Azure resources.
+
+
 ---
+Azure built-in roles;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
 ###
+You are the architect of the ACME banking group. You have been tasked to manage role-based access control (RBAC) within the ACME.com Azure tenant. Within the ACME.com tenant, there are two subscriptions: one for production labeled “Prod_US” and one non-prod labeled “Sandbox”. ACME has the following requirements:
+
+Requirement 1: You need to assign RBAC access to a third party so that they have to view the resources within the production subscription only.
+
+Requirement 2: You need to assign RBAC access internally to the Azure team so that they are only allowed to manage backups but not remove any backups on both subscriptions.
+
+Requirement 3: You need to assign RBAC access to the Dev manager so that he can manage user access to resources.
+
+Requirement 4: You need to assign RBAC access to the lead Azure engineer to ensure he has the correct permissions to test failover operations quarterly.
+
+What RBAC role should you assign for requirement 2?
 ---
+​
+Backup Contributor role on the Prod_US subscription only
+
+​
+Backup Operator role on the Prod_US subscription only
+
+​
+Backup Contributor role on the Sandbox subscription only
+
+​
+Backup Operator role on the Sandbox subscription only
+
+​
+Backup Contributor role on the Sandbox and Prod_US subscriptions
+
+​
+Backup Operator role on the Sandbox and Prod_US subscriptions *
 ---
+The Backup Operator role for both subscriptions is correct. The Backup operator role allows you to manage backup services except for the removal of backups, vault creation, and giving access to others. The Backup Contributor role is incorrect as this role lets you manage the backup service including the removal of backups.
+
+
 ---
+Backup Operator;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#backup-operator
 ###
+You are the architect of the ACME banking group. You have been tasked to manage role-based access control (RBAC) within the ACME.com Azure tenant. Within the ACME.com tenant, there are two subscriptions: one for production labeled “Prod_US” and one non-prod labeled “Sandbox”. ACME has the following requirements:
+
+Requirement 1: You need to assign RBAC access to a third party so that they have to view the resources within the production subscription only.
+
+Requirement 2: You need to assign RBAC access internally to the Azure team so that they are only allowed to manage backups but not remove any backups on both subscriptions.
+
+Requirement 3: You need to assign RBAC access to the Dev manager so that he can manage user access to resources within the non-prod environment.
+
+Requirement 4: You need to assign RBAC access to the lead Azure engineer to ensure he has the correct permissions to test failover operations quarterly.
+
+What RBAC role should you assign for requirement 3?
+
+​
 ---
+Contributor role on the Prod_US subscription only
+
+​
+User Access Administrator role on the Prod_US subscription only
+
+​
+Contributor role on the Sandbox subscription only
+
+​
+User Access Administrator role on the Sandbox subscription-only *
+
+​
+Contributor role on the Sandbox and Prod_US subscriptions
+
+​
+User Access Administrator role on the Sandbox and Prod_US subscriptions
 ---
+User Access Administrator role on the Sandbox subscription is correct as this is the least privileged role to delegate access. Contributor role does not allow you to manage user access to Azure resources.
+
+
 ---
+Azure built-in roles;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
 ###
+You are the architect of the ACME banking group. You have been tasked to manage role-based access control (RBAC) within the ACME.com Azure tenant. Within the ACME.com tenant, there are two subscriptions: one for production labeled “Prod_US” and one non-prod labeled “Sandbox”. ACME has the following requirements:
+
+Requirement 1: You need to assign RBAC access to a third party so that they have to view the resources within the production subscription only.
+
+Requirement 2: You need to assign RBAC access internally to the Azure team so that they are only allowed to manage backups but not remove any backups on both subscriptions.
+
+Requirement 3: You need to assign RBAC access to the Dev manager so that he can manage user access to resources within the non-prod environment.
+
+Requirement 4: You need to assign RBAC access to the lead Azure engineer to ensure he has the correct permissions to only test failover operations quarterly in the production environment.
+
+What RBAC role should you assign for requirement 4?
 ---
+Site Recovery Operator role on the Prod_US subscription only *
+
+​
+Site Recovery Contributor role on the Prod_US subscription only
+
+​
+Site Recovery Operator role on the Sandbox subscription only
+
+​
+Site Recovery Contributor role on the Sandbox subscription only
+
+​
+Site Recovery Operator role on the Sandbox and Prod_US subscriptions
+
+​
+Site Recovery Contributor role on the Sandbox and Prod_US subscriptions
 ---
+Site Recovery Operator role on the Prod_US subscription only is correct as this RBAC role will allow you to failover and failback but not perform other site recovery management operations.
+
+
 ---
+Azure built-in roles;https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
 ###
+True or False: Azure Front Door service supports HTTP to HTTPS redirection.
 ---
+​
+True *
+
+​
+False
 ---
+True is correct, Azure Front Door service supports HTTP to HTTPS redirection.
 ---
+Frequently asked questions for Azure Front Door;https://docs.microsoft.com/en-us/azure/frontdoor/front-door-faq
 ###
+True or False: You can deploy an Azure Load Balancer behind Azure Front Door service.
 ---
+True *
+
+​
+False
 ---
+True is correct, Azure Front Door service requires a public IP address to route traffic, deploying an Azure Load balancer behind the front door service is a common use case and is supported.
 ---
+Frequently asked questions for Azure Front Door;https://docs.microsoft.com/en-us/azure/frontdoor/front-door-faq
 ###
+You are the architect of the ACME banking group. You have been tasked to plan the deployment of an Azure Application Gateway. You plan on making use of the Application Gateway V2 SKU with the below requests from the application team:
+
+Request 1: Can you assign a static public IP address to the App gateway?
+
+Request 2: Can you assign multiple static public IPs to the App gateway?
+
+Request 3: Can you host multiple applications behind the App gateway?
+
+
+
+What is your response to request 1?
 ---
+​
+Yes, it is supported *
+
+​
+No, it is not supported
 ---
+Yes is correct as you can assign a static public IP address on the V2 SKU.
 ---
+Frequently asked questions about Application Gateway;https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-faq
 ###
+You are the architect of the ACME banking group. You have been tasked to plan the deployment of an Azure Application Gateway. You plan on making use of the Application Gateway V2 SKU with the below requests from the application team:
+
+Request 1: Can you assign a static public IP address to the App gateway?
+
+Request 2: Can you assign multiple static public IPs to the App gateway?
+
+Request 3: Can you host multiple applications behind the App gateway?
+
+What is your response to request 2?
 ---
+​
+Yes, it is supported
+
+​
+No, it is not supported *
 ---
+No is correct as you cannot assign more than 1 static public IP address on the App gateway.
 ---
+Frequently asked questions about Application Gateway;https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-faq
 ###
+You are the architect of the ACME banking group. You have been tasked to plan the deployment of an Azure Application Gateway. You plan on making use of the Application Gateway V2 SKU with the below requests from the application team:
+
+Request 1: Can you assign a static public IP address to the App gateway?
+
+Request 2: Can you assign multiple static public IPs to the App gateway?
+
+Request 3: Can you host multiple applications behind the App gateway?
+
+
+
+What is your response to request 3?
 ---
+Yes, it is supported *
+
+​
+No, it is not supported
 ---
+Yes is correct as you can host multiple applications behind the App gateway by using a multi-site configuration.
 ---
+Application Gateway multiple site hosting;https://docs.microsoft.com/en-us/azure/application-gateway/multiple-site-overview
 ###
 ---
 ---
