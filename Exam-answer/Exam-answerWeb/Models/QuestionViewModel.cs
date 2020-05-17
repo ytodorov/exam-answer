@@ -30,5 +30,7 @@ namespace Exam_answerWeb.Models
         public bool ShowDisqus { get; set; } = false;
 
         public string AcceptedAnswer { get; set; }
+
+        public bool? ShowAdsInQuestion { get; set; } = true;
     }
 }

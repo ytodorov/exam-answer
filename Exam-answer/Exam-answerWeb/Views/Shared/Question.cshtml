@@ -154,8 +154,17 @@
         </div>
 
     </section>
+    @if (Model?.Explanations?.Count > 0 && Model.ShowAdsInQuestion == true)
+    {<section expanded>
+            <h2>Ads by Google</h2>
+            <div class="center">
+                @Html.Raw(Html.GetRandomAddsenseAdd())
+            </div>
+        </section>
+    }
     @if (Model?.Explanations?.Count > 0)
     {
+
         <section>
             <h2>Explanation</h2>
             <div>
