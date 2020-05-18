@@ -169,7 +169,8 @@ namespace Exam_answerWeb
                            return async context =>
                            {
                                IMemoryCache cache = context.RequestServices.GetRequiredService<IMemoryCache>();
-                               bool isMobile = false; //context.IsMobileBrowser();
+                               string urlPath = context.Request.Path;
+                               bool isMobile = context.IsMobileBrowser();
                                string cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
                                if (!string.IsNullOrEmpty(cachedHtml))
                                {

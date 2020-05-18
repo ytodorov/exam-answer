@@ -58,59 +58,25 @@ namespace Exam_answerWeb.Infrastructure
             return microdata;
         }
 
-        public static string GetRandomAddsenseAdd(this IHtmlHelper helper)
+        public static string GetAddsenseAdd(this IHtmlHelper helper, AdsenseType adsenseType = AdsenseType.ResponsiveAdSquare)
         {
             var randomInt = random.Next(0, 3);
 
             string result = string.Empty;
 
-            switch (randomInt)
+            switch (adsenseType)
             {
-                case 0:
-                    result = @"<amp-ad
-     layout=""fixed""
-     width=""728""
-     height=""90""
+                case AdsenseType.ResponsiveAdSquare:
+                    result = @"<amp-ad width=""100vw"" height=""320""
      type=""adsense""
      data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""8914871063"">
+     data-ad-slot=""7303740684""
+     data-auto-format=""rspv""
+     data-full-width="""">
+  <div overflow=""""></div>
 </amp-ad>";
                     break;
-                case 1:
-                    result = @"<amp-ad
-     layout=""fixed""
-     width=""300""
-     height=""250""
-     type=""adsense""
-     data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""9062210728"">
-</amp-ad><amp-ad
-     layout=""fixed""
-     width=""300""
-     height=""250""
-     type=""adsense""
-     data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""9062210728"">
-</amp-ad>";
-                    break;
-                case 2:
-                    result = @"<amp-ad
-     layout=""fixed""
-     width=""336""
-     height=""280""
-     type=""adsense""
-     data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""3890802764"">
-</amp-ad><amp-ad
-     layout=""fixed""
-     width=""336""
-     height=""280""
-     type=""adsense""
-     data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""3890802764"">
-</amp-ad>";
-                    break;
-                default:
+                case AdsenseType.ResponsiveAdHorizontal:
                     result = @"<amp-ad width=""100vw"" height=""320""
      type=""adsense""
      data-ad-client=""ca-pub-2519209558650417""
@@ -120,22 +86,65 @@ namespace Exam_answerWeb.Infrastructure
   <div overflow=""""></div>
 </amp-ad>";
                     break;
-
-                    
-            }
-
-            bool? isMobile = helper?.ViewContext?.HttpContext?.IsMobileBrowser();
-
-            if (isMobile == true)
-            {
-                result = @"<amp-ad width=""100vw"" height=""320""
+                case AdsenseType.ResponsiveAdVertical:
+                    break;
+                case AdsenseType.Fixed_300_600:
+                    break;
+                case AdsenseType.Fixed_336_280:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""336""
+     height=""280""
      type=""adsense""
      data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""6605505176""
-     data-auto-format=""rspv""
-     data-full-width="""">
-  <div overflow=""""></div>
+     data-ad-slot=""3890802764"">
+";
+                    break;
+                case AdsenseType.Fixed_300_250:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""300""
+     height=""250""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""9062210728"">
+";
+
+                    break;
+                case AdsenseType.Fixed_728_90:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""728""
+     height=""90""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""8914871063"">
 </amp-ad>";
+                    break;
+                case AdsenseType.Fixed_160_600:
+                    break;
+                case AdsenseType.Fixed_970_90:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""970""
+     height=""90""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""1352037829"">
+</amp-ad>";
+                    break;
+                case AdsenseType.Fixed_320_100:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""320""
+     height=""100""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""9840423003"">
+</amp-ad>";
+                    break;
+                default:
+                    break;
             }
 
             return result;
