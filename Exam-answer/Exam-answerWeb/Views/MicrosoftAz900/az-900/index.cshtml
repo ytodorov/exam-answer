@@ -23,11 +23,11 @@
             <div class="center">
                 @if (!Html.ViewContext.HttpContext.IsMobileBrowser())
                 {
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_970_90))
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
                 }
                 else
                 {
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100))
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdSquare))
                 }
             </div>
         }
