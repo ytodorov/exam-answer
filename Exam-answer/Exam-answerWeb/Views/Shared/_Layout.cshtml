@@ -86,7 +86,7 @@
             </ul>
         </nav>
     </amp-sidebar>
-    <div class="center">
+    @*<div class="center">
         @if (!Html.ViewContext.HttpContext.IsMobileBrowser())
         {
             @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_970_90))
@@ -95,17 +95,17 @@
         {
             @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100))
         }
-    </div>
+    </div>*@
     @RenderBody()
     <div class="center">
-        @if (!Html.ViewContext.HttpContext.IsMobileBrowser())
+        @*@if (!Html.ViewContext.HttpContext.IsMobileBrowser())
         {
             @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_728_90))
         }
         else
         {
             @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
-        }
+        }*@
     </div>
     <br />
     @*<a title="Online security starts with a click. Advanced security. Internet freedom. Complete privacy." href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902" target="_blank" rel="noopener">
@@ -150,14 +150,15 @@
             <amp-addthis width="320" height="92" data-pub-id="ra-571b2acff4b44bbf" data-widget-id="vgua" data-widget-type="inline"></amp-addthis>
         </div>
     </footer>
-
-    <amp-iframe width="auto"
-                height="300"
-                sandbox="allow-scripts"
-                layout="fixed-height"
-                src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
-        <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
-    </amp-iframe>
+    <div class="center">
+        <amp-iframe width="auto"
+                    height="300"
+                    sandbox="allow-scripts"
+                    layout="fixed-height"
+                    src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
+            <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
+        </amp-iframe>
+    </div>
 
     @Html.Raw(Model?.PageMicrodata)
 </body>

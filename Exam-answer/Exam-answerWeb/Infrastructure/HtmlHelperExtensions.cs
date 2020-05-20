@@ -58,8 +58,12 @@ namespace Exam_answerWeb.Infrastructure
             return microdata;
         }
 
-        public static string GetAddsenseAdd(this IHtmlHelper helper, AdsenseType adsenseType = AdsenseType.ResponsiveAdSquare)
+        public static string GetAddsenseAdd(this IHtmlHelper helper, AdsenseType adsenseType = AdsenseType.ResponsiveAdSquare, bool? showAdd = true)
         {
+            if (showAdd != true)
+            {
+                return string.Empty;
+            }
             var randomInt = random.Next(0, 3);
 
             string result = string.Empty;
@@ -87,8 +91,24 @@ namespace Exam_answerWeb.Infrastructure
 </amp-ad>";
                     break;
                 case AdsenseType.ResponsiveAdVertical:
+                    result = @"<amp-ad width=""100vw"" height=""320""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""9433745813""
+     data-auto-format=""rspv""
+     data-full-width="""">
+  <div overflow=""""></div>
+</amp-ad>";
                     break;
                 case AdsenseType.Fixed_300_600:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""300""
+     height=""600""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""8256395515"">
+</amp-ad>";
                     break;
                 case AdsenseType.Fixed_336_280:
                     result = @"<amp-ad
@@ -122,6 +142,15 @@ namespace Exam_answerWeb.Infrastructure
 </amp-ad>";
                     break;
                 case AdsenseType.Fixed_160_600:
+                    result = @"<amp-ad
+     layout=""fixed""
+     width=""160""
+     height=""600""
+     type=""adsense""
+     data-ad-client=""ca-pub-2519209558650417""
+     data-ad-slot=""2924139798"">
+</amp-ad>
+";
                     break;
                 case AdsenseType.Fixed_970_90:
                     result = @"<amp-ad
@@ -143,10 +172,13 @@ namespace Exam_answerWeb.Infrastructure
      data-ad-slot=""9840423003"">
 </amp-ad>";
                     break;
-                default:
+                default:                    
                     break;
             }
-
+            if (helper.ViewContext.HttpContext.IsMobileBrowser())
+            {
+                result = string.Empty;
+            }
             return result;
         }
     }
