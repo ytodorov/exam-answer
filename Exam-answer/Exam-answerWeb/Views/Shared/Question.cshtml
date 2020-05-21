@@ -28,31 +28,22 @@
 <partial name="_PrevNextPartial" />
 <amp-accordion disable-session-states>
     <section expanded>
-
         <h2>Question @(questionNumber)</h2>
-
         <div>
-            <div class="left" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:100%" : "max-width:50%")">
-                <h3>
-                    @{
-                        var lines = Model.Contents.FirstOrDefault()?.Text?.Split(Environment.NewLine);
-                    }
-                    @for (int i = 0; i < lines.Length; i++)
-                    {
-                        var line = lines[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
+            <div class="m2 right">
+                @if (Model.Contents.Select(s => s.Text?.Length).Sum() > 500)
+                {
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                }
+                else
+                {
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                }
 
-                        <p class="ampstart-caption pt1 pb1">
-                            @Html.Raw(line)
-                        </p>
-                        if (i != lines.Length - 1)
-                        {
-                            <br />
-                        }
-                    }
-                </h3>
-
+            </div>
+            <div>
                 @{
-                    var lastContent = Model.Contents.Skip(1).ToList();
+                    var lastContent = Model.Contents.ToList();
                 }
                 @foreach (var content in lastContent)
                 {
@@ -64,103 +55,90 @@
                         {
                             var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-                            <p class="ampstart-caption pt1 pb1">
+                            <p class="justify">
                                 @Html.Raw(line)
                             </p>
-                            if (i != lines2.Length - 1)
-                            {
-                                <br />
-                            }
                         }
                     </h3>
                 }
             </div>
-            <div class="right" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:50%" : "max-width:100%")">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-            </div>
         </div>
-
     </section>
     <section expanded>
         <h2>Answers</h2>
         <div>
-            <div class="left" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:100%" : "max-width:50%")">
-                @{
-                    string correctId = $"correct{Html.GetNextId()}";
-                }
-                @if (Model.QuestionType == QuestionType.CheckBox)
-                {
+            @{
+                string correctId = $"correct{Html.GetNextId()}";
+            }
+            @if (Model.QuestionType == QuestionType.CheckBox)
+            {
 
-                    <ul class="fieldlist">
-                        @foreach (var answer in Model.Answers)
+                <ul class="fieldlist">
+                    @foreach (var answer in Model.Answers)
+                    {
+
+                        if (answer.IsCorrect == true)
                         {
-
-                            if (answer.IsCorrect == true)
-                            {
-                                <li class="correct">
-                                    <h3>
-                                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))" [class]="toggleVariable@(questionNumber) + ' k-checkbox-label'">
-                                            @(answer.Text)
-                                        </label>
-                                    </h3>
-                                </li>
-                            }
-                            else
-                            {
-                                <li>
-                                    <h3>
-                                        <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
-                                        <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-
-                                            @(answer.Text)
-                                        </label>
-                                    </h3>
-                                </li>
-                            }
+                            <li class="correct">
+                                <h3>
+                                    <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))" [class]="toggleVariable@(questionNumber) + ' k-checkbox-label'">
+                                        @(answer.Text)
+                                    </label>
+                                </h3>
+                            </li>
                         }
-                    </ul>
-                }
-                @if (Model.QuestionType == QuestionType.RadioButon)
-                {
-                    <ul class="fieldlist">
-                        @foreach (var answer in Model.Answers)
+                        else
                         {
-                            if (answer.IsCorrect == true)
-                            {
-                                <li class="correct">
-                                    <h3>
-                                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                                        <label class="k-radio-label" for="@(Html.GetNextId(true))" [class]="toggleVariable@(questionNumber) + ' k-radio-label'">
-                                            @(Html.Raw(answer.Text))
-                                        </label>
-                                    </h3>
-                                </li>
-                            }
-                            else
-                            {
-                                <li>
-                                    <h3>
-                                        <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
-                                        <label class="k-radio-label" for="@(Html.GetNextId(true))">
-                                            @(Html.Raw(answer.Text))
-                                        </label>
-                                    </h3>
-                                </li>
-                            }
+                            <li>
+                                <h3>
+                                    <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox">
+                                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+
+                                        @(answer.Text)
+                                    </label>
+                                </h3>
+                            </li>
                         }
-                    </ul>
-                }
-                <br />
-                <div class="center">
-                    <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox" on="change: AMP.setState({ toggleVariable@(questionNumber): event.checked ? 'green' : ''})">
-                    <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
-                        Show correct answer
-                    </label>
-                </div>
-            </div>
-            <div class="right" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:50%" : "max-width:100%")">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }
+                </ul>
+            }
+            @if (Model.QuestionType == QuestionType.RadioButon)
+            {
+                <ul class="fieldlist">
+                    @foreach (var answer in Model.Answers)
+                    {
+                        if (answer.IsCorrect == true)
+                        {
+                            <li class="correct">
+                                <h3>
+                                    <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                                    <label class="k-radio-label" for="@(Html.GetNextId(true))" [class]="toggleVariable@(questionNumber) + ' k-radio-label'">
+                                        @(Html.Raw(answer.Text))
+                                    </label>
+                                </h3>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <h3>
+                                    <input type="radio" name="group" id="@(Html.GetNextId())" class="k-radio">
+                                    <label class="k-radio-label" for="@(Html.GetNextId(true))">
+                                        @(Html.Raw(answer.Text))
+                                    </label>
+                                </h3>
+                            </li>
+                        }
+                    }
+                </ul>
+            }
+            <br />
+            <div class="center">
+                <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox" on="change: AMP.setState({ toggleVariable@(questionNumber): event.checked ? 'green' : ''})">
+                <label class="k-checkbox-label" for="@(Html.GetNextId(true))">
+                    Show correct answer
+                </label>
             </div>
         </div>
 
@@ -168,53 +146,59 @@
 
     @if (Model?.Explanations?.Count > 0)
     {
-        <section expanded>
+        <section>
             <h2>Explanation</h2>
             <div>
-                <div class="left" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:100%" : "max-width:75%")">
+                <div class="m2 right">
+                    @if (Model.Explanations.Select(s => s.Text?.Length).Sum() > 500)
+                    {
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }
+                    else
+                    {
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }
+                </div>
+                <div>
                     @if (Model.Explanations?.Count > 0)
                     {
 
                         @foreach (var explanation in Model.Explanations)
                         {
-                            <p class="ampstart-caption pt1 pb1">
+                            <p class="justify">
                                 @explanation.Text
                             </p>
                         }
                     }
-                </div>
-                <div class="right" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:25%" : "max-width:100%")">
-                    @if (Model.Explanations.Select(s => s.Text.Length).Sum() > 1200)
-                    {
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_160_600, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                    }
-                    else
-                    {
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                    }
-
                 </div>
             </div>
         </section>
     }
     @if (Model.References?.Count > 0)
     {
-        <section expanded>
+        <section>
             <h2>References</h2>
             <div>
-                <div class="left" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:100%" : "max-width:40%")">
+                <div class="m2 right">
+                    @if (Model.References.Select(s => s.Text?.Length).Sum() > 500)
+                    {
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }
+                    else
+                    {
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }
+                </div>
+                <div>
                     @if (Model.References?.Count > 0)
                     {
                         @foreach (var reference in Model.References)
                         {
-                            <p class="ampstart-caption pt1 pb1">
+                            <p class="justify">
                                 <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
                             </p>
                         }
                     }
-                </div>
-                <div class="right" style="@(Html.ViewContext.HttpContext.IsMobileBrowser() || !Model.ShowAdsInQuestion.GetValueOrDefault() ? "max-width:60%" : "max-width:100%")">
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_728_90, Model.ShowAdsInQuestion.GetValueOrDefault()))
                 </div>
             </div>
         </section>

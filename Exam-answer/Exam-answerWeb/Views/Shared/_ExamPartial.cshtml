@@ -14,8 +14,10 @@
     Model.ShowUdemy = false;
     for (int i = 0; i < Model.Questions.Count; i++)
     {
-        if (i % 6 == 0 && i > 0)
+        if (Context.IsMobileBrowser())
         {
+            if (i % 3 == 0 && i > 0)
+            {
             <amp-ad width="100vw" height="320"
                     type="adsense"
                     data-ad-client="ca-pub-2519209558650417"
@@ -24,8 +26,9 @@
                     data-full-width="">
                 <div overflow=""></div>
             </amp-ad>
+            }
         }
-        Model.Questions[i].ShowAdsInQuestion = false;
+        @*Model.Questions[i].ShowAdsInQuestion = false;*@
         <partial name="~/views/shared/question.cshtml" model="@Model.Questions[i]" />
     }
 }

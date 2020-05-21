@@ -22,6 +22,6 @@ namespace Exam_answerWeb.Models
 
         public string UdemyMessage { get; set; }
 
-        public bool ShowUdemy { get; set; } = true;
+        public bool ShowUdemy { get; set; } = false;
     }
 }
