@@ -86,26 +86,30 @@
             </ul>
         </nav>
     </amp-sidebar>
-    @*<div class="center">
-        @if (!Html.ViewContext.HttpContext.IsMobileBrowser())
+    <div class="center">
+        @if (Html.ViewContext.HttpContext.IsMobileBrowser())
         {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_970_90))
+        <amp-ad layout="fixed"
+                width="320"
+                height="50"
+                type="adsense"
+                data-ad-client="ca-pub-2519209558650417"
+                data-ad-slot="7770886760">
+        </amp-ad>
         }
-        else
-        {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100))
-        }
-    </div>*@
+    </div>
     @RenderBody()
     <div class="center">
-        @*@if (!Html.ViewContext.HttpContext.IsMobileBrowser())
+        @if (Html.ViewContext.HttpContext.IsMobileBrowser())
         {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_728_90))
+        <amp-ad layout="fixed"
+                width="320"
+                height="50"
+                type="adsense"
+                data-ad-client="ca-pub-2519209558650417"
+                data-ad-slot="7770886760">
+        </amp-ad>
         }
-        else
-        {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
-        }*@
     </div>
     <br />
     @*<a title="Online security starts with a click. Advanced security. Internet freedom. Complete privacy." href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902" target="_blank" rel="noopener">
