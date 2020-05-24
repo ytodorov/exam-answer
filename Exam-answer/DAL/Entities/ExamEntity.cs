@@ -10,6 +10,10 @@ namespace DAL.Entities
 
         public string Provider { get; set; }
 
+        public string ExamProviderUrl { get; set; }
+
+        public string ExamUrl { get; set; }
+
         public string PageTitle { get; set; }
 
         public string PageDescription { get; set; }

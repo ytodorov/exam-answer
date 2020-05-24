@@ -16,15 +16,35 @@
     {
         if (Context.IsMobileBrowser())
         {
-            if (i % 3 == 0 && i > 0)
+            if (i % 4 == 0 && i > 0)
             {
-    <amp-ad layout="fixed"
-            width="320"
-            height="50"
-            type="adsense"
-            data-ad-client="ca-pub-2519209558650417"
-            data-ad-slot="7770886760">
-    </amp-ad>
+                <div class="center">
+                    <amp-ad layout="fixed"
+                            width="320"
+                            height="50"
+                            type="adsense"
+                            data-ad-client="ca-pub-2519209558650417"
+                            data-ad-slot="7770886760">
+                    </amp-ad>
+                </div>
+            }
+            else if (i % 2 == 0 && i > 0)
+            {
+                <amp-ad width="100vw" height="320"
+                        type="adsense"
+                        data-ad-client="ca-pub-2519209558650417"
+                        data-ad-slot="7303740684"
+                        data-auto-format="rspv"
+                        data-full-width="">
+                    <div overflow=""></div>
+                </amp-ad>
+            }
+        }
+        else
+        {
+            if (i % 4 == 0 && i > 0)
+            {
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
             }
         }
         @*Model.Questions[i].ShowAdsInQuestion = false;*@

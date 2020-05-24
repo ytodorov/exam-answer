@@ -10,6 +10,10 @@ namespace Exam_answerWeb.Models
 
         public string Provider { get; set; }
 
+        public string ExamProviderUrl { get; set; }
+
+        public string ExamUrl { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }

@@ -162,6 +162,8 @@ namespace Exam_answerWeb.Infrastructure
             ExamEntity scfslc = new ExamEntity()
             {
                 Provider = "Salesforce",
+                ExamProviderUrl = "https://www.exam-answer.com", // To be changed
+                ExamUrl = "https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant",
                 Code = "Salesforce-Certified-Field-Service-Lightning-Consultant",
                 Name = "Salesforce Certified Field Service Lightning Consultant",
                 PageTitle = "Salesforce Certified Field Service Lightning Consultant",
@@ -176,6 +178,8 @@ namespace Exam_answerWeb.Infrastructure
             {
                 Provider = "Salesforce",
                 Code = "CRT-251",
+                ExamProviderUrl = "https://www.exam-answer.com", // To be changed
+                ExamUrl = "https://www.exam-answer.com/salesforce/crt-251",
                 Name = "Sales Cloud Consultant",
                 PageTitle = "Exam CRT-251: Sales Cloud Consultant",
                 PageDescription = "Prepare for Exam CRT-251: Sales Cloud Consultant. Free demo questions with answers and explanations.",
@@ -299,6 +303,8 @@ namespace Exam_answerWeb.Infrastructure
                 Provider = "Microsoft",
                 Code = "AZ-300",
                 Name = "Microsoft Azure Architect Technologies",
+                ExamProviderUrl = "https://www.exam-answer.com", // To be changed
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-300",
                 PageTitle = "Exam AZ-300: Microsoft Azure Architect Technologies",
                 PageDescription = "Prepare for Exam AZ-300: Microsoft Azure Architect Technologies. Free demo questions with answers and explanations.",
                 Questions = GetQuestions("Exams\\az-300.txt"),
@@ -311,6 +317,8 @@ namespace Exam_answerWeb.Infrastructure
             {
                 Provider = "Microsoft",
                 Code = "AZ-100",
+                ExamProviderUrl = "https://www.exam-answer.com", // To be changed
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-100",
                 Name = "Microsoft Azure Infrastructure and Deployment",
                 PageTitle = "Exam AZ-100: Microsoft Azure Infrastructure and Deployment",
                 PageDescription = "Prepare for Exam AZ-100: Microsoft Azure Infrastructure and Deployment. Free demo questions with answers and explanations.",
@@ -324,6 +332,8 @@ namespace Exam_answerWeb.Infrastructure
             {
                 Provider = "Microsoft",
                 Code = "AZ-900",
+                ExamProviderUrl = "https://www.exam-answer.com", // To be changed
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-900",
                 Name = "Microsoft Azure Fundamentals",
                 PageTitle = "Exam AZ-900: Microsoft Azure Fundamentals",
                 PageDescription = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations.",

@@ -23,8 +23,8 @@
             StringComparison.InvariantCultureIgnoreCase);
         }
     }
-}
-<h1>@Model.Exam.Provider / @Model.Exam.Code / Question @(questionNumber)</h1>
+}    
+    <h1><a href="@Model.Exam.ExamProviderUrl">@Model.Exam.Provider</a> / <a href="@Model.Exam.ExamUrl"> @Model.Exam.Code</a> / <a href="@(Model.Exam.ExamUrl + "/question" + questionNumber)"> Question @(questionNumber)</a></h1>
 <partial name="_PrevNextPartial" />
 <amp-accordion disable-session-states>
     <section expanded>
@@ -204,4 +204,5 @@
         </section>
     }
 </amp-accordion>
+<partial name="_PrevNextPartial" />
 <hr />

@@ -39,7 +39,7 @@ namespace UnitTests
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-100/question{i}");
                 }
 
-                for (int i = 1; i < 47; i++)
+                for (int i = 1; i < 242; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-300/question{i}");
                 }
