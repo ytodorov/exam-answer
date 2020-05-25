@@ -1,0 +1,35 @@
+﻿@model BaseViewModel
+@{ 
+    var exams = TempData["exams"] as List<ExamViewModel>;
+    var configuration = ViewContext.HttpContext.RequestServices.GetService<IConfiguration>();
+
+    var pageBaseCanonicalUrl = configuration.GetValue(typeof(string), "PageBaseCanonicalUrl")?.ToString();
+}
+<div class="k-block k-info-colored" style="text-align: center;">
+    <div class="k-header k-info-colored">
+        <h1>
+            @Model.PageH1
+        </h1>
+    </div>
+    <h2>
+        @Model.PageDescription
+    </h2>
+</div>
+@foreach (var exam in exams)
+{
+    <div class="k-block">
+        <div class="k-header">
+           @($"{exam?.Provider}: {exam?.Code}")
+        </div>
+        <h2>
+            @(exam?.Name)
+        </h2>
+        <p>
+            <a href="@($"{pageBaseCanonicalUrl?.ToLowerInvariant()}/{exam?.Provider?.ToLowerInvariant()}/{exam?.Code?.ToLowerInvariant()}")">Start in Learn Model</a>
+        </p>
+        <p>
+            <a href="@($"{pageBaseCanonicalUrl?.ToLowerInvariant()}/{exam?.Provider?.ToLowerInvariant()}/{exam?.Code?.ToLowerInvariant()}/question1")">Start in Exam Model</a>
+        </p>
+    </div>
+    <br />
+}
