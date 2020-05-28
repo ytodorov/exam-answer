@@ -153,7 +153,7 @@
         <section>
             <h2>Explanation</h2>
             <div>
-                <div class="m2 right">
+                @*<div class="m2 right">
                     @if (Model.Explanations.Select(s => s.Text?.Length).Sum() > 500)
                     {
                         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
@@ -162,7 +162,7 @@
                     {
                         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     }
-                </div>
+                </div>*@
                 <div>
                     @if (Model.Explanations?.Count > 0)
                     {
@@ -183,7 +183,7 @@
         <section>
             <h2>References</h2>
             <div>
-                <div class="m2 right">
+                @*<div class="m2 right">
                     @if (Model.References.Select(s => s.Text?.Length).Sum() > 500)
                     {
                         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
@@ -192,7 +192,7 @@
                     {
                         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     }
-                </div>
+                </div>*@
                 <div>
                     @if (Model.References?.Count > 0)
                     {
