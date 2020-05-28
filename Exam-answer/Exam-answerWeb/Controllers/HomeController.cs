@@ -148,7 +148,9 @@ namespace Exam_answerWeb.Controllers
 
             return View(baseViewModel);
         }
+
         [Route("trustlogo")]
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any)]
         public IActionResult TrustLogo()
         {
             return View();

@@ -17,6 +17,10 @@
         <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
         <meta property="og:image:alt" content="@(Model?.PageTitle)" />
     }
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect dns-prefetch" href="https://secure.trust-provider.com" crossorigin>
+    <link rel="preconnect dns-prefetch" href="https://www.positivessl.com" crossorigin>
+    <link rel="preconnect dns-prefetch" href="https://cdn.ampproject.org" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <partial name="_BoilerplateCssPartial.cshtml" />
     <partial name="_AmpCustomCssPartial.cshtml" />
@@ -28,10 +32,10 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    @*<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>*@
 </head>
 <body>
-    <amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>
+    @*<amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>*@
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
         <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>

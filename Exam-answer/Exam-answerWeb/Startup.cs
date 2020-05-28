@@ -20,7 +20,9 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Exam_answerWeb
@@ -39,8 +41,6 @@ namespace Exam_answerWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMemoryCache();
-
             services.Configure<BrotliCompressionProviderOptions>(options =>
             {
                 options.Level = CompressionLevel.Optimal;
@@ -57,9 +57,14 @@ namespace Exam_answerWeb
                 options.Providers.Clear();
                 options.Providers.Add<BrotliCompressionProvider>();
                 options.Providers.Add<GzipCompressionProvider>();
+
+                var mimeTypes = ResponseCompressionDefaults.MimeTypes;
+                options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "document", "text/html", "image/x-icon" });
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddMemoryCache();
 
             services.AddOutputCaching();
 
@@ -68,7 +73,7 @@ namespace Exam_answerWeb
                 .AddMvc(options => options.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-                //.AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            //.AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services.AddDbContext<ExamAnswerContext>(options => options.UseInMemoryDatabase(databaseName: "ExamAnswerContext"));
 
@@ -144,6 +149,8 @@ namespace Exam_answerWeb
                 ContentTypeProvider = provider
             });
 
+            app.UseOutputCaching();
+
             app.Use(
                        next =>
                        {
@@ -172,7 +179,16 @@ namespace Exam_answerWeb
                                string urlPath = context.Request.Path;
                                bool isMobile = context.IsMobileBrowser();
                                string cachedHtml = cache.Get<string>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString());
-                               if (!string.IsNullOrEmpty(cachedHtml))
+                               byte[] byteArray = cache.Get<byte[]>(context.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString() + "compressedBr");
+
+                               string[] browserSupportedCompressionTypes = context.Request.Headers["Accept-Encoding"].ToString().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                               if (browserSupportedCompressionTypes.Contains("br") && byteArray != null)
+                               {
+                                   context.Response.ContentType = "text/html";
+                                   context.Response.Headers.Add("Content-Encoding", new[] { "br" });
+                                   await context.Response.Body.WriteAsync(byteArray, 0, byteArray.Length);// .WriteAsync(compressedString);
+                               }
+                               else if (!string.IsNullOrEmpty(cachedHtml))
                                {
                                    await context.Response.WriteAsync(cachedHtml);
                                }
@@ -180,10 +196,44 @@ namespace Exam_answerWeb
                                {
                                    await next(context);
                                }
+
+                               //if (!string.IsNullOrEmpty(cachedHtml))
+                               //{
+
+                               //// convert string to stream
+                               //byte[] byteArray = Encoding.ASCII.GetBytes(cachedHtml);
+
+                               //using (MemoryStream fs = new MemoryStream(byteArray))
+                               //using (var ms = new MemoryStream())
+                               //{
+                               //    using (var bs = new BrotliSharpLib.BrotliStream(ms, System.IO.Compression.CompressionMode.Compress))
+                               //    {
+                               //        bs.SetQuality(11);
+                               //        fs.Position = 0;
+                               //        fs.CopyTo(bs);
+
+                               //        bs.Dispose();
+                               //        byte[] compressed = ms.ToArray();
+                               //        var compressedString = Encoding.ASCII.GetString(compressed);
+
+                               //        context.Response.ContentType = "text/html";
+                               //        context.Response.Headers.Add("Content-Encoding", new[] { "br" });
+                               //        await context.Response.Body.WriteAsync(compressed, 0, compressed.Length);// .WriteAsync(compressedString);
+
+                               //    }
+                               //}
+                               //context.Response.Headers["Content-Encoding"] = "br";
+                               //await context.Response.WriteAsync(cachedHtml);
+                               //await context.Response.WriteAsync(cachedHtml);
+                               //}
+                               //else
+                               //{
+                               //    await next(context);
+                               //}
                            };
                        });
 
-            app.UseOutputCaching();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

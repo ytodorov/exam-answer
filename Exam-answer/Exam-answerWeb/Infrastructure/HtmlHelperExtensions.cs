@@ -164,13 +164,18 @@ namespace Exam_answerWeb.Infrastructure
                     break;
                 case AdsenseType.Fixed_320_100:
                     result = @"<amp-ad
-     layout=""fixed""
-     width=""320""
-     height=""100""
-     type=""adsense""
-     data-ad-client=""ca-pub-2519209558650417""
-     data-ad-slot=""9840423003"">
-</amp-ad>";
+                         layout=""fixed""
+                         width=""320""
+                         height=""100""
+                         type=""adsense""
+                         data-ad-client=""ca-pub-2519209558650417""
+                         data-ad-slot=""9840423003"">
+                    </amp-ad>";
+
+//                    result = @"<amp-ad width=320 height=100
+//    type=""doubleclick""
+//    data-slot=""/22029984878/Desktop_320x100"">
+//</amp-ad>";
                     break;
                 default:                    
                     break;

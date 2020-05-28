@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace Exam_answerWeb.Controllers
 {
@@ -337,6 +338,25 @@ $@"
                 if (statusCode == StatusCodes.Status200OK)
                 {
                     cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+
+                    // convert string to stream
+                    byte[] byteArray = Encoding.ASCII.GetBytes(htmlToCache);
+
+                    using (MemoryStream fs = new MemoryStream(byteArray))
+                    using (var ms = new MemoryStream())
+                    {
+                        using (var bs = new BrotliSharpLib.BrotliStream(ms, System.IO.Compression.CompressionMode.Compress))
+                        {
+                            bs.SetQuality(11);
+                            fs.Position = 0;
+                            fs.CopyTo(bs);
+
+                            bs.Dispose();
+                            byte[] compressed = ms.ToArray();
+
+                            cache.Set<byte[]>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString() + "compressedBr", compressed);
+                        }
+                    }
                 }
             }
             base.OnActionExecuted(context);
