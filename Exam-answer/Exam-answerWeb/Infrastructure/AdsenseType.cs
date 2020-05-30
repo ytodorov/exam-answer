@@ -30,6 +30,7 @@ namespace Exam_answerWeb.Infrastructure
         Fixed_160_600, //Wide Skyscraper
         Fixed_970_90,
         Fixed_320_100,
+        Fixed_320_50,
 
     }
 }

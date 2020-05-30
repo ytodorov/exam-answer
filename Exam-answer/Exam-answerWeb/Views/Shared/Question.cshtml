@@ -35,14 +35,14 @@
         <h2>Question @(questionNumber)</h2>
         <div>
             <div class="m2 right">
-                @if (Model.Contents.Select(s => s.Text?.Length).Sum() > 500)
-                {
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                }
-                else
-                {
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                }
+                @*@if (Model.Contents.Select(s => s.Text?.Length).Sum() > 500)
+                    {
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }
+                    else
+                    {
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    }*@
 
             </div>
             <div>
@@ -72,20 +72,20 @@
         <h2>Answers</h2>
         <div>
             <div class="m2 right">
-                @if (Model.Answers.Max(s => s.Text.Length) < 50)
-                {
-                    if (!Html.ViewContext.HttpContext.IsMobileBrowser())
+                @*@if (Model.Answers.Max(s => s.Text.Length) < 50)
                     {
-                        if (Model.Answers.Count <= 2)
+                        if (!Html.ViewContext.HttpContext.IsMobileBrowser())
                         {
-                            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                            if (Model.Answers.Count <= 2)
+                            {
+                                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                            }
+                            else
+                            {
+                                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                            }
                         }
-                        else
-                        {
-                            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                        }
-                    }
-                }
+                    }*@
             </div>
             <div>
                 @{
@@ -164,7 +164,15 @@
             </div>
         </div>
     </section>
-
+    @if (Model.ShowAdsInQuestion.GetValueOrDefault())
+    {
+        <section expanded>
+            <h2>Advertisement</h2>
+            <div class="center">
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+            </div>
+        </section>
+    }
     @if (Model?.Explanations?.Count > 0)
     {
         <section>

@@ -11,6 +11,9 @@ namespace Exam_answerWeb.Extensions
     {
         public static bool IsMobileBrowser(this HttpContext httpContext)
         {
+            // Do not use this. Amp cache can (will) load html without caring if it is a mobile or desktop.
+            // As a result a desktop version will be shown on mobile device.
+            return false;
             bool result = true;
 
             if (httpContext?.Request?.Headers?.ContainsKey("User-Agent") == true)

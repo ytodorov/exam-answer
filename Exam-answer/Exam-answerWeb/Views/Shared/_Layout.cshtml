@@ -29,7 +29,10 @@
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
     <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async=""></script>
     <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
+    {
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    }
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     @*<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>*@
@@ -92,39 +95,41 @@
         </nav>
     </amp-sidebar>
     <div class="center">
-        @if (Html.ViewContext.HttpContext.IsMobileBrowser())
-        {
-            <amp-ad layout="fixed"
-                    width="320"
-                    height="50"
-                    type="adsense"
-                    data-ad-client="ca-pub-2519209558650417"
-                    data-ad-slot="7770886760">
-            </amp-ad>
-        }
-        else
-        {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_970_90))
-        }
+        @*@if (Html.ViewContext.HttpContext.IsMobileBrowser())
+            {
+                <amp-ad layout="fixed"
+                        width="320"
+                        height="50"
+                        type="adsense"
+                        data-ad-client="ca-pub-2519209558650417"
+                        data-ad-slot="7770886760">
+                </amp-ad>
+            }
+            else
+            {
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_970_90))
+            }*@
+        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
     </div>
     @RenderBody()
-<div class="center">
-    @if (Html.ViewContext.HttpContext.IsMobileBrowser())
-    {
-        <amp-ad width="100vw" height="320"
-                type="adsense"
-                data-ad-client="ca-pub-2519209558650417"
-                data-ad-slot="7303740684"
-                data-auto-format="rspv"
-                data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>
-    }
-    else
-    {
+    <div class="center">
+        @*@if (Html.ViewContext.HttpContext.IsMobileBrowser())
+            {
+                <amp-ad width="100vw" height="320"
+                        type="adsense"
+                        data-ad-client="ca-pub-2519209558650417"
+                        data-ad-slot="7303740684"
+                        data-auto-format="rspv"
+                        data-full-width="">
+                    <div overflow=""></div>
+                </amp-ad>
+            }
+            else
+            {
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+            }*@
         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
-    }
-</div>
+    </div>
     <br />
     @*<a title="Online security starts with a click. Advanced security. Internet freedom. Complete privacy." href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902" target="_blank" rel="noopener">
             <amp-img alt="Online security starts with a click. Advanced security. Internet freedom. Complete privacy."
@@ -169,14 +174,14 @@
         </div>
     </footer>
     @*<div class="center">
-        <amp-iframe width="auto"
-                    height="300"
-                    sandbox="allow-scripts"
-                    layout="fixed-height"
-                    src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
-            <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
-        </amp-iframe>
-    </div>*@
+            <amp-iframe width="auto"
+                        height="300"
+                        sandbox="allow-scripts"
+                        layout="fixed-height"
+                        src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
+                <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
+            </amp-iframe>
+        </div>*@
 
     @Html.Raw(Model?.PageMicrodata)
 </body>

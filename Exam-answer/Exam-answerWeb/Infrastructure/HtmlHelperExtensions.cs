@@ -177,13 +177,22 @@ namespace Exam_answerWeb.Infrastructure
 //    data-slot=""/22029984878/Desktop_320x100"">
 //</amp-ad>";
                     break;
+                case AdsenseType.Fixed_320_50:
+                    result = @"<amp-ad layout=""fixed""
+                width=""320""
+                height=""50""
+                type=""adsense""
+                data-ad-client=""ca-pub-2519209558650417""
+                data-ad-slot=""7770886760"">
+        </amp-ad>";
+                    break;
                 default:                    
                     break;
             }
-            if (helper.ViewContext.HttpContext.IsMobileBrowser())
-            {
-                result = string.Empty;
-            }
+            //if (helper.ViewContext.HttpContext.IsMobileBrowser())
+            //{
+            //    result = string.Empty;
+            //}
             return result;
         }
     }
