@@ -316,6 +316,22 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(az300);
             result.Add(az300);
 
+            ExamEntity az400 = new ExamEntity()
+            {
+                Provider = "Microsoft",
+                Code = "AZ-400",
+                ExamProviderUrl = "https://www.exam-answer.com/microsoft",
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-400",
+                Name = "Designing and Implementing Microsoft DevOps Solutions",
+                PageTitle = "Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions",
+                PageDescription = "Prepare for Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\az-400.txt"),
+                Order = 4,
+            };
+
+            context?.Exams?.Add(az400);
+            result.Add(az400);
+
             ExamEntity az100 = new ExamEntity()
             {
                 Provider = "Microsoft",

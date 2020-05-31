@@ -166,13 +166,16 @@
     </section>
     @if (Model.ShowAdsInQuestion.GetValueOrDefault())
     {
+        @if (Model?.Explanations?.Count > 0 || Model.References?.Count > 0)
+        {
         <section expanded>
             <h2>Advertisement</h2>
             <div class="center">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
             </div>
         </section>
-    }
+            }
+        }
     @if (Model?.Explanations?.Count > 0)
     {
         <section>

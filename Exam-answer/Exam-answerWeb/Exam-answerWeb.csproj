@@ -1008,14 +1008,14 @@
 
 
   <ItemGroup>
-    <PackageReference Include="AngleSharp" Version="0.13.0" />
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="BrotliSharpLib" Version="0.3.3" />
     <PackageReference Include="HtmlMinificationMiddleware" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
-    <PackageReference Include="UAParser" Version="3.1.43" />
-    <PackageReference Include="WebEssentials.AspNetCore.OutputCaching" Version="1.0.16" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="UAParser" Version="3.1.44" />
+    <PackageReference Include="WebEssentials.AspNetCore.OutputCaching" Version="1.0.28" />
   </ItemGroup>
 
 
@@ -1413,6 +1413,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\az-300.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-400.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\az-900.txt">

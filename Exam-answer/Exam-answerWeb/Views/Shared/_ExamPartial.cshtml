@@ -17,11 +17,15 @@
 
         if (i % 4 == 0 && i > 0)
         {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
+            <div class="center">
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
+            </div>
         }
         else if (i % 2 == 0 && i > 0)
         {
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+            <div class="center">
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+            </div>
         }
 
         Model.Questions[i].ShowAdsInQuestion = false;
