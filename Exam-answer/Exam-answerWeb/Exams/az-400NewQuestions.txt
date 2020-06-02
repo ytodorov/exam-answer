@@ -1,0 +1,1515 @@
+﻿###
+You use Azure Artifacts to host NuGet packages that you create.
+You need to make one of the packages available to anonymous users outside your organization. The solution must minimize the number of publication points.
+What should you do?
+---
+Change the feed URL of the package
+Create a new feed for the package *
+Promote the package to a release view.
+Publish the package to a public NuGet repository.
+---
+Azure Artifacts introduces the concept of multiple feeds that you can use to organize and control access to your packages.
+Packages you host in Azure Artifacts are stored in a feeSetting permissions on the feed allows you to share your packages with as many or as few people as your scenario requires.
+Feeds have four levels of access: Owners, Contributors, Collaborators, and Readers.
+---
+Secure and share packages using feed permissions;https://docs.microsoft.com/en-us/azure/devops/artifacts/feeds/feed-permissions?view=vsts&tabs=new-nav
+###
+Your company plans to use an agile approach to software development.
+You need to recommend an application to provide communication between members of the development team who work in locations around the worlThe applications must meet the following requirements:
+Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.
+Be available on Windows 10, Mac OS, iOS, and Android operating systems.
+Provide the ability to add external contractors and suppliers to projects.
+Integrate directly with Azure DevOps.
+
+What should you recommend?
+---
+Microsoft Project
+Bamboo
+Microsoft Lync
+Microsoft Teams *
+---
+Within each team, users can create different channels to organize their communications by topiEach channel can include a couple of users or scale to thousands of users.
+Microsoft Teams works on Android, iOS, Mac and Windows systems and devices. It also works in Chrome, Firefox, Internet Explorer 11 and Microsoft Edge web browsers.
+The guest-access feature in Microsoft Teams allows users to invite people outside their organizations to join internal channels for messaging, meetings and file sharing. This capability helps to facilitate business-to-business project management.
+Teams integrates with Azure DevOps.
+Note: Slack would also be a correct answer, but it is not an option here.
+---
+Microsoft Teams;https://searchunifiedcommunications.techtarget.com/definition/Microsoft-Teams
+###
+You manage build pipelines and deployment pipelines by using Azure DevOps.
+Your company has a team of 500 developers. New members are added continually to the team.
+You need to automate the management of users and licenses whenever possible.
+Which task must you perform manually?
+---
+modifying group memberships
+adding users
+assigning entitlements
+procuring licenses *
+---
+Incorrect Answers:
+You can seamlessly replace existing solutions with group-based licensing to more easily manage licenses in Azure DevOps. You can use Group rules.
+Member Entitlement Management APIs allow managing Entitlements that include -
+License
+Extensions
+Project/Team memberships
+---
+Add a group rule to assign access levels and extensions;https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/migrate-to-group-based-resource-management?view=vsts&tabs=new-nav
+Member Entitlement Management API;https://docs.microsoft.com/en-us/rest/api/azure/devops/memberentitlementmanagement/?view=azure-devops-rest-5.0
+###
+You are developing a multi-tier application. The application will use Azure App Service web apps as the front end and an Azure SQL database as the back end.
+The application will use Azure functions to write some data to Azure Storage.
+You need to send the Azure DevOps team an email message when the front end fails to return a status code of 200.
+Which feature should you use?
+---
+Service Map in Azure Log Analytics
+Availability tests in Azure Application Insights
+Profiler in Azure Application Insights
+Application Map in Azure Application Insights *
+---
+Application Map helps you spot performance bottlenecks or failure hotspots across all components of your distributed application. Each node on the map represents an application component or its dependencies; and has health KPI and alerts status.
+Incorrect Answers:
+Service Map automatically discovers application components on Windows and Linux systems and maps the communication between services. You can use it to view your servers as you think of them--interconnected systems that deliver critical services. Service Map shows connections between servers, processes, and ports across any TCP-connected architecture with no configuration required, other than installation of an agent.
+---
+Application Map: Triage Distributed Applications;https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-map
+###
+During a code review, you discover many quality issues. Many modules contain unused variables and empty catch blocks.
+You need to recommend a solution to improve the quality of the code.
+What should you recommend?
+---
+In a Grunt build task, select Enabled from Control Options.
+In a Maven build task, select Run PM*
+In a Xcode build task, select Use xcpretty from Advanced.
+In a Gradle build task, select Run Checkstyle.
+---
+PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth.
+There is an Apache Maven PMD Plugin which allows you to automatically run the PMD code analysis tool on your project's source code and generate a site report with its results.
+Incorrect Answers:
+xcpretty is a fast and flexible formatter for xcodebuild.
+---
+PMD An extensible cross-language static code analyzer;https://pmd.github.io/
+###
+C
+Your company has an on-premises Bitbucket Server that is used for Git-based source control. The server is protected by a firewall that blocks inbound Internet traffic.
+You plan to use Azure DevOps to manage the build and release processes.
+Which two components are required to integrate Azure DevOps and Bitbucket? Each correct answer presents part of the solution.
+---
+a deployment group
+a Microsoft-hosted agent
+service hooks
+a self-hosted agent *
+an External Git service connection *
+---
+GitLab CI/CD can be used with GitHub or any other Git server such as BitBucket. Instead of moving your entire project to GitLab, you can connect your external repository to get the benefits of GitLab CI/CD.
+Note: When a pipeline uses a remote, 3rd-party repository host such as Bitbucket Cloud, the repository is configured with webhooks that notify Azure Pipelines
+Server or TFS when code has changed and a build should be triggereSince on-premises installations are normally protected behind a firewall, 3rd-party webhooks are unable to reach the on-premises server. As a workaround, you can use the External Git repository type which uses polling instead of webhooks to trigger a build when code has changed.
+---
+Pipeline options for Git repositories;https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git
+###
+Your company plans to use an agile approach to software development.
+You need to recommend an application to provide communication between members of the development team who work in locations around the worlThe applications must meet the following requirements:
+Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.
+Be available on Windows 10, Mac OS, iOS, and Android operating systems.
+Provide the ability to add external contractors and suppliers to projects.
+Integrate directly with Azure DevOps.
+What should you recommend?
+---
+Microsoft Project
+Bamboo
+Octopus
+Slack *
+---
+Slack is a popular team collaboration service that helps teams be more productive by keeping all communications in one place and easily searchable from virtually anywhere. All your messages, your files, and everything from Twitter, Dropbox, Google Docs, Azure DevOps, and more all together. Slack also has fully native apps for iOS and Android to give you the full functionality of Slack wherever you go.
+
+Integrated with Azure DevOps -
+This integration keeps your team informed of activity happening in its Azure DevOps projects. With this integration, code check-ins, pull requests, work item updates, and build events show up directly in your team's Slack channel.
+Note: Microsoft Teams would also be a correct answer, but it is not an option here.
+---
+Slack Integration;https://marketplace.visualstudio.com/items?itemName=ms-vsts.vss-services-slack
+###
+C
+Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
+You need to make a custom package available to all the developers. The package must be managed centrally, and the latest version must be available for consumption in Visual Studio automatically.
+Which three actions should you perform? Each correct answer presents part of the solution.
+---
+Publish the package to a fee*
+Create a new feed in Azure Artifacts. *
+Upload a package to a Git repository.
+Add the package URL to the Environment settings in Visual Studio.
+Add the package URL to the NuGet Package Manager settings in Visual Studio. *
+Create a Git repository in Azure Repos.
+---
+By using your custom NuGet package feed within your Azure DevOps (previously VSTS) instance, you'll be able to distribute your packages within your organization with ease.
+Start by creating a new feed.
+We can publish, pack and push the built project to our NuGet feed.
+Consume your private NuGet Feed
+Go back to the Packages area in Azure DevOps, select your feed and hit "Connect to feed". You'll see some instructions for your feed, but it's fairly simple to set up.
+Just copy your package source URL, go to Visual Studio, open the NuGet Package Manager, go to its settings and add a new source. Choose a fancy name, insert the source URL. Done.
+Search for your package in the NuGet Package Manager and it should appear there, ready for installation. Make sure to select the appropriate feed (or just all feeds) from the top right select box.
+---
+Get started with private NuGet feeds in Azure DevOps;https://medium.com/medialesson/get-started-with-private-nuget-feeds-in-azure-devops-8c7b5f022a68
+###
+You have a GitHub repository.
+You create a new repository in Azure DevOps.
+You need to recommend a procedure to clone the repository from GitHub to Azure DevOps.
+What should you recommend?
+---
+Create a pull request.
+Create a webhook.
+Create a service connection for GitHub.
+From Import a Git repository, click Import. *
+Create a personal access token in Azure DevOps.
+---
+You can import an existing Git repo from GitHub, Bitbucket, GitLab, or other location into a new or empty existing repo in your project in Azure DevOps.
+
+Import into a new repo -
+1. Select Repos, Files.
+2. From the repo drop-down, select Import repository.
+3. If the source repo is publicly available, just enter the clone URL of the source repository and a name for your new Git repository.
+---
+Import a Git repo;https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops
+###
+Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
+You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
+What should you use?
+---
+SourceGear Vault
+Jenkins
+Microsoft Visual SourceSafe
+WhiteSource Bolt *
+---
+WhiteSource provides WhiteSource Bolt, a lightweight open source security and management solution developed specifically for integration with Azure DevOps and Azure DevOps Server.
+Note: WhiteSource is the leader in continuous open source software security and compliance management. WhiteSource integrates into your build process, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated definitive database of open source repositories.
+---
+Managing Open-source security and license with WhiteSource;https://www.azuredevopslabs.com/labs/vstsextend/whitesource/
+###
+You have a branch policy in a project in Azure DevOps. The policy requires that code always builds successfully.
+You need to ensure that a specific user can always merge changes to the master branch, even if the code fails to compile. The solution must use the principle of least privilege.
+What should you do?
+---
+Add the user to the Build Administrators group.
+Add the user to the Project Administrators group.
+From the Security settings of the repository, modify the access control for the user.
+From the Security settings of the branch, modify the access control for the user. *
+---
+In some cases, you need to bypass policy requirements so you can push changes to the branch directly or complete a pull request even if branch policies are not satisfieFor these situations, grant the desired permission from the previous list to a user or group. You can scope this permission to an entire project, a repo, or a single branch. Manage this permission along the with other Git permissions.
+---
+hImprove code quality with branch policies;https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies
+
+
+###
+Your company uses a Git repository in Azure Repos to manage the source code of a web application. The master branch is protected from direct updates.
+Developers work on new features in the topic branches.
+Because of the high volume of requested features, it is difficult to follow the history of the changes to the master branch.
+You need to enforce a pull request merge strategy. The strategy must meet the following requirements:
+Consolidate commit histories.
+Merge the changes into a single commit.
+Which merge strategy should you use in the branch policy?
+---
+squash merge *
+fast-forward merge
+Git fetch
+no-fast-forward merge
+---
+Squash merging is a merge option that allows you to condense the Git history of topic branches when you complete a pull request. Instead of each commit on the topic branch being added to the history of the default branch, a squash merge takes all the file changes and adds them to a single new commit on the default branch.
+A simple way to think about this is that squash merge gives you just the file changes, and a regular merge gives you the file changes and the commit history.
+Note: Squash merging keeps your default branch histories clean and easy to follow without demanding any workflow changes on your team. Contributors to the topic branch work how they want in the topic branch, and the default branches keep a linear history through the use of squash merges. The commit history of a master branch updated with squash merges will have one commit for each merged branch. You can step through this history commit by commit to find out exactly when work was done.
+---
+Squash merge pull requests;https://docs.microsoft.com/en-us/azure/devops/repos/git/merging-with-squash
+###
+C
+Your company uses cloud-hosted Jenkins for builds.
+You need to ensure that Jenkins can retrieve source code from Azure Repos.
+Which three actions should you perform? Each correct answer presents part of the solution.
+---
+Create a webhook in Jenkins.
+Add the Team Foundation Server (TFS) plug-in to Jenkins. *
+Add a domain to your Jenkins account.
+Create a personal access token in your Azure DevOps account. *
+Create a service hook in Azure DevOps. *
+---
+Jenkins' built-in Git Plugin or Team Foundation Server Plugin can poll a Team Services repository every few minutes and queue a job when changes are detected.
+Use Azure DevOps/ Visual Studio Team Services to create an access token, and use th
+For those who need tighter integration, Team Services provides two additional ways to achieve it: 1) the Jenkins Service Hook, and 2) Jenkins build and release tasks.)
+---
+Visual Studio Team Services Integration with Jenkins;https://blogs.msdn.microsoft.com/devops/2017/04/25/vsts-visual-studio-team-services-integration-with-jenkins/
+How to setup automated builds using Jenkins and Visual Studio Team Foundation Server;http://www.aisoftwarellc.com/blog/post/how-to-setup-automated-builds-using-jenkins-and-visual-studio-team-foundation-server/2044
+###
+You have an Azure Resource Manager template that deploys a multi-tier application.
+You need to prevent the user who performs the deployment from viewing the account credentials and connection strings used by the application.
+What should you use?
+---
+Azure Key Vault *
+a Web.config file
+an Appsettings.json file
+an Azure Storage table
+an Azure Resource Manager parameter file
+---
+When you need to pass a secure value (like a password) as a parameter during deployment, you can retrieve the value from an Azure Key Vault. You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault IThe key vault can exist in a different subscription than the resource group you are deploying to.
+---
+Use Azure Key Vault to pass secure parameter value during deployment;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-keyvault-parameter
+###
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+Solution: You create an email subscription to an Azure DevOps notification.
+Does this meet the goal?
+---
+Yes
+No *
+---
+You can create a service hook for Azure DevOps Services and TFS with Jenkins.
+---
+Create a service hook for Azure DevOps Services and TFS with Jenkin;https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/jenkins
+###
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+Solution: You create a service hook subscription that uses the code pushed event.
+Does this meet the goal?
+---
+Yes *
+No
+---
+You can create a service hook for Azure DevOps Services and TFS with Jenkins.
+---
+Create a service hook for Azure DevOps Services and TFS with Jenkin;https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/jenkins
+###
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+Solution: You add a trigger to the build pipeline.
+Does this meet the goal?
+---
+Yes
+No *
+---
+You can create a service hook for Azure DevOps Services and TFS with Jenkins.
+---
+Create a service hook for Azure DevOps Services and TFS with Jenkin;https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/jenkins
+###
+You are automating the build process for a Java-based application by using Azure DevOps.
+You need to add code coverage testing and publish the outcomes to the pipeline.
+What should you use?
+---
+Cobertura *
+Bullseye Coverage
+MSTest
+Coverlet
+NUnit
+Coverage.py
+---
+Use Publish Code Coverage Results task in a build pipeline to publish code coverage results to Azure Pipelines or TFS, which were produced by a build in Cobertura or JaCoCo format.
+---
+Publish Code Coverage Results task;https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results
+###
+Your company uses Azure DevOps.
+Only users who have accounts in Azure Active Directory can access the Azure DevOps environment.
+You need to ensure that only devices that are connected to the on-premises network can access the Azure DevOps environment.
+What should you do?
+---
+Assign the Stakeholder access level all users.
+In Azure Active Directory, configure risky sign-ins.
+In Azure DevOps, configure Security in Project Settings.
+In Azure Active Directory, configure conditional access. *
+---
+Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
+Conditional Access policies are enforced after the first-factor authentication has been completed.
+---
+What is Conditional Access?;https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+###
+You are automating the testing process for your company.
+You need to automate UI testing of a web application.
+Which framework should you use?
+---
+JaCoco
+Selenium *
+Xamarin.UITest
+Microsoft.CodeAnalysis
+---
+Performing user interface (UI) testing as part of the release pipeline is a great way of detecting unexpected changes, and need not be difficult. Selenium can be used to test your website during a continuous deployment release and test automation.
+---
+UI test with Selenium;https://docs.microsoft.com/en-us/azure/devops/pipelines/test/continuous-test-selenium?view=azure-devops
+###
+You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project1, an Azure subscription named Sub1, and an Azure key vault named vault1.
+You need to ensure that you can reference the values of the secrets stored in vault1 in all the pipelines of Project1. The solution must prevent the values from being stored in the pipelines.
+What should you do?
+---
+Create a variable group in Project1. *
+Add a secure file to Project1.
+Modify the security settings of the pipelines.
+Configure the security policy of Contoso.
+---
+Use a variable group to store values that you want to control and make available across multiple pipelines.
+---
+Add and use variable groups;https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups
+###
+Your team uses an agile development approach.
+You need to recommend a branching strategy for the team's Git repository. The strategy must meet the following requirements.
+Provide the ability to work on multiple independent tasks in parallel.
+Ensure that checked-in code remains in a releasable state always.
+Ensure that new features can be abandoned at any time.
+Encourage experimentation.
+What should you recommend?
+---
+a single long-running branch
+multiple long-running branches
+a single fork per team member
+a single-running branch with multiple short-lived topic branches *
+---
+Topic branches, however, are useful in projects of any size. A topic branch is a short-lived branch that you create and use for a single particular feature or related work. This is something you've likely never done with a VCS before because it's generally too expensive to create and merge branches. But in Git it's common to create, work on, merge, and delete branches several times a day.
+---
+3.4 Git Branching - Branching Workflows; https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows
+###
+Your company has a project in Azure DevOps for a new web application.
+The company identifies security as one of the highest priorities.
+You need to recommend a solution to minimize the likelihood that infrastructure credentials will be leaked.
+What should you recommend?
+---
+Add a Run Inline Azure PowerShell task to the pipeline.
+Add a PowerShell task to the pipeline and run Set-AzureKeyVaultSecret. *
+Add a Azure Key Vault task to the pipeline.
+Add Azure Key Vault references to Azure Resource Manger templates.
+---
+Azure Key Vault provides a way to securely store credentials and other keys and secrets.
+The Set-AzureKeyVaultSecret cmdlet creates or updates a secret in a key vault in Azure Key Vault.
+---
+Set-AzureKeyVaultSecret;https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret
+###
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+The builds must access an on-premises dependency management system.
+The build outputs must be stored as Server artifacts in Azure DevOps.
+The source code must be stored in a Git repository in Azure DevOps.
+Solution: Configure an Octopus Tentacle on an on-premises machine. Use the Package Application task in the build pipeline.
+Does this meet the goal?
+---
+Yes *
+No
+---
+Octopus Deploy is an automated deployment server that makes it easy to automate deployment of ASP.NET web applications, Java applications, NodeJS application and custom scripts to multiple environments.
+Octopus can be installed on various platforms including Windows, Mac and Linux. It can also be integrated with most version control tools including VSTS and GIT.
+When you deploy software to Windows servers, you need to install Tentacle, a lightweight agent service, on your Windows servers so they can communicate with the Octopus server.
+When defining your deployment process, the most common step type will be a package step. This step deploys your packaged application onto one or more deployment targets.
+When deploying a package you will need to select the machine role that the package will be deployed to.
+---
+Packages;https://octopus.com/docs/deployment-examples/package-deployments
+Octopus for Automated Deployment in DevOps models;https://explore.emtecinc.com/blog/octopus-for-automated-deployment-in-devops-models
+###
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+The builds must access an on-premises dependency management system.
+The build outputs must be stored as Server artifacts in Azure DevOps.
+The source code must be stored in a Git repository in Azure DevOps.
+Solution: Install and configure a self-hosted build agent on an on-premises machine. Configure the build pipeline to use the Default agent pool. Include the Java
+Tool Installer task in the build pipeline.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead use Octopus Tentacle.
+---
+Octopus for Automated Deployment in DevOps models;https://explore.emtecinc.com/blog/octopus-for-automated-deployment-in-devops-models
+###
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+The builds must access an on-premises dependency management system.
+The build outputs must be stored as Server artifacts in Azure DevOps.
+The source code must be stored in a Git repository in Azure DevOps.
+Solution: Configure the build pipeline to use a Hosted VS 2017 agent pool. Include the Java Tool Installer task in the build pipeline.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead use Octopus Tentacle.
+---
+Octopus for Automated Deployment in DevOps models;https://explore.emtecinc.com/blog/octopus-for-automated-deployment-in-devops-models
+###
+You are designing the development process for your company.
+You need to recommend a solution for continuous inspection of the company's code base to locate common code patterns that are known to be problematic.
+What should you include in the recommendation?
+---
+Microsoft Visual Studio test plans
+Gradle wrapper scripts
+SonarCloud analysis *
+the JavaScript task runner
+---
+SonarCloud is a cloud service offered by SonarSource and based on SonarQube. SonarQube is a widely adopted open source platform to inspect continuously the quality of source code and detect bugs, vulnerabilities and code smells in more than 20 different languages.
+Note: The SonarCloud Azure DevOps extension brings everything you need to have your projects analyzed on SonarCloud very quickly.
+Incorrect Answers:
+Test plans are used to group together test suites and individual test cases. This includes static test suites, requirement-based suites, and query-based suites.
+---
+Using SonarCloud with Travis CI;https://docs.travis-ci.com/user/sonarcloud/
+Get started with Azure DevOps Services;https://sonarcloud.io/documentation/integrations/vsts/
+###
+Your company builds a multi-tier web application.
+You use Azure DevOps and host the production application on Azure virtual machines.
+Your team prepares an Azure Resource Manager template of the virtual machine that you will use to test new features.
+You need to create a staging environment in Azure that meets the following requirements:
+Minimizes the cost of Azure hosting
+
+Provisions the virtual machines automatically
+Uses the custom Azure Resource Manager template to provision the virtual machines
+What should you do?
+---
+In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
+In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services.
+From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
+In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs. *
+---
+You can use the Azure DevTest Labs Tasks extension that's installed in Azure DevOps to easily integrate your CI/CD build-and-release pipeline with Azure
+DevTest Labs. The extension installs three tasks:
+Create a VM
+Create a custom image from a VM
+Delete a VM
+The process makes it easy to, for example, quickly deploy a "golden image" for a specific test task and then delete it when the test is finished.
+---
+Integrate Azure DevTest Labs into your Azure Pipelines CI/CD pipeline;https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-integrate-ci-cd-vsts
+###
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+The builds must access an on-premises dependency management system.
+The build outputs must be stored as Server artifacts in Azure DevOps.
+The source code must be stored in a Git repository in Azure DevOps.
+Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead use Octopus Tentacle.
+---
+Octopus for Automated Deployment in DevOps models;https://explore.emtecinc.com/blog/octopus-for-automated-deployment-in-devops-models
+###
+Your company has a hybrid cloud between Azure and Azure Stack.
+The company uses Azure DevOps for its full CI/CD pipelines. Some applications are built by using Erlang and Hack.
+You need to ensure that Erlang and Hack are supported as part of the build strategy across the hybrid clouThe solution must minimize management overhead.
+What should you use to execute the build pipeline?
+---
+a Microsoft-hosted agent
+Azure DevOps self-hosted agents on Azure DevTest Labs virtual machines.
+Azure DevOps self-hosted agents on Hyper-V virtual machines
+Azure DevOps self-hosted agents on virtual machines that run on Azure Stack *
+---
+Azure Stack offers virtual machines (VMs) as one type of an on-demand, scalable computing resource. You can choose a VM when you need more control over the computing environment.
+---
+Introduction to Azure Stack Hub VMs;https://docs.microsoft.com/en-us/azure-stack/user/azure-stack-compute-overview?view=azs-2002
+###
+You need to recommend a Docker container build strategy that meets the following requirements:
+Minimizes image sizes
+Minimizes the security surface area of the final image
+What should you include in the recommendation?
+---
+multi-stage builds *
+PowerShell Desired State Configuration (DSC)
+Docker Swarm
+single-stage builds
+---
+Multi-stage builds are a new feature requiring Docker 17.05 or higher on the daemon and client. Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain.
+Incorrect Answers:
+A swarm consists of multiple Docker hosts which run in swarm mode and act as managers (to manage membership and delegation) and workers (which run swarm services).
+---
+Use multi-stage builds;https://docs.docker.com/develop/develop-images/multistage-build/
+###
+You plan to create an image that will contain a .NET Core application.
+You have a Dockerfile file that contains the following code. (Line numbers are included for reference only.)
+01 FROM microsoft/dotnet:2.1-sdk
+02 COPY ./
+03 RUN dotnet publish -c Release -o out
+04 FROM microsoft/dotnet:2.1-sdk
+05 COPY -fromF0 /out /
+06 WORKDIR /
+07 ENTRYPOINT ["dotnet", "appl.dll"] 
+You need to ensure that the image is as small as possible when the image is built.
+Which line should you modify in the file?
+---
+1 *
+3
+4
+7
+---
+Multi-stage builds (in Docker 17.05 or higher) allow you to drastically reduce the size of your final image, without struggling to reduce the number of intermediate layers and files.
+With multi-stage builds, you use multiple FROM statements in your Dockerfile. Each FROM instruction can use a different base, and each of them begins a new stage of the builYou can selectively copy artifacts from one stage to another, leaving behind everything you don't want in the final image.
+---
+Use multi-stage builds;https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
+###
+You are developing an open source solution that uses a GitHub repository.
+You create a new public project in Azure DevOps.
+You plan to use Azure Pipelines for continuous builThe solution will use the GitHub Checks API.
+Which authentication type should you use?
+---
+OAuth
+GitHub App *
+a personal access token
+SAML
+---
+You can authenticate as a GitHub App.
+---
+Authenticating with GitHub Apps;https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/
+###
+Your company has a project in Azure DevOps for a new web application.
+You need to ensure that when code is checked in, a build runs automatically.
+Solution: From the Continuous deployment trigger settings of the release pipeline, you enable the Pull request trigger setting.
+Does this meet the goal?
+---
+Yes
+No *
+---
+In Visual Designer you enable continuous integration (CI) by:
+1. Select the Triggers tab.
+2. Enable Continuous integration.
+---
+Create your first pipeline;https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-designer
+###
+Your company has a project in Azure DevOps for a new web application.
+You need to ensure that when code is checked in, a build runs automatically.
+Solution: From the Pre-deployment conditions settings of the release pipeline, you select After stage.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead, In Visual Designer you enable continuous integration (CI) by:
+1. Select the Triggers tab.
+2. Enable Continuous integration.
+---
+Create your first pipeline;https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-designer
+###
+Your company has a project in Azure DevOps for a new web application.
+You need to ensure that when code is checked in, a build runs automatically.
+Solution: From the Pre-deployment conditions settings of the release pipeline, you select Batch changes while a build is in progress.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead, In Visual Designer you enable continuous integration (CI) by:
+1. Select the Triggers tab.
+2. Enable Continuous integration.
+---
+Create your first pipeline;https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-designer
+###
+Your company has a project in Azure DevOps for a new web application.
+You need to ensure that when code is checked in, a build runs automatically.
+Solution: From the Triggers tab of the build pipeline, you select Enable continuous integration.
+Does this meet the goal?
+---
+Yes
+No *
+---
+In Visual Designer you enable continuous integration (CI) by:
+1. Select the Triggers tab.
+2. Enable Continuous integration.
+A continuous integration trigger on a build pipeline indicates that the system should automatically queue a new build whenever a code change is committed.
+---
+Create your first pipeline;https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-designer
+###
+You have a project in Azure DevOps. You have an Azure Resource Group deployment project in Microsoft Visual Studio that is checked in to the Azure DevOps project.
+You need to create a release pipeline that will deploy resources by using Azure Resource Manager templates. The solution must minimize administrative effort.
+Which task type should you include in the solution?
+---
+Azure Cloud Service Deployment
+Azure RM Web App Deployment
+Azure PowerShell *
+Azure App Service Manage
+---
+There are two different ways to deploy templates to Azure DevOps Services. Both methods provide the same results, so choose the one that best fits your workflow.
+1. Add a single step to your build pipeline that runs the PowerShell script that's included in the Azure Resource Group deployment project (Deploy-
+AzureResourceGroup.ps1). The script copies artifacts and then deploys the template.
+2. Add multiple Azure DevOps Services build steps, each one performing a stage task.
+The first option has the advantage of using the same script used by developers in Visual Studio and providing consistency throughout the lifecycle.
+---
+Integrate ARM templates with Azure Pipelines;https://docs.microsoft.com/en-us/azure/vs-azure-tools-resource-groups-ci-in-vsts
+###
+Your company is building a new solution in Java.
+The company currently uses a SonarQube server to analyze the code of .NET solutions.
+You need to analyze and monitor the code quality of the Java solution.
+Which task types should you add to the build pipeline?
+---
+Chef
+Gradle *
+Octopus
+Gulp
+---
+SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps
+Services build task.
+---
+Use SonarQube with Azure DevOps or Team Foundation Server (TFS) for Java development;https://docs.microsoft.com/en-us/azure/devops/java/sonarqube?view=azure-devops
+###
+C
+You have an Azure DevOps organization named Contoso and an Azure DevOps project named Project1.
+You plan to use Microsoft-hosted agents to build container images that will host full Microsoft .NET Framework apps in a YAML pipeline in Project1.
+What are two possible virtual machine images that you can use for the Microsoft-hosted agent pool? Each correct answer presents a complete solution.
+---
+vs2017-win2016 *
+ubuntu-16.04 *
+win1803
+macOS-10.13
+vs.2015-win2012r2
+---
+The Microsoft-hosted agent pool provides 7 virtual machine images to choose from:
+Ubuntu 16.04 (ubuntu-16.04)
+Windows Server 1803 (win1803) - for running Windows containers
+Visual Studio 2019 Preview on Windows Server 2019 (windows-2019)
+Visual Studio 2017 on Windows Server 2016 (vs2017-win2016)
+Visual Studio 2015 on Windows Server 2012R2 (vs2015-win2012r2)
+macOS X Mojave 10.14 (macOS-10.14)
+macOS X High Sierra 10.13 (macOS-10.13)
+---
+Microsoft-hosted agents;https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
+###
+Your company has a project in Azure DevOps.
+You need to ensure that when there are multiple builds pending deployment, only the most recent build is deployed.
+What should you use?
+---
+deployment conditions
+deployment queue settings *
+release gates
+pull request triggers
+---
+The options you can choose for a queuing policy are:
+Number of parallel deployments
+If you specify a maximum number of deployments, two more options appear:
+- Deploy all in sequence
+- Deploy latest and cancel the others: Use this option if you are producing releases faster than builds, and you only want to deploy the latest build.
+Incorrect Answers:
+Release gates allow automatic collection of health signals from external services, and then promote the release when all the signals are successful at the same time or stop the deployment on timeout. Typically, gates are used in connection with incident management, problem management, change management, monitoring, and external approval systems.
+---
+Add stages, dependencies, conditions;https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?tabs=classic&view=azure-devops#queuing-policies
+###
+Your company develops a client banking application that processes a large volume of data.
+Code quality is an ongoing issue for the company. Recently, the code quality has deteriorated because of an increase in time pressure on the development team.
+You need to implement static code analysis.
+During which phase should you use static code analysis?
+---
+integration testing *
+staging
+production release
+build
+---
+The Secure Development Lifecycle (SDL) Guidelines recommend that teams perform static analysis during the implementation phase of their development cycle.
+Note: The company should focus in particular on the implementation of DevOps tests to assess the quality of the software from the planning stage to the implementation phase of the project.
+---
+Microsoft Security Code Analysis;https://secdevtools.azurewebsites.net/
+
+
+###
+Your company is building a new solution in Java.
+The company currently uses a SonarQube server to analyze the code of .NET solutions.
+You need to analyze and monitor the code quality of the Java solution.
+Which task types should you add to the build pipeline?
+---
+Grunt
+Chef
+Maven *
+Gulp
+---
+SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps
+Services build task.
+---
+Use SonarQube with Azure DevOps or Team Foundation Server (TFS) for Java development;https://docs.microsoft.com/en-us/azure/devops/java/sonarqube?view=azure-devops
+###
+You have 50 Node.js-based projects that you scan by using WhiteSource. Each project includes Package.json, Package-lock.json, and Npm-shrinkwrap.json files.
+You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference.
+What should you do?
+---
+Configure the File System Agent plug-in.
+Add a devDependencies section to Package-lock.json. *
+Configure the Artifactory plug-in.
+Delete Package-lock.json.
+---
+Separate Your Dependencies -
+Within your package.json file be sure you split out your npm dependencies between devDependencies and (production) dependencies. The key part is that you must then make use of the --production flag when installing the npm packages. The --production flag will exclude all packages defined in the devDependencies section.
+---
+Manage your open source usage and security as reported by your CI/CD pipeline;https://docs.microsoft.com/en-us/archive/blogs/visualstudioalmrangers/manage-your-open-source-usage-and-security-as-reported-by-your-cicd-pipeline
+###
+Your company deploys applications in Docker containers.
+You want to detect known exploits in the Docker images used to provision the Docker containers.
+You need to integrate image scanning into the application lifecycle. The solution must expose the exploits as early as possible during the application lifecycle.
+What should you configure?
+---
+a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry *
+manual tasks performed during the planning phase and the deployment phase
+a task executed in the continuous deployment pipeline and a scheduled task against a running production container
+a task executed in the continuous integration pipeline and a scheduled task that analyzes the production container
+---
+You can use the Docker task to sign into ACR and then use a subsequent script to pull an image and scan the container image for vulnerabilities.
+Use the docker task in a build or release pipeline. This task can be used with Docker or Azure Container registry.
+Incorrect Answers:
+We should not wait until deployment. We want to detect the exploits as early as possible.
+We should wait until the image is in the product container. We want to detect the exploits as early as possible.
+---
+Learn how to add continuous security validation to your CI/CD pipeline;https://docs.microsoft.com/en-us/azure/devops/articles/security-validation-cicd-pipeline?view=vsts
+###
+C
+Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
+You need to recommend a strategy for managing technical debt.
+Which two actions should you include in the recommendation? Each correct answer presents part of the solution.
+---
+Configure post-deployment approvals in the deployment pipeline.
+Configure pre-deployment approvals in the deployment pipeline. *
+Integrate Azure DevOps and SonarQube. *
+Integrate Azure DevOps and Azure DevTest Labs.
+---
+Implement Continuous Delivery
+---
+###
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+Two resource groups
+Four Azure virtual machines in one resource group
+Two Azure SQL databases in other resource group
+You need to recommend a solution to deploy the resources.
+Solution: Create a main template that will deploy the resources in one resource group and a nested template that will deploy the resources in the other resource group.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Use two linked templates, instead of the nested template.
+---
+Using linked and nested templates when deploying Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-linked-templates
+###
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+Two resource groups
+Four Azure virtual machines in one resource group
+Two Azure SQL databases in other resource group
+You need to recommend a solution to deploy the resources.
+Solution: Create a main template that has two linked templates, each of which will deploy the resources in its respective group.
+Does this meet the goal?
+---
+Yes *
+No
+---
+To deploy your solution, you can use either a single template or a main template with many related templates. The related template can be either a separate file that is linked to from the main template, or a template that is nested within the main template.
+---
+Using linked and nested templates when deploying Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-linked-templates
+###
+C
+Your company has a project in Azure DevOps for a new web application.
+The company uses ServiceNow for change management.
+You need to ensure that a change request is processed before any components can be deployed to the production environment.
+What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? Each correct answer presents a complete solution.
+---
+Define a deployment control that invokes the ServiceNow REST API.
+Define a pre-deployment gate before the deployment to the Prod stage. *
+Define a deployment control that invokes the ServiceNow SOAP API.
+Define a post-deployment gate after the deployment to the QA stage. *
+---
+In this example, a release of a website is created by collecting specific versions of two builds (artifacts), each from a different build pipeline. The release is first deployed to a Dev stage and then forked to two QA stages in parallel. If the deployment succeeds in both the QA stages, the release is deployed to Prod ring 1 and then to Prod ring 2. Each production ring represents multiple instances of the same website deployed at various locations around the globe.
+---
+Release pipelines;https://docs.microsoft.com/en-us/azure/devops/pipelines/release
+###
+You have an approval process that contains a condition. The condition requires that releases be approved by a team leader before they are deployed.
+You have a policy stating that approvals must occur within eight hours.
+You discover that deployment fail if the approvals take longer than two hours.
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+Solution: From Post-deployment conditions, you modify the Time between re-evaluation of gates option.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Use a gate From Pre-deployment conditions instead.
+---
+Release deployment control using gates;https://docs.microsoft.com/en-us/azure/devops/pipelines/release/approvals/gates?view=azure-devops
+###
+You have an approval process that contains a condition. The condition requires that releases be approved by a team leader before they are deployed.
+You have a policy stating that approvals must occur within eight hours.
+You discover that deployment fail if the approvals take longer than two hours.
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+Solution: From Pre-deployment conditions, you modify the Time between re-evaluation of gates option.
+Does this meet the goal?
+---
+Yes *
+No
+---
+Gates allow automatic collection of health signals from external services, and then promote the release when all the signals are successful at the same time or stop the deployment on timeout. Typically, gates are used in connection with incident management, problem management, change management, monitoring, and external approval systems.
+Approvals and gates give you additional control over the start and completion of the deployment pipeline. Each stage in a release pipeline can be configured with pre-deployment and post-deployment conditions that can include waiting for users to manually approve or reject deployments, and checking with other automated systems until specific conditions are verified.
+---
+Release deployment control using gates;https://docs.microsoft.com/en-us/azure/devops/pipelines/release/approvals/gates
+###
+You have an approval process that contains a condition. The condition requires that releases be approved by a team leader before they are deployed.
+You have a policy stating that approvals must occur within eight hours.
+You discover that deployment fail if the approvals take longer than two hours.
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+Solution: From Pre-deployment conditions, you modify the Timeout setting for pre-deployment approvals.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Use a gate instead of an approval instead.
+---
+Release deployment control using gates;https://docs.microsoft.com/en-us/azure/devops/pipelines/release/approvals/gates
+###
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+Two resource groups
+Four Azure virtual machines in one resource group
+Two Azure SQL databases in other resource group
+You need to recommend a solution to deploy the resources.
+Solution: Create two standalone templates, each of which will deploy the resources in its respective group.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Use a main template and two linked templates.
+---
+Using linked and nested templates when deploying Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-linked-templates
+###
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+Two resource groups
+Four Azure virtual machines in one resource group
+Two Azure SQL databases in other resource group
+You need to recommend a solution to deploy the resources.
+Solution: Create a single standalone template that will deploy all the resources.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Use two templates, one for each resource group, and link the templates.
+---
+Using linked and nested templates when deploying Azure resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-linked-templates
+###
+You have an approval process that contains a condition. The condition requires that releases be approved by a team leader before they are deployed.
+You have a policy stating that approvals must occur within eight hours.
+You discover that deployment fail if the approvals take longer than two hours.
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+Solution: From Post-deployment conditions, you modify the Timeout setting for post-deployment approvals.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Use Pre-deployments conditions instead.
+Use a gate instead of an approval instead.
+---
+Release deployment control using gates;https://docs.microsoft.com/en-us/azure/devops/pipelines/release/approvals/gates
+###
+You have an Azure DevOps project.
+Your build process creates several artifacts.
+You need to deploy the artifacts to on-premises servers.
+Solution: You deploy a Kubernetes cluster on-premises. You deploy a Helm agent to the cluster. You add a Download Build Artifacts task to the deployment pipeline.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead you should deploy an Azure self-hosted agent to an on-premises server.
+Note: To build your code or deploy your software using Azure Pipelines, you need at least one agent.
+If your on-premises environments do not have connectivity to a Microsoft-hosted agent pool (which is typically the case due to intermediate firewalls), you'll need to manually configure a self-hosted agent on on-premises computer(s).
+Note 2: As we [Microsoft] are launching this new experience in preview, we are currently optimizing it for Azure Kubernetes Service (AKS) and Azure Container
+Registry (ACR). Other Kubernetes clusters, for example running on-premises or in other clouds, as well as other container registries, can be used, but require setting up a Service Account and connection manually.
+---
+Azure Pipelines agents;https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops
+###
+You have an Azure DevOps project.
+Your build process creates several artifacts.
+You need to deploy the artifacts to on-premises servers.
+Solution: You deploy a Docker build to an on-premises server. You add a Download Build Artifacts task to the deployment pipeline.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead you should deploy an Azure self-hosted agent to an on-premises server.
+Note: To build your code or deploy your software using Azure Pipelines, you need at least one agent.
+If your on-premises environments do not have connectivity to a Microsoft-hosted agent pool (which is typically the case due to intermediate firewalls), you'll need to manually configure a self-hosted agent on on-premises computer(s).
+---
+Azure Pipelines agents;https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops
+###
+You have an Azure DevOps project.
+Your build process creates several artifacts.
+You need to deploy the artifacts to on-premises servers.
+Solution: You deploy an Azure self-hosted agent to an on-premises server. You add a Copy and Publish Build Artifacts task to the deployment pipeline.
+Does this meet the goal?
+---
+Yes *
+No
+---
+To build your code or deploy your software using Azure Pipelines, you need at least one agent.
+If your on-premises environments do not have connectivity to a Microsoft-hosted agent pool (which is typically the case due to intermediate firewalls), you'll need to manually configure a self-hosted agent on on-premises computer(s). The agents must have connectivity to the target on-premises environments, and access to the Internet to connect to Azure Pipelines or Team Foundation Server.
+---
+Azure Pipelines agents;https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops
+###
+Your company hosts a web application in Azure. The company uses Azure Pipelines for the build and release management of the application.
+Stakeholders report that the past few releases have negatively affected system performance.
+You configure alerts in Azure Monitor.
+You need to ensure that new releases are only deployed to production if the releases meet defined performance baseline criteria in the staging environment first.
+What should you use to prevent the deployment of releases that fall to meet the performance baseline?
+---
+an Azure Scheduler job
+a trigger
+a gate *
+an Azure function
+---
+Scenarios and use cases for gates include:
+Quality validation. Query metrics from tests on the build artifacts such as pass rate or code coverage and deploy only if they are within required thresholds.
+Use Quality Gates to integrate monitoring into your pre-deployment or post-deployment. This ensures that you are meeting the key health/performance metrics
+(KPIs) as your applications move from dev to production and any differences in the infrastructure environment or scale is not negatively impacting your KPIs.
+Note: Gates allow automatic collection of health signals from external services, and then promote the release when all the signals are successful at the same time or stop the deployment on timeout. Typically, gates are used in connection with incident management, problem management, change management, monitoring, and external approval systems.
+---
+Continuous monitoring with Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/continuous-monitoring
+Release deployment control using gates;https://docs.microsoft.com/en-us/azure/devops/pipelines/release/approvals/gates?view=azure-devops
+###
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure SQL database named DB1.
+You need to create a release pipeline that uses the Azure SQL Database Deployment task to update DB1.
+Which artifact should you deploy?
+---
+a BACPAC
+a DACPAC *
+an LDF file
+an MDF file
+---
+Use Azure SQL Database Deployment task in a build or release pipeline to deploy to Azure SQL DB using a DACPAC or run scripts using SQLCMD.
+---
+Azure SQL Database Deployment task;https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/sql-azure-dacpac-deployment
+###
+You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
+You need to release multiple builds of each package by using a single feeThe solution must limit the release of packages that are in development.
+What should you use?
+---
+local symbols
+views
+global symbols
+upstream sources *
+---
+Upstream sources enable you to manage all of your product's dependencies in a single feeWe recommend publishing all of the packages for a given product to that product's feed, and managing that product's dependencies from remote feeds in the same feed, via upstream sources. This setup has a few benefits:
+Simplicity: your NuGet.config, .npmrc, or settings.xml contains exactly one feed (your feed).
+Determinism: your feed resolves package requests in order, so rebuilding the same codebase at the same commit or changeset uses the same set of packages
+Provenance: your feed knows the provenance of packages it saved via upstream sources, so you can verify that you're using the original package, not a custom or malicious copy published to your feed
+Peace of minpackages used via upstream sources are guaranteed to be saved in the feed on first use; if the upstream source is disabled/removed, or the remote feed goes down or deletes a package you depend on, you can continue to develop and build
+---
+Upstream sources;https://docs.microsoft.com/en-us/azure/devops/artifacts/concepts/upstream-sources?view=vsts
+###
+Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
+You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
+What should you use?
+---
+Microsoft Visual SourceSafe
+PDM
+WhiteSource *
+OWASP ZAP
+---
+WhiteSource is the leader in continuous open source software security and compliance management. WhiteSource integrates into your build process, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated definitive database of open source repositories.
+Azure DevOps integration with WhiteSource Bolt will enable you to:
+1. Detect and remedy vulnerable open source components.
+2. Generate comprehensive open source inventory reports per project or build.
+3. Enforce open source license compliance, including dependencies' licenses.
+4. Identify outdated open source libraries with recommendations to update.
+Note: Black duck would also be a good answer, but it is not an option here.
+---
+Managing Open-source security and license with WhiteSource;https://www.azuredevopslabs.com/labs/vstsextend/WhiteSource/
+###
+Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
+You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
+What should you use?
+---
+Microsoft Visual SourceSafe
+Code Style
+Black Duck *
+Jenkins
+SourceGea
+OWASP ZAP
+---
+Secure and Manage Open Source Software
+Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios.
+Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
+Note: WhiteSource would also be a good answer, but it is not an option here.
+---
+Black Duck Hub;https://marketplace.visualstudio.com/items?itemName=black-duck-software.hub-tfs
+
+
+###
+Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual Studio App Center.
+You plan to distribute a new release of the app.
+You need to identify which certificate file you require to distribute the new release from App Center.
+Which file type should you upload to App Center?
+---
+.cer
+.pfx
+.p12 *
+.pvk
+---
+A successful IOS device build will produce an ipa file. In order to install the build on a device, it needs to be signed with a valid provisioning profile and certificate.
+To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (.mobileprovision) and a valid certificate (.p12), along with the password for the certificate.
+---
+Building Xamarin apps for iOS;https://docs.microsoft.com/en-us/appcenter/build/xamarin/ios/
+
+
+###
+You have an application that consists of several Azure App Service web apps and Azure functions.
+You need to access the security of the web apps and the functions.
+Which Azure features can you use to provide a recommendation for the security of the application?
+---
+Security & Compliance in Azure Log Analytics
+Resource health in Azure Service Health
+Smart Detection in Azure Application Insights
+Compute & apps in Azure Security Center *
+---
+Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
+
+Recommendations -
+This section has a set of recommendations for each VM and computer, web and worker roles, Azure App Service Web Apps, and Azure App Service Environment that Security Center monitors. The first column lists the recommendation. The second column shows the total number of resources that are affected by that recommendation. The third column shows the severity of the issue.
+Incorrect Answers:
+Smart Detection automatically warns you of potential performance problems, not security problems in your web application.
+---
+Smart Detection in Application Insights;https://docs.microsoft.com/en-us/azure/azure-monitor/app/proactive-diagnostics
+
+
+###
+You have a private distribution group that contains provisioned and unprovisioned devices.
+You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
+What should you do?
+---
+Request the Apple ID associated with the user of each device.
+Register the devices on the Apple Developer portal. *
+Create an active subscription in App Center Test.
+Add the device owner to the organization in App Center.
+ 
+
+---
+When releasing an iOS app signed with an ad-hoc or development provisioning profile, you must obtain tester's device IDs (UDIDs), and add them to the provisioning profile before compiling a release. When you enable the distribution group's Automatically manage devices setting, App Center automates the before mentioned operations and removes the constraint for you to perform any manual tasks. As part of automating the workflow, you must provide the user name and password for your Apple ID and your production certificate in a .p12 format.
+App Center starts the automated tasks when you distribute a new release or one of your testers registers a new device. First, all devices from the target distribution group will be registered, using your Apple ID, in your developer portal and all provisioning profiles used in the app will be generated with both new and existing device IAfterward, the newly generated provisioning profiles are downloaded to App Center servers.
+---
+Manage App Center Distribution Groups;https://docs.microsoft.com/en-us/appcenter/distribution/groups
+
+
+###
+Your company has a project in Azure DevOps for a new application. The application will be deployed to several Azure virtual machines that run Windows Server
+2016.
+You need to recommend a deployment strategy for the virtual machines. The strategy must meet the following requirements:
+Ensure that the virtual machines maintain a consistent configuration.
+Minimize administrative effort to configure the virtual machines.
+
+What should you include in the recommendation?
+---
+Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows
+Deployment YAML and Azure pipeline deployment groups
+Azure Resource Manager templates and the Custom Script Extension for Windows *
+Deployment YAML and Azure pipeline stage templates
+---
+The Custom Script Extension downloads and executes scripts on Azure virtual machines. This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks. Scripts can be downloaded from Azure storage or GitHub, or provided to the Azure portal at extension run time. The Custom Script Extension integrates with Azure Resource Manager templates, and can be run using the Azure CLI, PowerShell, Azure portal, or the Azure Virtual Machine REST API.
+Incorrect Answers:
+YAML doesn't work with Azure pipeline deployment groups.
+---
+Custom Script Extension for Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows
+###
+You manage a project in Azure DevOps.
+You need to prevent the configuration of the project from changing over time.
+Solution: Add a code coverage step to the build pipelines.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead implement Continuous Assurance for the project.
+---
+Secure DevOps Kit for Azure;https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
+###
+You manage a project in Azure DevOps.
+You need to prevent the configuration of the project from changing over time.
+Solution: Implement Continuous Integration for the project.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead implement Continuous Assurance for the project.
+
+---
+Secure DevOps Kit for Azure;https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
+
+###
+You manage a project in Azure DevOps.
+You need to prevent the configuration of the project from changing over time.
+Solution: Implement Continuous Assurance for the project.
+Does this meet the goal?
+---
+Yes *
+No
+---
+The basic idea behind Continuous Assurance (CA) is to setup the ability to check for "drift" from what is considered a secure snapshot of a system. Support for
+Continuous Assurance lets us treat security truly as a 'state' as opposed to a 'point in time' achievement. This is particularly important in today's context when
+'continuous change' has become a norm.
+There can be two types of drift:
+Drift involving 'baseline' configuration: This involves settings that have a fixed number of possible states (often pre-defined/statically determined ones). For instance, a SQL DB can have TDE encryption turned ON or OFF"¦or a Storage Account may have auditing turned ON however the log retention period may be less than 365 days.
+Drift involving 'stateful' configuration: There are settings which cannot be constrained within a finite set of well-known states. For instance, the IP addresses configured to have access to a SQL DB can be any (arbitrary) set of IP addresses. In such scenarios, usually human judgment is initially required to determine whether a particular configuration should be considered 'secure' or not. However, once that is done, it is important to ensure that there is no "stateful drift" from the attested configuration. (E.g., if, in a troubleshooting session, someone adds the IP address of a developer machine to the list, the Continuous Assurance feature should be able to identify the drift and generate notifications/alerts or even trigger 'auto-remediation' depending on the severity of the change).
+---
+Secure DevOps Kit for Azure;https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
+
+###
+Your company has a release pipeline in an Azure DevOps project.
+You plan to deploy to an Azure Kubernetes Services (AKS) cluster by using the Helm package and deploy task.
+You need to install a service in the AKS namespace for the planned deployment.
+Which service should you install?
+---
+Azure Container Registry
+Chart
+Kubectl
+Tiller *
+---
+Before you can deploy Helm in an RBAC-enabled AKS cluster, you need a service account and role binding for the Tiller service.
+Incorrect Answers:
+Kubectl is a command line interface for running commands against Kubernetes clusters.
+---
+Install existing applications with Helm in Azure Kubernetes Service (AKS);https://docs.microsoft.com/en-us/azure/aks/kubernetes-helm
+
+###
+Your company uses ServiceNow for incident management.
+You develop an application that runs on Azure.
+The company needs to generate a ticket in ServiceNow when the application fails to authenticate.
+Which Azure Log Analytics solution should you use?
+---
+Application Insights Connector
+Automation & Control
+IT Service Management Connector (ITSM) *
+Insight & Analytics
+---
+The IT Service Management Connector (ITSMC) allows you to connect Azure and a supported IT Service Management (ITSM) product/service.
+ITSMC supports connections with the following ITSM tools:
+ServiceNow
+System Center Service Manager
+Provance
+Cherwell
+
+With ITSMC, you can -
+Create work items in ITSM tool, based on your Azure alerts (metric alerts, Activity Log alerts and Log Analytics alerts).
+Optionally, you can sync your incident and change request data from your ITSM tool to an Azure Log Analytics workspace.
+---
+Connect Azure to ITSM tools using IT Service Management Connector;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/itsmc-overview
+###
+You use Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring.
+You need to write ad-hoc queries against the monitoring data.
+Which query language should you use?
+---
+Azure Log Analytics *
+PL/pgSQL
+PL/SQL
+Transact-SQL
+---
+Data analysis in Azure SQL Analytics is based on Log Analytics language for your custom querying and reporting.
+
+---
+Monitor Azure SQL Database using Azure SQL Analytics (Preview);https://docs.microsoft.com/en-us/azure/azure-monitor/insights/azure-sql
+###
+You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
+You need to recommend a solution to capture and store telemetry data. The solution must meet the following requirements:
+✑ Support using ad-hoc queries to identify baselines.
+✑ Trigger alerts when metrics in the baseline are exceeded.
+✑ Store application and database metrics in a central location.
+What should you include in the recommendation?
+---
+A. Azure Event Hubs
+B. Azure SQL Database Intelligent Insights
+C. Azure Application Insights
+D. Azure Log Analytics *
+---
+Azure Platform as a Service (PaaS) resources, like Azure SQL and Web Sites (Web Apps), can emit performance metrics data natively to Log Analytics.
+The Premium plan will retain up to 12 months of data, giving you an excellent baseline ability.
+There are two options available in the Azure portal for analyzing data stored in Log analytics and for creating queries for ad hoc analysis.
+Incorrect Answers:
+B: Intelligent Insights analyzes database performance by comparing the database workload from the last hour with the past seven-day baseline workload.
+However, we need handle application metrics as well.
+---
+Collect Azure platform logs in Log Analytics workspace in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-azurepass-posh
+###
+C
+Your company creates a web application.
+You need to recommend a solution that automatically sends to Microsoft Teams a daily summary of the exceptions that occur in the application.
+Which two Azure services should you recommend? Each correct answer presents part of the solution.
+---
+A. Azure Logic Apps *
+B. Azure Pipelines
+C. Microsoft Visual Studio App Center
+D. Azure DevOps Project
+E. Azure Application Insights *
+---
+E: Exceptions in your live web app are reported by Application Insights.
+Note: Periodical reports help keep a team informed on how their business critical services are doing. Developers, DevOps/SRE teams, and their managers can be productive with automated reports reliably delivering insights without requiring everyone to sign in the portal. Such reports can also help identify gradual increases in latencies, load or failure rates that may not trigger any alert rules.
+A: You can programmatically query Application Insights data to generate custom reports on a schedule. The following options can help you get started quickly:
+✑ Automate reports with Microsoft Flow
+✑ Automate reports with Logic Apps
+---
+Diagnose exceptions in your web apps with Application Insights;https://docs.microsoft.com/en-us/azure/azure-monitor/app/asp-net-exceptions
+Automate custom reports with Azure Application Insights data;https://docs.microsoft.com/en-us/azure/azure-monitor/app/automate-custom-reports
+###
+Your company is building a mobile app that targets Android and iOS devices.
+Your team uses Azure DevOps to manage all work items and release cycles.
+You need to recommend a solution to perform the following tasks:
+✑ Collect crash reports for issue analysis.
+✑ Distribute beta releases to your testers.
+✑ Get user feedback on the functionality of new apps.
+What should you include in the recommendation?
+---
+A. the Microsoft Test & Feedback extension *
+B. Microsoft Visual Studio App Center integration
+C. Azure Application Insights widgets
+D. Jenkins integration
+---
+The "Exploratory Testing" extension is now "Test & Feedback" and is now Generally Available.
+Anyone can now test web apps and give feedback, all directly from the browser on any platform: Windows, Mac, or Linux. Available for Google Chrome and
+Mozilla Firefox (required version 50.0 or above) currently. Support for Microsoft Edge is in the pipeline and will be enabled once Edge moves to a Chromium- compatible web platform.
+---
+Test & Feedback;https://marketplace.visualstudio.com/items?itemName=ms.vss-exploratorytesting-web
+###
+C
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure virtual machine scale set named VMSS1.
+VMSS1 hosts a web application named WebApp1. WebApp1 uses stateful sessions.
+The WebApp1 installation is managed by using the Custom Script extension. The script resides in an Azure Storage account named sa1.
+You plan to make a minor change to a UI element of WebApp1 and to gather user feedback about the change.
+You need to implement limited user testing for the new version of WebApp1 on VMSS1.
+Which three actions should you perform? Each correct answer presents part of the solution.
+---
+A. Modify the load balancer settings of VMSS1.
+B. Redeploy VMSS1. *
+C. Upload a custom script file to sa1. *
+D. Modify the Custom Script extension settings of VMSS1. *
+E. Update the configuration of a virtual machine in VMSS1.
+---
+---
+###
+Your company builds a multi-tier web application.
+You use Azure DevOps and host the production application on Azure virtual machines.
+Your team prepares an Azure Resource Manager template of the virtual machine that you will use to test new features.
+You need to create a staging environment in Azure that meets the following requirements:
+✑ Minimizes the cost of Azure hosting
+✑ Provisions the virtual machines automatically
+✑ Uses the custom Azure Resource Manager template to provision the virtual machines
+What should you do?
+---
+A. In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
+B. In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services.
+C. From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
+D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs. *
+---
+You can use the Azure DevTest Labs Tasks extension that's installed in Azure DevOps to easily integrate your CI/CD build-and-release pipeline with Azure
+DevTest Labs. The extension installs three tasks:
+✑ Create a VM
+✑ Create a custom image from a VM
+✑ Delete a VM
+The process makes it easy to, for example, quickly deploy a "golden image" for a specific test task and then delete it when the test is finished.
+---
+Integrate Azure DevTest Labs into your Azure Pipelines CI/CD pipeline;https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-integrate-ci-cd
+###
+You are automating the build process for a Java-based application by using Azure DevOps.
+You need to add code coverage testing and publish the outcomes to the pipeline.
+What should you use?
+---
+A. Cobertura *
+B. Bullseye Coverage
+C. MSTest
+D. Coverlet
+---
+Use Publish Code Coverage Results task in a build pipeline to publish code coverage results to Azure Pipelines or TFS, which were produced by a build in Cobertura or JaCoCo format.
+---
+Publish Code Coverage Results task;https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops
+###
+Your company builds a multi-tier web application.
+You use Azure DevOps and host the production application on Azure virtual machines.
+Your team prepares an Azure Resource Manager template of the virtual machine that you will use to test new features.
+You need to create a staging environment in Azure that meets the following requirements:
+✑ Minimizes the cost of Azure hosting
+✑ Provisions the virtual machines automatically
+✑ Uses the custom Azure Resource Manager template to provision the virtual machines
+What should you do?
+---
+A. In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
+B. In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services.
+C. From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
+D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs. *
+---
+You can use the Azure DevTest Labs Tasks extension that's installed in Azure DevOps to easily integrate your CI/CD build-and-release pipeline with Azure
+DevTest Labs. The extension installs three tasks:
+✑ Create a VM
+✑ Create a custom image from a VM
+✑ Delete a VM
+The process makes it easy to, for example, quickly deploy a "golden image" for a specific test task and then delete it when the test is finished.
+---
+Integrate Azure DevTest Labs into your Azure Pipelines CI/CD pipeline;https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-integrate-ci-cd-vsts
+###
+You plan to use a NuGet package in a project in Azure DevOps. The NuGet package is in a feed that requires authentication.
+You need to ensure that the project can restore the NuGet package automatically.
+What should the project use to automate the authentication?
+---
+A. an Azure Automation account
+B. an Azure Artifacts Credential Provider *
+C. an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
+D. an Azure Active Directory (Azure AD) service principal
+---
+The Azure Artifacts Credential Provider automates the acquisition of credentials needed to restore NuGet packages as part of your .NET development workflow. It integrates with MSBuild, dotnet, and NuGet(.exe) and works on Windows, Mac, and Linux. Any time you want to use packages from an Azure Artifacts feed, the
+Credential Provider will automatically acquire and securely store a token on behalf of the NuGet client you're using.
+---
+Azure Artifacts Credential Provider;https://github.com/microsoft/artifacts-credprovider
+###
+You create a Microsoft ASP.NET Core application.
+You plan to use Azure Key Vault to provide secrets to the application as configuration data.
+You need to create a Key Vault access policy to assign secret permissions to the application. The solution must use the principle of least privilege.
+Which secret permissions should you use?
+---
+A. List only
+B. Get only *
+C. Get and List
+---
+Application data plane permissions:
+✑ Keys: sign
+✑ Secrets: get
+---
+Secure access to a key vault;https://docs.microsoft.com/en-us/azure/key-vault/key-vault-secure-your-key-vault
+###
+You are designing an Azure DevOps strategy for your company's development team.
+You suspect that the team's productivity is low due to accumulate technical debt.
+You need to recommend a metric to assess the amount of the team's technical debt.
+What should you recommend?
+---
+A. the number of code modules in an application
+B. the number of unit test failures
+C. the percentage of unit test failures
+D. the percentage of overall time spent on rework *
+---
+Technical Debt is the estimated cost to fix code elements issues.
+Technical Debt Ratio: Ratio between the cost to develop the software and the cost to fix it. The Technical Debt Ratio formula is:
+Remediation cost / Development cost
+Which can be restated as:
+Remediation cost / (Cost to develop 1 line of code * Number of lines of code)
+---
+People, Process, Product - DevOps - SonarQube Tool Assessment- 1;http://www.azure365.co.in/devops/3PDevOps-4
+###
+You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
+You need to ensure that all the open source libraries comply with your company's licensing standards.
+Which service should you use?
+---
+A. NuGet
+B. Maven
+C. Black Duck *
+D. Helm
+---
+Secure and Manage Open Source Software
+Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios.
+Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
+Note: WhiteSource would also be a good answer, but it is not an option here.
+---
+Black Duck Hub;https://marketplace.visualstudio.com/items?itemName=black-duck-software.hub-tfs
+###
+Your company has a project in Azure DevOps for a new application. The application will be deployed to several Azure virtual machines that run Windows Server
+2016.
+You need to recommend a deployment strategy for the virtual machines. The strategy must meet the following requirements:
+✑ Ensure that the virtual machines maintain a consistent configuration.
+✑ Minimize administrative effort to configure the virtual machines.
+What should you include in the recommendation?
+---
+A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows
+B. Deployment YAML and Azure pipeline deployment groups
+C. Azure Resource Manager templates and the Custom Script Extension for Windows *
+D. Deployment YAML and Azure pipeline stage templates
+---
+The Custom Script Extension downloads and executes scripts on Azure virtual machines. This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks. Scripts can be downloaded from Azure storage or GitHub, or provided to the Azure portal at extension run time. The Custom Script Extension integrates with Azure Resource Manager templates, and can be run using the Azure CLI, PowerShell, Azure portal, or the Azure Virtual Machine REST API.
+Incorrect Answers:
+B: YAML doesn't work with Azure pipeline deployment groups.
+---
+Custom Script Extension for Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows
+###
+C
+You are developing an iOS application by using Azure DevOps.
+You need to test the application manually on 10 devices without releasing the application to the public.
+Which two actions should you perform? Each correct answer presents part of the solution.
+---
+A. Create a Microsoft Intune device compliance policy.
+B. Deploy a certificate from an internal certification authority (CA) to each device. *
+C. Register the application in the iTunes store.
+D. Onboard the devices into Microsoft Intune.
+E. Distribute a new release of the application.
+F. Register the IDs of the devices in the Apple Developer portal. *
+---
+B: Follow these steps to register the devices:
+Select the Register devices button.
+A dialog prompts for your username and password used in the Apple Developer portal.
+Once you sign in with your Apple username and password, App Center adds the unprovisioned devices to both your Apple developer account and the releases provisioning profile.
+Optionally you can upload a .p12 file to re-sign the app and distribute it to the newly added devices. Read more on how to generate a .p12 file.
+F: Registering a device means making it part of the list of devices on the Apple Developer portal that can then be included in a provisioning profile.
+Incorrect Answers:
+C: Only register the application in the iTunes store when it is ready for public release.
+---
+Device registration and app re-signing;https://docs.microsoft.com/en-us/appcenter/distribution/auto-provisioning
+###
+You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
+You need to recommend a solution to capture and store telemetry data. The solution must meet the following requirements:
+✑ Support using ad-hoc queries to identify baselines.
+✑ Trigger alerts when metrics in the baseline are exceeded.
+Store application and database metrics in a central location.
+
+What should you include in the recommendation?
+---
+A. Azure Event Hubs
+B. Azure SQL Database Intelligent Insights
+C. Azure Application Insights
+D. Azure Log Analytics *
+---
+Azure Platform as a Service (PaaS) resources, like Azure SQL and Web Sites (Web Apps), can emit performance metrics data natively to Log Analytics.
+The Premium plan will retain up to 12 months of data, giving you an excellent baseline ability.
+There are two options available in the Azure portal for analyzing data stored in Log analytics and for creating queries for ad hoc analysis.
+Incorrect Answers:
+B: Intelligent Insights analyzes database performance by comparing the database workload from the last hour with the past seven-day baseline workload. However, we need handle application metrics as well.
+---
+Collect Azure platform logs in Log Analytics workspace in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-azurepass-posh
+###
+C
+Your company has a project in Azure DevOps for a new web application.
+The company uses ServiceNow for change management.
+You need to ensure that a change request is processed before any components can be deployed to the production environment.
+What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? Each correct answer presents a complete solution.
+---
+A. Define a deployment control that invokes the ServiceNow REST API.
+B. Define a pre-deployment gate before the deployment to the Prod stage. *
+C. Define a deployment control that invokes the ServiceNow SOAP API.
+D. Define a post-deployment gate after the deployment to the QA stage. *
+---
+An example of a release pipeline that can be modeled through a release pipeline in shown below:
+
+In this example, a release of a website is created by collecting specific versions of two builds (artifacts), each from a different build pipeline. The release is first deployed to a Dev stage and then forked to two QA stages in parallel. If the deployment succeeds in both the QA stages, the release is deployed to Prod ring 1 and then to Prod ring 2. Each production ring represents multiple instances of the same website deployed at various locations around the globe.
+---
+Release pipelines;https://docs.microsoft.com/en-us/azure/devops/pipelines/release
+###
+Your company has a project in Azure DevOps for a new web application.
+You need to ensure that when code is checked in, a build runs automatically.
+Solution: From the Triggers tab of the build pipeline, you select Enable continuous integration.
+Does this meet the goal?
+---
+A. Yes *
+B. No
+---
+In Visual Designer you enable continuous integration (CI) by:
+1. Select the Triggers tab.
+2. Enable Continuous integration.
+A continuous integration trigger on a build pipeline indicates that the system should automatically queue a new build whenever a code change is committed.
+---
+Create your first pipeline;https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-designer
+###
+You are automating the build process for a Java-based application by using Azure DevOps.
+You need to add code coverage testing and publish the outcomes to the pipeline.
+What should you use?
+---
+A. Cobertura
+B. Bullseye Coverage
+C. MSTest
+D. Coverlet *
+---
+Use Publish Code Coverage Results task in a build pipeline to publish code coverage results to Azure
+Pipelines or TFS, which were produced by a build in Cobertura or JaCoCo format.
+---
+Publish Code Coverage Results task;https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---

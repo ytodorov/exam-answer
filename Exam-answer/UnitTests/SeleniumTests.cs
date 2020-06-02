@@ -19,29 +19,34 @@ namespace UnitTests
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
             {
-                for (int i = 1; i < 116; i++)
+                for (int i = 1; i <= 130; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-900/question{i}");
                 }
 
-                for (int i = 1; i < 61; i++)
+                for (int i = 1; i <= 60; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant/question{i}");
                 }
 
-                for (int i = 1; i < 101; i++)
+                for (int i = 1; i <= 100; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/crt-251/question{i}");
                 }
 
-                for (int i = 1; i < 100; i++)
+                for (int i = 1; i <= 112; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-100/question{i}");
                 }
 
-                for (int i = 1; i < 242; i++)
+                for (int i = 1; i <= 243; i++)
                 {
                     driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-300/question{i}");
+                }
+
+                for (int i = 1; i <= 73; i++)
+                {
+                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-400/question{i}");
                 }
             }
         }

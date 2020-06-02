@@ -337,24 +337,28 @@ $@"
                 int statusCode = HttpContext.Response.StatusCode;
                 if (statusCode == StatusCodes.Status200OK)
                 {
-                    cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
-
-                    // convert string to stream
-                    byte[] byteArray = Encoding.ASCII.GetBytes(htmlToCache);
-
-                    using (MemoryStream fs = new MemoryStream(byteArray))
-                    using (var ms = new MemoryStream())
+                    // do not cache dynamically calculated data - as real exam with random questions
+                    if (!HttpContext.Request.Path.ToString().Contains("test", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        using (var bs = new BrotliSharpLib.BrotliStream(ms, System.IO.Compression.CompressionMode.Compress))
+                        cache.Set<string>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString(), htmlToCache);
+
+                        // convert string to stream
+                        byte[] byteArray = Encoding.ASCII.GetBytes(htmlToCache);
+
+                        using (MemoryStream fs = new MemoryStream(byteArray))
+                        using (var ms = new MemoryStream())
                         {
-                            bs.SetQuality(11);
-                            fs.Position = 0;
-                            fs.CopyTo(bs);
+                            using (var bs = new BrotliSharpLib.BrotliStream(ms, System.IO.Compression.CompressionMode.Compress))
+                            {
+                                bs.SetQuality(11);
+                                fs.Position = 0;
+                                fs.CopyTo(bs);
 
-                            bs.Dispose();
-                            byte[] compressed = ms.ToArray();
+                                bs.Dispose();
+                                byte[] compressed = ms.ToArray();
 
-                            cache.Set<byte[]>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString() + "compressedBr", compressed);
+                                cache.Set<byte[]>(HttpContext.Request.Path.ToString() + "_IsMobile_" + isMobile.ToString() + "compressedBr", compressed);
+                            }
                         }
                     }
                 }
