@@ -70,8 +70,8 @@
     </section>
     <section expanded>
         <h2>Answers</h2>
-        <div>
-            <div class="m2 right">
+        <div class="m2">
+            <div class="right">
                 @*@if (Model.Answers.Max(s => s.Text.Length) < 50)
                     {
                         if (!Html.ViewContext.HttpContext.IsMobileBrowser())
@@ -168,29 +168,24 @@
     {
         @if (Model?.Explanations?.Count > 0 || Model.References?.Count > 0)
         {
-        <section expanded>
-            <h2>Advertisement</h2>
-            <div class="center">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-            </div>
-        </section>
-            }
+            <section expanded>
+                <h2>Advertisement</h2>
+                <div class="center m2">
+                    <div class="center inline">
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    </div>
+                    <div class="center inline">
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                    </div>
+                </div>
+            </section>
         }
+    }
     @if (Model?.Explanations?.Count > 0)
     {
-        <section>
-            <h2>Explanation (Click to expand)</h2>
-            <div>
-                @*<div class="m2 right">
-                        @if (Model.Explanations.Select(s => s.Text?.Length).Sum() > 500)
-                        {
-                            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                        }
-                        else
-                        {
-                            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                        }
-                    </div>*@
+        <section expanded>
+            <h2>Explanation</h2>
+            <div class="m2">              
                 <div>
                     @if (Model.Explanations?.Count > 0)
                     {
@@ -208,19 +203,9 @@
     }
     @if (Model.References?.Count > 0)
     {
-        <section>
-            <h2>References (Click to expand)</h2>
-            <div>
-                @*<div class="m2 right">
-                        @if (Model.References.Select(s => s.Text?.Length).Sum() > 500)
-                        {
-                            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                        }
-                        else
-                        {
-                            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                        }
-                    </div>*@
+        <section expanded>
+            <h2>References</h2>
+            <div class="m2">               
                 <div>
                     @if (Model.References?.Count > 0)
                     {
