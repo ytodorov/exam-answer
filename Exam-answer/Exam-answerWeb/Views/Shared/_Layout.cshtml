@@ -72,6 +72,7 @@
                             <ul class="a-dropdown-items list-reset m0 p0">
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-100")" class="text-decoration-none">AZ-100</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-300")" class="text-decoration-none">AZ-300</a></li>
+                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-400")" class="text-decoration-none">AZ-400</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-900")" class="text-decoration-none">AZ-900</a></li>
                             </ul>
                         </section>
@@ -94,51 +95,14 @@
             </ul>
         </nav>
     </amp-sidebar>
-    <div class="center">
-        @*@if (Html.ViewContext.HttpContext.IsMobileBrowser())
-            {
-                <amp-ad layout="fixed"
-                        width="320"
-                        height="50"
-                        type="adsense"
-                        data-ad-client="ca-pub-2519209558650417"
-                        data-ad-slot="7770886760">
-                </amp-ad>
-            }
-            else
-            {
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_970_90))
-            }*@
+    <div class="center">      
         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
     </div>
     @RenderBody()
-    <div class="center">
-        @*@if (Html.ViewContext.HttpContext.IsMobileBrowser())
-            {
-                <amp-ad width="100vw" height="320"
-                        type="adsense"
-                        data-ad-client="ca-pub-2519209558650417"
-                        data-ad-slot="7303740684"
-                        data-auto-format="rspv"
-                        data-full-width="">
-                    <div overflow=""></div>
-                </amp-ad>
-            }
-            else
-            {
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
-            }*@
+    <div class="center">        
         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdSquare))
     </div>
-    <br />
-    @*<a title="Online security starts with a click. Advanced security. Internet freedom. Complete privacy." href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902" target="_blank" rel="noopener">
-            <amp-img alt="Online security starts with a click. Advanced security. Internet freedom. Complete privacy."
-                     src="/images/paid-banners-Q1-affiliate-728x90-usd.png"
-                     width="728"
-                     height="90"
-                     layout="responsive">
-            </amp-img>
-        </a>*@
+    <br /> 
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
             <li>

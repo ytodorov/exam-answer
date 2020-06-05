@@ -33,18 +33,7 @@
 <amp-accordion disable-session-states>
     <section expanded>
         <h2>Question @(questionNumber)</h2>
-        <div>
-            <div class="m2 right">
-                @*@if (Model.Contents.Select(s => s.Text?.Length).Sum() > 500)
-                    {
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                    }
-                    else
-                    {
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                    }*@
-
-            </div>
+        <div class="m1">            
             <div>
                 @{
                     var lastContent = Model.Contents.ToList();
@@ -59,7 +48,7 @@
                         {
                             var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-                            <p class="justify">
+                            <p>
                                 @Html.Raw(line)
                             </p>
                         }
@@ -70,7 +59,7 @@
     </section>
     <section expanded>
         <h2>Answers</h2>
-        <div class="m2">
+        <div class="m1">
             <div class="right">
                 @*@if (Model.Answers.Max(s => s.Text.Length) < 50)
                     {
@@ -170,7 +159,7 @@
         {
             <section expanded>
                 <h2>Advertisement</h2>
-                <div class="center m2">
+                <div class="center m1">
                     <div class="center inline">
                         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
@@ -185,14 +174,14 @@
     {
         <section expanded>
             <h2>Explanation</h2>
-            <div class="m2">              
+            <div class="m1">              
                 <div>
                     @if (Model.Explanations?.Count > 0)
                     {
 
                         @foreach (var explanation in Model.Explanations)
                         {
-                            <p class="justify">
+                            <p>
                                 @explanation.Text
                             </p>
                         }
@@ -205,13 +194,13 @@
     {
         <section expanded>
             <h2>References</h2>
-            <div class="m2">               
+            <div class="m1">               
                 <div>
                     @if (Model.References?.Count > 0)
                     {
                         @foreach (var reference in Model.References)
                         {
-                            <p class="justify">
+                            <p>
                                 <a href="@reference.Url" target="_blank" rel="noopener">@(!string.IsNullOrWhiteSpace(reference.Text) ? reference.Text : reference.Url)</a>
                             </p>
                         }
