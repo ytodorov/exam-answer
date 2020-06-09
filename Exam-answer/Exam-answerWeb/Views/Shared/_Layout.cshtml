@@ -95,14 +95,29 @@
             </ul>
         </nav>
     </amp-sidebar>
-    <div class="center">      
+    <div class="center">
         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
     </div>
+
+    @*<label for="cars">Choose a car:</label>
+    <select id="cars" name="cars" placeholder="select ...">
+        <option value="" selected>select your beverage</option>
+        <option value="volvo">Volvo sds</option>
+        <option value="saab" class="correct" style="color:green">Saab dsa d</option>
+        <option value="fiat">Fiat ds</option>
+        <option value="audi">Audi asdasd asd asd asd asd asd asd</option>
+    </select>*@
+
     @RenderBody()
-    <div class="center">        
-        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdSquare))
+<div class="center m2">
+    <div class="center inline">
+        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
     </div>
-    <br /> 
+    <div class="center inline">
+        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
+    </div>
+</div>
+    <br />
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
             <li>

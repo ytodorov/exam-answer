@@ -11,9 +11,9 @@
         var content = Model.Contents[i];
         if (content.Text.Contains(" VPN ", StringComparison.CurrentCultureIgnoreCase))
         {
-            content.Text = content.Text.Replace(" VPN ",
-                $@"<a style=""color: deepskyblue"" class=""underline"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
-                StringComparison.InvariantCultureIgnoreCase);
+            //content.Text = content.Text.Replace(" VPN ",
+            //    $@"<a style=""color: deepskyblue"" class=""underline"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
+            //    StringComparison.InvariantCultureIgnoreCase);
         }
     }
 
@@ -22,9 +22,9 @@
         var explanation = Model.Explanations[i];
         if (explanation.Text.Contains(" VPN ", StringComparison.CurrentCultureIgnoreCase))
         {
-            explanation.Text = explanation.Text.Replace(" VPN ",
-            $@"<a class=""inline-block pt1 underline caps"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
-            StringComparison.InvariantCultureIgnoreCase);
+            //explanation.Text = explanation.Text.Replace(" VPN ",
+            //$@"<a class=""inline-block pt1 underline caps"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
+            //StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }
@@ -161,10 +161,10 @@
                 <h2>Advertisement</h2>
                 <div class="center m1">
                     <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
                     <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
                 </div>
             </section>
@@ -172,8 +172,8 @@
     }
     @if (Model?.Explanations?.Count > 0)
     {
-        <section expanded>
-            <h2>Explanation</h2>
+        <section>
+            <h2>Explanation (click to expand)</h2>
             <div class="m1">              
                 <div>
                     @if (Model.Explanations?.Count > 0)
@@ -192,8 +192,8 @@
     }
     @if (Model.References?.Count > 0)
     {
-        <section expanded>
-            <h2>References</h2>
+        <section>
+            <h2>References (click to expand)</h2>
             <div class="m1">               
                 <div>
                     @if (Model.References?.Count > 0)

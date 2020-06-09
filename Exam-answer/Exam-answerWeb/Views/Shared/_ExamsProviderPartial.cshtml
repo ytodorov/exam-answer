@@ -24,12 +24,12 @@
         <h2>
             @(exam?.Name)
         </h2>
-        <p>
+        <span>
             <a href="@($"{pageBaseCanonicalUrl?.ToLowerInvariant()}/{exam?.Provider?.ToLowerInvariant()}/{exam?.Code?.ToLowerInvariant()}")">All Questions</a>
-        </p>
-        <p>
+        </span>
+        <span>
             <a href="@($"{pageBaseCanonicalUrl?.ToLowerInvariant()}/{exam?.Provider?.ToLowerInvariant()}/{exam?.Code?.ToLowerInvariant()}/question1")">First Question</a>
-        </p>
+        </span>
     </div>
     <br />
 }
