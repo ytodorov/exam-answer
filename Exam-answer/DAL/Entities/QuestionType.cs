@@ -4,6 +4,6 @@
     {
         RadioButon,
         CheckBox,
-        CustomHtml
+        DropDown
     }
 }

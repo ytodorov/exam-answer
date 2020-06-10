@@ -1,9 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using UAParser;
+using Microsoft.Extensions.DependencyInjection;
+using Exam_answerWeb.Models;
 
 namespace Exam_answerWeb.Extensions
 {
@@ -37,5 +42,41 @@ namespace Exam_answerWeb.Extensions
             return result;
                  
         }
+
+        public static EaImageViewModel GetPngSize(this HttpContext httpContext, string fileName)
+        {
+            EaImageViewModel eaImageViewModel = new EaImageViewModel();
+            var env = httpContext.RequestServices.GetService<IWebHostEnvironment>();
+
+            var files = Directory.GetFiles(env.ContentRootPath, "*.png", SearchOption.AllDirectories);
+            var filePath = files.FirstOrDefault(f => f.Contains(fileName, StringComparison.InvariantCultureIgnoreCase));
+            using BinaryReader br = new BinaryReader(File.OpenRead(filePath));
+            br.BaseStream.Position = 16;
+            byte[] widthbytes = new byte[sizeof(int)];
+            for (int i = 0; i < sizeof(int); i++) widthbytes[sizeof(int) - 1 - i] = br.ReadByte();
+            int width = BitConverter.ToInt32(widthbytes, 0);
+            byte[] heightbytes = new byte[sizeof(int)];
+            for (int i = 0; i < sizeof(int); i++) heightbytes[sizeof(int) - 1 - i] = br.ReadByte();
+            int height = BitConverter.ToInt32(heightbytes, 0);
+            eaImageViewModel.Size = new Size(width, height);
+            eaImageViewModel.RelativePathFromWwwRoot = filePath
+                .Replace(env.ContentRootPath, string.Empty)
+                .Replace("\\", "/")
+                .Replace("/wwwroot", string.Empty);
+
+            return eaImageViewModel;
+        }
+
+
+        /*
+         * BinaryReader br = new BinaryReader(File.OpenRead("az-301-q1.PNG"));
+            br.BaseStream.Position = 16;
+            byte[] widthbytes = new byte[sizeof(int)];
+            for (int i = 0; i < sizeof(int); i++) widthbytes[sizeof(int) - 1 - i] = br.ReadByte();
+            int width = BitConverter.ToInt32(widthbytes, 0);
+            byte[] heightbytes = new byte[sizeof(int)];
+            for (int i = 0; i < sizeof(int); i++) heightbytes[sizeof(int) - 1 - i] = br.ReadByte();
+            int height = BitConverter.ToInt32(heightbytes, 0);
+         */
     }
 }

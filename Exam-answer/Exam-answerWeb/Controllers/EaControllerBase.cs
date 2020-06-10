@@ -191,7 +191,27 @@ namespace Exam_answerWeb.Controllers
             string canonicalUrlEncoded = HttpUtility.JavaScriptStringEncode(canonicalUrl);
 
             List<AnswerViewModel> acceptedAnswers = questionVM.Answers.Where(a => a.IsCorrect == true).ToList();
+            
             List<AnswerViewModel> suggestedAnswers = questionVM.Answers.Where(a => a.IsCorrect != true).ToList();
+
+            if (questionVM.QuestionType == QuestionType.DropDown)
+            {
+                acceptedAnswers = new List<AnswerViewModel>();
+                suggestedAnswers = new List<AnswerViewModel>();
+                foreach (var ans in questionVM.Answers)
+                {
+                    var values = ans.Text.Split(";", StringSplitOptions.RemoveEmptyEntries).ToList();
+                    var titleOfDdlAnswer = values.FirstOrDefault();
+
+                    values = values.Skip(1).ToList();
+
+                    List<string> wrongAnswers = values.Where(v => !v.Trim().EndsWith("*")).ToList().Select(s => s.Replace("*", string.Empty).Trim()).ToList();
+                    List<string> correctAnswers = values.Where(v => v.Trim().EndsWith("*")).ToList().Select(s => s.Replace("*", string.Empty).Trim()).ToList();
+
+                    acceptedAnswers.Add(new AnswerViewModel() { Text = $"{titleOfDdlAnswer}: {string.Join(", ", correctAnswers)}" });
+                    suggestedAnswers.Add(new AnswerViewModel() { Text = $"{titleOfDdlAnswer}: {string.Join(", ", wrongAnswers)}" });
+                }
+            }
 
             StringBuilder sbAcceptedAnswer = new StringBuilder();
             StringBuilder sbSuggestedAnswer = new StringBuilder();
@@ -211,7 +231,14 @@ namespace Exam_answerWeb.Controllers
                 allAnswers = questionVM.AcceptedAnswer;
             }
 
-            allAnswers = allAnswers.Replace("\\", "\\\\").Replace("\"", "\\\"");
+            if (allAnswers != null) // TO DO for DropDown
+            {
+                allAnswers = allAnswers.Replace("\\", "\\\\").Replace("\"", "\\\"");
+            }
+            else
+            {
+                allAnswers = string.Empty; // TO DO for DropDown
+            }
 
             sbAcceptedAnswer.Append($@"{{
         ""@type"": ""Answer"",

@@ -117,7 +117,7 @@ D.configuring the SaaS solution
         {
             foreach (ExamEntity exam in ExamsToCheck)
             {
-                List<int?> questionsWithoutAnswers = exam.Questions.Where(q => !q.Answers.Any(a => a.IsCorrect == true)).Select(q => q.Order).ToList();
+                List<int?> questionsWithoutAnswers = exam.Questions.Where(q => q.QuestionType != QuestionType.DropDown && !q.Answers.Any(a => a.IsCorrect == true)).Select(q => q.Order).ToList();
                 Assert.Empty(questionsWithoutAnswers);
             }
         }
@@ -188,6 +188,10 @@ D.configuring the SaaS solution
                     else if (question.QuestionType == QuestionType.RadioButon)
                     {
                         Assert.True(correctQuestionCount.Count == 1);
+                    }
+                    else if (question.QuestionType == QuestionType.DropDown)
+                    {
+                        Assert.True(question.Answers.All(a => a.Text.Contains(" *")));
                     }
                 }
             }

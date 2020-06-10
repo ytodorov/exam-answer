@@ -25,7 +25,7 @@ namespace Exam_answerWeb.Infrastructure
 
             List<QuestionEntity> qeList = new List<QuestionEntity>();
             foreach (string question in quesions)
-            {                
+            {
                 string[] questionsGroups = question.Split($"---", StringSplitOptions.RemoveEmptyEntries);
 
                 List<string> questionContent = questionsGroups[0].Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -51,6 +51,12 @@ namespace Exam_answerWeb.Infrastructure
                     qe.QuestionType = QuestionType.CheckBox;
                     questionContent = questionContent.Skip(1).ToList();
                 }
+                else if (questionContent.FirstOrDefault()?.Equals("D") == true)
+                {
+                    qe.QuestionType = QuestionType.DropDown;
+                    questionContent = questionContent.Skip(1).ToList();
+                }
+
 
                 foreach (string content in questionContent)
                 {
@@ -348,6 +354,22 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(az100);
             result.Add(az100);
 
+            ExamEntity az301 = new ExamEntity()
+            {
+                Provider = "Microsoft",
+                Code = "AZ-301",
+                ExamProviderUrl = "https://www.exam-answer.com/microsoft",
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-301",
+                Name = "Microsoft Azure Architect Design",
+                PageTitle = "Exam AZ-301: Microsoft Azure Architect Design",
+                PageDescription = "Prepare for Exam AZ-301: Microsoft Azure Architect Design. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\az-301.txt"),
+                Order = 3,
+            };
+
+            context?.Exams?.Add(az301);
+            result.Add(az301);
+
             ExamEntity az900 = new ExamEntity()
             {
                 Provider = "Microsoft",
@@ -358,9 +380,9 @@ namespace Exam_answerWeb.Infrastructure
                 PageTitle = "Exam AZ-900: Microsoft Azure Fundamentals",
                 PageDescription = "Prepare for Exam AZ-900: Microsoft Azure Fundamentals. Free demo questions with answers and explanations.",
                 Questions = new List<QuestionEntity>(),
-                Order = 3,
+                Order = 5,
             };
-                        
+
 
             az900.ShowUdemy = false;
             az900.UdemyLinkUrl = "https://www.udemy.com/course/exam-az-900-microsoft-azure-fundamentals-exam-questions/?couponCode=50_OFF";

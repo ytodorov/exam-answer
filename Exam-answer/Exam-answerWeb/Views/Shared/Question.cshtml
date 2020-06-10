@@ -9,23 +9,11 @@
     for (int i = 0; i < Model.Contents.Count; i++)
     {
         var content = Model.Contents[i];
-        if (content.Text.Contains(" VPN ", StringComparison.CurrentCultureIgnoreCase))
-        {
-            //content.Text = content.Text.Replace(" VPN ",
-            //    $@"<a style=""color: deepskyblue"" class=""underline"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
-            //    StringComparison.InvariantCultureIgnoreCase);
-        }
     }
 
     for (int i = 0; i < Model.Explanations.Count; i++)
     {
         var explanation = Model.Explanations[i];
-        if (explanation.Text.Contains(" VPN ", StringComparison.CurrentCultureIgnoreCase))
-        {
-            //explanation.Text = explanation.Text.Replace(" VPN ",
-            //$@"<a class=""inline-block pt1 underline caps"" title=""Online security starts with a click. Advanced security. Internet freedom. Complete privacy."" href=""https://go.nordvpn.net/aff_c?offer_id=15&aff_id=40528&url_id=902"" target=""_blank"" rel=""noopener"">  VPN  </a>",
-            //StringComparison.InvariantCultureIgnoreCase);
-        }
     }
 }
 <h1><a href="@pageBaseCanonicalUrl">Home</a> / <a href="@Model.Exam.ExamProviderUrl">@Model.Exam.Provider</a> / <a href="@Model.Exam.ExamUrl"> @Model.Exam.Code</a> / <a href="@(Model.Exam.ExamUrl + "/question" + questionNumber)"> Question @(questionNumber)</a></h1>
@@ -33,7 +21,7 @@
 <amp-accordion disable-session-states>
     <section expanded>
         <h2>Question @(questionNumber)</h2>
-        <div class="m1">            
+        <div class="m1">
             <div>
                 @{
                     var lastContent = Model.Contents.ToList();
@@ -48,9 +36,21 @@
                         {
                             var line = lines2[i].Replace("Constants.PaddingChar.ToString()", "&nbsp;");
 
-                            <p>
-                                @Html.Raw(line)
-                            </p>
+                            if (line.EndsWith(".png", StringComparison.InvariantCultureIgnoreCase))
+                            {
+                                <amp-img alt="@($"{Model.Exam.Provider} {Model.Exam.Code} question{questionNumber}")"
+                                         src="@(Html.ViewContext.HttpContext.GetPngSize(line).RelativePathFromWwwRoot)"
+                                         width="@(Html.ViewContext.HttpContext.GetPngSize(line).Size.Width)"
+                                         height="@(Html.ViewContext.HttpContext.GetPngSize(line).Size.Height)"
+                                         layout="responsive">
+                                </amp-img>
+                            }
+                            else
+                            {
+                                <p>
+                                    @Html.Raw(line)
+                                </p>
+                            }
                         }
                     </h3>
                 }
@@ -60,22 +60,6 @@
     <section expanded>
         <h2>Answers</h2>
         <div class="m1">
-            <div class="right">
-                @*@if (Model.Answers.Max(s => s.Text.Length) < 50)
-                    {
-                        if (!Html.ViewContext.HttpContext.IsMobileBrowser())
-                        {
-                            if (Model.Answers.Count <= 2)
-                            {
-                                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                            }
-                            else
-                            {
-                                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
-                            }
-                        }
-                    }*@
-            </div>
             <div>
                 @{
                     string correctId = $"correct{Html.GetNextId()}";
@@ -143,6 +127,33 @@
                         }
                     </ul>
                 }
+                @if (Model.QuestionType == QuestionType.DropDown)
+                {
+                    @foreach (var answer in Model.Answers)
+                    {
+                        <p>
+                            @{
+                                var dropdDownValues = answer.Text.Split(";", StringSplitOptions.RemoveEmptyEntries).ToList();
+                                var labelText = dropdDownValues.FirstOrDefault();
+                            }
+                            <label for="@(Html.GetNextId())">@labelText</label>
+                            <select id="@(Html.GetNextId(true))" name="@(Html.GetNextId(true))">
+                                @*<option value="" disabled selected>Select your option</option>*@
+                                @foreach (var drValue in dropdDownValues.Skip(1))
+                                {
+                                    @if (drValue.Trim().EndsWith("*", StringComparison.InvariantCultureIgnoreCase))
+                                    {
+                                        <option [selected]="toggleVariable@(questionNumber) == 'green'" [class]="toggleVariable@(questionNumber)" value="@drValue.Replace("*", string.Empty).Trim()">@drValue.Replace("*", string.Empty).Trim()</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@drValue">@drValue</option>
+                                    }
+                                }
+                            </select>
+                        </p>
+                    }
+                }
                 <br />
                 <div class="center">
                     <input type="checkbox" id="@(Html.GetNextId())" class="k-checkbox" on="change: AMP.setState({ toggleVariable@(questionNumber): event.checked ? 'green' : ''})">
@@ -161,10 +172,10 @@
                 <h2>Advertisement</h2>
                 <div class="center m1">
                     <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
                     <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
                 </div>
             </section>
@@ -174,7 +185,7 @@
     {
         <section>
             <h2>Explanation (click to expand)</h2>
-            <div class="m1">              
+            <div class="m1">
                 <div>
                     @if (Model.Explanations?.Count > 0)
                     {
@@ -194,7 +205,7 @@
     {
         <section>
             <h2>References (click to expand)</h2>
-            <div class="m1">               
+            <div class="m1">
                 <div>
                     @if (Model.References?.Count > 0)
                     {

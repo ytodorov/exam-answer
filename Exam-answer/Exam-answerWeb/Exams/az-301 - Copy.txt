@@ -1,0 +1,141 @@
+﻿###
+D
+You deploy several Azure SQL Database instances.
+You plan to configure the Diagnostics settings on the databases as shown in the following exhibit.
+az-301-q1.PNG
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
+---
+The amount of time that SQLInsights data will be stored in blob storage is;30 days;90 days;730 days;indefinite *;
+The maximum amount of time that  SQLInsights data can be stored in Azure Log Analytics is;30 days;90 days;730 days *;indefinite
+---
+In the exhibit, the SQLInsights data is configured to be stored in Azure Log Analytics for 90 days. However, the question is asking for the "maximum" amount of time that the data can be stored which is 730 days.
+az-301-q1-1.PNG
+---
+Manage usage and costs with Azure Monitor Logs;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage
+###
+Your company uses Microsoft System Center "" Service Manager on its on-premises network.
+You plan to deploy several services to Azure.
+You need to recommend a solution to push Azure service health alerts to Service Manager.
+What should you include in the recommendation?
+---
+A. Azure Notification Hubs
+B. Azure Event Hubs
+C. IT Service Management Connector (ITSM) *
+D. Application Insights Connector
+---
+The IT Service Management Connector (ITSMC) allows you to connect Azure and a supported IT Service Management (ITSM) product/service.
+
+Azure services like Log Analytics and Azure Monitor provide tools to detect, analyze and troubleshoot issues with your Azure and non-Azure resources. However, the work items related to an issue typically reside in an ITSM product/service. The ITSM connector provides a bi-directional connection between Azure and ITSM tools to help you resolve issues faster.
+
+ITSMC supports connections with the following ITSM tools:
+
+ServiceNow
+System Center Service Manager
+Provance
+Cherwell
+With ITSMC, you can:
+
+Create work items in ITSM tool, based on your Azure alerts (metric alerts, Activity Log alerts and Log Analytics alerts).
+Optionally, you can sync your incident and change request data from your ITSM tool to an Azure Log Analytics workspace.
+---
+Connect Azure to ITSM tools using IT Service Management Connector;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/itsmc-overview
+###
+C
+You have an on-premises Hyper-V cluster. The cluster contains Hyper-V hosts that run Windows Server 2016 Datacenter. The hosts are licensed under a
+Microsoft Enterprise Agreement that has Software Assurance.
+The Hyper-V cluster hosts 3 virtual machines that run Windows Server 2012 R2. Each virtual machine runs a different workload. The workloads have predictable consumption patterns.
+You plan to replace the virtual machines with Azure virtual machines that run Windows Server 2016. The virtual machines will be sized according to the consumption pattern of each workload.
+You need to recommend a solution to minimize the compute costs of the Azure virtual machines.
+Which two recommendations should you include in the solution? Each correct answer presents part of the solution.
+---
+A. Purchase Azure Reserved Virtual Machine Instances for the Azure virtual machines *
+B. Create a virtual machine scale set that uses autoscaling
+C. Configure a spending limit in the Azure account center
+D. Create a lab in Azure DevTest Labs and place the Azure virtual machines in the lab
+E. Activate Azure Hybrid Benefit for the Azure virtual machines *
+---
+---
+Azure Reserved VM Instances (RIs);https://azure.microsoft.com/en-us/pricing/reserved-vm-instances/
+Azure Hybrid Benefit;https://azure.microsoft.com/en-us/pricing/hybrid-benefit/
+###
+C
+You have an on-premises Active Directory forest and an Azure Active Directory (Azure AD) tenant. All Azure AD users are assigned a Premium P1 license.
+You deploy Azure AD Connect.
+Which two features are available in this environment that can reduce operational overhead for your company's help desk? Each correct answer presents a complete solution.
+---
+A. Azure AD Privileged Identity Management policies
+B. access reviews
+C. self-service password reset *
+D. Microsoft Cloud App Security Conditional Access App Control
+E. password writeback *
+---
+---
+Licensing requirements for Azure Active Directory self-service password reset;https://docs.microsoft.com/en-ca/azure/active-directory/authentication/concept-sspr-licensing
+###
+You are planning the implementation of an order processing web service that will contain microservices hosted in an Azure Service Fabric cluster.
+You need to recommend a solution to provide developers with the ability to proactively identify and fix performance issues. The developers must be able to simulate user connections to the order processing web service from the Internet, as well as simulate user transactions. The developers must be notified if the goals for the transaction response times are not met.
+What should you include in the recommendation?
+---
+A. container health
+B. Azure Network Watcher
+C. Application Insights *
+D. Service Fabric Analytics
+---
+Part of Azure Monitor, Application Insights is an extensible platform for application monitoring and diagnostics. It includes a powerful analytics and querying tool, customizable dashboard and visualizations, and further options including automated alerting. Application Insights's integration with Service Fabric includes tooling experiences for Visual Studio and Azure portal, as well as Service Fabric specific metrics, providing a comprehensive out-of-the-box logging experience. Though many logs are automatically created and collected for you with Application Insights, we recommend that you add further custom logging to your applications to create a richer diagnostics experience.
+---
+Event analysis and visualization with Application Insights;https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-diagnostics-event-analysis-appinsights
+###
+You need to recommend a solution to generate a monthly report of all the new Azure Resource Manager resource deployments in your subscription.
+What should you include in the recommendation?
+---
+A. Azure Analysis Services
+B. Azure Activity Log *
+C. Azure Monitor action groups
+D. Azure Advisor
+E. Azure Monitor metrics
+F. Azure Log Analytics
+G. Application Insights
+---
+Through activity logs, you can determine:
+✑ what operations were taken on the resources in your subscription
+✑ who started the operation
+✑ when the operation occurred
+✑ the status of the operation
+✑ the values of other properties that might help you research the operation
+---
+View activity logs to monitor actions on resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit
+###
+D
+You have an Azure App Service Web App that includes Azure Blob storage and an Azure SQL Database instance. The application is instrumented by using the
+Application Insights SDK.
+You need to design a monitoring solution for the web app.
+Which Azure monitoring services should you use? To answer, select the appropriate Azure monitoring services in the answer area.
+---
+Correlate Azure resource usage and performance data with application configuration and performance data;Azure Application Insights;Azure Service Map;Azure Log Analytics *;Azure Activity Log
+Visualize the relationships between application components;Azure Application Insights;Azure Service Map *;Azure Log Analytics;Azure Activity Log
+Track requests and exceptions to a specific line of code withing application;Azure Application Insights *;Azure Service Map;Azure Log Analytics;Azure Activity Log
+Analyze how many users return to the application and how often they select a particular dropdown value;Azure Application Insights *;Azure Service Map;Azure Log Analytics;Azure Activity Log
+---
+Through activity logs, you can determine:
+
+what operations were taken on the resources in your subscription
+who started the operation
+when the operation occurred
+the status of the operation
+the values of other properties that might help you research the operation
+
+Service Map automatically discovers application components on Windows and Linux systems and maps the communication between services. With Service Map, you can view your servers in the way that you think of them: as interconnected systems that deliver critical services. Service Map shows connections between servers, processes, inbound and outbound connection latency, and ports across any TCP-connected architecture, with no configuration required other than the installation of an agent.
+
+Application Insights, a feature of Azure Monitor, is an extensible Application Performance Management (APM) service for developers and DevOps professionals. Use it to monitor your live applications. It will automatically detect performance anomalies, and includes powerful analytics tools to help you diagnose issues and to understand what users actually do with your app. It's designed to help you continuously improve performance and usability. It works for apps on a wide variety of platforms including .NET, Node.js, Java, and Python hosted on-premises, hybrid, or any public cloud. It integrates with your DevOps process, and has connection points to a variety of development tools. It can monitor and analyze telemetry from mobile apps by integrating with Visual Studio App Center.
+---
+View activity logs to monitor actions on resources;https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/view-activity-logs
+Using Service Map solution in Azure;https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map
+What is Application Insights?;https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+###
+---
+---
+---
+###
+---
+---
+---
