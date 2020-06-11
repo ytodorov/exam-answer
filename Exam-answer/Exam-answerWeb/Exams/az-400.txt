@@ -608,8 +608,7 @@ Azure PowerShell *
 Azure App Service Manage
 ---
 There are two different ways to deploy templates to Azure DevOps Services. Both methods provide the same results, so choose the one that best fits your workflow.
-1. Add a single step to your build pipeline that runs the PowerShell script that's included in the Azure Resource Group deployment project (Deploy-
-AzureResourceGroup.ps1). The script copies artifacts and then deploys the template.
+1. Add a single step to your build pipeline that runs the PowerShell script that's included in the Azure Resource Group deployment project (Deploy-AzureResourceGroup.ps1). The script copies artifacts and then deploys the template.
 2. Add multiple Azure DevOps Services build steps, each one performing a stage task.
 The first option has the advantage of using the same script used by developers in Visual Studio and providing consistency throughout the lifecycle.
 ---
@@ -625,8 +624,7 @@ Gradle *
 Octopus
 Gulp
 ---
-SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps
-Services build task.
+SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps Services build task.
 ---
 Use SonarQube with Azure DevOps or Team Foundation Server (TFS) for Java development;https://docs.microsoft.com/en-us/azure/devops/java/sonarqube?view=azure-devops
 ###
@@ -685,8 +683,6 @@ The Secure Development Lifecycle (SDL) Guidelines recommend that teams perform s
 Note: The company should focus in particular on the implementation of DevOps tests to assess the quality of the software from the planning stage to the implementation phase of the project.
 ---
 Microsoft Security Code Analysis;https://secdevtools.azurewebsites.net/
-
-
 ###
 Your company is building a new solution in Java.
 The company currently uses a SonarQube server to analyze the code of .NET solutions.
@@ -1030,8 +1026,6 @@ A successful IOS device build will produce an ipa file. In order to install the 
 To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (.mobileprovision) and a valid certificate (.p12), along with the password for the certificate.
 ---
 Building Xamarin apps for iOS;https://docs.microsoft.com/en-us/appcenter/build/xamarin/ios/
-
-
 ###
 You have an application that consists of several Azure App Service web apps and Azure functions.
 You need to access the security of the web apps and the functions.
@@ -1050,8 +1044,6 @@ Incorrect Answers:
 Smart Detection automatically warns you of potential performance problems, not security problems in your web application.
 ---
 Smart Detection in Application Insights;https://docs.microsoft.com/en-us/azure/azure-monitor/app/proactive-diagnostics
-
-
 ###
 You have a private distribution group that contains provisioned and unprovisioned devices.
 You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
@@ -1061,22 +1053,17 @@ Request the Apple ID associated with the user of each device.
 Register the devices on the Apple Developer portal. *
 Create an active subscription in App Center Test.
 Add the device owner to the organization in App Center.
- 
-
 ---
 When releasing an iOS app signed with an ad-hoc or development provisioning profile, you must obtain tester's device IDs (UDIDs), and add them to the provisioning profile before compiling a release. When you enable the distribution group's Automatically manage devices setting, App Center automates the before mentioned operations and removes the constraint for you to perform any manual tasks. As part of automating the workflow, you must provide the user name and password for your Apple ID and your production certificate in a .p12 format.
 App Center starts the automated tasks when you distribute a new release or one of your testers registers a new device. First, all devices from the target distribution group will be registered, using your Apple ID, in your developer portal and all provisioning profiles used in the app will be generated with both new and existing device IAfterward, the newly generated provisioning profiles are downloaded to App Center servers.
 ---
 Manage App Center Distribution Groups;https://docs.microsoft.com/en-us/appcenter/distribution/groups
-
-
 ###
 Your company has a project in Azure DevOps for a new application. The application will be deployed to several Azure virtual machines that run Windows Server
 2016.
 You need to recommend a deployment strategy for the virtual machines. The strategy must meet the following requirements:
 Ensure that the virtual machines maintain a consistent configuration.
 Minimize administrative effort to configure the virtual machines.
-
 What should you include in the recommendation?
 ---
 Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows
@@ -1111,10 +1098,8 @@ Yes
 No *
 ---
 Instead implement Continuous Assurance for the project.
-
 ---
 Secure DevOps Kit for Azure;https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
-
 ###
 You manage a project in Azure DevOps.
 You need to prevent the configuration of the project from changing over time.
@@ -1132,7 +1117,6 @@ Drift involving 'baseline' configuration: This involves settings that have a fix
 Drift involving 'stateful' configuration: There are settings which cannot be constrained within a finite set of well-known states. For instance, the IP addresses configured to have access to a SQL DB can be any (arbitrary) set of IP addresses. In such scenarios, usually human judgment is initially required to determine whether a particular configuration should be considered 'secure' or not. However, once that is done, it is important to ensure that there is no "stateful drift" from the attested configuration. (E.g., if, in a troubleshooting session, someone adds the IP address of a developer machine to the list, the Continuous Assurance feature should be able to identify the drift and generate notifications/alerts or even trigger 'auto-remediation' depending on the severity of the change).
 ---
 Secure DevOps Kit for Azure;https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
-
 ###
 Your company has a release pipeline in an Azure DevOps project.
 You plan to deploy to an Azure Kubernetes Services (AKS) cluster by using the Helm package and deploy task.
@@ -1184,77 +1168,314 @@ PL/SQL
 Transact-SQL
 ---
 Data analysis in Azure SQL Analytics is based on Log Analytics language for your custom querying and reporting.
-
 ---
 Monitor Azure SQL Database using Azure SQL Analytics (Preview);https://docs.microsoft.com/en-us/azure/azure-monitor/insights/azure-sql
 ###
+You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
+You need to recommend a solution to capture and store telemetry datThe solution must meet the following requirements:
+Support using ad-hoc queries to identify baselines.
+Trigger alerts when metrics in the baseline are exceeded.
+Store application and database metrics in a central location.
+What should you include in the recommendation?
 ---
+Azure Event Hubs
+Azure SQL Database Intelligent Insights
+Azure Application Insights
+Azure Log Analytics *
+---
+Azure Platform as a Service (PaaS) resources, like Azure SQL and Web Sites (Web Apps), can emit performance metrics data natively to Log Analytics.
+The Premium plan will retain up to 12 months of data, giving you an excellent baseline ability.
+There are two options available in the Azure portal for analyzing data stored in Log analytics and for creating queries for ad hoc analysis.
+Incorrect Answers:
+B: Intelligent Insights analyzes database performance by comparing the database workload from the last hour with the past seven-day baseline workload.
+However, we need handle application metrics as well.
+---
+Collect Azure platform logs in Log Analytics workspace in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-azurepass-posh
+###
+C
+Your company creates a web application.
+You need to recommend a solution that automatically sends to Microsoft Teams a daily summary of the exceptions that occur in the application.
+Which two Azure services should you recommend? Each correct answer presents part of the solution.
+---
+Azure Logic Apps *
+Azure Pipelines
+Microsoft Visual Studio App Center
+Azure DevOps Project
+Azure Application Insights *
+---
+E: Exceptions in your live web app are reported by Application Insights.
+Note: Periodical reports help keep a team informed on how their business critical services are doing. Developers, DevOps/SRE teams, and their managers can be productive with automated reports reliably delivering insights without requiring everyone to sign in the portal. Such reports can also help identify gradual increases in latencies, load or failure rates that may not trigger any alert rules.
+A: You can programmatically query Application Insights data to generate custom reports on a schedule. The following options can help you get started quickly:
+Automate reports with Microsoft Flow
+Automate reports with Logic Apps
+---
+Diagnose exceptions in your web apps with Application Insights;https://docs.microsoft.com/en-us/azure/azure-monitor/app/asp-net-exceptions
+Automate custom reports with Azure Application Insights data;https://docs.microsoft.com/en-us/azure/azure-monitor/app/automate-custom-reports
+###
+Your company is building a mobile app that targets Android and iOS devices.
+Your team uses Azure DevOps to manage all work items and release cycles.
+You need to recommend a solution to perform the following tasks:
+Collect crash reports for issue analysis.
+Distribute beta releases to your testers.
+Get user feedback on the functionality of new apps.
+What should you include in the recommendation?
+---
+the Microsoft Test & Feedback extension *
+Microsoft Visual Studio App Center integration
+Azure Application Insights widgets
+Jenkins integration
+---
+The "Exploratory Testing" extension is now "Test & Feedback" and is now Generally Available.
+Anyone can now test web apps and give feedback, all directly from the browser on any platform: Windows, Mac, or Linux. Available for Google Chrome and
+Mozilla Firefox (required version 50.0 or above) currently. Support for Microsoft Edge is in the pipeline and will be enabled once Edge moves to a Chromium- compatible web platform.
+---
+Test & Feedback;https://marketplace.visualstudio.com/items?itemName=ms.vss-exploratorytesting-web
+###
+C
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure virtual machine scale set named VMSS1.
+VMSS1 hosts a web application named WebApp1. WebApp1 uses stateful sessions.
+The WebApp1 installation is managed by using the Custom Script extension. The script resides in an Azure Storage account named sa1.
+You plan to make a minor change to a UI element of WebApp1 and to gather user feedback about the change.
+You need to implement limited user testing for the new version of WebApp1 on VMSS1.
+Which three actions should you perform? Each correct answer presents part of the solution.
+---
+Modify the load balancer settings of VMSS1.
+Redeploy VMSS1. *
+Upload a custom script file to sa1. *
+Modify the Custom Script extension settings of VMSS1. *
+Update the configuration of a virtual machine in VMSS1.
 ---
 ---
 ###
+Your company builds a multi-tier web application.
+You use Azure DevOps and host the production application on Azure virtual machines.
+Your team prepares an Azure Resource Manager template of the virtual machine that you will use to test new features.
+You need to create a staging environment in Azure that meets the following requirements:
+Minimizes the cost of Azure hosting
+Provisions the virtual machines automatically
+Uses the custom Azure Resource Manager template to provision the virtual machines
+What should you do?
 ---
+In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
+In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services.
+From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
+In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs. *
 ---
+You can use the Azure DevTest Labs Tasks extension that's installed in Azure DevOps to easily integrate your CI/CD build-and-release pipeline with Azure
+DevTest Labs. The extension installs three tasks:
+Create a VM
+Create a custom image from a VM
+Delete a VM
+The process makes it easy to, for example, quickly deploy a "golden image" for a specific test task and then delete it when the test is finished.
 ---
+Integrate Azure DevTest Labs into your Azure Pipelines CI/CD pipeline;https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-integrate-ci-cd
 ###
+You are automating the build process for a Java-based application by using Azure DevOps.
+You need to add code coverage testing and publish the outcomes to the pipeline.
+What should you use?
 ---
+Cobertura *
+Bullseye Coverage
+MSTest
+Coverlet
 ---
+Use Publish Code Coverage Results task in a build pipeline to publish code coverage results to Azure Pipelines or TFS, which were produced by a build in Cobertura or JaCoCo format.
 ---
+Publish Code Coverage Results task;https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops
 ###
+Your company builds a multi-tier web application.
+You use Azure DevOps and host the production application on Azure virtual machines.
+Your team prepares an Azure Resource Manager template of the virtual machine that you will use to test new features.
+You need to create a staging environment in Azure that meets the following requirements:
+Minimizes the cost of Azure hosting
+Provisions the virtual machines automatically
+Uses the custom Azure Resource Manager template to provision the virtual machines
+What should you do?
 ---
+In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
+In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services.
+From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
+In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs. *
 ---
+You can use the Azure DevTest Labs Tasks extension that's installed in Azure DevOps to easily integrate your CI/CD build-and-release pipeline with Azure
+DevTest Labs. The extension installs three tasks:
+Create a VM
+Create a custom image from a VM
+Delete a VM
+The process makes it easy to, for example, quickly deploy a "golden image" for a specific test task and then delete it when the test is finished.
 ---
+Integrate Azure DevTest Labs into your Azure Pipelines CI/CD pipeline;https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-integrate-ci-cd-vsts
 ###
+You plan to use a NuGet package in a project in Azure DevOps. The NuGet package is in a feed that requires authentication.
+You need to ensure that the project can restore the NuGet package automatically.
+What should the project use to automate the authentication?
 ---
+an Azure Automation account
+an Azure Artifacts Credential Provider *
+an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
+an Azure Active Directory (Azure AD) service principal
 ---
+The Azure Artifacts Credential Provider automates the acquisition of credentials needed to restore NuGet packages as part of your .NET development workflow. It integrates with MSBuild, dotnet, and NuGet(.exe) and works on Windows, Mac, and Linux. Any time you want to use packages from an Azure Artifacts feed, the
+Credential Provider will automatically acquire and securely store a token on behalf of the NuGet client you're using.
 ---
+Azure Artifacts Credential Provider;https://github.com/microsoft/artifacts-credprovider
 ###
+You create a Microsoft ASP.NET Core application.
+You plan to use Azure Key Vault to provide secrets to the application as configuration data.
+You need to create a Key Vault access policy to assign secret permissions to the application. The solution must use the principle of least privilege.
+Which secret permissions should you use?
 ---
+List only
+Get only *
+Get and List
 ---
+Application data plane permissions:
+Keys: sign
+Secrets: get
 ---
+Secure access to a key vault;https://docs.microsoft.com/en-us/azure/key-vault/key-vault-secure-your-key-vault
 ###
+You are designing an Azure DevOps strategy for your company's development team.
+You suspect that the team's productivity is low due to accumulate technical debt.
+You need to recommend a metric to assess the amount of the team's technical debt.
+What should you recommend?
 ---
+the number of code modules in an application
+the number of unit test failures
+the percentage of unit test failures
+the percentage of overall time spent on rework *
 ---
+Technical Debt is the estimated cost to fix code elements issues.
+Technical Debt Ratio: Ratio between the cost to develop the software and the cost to fix it. The Technical Debt Ratio formula is:
+Remediation cost / Development cost
+Which can be restated as:
+Remediation cost / (Cost to develop 1 line of code * Number of lines of code)
 ---
+People, Process, Product - DevOps - SonarQube Tool Assessment- 1;http://www.azure365.co.in/devops/3PDevOps-4
 ###
+You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
+You need to ensure that all the open source libraries comply with your company's licensing standards.
+Which service should you use?
 ---
+NuGet
+Maven
+Black Duck *
+Helm
 ---
+Secure and Manage Open Source Software
+Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios.
+Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
+Note: WhiteSource would also be a good answer, but it is not an option here.
 ---
+Black Duck Hub;https://marketplace.visualstudio.com/items?itemName=black-duck-software.hub-tfs
 ###
+Your company has a project in Azure DevOps for a new application. The application will be deployed to several Azure virtual machines that run Windows Server
+2016.
+You need to recommend a deployment strategy for the virtual machines. The strategy must meet the following requirements:
+Ensure that the virtual machines maintain a consistent configuration.
+Minimize administrative effort to configure the virtual machines.
+What should you include in the recommendation?
 ---
+Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows
+Deployment YAML and Azure pipeline deployment groups
+Azure Resource Manager templates and the Custom Script Extension for Windows *
+Deployment YAML and Azure pipeline stage templates
 ---
+The Custom Script Extension downloads and executes scripts on Azure virtual machines. This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks. Scripts can be downloaded from Azure storage or GitHub, or provided to the Azure portal at extension run time. The Custom Script Extension integrates with Azure Resource Manager templates, and can be run using the Azure CLI, PowerShell, Azure portal, or the Azure Virtual Machine REST API.
+Incorrect Answers:
+B: YAML doesn't work with Azure pipeline deployment groups.
 ---
+Custom Script Extension for Windows;https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows
 ###
+C
+You are developing an iOS application by using Azure DevOps.
+You need to test the application manually on 10 devices without releasing the application to the public.
+Which two actions should you perform? Each correct answer presents part of the solution.
 ---
+Create a Microsoft Intune device compliance policy.
+Deploy a certificate from an internal certification authority (CA) to each device. *
+Register the application in the iTunes store.
+Onboard the devices into Microsoft Intune.
+Distribute a new release of the application.
+Register the IDs of the devices in the Apple Developer portal. *
 ---
+B: Follow these steps to register the devices:
+Select the Register devices button.
+A dialog prompts for your username and password used in the Apple Developer portal.
+Once you sign in with your Apple username and password, App Center adds the unprovisioned devices to both your Apple developer account and the releases provisioning profile.
+Optionally you can upload a .p12 file to re-sign the app and distribute it to the newly added devices. Read more on how to generate a .p12 file.
+F: Registering a device means making it part of the list of devices on the Apple Developer portal that can then be included in a provisioning profile.
+Incorrect Answers:
+C: Only register the application in the iTunes store when it is ready for public release.
 ---
+Device registration and app re-signing;https://docs.microsoft.com/en-us/appcenter/distribution/auto-provisioning
 ###
+You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
+You need to recommend a solution to capture and store telemetry datThe solution must meet the following requirements:
+Support using ad-hoc queries to identify baselines.
+Trigger alerts when metrics in the baseline are exceeded.
+Store application and database metrics in a central location.
+
+What should you include in the recommendation?
 ---
+Azure Event Hubs
+Azure SQL Database Intelligent Insights
+Azure Application Insights
+Azure Log Analytics *
 ---
+Azure Platform as a Service (PaaS) resources, like Azure SQL and Web Sites (Web Apps), can emit performance metrics data natively to Log Analytics.
+The Premium plan will retain up to 12 months of data, giving you an excellent baseline ability.
+There are two options available in the Azure portal for analyzing data stored in Log analytics and for creating queries for ad hoc analysis.
+Incorrect Answers:
+B: Intelligent Insights analyzes database performance by comparing the database workload from the last hour with the past seven-day baseline workloaHowever, we need handle application metrics as well.
 ---
+Collect Azure platform logs in Log Analytics workspace in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-azurepass-posh
 ###
+C
+Your company has a project in Azure DevOps for a new web application.
+The company uses ServiceNow for change management.
+You need to ensure that a change request is processed before any components can be deployed to the production environment.
+What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? Each correct answer presents a complete solution.
 ---
+Define a deployment control that invokes the ServiceNow REST API.
+Define a pre-deployment gate before the deployment to the Prod stage. *
+Define a deployment control that invokes the ServiceNow SOAP API.
+Define a post-deployment gate after the deployment to the QA stage. *
 ---
+An example of a release pipeline that can be modeled through a release pipeline in shown below:
+
+In this example, a release of a website is created by collecting specific versions of two builds (artifacts), each from a different build pipeline. The release is first deployed to a Dev stage and then forked to two QA stages in parallel. If the deployment succeeds in both the QA stages, the release is deployed to Prod ring 1 and then to Prod ring 2. Each production ring represents multiple instances of the same website deployed at various locations around the globe.
 ---
+Release pipelines;https://docs.microsoft.com/en-us/azure/devops/pipelines/release
 ###
+Your company has a project in Azure DevOps for a new web application.
+You need to ensure that when code is checked in, a build runs automatically.
+Solution: From the Triggers tab of the build pipeline, you select Enable continuous integration.
+Does this meet the goal?
 ---
+Yes *
+No
 ---
+In Visual Designer you enable continuous integration (CI) by:
+1. Select the Triggers tab.
+2. Enable Continuous integration.
+A continuous integration trigger on a build pipeline indicates that the system should automatically queue a new build whenever a code change is committed.
 ---
+Create your first pipeline;https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-designer
 ###
+You are automating the build process for a Java-based application by using Azure DevOps.
+You need to add code coverage testing and publish the outcomes to the pipeline.
+What should you use?
 ---
+Cobertura
+Bullseye Coverage
+MSTest
+Coverlet *
 ---
+Use Publish Code Coverage Results task in a build pipeline to publish code coverage results to Azure
+Pipelines or TFS, which were produced by a build in Cobertura or JaCoCo format.
 ---
-###
----
----
----
-###
----
----
----
-###
----
----
----
+Publish Code Coverage Results task;https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops
 ###
 ---
 ---

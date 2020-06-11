@@ -138,7 +138,7 @@
                             }
                             <label for="@(Html.GetNextId())">@labelText</label>
                             <select id="@(Html.GetNextId(true))" name="@(Html.GetNextId(true))">
-                                @*<option value="" disabled selected>Select your option</option>*@
+                                <option value="Select your option">Select your option:</option>
                                 @foreach (var drValue in dropdDownValues.Skip(1))
                                 {
                                     @if (drValue.Trim().EndsWith("*", StringComparison.InvariantCultureIgnoreCase))
@@ -192,9 +192,21 @@
 
                         @foreach (var explanation in Model.Explanations)
                         {
-                            <p>
-                                @explanation.Text
-                            </p>
+                            if (explanation.Text.Trim().EndsWith(".png", StringComparison.InvariantCultureIgnoreCase))
+                            {
+                                <amp-img alt="@($"{Model.Exam.Provider} {Model.Exam.Code} question{questionNumber} explanation")"
+                                         src="@(Html.ViewContext.HttpContext.GetPngSize(explanation.Text).RelativePathFromWwwRoot)"
+                                         width="@(Html.ViewContext.HttpContext.GetPngSize(explanation.Text).Size.Width)"
+                                         height="@(Html.ViewContext.HttpContext.GetPngSize(explanation.Text).Size.Height)"
+                                         layout="responsive">
+                                </amp-img>
+                            }
+                            else
+                            {
+                                <p>
+                                    @explanation.Text
+                                </p>
+                            }
                         }
                     }
                 </div>

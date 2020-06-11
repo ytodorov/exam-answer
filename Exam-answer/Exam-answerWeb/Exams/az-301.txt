@@ -132,6 +132,660 @@ View activity logs to monitor actions on resources;https://docs.microsoft.com/en
 Using Service Map solution in Azure;https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map
 What is Application Insights?;https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 ###
+You plan to deploy 200 Microsoft SQL Server databases to Azure by using Azure SQL Database and Azure SQL Database Managed Instance.
+You need to recommend a monitoring solution that provides a consistent monitoring approach for all deployments. The solution must meet the following requirements:
+Support current-state analysis based on metrics collected near real-time, multiple times per minute, and maintained for up to one hour
+Support longer term analysis based on metrics collected multiple times per hour and maintained for up to two weeks.
+Support monitoring of the number of concurrent logins and concurrent sessions.
+What should you include in the recommendation?
+---
+dynamic management views
+trace flags
+Azure Monitor *
+SQL Server Profiler
+---
+---
+###
+You have an Azure subscription named Project1. Only a group named Project1admins is assigned roles in the Project1 subscription. The Project1 subscription contains all the resources for an application named Application1.
+Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
+(Azure AD) group named App2Dev.
+You identify the following requirements for Application2:
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
+You need to recommend a solution for the role assignments of Application2.
+Solution: Create a new Azure subscription named Project2. Assign Project1admins the Owner role for the Project2 subscription. Assign App2Dev the Contributor role for the Project2 subscription.
+Does this meet the goal?
+---
+Yes *
+No
+---
+---
+###
+You have an Azure subscription named Project1. Only a group named Project1admins is assigned roles in the Project1 subscription. The Project1 subscription contains all the resources for an application named Application1.
+Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
+(Azure AD) group named App2Dev.
+You identify the following requirements for Application2:
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
+You need to recommend a solution for the role assignments of Application2.
+Solution: Create a new Azure subscription named Project2. Assign Project1admins the User Access Administrator role for the Project2 subscription. Assign
+App2Dev the Owner role for the Project2 subscription.
+Does this meet the goal?
+---
+Yes
+No *
+---
+---
+###
+You have an Azure subscription named Project1. Only a group named Project1admins is assigned roles in the Project1 subscription. The Project1 subscription contains all the resources for an application named Application1.
+Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
+(Azure AD) group named App2Dev.
+You identify the following requirements for Application2:
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
+You need to recommend a solution for the role assignments of Application2.
+Solution: In Project1, create a resource group named Application2RG. Assign Project1admins the Owner role for Application2RG. Assign App2Dev the Contributor role for Application2RG.
+Does this meet the goal?
+---
+Yes
+No *
+---
+You should use a separate subscription for Project2.
+---
+###
+You have an Azure subscription that contains a resource group named RG1.
+You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
+You need to recommend a solution that meets the following requirements:
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+Solution: Create a lab in Azure DevTest LaConfigure the DevTest Labs settings. Assign the DevTest Labs User role to the ResearchUsers group.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
+---
+###
+You have an Azure subscription that contains a resource group named RG1.
+You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
+You need to recommend a solution that meets the following requirements:
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+Solution: Create an Azure DevOps Project. Configure the DevOps Project settings.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
+---
+###
+You have an Azure subscription that contains a resource group named RG1.
+You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
+You need to recommend a solution that meets the following requirements:
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+Solution: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
+Does this meet the goal?
+---
+Yes *
+No
+---
+---
+###
+A company named Contoso Ltd., has a single-domain Active Directory forest named contoso.com.
+Contoso is preparing to migrate all workloads to AzurContoso wants users to use single sign-on (SSO) when they access cloud-based services that integrate with Azure Active Directory (Azure AD).
+You need to identify any objects in Active Directory that will fail to synchronize to Azure AD due to formatting issues. The solution must minimize costs.
+What should you include in the solution?
+---
+Azure Advisor
+Microsoft Office 365 IdFix *
+Azure AD Connect Health
+Password Export Server version 3.1 (PES v3.1) in Active Directory Migration Tool (ADMT)
+---
+---
+###
+D
+Your company has an API that returns XML data to internal applications.
+You plan to migrate the applications to AzurYou also plan to allow the company's partners to access the API.
+You need to recommend an API management solution that meets the following requirements:
+Internal applications must receive data in the JSON format once the applications migrate to Azure.
+Partner applications must have their header information stripped before the applications receive the data.
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+---
+Minimum number of APIs to add to Azure API Management;1 *;2;3
+Minimum number of products to publish in Azure API Management;1 *;2;3
+Minimum number of policy elements to add;1;2 *;3
+---
+---
+Create and publish a product;https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-add-products
+Policies in Azure API Management;https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-policies
+Transform and protect your API;https://docs.microsoft.com/en-us/azure/api-management/transform-api
+###
+You have an Azure subscription.
+You need to recommend a solution to provide developers with the ability to provision Azure virtual machines. The solution must meet the following requirements:
+Only allow the creation of the virtual machines in specific regions.
+Only allow the creation of specific sizes of virtual machines.
+What should include in the recommendation?
+---
+conditional access policies
+Azure Policy *
+Azure Resource Manager templates
+role-based access control (RBAC)
+---
+---
+###
+D
+Your company has 20 web APIs that were developed in-house.
+The company is developing 10 web apps that will use the web APIs. The web apps and the APIs are registered in the company's Azure Active Directory (Azure
+AD) tenant. The web APIs are published by using Azure API Management.
+You need to recommend a solution to block unauthorized requests originating from the web apps from reaching the web APIs. The solution must meet the following requirements:
+Use Azure AD-generated claims.
+Minimize configuration and management effort.
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+---
+Grant permissions to allow the web apps to access the web APIs by using;Azure AD;Azure API Management *;The web APIs
+Configure a JSON Web Tocken (JWT) validation policy by using;Azure AD;Azure API Management *;The web APIs
+---
+---
+###
+D
+You are designing an access policy for the sales department at your company.
+Occasionally, the developers at the company must stop, start, and restart Azure virtual machines. The development team changes often.
+You need to recommend a solution to provide the developers with the required access to the virtual machines. The solution must meet the following requirements:
+Provide permissions only when needed.
+Use the principle of least privilege.
+Minimize costs.
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+---
+Azure Active Directory (Azure ID) license;Free;Basic;Premium P1;Premium P2 *;
+Security feature;Just in time VM access;A conditional access policy;Privileged Identity Management for the Azure Resources *;
+---
+---
+###
+Your network contains an on-premises Active Directory forest.
+You discover that when users change jobs within your company, the membership of the user groups are not being updateAs a result, the users can access resources that are no longer relevant to their job.
+You plan to integrate Active Directory and Azure Active Directory (Azure AD) by using Azure AD Connect.
+You need to recommend a solution to ensure that group owners are emailed monthly about the group memberships they manage.
+What should you include in the recommendation?
+---
+Azure AD access reviews *
+Tenant Restrictions
+Azure AD Identity Protection
+conditional access policies
+---
+What are Azure AD access reviews?;https://docs.microsoft.com/en-us/azure/active-directory/governance/access-reviews-overview
+---
+###
+D
+You are designing a software as a service (SaaS) application that will enable Azure Active Directory (Azure AD) users to create and publish surveys. The SaaS application will have a front-end web app and a back-end web API. The web app will rely on the web API to handle updates to customer surveys.
+You need to design an authorization flow for the SaaS application. The solution must meet the following requirements:
+To access the back-end web API, the web app must authenticate by using OAuth 2 bearer tokens.
+The web app must authenticate by using the identities of individual users.
+What should you include in the solution? To answer, select the appropriate options in the answer area.
+---
+The access tokens will be generated by;Azure AD *;A web app;A web API;
+Authorization decisions will be performed by;Azure AD;A web app;A web API *;
+---
+---
+Secure a backend web API for multitenant applications;https://docs.microsoft.com/lb-lu/azure/architecture/multitenant-identity/web-api
+Call an ASP.NET web API protected by Microsoft identity platform;https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v1-dotnet-webapi
+###
+D
+You have five .NET Core applications that run on 10 Azure virtual machines in the same subscription.
+You need to recommend a solution to ensure that the applications can authenticate by using the same Azure Active Directory (Azure AD) identity. The solution must meet the following requirements:
+Ensure that the applications can authenticate only when running on the 10 virtual machines.
+Minimize administrative effort.
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+---
+To provision the Azure AD identity;Create a system-assigned Managed Identities for Azure resources;Create a user-assigned Managed Identities for Azure resources *;Register each application in Azure AD
+To authenticate request a token by using;An Azure AD v1.0 endpoint;An Azure AD v2.0 endpoint;An Azure Instance Metadata Service Identity *;OAuth2 endpoint
+---
+---
+Tutorial: Use a user-assigned managed identity on a Windows VM to access Azure Resource Manager;https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-ua-arm
+###
+A company named Contoso, Lthas an Azure Active Directory (Azure AD) tenant that is integrated with Microsoft Office 365 and an Azure subscription.
+Contoso has an on-premises identity infrastructurThe infrastructure includes servers that run Active Directory Domain Services (AD DS), Active Directory
+Federation Services (AD FS), Azure AD Connect, and Microsoft Identity Manager (MIM).
+Contoso has a partnership with a company named Fabrikam, InFabrikam has an Active Directory forest and an Office 365 tenant. Fabrikam has the same on- premises identity infrastructure as Contoso.
+A team of 10 developers from Fabrikam will work on an Azure solution that will be hosted in the Azure subscription of Contoso. The developers must be added to the Contributor role for a resource in the Contoso subscription.
+You need to recommend a solution to ensure that Contoso can assign the role to the 10 Fabrikam developers. The solution must ensure that the Fabrikam developers use their existing credentials to access resources.
+What should you recommend?
+---
+Configure a forest trust between the on-premises Active Directory forests of Contoso and Fabrikam.
+Configure an organization relationship between the Office 365 tenants of Fabrikam and Contoso.
+In the Azure AD tenant of Contoso, enable Azure Active Directory Domain Services (Azure AD DS). Create a one-way forest trust that uses selective authentication between the Active Directory forests of Contoso and Fabrikam.
+In the Azure AD tenant of Contoso, create guest accounts for the Fabrikam developers. *
+---
+---
+Add or remove Azure role assignments for external guest users using the Azure portal;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-external-users
+###
+You have a hybrid deployment of Azure Active Directory (Azure AD).
+You need to recommend a solution to ensure that the Azure AD tenant can be managed only from the computers on your on-premises network.
+What should you include in the recommendation?
+---
+Azure AD roles and administrators
+a conditional access policy *
+Azure AD Application Proxy
+Azure AD Privileged Identity Management
+---
+---
+###
+You have an Azure Active Directory (Azure AD) tenant named contoso.com that contains two administrative user accounts named Admin1 and Admin2.
+You create two Azure virtual machines named VM1 and VM2.
+You need to ensure that Admin1 and Admin2 are notified when more than five events are added to the security log of VM1 or VM2 during a period of 120 seconds.
+The solution must minimize administrative tasks.
+What should you create?
+---
+two action groups and one alert rule
+one action group and one alert rule *
+five action groups and one alert rule
+two action groups and two alert rules
+---
+---
+###
+You have an Azure Active Directory (Azure AD) tenant named contoso.com that contains several administrative user accounts.
+You need to recommend a solution to identify which administrative user accounts have NOT signed in during the previous 30 days.
+Which service should you include in the recommendation?
+---
+Azure AD Identity Protection
+Azure Activity Log
+Azure Advisor
+Azure AD Privileged Identity Management (PIM) *
+---
+---
+###
+D
+Your organization has developed and deployed several Azure App Service Web and API applications. The applications use Azure Key Vault to store several authentication, storage account, and data encryption keys. Several departments have the following requests to support the applications:
+az-301-q27.png
+You need to recommend the appropriate Azure service for each department request.
+What should you recommend? To answer, configure the appropriate options in the dialog box in the answer area.
+---
+Department: Security, Azure Service:;Azure AD Privileged Identity Management *;Azure AD Managed Service Identity;Azure AD Connect;Azure AD Identity Protection
+Department: Development, Azure Service:;Azure AD Privileged Identity Management;Azure AD Managed Service Identity *;Azure AD Connect;Azure AD Identity Protection
+Department: Quality Assurance, Azure Service:;Azure AD Privileged Identity Management *;Azure AD Managed Service Identity;Azure AD Connect;Azure AD Identity Protection
+---
+---
+###
+You manage a single-domain, on-premises Active Directory forest named contoso.com. The forest functional level is Windows Server 2016.
+You have several on-premises applications that depend on Active Directory.
+You plan to migrate the applications to Azure.
+You need to recommend an identity solution for the applications. The solution must meet the following requirements:
+Eliminate the need for hybrid network connectivity.
+Minimize management overhead for Active Directory.
+What should you recommend?
+---
+In Azure, deploy an additional child domain to the contoso.com forest.
+In Azure, deploy additional domain controllers for the contoso.com domain.*
+Implement a new Active Directory forest in Azure.
+Implement Azure Active Directory Domain Services (Azure AD DS).
+---
+---
+###
+You have an Azure subscription named Project1. Only a group named Project1admins is assigned roles in the Project1 subscription. The Project1 subscription contains all the resources for an application named Application1.
+Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
+(Azure AD) group named App2Dev.
+You identify the following requirements for Application2:
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
+You need to recommend a solution for the role assignments of Application2.
+Solution: In Project1, create a network security group (NSG) named NSG1. Assign Project1admins the Owner role for NSG1. Assign the App2Dev the Contributor role for NSG1.
+Does this meet the goal?
+---
+Yes
+No *
+---
+You should use a separate subscription for Project2.
+---
+###
+D
+You manage a network that includes an on-premises Active Directory Domain Services domain and an Azure Active Directory (Azure AD).
+Employees are required to use different accounts when using on-premises or cloud resources. You must recommend a solution that lets employees sign in to all company resources by using a single account. The solution must implement an identity provider.
+You need provide guidance on the different identity providers.
+How should you describe each identity provider? To answer, select the appropriate description from each list in the answer area.
+---
+Identity provider: synchronized identity, Description:;User management occurs on-premises. Azure AD authenticates employees by using on-premises passwords. *; User management occurs on-premises. The on-premises domain controller authenticates employees credentials.;Both user management and authentication occur in Azure AD
+Identity provider: federated identity, Description:;User management occurs on-premises. Azure AD authenticates employees by using on-premises passwords.; User management occurs on-premises. The on-premises domain controller authenticates employees credentials. *;Both user management and authentication occur in Azure AD
+---
+Box1: User management occurs on-premises. Azure AD authenticates employees by using on-premises passwords.
+Azure AD Domain Services for hybrid organizations
+Organizations with a hybrid IT infrastructure consume a mix of cloud resources and on-premises resources. Such organizations synchronize identity information from their on-premises directory to their Azure AD tenant. As hybrid organizations look to migrate more of their on-premises applications to the cloud, especially legacy directory-aware applications, Azure AD Domain Services can be useful to them.
+Example: Litware Corporation has deployed Azure AD Connect, to synchronize identity information from their on-premises directory to their Azure AD tenant. The identity information that is synchronized includes user accounts, their credential hashes for authentication (password hash sync) and group memberships.
+az-301-q30.PNG
+User accounts, group memberships, and credentials from Litware's on-premises directory are synchronized to Azure AD via Azure AD Connect. These user accounts, group memberships, and credentials are automatically available within the managed domain.
+Box 2: User management occurs on-premises. The on-promises domain controller authenticates employee credentials.
+You can federate your on-premises environment with Azure AD and use this federation for authentication and authorization. This sign-in method ensures that all user authentication occurs on-premises.
+az-301-q30-1.PNG
+---
+What is Azure Active Directory Domain Services?;https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-overview
+What is federation with Azure AD?;https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-fed
+###
+You have an Azure subscription that contains a resource group named RG1.
+You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
+You need to recommend a solution that meets the following requirements:
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+Solution: On RG1, assign a custom role-based access control (RBAC) role to the ResearchUsers group.
+Does this meet the goal?
+---
+Yes
+No *
+---
+Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
+---
+###
+A company deploys Azure Active Directory (Azure AD) Connect to synchronize identity information from their on-premises Active Directory Domain Services (AD
+DS) directory to their Azure AD tenant. The identity information that is synchronized includes user accounts , credential hashes for authentication (password sync), and group membership. The company plans to deploy several Windows and Linux virtual machines (VMs) to support their applications.
+The VMs have the following requirements:
+Support domain join, LDAP read, LDAP bind, NTLM and Kerberos authentication, and Group Policy.
+Allow users to sign in to the domain using their corporate credentials and connect remotely to the VM by using Remote Desktop.
+You need to support the VM deployment.
+Which service should you use?
+---
+Azure AD Domain Services *
+Azure AD Privileged Identity Management
+Azure AD Managed Service Identity
+Active Directory Federation Services (AD FS)
+---
+Azure AD Domain Services provides managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM authentication that are fully compatible with Windows Server Active Directory.
+---
+What is Azure Active Directory Domain Services?;https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-overview
+###
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Several VMs are exhibiting network connectivity issues.
+You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
+Solution: Use the Azure traffic analytics solution in Azure Log Analytics to analyze the network traffic.
+Does the solution meet the goal?
+---
+Yes
+No *
+---
+Instead use Azure Network Watcher to run IP flow verify to analyze the network traffic.
+
+---
+What is Azure Network Watcher?;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview
+Introduction to IP flow verify in Azure Network Watcher;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-ip-flow-verify-overview
+###
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Several VMs are exhibiting network connectivity issues.
+You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
+Solution: Use Azure Network Watcher to run IP flow verify to analyze the network traffic.
+Does the solution meet the goal?
+---
+Yes *
+No
+---
+The Network Watcher Network performance monitor is a cloud-based hybrid network monitoring solution that helps you monitor network performance between various points in your network infrastructurIt also helps you monitor network connectivity to service and application endpoints and monitor the performance of
+Azure ExpressRoute.
+Note:
+IP flow verify checks if a packet is allowed or denied to or from a virtual machinThe information consists of direction, protocol, local IP, remote IP, local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returneWhile any source or destination IP can be chosen,
+IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment.
+IP flow verify looks at the rules for all Network Security Groups (NSGs) applied to the network interface, such as a subnet or virtual machine NITraffic flow is then verified based on the configured settings to or from that network interfacIP flow verify is useful in confirming if a rule in a Network Security Group is blocking ingress or egress traffic to or from a virtual machine.
+---
+###
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Several VMs are exhibiting network connectivity issues.
+You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
+Solution: Install and configure the Log Analytics and Dependency Agents on all VMs. Use the Wire Data solution in Azure Log Analytics to analyze the network traffic.
+Does the solution meet the goal?
+---
+Yes
+No *
+---
+Instead use Azure Network Watcher to run IP flow verify to analyze the network traffic.
+---
+###
+D
+A company plans to implement an HTTP-based API to support a web app. The web app allows customers to check the status of their orders.
+The API must meet the following requirements:
+Implement Azure Functions
+Provide public read-only operations
+Do not allow write operations
+You need to recommend configuration options.
+What should you recommend? To answer, configure the appropriate options in the dialog box in the answer area.
+---
+Allowed authentication methods;All methods;GET only *;GET and POST only;GET, POST and OPTIONS only;
+Authorization level;Function;Anonymous *;Admin;
+---
+Allowed authentication methods: GET only
+
+Authorization level: Anonymous -
+The option is Allow Anonymous requests. This option turns on authentication and authorization in App Service, but defers authorization decisions to your application codFor authenticated requests, App Service also passes along authentication information in the HTTP headers.
+This option provides more flexibility in handling anonymous requests.
+---
+Authentication and authorization in Azure App Service and Azure Functions;https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization
+###
+Your network contains an on-premises Active Directory forest named contoso.com. The forest is synced to an Azure Active Directory (Azure AD) tenant named contoso.com and an Azure AD Domain Services (Azure AD DS) domain named contoso-aad.com.
+You have an Azure Storage account named Storage1 that contains a file share named Share1.
+You configure NTFS permissions on Share1. You plan to deploy a virtual machine that will be used by several users to access Share1.
+You need to ensure that the users can access Share1.
+Which type virtual machine should you deploy?
+---
+a virtual machine that runs Windows Server 2016 and is joined to the contoso.com domain
+a virtual machine that runs Windows 10 and is joined to the contoso-add.com domain
+a virtual machine that runs Windows 10 and is hybrid Azure AD joined to the contoso.com domain
+an Azure virtual machine that runs Windows Server 2016 and is joined to the contoso-add.com domain *
+ 
+
+---
+You join the Windows Server virtual machine to the Azure AD DS-managed domain, here named contoso-aad.com.
+Note: Azure Files supports identity-based authentication over SMB (Server Message Block) (preview) through Azure Active Directory (Azure AD) Domain
+Services. Your domain-joined Windows virtual machines (VMs) can access Azure file shares using Azure AD credentials.
+Incorrect Answers:
+Azure AD authentication over SMB is not supported for Linux VMs for the preview releasOnly Windows Server VMs are supported.
+---
+Enable Azure Active Directory Domain Services authentication on Azure Files;https://docs.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-enable#mount-a-file-share-from-a-domain-joined-vm
+###
+Your company has an on-premises data center and an Azure subscription. The on-premises data center contains a Hardware Security Module (HSM).
+Your network contains an Active Directory domain that is synchronized to an Azure Active Directory (Azure AD) tenant.
+The company is developing an application named Application1. Application1 will be hosted in Azure by using 10 virtual machines that run Windows Server 2016.
+Five virtual machines will be in the West Europe Azure region and five virtual machines will be in the East US Azure region. The virtual machines will store sensitive company information. All the virtual machines will use managed disks.
+You need to recommend a solution to encrypt the virtual machine disks by using BitLocker Drive Encryption (BitLocker).
+Solution: Deploy one Azure Key Vault to each region. Create two Azure AD service principals. Configure the virtual machines to use Azure Disk Encryption and specify a different service principal for the virtual machines in each region.
+Does this meet the goal?
+---
+Yes
+No *
+---
+You would also have to import the security keys from the HSM into each Azure key vault.
+---
+Azure Disk Encryption for virtual machines and virtual machine scale sets;https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption-prerequisites-aad
+###
+Your company has an on-premises data center and an Azure subscription. The on-premises data center contains a Hardware Security Module (HSM).
+Your network contains an Active Directory domain that is synchronized to an Azure Active Directory (Azure AD) tenant.
+The company is developing an application named Application1. Application1 will be hosted in Azure by using 10 virtual machines that run Windows Server 2016.
+Five virtual machines will be in the West Europe Azure region and five virtual machines will be in the East US Azure region. The virtual machines will store sensitive company information. All the virtual machines will use managed disks.
+You need to recommend a solution to encrypt the virtual machine disks by using BitLocker Drive Encryption (BitLocker).
+Solution: Export a security key from the on-premises HSM. Create one Azure AD service principal. Configure the virtual machines to use Azure Storage Service
+Encryption.
+Does this meet the goal?
+---
+Yes
+No *
+---
+We use the Azure Premium Key Vault with Hardware Security Modules (HSM) backed keys.
+The Key Vault has to be in the same region as the VM that will be encrypted.
+---
+Azure Disk Encryption, V2;https://www.ciraltos.com/azure-disk-encryption-v2/
+###
+Your company has an on-premises data center and an Azure subscription. The on-premises data center contains a Hardware Security Module (HSM).
+Your network contains an Active Directory domain that is synchronized to an Azure Active Directory (Azure AD) tenant.
+The company is developing an application named Application1. Application1 will be hosted in Azure by using 10 virtual machines that run Windows Server 2016.
+Five virtual machines will be in the West Europe Azure region and five virtual machines will be in the East US Azure region. The virtual machines will store sensitive company information. All the virtual machines will use managed disks.
+You need to recommend a solution to encrypt the virtual machine disks by using BitLocker Drive Encryption (BitLocker).
+Solution:
+Deploy one Azure key vault to each region
+Export two security keys from the on-premises HSM
+Import the security keys from the HSM into each Azure key vault
+Create two Azure AD service principals
+
+Configure the virtual machines to use Azure Disk Encryption
+Specify a different service principal for the virtual machines in each region
+Does this meet the goal?
+---
+Yes *
+No
+---
+We use the Azure Premium Key Vault with Hardware Security Modules (HSM) backed keys.
+The Key Vault has to be in the same region as the VM that will be encrypted.
+Note: If you want to use a key encryption key (KEK) for an additional layer of security for encryption keys, add a KEK to your key vault. Use the Add-
+AzKeyVaultKey cmdlet to create a key encryption key in the key vault. You can also import a KEK from your on-premises key management HSM.
+---
+Azure Disk Encryption for virtual machines and virtual machine scale sets;https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption-prerequisites-aad
+###
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Several VMs are exhibiting network connectivity issues.
+You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
+Solution: Use Azure Advisor to analyze the network traffic.
+Does the solution meet the goal?
+---
+Yes *
+No
+---
+Instead use Azure Network Watcher to run IP flow verify to analyze the network traffic.
+Note: Advisor is a personalized cloud consultant that helps you follow best practices to optimize your Azure deployments. It analyzes your resource configuration and usage telemetry and then recommends solutions that can help you improve the cost effectiveness, performance, high availability, and security of your Azure resources.
+With Advisor, you can:
+Get proactive, actionable, and personalized best practices recommendations.
+Improve the performance, security, and high availability of your resources, as you identify opportunities to reduce your overall Azure spend.
+Get recommendations with proposed actions inline.
+---
+Introduction to Azure Advisor;https://docs.microsoft.com/en-us/azure/advisor/advisor-overview
+###
+Your network contains an Active Directory domain named contoso.com that is federated to an Azure Active Directory (Azure AD) tenant. The on-premises domain contains a VPN server named Server1 that runs Windows Server 2016.
+You have a single on-premises location that uses an address space of 172.16.0.0/16.
+You need to implement two-factor authentication for users who establish VPN connections to Server1.
+What should you include in the implementation?
+---
+In Azure AD, create a conditional access policy and a trusted named location
+Install and configure Azure MFA Server on-premises *
+Configure an Active Directory Federation Services (AD FS) server on-premises
+In Azure AD, configure the authentication methods. From the multi-factor authentication (MFA) service settings, create a trusted IP range
+---
+You need to download, install and configure the MFA Server.
+---
+Getting started with the Azure Multi-Factor Authentication Server;https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy
+###
+D
+You configure the Diagnostics settings for an Azure SQL database as shown in the following exhibit.
+az-301-q43.png
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
+---
+To perform real-time reporting by using Microsoft Power BI, you must first;clear Send to Log Analytics;clear SQLInsights;select Archive to a storage account;select Stream to an event hub *;
+Diagnostics data can be reviewed in;Azure Analysis Services;Azure Application Insights;Azure SQL Analytics *;Microsoft SQL Server Analysis Services (SSAS);SQL Health Check;
+---
+---
+###
+Your company has an on-premises Active Directory Domain Services (AD DS) domain and an established Azure Active Directory (Azure AD) environment.
+Your company would like users to be automatically signed in to cloud apps when they are on their corporate desktops that are connected to the corporate network.
+You need to enable single sign-on (SSO) for company users.
+Solution: Install and configure an Azure AD Connect server to use password hash synchronization and select the Enable single sign-on option.
+Does the solution meet the goal?
+---
+Yes *
+No
+---
+---
+###
+You have an Azure subscription that contains a custom application named Application1. Application1 was developed by an external company named Fabrikam,
+LtDevelopers at Fabrikam were assigned role-based access control (RBAC) permissions to the Application1 components. All users are licensed for the
+Microsoft 365 E5 plan.
+You need to recommend a solution to verify whether the Fabrikam developers still require permissions to Application1. The solution must meet the following requirements:
+To the manager of the developers, send a monthly email message that lists the access permissions to Application1.
+If the manager does not verify an access permission, automatically revoke that permission.
+Minimize development effort.
+What should you recommend?
+---
+In Azure Active Directory (AD) Privileged Identity Management, create a custom role assignment for the Application1 resources
+Create an Azure Automation runbook that runs the Get-AzureADUserAppRoleAssignment cmdlet
+Create an Azure Automation runbook that runs the Get-AzureRmRoleAssignment cmdlet
+In Azure Active Directory (Azure AD), create an access review of Application1 *
+---
+---
+###
+Your company has an on-premises Active Directory Domain Services (AD DS) domain and an established Azure Active Directory (Azure AD) environment.
+Your company would like users to be automatically signed in to cloud apps when they are on their corporate desktops that are connected to the corporate network.
+You need to enable single sign-on (SSO) for company users.
+Solution: Install and configure an Azure AD Connect server to use pass-through authentication and select the Enable single sign-on option.
+Does the solution meet the goal?
+---
+Yes *
+No
+---
+---
+###
+Your company has an on-premises Active Directory Domain Services (AD DS) domain and an established Azure Active Directory (Azure AD) environment.
+Your company would like users to be automatically signed in to cloud apps when they are on their corporate desktops that are connected to the corporate network.
+You need to enable single sign-on (SSO) for company users.
+Solution: Configure an AD DS server in an Azure virtual machine (VM). Configure bidirectional replication.
+Does the solution meet the goal?
+---
+Yes
+No *
+---
+---
+###
+D
+You are building an application that will run in a virtual machine (VM). The application will use Managed Service Identity (MSI).
+The application uses Azure Key Vault, Azure SQL Database, and Azure Cosmos DB.
+You need to ensure the application can use secure credentials to access these services.
+Which authorization methods should you recommend? To answer, select the appropriate options in the answer area.
+---
+Azure Key Vault;Hash-based message authentication code (HMAC);Managed Service Identity (MSI);Role-Based Access Controls (RBAC) *;HTTPS encryption;
+Azure SQL;Hash-based message authentication code (HMAC);Managed Service Identity (MSI);Role-Based Access Controls (RBAC) *;HTTPS encryption;
+Cosmos DB;Hash-based message authentication code (HMAC) *;Managed Service Identity (MSI);Role-Based Access Controls (RBAC);HTTPS encryption;
+---
+---
+An overview of Azure SQL Database and SQL Managed Instance security capabilities;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-security-overview
+Security in Azure Cosmos DB - overview;https://docs.microsoft.com/en-us/azure/cosmos-db/database-security
+###
+You are designing a security solution for a company's Azure Active Directory (Azure AD). The company currently uses Azure AD Premium for all employees.
+Contractors will periodically access the corporate network based on demand.
+You must ensure that all employees and contractors are required to log on by using two-factor authentication. The solution must minimize costs.
+You need to recommend a solution.
+What should you recommend?
+---
+Purchase Azure Multi-Factor Authentication licenses for the employees and the contractors
+Use the Multi-Factor Authentication provider in Azure and configure the usage model for each authentication type
+Use the Multi-Factor Authentication provider in Azure and configure the usage model for each enabled user *
+Purchase Azure Multi-Factor Authentication licenses for the contractors only
+---
+---
+###
+You have an Azure Active Directory (Azure AZD) tenant named contoso.com. The tenant contains a group named Group1. Group1 contains all the administrative user accounts.
+You discover several login attempts to the Azure portal from countries where administrative users do NOT work.
+You need to ensure that all login attempts to the Azure portal from those countries require Azure Multi-Factor Authentication (MFA).
+Solution: Create an Access Review for Group1.
+Does this solution meet the goal?
+---
+Yes
+No *
+---
+---
+###
+You have an Azure Active Directory (Azure AZD) tenant named contoso.com. The tenant contains a group named Group1. Group1 contains all the administrative user accounts.
+You discover several login attempts to the Azure portal from countries where administrative users do NOT work.
+You need to ensure that all login attempts to the Azure portal from those countries require Azure Multi-Factor Authentication (MFA).
+Solution: You implement an access package.
+Does this solution meet the goal?
+---
+Yes
+No *
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
 ---
 ---
 ---

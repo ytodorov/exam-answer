@@ -62,7 +62,8 @@ namespace Exam_answerWeb.Extensions
             eaImageViewModel.RelativePathFromWwwRoot = filePath
                 .Replace(env.ContentRootPath, string.Empty)
                 .Replace("\\", "/")
-                .Replace("/wwwroot", string.Empty);
+                .Replace("/wwwroot", string.Empty)
+                .ToLowerInvariant();
 
             return eaImageViewModel;
         }
