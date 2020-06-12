@@ -778,6 +778,330 @@ No *
 ---
 ---
 ###
+You have an Azure Active Directory (Azure AZD) tenant named contoso.com. The tenant contains a group named Group1. Group1 contains all the administrative user accounts.
+You discover several login attempts to the Azure portal from countries where administrative users do NOT work.
+You need to ensure that all login attempts to the Azure portal from those countries require Azure Multi-Factor Authentication (MFA).
+Solution: Implement Azure AD Privileged Identity Management.
+Does this solution meet the goal?
+---
+Yes *
+No
+---
+---
+###
+Your company has several Azure subscriptions that are part of a Microsoft Enterprise Agreement.
+The company's compliance team creates automatic alerts by using Azure Monitor.
+You need to recommend a solution to apply the alerts automatically when new subscriptions are added to the Enterprise Agreement.
+What should you include in the recommendation?
+---
+Azure Automation runbooks
+Azure Log Analytics alerts
+Azure Monitor action groups
+Azure Resource Manager templates
+E. Azure Policy *
+---
+---
+###
+You store web access logs data in Azure Blob storage.
+You plan to generate monthly reports from the access logs.
+You need to recommend an automated process to upload the data to Azure SQL Database every month.
+What should you include in the recommendation?
+---
+Microsoft SQL Server Migration Assistant (SSMA)
+Azure Data Factory *
+Data Migration Assistant
+AzCopy
+---
+---
+###
+Your company has the offices shown in the following table.
+az-301-q55.png
+The network contains an Active Directory domain named contoso.com that is synced to Azure Active Directory (Azure AD).
+All users connect to an application hosted in Microsoft 365.
+You need to recommend a solution to ensure that all the users use Azure Multi-Factor Authentication (MFA) to connect to the application from one of the offices.
+What should you include in the recommendation?
+---
+a named location and two Microsoft Cloud App Security policies
+a conditional access policy and two virtual networks
+a virtual network and two Microsoft Cloud App Security policies
+a conditional access policy and two named locations *
+---
+---
+###
+D
+You have an Azure subscription that contains 300 Azure virtual machines that run Windows Server 2016.
+You need to centrally monitor all warning events in the System logs of the virtual machines.
+What should you include in the solutions? To answer, select the appropriate options in the answer area.
+---
+Resources to create in Azure;An event hub;A log analytics workspace *;A search service;A storage account;
+Configuration to perform on the virtual machines;Create event subscriptions;Configure Continuous delivery;Install the Microsoft Monitoring Agent *;Modify the membership of the Event Log Readers Groups;
+---
+---
+Windows event log data sources in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-sources-windows-events
+Connect Windows computers to Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows
+###
+You are developing a sales application that will contain several Azure cloud services and will handle different components of a transactions. Different cloud services will process customer orders, billing, payment, inventory, and shipping.
+You need to recommend a solution to enable the cloud services to asynchronously communicate transaction information by using REST messages.
+What would you include in the recommendation?
+---
+Traffic Manager
+Azure Notification Hubs
+Azure Blob storage
+Azure Queue storage *
+---
+---
+###
+You have an Azure subscription that contains an Azure Cosmos DB account.
+You need to recommend a solution to generate an alert from Azure Log Analytics when a request charge for a query exceeds 50 request units more than 20 times within a 15-minute window.
+What should you recommend?
+---
+Create a search query to identify when requestCharge_s exceeds 50. Configure an alert threshold of 20 and a period of 15. *
+Create a search query to identify when duration_s exceeds 20 and requestCharge_s exceeds 50. Configure a period of 15.
+Create a search query to identify when requestCharge_s exceeds 20. Configure a period of 15 and a frequency of 20.
+Create a search query to identify when duration_s exceeds 20. Configure a period of 15.
+---
+---
+###
+You are designing a data protection strategy for Azure virtual machines. All the virtual machines are in the Standard tier and use managed disks.
+You need to recommend a solution that meets the following requirements:
+The use of encryption keys is audited.
+All the data is encrypted at rest always.
+You manage the encryption keys, not Microsoft.
+What should you include in the recommendation?
+---
+BitLocker Drive Encryption (BitLocker)
+Azure Storage Service Encryption
+client-side encryption
+Azure Disk Encryption *
+---
+---
+Azure Disk Encryption for virtual machines and virtual machine scale sets;https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption-overview
+###
+You have 100 servers that run Windows Server 2012 R2 and host Microsoft SQL Server 2012 R2 instances. The instances host databases that have the following characteristics:
+The largest database is currently 3 TNone of the databases will ever exceed 4 TB.
+Stored procedures are implemented by using CLR.
+You plan to move all the data from SQL Server to Azure.
+You need to recommend an Azure service to host the databases. The solution must meet the following requirements:
+Whenever possible, minimize management overhead for the migrated databases.
+Minimize the number of database changes required to facilitate the migration.
+Ensure that users can authenticate by using their Active Directory credentials.
+
+What should you include in the recommendation?
+---
+Azure SQL Database single databases
+Azure SQL Database Managed Instance *
+Azure SQL Database elastic pools
+SQL Server 2016 on Azure virtual machines
+---
+Part of the Azure SQL product family, Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service. SQL Managed Instance has near 100% compatibility with the latest SQL Server (Enterprise Edition) database engine, providing a native virtual network (VNet) implementation that addresses common security concerns, and a business model favorable for existing SQL Server customers. SQL Managed Instance allows existing SQL Server customers to lift and shift their on-premises applications to the cloud with minimal application and database changes. At the same time, SQL Managed Instance preserves all PaaS capabilities (automatic patching and version updates, automated backups, high availability) that drastically reduce management overhead and TCO.
+---
+What is Azure SQL Managed Instance?;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance
+###
+D
+ou are designing a virtual machine that will run Microsoft SQL Server and will contain two data disks. The first data disk will store log files, and the second data disk will store data. Both disks are P40 managed disks.
+You need to recommend a caching policy for each disk. The policy must provide the best overall performance for the virtual machine.
+Which caching policy should you recommend for each disk? 
+---
+Log;None *;ReadOnly;ReadWrite;
+Data;None;ReadOnly *;ReadWrite;
+---
+---
+Performance guidelines for SQL Server on Azure Virtual Machines;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance
+###
+You plan to create an Azure Cosmos DB account that uses the SQL API. The account will contain data added by a web application. The web application will send data daily.
+You need to recommend a notification solution that meets the following requirements:
+Sends email notification when data is received from IoT devices.
+Minimizes compute cost.
+What should you include in the recommendation?
+---
+Deploy an Azure logic app that has the Azure Cosmos DB connector configured to use a SendGrid action.
+Deploy a function app that is configured to use the Consumption plan and a SendGrid binding. *
+Deploy an Azure logic app that has a SendGrid connector configured to use an Azure Cosmos DB action.
+Deploy a function app that is configured to use the Consumption plan and an Azure Event Hubs binding.
+---
+---
+###
+You have Azure virtual machines that run a custom line-of-business web application.
+You plan to use a third-party solution to parse event logs from the virtual machines stored in an Azure storage account.
+You need to recommend a solution to save the event logs from the virtual machines to the Azure Storage account. The solution must minimize costs and complexity.
+What should you include in the recommendation?
+---
+Azure VM Diagnostics Extension *
+Azure Monitor
+event log subscriptions
+Azure Log Analytics
+---
+---
+Azure Diagnostics Extension for Windows VMs;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-diagnostics
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
 ---
 ---
 ---

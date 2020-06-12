@@ -2,6 +2,7 @@
 using Exam_answerWeb.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -67,6 +68,7 @@ namespace UnitTests
 </urlset>");
 
             var res = sb.ToString().ToLowerInvariant();
+            Debugger.Break();
         }
 
         [Fact]
