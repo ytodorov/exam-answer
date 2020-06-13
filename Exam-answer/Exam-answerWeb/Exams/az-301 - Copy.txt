@@ -134,15 +134,15 @@ What is Application Insights?;https://docs.microsoft.com/en-us/azure/azure-monit
 ###
 You plan to deploy 200 Microsoft SQL Server databases to Azure by using Azure SQL Database and Azure SQL Database Managed Instance.
 You need to recommend a monitoring solution that provides a consistent monitoring approach for all deployments. The solution must meet the following requirements:
-✑ Support current-state analysis based on metrics collected near real-time, multiple times per minute, and maintained for up to one hour
-✑ Support longer term analysis based on metrics collected multiple times per hour and maintained for up to two weeks.
+Support current-state analysis based on metrics collected near real-time, multiple times per minute, and maintained for up to one hour
+Support longer term analysis based on metrics collected multiple times per hour and maintained for up to two weeks.
 Support monitoring of the number of concurrent logins and concurrent sessions.
 What should you include in the recommendation?
 ---
-A. dynamic management views
-B. trace flags
-C. Azure Monitor *
-D. SQL Server Profiler
+dynamic management views
+trace flags
+Azure Monitor *
+SQL Server Profiler
 ---
 ---
 ###
@@ -150,15 +150,15 @@ You have an Azure subscription named Project1. Only a group named Project1admins
 Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
 (Azure AD) group named App2Dev.
 You identify the following requirements for Application2:
-✑ The members of App2Dev must be prevented from changing the role assignments in Azure.
-✑ The members of App2Dev must be able to create new Azure resources required by Application2.
-✑ All the required role assignments for Application2 will be performed by the members of Project1admins.
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
 You need to recommend a solution for the role assignments of Application2.
 Solution: Create a new Azure subscription named Project2. Assign Project1admins the Owner role for the Project2 subscription. Assign App2Dev the Contributor role for the Project2 subscription.
 Does this meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
 ---
 ###
@@ -166,16 +166,16 @@ You have an Azure subscription named Project1. Only a group named Project1admins
 Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
 (Azure AD) group named App2Dev.
 You identify the following requirements for Application2:
-✑ The members of App2Dev must be prevented from changing the role assignments in Azure.
-✑ The members of App2Dev must be able to create new Azure resources required by Application2.
-✑ All the required role assignments for Application2 will be performed by the members of Project1admins.
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
 You need to recommend a solution for the role assignments of Application2.
 Solution: Create a new Azure subscription named Project2. Assign Project1admins the User Access Administrator role for the Project2 subscription. Assign
 App2Dev the Owner role for the Project2 subscription.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 ---
 ###
@@ -183,15 +183,15 @@ You have an Azure subscription named Project1. Only a group named Project1admins
 Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
 (Azure AD) group named App2Dev.
 You identify the following requirements for Application2:
-✑ The members of App2Dev must be prevented from changing the role assignments in Azure.
-✑ The members of App2Dev must be able to create new Azure resources required by Application2.
-✑ All the required role assignments for Application2 will be performed by the members of Project1admins.
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
 You need to recommend a solution for the role assignments of Application2.
 Solution: In Project1, create a resource group named Application2RG. Assign Project1admins the Owner role for Application2RG. Assign App2Dev the Contributor role for Application2RG.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 You should use a separate subscription for Project2.
 ---
@@ -199,13 +199,13 @@ You should use a separate subscription for Project2.
 You have an Azure subscription that contains a resource group named RG1.
 You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
 You need to recommend a solution that meets the following requirements:
-✑ The researchers must be allowed to create Azure virtual machines.
+The researchers must be allowed to create Azure virtual machines.
 The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
-Solution: Create a lab in Azure DevTest Lab. Configure the DevTest Labs settings. Assign the DevTest Labs User role to the ResearchUsers group.
+Solution: Create a lab in Azure DevTest LaConfigure the DevTest Labs settings. Assign the DevTest Labs User role to the ResearchUsers group.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
 ---
@@ -213,13 +213,13 @@ Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create 
 You have an Azure subscription that contains a resource group named RG1.
 You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
 You need to recommend a solution that meets the following requirements:
-✑ The researchers must be allowed to create Azure virtual machines.
-✑ The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
 Solution: Create an Azure DevOps Project. Configure the DevOps Project settings.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
 ---
@@ -227,34 +227,34 @@ Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create 
 You have an Azure subscription that contains a resource group named RG1.
 You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
 You need to recommend a solution that meets the following requirements:
-✑ The researchers must be allowed to create Azure virtual machines.
-✑ The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
 Solution: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
 Does this meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
 ---
 ###
 A company named Contoso Ltd., has a single-domain Active Directory forest named contoso.com.
-Contoso is preparing to migrate all workloads to Azure. Contoso wants users to use single sign-on (SSO) when they access cloud-based services that integrate with Azure Active Directory (Azure AD).
+Contoso is preparing to migrate all workloads to AzurContoso wants users to use single sign-on (SSO) when they access cloud-based services that integrate with Azure Active Directory (Azure AD).
 You need to identify any objects in Active Directory that will fail to synchronize to Azure AD due to formatting issues. The solution must minimize costs.
 What should you include in the solution?
 ---
-A. Azure Advisor
-B. Microsoft Office 365 IdFix *
-C. Azure AD Connect Health
-D. Password Export Server version 3.1 (PES v3.1) in Active Directory Migration Tool (ADMT)
+Azure Advisor
+Microsoft Office 365 IdFix *
+Azure AD Connect Health
+Password Export Server version 3.1 (PES v3.1) in Active Directory Migration Tool (ADMT)
 ---
 ---
 ###
 D
 Your company has an API that returns XML data to internal applications.
-You plan to migrate the applications to Azure. You also plan to allow the company's partners to access the API.
+You plan to migrate the applications to AzurYou also plan to allow the company's partners to access the API.
 You need to recommend an API management solution that meets the following requirements:
-✑ Internal applications must receive data in the JSON format once the applications migrate to Azure.
-✑ Partner applications must have their header information stripped before the applications receive the data.
+Internal applications must receive data in the JSON format once the applications migrate to Azure.
+Partner applications must have their header information stripped before the applications receive the data.
 What should you include in the recommendation? To answer, select the appropriate options in the answer area.
 ---
 Minimum number of APIs to add to Azure API Management;1 *;2;3
@@ -268,14 +268,14 @@ Transform and protect your API;https://docs.microsoft.com/en-us/azure/api-manage
 ###
 You have an Azure subscription.
 You need to recommend a solution to provide developers with the ability to provision Azure virtual machines. The solution must meet the following requirements:
-✑ Only allow the creation of the virtual machines in specific regions.
-✑ Only allow the creation of specific sizes of virtual machines.
+Only allow the creation of the virtual machines in specific regions.
+Only allow the creation of specific sizes of virtual machines.
 What should include in the recommendation?
 ---
-A. conditional access policies
-B. Azure Policy *
-C. Azure Resource Manager templates
-D. role-based access control (RBAC)
+conditional access policies
+Azure Policy *
+Azure Resource Manager templates
+role-based access control (RBAC)
 ---
 ---
 ###
@@ -284,8 +284,8 @@ Your company has 20 web APIs that were developed in-house.
 The company is developing 10 web apps that will use the web APIs. The web apps and the APIs are registered in the company's Azure Active Directory (Azure
 AD) tenant. The web APIs are published by using Azure API Management.
 You need to recommend a solution to block unauthorized requests originating from the web apps from reaching the web APIs. The solution must meet the following requirements:
-✑ Use Azure AD-generated claims.
-✑ Minimize configuration and management effort.
+Use Azure AD-generated claims.
+Minimize configuration and management effort.
 What should you include in the recommendation? To answer, select the appropriate options in the answer area.
 ---
 Grant permissions to allow the web apps to access the web APIs by using;Azure AD;Azure API Management *;The web APIs
@@ -297,9 +297,9 @@ D
 You are designing an access policy for the sales department at your company.
 Occasionally, the developers at the company must stop, start, and restart Azure virtual machines. The development team changes often.
 You need to recommend a solution to provide the developers with the required access to the virtual machines. The solution must meet the following requirements:
-✑ Provide permissions only when needed.
-✑ Use the principle of least privilege.
-✑ Minimize costs.
+Provide permissions only when needed.
+Use the principle of least privilege.
+Minimize costs.
 What should you include in the recommendation? To answer, select the appropriate options in the answer area.
 ---
 Azure Active Directory (Azure ID) license;Free;Basic;Premium P1;Premium P2 *;
@@ -308,15 +308,15 @@ Security feature;Just in time VM access;A conditional access policy;Privileged I
 ---
 ###
 Your network contains an on-premises Active Directory forest.
-You discover that when users change jobs within your company, the membership of the user groups are not being updated. As a result, the users can access resources that are no longer relevant to their job.
+You discover that when users change jobs within your company, the membership of the user groups are not being updateAs a result, the users can access resources that are no longer relevant to their job.
 You plan to integrate Active Directory and Azure Active Directory (Azure AD) by using Azure AD Connect.
 You need to recommend a solution to ensure that group owners are emailed monthly about the group memberships they manage.
 What should you include in the recommendation?
 ---
-A. Azure AD access reviews *
-B. Tenant Restrictions
-C. Azure AD Identity Protection
-D. conditional access policies
+Azure AD access reviews *
+Tenant Restrictions
+Azure AD Identity Protection
+conditional access policies
 ---
 What are Azure AD access reviews?;https://docs.microsoft.com/en-us/azure/active-directory/governance/access-reviews-overview
 ---
@@ -324,8 +324,8 @@ What are Azure AD access reviews?;https://docs.microsoft.com/en-us/azure/active-
 D
 You are designing a software as a service (SaaS) application that will enable Azure Active Directory (Azure AD) users to create and publish surveys. The SaaS application will have a front-end web app and a back-end web API. The web app will rely on the web API to handle updates to customer surveys.
 You need to design an authorization flow for the SaaS application. The solution must meet the following requirements:
-✑ To access the back-end web API, the web app must authenticate by using OAuth 2 bearer tokens.
-✑ The web app must authenticate by using the identities of individual users.
+To access the back-end web API, the web app must authenticate by using OAuth 2 bearer tokens.
+The web app must authenticate by using the identities of individual users.
 What should you include in the solution? To answer, select the appropriate options in the answer area.
 ---
 The access tokens will be generated by;Azure AD *;A web app;A web API;
@@ -338,8 +338,8 @@ Call an ASP.NET web API protected by Microsoft identity platform;https://docs.mi
 D
 You have five .NET Core applications that run on 10 Azure virtual machines in the same subscription.
 You need to recommend a solution to ensure that the applications can authenticate by using the same Azure Active Directory (Azure AD) identity. The solution must meet the following requirements:
-✑ Ensure that the applications can authenticate only when running on the 10 virtual machines.
-✑ Minimize administrative effort.
+Ensure that the applications can authenticate only when running on the 10 virtual machines.
+Minimize administrative effort.
 What should you include in the recommendation? To answer, select the appropriate options in the answer area.
 ---
 To provision the Azure AD identity;Create a system-assigned Managed Identities for Azure resources;Create a user-assigned Managed Identities for Azure resources *;Register each application in Azure AD
@@ -348,18 +348,18 @@ To authenticate request a token by using;An Azure AD v1.0 endpoint;An Azure AD v
 ---
 Tutorial: Use a user-assigned managed identity on a Windows VM to access Azure Resource Manager;https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-ua-arm
 ###
-A company named Contoso, Ltd. has an Azure Active Directory (Azure AD) tenant that is integrated with Microsoft Office 365 and an Azure subscription.
-Contoso has an on-premises identity infrastructure. The infrastructure includes servers that run Active Directory Domain Services (AD DS), Active Directory
+A company named Contoso, Lthas an Azure Active Directory (Azure AD) tenant that is integrated with Microsoft Office 365 and an Azure subscription.
+Contoso has an on-premises identity infrastructurThe infrastructure includes servers that run Active Directory Domain Services (AD DS), Active Directory
 Federation Services (AD FS), Azure AD Connect, and Microsoft Identity Manager (MIM).
-Contoso has a partnership with a company named Fabrikam, Inc. Fabrikam has an Active Directory forest and an Office 365 tenant. Fabrikam has the same on- premises identity infrastructure as Contoso.
+Contoso has a partnership with a company named Fabrikam, InFabrikam has an Active Directory forest and an Office 365 tenant. Fabrikam has the same on- premises identity infrastructure as Contoso.
 A team of 10 developers from Fabrikam will work on an Azure solution that will be hosted in the Azure subscription of Contoso. The developers must be added to the Contributor role for a resource in the Contoso subscription.
 You need to recommend a solution to ensure that Contoso can assign the role to the 10 Fabrikam developers. The solution must ensure that the Fabrikam developers use their existing credentials to access resources.
 What should you recommend?
 ---
-A. Configure a forest trust between the on-premises Active Directory forests of Contoso and Fabrikam.
-B. Configure an organization relationship between the Office 365 tenants of Fabrikam and Contoso.
-C. In the Azure AD tenant of Contoso, enable Azure Active Directory Domain Services (Azure AD DS). Create a one-way forest trust that uses selective authentication between the Active Directory forests of Contoso and Fabrikam.
-D. In the Azure AD tenant of Contoso, create guest accounts for the Fabrikam developers. *
+Configure a forest trust between the on-premises Active Directory forests of Contoso and Fabrikam.
+Configure an organization relationship between the Office 365 tenants of Fabrikam and Contoso.
+In the Azure AD tenant of Contoso, enable Azure Active Directory Domain Services (Azure AD DS). Create a one-way forest trust that uses selective authentication between the Active Directory forests of Contoso and Fabrikam.
+In the Azure AD tenant of Contoso, create guest accounts for the Fabrikam developers. *
 ---
 ---
 Add or remove Azure role assignments for external guest users using the Azure portal;https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-external-users
@@ -368,10 +368,10 @@ You have a hybrid deployment of Azure Active Directory (Azure AD).
 You need to recommend a solution to ensure that the Azure AD tenant can be managed only from the computers on your on-premises network.
 What should you include in the recommendation?
 ---
-A. Azure AD roles and administrators
-B. a conditional access policy *
-C. Azure AD Application Proxy
-D. Azure AD Privileged Identity Management
+Azure AD roles and administrators
+a conditional access policy *
+Azure AD Application Proxy
+Azure AD Privileged Identity Management
 ---
 ---
 ###
@@ -381,10 +381,10 @@ You need to ensure that Admin1 and Admin2 are notified when more than five event
 The solution must minimize administrative tasks.
 What should you create?
 ---
-A. two action groups and one alert rule
-B. one action group and one alert rule *
-C. five action groups and one alert rule
-D. two action groups and two alert rules
+two action groups and one alert rule
+one action group and one alert rule *
+five action groups and one alert rule
+two action groups and two alert rules
 ---
 ---
 ###
@@ -392,10 +392,10 @@ You have an Azure Active Directory (Azure AD) tenant named contoso.com that cont
 You need to recommend a solution to identify which administrative user accounts have NOT signed in during the previous 30 days.
 Which service should you include in the recommendation?
 ---
-A. Azure AD Identity Protection
-B. Azure Activity Log
-C. Azure Advisor
-D. Azure AD Privileged Identity Management (PIM) *
+Azure AD Identity Protection
+Azure Activity Log
+Azure Advisor
+Azure AD Privileged Identity Management (PIM) *
 ---
 ---
 ###
@@ -415,14 +415,14 @@ You manage a single-domain, on-premises Active Directory forest named contoso.co
 You have several on-premises applications that depend on Active Directory.
 You plan to migrate the applications to Azure.
 You need to recommend an identity solution for the applications. The solution must meet the following requirements:
-✑ Eliminate the need for hybrid network connectivity.
-✑ Minimize management overhead for Active Directory.
+Eliminate the need for hybrid network connectivity.
+Minimize management overhead for Active Directory.
 What should you recommend?
 ---
-A. In Azure, deploy an additional child domain to the contoso.com forest.
-B. In Azure, deploy additional domain controllers for the contoso.com domain.*
-C. Implement a new Active Directory forest in Azure.
-D. Implement Azure Active Directory Domain Services (Azure AD DS).
+In Azure, deploy an additional child domain to the contoso.com forest.
+In Azure, deploy additional domain controllers for the contoso.com domain.*
+Implement a new Active Directory forest in Azure.
+Implement Azure Active Directory Domain Services (Azure AD DS).
 ---
 ---
 ###
@@ -430,15 +430,15 @@ You have an Azure subscription named Project1. Only a group named Project1admins
 Your company is developing a new application named Application2. The members of the Application2 development team belong to an Azure Active Directory
 (Azure AD) group named App2Dev.
 You identify the following requirements for Application2:
-✑ The members of App2Dev must be prevented from changing the role assignments in Azure.
-✑ The members of App2Dev must be able to create new Azure resources required by Application2.
-✑ All the required role assignments for Application2 will be performed by the members of Project1admins.
+The members of App2Dev must be prevented from changing the role assignments in Azure.
+The members of App2Dev must be able to create new Azure resources required by Application2.
+All the required role assignments for Application2 will be performed by the members of Project1admins.
 You need to recommend a solution for the role assignments of Application2.
 Solution: In Project1, create a network security group (NSG) named NSG1. Assign Project1admins the Owner role for NSG1. Assign the App2Dev the Contributor role for NSG1.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 You should use a separate subscription for Project2.
 ---
@@ -468,13 +468,13 @@ What is federation with Azure AD?;https://docs.microsoft.com/en-us/azure/active-
 You have an Azure subscription that contains a resource group named RG1.
 You create an Azure Active Directory (Azure AD) group named ResearchUsers that contains the user accounts of all researchers.
 You need to recommend a solution that meets the following requirements:
-✑ The researchers must be allowed to create Azure virtual machines.
-✑ The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
+The researchers must be allowed to create Azure virtual machines.
+The researchers must only be able to create Azure virtual machines by using specific Azure Resource Manager templates.
 Solution: On RG1, assign a custom role-based access control (RBAC) role to the ResearchUsers group.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create a custom Azure Policy definition and assign the policy to RG1.
 ---
@@ -482,28 +482,28 @@ Instead: On RG1, assign the Contributor role to the ResearchUsers group. Create 
 A company deploys Azure Active Directory (Azure AD) Connect to synchronize identity information from their on-premises Active Directory Domain Services (AD
 DS) directory to their Azure AD tenant. The identity information that is synchronized includes user accounts , credential hashes for authentication (password sync), and group membership. The company plans to deploy several Windows and Linux virtual machines (VMs) to support their applications.
 The VMs have the following requirements:
-✑ Support domain join, LDAP read, LDAP bind, NTLM and Kerberos authentication, and Group Policy.
-✑ Allow users to sign in to the domain using their corporate credentials and connect remotely to the VM by using Remote Desktop.
+Support domain join, LDAP read, LDAP bind, NTLM and Kerberos authentication, and Group Policy.
+Allow users to sign in to the domain using their corporate credentials and connect remotely to the VM by using Remote Desktop.
 You need to support the VM deployment.
 Which service should you use?
 ---
-A. Azure AD Domain Services *
-B. Azure AD Privileged Identity Management
-C. Azure AD Managed Service Identity
-D. Active Directory Federation Services (AD FS)
+Azure AD Domain Services *
+Azure AD Privileged Identity Management
+Azure AD Managed Service Identity
+Active Directory Federation Services (AD FS)
 ---
 Azure AD Domain Services provides managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM authentication that are fully compatible with Windows Server Active Directory.
 ---
 What is Azure Active Directory Domain Services?;https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-overview
 ###
-Your company has deployed several virtual machines (VMs) on-premises and to Azure. Azure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
 Several VMs are exhibiting network connectivity issues.
 You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
 Solution: Use the Azure traffic analytics solution in Azure Log Analytics to analyze the network traffic.
 Does the solution meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 Instead use Azure Network Watcher to run IP flow verify to analyze the network traffic.
 
@@ -511,31 +511,31 @@ Instead use Azure Network Watcher to run IP flow verify to analyze the network t
 What is Azure Network Watcher?;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview
 Introduction to IP flow verify in Azure Network Watcher;https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-ip-flow-verify-overview
 ###
-Your company has deployed several virtual machines (VMs) on-premises and to Azure. Azure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
 Several VMs are exhibiting network connectivity issues.
 You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
 Solution: Use Azure Network Watcher to run IP flow verify to analyze the network traffic.
 Does the solution meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
-The Network Watcher Network performance monitor is a cloud-based hybrid network monitoring solution that helps you monitor network performance between various points in your network infrastructure. It also helps you monitor network connectivity to service and application endpoints and monitor the performance of
+The Network Watcher Network performance monitor is a cloud-based hybrid network monitoring solution that helps you monitor network performance between various points in your network infrastructurIt also helps you monitor network connectivity to service and application endpoints and monitor the performance of
 Azure ExpressRoute.
 Note:
-IP flow verify checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP, remote IP, local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. While any source or destination IP can be chosen,
+IP flow verify checks if a packet is allowed or denied to or from a virtual machinThe information consists of direction, protocol, local IP, remote IP, local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returneWhile any source or destination IP can be chosen,
 IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment.
-IP flow verify looks at the rules for all Network Security Groups (NSGs) applied to the network interface, such as a subnet or virtual machine NIC. Traffic flow is then verified based on the configured settings to or from that network interface. IP flow verify is useful in confirming if a rule in a Network Security Group is blocking ingress or egress traffic to or from a virtual machine.
+IP flow verify looks at the rules for all Network Security Groups (NSGs) applied to the network interface, such as a subnet or virtual machine NITraffic flow is then verified based on the configured settings to or from that network interfacIP flow verify is useful in confirming if a rule in a Network Security Group is blocking ingress or egress traffic to or from a virtual machine.
 ---
 ###
-Your company has deployed several virtual machines (VMs) on-premises and to Azure. Azure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
 Several VMs are exhibiting network connectivity issues.
 You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
 Solution: Install and configure the Log Analytics and Dependency Agents on all VMs. Use the Wire Data solution in Azure Log Analytics to analyze the network traffic.
 Does the solution meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 Instead use Azure Network Watcher to run IP flow verify to analyze the network traffic.
 ---
@@ -543,9 +543,9 @@ Instead use Azure Network Watcher to run IP flow verify to analyze the network t
 D
 A company plans to implement an HTTP-based API to support a web app. The web app allows customers to check the status of their orders.
 The API must meet the following requirements:
-✑ Implement Azure Functions
-✑ Provide public read-only operations
-✑ Do not allow write operations
+Implement Azure Functions
+Provide public read-only operations
+Do not allow write operations
 You need to recommend configuration options.
 What should you recommend? To answer, configure the appropriate options in the dialog box in the answer area.
 ---
@@ -555,7 +555,7 @@ Authorization level;Function;Anonymous *;Admin;
 Allowed authentication methods: GET only
 
 Authorization level: Anonymous -
-The option is Allow Anonymous requests. This option turns on authentication and authorization in App Service, but defers authorization decisions to your application code. For authenticated requests, App Service also passes along authentication information in the HTTP headers.
+The option is Allow Anonymous requests. This option turns on authentication and authorization in App Service, but defers authorization decisions to your application codFor authenticated requests, App Service also passes along authentication information in the HTTP headers.
 This option provides more flexibility in handling anonymous requests.
 ---
 Authentication and authorization in Azure App Service and Azure Functions;https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization
@@ -566,10 +566,10 @@ You configure NTFS permissions on Share1. You plan to deploy a virtual machine t
 You need to ensure that the users can access Share1.
 Which type virtual machine should you deploy?
 ---
-A. a virtual machine that runs Windows Server 2016 and is joined to the contoso.com domain
-B. a virtual machine that runs Windows 10 and is joined to the contoso-add.com domain
-C. a virtual machine that runs Windows 10 and is hybrid Azure AD joined to the contoso.com domain
-D. an Azure virtual machine that runs Windows Server 2016 and is joined to the contoso-add.com domain *
+a virtual machine that runs Windows Server 2016 and is joined to the contoso.com domain
+a virtual machine that runs Windows 10 and is joined to the contoso-add.com domain
+a virtual machine that runs Windows 10 and is hybrid Azure AD joined to the contoso.com domain
+an Azure virtual machine that runs Windows Server 2016 and is joined to the contoso-add.com domain *
  
 
 ---
@@ -577,7 +577,7 @@ You join the Windows Server virtual machine to the Azure AD DS-managed domain, h
 Note: Azure Files supports identity-based authentication over SMB (Server Message Block) (preview) through Azure Active Directory (Azure AD) Domain
 Services. Your domain-joined Windows virtual machines (VMs) can access Azure file shares using Azure AD credentials.
 Incorrect Answers:
-Azure AD authentication over SMB is not supported for Linux VMs for the preview release. Only Windows Server VMs are supported.
+Azure AD authentication over SMB is not supported for Linux VMs for the preview releasOnly Windows Server VMs are supported.
 ---
 Enable Azure Active Directory Domain Services authentication on Azure Files;https://docs.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-enable#mount-a-file-share-from-a-domain-joined-vm
 ###
@@ -589,8 +589,8 @@ You need to recommend a solution to encrypt the virtual machine disks by using B
 Solution: Deploy one Azure Key Vault to each region. Create two Azure AD service principals. Configure the virtual machines to use Azure Disk Encryption and specify a different service principal for the virtual machines in each region.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 You would also have to import the security keys from the HSM into each Azure key vault.
 ---
@@ -605,8 +605,8 @@ Solution: Export a security key from the on-premises HSM. Create one Azure AD se
 Encryption.
 Does this meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 We use the Azure Premium Key Vault with Hardware Security Modules (HSM) backed keys.
 The Key Vault has to be in the same region as the VM that will be encrypted.
@@ -619,17 +619,17 @@ The company is developing an application named Application1. Application1 will b
 Five virtual machines will be in the West Europe Azure region and five virtual machines will be in the East US Azure region. The virtual machines will store sensitive company information. All the virtual machines will use managed disks.
 You need to recommend a solution to encrypt the virtual machine disks by using BitLocker Drive Encryption (BitLocker).
 Solution:
-✑ Deploy one Azure key vault to each region
-✑ Export two security keys from the on-premises HSM
-✑ Import the security keys from the HSM into each Azure key vault
+Deploy one Azure key vault to each region
+Export two security keys from the on-premises HSM
+Import the security keys from the HSM into each Azure key vault
 Create two Azure AD service principals
 
-✑ Configure the virtual machines to use Azure Disk Encryption
-✑ Specify a different service principal for the virtual machines in each region
+Configure the virtual machines to use Azure Disk Encryption
+Specify a different service principal for the virtual machines in each region
 Does this meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
 We use the Azure Premium Key Vault with Hardware Security Modules (HSM) backed keys.
 The Key Vault has to be in the same region as the VM that will be encrypted.
@@ -638,14 +638,14 @@ AzKeyVaultKey cmdlet to create a key encryption key in the key vault. You can al
 ---
 Azure Disk Encryption for virtual machines and virtual machine scale sets;https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption-prerequisites-aad
 ###
-Your company has deployed several virtual machines (VMs) on-premises and to Azure. Azure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
+Your company has deployed several virtual machines (VMs) on-premises and to AzurAzure ExpressRoute has been deployed and configured for on-premises to Azure connectivity.
 Several VMs are exhibiting network connectivity issues.
 You need to analyze the network traffic to determine whether packets are being allowed or denied to the VMs.
 Solution: Use Azure Advisor to analyze the network traffic.
 Does the solution meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
 Instead use Azure Network Watcher to run IP flow verify to analyze the network traffic.
 Note: Advisor is a personalized cloud consultant that helps you follow best practices to optimize your Azure deployments. It analyzes your resource configuration and usage telemetry and then recommends solutions that can help you improve the cost effectiveness, performance, high availability, and security of your Azure resources.
@@ -661,10 +661,10 @@ You have a single on-premises location that uses an address space of 172.16.0.0/
 You need to implement two-factor authentication for users who establish VPN connections to Server1.
 What should you include in the implementation?
 ---
-A. In Azure AD, create a conditional access policy and a trusted named location
-B. Install and configure Azure MFA Server on-premises *
-C. Configure an Active Directory Federation Services (AD FS) server on-premises
-D. In Azure AD, configure the authentication methods. From the multi-factor authentication (MFA) service settings, create a trusted IP range
+In Azure AD, create a conditional access policy and a trusted named location
+Install and configure Azure MFA Server on-premises *
+Configure an Active Directory Federation Services (AD FS) server on-premises
+In Azure AD, configure the authentication methods. From the multi-factor authentication (MFA) service settings, create a trusted IP range
 ---
 You need to download, install and configure the MFA Server.
 ---
@@ -686,24 +686,24 @@ You need to enable single sign-on (SSO) for company users.
 Solution: Install and configure an Azure AD Connect server to use password hash synchronization and select the Enable single sign-on option.
 Does the solution meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
 ---
 ###
 You have an Azure subscription that contains a custom application named Application1. Application1 was developed by an external company named Fabrikam,
-Ltd. Developers at Fabrikam were assigned role-based access control (RBAC) permissions to the Application1 components. All users are licensed for the
+LtDevelopers at Fabrikam were assigned role-based access control (RBAC) permissions to the Application1 components. All users are licensed for the
 Microsoft 365 E5 plan.
 You need to recommend a solution to verify whether the Fabrikam developers still require permissions to Application1. The solution must meet the following requirements:
-✑ To the manager of the developers, send a monthly email message that lists the access permissions to Application1.
-✑ If the manager does not verify an access permission, automatically revoke that permission.
-✑ Minimize development effort.
+To the manager of the developers, send a monthly email message that lists the access permissions to Application1.
+If the manager does not verify an access permission, automatically revoke that permission.
+Minimize development effort.
 What should you recommend?
 ---
-A. In Azure Active Directory (AD) Privileged Identity Management, create a custom role assignment for the Application1 resources
-B. Create an Azure Automation runbook that runs the Get-AzureADUserAppRoleAssignment cmdlet
-C. Create an Azure Automation runbook that runs the Get-AzureRmRoleAssignment cmdlet
-D. In Azure Active Directory (Azure AD), create an access review of Application1 *
+In Azure Active Directory (AD) Privileged Identity Management, create a custom role assignment for the Application1 resources
+Create an Azure Automation runbook that runs the Get-AzureADUserAppRoleAssignment cmdlet
+Create an Azure Automation runbook that runs the Get-AzureRmRoleAssignment cmdlet
+In Azure Active Directory (Azure AD), create an access review of Application1 *
 ---
 ---
 ###
@@ -713,8 +713,8 @@ You need to enable single sign-on (SSO) for company users.
 Solution: Install and configure an Azure AD Connect server to use pass-through authentication and select the Enable single sign-on option.
 Does the solution meet the goal?
 ---
-A. Yes *
-B. No
+Yes *
+No
 ---
 ---
 ###
@@ -724,8 +724,8 @@ You need to enable single sign-on (SSO) for company users.
 Solution: Configure an AD DS server in an Azure virtual machine (VM). Configure bidirectional replication.
 Does the solution meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 ---
 ###
@@ -749,10 +749,10 @@ You must ensure that all employees and contractors are required to log on by usi
 You need to recommend a solution.
 What should you recommend?
 ---
-A. Purchase Azure Multi-Factor Authentication licenses for the employees and the contractors
-B. Use the Multi-Factor Authentication provider in Azure and configure the usage model for each authentication type
-C. Use the Multi-Factor Authentication provider in Azure and configure the usage model for each enabled user *
-D. Purchase Azure Multi-Factor Authentication licenses for the contractors only
+Purchase Azure Multi-Factor Authentication licenses for the employees and the contractors
+Use the Multi-Factor Authentication provider in Azure and configure the usage model for each authentication type
+Use the Multi-Factor Authentication provider in Azure and configure the usage model for each enabled user *
+Purchase Azure Multi-Factor Authentication licenses for the contractors only
 ---
 ---
 ###
@@ -762,8 +762,8 @@ You need to ensure that all login attempts to the Azure portal from those countr
 Solution: Create an Access Review for Group1.
 Does this solution meet the goal?
 ---
-A. Yes
-B. No *
+Yes
+No *
 ---
 ---
 ###
@@ -773,8 +773,950 @@ You need to ensure that all login attempts to the Azure portal from those countr
 Solution: You implement an access package.
 Does this solution meet the goal?
 ---
+Yes
+No *
+---
+---
+###
+You have an Azure Active Directory (Azure AZD) tenant named contoso.com. The tenant contains a group named Group1. Group1 contains all the administrative user accounts.
+You discover several login attempts to the Azure portal from countries where administrative users do NOT work.
+You need to ensure that all login attempts to the Azure portal from those countries require Azure Multi-Factor Authentication (MFA).
+Solution: Implement Azure AD Privileged Identity Management.
+Does this solution meet the goal?
+---
+Yes *
+No
+---
+---
+###
+Your company has several Azure subscriptions that are part of a Microsoft Enterprise Agreement.
+The company's compliance team creates automatic alerts by using Azure Monitor.
+You need to recommend a solution to apply the alerts automatically when new subscriptions are added to the Enterprise Agreement.
+What should you include in the recommendation?
+---
+Azure Automation runbooks
+Azure Log Analytics alerts
+Azure Monitor action groups
+Azure Resource Manager templates
+E. Azure Policy *
+---
+---
+###
+You store web access logs data in Azure Blob storage.
+You plan to generate monthly reports from the access logs.
+You need to recommend an automated process to upload the data to Azure SQL Database every month.
+What should you include in the recommendation?
+---
+Microsoft SQL Server Migration Assistant (SSMA)
+Azure Data Factory *
+Data Migration Assistant
+AzCopy
+---
+---
+###
+Your company has the offices shown in the following table.
+az-301-q55.png
+The network contains an Active Directory domain named contoso.com that is synced to Azure Active Directory (Azure AD).
+All users connect to an application hosted in Microsoft 365.
+You need to recommend a solution to ensure that all the users use Azure Multi-Factor Authentication (MFA) to connect to the application from one of the offices.
+What should you include in the recommendation?
+---
+a named location and two Microsoft Cloud App Security policies
+a conditional access policy and two virtual networks
+a virtual network and two Microsoft Cloud App Security policies
+a conditional access policy and two named locations *
+---
+---
+###
+D
+You have an Azure subscription that contains 300 Azure virtual machines that run Windows Server 2016.
+You need to centrally monitor all warning events in the System logs of the virtual machines.
+What should you include in the solutions? To answer, select the appropriate options in the answer area.
+---
+Resources to create in Azure;An event hub;A log analytics workspace *;A search service;A storage account;
+Configuration to perform on the virtual machines;Create event subscriptions;Configure Continuous delivery;Install the Microsoft Monitoring Agent *;Modify the membership of the Event Log Readers Groups;
+---
+---
+Windows event log data sources in Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-sources-windows-events
+Connect Windows computers to Azure Monitor;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows
+###
+You are developing a sales application that will contain several Azure cloud services and will handle different components of a transactions. Different cloud services will process customer orders, billing, payment, inventory, and shipping.
+You need to recommend a solution to enable the cloud services to asynchronously communicate transaction information by using REST messages.
+What would you include in the recommendation?
+---
+Traffic Manager
+Azure Notification Hubs
+Azure Blob storage
+Azure Queue storage *
+---
+---
+###
+You have an Azure subscription that contains an Azure Cosmos DB account.
+You need to recommend a solution to generate an alert from Azure Log Analytics when a request charge for a query exceeds 50 request units more than 20 times within a 15-minute window.
+What should you recommend?
+---
+Create a search query to identify when requestCharge_s exceeds 50. Configure an alert threshold of 20 and a period of 15. *
+Create a search query to identify when duration_s exceeds 20 and requestCharge_s exceeds 50. Configure a period of 15.
+Create a search query to identify when requestCharge_s exceeds 20. Configure a period of 15 and a frequency of 20.
+Create a search query to identify when duration_s exceeds 20. Configure a period of 15.
+---
+---
+###
+You are designing a data protection strategy for Azure virtual machines. All the virtual machines are in the Standard tier and use managed disks.
+You need to recommend a solution that meets the following requirements:
+The use of encryption keys is audited.
+All the data is encrypted at rest always.
+You manage the encryption keys, not Microsoft.
+What should you include in the recommendation?
+---
+BitLocker Drive Encryption (BitLocker)
+Azure Storage Service Encryption
+client-side encryption
+Azure Disk Encryption *
+---
+---
+Azure Disk Encryption for virtual machines and virtual machine scale sets;https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption-overview
+###
+You have 100 servers that run Windows Server 2012 R2 and host Microsoft SQL Server 2012 R2 instances. The instances host databases that have the following characteristics:
+The largest database is currently 3 TNone of the databases will ever exceed 4 TB.
+Stored procedures are implemented by using CLR.
+You plan to move all the data from SQL Server to Azure.
+You need to recommend an Azure service to host the databases. The solution must meet the following requirements:
+Whenever possible, minimize management overhead for the migrated databases.
+Minimize the number of database changes required to facilitate the migration.
+Ensure that users can authenticate by using their Active Directory credentials.
+
+What should you include in the recommendation?
+---
+Azure SQL Database single databases
+Azure SQL Database Managed Instance *
+Azure SQL Database elastic pools
+SQL Server 2016 on Azure virtual machines
+---
+Part of the Azure SQL product family, Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service. SQL Managed Instance has near 100% compatibility with the latest SQL Server (Enterprise Edition) database engine, providing a native virtual network (VNet) implementation that addresses common security concerns, and a business model favorable for existing SQL Server customers. SQL Managed Instance allows existing SQL Server customers to lift and shift their on-premises applications to the cloud with minimal application and database changes. At the same time, SQL Managed Instance preserves all PaaS capabilities (automatic patching and version updates, automated backups, high availability) that drastically reduce management overhead and TCO.
+---
+What is Azure SQL Managed Instance?;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance
+###
+D
+ou are designing a virtual machine that will run Microsoft SQL Server and will contain two data disks. The first data disk will store log files, and the second data disk will store data. Both disks are P40 managed disks.
+You need to recommend a caching policy for each disk. The policy must provide the best overall performance for the virtual machine.
+Which caching policy should you recommend for each disk? 
+---
+Log;None *;ReadOnly;ReadWrite;
+Data;None;ReadOnly *;ReadWrite;
+---
+---
+Performance guidelines for SQL Server on Azure Virtual Machines;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance
+###
+You plan to create an Azure Cosmos DB account that uses the SQL API. The account will contain data added by a web application. The web application will send data daily.
+You need to recommend a notification solution that meets the following requirements:
+Sends email notification when data is received from IoT devices.
+Minimizes compute cost.
+What should you include in the recommendation?
+---
+Deploy an Azure logic app that has the Azure Cosmos DB connector configured to use a SendGrid action.
+Deploy a function app that is configured to use the Consumption plan and a SendGrid binding. *
+Deploy an Azure logic app that has a SendGrid connector configured to use an Azure Cosmos DB action.
+Deploy a function app that is configured to use the Consumption plan and an Azure Event Hubs binding.
+---
+---
+###
+You have Azure virtual machines that run a custom line-of-business web application.
+You plan to use a third-party solution to parse event logs from the virtual machines stored in an Azure storage account.
+You need to recommend a solution to save the event logs from the virtual machines to the Azure Storage account. The solution must minimize costs and complexity.
+What should you include in the recommendation?
+---
+Azure VM Diagnostics Extension *
+Azure Monitor
+event log subscriptions
+Azure Log Analytics
+---
+---
+Azure Diagnostics Extension for Windows VMs;https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-diagnostics
+###
+D
+You are planning an Azure solution that will host production databases for a high-performance application. The solution will include the following components:
+✑ Two virtual machines that will run Microsoft SQL Server 2016, will be deployed to different data centers in the same Azure region, and will be part of an Always
+On availability group.
+✑ SQL Server data that will be backed up by using the Automated Backup feature of the SQL Server IaaS Agent Extension (SQLIaaSExtension)
+You identify the storage priorities for various data types as shown in the following table.
+az-301-q64.png
+Which storage type should you recommend for each data type?
+---
+Operating system:;A geo-redundant storage (GRS) account;A locally-redundant storage (LRS) account;A premium managed disk *;A standard managed disk;
+Database and logs:;A geo-redundant storage (GRS) account;A locally-redundant storage (LRS) account;A premium managed disk *;A standard managed disk;
+Backups:;A geo-redundant storage (GRS) account;A locally-redundant storage (LRS) account *;A premium managed disk;A standard managed disk;
+---
+---
+###
+D
+Your company deploys several Linux and Windows virtual machines (VMs) to Azure. The VMs are deployed with the Microsoft Dependency Agent and the Log
+Analytics Agent installed by using Azure VM extensions. On-premises connectivity has been enabled by using Azure ExpressRoute.
+You need to design a solution to monitor the VMs.
+Which Azure monitoring services should you use?
+---
+Analyze Network Security Group (NSG) flow logs for VMs attempting Internet access;Azure Traffic Analytics *;Azure ExpressRoute Monitor;Azure Service Endpoint Monitor;Azure DNS Analytics;
+Visualize the VMs with their different processes and dependencies on other computers and external processes;Azure Service Map *;Azure Activity Log;Azure Service Health;Azure Advisor;
+---
+Traffic Analytics is a cloud-based solution that provides visibility into user and application activity in cloud networks. Traffic analytics analyzes Network Watcher network security group (NSG) flow logs to provide insights into traffic flow in your Azure cloud. With traffic analytics, you can:
+✑ Identify security threats to, and secure your network, with information such as open-ports, applications attempting internet access, and virtual machines (VM) connecting to rogue networks.
+✑ Visualize network activity across your Azure subscriptions and identify hot spots.
+✑ Understand traffic flow patterns across Azure regions and the internet to optimize your network deployment for performance and capacity.
+✑ Pinpoint network misconfigurations leading to failed connections in your network.
+Service Map automatically discovers application components on Windows and Linux systems and maps the communication between services. With Service Map, you can view your servers in the way that you think of them: as interconnected systems that deliver critical services. Service Map shows connections between servers, processes, inbound and outbound connection latency, and ports across any TCP-connected architecture, with no configuration required other than the installation of an agent.
+---
+Traffic Analytics;https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+Using Service Map solution in Azure;https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map
+###
+You are designing an Azure solution for a company that has four departments. Each department will deploy several Azure app services and Azure SQL databases.
+You need to recommend a solution to report the costs for each department to deploy the app services and the databases. The solution must provide a consolidated view for cost reporting.
+Solution: Create a resources group for each resource type. Assign tags to each resource group.
+Does this meet the goal?
+---
+A. Yes *
+B. No
+---
+Tags enable you to retrieve related resources from different resource groups. This approach is helpful when you need to organize resources for billing or management.
+---
+Use tags to organize your Azure resources and management hierarchy;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+###
+You are designing an Azure solution for a company that has four departments. Each department will deploy several Azure app services and Azure SQL databases.
+You need to recommend a solution to report the costs for each department to deploy the app services and the databases. The solution must provide a consolidated view for cost reporting.
+Solution: Place all resources in the same resource group. Assign tags to each resource.
+Does this meet the goal?
+---
 A. Yes
 B. No *
+---
+Instead, create a resources group for each resource type. Assign tags to each resource
+Note: Tags enable you to retrieve related resources from different resource groups. This approach is helpful when you need to organize resources for billing or management.
+---
+Use tags to organize your Azure resources and management hierarchy;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+###
+You are designing an Azure solution for a company that has four departments. Each department will deploy several Azure app services and Azure SQL databases.
+You need to recommend a solution to report the costs for each department to deploy the app services and the databases. The solution must provide a consolidated view for cost reporting.
+Solution: Create a new subscription for each department.
+Does this meet the goal?
+---
+A. Yes
+B. No *
+---
+Instead, create a resources group for each resource type. Assign tags to each resource
+Note: Tags enable you to retrieve related resources from different resource groups. This approach is helpful when you need to organize resources for billing or management.
+---
+Use tags to organize your Azure resources and management hierarchy;https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags
+###
+D
+You plan to deploy logical Azure SQL Database servers to the East US Azure region and the West US Azure region. Each server will contain 20 databases. Each database will be accessed by a different user who resides in a different on-premises location. The databases will be configured to use active geo-replication.
+You need to recommend a solution that meets the following requirements:
+✑ Restricts user access to each database
+✑ Restricts network access to each database based on each user's respective location
+✑ Ensures that the databases remain accessible from client applications if the local Azure region fails
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+---
+Configure user access by using:;Configure user access by using;Azure PowerShell;The REST API;Transact-SQL *;
+Configure database-level firewall rules by using:;Azure PowerShell *;The REST API;Transact-SQL;
+---
+---
+###
+D
+You plan to deploy the backup policy shown in the following exhibit.
+az-301-q70.png
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
+---
+To access the files, you must:;generate a snapshot;modify the access tier *;modify the blob type;
+The files will be stored:;at the highest storage cost;at the lowest data retrieval cost;at the lowest storage cost *;
+---
+Change the access tier:
+az-301-q70-1.png
+If you are going to download an archived file an error will be returned:
+az-301-q70-2.png
+---
+Azure Blob storage: hot, cool, and archive access tiers;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers#archive-access-tier-preview
+###
+You plan to use Azure Site Recovery to protect several on-premises physical server workloads. Each server workload is independent of the other. The workloads are stateless.
+You need to recommend a failover strategy to ensure that if the on-premises data center fails, the workloads are available in Azure as quickly as possible.
+Which failover strategy should you include in the recommendation?
+---
+A. Latest
+B. Latest app-consistent
+C. Latest multi-VM processed
+D. Latest processed *
+---
+---
+Run a failover from on-premises to Azure;https://docs.microsoft.com/en-us/azure/site-recovery/site-recovery-failover
+###
+D
+Your company identifies the following business continuity and disaster recovery objectives for virtual machines that host sales, finance, and reporting applications in the company's on-premises data center:
+✑ The finance application requires that data be retained for seven years. In the event of a disaster, the application must be able to run from Azure. The recovery time objective (RTO) is 10 minutes.
+✑ The reporting application must be able to recover point-in-time data at a daily granularity. The RTO is eight hours.
+✑ The sales application must be able to fail over to a second on-premises data center.
+You need to recommend which Azure services meet the business continuity and disaster recovery objectives. The solution must minimize costs.
+---
+Sales:;Azure Backup only;Azure Site Recovery only;Azure Site Recovery and Azure Backup *;
+Finance:;Azure Backup only *;Azure Site Recovery only;Azure Site Recovery and Azure Backup;
+Reporting:;Azure Backup only;Azure Site Recovery only *;Azure Site Recovery and Azure Backup;
+---
+---
+###
+You plan to move a web application named App1 from an on-premises data center to Azure.
+App1 depends on a custom COM component that is installed on the host server.
+You need to recommend a solution to host App1 in Azure. The solution must meet the following requirements:
+✑ App1 must be available to users if an Azure data center becomes unavailable.
+✑ Costs must be minimized.
+What should you include in the recommendation?
+---
+A. In two Azure regions, deploy a Traffic Manager profile and a web app.
+B. In two Azure regions, deploy a load balancer and a virtual machine scale set.
+C. Deploy a load balancer and a virtual machine scale set across two availability zones. *
+D. In two Azure regions, deploy a load balancer and a web app.
+---
+---
+###
+You plan to deploy a payroll system to Azure. The payroll system will use Azure virtual machines that run SUSE Linux Enterprise Server and Windows.
+You need to recommend a business continuity solution for the payroll system. The solution must meet the following requirements:
+✑ Minimize costs.
+✑ Provide business continuity if an Azure region fails.
+✑ Provide a recovery time objective (RTO) of 120 minutes.
+✑ Provide a recovery point objective (RPO) of five minutes.
+What should you include in the recommendation?
+---
+A. Microsoft System Center Data Protection Manager (DPM)
+B. Azure Site Recovery
+C. unmanaged disks that use geo-redundant storage (GRS) *
+D. Azure Backup
+---
+If your storage account has GRS enabled, then your data is durable even in the case of a complete regional outage or a disaster in which the primary region isn't recoverable.
+Note: The recovery time objective (RTO) is the targeted duration of time and a service level within which a business process must be restored after a disaster (or disruption) in order to avoid unacceptable consequences associated with a break in business continuity.
+---
+Azure Storage redundancy;https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy-grs
+SLA for Azure Site Recovery;https://azure.microsoft.com/en-us/support/legal/sla/site-recovery/v1_2/
+###
+The accounting department at your company migrates to a new financial accounting software. The accounting department must keep file-based database backups for seven years for compliance purposes. It is unlikely that the backups will be used to recover data.
+You need to move the backups to Azure. The solution must minimize costs.
+Where should you store the backups?
+---
+A. Azure SQL Database
+B. Azure Blob storage that uses the Archive tier *
+C. a Recovery Services vault
+D. Azure Blob storage that uses the Cool tier
+---
+---
+###
+D
+Your company has two on-premises sites in New York and Los Angeles and Azure virtual networks in the East US Azure region and the West US Azure region.
+Each on-premises site has Azure ExpressRoute circuits to both regions.
+You need to recommend a solution that meets the following requirements:
+✑ Outbound traffic to the Internet from workloads hosted on the virtual networks must be routed through the closest available on-premises site.
+✑ If an on-premises site fails, traffic from the workloads on the virtual networks to the Internet must reroute automatically to the other site.
+What should you include in the recommendation?
+---
+Routing from the virtual networks to the on-premises locations must be configured by using:;Azure default routes;Border Gateway Protocol (BGP) *;User-defined routes;
+The automatic routing configuration following a failover must be handled by using:;Border Gateway Protocol (BGP) *;Hot Standby Routing Protocol (HSRP);Virtual Router Redundancy Protocol (VRRP);
+---
+---
+ExpressRoute routing requirements;https://docs.microsoft.com/en-us/azure/expressroute/expressroute-routing
+###
+You plan to store data in Azure Blob storage for many years. The stored data will be accessed rarely.
+You need to ensure that the data in Blob storage is always available for immediate access. The solution must minimize storage costs.
+Which storage tier should you use?
+---
+A. Cool *
+B. Archive
+C. Hot
+---
+Azure cool tier is equivalent to the Amazon S3 Infrequent Access (S3-IA) storage in AWS that provides a low cost high performance storage for infrequently access data.
+Note: Azure's cool storage tier, also known as Azure cool Blob storage, is for infrequently-accessed data that needs to be stored for a minimum of 30 days.
+Typical use cases include backing up data before tiering to archival systems, legal data, media files, system audit information, datasets used for big data analysis and more.
+The storage cost for this Azure cold storage tier is lower than that of hot storage tier. Since it is expected that the data stored in this tier will be accessed less frequently, the data access charges are high when compared to hot tier. There are no additional changes required in your applications as these tiers can be accessed using APIs in the same manner that you access Azure storage.
+Incorrect Answers:
+B: Even though Azure archive storage offers the lowest cost in terms of data storage, its data retrieval charges are higher than that of hot and cool tiers. In fact, the data in the archive tier remains offline until the tier of the data is changed using a process called hydration. The process of hydrating data in the archive storage tier and moving it to either hot or cool tier could take up to 15 hours and, hence, it is only intended for data that can afford that kind of access delay.
+C: The storage cost for this Azure cold storage tier is lower than that of hot storage tier.
+---
+Storage Options for Lower Azure Storage Costs and Azure Backup Costs;https://cloud.netapp.com/blog/low-cost-storage-options-on-azure
+###
+D
+You have a virtual machine scale set named SS1.
+You configure autoscaling as shown in the following exhibit.
+az-301-q78.png
+You configure the scale out and scale in rules to have a duration of 10 minutes and a cool down time of 10 minutes.
+Use the drop-down menus to select the answer choice that answers each question based on the information presented in the graphic.
+---
+If SS1 scales to nine virtual machines, what is the minimum amount of time before SS1 will scale up?;10 minutes;20 minutes *;30 minutes;60 minutes;
+If SS1 scales to nine virtual machines, and then the average processor utilization is 30 percent for one hour, how many virtual machines will be in SS1?;1;3;6;9 *;12;15;
+---
+Box 1: 20 Minutes. 10 minutes cool down time after the last scale-up plus 10 minutes duration equals 20 minutes.
+Box 2: 9 virtual machines. 30% does not match the scale in requirement of less than 25% so the number of virtual machines will not change.
+---
+###
+D
+You have 20 Azure virtual machines that run Windows Server 2016 based on a custom virtual machine image. Each virtual machine hosts an instance of a VSS- capable web app that was developed in-house. Each instance is accessed by using a public endpoint. Each instance uses a separate database. The average database size is 200 GB.
+You need to design a disaster recovery solution for individual instances. The solution must meet the following requirements:
+✑ Provide a recovery time objective (RTO) of six hours
+✑ Provide a recovery point objective (RPO) of eight hours
+✑ Support recovery to a different Azure region
+✑ Support VSS-based backups
+✑ Minimize costs
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+---
+Disaster recovery solution:;Azure Site Recovery;Scheduled backups by using an Azure Backup agent *;Scheduled backups by using Windows Server Backup;Scheduled virtual machine-level backups;
+Storage type:;A recovery Service vault *;Premium managed disks;Unmanaged disks in an storage account that uses RA-GRS;
+---
+---
+###
+D
+You plan to deploy the backup policy shown in the following exhibit.
+az-301-q80.png
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
+---
+Virtual machines that are backed up using the policy can be recovered for up to a maximum of:;90 days;26 weeks;36 months *;45 months;
+The minimum recovery point objective for virtual machines that are backed up by using the policy is:;1 hour;1 day *;1 week;1 month;1 year;
+---
+---
+###
+D
+You have databases in Azure as shown in the following table.
+az-301-q81.png
+You are designing a data retention policy.
+You need to identify which databases can retain a daily backup for up to 35 days and which databases can retain monthly backups for up to 120 months.
+Which databases should you identify?
+---
+Databases that can retain a daily backup for up to 35 days:;DW1 only;SQLdb2 and SQLdb3 only *;SQLdb1, SQLdb2 and SQLdb3 only;SQLdb1, SQLdb2, SQLdb3 and DW1;
+Databases that can retain monthly backups for up to 120 months:;DW1 only;SQLdb2 and SQLdb3 only *;SQLdb1, SQLdb2 and SQLdb3 only;SQLdb1, SQLdb2, SQLdb3 and DW1;
+---
+---
+###
+D
+You plan to import data from your on-premises environment into Azure. The data is shown in the following table.
+az-301-q82.png
+What should you recommend using to migrate the data?
+---
+From the SQL Server 2012 database:;AzCopy;Azure Cosmos DB Data Migration Tool;Data Management Gateway;Data Migration Assistant *;
+From the table in the SQL Server 2008 database:;AzCopy;Azure Cosmos DB Data Migration Tool *;Data Management Gateway;Data Migration Assistant;
+---
+---
+###
+You have an on-premises deployment of MongoDB.
+You plan to migrate MongoDB to an Azure Cosmos DB account that uses the MongoDB API.
+You need to recommend a solution for migrating MongoDB to Azure Cosmos DB.
+What should you include in the recommendation?
+---
+A. mongorestore *
+B. Data Migration Assistant
+C. Azure Storage Explorer
+D. Azure Cosmos DB Data Migration Tool
+---
+---
+Tutorial: Migrate MongoDB to Azure Cosmos DB's API for MongoDB offline using DMS;https://docs.microsoft.com/en-us/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json
+###
+Your company plans to publish APIs for its services by using Azure API Management.
+You discover that service responses include the AspNet-Version header.
+You need to recommend a solution to remove AspNet-Version from the response of the published APIs.
+What should you include in the recommendation?
+---
+A. a new product
+B. a modification to the URL scheme
+C. a new policy *
+D. a new revision
+---
+---
+###
+Your company has 300 virtual machines hosted in a Vmware environment. The virtual machines vary in size and have various utilization levels.
+You plan to move all the virtual machines to Azure.
+You need to recommend how many and what size Azure virtual machines will be required to move the current workloads to Azure. The solution must minimize administrative effort.
+What should you use to make the recommendation?
+---
+A. Azure Advisor
+B. Azure Migrate *
+C. Azure Pricing calculator
+D. Azure Cost Management
+---
+---
+###
+You are designing an Azure solution for a company that wants to move a .NET Core web application from an on-premises data center to Azure. The web application relies on a Microsoft SQL Server 2016 database on Windows Server 2016. The database server will not move to Azure.
+A separate networking team is responsible for configuring network permissions.
+The company uses Azure ExpressRoute and has an ExpressRoute gateway connected to an Azure virtual network named VNET1.
+You need to recommend a solution for deploying the web application.
+Solution:
+Deploy the web application to a web app hosted in a Standard App Service plan. Create and configure an Azure App Service Hybrid Connections endpoint.
+On the on-premises network, deploy the Hybrid Connection Manager. Configure the Hybrid Connection Manager to access both the Hybrid Connection endpoint and the SQL Server instance.
+Does this meet the goal?
+---
+A. Yes
+B. No *
+---
+Instead, use VNet Integration.
+Note: VNet Integration gives your web app access to resources in your virtual network. VNet Integration is often used to enable access from apps to a databases and web services running in your VNet.
+---
+Integrate your app with an Azure virtual network;https://docs.microsoft.com/en-us/azure/app-service/web-sites-integrate-with-vnet
+###
+A company has custom ASP.NET and Java applications that run old versions of Windows and Linux. The company plans to place applications in containers.
+You need to design a solution that includes networking, service discovery, and load balancing for the applications. The solution must support storage orchestration.
+Solution: You create an Azure virtual network, public IP address, and load balancer. Then add virtual machines (VMs) to the solution and deploy individual containers on them.
+Does the solution meet the goal?
+---
+A. Yes
+B. No *
+---
+Instead you should deploy each application to an Azure Container instance.
+Note: Docker Containers are the global standard and are natively supported in Azure, offering enterprises an interesting and flexible way to migrate legacy apps for both future proofing and cost benefits.
+---
+Deploy existing .NET apps as Windows containers;https://docs.microsoft.com/en-us/dotnet/standard/modernize-with-azure-and-containers/modernize-existing-apps-to-cloud-optimized/deploy-existing-net-apps-as-windows-containers
+###
+A company has custom ASP.NET and Java applications that run old versions of Windows and Linux. The company plans to place applications in containers.
+You need to design a solution that includes networking, service discovery, and load balancing for the applications. The solution must support storage orchestration.
+Solution: Deploy a Kubernetes cluster that has the desired number of instances of the applications.
+Does the solution meet the goal?
+---
+A. Yes
+B. No *
+---
+Instead you should deploy each application to an Azure Container instance.
+Note: Docker Containers are the global standard and are natively supported in Azure, offering enterprises an interesting and flexible way to migrate legacy apps for both future proofing and cost benefits.
+---
+Deploy existing .NET apps as Windows containers;https://docs.microsoft.com/en-us/dotnet/standard/modernize-with-azure-and-containers/modernize-existing-apps-to-cloud-optimized/deploy-existing-net-apps-as-windows-containers
+###
+A company has custom ASP.NET and Java applications that run old versions of Windows and Linux. The company plans to place applications in containers.
+You need to design a solution that includes networking, service discovery, and load balancing for the applications. The solution must support storage orchestration.
+Solution: You deploy each application to an Azure Container instance.
+Does the solution meet the goal?
+---
+A. Yes *
+B. No
+---
+Docker Containers are the global standard and are natively supported in Azure, offering enterprises an interesting and flexible way to migrate legacy apps for both future proofing and cost benefits.
+Containers are modular and portable. Docker containers are supported on any server operating system (Linux and Windows), in any major public cloud (Microsoft
+Azure, Amazon AWS, Google, IBM), and in on-premises and private or hybrid cloud environments.
+---
+Deploy existing .NET apps as Windows containers;https://docs.microsoft.com/en-us/dotnet/standard/modernize-with-azure-and-containers/modernize-existing-apps-to-cloud-optimized/deploy-existing-net-apps-as-windows-containers
+###
+D
+You have a web application that uses a MongoDB database. You plan to migrate the web application to Azure.
+You must migrate to Cosmos DB while minimizing code and configuration changes.
+You need to design the Cosmos DB configuration.
+What should you recommend? To answer, select the appropriate values in the answer area.
+---
+MongoDB compatibility:;Database;API *;Collection;Account;
+API:;Cassandra API;DocumentDB API;Graph API;MongoDB API *;Table API;
+---
+MongoDB compatibility: API -
+
+API: MongoDB API -
+Azure Cosmos DB comes with multiple APIs:
+✑ SQL API, a JSON document database service that supports SQL queries. This is compatible with the former Azure DocumentDB.
+✑ MongoDB API, compatible with existing Mongo DB libraries, drivers, tools and applications.
+✑ Cassandra API, compatible with existing Apache Cassandra libraries, drivers, tools, and applications.
+✑ Azure Table API, a key-value database service compatible with existing Azure Table Storage.
+✑ Gremlin (graph) API, a graph database service supporting Apache Tinkerpop's graph traversal language, Gremlin.
+---
+Quickstart: Build a .NET web app using Azure Cosmos DB's API for MongoDB;https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet
+###
+C
+You manage an application instance. The application consumes data from multiple databases. Application code references database tables using a combination of the server, database, and table name.
+You need to migrate the application instance to Azure.
+What are two possible ways to achieve this goal? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+---
+A. SQL Server Stretch Database *
+B. SQL Server in an Azure virtual machine
+C. Azure SQL Database
+D. SQL Managed Instance *
+---
+A: Access your SQL Server data seamlessly regardless of whether it's on-premises or stretched to the cloud. You set the policy that determines where data is stored, and SQL Server handles the data movement in the background. The entire table is always online and queryable. And, Stretch Database doesn't require any changes to existing queries or applications - the location of the data is completely transparent to the application.
+D: The managed instance deployment model is designed for customers looking to migrate a large number of apps from on-premises or IaaS, self-built, or ISV provided environment to fully managed PaaS cloud environment, with as low migration effort as possible. Using the fully automated Data Migration Service (DMS) in Azure, customers can lift and shift their on-premises SQL Server to a managed instance that offers compatibility with SQL Server on-premises and complete isolation of customer instances with native VNet support.
+---
+Stretch Database;https://docs.microsoft.com/en-us/sql/sql-server/stretch-database/stretch-database
+What is Azure SQL Managed Instance?;https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance
+###
+You have 100 Microsoft SQL Server Integration Services (SSIS) packages that are configured to use 10 on-premises SQL Server databases as their destinations.
+You plan to migrate the 10 on-premises databases to Azure SQL Database.
+You need to recommend a solution to host the SSIS packages in Azure. The solution must ensure that the packages can target the SQL Database instances as their destinations.
+What should you include in the recommendation?
+---
+A. SQL Server Migration Assistant (SSMA)
+B. Azure Data Factory
+C. Data Migration Assistant *
+D. Azure Data Catalog
+---
+---
+###
+A company has custom ASP.NET and Java applications that run on old versions of Windows and Linux. The company plans to place applications in containers.
+You need to design a solution that includes networking, service discovery, and load balancing for the applications. The solution must support storage orchestration.
+Solution: You deploy each application to an Azure Web App that has container support.
+Does the solution meet the goal?
+---
+A. Yes
+B. No *
+---
+---
+###
+C
+Your company develops a web service that is deployed to an Azure virtual machine named VM1. The web service allows an API to access real-time data from
+VM1.
+The current virtual machine deployment is shown in the Deployment exhibit. (Click the Deployment tab).
+az-301-q94.png
+The chief technology officer (CTO) sends you the following email message: "Our developers have deployed the web service to a virtual machine named VM1.
+Testing has shown that the APIs is accessible from VM1 and VM2. Our partners must be able to connect to the API over the Internet. Partners will use this data in application that they develop".
+You deploy an Azure API Management (APIM) service. The relevant API Management configuration is shown in the API exhibit. (Click the API tab).
+az-301-q94-1.png
+Choose all that apply:
+
+---
+The API is available to partners over the Internet *
+The APIM instance can access real-time from VM1 *
+A VPN gateway is required for partner access
+---
+---
+How to use Azure API Management with virtual networks;https://docs.microsoft.com/en-us/azure/api-management/api-management-using-with-vnet
+###
+D
+You have the application architecture shown in the following exhibit.
+az-301-q95.png
+Use the drop-down menus to select choice that completes each statement based on the information presented in the graphic.
+---
+To change the front end to an active/active architecture in which both regions process incoming connections, you must:;add a load balancer to each region;add an Azure Application Gateway to each region;add an Azure content delivery network (CDN);modify the Traffic Manager routing method *;
+To control the threshold for failing over the front end to the standby region, you must configure the:;an Application Insights availability test;Azure SQL Database failover groups;Connection Monitor in Azure Network Watcher;Endpoint monitor settings in Traffic Manager *;
+---
+---
+Traffic Manager routing methods;https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-routing-methods
+Traffic Manager endpoint monitoring;https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-monitoring
+###
+D
+You are designing a solution for a stateless front-end application named Application1. Application1 will be hosted on two Azure virtual machines named VM1 and
+VM2.
+You plan to load balance connections to VM1 and VM2 from the Internet by using one Azure load balancer.
+You need to recommend the minimum number of required public IP addresses.
+How many public IP addresses should you recommend using for each resource? To answer, select the appropriate options in the answer area.
+---
+Load balancer:;0;1 *;2;3;
+VM1:;0 *;1;2;3;
+VM2:;0 *;1;2;3;
+---
+---
+###
+You need to recommend a data storage solution that meets the following requirements:
+✑ Ensures that application can access the data by using a REST connection
+Hosts 20 independent tables of varying sizes and usage patterns
+
+✑ Automatically replicates the data to a second Azure region
+✑ Minimizes costs
+What should you recommend?
+---
+A. an Azure SQL Database elastic database pool that uses active geo-replication
+B. tables in an Azure Storage account that uses geo-redundant storage (GRS)
+C. tables in an Azure Storage account that use read-access geo-redundant storage (RA-GRS) *
+D. an Azure SQL database that uses active geo-replication
+---
+---
+###
+You deploy two instances of an Azure web app. One instance is in the East US Azure region and the other instance is in the West US Azure region. The web app uses Azure Blob storage to deliver large files to end users.
+You need to recommend a solution for delivering the files to the users. The solution must meet the following requirements:
+✑ Ensure that the users receive files from the same region as the web app that they access.
+✑ Ensure that the files only need to be updated once.
+✑ Minimize costs.
+What should you include in the recommendation?
+---
+A. Azure File Sync
+B. Distributed File System (DFS)
+C. read-access geo-redundant storage (RA-GRS) *
+D. geo-redundant storage (GRS)
+---
+---
+###
+Your company has an on-premises Windows HPC cluster. The cluster runs an intrinsically parallel, compute-intensive workload that performs financial risk modelling.
+You plan to migrate the workload to Azure Batch.
+You need to design a solution that will support the workload. The solution must meet the following requirements:
+✑ Support the large-scale parallel execution of Azure Batch jobs.
+✑ Minimize cost.
+What should you include in the solution?
+---
+A. Basic A-series virtual machines
+B. low-priority virtual machines *
+C. burstable virtual machines
+D. Azure virtual machine sizes that support the Message Passing Interface (MPI) API
+---
+---
+What is Azure Batch?;https://docs.microsoft.com/en-us/azure/batch/batch-technical-overview
+###
+D
+Your company has users who work remotely from laptops.
+You plan to move some of the applications accessed by the remote users to Azure virtual machines. The users will access the applications in Azure by using a point-to-site VPN connection. You will use certificates generated from an on-premises-based certification authority (CA).
+You need to recommend which certificates are required for the deployment.
+What should you include in the recommendation?
+---
+Trusted Root Certificate Authorities certificate store on each laptop:;A root CA certificate that has the private key;A root CA certificate that has the public key *;A user certificate that has the private key;A user certificate that has the public key;
+The users' Personal store on each laptop:;A root CA certificate that has the private key;A root CA certificate that has the public key;A user certificate that has the private key *;A user certificate that has the public key;
+The Azure VPN gateway:;A root CA certificate that has the private key;A root CA certificate that has the public key *;A user certificate that has the private key;A user certificate that has the public key;
+---
+---
+###
+D
+You have an Azure subscription. The subscription contains Azure virtual machines that run Windows Server 2016 and Linux.
+You need to use Azure Log Analytics design an alerting strategy for security-related events.
+Which Log Analytics tables should you query? 
+---
+Events from Windows event logs:;AzureActivity;AzureDiagnostics;Event *;Syslog;
+Events from Linux system logging:;AzureActivity;AzureDiagnostics;Event;Syslog *;
+---
+---
+Log Analytics agent overview;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent
+###
+C
+You have the network topology shown in the following exhibit.
+az-301-q102.png
+You have a user-defined route that has a default route of 0.0.0.0/0 and the next hop set to the network virtual appliance.
+You configure the Azure Storage account to use virtual network service endpoints.
+Choose all that apply:
+---
+From VM1, traffic destined to the Azure Key Management Service will be routed to the network virtual appliance *
+From VM1, traffic destined to the Azure file share will be routed to the Internet
+From VM1, traffic destined to the Azure SQL database will be routed to the Internet
+---
+---
+Virtual network traffic routing;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview
+###
+You are designing a container solution in Azure that will include two containers. One container will host a web API that will be available to the public. The other container will perform health monitoring of the web API and will remain private. The two containers will be deployed together as a group.
+You need to recommend a compute service for the containers. The solution must minimize costs and maintenance overhead.
+What should you include in the recommendation?
+---
+A. Azure Service Fabric
+B. Azure Container Service
+C. Azure Kubernetes Service (AKS)
+D. Azure Container Instances *
+---
+---
+Container groups in Azure Container Instances;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-container-groups
+###
+D
+Your company has three branch offices and an Azure subscription. Each branch office contains a Hyper-V host that hosts application servers.
+You need to recommend a storage solution for the branch offices. The solution must ensure that the application servers can connect to a central storage device by using iSCSI connections. Data saved to the iSCSI storage device from the application servers must be uploaded to Azure automatically.
+Which components should you include in the recommendation?
+---
+Branch office Hyper-V hosts:;Azure File Sync agent;Azure Site Recovery agent;Azure StorSimple Virtual Array *;Distributed File System Replication;
+Azure subscription:;Azure file share;Azure File Sync;Azure Site Recovery vault;Azure Storage account *;
+---
+---
+Introduction to the StorSimple Virtual Array;https://docs.microsoft.com/en-us/azure/storsimple/storsimple-ova-overview
+###
+D
+You have an on-premises network that uses an IP address space of 172.16.0.0/16.
+You plan to deploy 25 virtual machines to a new Azure subscription.
+You identify the following technical requirements:
+✑ All Azure virtual machines must be placed on the same subnet named Subnet1.
+✑ All the Azure virtual machines must be able to communicate with all on-premises servers.
+✑ The servers must be able to communicate between the on-premises network and Azure by using a site-to-site VPN.
+You need to recommend a subnet design that meets the technical requirements.
+What should you include in the recommendation?
+---
+Subnet1:;172.16.0.0/16;172.16.1.0/28;192.168.0.0/24 *;192.168.1.0/28;
+Gateway subnet:;172.16.0.0/16;172.16.1.0/28;192.168.0.0/24;192.168.1.0/28 *;
+---
+---
+###
+You are migrating an on-premises application to Azure. One component of the application is a legacy Windows native executable that performs image processing.
+The image processing application must run every hour. During times that the image processing application is not running, it should not be consuming any Azure compute resources.
+You need to ensure that the image processing application runs correctly every hour.
+Solution: Create an Azure WebJob that runs the image processing application every hour.
+Does the solution meet the goal?
+---
+A. Yes
+B. No *
+---
+Instead use an Azure Logic Apps, which helps you automate workflows that run on a schedule.
+---
+Tutorial: Create automated, schedule-based, recurring workflows by using Azure Logic Apps;https://docs.microsoft.com/en-us/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow
+###
+You are migrating an on-premises application to Azure. One component of the application is a legacy Windows native executable that performs image processing.
+The image processing application must run every hour. During times that the image processing application is not running, it should not be consuming any Azure compute resources.
+You need to ensure that the image processing application runs correctly every hour.
+Solution: Create an Azure Function to run the image processing application every hour.
+Does the solution meet the goal?
+---
+A. Yes
+B. No
+---
+Instead use an Azure Logic Apps, which helps you automate workflows that run on a schedule.
+---
+Tutorial: Create automated, schedule-based, recurring workflows by using Azure Logic Apps;https://docs.microsoft.com/en-us/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow
+###
+You are migrating an on-premises application to Azure. One component of the application is a legacy Windows native executable that performs image processing.
+The image processing application must run every hour. During times that the image processing application is not running, it should not be consuming any Azure compute resources.
+You need to ensure that the image processing application runs correctly every hour.
+Solution: Create a Logic App to run the image processing application every hour.
+Does the solution meet the goal?
+---
+A. Yes *
+B. No
+---
+Azure Logic Apps helps you automate workflows that run on a schedule.
+---
+Tutorial: Create automated, schedule-based, recurring workflows by using Azure Logic Apps;https://docs.microsoft.com/en-us/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
 ---
 ---
 ###

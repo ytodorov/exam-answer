@@ -164,7 +164,7 @@ D.configuring the SaaS solution
             {
                 foreach (QuestionEntity question in exam.Questions)
                 {
-                    Assert.True(question.ContentText.Length < 4000);
+                    Assert.True(question.ContentText.Length < 6000); // testlets are very long
                     Assert.True(question.AnswerText.Length < 4000);
                     Assert.True(question.ExplanationText.Length < 4000);
                     Assert.True(question.ReferenceText.Length < 4000);
