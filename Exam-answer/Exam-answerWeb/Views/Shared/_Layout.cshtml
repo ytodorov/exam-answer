@@ -68,6 +68,16 @@
                 <li class="a-nav-item a-nav-dropdown relative ">
                     <amp-accordion layout="container" disable-session-states="" class="a-dropdown">
                         <section expanded="">
+                            <header>Amazon</header>
+                            <ul class="a-dropdown-items list-reset m0 p0">
+                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/amazon/saa-c01")" class="text-decoration-none">SAA-C01</a></li>
+                            </ul>
+                        </section>
+                    </amp-accordion>
+                </li>
+                <li class="a-nav-item a-nav-dropdown relative ">
+                    <amp-accordion layout="container" disable-session-states="" class="a-dropdown">
+                        <section expanded="">
                             <header>Microsoft</header>
                             <ul class="a-dropdown-items list-reset m0 p0">
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-100")" class="text-decoration-none">AZ-100</a></li>
@@ -117,10 +127,10 @@
     @RenderBody()
     <div class="center m2">
         <div class="center inline">
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
         </div>
         <div class="center inline">
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
         </div>
     </div>
     <br />

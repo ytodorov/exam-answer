@@ -95,14 +95,30 @@ namespace Exam_answerWeb.Infrastructure
 
                 foreach (string reference in questionReferences)
                 {
-                    List<string> parts = reference.Split(";").ToList();
-                    ReferenceEntity referenceEntity = new ReferenceEntity()
+                    if (reference.Length > 3)
                     {
-                        Text = parts[0],
-                        Url = parts[1],
-                        Order = questionReferences.IndexOf(reference),
-                    };
-                    qe.References.Add(referenceEntity);
+                        ReferenceEntity referenceEntity = null;
+                        if (reference.Contains(";"))
+                        {
+                            List<string> parts = reference.Split(";").ToList();
+                            referenceEntity = new ReferenceEntity()
+                            {
+                                Text = parts[0],
+                                Url = parts[1],
+                                Order = questionReferences.IndexOf(reference),
+                            };
+                        }
+                        else
+                        {
+                            referenceEntity = new ReferenceEntity()
+                            {
+                                Text = reference,
+                                Url = reference,
+                                Order = questionReferences.IndexOf(reference),
+                            };
+                        }
+                        qe.References.Add(referenceEntity);
+                    }
                 }
 
                 qeList.Add(qe);
@@ -305,6 +321,24 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(crt251);
 
             result.Add(crt251);
+
+            ExamEntity saa_c01 = new ExamEntity()
+            {
+                Provider = "Amazon",
+                Code = "SAA-C01",
+                Name = "AWS Certified Solutions Architect – Associate",
+                ExamProviderUrl = "https://www.exam-answer.com/amazon",
+                ExamUrl = "https://www.exam-answer.com/amazon/saa-c01",
+                PageTitle = "Exam SAA-C01: AWS Certified Solutions Architect – Associate",
+                PageDescription = "Prepare for Exam SAA-C01: AWS Certified Solutions Architect – Associate. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\SAA-C01.txt"),
+                Order = 1,
+            };
+
+            context?.Exams?.Add(saa_c01);
+            result.Add(saa_c01);
+
+
 
             ExamEntity az300 = new ExamEntity()
             {
