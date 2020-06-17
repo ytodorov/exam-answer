@@ -326,7 +326,7 @@ namespace Exam_answerWeb.Infrastructure
             {
                 Provider = "Amazon",
                 Code = "SAA-C01",
-                Name = "AWS Certified Solutions Architect – Associate",
+                Name = "AWS Certified Solutions Architect - Associate",
                 ExamProviderUrl = "https://www.exam-answer.com/amazon",
                 ExamUrl = "https://www.exam-answer.com/amazon/saa-c01",
                 PageTitle = "Exam SAA-C01: AWS Certified Solutions Architect – Associate",
@@ -338,6 +338,21 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(saa_c01);
             result.Add(saa_c01);
 
+            ExamEntity slf_c01 = new ExamEntity()
+            {
+                Provider = "Amazon",
+                Code = "CLF-C01",
+                Name = "AWS Certified Cloud Practitioner",
+                ExamProviderUrl = "https://www.exam-answer.com/amazon",
+                ExamUrl = "https://www.exam-answer.com/amazon/clf-c01",
+                PageTitle = "Exam CLF-C01: AWS Certified Cloud Practitioner",
+                PageDescription = "Prepare for Exam CLF-C01: AWS Certified Cloud Practitioner. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\CLF-C01.txt"),
+                Order = 1,
+            };
+
+            context?.Exams?.Add(slf_c01);
+            result.Add(slf_c01);
 
 
             ExamEntity az300 = new ExamEntity()

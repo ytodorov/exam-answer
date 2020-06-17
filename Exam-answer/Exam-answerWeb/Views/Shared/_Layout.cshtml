@@ -71,6 +71,7 @@
                             <header>Amazon</header>
                             <ul class="a-dropdown-items list-reset m0 p0">
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/amazon/saa-c01")" class="text-decoration-none">SAA-C01</a></li>
+                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/amazon/clf-c01")" class="text-decoration-none">CLF-C01</a></li>
                             </ul>
                         </section>
                     </amp-accordion>
@@ -107,7 +108,7 @@
         </nav>
     </amp-sidebar>
     <div class="center">
-        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_100))
+        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
     </div>
 
     @*<label for="cars">Choose a car:</label>
@@ -127,10 +128,10 @@
     @RenderBody()
     <div class="center m2">
         <div class="center inline">
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
         </div>
         <div class="center inline">
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
         </div>
     </div>
     <br />

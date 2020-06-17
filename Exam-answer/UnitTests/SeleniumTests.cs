@@ -1,8 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using Exam_answerWeb.Infrastructure;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace UnitTests
@@ -12,43 +14,72 @@ namespace UnitTests
         [Fact]
         public void PreloadSiteTest()
         {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
-            chromeOptions.AcceptInsecureCertificates = true;
+            var ExamsToCheck = DataGenerator.Initialize(null);
 
-            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
+
+            Parallel.ForEach(ExamsToCheck, (exam) =>
             {
-                for (int i = 1; i <= 130; i++)
-                {
-                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-900/question{i}");
-                }
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
+                chromeOptions.AcceptInsecureCertificates = true;
 
-                for (int i = 1; i <= 60; i++)
+                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
                 {
-                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant/question{i}");
+                    for (int i = 1; i <= exam.Questions.Count; i++)
+                    {
+                        driver.Navigate().GoToUrl($"https://www.exam-answer.com/{exam.Provider}/{exam.Code}/question{i}");
+                    }
                 }
+            });
 
-                for (int i = 1; i <= 100; i++)
-                {
-                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/crt-251/question{i}");
-                }
 
-                for (int i = 1; i <= 112; i++)
-                {
-                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-100/question{i}");
-                }
 
-                for (int i = 1; i <= 243; i++)
-                {
-                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-300/question{i}");
-                }
 
-                for (int i = 1; i <= 73; i++)
-                {
-                    driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-400/question{i}");
-                }
-            }
+
+
+
+            //ChromeOptions chromeOptions = new ChromeOptions();
+            //chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
+            //chromeOptions.AcceptInsecureCertificates = true;
+
+            //string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            //using (ChromeDriver driver = new ChromeDriver(path, chromeOptions))
+            //{
+            //    for (int i = 1; i <= 340; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/amazon/saa-c01/question{i}");
+            //    }
+            //    for (int i = 1; i <= 130; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-900/question{i}");
+            //    }
+
+            //    for (int i = 1; i <= 60; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant/question{i}");
+            //    }
+
+            //    for (int i = 1; i <= 100; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/salesforce/crt-251/question{i}");
+            //    }
+
+            //    for (int i = 1; i <= 112; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-100/question{i}");
+            //    }
+
+            //    for (int i = 1; i <= 243; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-300/question{i}");
+            //    }
+
+            //    for (int i = 1; i <= 73; i++)
+            //    {
+            //        driver.Navigate().GoToUrl($"https://www.exam-answer.com/microsoft/az-400/question{i}");
+            //    }
+            //}
         }
 
         [Fact]
