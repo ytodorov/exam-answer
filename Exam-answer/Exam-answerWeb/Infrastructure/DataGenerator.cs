@@ -95,7 +95,7 @@ namespace Exam_answerWeb.Infrastructure
 
                 foreach (string reference in questionReferences)
                 {
-                    if (reference.Length > 3)
+                    if (reference.Length > 10)
                     {
                         ReferenceEntity referenceEntity = null;
                         if (reference.Contains(";"))
@@ -180,6 +180,22 @@ namespace Exam_answerWeb.Infrastructure
             }
 
             List<ExamEntity> result = new List<ExamEntity>();
+
+            ExamEntity adm201 = new ExamEntity()
+            {
+                Provider = "Salesforce",
+                ExamProviderUrl = "https://www.exam-answer.com/salesforce",
+                ExamUrl = "https://www.exam-answer.com/salesforce/adm-201",
+                Code = "ADM-201",
+                Name = "Administration Essentials for New Admins",
+                PageTitle = "Exam ADM-201: Administration Essentials for New Admins",
+                PageDescription = "Prepare for Exam ADM-201: Administration Essentials for New Admins. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\adm-201.txt"),
+                Order = 3,
+            };
+
+            context?.Exams?.Add(adm201);
+            result.Add(adm201);
 
             ExamEntity scfslc = new ExamEntity()
             {

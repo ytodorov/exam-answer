@@ -175,6 +175,7 @@ D.configuring the SaaS solution
         [Fact]
         public void AllQuestionsAnsewerAndTypeShouldMatchTest()
         {
+            StringBuilder sb = new StringBuilder();
             foreach (ExamEntity exam in ExamsToCheck)
             {
                 foreach (QuestionEntity question in exam.Questions)
@@ -183,18 +184,39 @@ D.configuring the SaaS solution
 
                     if (question.QuestionType == QuestionType.CheckBox)
                     {
-                        Assert.True(correctQuestionCount.Count > 0);
+                        //Assert.True(correctQuestionCount.Count > 0);
+                        if (!(correctQuestionCount.Count > 0))
+                        {
+                            sb.AppendLine(question.ContentText);
+                            sb.AppendLine("--------------------------------------------------------");
+                            sb.AppendLine("--------------------------------------------------------");
+                        }
                     }
                     else if (question.QuestionType == QuestionType.RadioButon)
                     {
-                        Assert.True(correctQuestionCount.Count == 1);
+                        //Assert.True(correctQuestionCount.Count == 1);
+                        if (!(correctQuestionCount.Count == 1))
+                        {
+                            sb.AppendLine(question.ContentText);
+                            sb.AppendLine("--------------------------------------------------------");
+                            sb.AppendLine("--------------------------------------------------------");
+                        }
                     }
                     else if (question.QuestionType == QuestionType.DropDown)
                     {
-                        Assert.True(question.Answers.All(a => a.Text.Contains(" *")));
+                        //Assert.True(question.Answers.All(a => a.Text.Contains(" *")));
+                        if (!(question.Answers.All(a => a.Text.Contains(" *"))))
+                        {
+                            sb.AppendLine(question.ContentText);
+                            sb.AppendLine("--------------------------------------------------------");
+                            sb.AppendLine("--------------------------------------------------------");
+                        }
                     }
                 }
             }
+
+            var errors = sb.ToString();
+            Assert.True(string.IsNullOrEmpty(errors));
         }
 
 

@@ -1416,6 +1416,7 @@
     <Folder Include="bin\" />
     <Folder Include="Infrastructure\az100\" />
     <Folder Include="wwwroot\duplicates\" />
+    <Folder Include="wwwroot\images\cisco\ICND1\" />
   </ItemGroup>
 
 
@@ -1425,6 +1426,9 @@
 
 
   <ItemGroup>
+    <None Update="Exams\adm-201.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Exams\az-100.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1477,6 +1481,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\AZ-900\Microsoft.Test-king.AZ-900.v2019-04-19.by_.Martin.40q.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\SAA-C02.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\CLF-C01.txt">

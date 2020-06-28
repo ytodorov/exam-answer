@@ -95,6 +95,7 @@
                         <section expanded="">
                             <header>Salesforce</header>
                             <ul class="a-dropdown-items list-reset m0 p0">
+                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/adm-201")" class="text-decoration-none">ADM-201</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/crt-251")" class="text-decoration-none">CRT-251</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/salesforce-certified-field-service-lightning-consultant")" class="text-decoration-none">Salesforce Certified Field Service Lightning Consultant</a></li>
                             </ul>
@@ -108,7 +109,7 @@
         </nav>
     </amp-sidebar>
     <div class="center">
-        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_320_50))
+        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
     </div>
 
     @*<label for="cars">Choose a car:</label>
