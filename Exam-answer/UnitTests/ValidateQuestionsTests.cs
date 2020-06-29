@@ -1,3 +1,4 @@
+using AutoMapper.Configuration.Annotations;
 using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
 using System;
@@ -19,7 +20,8 @@ namespace UnitTests
             //ExamsToCheck = ExamsToCheck.Where(e => !e.Code.Equals("AZ-100", StringComparison.CurrentCultureIgnoreCase)).ToList();
         }
 
-        [Fact]
+
+        [Fact(Skip = "temp - very slow")]
         public void CheckForSimilarityOfCustomTextTest()
         {
             List<ExamEntity> exams = DataGenerator.Initialize(null);
@@ -71,12 +73,12 @@ D.configuring the SaaS solution
         }
 
 
-        [Fact]
+        [Fact(Skip = "temp - very slow")]
         public void CheckForSimilarityOfQuestionsTest()
         {
             List<ExamEntity> exams = DataGenerator.Initialize(null);
 
-            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("ADM-201"));
+            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("saa-c02", StringComparison.CurrentCultureIgnoreCase));
 
             List<QuestionEntity> allquestions = theExam.Questions;
 
