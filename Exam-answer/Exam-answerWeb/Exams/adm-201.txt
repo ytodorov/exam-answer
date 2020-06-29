@@ -1398,14 +1398,6 @@ Expected Revenue / Budgeted Cost
 ---
 D
 ###
-You can use standard reports when creating
----
-True
-False *
----
----
-B
-###
 The difference between an opportunity record type and a sales process is:
 ---
 The sales process controls the stage field, the record type controls all other picklist fields *
@@ -2650,15 +2642,6 @@ Multi-Currency
 ---
 B
 ###
-The formula editor may be used all of the following places EXCEPT:
----
-S-Control
-Formula Field
-Default values on Standard Fields *
----
----
-C
-###
 If you are added to a Sales Team with read/write access you then have the ability to extend sharing on the opportunity to other users.
 ---
 True
@@ -3293,18 +3276,6 @@ Creating a custom object *
 ---
 ---
 D
-###
-C
-Which of the following are standard Salesforce applications? (Select all that apply)
----
-Ideas *
-Campaigns
-Administration
-Call Center *
-Sales Center
----
----
-AD
 ###
 A role has many to many relationships with the user?
 ---
@@ -4693,18 +4664,6 @@ False
 A
 ###
 C
-Which of the following are setting options for the User Interface?
----
-Enable Collapsible Sections *
-Show Quick Create *
-Show customer Sidebar Components on All Pages *
-Transfer all Open Opportunities
-Enable Drag-and-drop scheduling on List Views *
----
----
-ABCE
-###
-C
 Which are Activity Attachment Enhancements in Spring 11?
 ---
 For new organizations, the Attachments related list is now automatically added to task and event records. *
@@ -4868,16 +4827,6 @@ Enterprise *
 ---
 AF
 ###
-What happens when you delete an object that is related to a junction object by a lookup relationship?
----
-The junction object is deleted
-The related field in the junction object is deleted *
-The master records are deleted
-The intersection object is deleted
----
----
-B
-###
 C
 Which of the following Collaboration Cloud Enhancements Features are automatically visible to all users after Winter 11 and no setup is required?
 ---
@@ -4970,16 +4919,6 @@ Integrated Campaign Builder views are not exposed through the Force.com API *
 ---
 ---
 ABCE
-###
-On Lead Conversion a Lead Object Custom field can not be mapped to Which Object custom field?
----
-Account
-Contacts
-Case *
-Opportunity
----
----
-C
 ###
 Which statements are true about standard fields?
 ---
@@ -5237,16 +5176,6 @@ Professional Edition *
 ---
 ---
 D
-###
-How many Solution records can be imported via Import Wizard?
----
-50.000 *
-5.000
-500
-50
----
----
-A
 ###
 AW computing has a discount workflow that requires approval from the Sales director when the discount is over 15% and from the VP of Global sales if the discount is over 30%. The sales rep has created a discount for 10% on a new opportunity. What happens when the sales Rep submits the request for approval?
 ---
@@ -5702,14 +5631,6 @@ False *
 ---
 B
 ###
-Customer Portal users can view the tags section of a page, if it is included in a page layout.
----
-True
-False *
----
----
-B
-###
 The number of formulas in a Custom summary formula is limited to:
 ---
 5000
@@ -5793,14 +5714,6 @@ Solutions *
 ---
 ---
 ACEF
-###
-A checkbox can be a controlling field in a field dependency?
----
-True *
-False
----
----
-A
 ###
 How many instances of personal tags can be applied to records?
 ---
@@ -5899,16 +5812,6 @@ A roll-up summary fields lets you rollback the data that was changed last week.
 The roll-up summary field is a custom field that aggregates child record information in to parent record *
 The roll up summary field is only accessible via API.
 The roll up summary field gives you a summary of the data type and object relationship
----
----
-B
-###
-Inline Editing updates the field when
----
-The field is saved/updated
-When the record is saved/updated *
-When the return key is pressed
-None of the above
 ---
 ---
 B
@@ -7219,14 +7122,6 @@ Each solution can be associated with multiple cases and a case can be associated
 ---
 ---
 D
-###
-Can you uninstall an AppExchange application once it has been deployed.
----
-True *
-False
----
----
-A
 ###
 All existing custom objects that were previously deployed will still be deployed when you upgrade a managed application.
 ---
@@ -8780,14 +8675,6 @@ Choose a default currency *
 ---
 BD
 ###
-You can only use standard fields when generating email and mail merge documents for leads or contacts.
----
-True
-False *
----
----
-B
-###
 C
 Which of the following can be done on the Activity Settings page at Your Name | Setup | Customize | Activities | Activity Settings?
 ---
@@ -8845,17 +8732,6 @@ Default Currency
 ---
 ---
 A
-###
-C
-What steps are part of the process to enable Multi-Currency in an organization?
----
-Create a Sandbox
-Contact salesforce.com to enable multiple currencies *
-Enable Advanced Currency Management
-Choose a default currency *
----
----
-BD
 ###
 To track revenue gain or loss based on currency fluctuations, you must implement
 ---
@@ -9050,17 +8926,6 @@ No *
 ---
 ---
 B
-###
-C
-UI component for tag Access (Choose 2)
----
-Edit tag links
-View tags on header *
-Sidebar widget
-Search Tags *
----
----
-BD
 ###
 C
 Which three features can automatically create a Case? (Choose three.)

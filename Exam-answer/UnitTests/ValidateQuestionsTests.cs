@@ -76,7 +76,7 @@ D.configuring the SaaS solution
         {
             List<ExamEntity> exams = DataGenerator.Initialize(null);
 
-            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("AZ-900"));
+            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("ADM-201"));
 
             List<QuestionEntity> allquestions = theExam.Questions;
 
@@ -109,6 +109,8 @@ D.configuring the SaaS solution
                     }
                 }
             }
+            string duplicateResultHelper = string.Join("\r\n\r\n\r\n", duplicatesLists.Select(s => s.Item1.ContentText + " ----- " + s.Item2.ContentText).ToList());
+
             distances = distances.OrderByDescending(d => d).ToList();
         }
 
