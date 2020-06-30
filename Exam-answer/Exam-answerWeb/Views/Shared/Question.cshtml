@@ -15,6 +15,8 @@
     {
         var explanation = Model.Explanations[i];
     }
+
+    var similarQuestions = HelperMethods.GetSimilarQuestions(Model, Model.Exam);
 }
 <h1><a href="@pageBaseCanonicalUrl">Home</a> / <a href="@Model.Exam.ExamProviderUrl">@Model.Exam.Provider</a> / <a href="@Model.Exam.ExamUrl"> @Model.Exam.Code</a> / <a href="@(Model.Exam.ExamUrl + "/question" + questionNumber)"> Question @(questionNumber)</a></h1>
 <partial name="_PrevNextPartial" />
@@ -231,6 +233,22 @@
                 </div>
             </div>
         </section>
+    }
+    @if (similarQuestions?.Count > 0)
+    {
+<section expanded>
+    <h2>Similar questions</h2>
+    <div class="m1">
+        <div>
+            @foreach (var similarQuestion in similarQuestions)
+            {
+            <p>
+                <a href="@(Model.Exam.ExamUrl + "/question" + (Model.Exam.Questions.IndexOf(similarQuestion) + 1))">Question @(Model.Exam.Questions.IndexOf(similarQuestion) + 1): @(similarQuestion.ContentText)</a>
+            </p>
+            }
+        </div>
+    </div>
+</section>
     }
 </amp-accordion>
 <partial name="_PrevNextPartial" />

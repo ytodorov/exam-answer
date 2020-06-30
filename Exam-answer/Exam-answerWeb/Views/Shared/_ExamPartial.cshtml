@@ -17,19 +17,25 @@
 
         if (i % 4 == 0 && i > 0)
         {
+            @*<div class="center">
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdSquare))
+                </div>*@
             <div class="center">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdSquare))
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
             </div>
         }
         else if (i % 2 == 0 && i > 0)
         {
-            <div class="center m2">
-                <div class="center inline">
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
-                </div>
-                <div class="center inline">
-                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
-                </div>
+            @*<div class="center m2">
+                    <div class="center inline">
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+                    </div>
+                    <div class="center inline">
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+                    </div>
+                </div>*@
+            <div class="center">
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
             </div>
         }
 

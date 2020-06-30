@@ -32,5 +32,9 @@ namespace Exam_answerWeb.Models
         public string AcceptedAnswer { get; set; }
 
         public bool? ShowAdsInQuestion { get; set; } = true;
+
+        public string ContentText { get; set; }
+
+        public string AnswerText { get; set; }
     }
 }

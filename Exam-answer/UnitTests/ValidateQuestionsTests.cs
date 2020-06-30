@@ -1,3 +1,4 @@
+using AngleSharp.Common;
 using AutoMapper.Configuration.Annotations;
 using DAL.Entities;
 using Exam_answerWeb.Infrastructure;
@@ -73,12 +74,12 @@ D.configuring the SaaS solution
         }
 
 
-        [Fact(Skip = "temp - very slow")]
+        [Fact()]
         public void CheckForSimilarityOfQuestionsTest()
         {
             List<ExamEntity> exams = DataGenerator.Initialize(null);
 
-            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("saa-c02", StringComparison.CurrentCultureIgnoreCase));
+            ExamEntity theExam = exams.FirstOrDefault(e => e.Code.Equals("az-900", StringComparison.CurrentCultureIgnoreCase));
 
             List<QuestionEntity> allquestions = theExam.Questions;
 
@@ -86,6 +87,9 @@ D.configuring the SaaS solution
 
             List<Tuple<QuestionEntity, QuestionEntity, string>> duplicatesLists =
                  new List<Tuple<QuestionEntity, QuestionEntity, string>>();
+
+            List<Tuple<QuestionEntity, QuestionEntity, double>> distanceListAllQuestions =
+                 new List<Tuple<QuestionEntity, QuestionEntity, double>>();
 
             for (int i = 0; i < allquestions.Count; i++)
             {
@@ -109,11 +113,16 @@ D.configuring the SaaS solution
 
                         string textToSee = $"{text1} {Environment.NewLine}{Environment.NewLine} {text2}";
                     }
+
+                    distanceListAllQuestions.Add(new Tuple<QuestionEntity, QuestionEntity, double>(
+                            q1, q2, distance));
                 }
             }
             string duplicateResultHelper = string.Join("\r\n\r\n\r\n", duplicatesLists.Select(s => s.Item1.ContentText + " ----- " + s.Item2.ContentText).ToList());
 
             distances = distances.OrderByDescending(d => d).ToList();
+
+            distanceListAllQuestions = distanceListAllQuestions.OrderByDescending(d => d.Item3).ToList();
         }
 
         [Fact]

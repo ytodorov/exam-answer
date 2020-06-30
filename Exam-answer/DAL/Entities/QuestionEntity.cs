@@ -145,5 +145,11 @@ namespace DAL.Entities
         }
 
         public string AcceptedAnswer { get; set; }
+
+        public override string ToString()
+        {
+            string result = $"{ContentText} {AnswerText}";
+            return result;
+        }
     }
 }
