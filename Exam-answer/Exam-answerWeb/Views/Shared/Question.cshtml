@@ -174,10 +174,10 @@
                 <h2>Advertisement</h2>
                 <div class="center m1">
                     <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
                     <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280, Model.ShowAdsInQuestion.GetValueOrDefault()))
                     </div>
                 </div>
             </section>
@@ -234,7 +234,7 @@
             </div>
         </section>
     }
-    @if (similarQuestions?.Count > 0)
+    @*@if (similarQuestions?.Count > 0)
     {
 <section expanded>
     <h2>Similar questions</h2>
@@ -249,7 +249,7 @@
         </div>
     </div>
 </section>
-    }
+    }*@
 </amp-accordion>
 <partial name="_PrevNextPartial" />
 <hr />
