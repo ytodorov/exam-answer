@@ -109,6 +109,7 @@
             </ul>
         </nav>
     </amp-sidebar>
+    <br>
     <div class="center">
         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
     </div>
@@ -137,17 +138,35 @@
             </div>
         </div>*@
     @*<div class="center">
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+        </div>*@
+    @*<amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-2519209558650417"
+                data-ad-slot="6927557857"
+                data-auto-format="mcrspv"
+                data-full-width="">
+            <div overflow=""></div>
+        </amp-ad>
+        <br />*@
+
+    <amp-iframe width=600 height=140
+                layout="responsive"
+                sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+                resizable
+                src="https://ytodorov.azurewebsites.net/disqus#@Model?.PageCanonicalUrl">
+        <div overflow
+             tabindex=0
+             role=button
+             aria-label="Load more"
+             style="display:block;font-size:12px;font-weight:500;font-family:Helvetica Neue, arial, sans-serif;text-align:center;line-height:1.1;padding:12px 16px;border-radius:4px;background:rgba(29,47,58,0.6);color:rgb(255,255,255)">
+            Load more
+        </div>
+    </amp-iframe>
+    <br>
+    <div class="center">
         @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
-    </div>*@
-    <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-2519209558650417"
-            data-ad-slot="6927557857"
-            data-auto-format="mcrspv"
-            data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
-    <br />
+    </div>
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
             <li>
