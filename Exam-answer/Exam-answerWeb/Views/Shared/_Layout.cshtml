@@ -35,10 +35,10 @@
     }
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    @*<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>*@
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body>
-    @*<amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>*@
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
         <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
@@ -164,8 +164,13 @@
         </div>
     </amp-iframe>
     <br>
-    <div class="center">
-        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+    <div class="center m2">
+        <div class="center inline">
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+        </div>
+        <div class="center inline">
+            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+        </div>
     </div>
     <footer class="a-footer flex flex-column items-center mx-auto max-width-3 ">
         <ul class="a-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
