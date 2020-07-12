@@ -20,23 +20,31 @@
             @*<div class="center">
                     @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdSquare))
                 </div>*@
-            <div class="center">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+            @*<div class="center">
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+                </div>*@
+            <div class="center m2">
+                <div class="center inline">
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
+                </div>
+                <div class="center inline">
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250))
+                </div>
             </div>
         }
         else if (i % 2 == 0 && i > 0)
         {
             <div class="center m2">
-                    <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
-                    </div>
-                    <div class="center inline">
-                        @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
-                    </div>
+                <div class="center inline">
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
                 </div>
+                <div class="center inline">
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+                </div>
+            </div>
             @*<div class="center">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
-            </div>*@
+                    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+                </div>*@
 
         }
 
