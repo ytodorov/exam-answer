@@ -186,6 +186,14 @@ namespace Exam_answerWeb.Infrastructure
                 data-ad-slot=""7770886760"">
         </amp-ad>";
                     break;
+                case AdsenseType.Fixed_300_250_AdManager:
+                    result = @"<amp-ad width=300 height=250
+    type=""doubleclick""
+    data-slot=""/22029984878/Adsense_300_250"">
+  <div placeholder></div>
+  <div fallback></div>
+</amp-ad>";
+                    break;
                 default:                    
                     break;
             }

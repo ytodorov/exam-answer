@@ -26,6 +26,7 @@ namespace Exam_answerWeb.Infrastructure
         Fixed_300_600, // Half Page aka Large Skyscraper
         Fixed_336_280, // Large Rectangle 2 place
         Fixed_300_250, // Medium Rectangle 1 place
+        Fixed_300_250_AdManager,
         Fixed_728_90, // Leader board 3 place
         Fixed_160_600, //Wide Skyscraper
         Fixed_970_90,

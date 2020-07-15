@@ -16,7 +16,7 @@
         var explanation = Model.Explanations[i];
     }
 
-    var similarQuestions = HelperMethods.GetSimilarQuestions(Model, Model.Exam);
+    //var similarQuestions = HelperMethods.GetSimilarQuestions(Model, Model.Exam);
 }
 <h1><a href="@pageBaseCanonicalUrl">Home</a> / <a href="@Model.Exam.ExamProviderUrl">@Model.Exam.Provider</a> / <a href="@Model.Exam.ExamUrl"> @Model.Exam.Code</a> / <a href="@(Model.Exam.ExamUrl + "/question" + questionNumber)"> Question @(questionNumber)</a></h1>
 <partial name="_PrevNextPartial" />
@@ -177,7 +177,7 @@
                 @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
             </div>
             <div class="center inline">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250, Model.ShowAdsInQuestion.GetValueOrDefault()))
+                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_300_250_AdManager, Model.ShowAdsInQuestion.GetValueOrDefault()))
             </div>
         </div>
     @*<div class="center">
