@@ -1,0 +1,790 @@
+###
+Cosmic Solutions is rolling out a native Force.com mortgage calculator app that uses Visualforce and standard page layouts. The client would like sales reps to be able to use this application via Salesforce on their mobile phones. Which of the following use cases would require minimal build effort?
+Choose 1 answer.
+---
+A. Using a custom Android or iOS app to access the app
+B. Using a custom Heroku app to access the app's functionality
+C. Using the app via Salesforce in the mobile browser
+D. Using the Salesforce mobile app to access the app's functionality *
+---
+Salesforce can only be accessed via the Salesforce mobile app on mobile phones. It supports the use of custom objects and most types of customization in Salesforce, including the use of Visualforce tabs, pages, and Lightning Pages.
+
+Salesforce can no longer be accessed via a mobile browser. As the question is asking for a solution that requires minimal build effort, building a custom Heroku, Android, or iOS app is not necessary.
+---
+Salesforce Mobile App;https://help.salesforce.com/articleView?id=salesforce_app.htm&type=5
+Salesforce App Features: What’s Available in Each Version;https://developer.salesforce.com/docs/atlas.en-us.salesforce1appadmin.meta/salesforce1appadmin/sf1_features_to_app_comparison.htm
+###
+C
+As part of their initiative to increase lead data quality, Cosmic Computers has decided that only marketing should be able to create, update, and convert leads. Sales users should have visibility to all leads but should not be able to create leads themselves or modify existing leads. Ownership of existing leads will be transferred to marketing. What features would help to satisfy this requirement?
+Choose 2 answers.
+---
+A. Organization-wide defaults *
+B. Object-level permissions *
+C. Validation rules
+D. List views
+---
+In order to restrict the ability for sales users to create leads, the Lead object-level permission for ‘Create’ would be disabled for the Sales profile and enabled for the Marketing user profile. The org-wide default for Leads would be set to ‘Public Read Only’ to allow all users to see all leads but not to modify them.
+
+Validation rules could be used to prevent non-marketing users from creating and modifying leads, but it is easier to change the profiles to suit the organization’s security and access needs. List views do not control access to objects.
+---
+Sharing Default Access Settings;https://help.salesforce.com/articleView?id=sharing_model_fields.htm&type=5
+User Permissions and Access;https://help.salesforce.com/articleView?id=permissions_about_users_access.htm&type=5
+###
+C
+Fast Finance had a goal of increasing revenue and generating a higher number of quality leads by implementing Sales Cloud. Which metrics should be analyzed to determine the success of this goal?
+Choose 2 answers.
+---
+A. Deal-related activities
+B. Lead-to-opportunities conversion rate *
+C. Total number of leads by source
+D. Opportunity pipeline *
+---
+A higher number of quality leads can be measured by an increased lead-to-opportunities conversion rate. Increased revenue can be measured via the size of the opportunity pipeline.
+
+The total number of leads by source does not indicate a higher number of quality leads. More deal-related activities does not necessarily correlate to an increase in revenue.
+---
+6 essential sales and marketing metrics for small businesses;https://www.salesforce.com/uk/blog/2016/02/6-essential-sales-and-marketing-metrics-for-small-businesses.html
+###
+As part of the sales process, Unique Parts sends a sample of a customized part to the prospect. The account manager changes the stage of the related opportunity to ‘Sample Requested’, and would like an automatic email to let the customer know that the sample is on the way. The email should include details of the opportunity products. How can a Salesforce Administrator meet this requirement?
+Choose 1 answer.
+---
+A. Create a workflow rule on 'Opportunity Product' that sends an email using an HTML email template
+B. Implement a workflow action on 'Opportunity' to send an email alert using a Visualforce template *
+C. Use a flow to send an email when the opportunity is updated
+D. Create an Apex trigger that executes when an opportunity is updated, sends an email, and retrieves the details of the opportunity products
+---
+A Visualforce email template would be required to access the details pertaining to related opportunity products. An HTML or text email template on the Opportunity object will not have access to Opportunity Product fields. Merge fields can be used while creating an HTML email template, but these fields pull information from a particular object, such as Opportunity or Opportunity Line Item. It is not possible to pull information from related records, such as Opportunity Line Items related to a particular Opportunity.
+
+A workflow rule with an email alert can be used to automatically send an email when the Opportunity’s stage has been changed to ‘Sample Requested’. The email alert can use a Visualforce email template that can access the Opportunity Product details. Although an Apex trigger could work, it would be preferable to use declarative options as much as possible. A flow could send the email, but it has to be triggered by a process.
+---
+Product Line Items from Opportunities in Email Templates;https://trailblazer.salesforce.com/ideaView?id=08730000000BqfSAAS
+Visualforce Email Templates;https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_email_templates_intro.htm
+###
+Cosmic Electronics would like to enable its sales representatives to use different steps for selling different types of products. A Sales Cloud Consultant working for the company has suggested the use of multiple sales processes for this requirement. Which field on the Opportunity object can be customized to define the steps that could be included in each sales process?
+Choose 1 answer.
+---
+A. Next Step
+B. Stage *
+C. Type
+D. Lead Source
+---
+The "Stage" field on the Opportunity object can be customized to define the stages or steps that could be included in an organization’s sales process. When setting up a new sales process, the stages that apply to the sales process can be selected.
+
+The Lead Source tracks the source of the opportunity, and the Type identifies the type of the opportunity. Both fields are mainly used for reporting and are independent of the sales process. Next Step, on the other hand, is a text description of what the sales representative should do to progress the opportunity to the next stage.
+---
+Customize a Sales Path Introduction;https://trailhead.salesforce.com/en/content/learn/projects/customize-a-sales-path-for-your-team/customize-a-sales-path
+Opportunity Fields;https://help.salesforce.com/articleView?id=opp_fields.htm&type=5
+###
+Cosmic Technologies is a software development company that has B2B customers in several countries. Sales reps of the company primarily use Gmail to communicate with customers via email. They are already using Gmail integration to see related Salesforce data while viewing emails. However, they are currently adding inbound and outbound emails to related records like accounts and contacts manually in Salesforce. Which feature of Sales Cloud Einstein can be utilized to automate this process?
+Choose 1 answer.
+---
+A. Einstein Email Sync
+B. Einstein Automated Emails
+C. Einstein Insights *
+D. Einstein Activity Capture
+---
+Einstein Activity Capture automatically captures emails and events from a connected Gmail account and adds them to the activity timeline of related Salesforce records, such as accounts and contacts. Einstein Insights displays insights related to accounts and opportunities. There is no feature called Einstein Automated Emails or Einstein Email Sync.
+---
+Outlook and Gmail Integration User Experiences;https://help.salesforce.com/articleView?id=email_int_experiences.htm&type=5
+Einstein Activity Capture for Sales Cloud Einstein;https://help.salesforce.com/articleView?id=aac_in_einstein.htm&type=5
+###
+C
+Sales Cloud Consultants offer services to various organizations. Which of the following organizations should use Person Accounts?
+Choose 2 answers.
+---
+A. Steadfast Gears & Bolts
+B. Main St. Community Bank *
+C. Fueldex Petrochemicals
+D. Platinum Fitness Gym *
+---
+Person Accounts are chosen for businesses that have transactions with individual consumers rather than other organizations. Person Accounts are mostly suitable for customers like online shoppers, gym members, bank customers, vacation travelers, or other individual consumers.
+---
+Person Accounts;https://help.salesforce.com/articleView?id=account_person.htm&type=5
+###
+How can product returns be dealt with?
+Choose 1 answer.
+---
+A. By reducing the product quantity on an activated order
+B. By creating a return order from the original order
+C. By creating a reduction order from the original order *
+D. By adding a new product to the order with a negative quantity
+---
+Reduction orders are created and linked to the original order. On the reduction order in Salesforce Classic, the product and quantity can be specified.
+---
+Add Products to a Reduction Order;https://help.salesforce.com/articleView?id=orderproductreduction_add.htm&type=5
+###
+C
+Cosmic Innovation would like to use multiple currencies in Salesforce, such as USD, GBP, and CAD. Several sales users of the company will need to create and view reports based on currency fields. Which of the following are important considerations related to the enablement of multiple currencies for this use case?
+Choose 3 answers.
+---
+A. The primary currency may reflect the default corporate currency. *
+B. The primary currency may reflect the currency selected for the record. *
+C. The secondary currency always reflects the personal default currency of the user running the report.
+D. The secondary currency reflects the personal default currency of the user running the report, or the currency specified in the report criteria. *
+E. The primary currency always reflects the primary currency specified on the 'Manage Currencies' page in Setup.
+---
+When multiple currencies is enabled, the primary currency in reports reflects either the default corporate currency or the currency selected for the record. On the other hand, the secondary currency reflects the personal default currency of the user running the report, or the currency specified in the report criteria. It is not possible to select the primary currency on the ‘Manage Currencies’ page in Setup.
+
+---
+Considerations for Enabling Multiple Currencies;https://help.salesforce.com/articleView?id=admin_enable_multicurrency_implications.htm&type=5
+Manage Multiple Currencies;https://help.salesforce.com/articleView?id=admin_currency.htm&type=5
+###
+Cosmic Gemina is a transportation company that has sales divisions in three countries, namely, France, Germany, and Italy. Each sales division has a sales manager who should be able to view and edit custom sales reports that have been created for their division. A separate report folder has been created for each sales division and shared with the Sales Manager. Which user permission and folder access level should be assigned to each sales manager for this requirement?
+Choose 1 answer.
+---
+A. 'Create and Customize Reports' permission and 'Editor' access level *
+B. 'Report Builder' permission and 'Editor' access level
+C. 'Manage Reports' permission and 'Collaborator' access level
+D. 'Customize Reports' permission and 'Collaborator' access level
+---
+Each sales manager should be granted the user permission of ‘Create and Customize Reports’ through a permission set, which would allow them to create, edit and delete reports in shared folders. The folder needs to be shared with each sales manager and they need to be given ‘Editor’ access to the report folder that contains their sales division’s performance reports. The ‘Editor’ access level would allow each sales manager to view, edit, save, rename, and delete the reports in the folder.
+---
+Editor Access to Report and Dashboard Folders;https://help.salesforce.com/articleView?id=analytics_folder_editor.htm&type=0
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---

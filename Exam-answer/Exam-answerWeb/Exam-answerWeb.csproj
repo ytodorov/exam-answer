@@ -1418,6 +1418,7 @@
     <Folder Include="Infrastructure\az100\" />
     <Folder Include="wwwroot\duplicates\" />
     <Folder Include="wwwroot\images\cisco\ICND1\" />
+    <Folder Include="wwwroot\images\microsoft\az-104\" />
   </ItemGroup>
 
 
@@ -1428,6 +1429,30 @@
 
   <ItemGroup>
     <None Update="Exams\adm-201.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104 - Copy %282%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104 - Copy %283%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104 - Copy %284%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104 - Copy %285%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104 - Copy %286%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104 - Copy.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-104.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\CRT251.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\az-100.txt">
