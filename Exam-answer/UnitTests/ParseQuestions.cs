@@ -50,7 +50,6 @@ namespace UnitTests
                 sb.Append(@$"
 <url>
   <loc>{baseAddress}/{exam.Provider}/{exam.Code}</loc>
-  <lastmod>2020-07-1T21:20:29+00:00</lastmod>
 </url>");
             }
 
@@ -61,15 +60,14 @@ namespace UnitTests
                     sb.Append(@$"
 <url>
   <loc>{baseAddress}/{exam.Provider}/{exam.Code}/question{i}</loc>
-  <lastmod>2020-07-1T21:20:29+00:00</lastmod>
 </url>");
                 }
             }
-
+            // <lastmod>2020-07-1T21:20:29+00:00</lastmod>
             sb.Append(@"
 </urlset>");
 
-            var res = sb.ToString().ToLowerInvariant().Replace("2020-07-1t21:20:29+00:00", "2020-07-1T21:20:29+00:00");
+            var res = sb.ToString().ToLowerInvariant(); //.Replace("2020-07-1t21:20:29+00:00", "2020-07-1T21:20:29+00:00");
             Debugger.Break();
         }
 

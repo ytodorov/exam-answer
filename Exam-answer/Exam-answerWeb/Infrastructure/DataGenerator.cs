@@ -386,21 +386,21 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(slf_c01);
             result.Add(slf_c01);
 
-            //ExamEntity az104 = new ExamEntity()
-            //{
-            //    Provider = "Microsoft",
-            //    Code = "AZ-104",
-            //    Name = "Microsoft Azure Administrator",
-            //    ExamProviderUrl = "https://www.exam-answer.com/microsoft",
-            //    ExamUrl = "https://www.exam-answer.com/microsoft/az-104",
-            //    PageTitle = "Exam AZ-104: Microsoft Azure Administrator",
-            //    PageDescription = "Prepare for Exam AZ-104: Microsoft Azure Administrator. Free demo questions with answers and explanations.",
-            //    Questions = GetQuestions("Exams\\az-104.txt"),
-            //    Order = 2,
-            //};
+            ExamEntity az104 = new ExamEntity()
+            {
+                Provider = "Microsoft",
+                Code = "AZ-104",
+                Name = "Microsoft Azure Administrator",
+                ExamProviderUrl = "https://www.exam-answer.com/microsoft",
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-104",
+                PageTitle = "Exam AZ-104: Microsoft Azure Administrator",
+                PageDescription = "Prepare for Exam AZ-104: Microsoft Azure Administrator. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\az-104.txt"),
+                Order = 2,
+            };
 
-            //context?.Exams?.Add(az104);
-            //result.Add(az104);
+            context?.Exams?.Add(az104);
+            result.Add(az104);
 
 
             ExamEntity az300 = new ExamEntity()
