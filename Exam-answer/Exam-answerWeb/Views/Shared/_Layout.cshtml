@@ -21,6 +21,7 @@
     <link rel="preconnect dns-prefetch" href="https://secure.trust-provider.com" crossorigin>
     <link rel="preconnect dns-prefetch" href="https://www.positivessl.com" crossorigin>
     <link rel="preconnect dns-prefetch" href="https://cdn.ampproject.org" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
     <partial name="_BoilerplateCssPartial.cshtml" />
     <partial name="_AmpCustomCssPartial.cshtml" />
@@ -35,10 +36,10 @@
     }
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    @*<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>*@
 </head>
 <body>
-    <amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>
+    @*<amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>*@
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
         <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
@@ -83,6 +84,7 @@
                             <header>Microsoft</header>
                             <ul class="a-dropdown-items list-reset m0 p0">
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-100")" class="text-decoration-none">AZ-100</a></li>
+                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-104")" class="text-decoration-none">AZ-104</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-300")" class="text-decoration-none">AZ-300</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-301")" class="text-decoration-none">AZ-301</a></li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/microsoft/az-400")" class="text-decoration-none">AZ-400</a></li>
@@ -97,7 +99,7 @@
                             <header>Salesforce</header>
                             <ul class="a-dropdown-items list-reset m0 p0">
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/adm-201")" class="text-decoration-none">ADM-201</a></li>
-                                <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/crt-251")" class="text-decoration-none">CRT-251</a></li>
+                                <li class="a-dropdown-item">@*<a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/crt-251")" class="text-decoration-none">CRT-251</a>*@</li>
                                 <li class="a-dropdown-item"><a href="@($"{Model?.PageBaseCanonicalUrl}/salesforce/salesforce-certified-field-service-lightning-consultant")" class="text-decoration-none">Salesforce Certified Field Service Lightning Consultant</a></li>
                             </ul>
                         </section>
