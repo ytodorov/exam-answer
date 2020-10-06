@@ -65,5 +65,67 @@ namespace Exam_answerWeb.Infrastructure
             List<QuestionViewModel> result = top3Distances.Select(s => s.Item2).ToList();
             return result;
         }
+
+        public static string GetPrefixAnswerLetter<T>(List<T> list, T member)
+        {
+            var answerIndex = list.IndexOf(member);
+            var prefixAnswerLetter = string.Empty;
+
+            switch (answerIndex)
+            {
+                case 0:
+                    prefixAnswerLetter = "A";
+                    break;
+                case 1:
+                    prefixAnswerLetter = "B";
+                    break;
+                case 2:
+                    prefixAnswerLetter = "C";
+                    break;
+                case 3:
+                    prefixAnswerLetter = "D";
+                    break;
+                case 4:
+                    prefixAnswerLetter = "E";
+                    break;
+                case 5:
+                    prefixAnswerLetter = "F";
+                    break;
+                case 6:
+                    prefixAnswerLetter = "G";
+                    break;
+                case 7:
+                    prefixAnswerLetter = "H";
+                    break;
+                case 8:
+                    prefixAnswerLetter = "I";
+                    break;
+                case 9:
+                    prefixAnswerLetter = "J";
+                    break;
+                case 10:
+                    prefixAnswerLetter = "K";
+                    break;
+                case 11:
+                    prefixAnswerLetter = "L";
+                    break;
+                case 12:
+                    prefixAnswerLetter = "M";
+                    break;
+                case 13:
+                    prefixAnswerLetter = "N";
+                    break;
+                case 14:
+                    prefixAnswerLetter = "O";
+                    break;
+                case 15:
+                    prefixAnswerLetter = "P";
+                    break;
+                default:
+                    break;
+            }
+
+            return prefixAnswerLetter;
+        }
     }
 }

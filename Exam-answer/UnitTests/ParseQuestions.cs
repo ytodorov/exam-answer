@@ -45,6 +45,11 @@ namespace UnitTests
   <loc>{baseAddress}/about</loc>  
 </url>");
 
+            sb.Append(@$"
+<url>
+  <loc>{baseAddress}/privacy</loc>  
+</url>");
+
             foreach (var exam in ExamsToCheck)
             {
                 sb.Append(@$"

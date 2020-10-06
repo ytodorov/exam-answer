@@ -1,0 +1,547 @@
+﻿###
+You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Convert the Azure Storage account to a BlockBlobStorage storage account.
+Does the solution meet the goal?
+---
+A. Yes
+B. No *
+---
+Not necessary to convert the account, instead move photo processing to an Azure Function triggered from the blob upload..
+Azure Storage events allow applications to react to events. Common Blob storage event scenarios include image or video processing, search indexing, or any file- oriented workflow.
+Note: Only storage accounts of kind StorageV2 (general purpose v2) and BlobStorage support event integration. Storage (general purpose v1) does not support integration with Event Grid.
+
+Azure Storage events allow applications to react to events, such as the creation and deletion of blobs. It does so without the need for complicated code or expensive and inefficient polling services. The best part is you only pay for what you use.
+
+Blob storage events are pushed using Azure Event Grid to subscribers such as Azure Functions, Azure Logic Apps, or even to your own http listener. Event Grid provides reliable event delivery to your applications through rich retry policies and dead-lettering.
+---
+Reacting to Blob storage events;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-overview
+###
+You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Move photo processing to an Azure Function triggered from the blob upload.
+Does the solution meet the goal?
+---
+A. Yes *
+B. No
+---
+To view in-depth examples of reacting to Blob storage events by using Azure functions, see these articles:
+---
+Tutorial: Automate resizing uploaded images using Event Grid;https://docs.microsoft.com/en-us/azure/event-grid/resize-images-on-storage-blob-upload-event?tabs=dotnet
+Tutorial: Implement the data lake capture pattern to update a Databricks Delta table;https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-events
+###
+You are developing an application that uses Azure Blob storage.
+The application must read the transaction logs of all the changes that occur to the blobs and the blob metadata in the storage account for auditing purposes. The changes must be in the order in which they occurred, include only create, update, delete, and copy operations and be retained for compliance reasons.
+You need to process the transaction logs asynchronously.
+What should you do?
+---
+A. Process all Azure Blob storage events by using Azure Event Grid with a subscriber Azure Function app.
+B. Enable the change feed on the storage account and process all changes for available events. *
+C. Process all Azure Storage Analytics logs for successful blob events.
+D. Use the Azure Monitor HTTP Data Collector API and scan the request body for successful blob events.
+---
+Change feed support in Azure Blob Storage
+The purpose of the change feed is to provide transaction logs of all the changes that occur to the blobs and the blob metadata in your storage account. The change feed provides ordered, guaranteed, durable, immutable, read-only log of these changes. Client applications can read these logs at any time, either in streaming or in batch mode. The change feed enables you to build efficient and scalable solutions that process change events that occur in your Blob Storage account at a low cost.
+The change feed is stored as blobs in a special container in your storage account at standard blob pricing cost. You can control the retention period of these files based on your requirements (See the conditions of the current release). Change events are appended to the change feed as records in the Apache Avro format specification: a compact, fast, binary format that provides rich data structures with inline schema. This format is widely used in the Hadoop ecosystem, Stream Analytics, and Azure Data Factory.
+---
+Change feed support in Azure Blob Storage;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-change-feed
+###
+You are developing an application to use Azure Blob storage. You have configured Azure Blob storage to include change feeds.
+A copy of your storage account must be created in another region. Data must be copied from the current storage account to the new storage account directly between the storage servers.
+You need to create a copy of the storage account in another region and copy the data.
+In which order should you perform the actions?
+
+1.Export a template.
+2.Modify the template by adding the target region and storage account name.
+3.Deploy the template to create the new storage account.
+4.Configure the new storage account.
+5.Move data to the new storage account.
+---
+1.2.3.4.5 *
+2.3.1.5.4
+1.4.3.2.5
+2.3.5.1.4
+---
+To move a storage account, create a copy of your storage account in another region. Then, move your data to that account by using AzCopy, or another tool of your choice.
+
+Export a template.
+Modify the template by adding the target region and storage account name.
+Deploy the template to create the new storage account.
+Configure the new storage account.
+Move data to the new storage account.
+Delete the resources in the source region.
+---
+Move an Azure Storage account to another region;https://docs.microsoft.com/en-us/azure/storage/common/storage-account-move?tabs=azure-portal
+###
+D
+You are developing an ASP.NET Core web application. You plan to deploy the application to Azure Web App for Containers.
+The application needs to store runtime diagnostic data that must be persisted across application restarts. You have the following code:
+az-204-q5.png
+You need to configure the application settings so that diagnostic data is stored as required.
+---
+value true for:;LOCALAPPDATA;WEBSITE_LOCALCACHE_ENABLED;DOTNET_HOSTING_OPTIMIZATION_CACHE;WEBSITE_ENABLE_APP_SERVICE_STORAGE *;
+value for DIAGDATA:;/home *;/local;D:\home;D:\local;
+---
+If WEBSITES_ENABLE_APP_SERVICE_STORAGE setting is unspecified or set to true, the /home/ directory will be shared across scale instances, and files written will persist across restarts. Explicitly setting WEBSITES_ENABLE_APP_SERVICE_STORAGE to false will disable the mount.
+---
+Custom containers;https://docs.microsoft.com/en-us/azure/app-service/faq-app-service-linux#custom-containers
+###
+You are developing a web app that is protected by Azure Web Application Firewall (WAF). All traffic to the web app is routed through an Azure Application
+Gateway instance that is used by multiple web apps. The web app address is contoso.azurewebsites.net.
+All traffic must be secured with SSL. The Azure Application Gateway instance is used by multiple web apps.
+You need to configure the Azure Application Gateway for the app.
+Which two actions should you perform? Each correct answer presents part of the solution.
+NOTE: Each correct selection is worth one point.
+---
+A. In the Azure Application Gateway's HTTP setting, enable the Use for App service setting. *
+B. Convert the web app to run in an Azure App service environment (ASE).
+C. Add an authentication certificate for contoso.azurewebsites.net to the Azure Application gateway.
+D. In the Azure Application Gateway's HTTP setting, set the value of the Override backend path option to contoso22.azurewebsites.net. *
+---
+The ability to specify a host override is defined in the HTTP settings and can be applied to any back-end pool during rule creation.
+The ability to derive the host name from the IP or FQDN of the back-end pool members. HTTP settings also provide an option to dynamically pick the host name from a back-end pool member's FQDN if configured with the option to derive host name from an individual back-end pool member.
+SSL termination and end to end SSL with multi-tenant services.
+In case of end to end SSL, trusted Azure services such as Azure App service web apps do not require whitelisting the backends in the application gateway.
+Therefore, there is no need to add any authentication certificates.
+---
+Application Gateway support for multi-tenant back ends such as App service;https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-web-app-overview
+Configure App Service with Application Gateway;https://docs.microsoft.com/en-US/azure/application-gateway/configure-web-app-portal
+###
+question 7
+D
+You are implementing a software as a service (SaaS) ASP.NET Core web service that will run as an Azure Web App. The web service will use an on-premises
+SQL Server database for storage. The web service also includes a WebJob that processes data updates. Four customers will use the web service.
+✑ Each instance of the WebJob processes data for a single customer and must run as a singleton instance.
+✑ Each deployment must be tested by using deployment slots prior to serving production data.
+✑ Azure costs must be minimized.
+✑ Azure resources must be located in an isolated network.
+You need to configure the App Service plan for the Web App.
+How should you configure the App Service plan?
+---
+Number of VM instances:;2;4 *;8;16;
+Pricing tier:;Isolated *;Standard;Premium;Consumption;
+---
+---
+Announcing App Service Isolated, more power, scale and ease of use;https://azure.microsoft.com/sv-se/blog/announcing-app-service-isolated-more-power-scale-and-ease-of-use/
+###
+D
+You are a developer for a software as a service (SaaS) company that uses an Azure Function to process orders. The Azure Function currently runs on an Azure
+Function app that is triggered by an Azure Storage queue.
+You are preparing to migrate the Azure Function to Kubernetes using Kubernetes-based Event Driven Autoscaling (KEDA).
+You need to configure Kubernetes Custom Resource Definitions (CRD) for the Azure Function.
+Which CRDs should you configure?
+---
+Azure Function code:;Secret;Deployment;ScaledObject;TriggerAuthentication;
+Pooling Interval:;Azure Function code:;Secret;Deployment;ScaledObject;TriggerAuthentication;
+Azure Storage connection string:;Azure Function code:;Secret;Deployment;ScaledObject;TriggerAuthentication;
+---
+Deployment - To deploy Azure Functions to Kubernetes use the func kubernetes deploy command has several attributes that directly control how our app scales, once it is deployed to Kubernetes.
+ScaledObject - With --polling-interval, we can control the interval used by KEDA to check Azure Service Bus Queue for messages.
+Secret - Store connection strings in Kubernetes Secrets.
+
+KEDA is a Kubernetes-based Event Driven Autoscaler. With KEDA, you can drive the scaling of any container in Kubernetes based on the number of events needing to be processed.
+
+KEDA is a single-purpose and lightweight component that can be added into any Kubernetes cluster. KEDA works alongside standard Kubernetes components like the Horizontal Pod Autoscaler and can extend functionality without overwriting or duplication. With KEDA you can explicitly map the apps you want to use event-driven scale, with other apps continuing to function. This makes KEDA a flexible and safe option to run alongside any number of any other Kubernetes applications or frameworks.
+---
+Serverless Workloads In Kubernetes With KEDA;https://www.thinktecture.com/en/kubernetes/serverless-workloads-with-keda/serverless-workloads-with-keda/
+Kubernetes Event-driven Autoscaling;https://keda.sh/
+###
+D
+---
+You are creating a CLI script that creates an Azure web app and related services in Azure App Service. The web app uses the following variables:
+$gitrepo = https://github.com/contoso/webapp
+@webappname = Webapp1103
+You need to automatically deploy code from Git-Hub to the newly created web app.
+How should you complete the script?
+az group create --location westeurope --name myResourceGroup
+PLACEHOLDER1 --name $webappname --resource-group myResourceGroup --sku FREE
+PLACEHOLDER2 --name $webappname --resource-group myResourceGroup
+PLACEHOLDER3 PLACEHOLDER4 source config --name $webappname --resourceGroup PLACEHOLDER5
+---
+PLACEHOLDER1:;az web app create;az appservice plan create *;az webapp deployment;az group delete;
+PLACEHOLDER2:;az web app create *;az appservice plan create;az webapp deployment;az group delete;
+PLACEHOLDER3:;--repo-url $gitrepo --branch master --manual-integration;git clone $gitrepo;--plan $webappname *;
+PLACEHOLDER4:;az web app create;az appservice plan create;az webapp deployment *;az group delete;
+PLACEHOLDER5:;--repo-url $gitrepo --branch master --manual-integration *;git clone $gitrepo;--plan $webappname;
+---
+az appservice plan create - The azure group creates command successfully returns JSON result. Now we can use resource group to create a azure app service plan
+az webapp create - Create a new web app..
+--plan $webappname - ..with the serviceplan we created
+az webapp deployment - Continuous Delivery with GitHub.
+Example: az webapp deployment source config --name firstsamplewebsite1 --resource-group websites--repo-url $gitrepo --branch master --git-token $token
+-repo-url $gitrepo --branch master --manual-integration
+---
+Create an App Service app and deploy code to a staging environment using Azure CLI;https://docs.microsoft.com/en-us/azure/app-service/scripts/cli-deploy-staging-environment
+###
+You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Trigger the photo processing from Blob storage events.
+Does the solution meet the goal?
+---
+A. Yes *
+B. No
+---
+You need to catch the triggered event, so move the photo processing to an Azure Function triggered from the blob upload.
+Events are pushed using Azure Event Grid to subscribers such as Azure Functions, Azure Logic Apps, or even to your own http listener.
+---
+Reacting to Blob storage events;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-overview
+###
+You develop Azure solutions.
+You must connect to a No-SQL globally-distributed database by using the .NET API.
+You need to create an object to configure and execute requests in the database.
+Which code segment should you use?
+---
+A. new Container(EndpointUri, PrimaryKey);
+B. new Database(Endpoint, PrimaryKey);
+C. new CosmosClient(EndpointUri, PrimaryKey);
+---
+// Create a new instance of the Cosmos Client
+this.cosmosClient = new CosmosClient(EndpointUri, PrimaryKey);
+---
+Tutorial: Build a .NET console app to manage data in Azure Cosmos DB SQL API account;https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-get-started
+###
+D
+You are building a traffic monitoring system that monitors traffic along six highways. The system produces time series analysis-based reports for each highway.
+Data from traffic sensors are stored in Azure Event Hub.
+Traffic data is consumed by four departments. Each department has an Azure Web App that displays the time series-based reports and contains a WebJob that processes the incoming data from Event Hub. All Web Apps run on App Service Plans with three instances.
+Data throughput must be maximized. Latency must be minimized.
+You need to implement the Azure Event Hub.
+Which settings should you use? 
+---
+Number of partitions:;3;4;6 *;12;
+Partition Key:;Highway *;Department;Timestamp;VM name;
+---
+The number of partitions is specified at creation and must be between 2 and 32. There are 6 highways.
+Event Hubs provides message streaming through a partitioned consumer pattern in which each consumer only reads a specific subset, or partition, of the message stream. This pattern enables horizontal scale for event processing and provides other stream-focused features that are unavailable in queues and topics.
+A partition is an ordered sequence of events that is held in an event hub. As newer events arrive, they are added to the end of this sequence. A partition can be thought of as a "commit log."
+Event Hubs retains data for a configured retention time that applies across all partitions in the event hub. Events expire on a time basis; you cannot explicitly delete them. Because partitions are independent and contain their own sequence of data, they often grow at different rates.
+---
+Features and terminology in Azure Event Hubs;https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features
+###
+D
+You are developing a microservices solution. You plan to deploy the solution to a multinode Azure Kubernetes Service (AKS) cluster.
+You need to deploy a solution that includes the following features:
+✑ reverse proxy capabilities
+✑ configurable traffic routing
+✑ TLS termination with a custom certificate
+Which component should you use?
+---
+DeploySolution;Helm *;Draft;Brigade;KubeCtl;Ingress Controller;CoreDNS;Virtual Kubelet;
+View cluster and external IP addressing;Helm;Draft;Brigade;KubeCtl *;Ingress Controller;CoreDNS;Virtual Kubelet;
+Implement a single, public IP endpoint that is routed to multiple microservices;Helm;Draft;Brigade;KubeCtl;Ingress Controller *;CoreDNS;Virtual Kubelet;
+---
+Helm - To create the ingress controller, use Helm to install nginx-ingress.
+kubectl - To find the cluster IP address of a Kubernetes pod, use the kubectl get pod command on your local machine, with the option -o wide.
+Ingress Controller - An ingress controller is a piece of software that provides reverse proxy, configurable traffic routing, and TLS termination for Kubernetes services. Kubernetes ingress resources are used to configure the ingress rules and routes for individual Kubernetes services.
+---
+Create an ingress controller in Azure Kubernetes Service (AKS);https://docs.microsoft.com/bs-cyrl-ba/azure/aks/ingress-basic
+###
+Your company is developing an Azure API.
+You need to implement authentication for the Azure API. You have the following requirements:
+✑ All API calls must be secure.
+✑ Callers to the API must not send credentials to the API.
+Which authentication mechanism should you use?
+---
+A. Basic
+B. Anonymous
+C. Managed identity *
+D. Client certificate
+---
+Use the authentication-managed-identity policy to authenticate with a backend service using the managed identity of the API Management service. This policy essentially uses the managed identity to obtain an access token from Azure Active Directory for accessing the specified resource. After successfully obtaining the token, the policy will set the value of the token in the Authorization header using the Bearer scheme.
+---
+API Management authentication policies;https://docs.microsoft.com/bs-cyrl-ba/azure/api-management/api-management-authentication-policies
+###
+You are a developer for a SaaS company that offers many web services.
+All web services for the company must meet the following requirements:
+✑ Use API Management to access the services
+✑ Use OpenID Connect for authentication
+
+Prevent anonymous usage -
+
+A recent security audit found that several web services can be called without any authentication.
+Which API Management policy should you implement?
+---
+A. jsonp
+B. authentication-certificate
+C. check-header
+D. validate-jwt
+---
+Add the validate-jwt policy to validate the OAuth token for every incoming request.
+The validate-jwt policy enforces existence and validity of a JWT extracted from either a specified HTTP Header or a specified query parameter.
+---
+Validate JWT;https://docs.microsoft.com/en-us/azure/api-management/api-management-access-restriction-policies#ValidateJWT
+###
+https://www.examtopics.com/exams/microsoft/az-204/view/5/ question 3
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---
+###
+---
+---
+---

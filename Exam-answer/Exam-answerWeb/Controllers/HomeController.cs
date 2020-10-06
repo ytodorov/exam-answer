@@ -65,7 +65,7 @@ namespace Exam_answerWeb.Controllers
         {
             BaseViewModel baseViewModel = new BaseViewModel()
             {
-                PageCanonicalUrl = $"{pageBaseCanonicalUrl}/contact",
+                PageCanonicalUrl = $"{pageBaseCanonicalUrl}/privacy",
                 PageBaseCanonicalUrl = pageBaseCanonicalUrl,
                 PageH1 = "Privacy",
                 PageDescription = "Please read our privacy policy.",
