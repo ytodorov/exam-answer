@@ -197,21 +197,21 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(adm201);
             result.Add(adm201);
 
-            ExamEntity scfslc = new ExamEntity()
-            {
-                Provider = "Salesforce",
-                ExamProviderUrl = "https://www.exam-answer.com/salesforce",
-                ExamUrl = "https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant",
-                Code = "Salesforce-Certified-Field-Service-Lightning-Consultant",
-                Name = "Salesforce Certified Field Service Lightning Consultant",
-                PageTitle = "Salesforce Certified Field Service Lightning Consultant",
-                PageDescription = "Prepare for Salesforce Certified Field Service Lightning Consultant. Free demo questions with answers and explanations.",
-                Questions = qeList,
-                Order = 2,
-            };
+            //ExamEntity scfslc = new ExamEntity()
+            //{
+            //    Provider = "Salesforce",
+            //    ExamProviderUrl = "https://www.exam-answer.com/salesforce",
+            //    ExamUrl = "https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant",
+            //    Code = "Salesforce-Certified-Field-Service-Lightning-Consultant",
+            //    Name = "Salesforce Certified Field Service Lightning Consultant",
+            //    PageTitle = "Salesforce Certified Field Service Lightning Consultant",
+            //    PageDescription = "Prepare for Salesforce Certified Field Service Lightning Consultant. Free demo questions with answers and explanations.",
+            //    Questions = qeList,
+            //    Order = 2,
+            //};
 
-            context?.Exams?.Add(scfslc);
-            result.Add(scfslc);
+            //context?.Exams?.Add(scfslc);
+            //result.Add(scfslc);
 
             //ExamEntity crt251 = new ExamEntity()
             //{

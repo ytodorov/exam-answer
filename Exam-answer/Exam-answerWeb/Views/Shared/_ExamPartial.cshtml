@@ -1,5 +1,8 @@
 ﻿@model ExamViewModel
-
+@{
+    var configuration = ViewContext.HttpContext.RequestServices.GetService<IConfiguration>();
+    var pageBaseCanonicalUrl = configuration.GetValue(typeof(string), "PageBaseCanonicalUrl")?.ToString();
+}
 <div class="k-block k-info-colored" style="text-align: center;">
     <div class="k-header k-info-colored">
         <h1>
@@ -52,3 +55,20 @@
         <partial name="~/views/shared/question.cshtml" model="@Model.Questions[i]" />
     }
 }
+<script type="application/ld+json">
+    {
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [{
+    "@@type": "ListItem",
+    "position": 1,
+    "name": "@Model?.Provider?.ToLowerInvariant()",
+    "item": "@($"{pageBaseCanonicalUrl}/{Model?.Provider?.ToLowerInvariant()}")"
+    },{
+    "@@type": "ListItem",
+    "position": 2,
+    "name": "@Model?.Code?.ToLowerInvariant()",
+    "item": "@($"{pageBaseCanonicalUrl}/{Model?.Provider?.ToLowerInvariant()}/{Model?.Code?.ToLowerInvariant()}")"
+    }]
+    }
+</script>

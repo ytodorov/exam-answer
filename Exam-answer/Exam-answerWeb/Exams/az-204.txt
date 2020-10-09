@@ -277,51 +277,228 @@ The validate-jwt policy enforces existence and validity of a JWT extracted from 
 ---
 Validate JWT;https://docs.microsoft.com/en-us/azure/api-management/api-management-access-restriction-policies#ValidateJWT
 ###
-https://www.examtopics.com/exams/microsoft/az-204/view/5/ question 3
+D
+Contoso, Ltd. provides an API to customers by using Azure API Management (APIM). The API authorizes users with a JWT token.
+You must implement response caching for the APIM gateway. The caching mechanism must detect the user ID of the client that accesses data for a given location and cache the response for that user ID.
+You need to add the following policies to the policies file:
+✑ a set-variable policy to store the detected user identity
+✑ a cache-lookup-value policy
+✑ a cache-store-value policy
+a find-and-replace policy to update the response body with the user profile information
+
+To which policy section should you add the policies? 
 ---
+Set-variable;Inbound *;Outbound;
+Cache-lookup-value;Inbound *;Outbound;
+Cache-store-value;Inbound;Outbound *;
+Find-and-replace;Inbound;Outbound *;
 ---
+The set-variable policy declares a context variable and assigns it a value specified via an expression or a string literal. if the expression contains a literal it will be converted to a string and the type of the value will be System.String.
+Use the cache-lookup-value policy to perform cache lookup by key and return a cached value. The key can have an arbitrary string value and is typically provided using a policy expression.
+The cache-store-value performs cache storage by key. The key can have an arbitrary string value and is typically provided using a policy expression.
+The find-and-replace policy finds a request or response substring and replaces it with a different substring.
 ---
+API Management caching policies;https://docs.microsoft.com/en-us/azure/api-management/api-management-caching-policies
 ###
+You develop a web application.
+You need to register the application with an active Azure Active Directory (Azure AD) tenant.
+Which three actions should you perform in sequence?
+1. Select Manifest from the middle-tier service registration
+2. In Enterprise Applications, select New application
+3. Add a Cryptographic key
+4. Create a new application and provide the name, account type and redirect URL
+5. Select the Azure AD instance
+6. Use an access token to access the secure resource
+7. In App Registrations, select New registration
 ---
+7,5,4 *
+2,5,4
+2,1,3
+7,3,1
 ---
+Sign in to the Azure portal.
+
+If you have access to multiple tenants, use the Directory + subscription filter  in the top menu to select the tenant in which you want to register an application.
+
+Search for and select Azure Active Directory.
+
+Under Manage, select App registrations, then New registration.
+
+Enter a Name for your application. Users of your app might see this name, and you can change it later.
+
+Specify who can use the application, sometimes referred to as the sign-in audience.
+
+Enter Redirect URI (optional)
+
+Select Register to complete the initial app registration.
 ---
+Quickstart: Register an application with the Microsoft identity platform;https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
 ###
+C
+You have a new Azure subscription. You are developing an internal website for employees to view sensitive data. The website uses Azure Active Directory (Azure AD) for authentication.
+You need to implement multifactor authentication for the website.
+Which two actions should you perform? Each correct answer presents part of the solution.
+NOTE: Each correct selection is worth one point.
 ---
+A. Configure the website to use Azure AD B2C.
+B. In Azure AD, create a new conditional access policy. *
+C. Upgrade to Azure AD Premium. *
+D. In Azure AD, enable application proxy.
+E. In Azure AD conditional access, enable the baseline policy.
 ---
+MFA Enabled by conditional access policy. It is the most flexible means to enable two-step verification for your users. Enabling using conditional access policy only works for Azure MFA in the cloud and is a premium feature of Azure AD.
+Multi-Factor Authentication comes as part of the following offerings:
+Azure Active Directory Premium licenses - Full featured use of Azure Multi-Factor Authentication Service (Cloud) or Azure Multi-Factor Authentication Server (On-premises).
+Multi-Factor Authentication for Office 365
+Azure Active Directory Global Administrators
 ---
+Plan an Azure Multi-Factor Authentication deployment;https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-getstarted
 ###
+C
+You are developing an ASP.NET Core Web API web service. The web service uses Azure Application Insights for all telemetry and dependency tracking. The web service reads and writes data to a database other than Microsoft SQL Server.
+You need to ensure that dependency tracking works for calls to the third-party database.
+Which two dependency telemetry properties should you use? Each correct answer presents part of the solution.
+NOTE: Each correct selection is worth one point.
+---
+A. Telemetry.Context.Cloud.RoleInstance
+B. Telemetry.Id *
+C. Telemetry.Name
+D. Telemetry.Context.Operation.Id *
+E. Telemetry.Context.Session.Id
 ---
 ---
----
+Track custom operations with Application Insights .NET SDK;https://docs.microsoft.com/en-us/azure/azure-monitor/app/custom-operations-tracking#enqueue
 ###
+C
+You are using Azure Front Door Service.
+You are expecting inbound files to be compressed by using Brotli compression. You discover that inbound XML files are not compressed. The files are 9 megabytes (MB) in size.
+You need to determine the root cause for the issue.
+To answer, select the appropriate options in the answer area.
+Choose all that apply:
 ---
+The file MIME type is supported by the service *
+Edge nodes must be purged of all cache assets
+The compression type is supported *
 ---
+Front Door can dynamically compress content on the edge, resulting in a smaller and faster response to your clients. All files are eligible for compression. However, a file must be of a MIME type that is eligible for compression list.
+Sometimes you may wish to purge cached content from all edge nodes and force them all to retrieve new updated assets. This might be due to updates to your web application, or to quickly update assets that contain incorrect information.
+These profiles support the following compression encodings: Gzip (GNU zip), Brotli
 ---
+Caching with Azure Front Door;https://docs.microsoft.com/en-us/azure/frontdoor/front-door-caching
 ###
+D
+You are developing an Azure App Service hosted ASP.NET Core web app to deliver video on-demand streaming media. You enable an Azure Content Delivery
+Network (CDN) Standard for the web endpoint. Customer videos are downloaded from the web app by using the following example URL.: http://www.contoso.com/ content.mp4?quality=1
+All media content must expire from the cache after one hour. Customer videos with varying quality must be delivered to the closest regional point of presence (POP) node.
+You need to configure Azure CDN caching rules.
+Which options should you use?
 ---
+Caching behavior:;Bypass cache;Override *;Set if missing;
+Cache expiration duration:;1 second;1 minute;1 hour *;1 day;
+Query string caching behavior:;Ignore query strings;Bypass caching for query strings;Cache every unique URL *;
 ---
+Override: Ignore origin-provided cache duration; use the provided cache duration instead. This will not override cache-control: no-cache. Set if missing: Honor origin-provided cache-directive headers, if they exist; otherwise, use the provided cache duration.
+All media content must expire from the cache after one hour.
+Cache every unique URL: In this mode, each request with a unique URL, including the query string, is treated as a unique asset with its own cache. For example, the response from the origin server for a request for example.ashx?q=test1 is cached at the POP node and returned for subsequent caches with the same query string. A request for example.ashx?q=test2 is cached as a separate asset with its own time-to-live setting.
 ---
+Control Azure CDN caching behavior with caching rules;https://docs.microsoft.com/en-us/azure/cdn/cdn-caching-rules
 ###
+C
+You develop a web app that uses tier D1 app service plan by using the Web Apps feature of Microsoft Azure App Service.
+Spikes in traffic have caused increases in page load times.
+You need to ensure that the web app automatically scales when CPU load is about 85 percent and minimize costs.
+Which four actions should you perform in sequence?
+1.Configure the web app to the Premium App Service tier.
+2. Configure the web app to the Standard App Service tier.
+3. Enable autoscaling on the web-app.
+4. Add a Scale rule.
+5. Switch to an Azure App Services consumption plan.
+6. Configure a Scale condition
 ---
+2,3,6,4 *
+1,3,6,4
+5,3,4,6
+2,3,3,6
 ---
+The Standard tier supports auto-scaling, and we should minimize the cost.
 ---
+Get started with Autoscale in Azure;https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-get-started
 ###
+You are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.
+You have the following requirements:
+✑ Queue size must not grow larger than 80 gigabytes (GB).
+✑ Use first-in-first-out (FIFO) ordering of messages.
+✑ Minimize Azure costs.
+You need to implement the messaging solution.
+Solution: Use the .Net API to add a message to an Azure Service Bus Queue from the mobile application. Create an Azure Function App that uses an Azure
+Service Bus Queue trigger.
+Does the solution meet the goal?
+---
+Yes *
+No
 ---
 ---
----
+Storage queues and Service Bus queues - compared and contrasted;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
 ###
+You are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce 2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.
+You must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.
+You need to implement a solution to receive the device data.
+Solution: Provision an Azure Notification Hub. Register all devices with the hub.
+Does the solution meet the goal?
 ---
+Yes
+No *
 ---
+Service Bus is intended for traditional enterprise applications. These enterprise applications require transactions, ordering, duplicate detection, and instantaneous consistency. Service Bus enables cloud-native applications to provide reliable state transition management for business processes. When handling high-value messages that cannot be lost or duplicated, use Azure Service Bus. Service Bus also facilitates highly secure communication across hybrid cloud solutions and can connect existing on-premises systems to cloud solutions.
+
+Service Bus is a brokered messaging system. It stores messages in a "broker" (for example, a queue) until the consuming party is ready to receive the messages.
+
+It has the following characteristics:
+
+reliable asynchronous message delivery (enterprise messaging as a service) that requires polling
+advanced messaging features like FIFO, batching/sessions, transactions, dead-lettering, temporal control, routing and filtering, and duplicate detection
+at least once delivery
+optional in-order delivery
 ---
+Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
 ###
+You are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce 2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.
+You must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.
+You need to implement a solution to receive the device data.
+Solution: Provision an Azure Service Bus. Configure a topic to receive the device data by using a correlation filter.
+Does the solution meet the goal?
 ---
+Yes *
+No
 ---
+Service Bus is intended for traditional enterprise applications. These enterprise applications require transactions, ordering, duplicate detection, and instantaneous consistency. Service Bus enables cloud-native applications to provide reliable state transition management for business processes. When handling high-value messages that cannot be lost or duplicated, use Azure Service Bus. Service Bus also facilitates highly secure communication across hybrid cloud solutions and can connect existing on-premises systems to cloud solutions.
+
+Service Bus is a brokered messaging system. It stores messages in a "broker" (for example, a queue) until the consuming party is ready to receive the messages.
+
+It has the following characteristics:
+
+reliable asynchronous message delivery (enterprise messaging as a service) that requires polling
+advanced messaging features like FIFO, batching/sessions, transactions, dead-lettering, temporal control, routing and filtering, and duplicate detection
+at least once delivery
+optional in-order delivery
 ---
+Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
 ###
+You are developing an Azure solution to collect point-of-sale (POS) device data from 2,000 stores located throughout the world. A single device can produce 2 megabytes (MB) of data every 24 hours. Each store location has one to five devices that send data.
+You must store the device data in Azure Blob storage. Device data must be correlated based on a device identifier. Additional stores are expected to open in the future.
+You need to implement a solution to receive the device data.
+Solution: Provision an Azure Event Grid. Configure event filtering to evaluate the device identifier.
+Does the solution meet the goal?
 ---
+Yes
+No *
 ---
+Instead use an Azure Service Bus, which is used order processing and financial transactions.
+Note: An event is a lightweight notification of a condition or a state change. Event hubs is usually used reacting to status changes.
 ---
+Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
 ###
+https://www.examtopics.com/exams/microsoft/az-204/view/8/ question 5
 ---
 ---
 ---

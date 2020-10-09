@@ -304,26 +304,30 @@
 </amp-accordion>
 <partial name="_PrevNextPartial" />
 <hr />
-<script type="application/ld+json">
-    {
-    "@@context": "https://schema.org",
-    "@@type": "BreadcrumbList",
-    "itemListElement": [{
-    "@@type": "ListItem",
-    "position": 1,
-    "name": "@Model?.Exam?.Provider?.ToLowerInvariant()",
-    "item": "@($"{pageBaseCanonicalUrl}/{Model?.Exam?.Provider?.ToLowerInvariant()}")"
-    },{
-    "@@type": "ListItem",
-    "position": 2,
-    "name": "@Model?.Exam?.Code?.ToLowerInvariant()",
-    "item": "@($"{pageBaseCanonicalUrl}/{Model?.Exam?.Provider?.ToLowerInvariant()}/{Model?.Exam?.Code?.ToLowerInvariant()}")"
-    },{
-    "@@type": "ListItem",
-    "position": 3,
-    "name": "@($"question {questionNumber}")",
-    "item": "@($"{pageBaseCanonicalUrl}/{Model?.Exam?.Provider?.ToLowerInvariant()}/{Model?.Exam?.Code?.ToLowerInvariant()}/question{questionNumber}")"
-    }]
-    }
-</script>
+@if (Context.Request.Path.ToString().Contains("/question", StringComparison.InvariantCultureIgnoreCase))
+{
+    <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [{
+        "@@type": "ListItem",
+        "position": 1,
+        "name": "@Model?.Exam?.Provider?.ToLowerInvariant()",
+        "item": "@($"{pageBaseCanonicalUrl}/{Model?.Exam?.Provider?.ToLowerInvariant()}")"
+        },{
+        "@@type": "ListItem",
+        "position": 2,
+        "name": "@Model?.Exam?.Code?.ToLowerInvariant()",
+        "item": "@($"{pageBaseCanonicalUrl}/{Model?.Exam?.Provider?.ToLowerInvariant()}/{Model?.Exam?.Code?.ToLowerInvariant()}")"
+        },{
+        "@@type": "ListItem",
+        "position": 3,
+        "name": "@($"question {questionNumber}")",
+        "item": "@($"{pageBaseCanonicalUrl}/{Model?.Exam?.Provider?.ToLowerInvariant()}/{Model?.Exam?.Code?.ToLowerInvariant()}/question{questionNumber}")"
+        }]
+        }
+    </script>
+}
+
 
