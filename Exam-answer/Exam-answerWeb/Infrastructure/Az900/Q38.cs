@@ -35,7 +35,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new AnswerEntity()
                 {
                     Text = "No change is needed.",
-                    IsCorrect = true
+                    IsCorrect = false
                 },
                 new AnswerEntity()
                 {
@@ -45,7 +45,7 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new AnswerEntity()
                 {
                     Text = "Continues to function normally.",
-                    IsCorrect = false
+                    IsCorrect = true
                 },
                 new AnswerEntity()
                 {

@@ -498,54 +498,340 @@ Note: An event is a lightweight notification of a condition or a state change. E
 ---
 Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
 ###
-https://www.examtopics.com/exams/microsoft/az-204/view/8/ question 5
+D
+You manage several existing Logic Apps.
+You need to change definitions, add new logic, and optimize these apps on a regular basis.
+What should you use? 
 ---
+Edit B2B workflows:;Logic Apps Designer;Code View Editor;Enterprise Intergration Pack *;
+Edit definitions in JSON:;Logic Apps Designer;Code View Editor *;Enterprise Intergration Pack;
+Visually and functionality:;Logic Apps Designer *;Code View Editor;Enterprise Intergration Pack;
 ---
+For business-to-business (B2B) solutions and seamless communication between organizations, you can build automated scalable enterprise integration workflows by using the Enterprise Integration Pack (EIP) with Azure Logic Apps.
+Edit JSON - Azure portal -
+1. Sign in to the Azure portal.
+2. From the left menu, choose All services. In the search box, find "logic apps", and then from the results, select your logic app.
+3. On your logic app's menu, under Development Tools, select Logic App Code View.
+4. The Code View editor opens and shows your logic app definition in JSON format.
 ---
+B2B enterprise integration solutions with Azure Logic Apps and Enterprise Integration Pack;https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-enterprise-integration-overview
+Create, edit, or extend JSON for logic app workflow definitions in Azure Logic Apps;https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-author-definitions
 ###
+A company is developing a solution that allows smart refrigerators to send temperature information to a central location. You have an existing Service Bus.
+The solution must receive and store message until they can be processed. You create an Azure Service Bus Instance by providing a name, pricing tier, subscription, resource group, and location.
+You need to complete the configuration.
+Which Azure CLI or PowerShell command should you run?
 ---
+az servicebus queue create --resource-group fridge-group --namespace-name fridge-ns --name fridge-q *
+New-AzureRmResourceGroup -Name fridge-rg -Location fridge-loc
+New-AzureRmServiceBusNamespace -ResourceGroupName fridge-loc -Location fridge-loc
+connectionString=$(az servicebus namespace authorization-rule keys list --resource-group $resourceGroupName --namespace-name $namespaceName --name RootManageSharedAccessKey --query primaryConnectionString --output tsv)
 ---
+Run the following command to create a queue in the namespace: az servicebus queue create --resource-group ContosoRG --namespace-name ContosoSBusNS --name ContosoOrdersQueue
 ---
+C
+You are working for Contoso, Ltd.
+You define an API Policy object by using the following XML markup:
+Use the Azure CLI to create a Service Bus namespace and a queue;https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-cli
 ###
+<set-variable name="bodySize" value="@(context.Request.Headers["Content-Length"][0])" />
+<choose>
+    <when condition="@(int.Parse(context.Variables.GetValueOrDefault<string>("bodySize")) < 512 000)">
+    </when>
+    <otherwise>
+        <rewrite-uri template = "/put" />
+        <set-backend-service base-url="http://contoso.com/api/9.1/" />
+    </otherwise>
+</choose>
+Choose all that apply:
 ---
+The XML segment belongs in the <inbound> section of the policy. *
+If the body size is >256k, an error will occur.
+If the request is http://contoso/com/api/9.2/, the policy will retain the higher version
 ---
+The choose policy applies enclosed policy statements based on the outcome of evaluation of Boolean expressions, similar to an if-then-else or a switch construct in a programming language.
+<choose>
+    <when condition="Boolean expression | Boolean constant">
+        <!— one or more policy statements to be applied if the above condition is true  -->
+    </when>
+    <when condition="Boolean expression | Boolean constant">
+        <!— one or more policy statements to be applied if the above condition is true  -->
+    </when>
+    <otherwise>
+        <!— one or more policy statements to be applied if none of the above conditions are true  -->
+</otherwise>
+</choose>
 ---
+API Management advanced policies:https://docs.microsoft.com/en-us/azure/api-management/api-management-advanced-policies#choose
 ###
+C
+You are developing a solution that will use Azure messaging services.
+You need to ensure that the solution uses a publish-subscribe model and eliminates the need for constant polling.
+What are three possible ways to achieve the goal? Each correct answer presents a complete solution.
 ---
+A. Service Bus *
+B. Event Hub *
+C. Event Grid *
+D. Queue
 ---
+Event Hubs is a fully managed, real-time data ingestion service that’s simple, trusted, and scalable.
+It is strongly recommended to use available messaging products and services that support a publish-subscribe model, rather than building your own. In Azure, consider using Service Bus or Event Grid. Other technologies that can be used for pub/sub messaging include Redis, RabbitMQ, and Apache Kafka.
 ---
+Publisher-Subscriber pattern;https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
 ###
+A company is implementing a publish-subscribe (Pub/Sub) messaging component by using Azure Service Bus. You are developing the first subscription application.
+In the Azure portal you see that messages are being sent to the subscription for each topic. You create and initialize a subscription client object by supplying the correct details, but the subscription application is still not consuming the messages.
+You need to ensure that the subscription client processes all messages.
+Which code segment should you use?
 ---
+A. await subscriptionClient.AddRuleAsync(new RuleDescription(RuleDescription.DefaultRuleName, new TrueFilter()));
+B. subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
+C. await subscriptionClient.CloseAsync();
+D. subscriptionClient.RegisterMessageHandler(ProcessMessageAsync, messageHandlerOptions); *
 ---
+Using topic client, call RegisterMessageHandler which is used to receive messages continuously from the entity. It registers a message handler and begins a new thread to receive messages. This handler is waited on every time a new message is received by the receiver. subscriptionClient.RegisterMessageHandler(ReceiveMessagesAsync, messageHandlerOptions);
 ---
+Azure Service Bus Topic And Subscription (Pub-Sub);https://www.c-sharpcorner.com/article/azure-service-bus-topic-and-subscription-pub-sub/
 ###
+You are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.
+You have the following requirements:
+✑ Queue size must not grow larger than 80 gigabytes (GB).
+✑ Use first-in-first-out (FIFO) ordering of messages.
+✑ Minimize Azure costs.
+You need to implement the messaging solution.
+Solution: Use the .Net API to add a message to an Azure Storage Queue from the mobile application. Create an Azure VM that is triggered from Azure Storage
+Queue events.
+Does the solution meet the goal?
 ---
+A. Yes
+B. No *
 ---
+Don't use a VM, instead create an Azure Function App that uses an Azure Service Bus Queue trigger.
 ---
+Create a function triggered by Azure Queue storage;https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-storage-queue-triggered-function
 ###
+You are developing an Azure Service application that processes queue data when it receives a message from a mobile application. Messages may not be sent to the service consistently.
+You have the following requirements:
+✑ Queue size must not grow larger than 80 gigabytes (GB).
+✑ Use first-in-first-out (FIFO) ordering of messages.
+✑ Minimize Azure costs.
+You need to implement the messaging solution.
+Solution: Use the .Net API to add a message to an Azure Service Bus Queue from the mobile application. Create an Azure Windows VM that is triggered from
+Azure Service Bus Queue.
+Does the solution meet the goal?
 ---
+A. Yes
+B. No *
 ---
+Don't use a VM, instead create an Azure Function App that uses an Azure Service Bus Queue trigger.
 ---
+Create a function triggered by Azure Queue storage;https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-storage-queue-triggered-function
 ###
+C
+ContentAnalysisService -
+The company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.
+You must create an Azure Function named CheckUserContent to perform the content checks.
+
+Costs -
+You must minimize costs for all Azure services.
+
+Manual review -
+To review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using
+React and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.
+
+High availability -
+All services must run in multiple regions. The failure of any service in a region must not impact overall application availability.
+
+Monitoring -
+An alert must be raised if the ContentUploadService uses more than 80 percent of available CPU-cores.
+
+Security -
+You have the following security requirements:
+Any web service accessible over the Internet must be protected from cross site scripting attacks.
+All websites and services must use SSL from a valid root certificate authority.
+Azure Storage access keys must only be stored in memory and must be available only to the service.
+All Internal services must only be accessible from Internal Virtual Networks (VNets)
+All parts of the system must support inbound and outbound traffic restrictions.
+All service calls must be authenticated by using Azure AD.
+
+User agreements -
+When a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso.Ltd to review content, store cookies on user devices and track user's IP addresses.
+Information regarding agreements is used by multiple divisions within Contoso, Ltd.
+User responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.
+
+Validation testing -
+When a new version of the ContentAnalysisService is available the previous seven days of content must be processed with the new version to verify that the new version does not significantly deviate from the old version.
+
+Issues -
+Users of the ContentUploadService report that they occasionally see HTTP 502 responses on specific pages.
+
+Code -
+az-204-q40.png
+az-204-q40-1.png
+Question
+You need to configure the ContentUploadService deployment.
+Which two actions should you perform? Each correct answer presents part of the solution.
+NOTE: Each correct selection is worth one point.
 ---
+A. Add the following markup to line CS23: types: Private *
+B. Add the following markup to line CS24: osType: Windows
+C. Add the following markup to line CS24: osType: Linux *
+D. Add the following markup to line CS23: types: Public
 ---
+Since all of the services must be available from a virtual network, we have to mention the types as Private
+Since all of the services must be available from a virtual network, we have to mention the osType as Linux. Currently this is the only OS that supports container instances to be available from a virtual network.
 ---
+Virtual network scenarios and resources;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-virtual-network-concepts#unsupported-networking-scenarios
 ###
+D
+Current environment -
+Windows Server 2016 virtual machine
+The virtual machine (VM) runs BizTalk Server 2016. The VM runs the following workflows:
+Ocean Transport "" This workflow gathers and validates container information including container contents and arrival notices at various shipping ports.
+Inland Transport "" This workflow gathers and validates trucking information including fuel usage, number of stops, and routes.
+The VM supports the following REST API calls:
+Container API "" This API provides container information including weight, contents, and other attributes.
+Location API "" This API provides location information regarding shipping ports of call and tracking stops.
+Shipping REST API "" This API provides shipping information for use and display on the shipping website.
+
+Shipping Data -
+The application uses MongoDB JSON document storage database for all container and transport information.
+
+Shipping Web Site -
+The site displays shipping container tracking information and container contents. The site is located at http://shipping.wideworldimporters.com/
+
+Proposed solution -
+The on-premises shipping application must be moved to Azure. The VM has been migrated to a new Standard_D16s_v3 Azure VM by using Azure Site Recovery and must remain running in Azure to complete the BizTalk component migrations. You create a Standard_D16s_v3 Azure VM to host BizTalk Server. The Azure architecture diagram for the proposed solution is shown below:
+az-204-q41.png
+Requirements -
+
+Shipping Logic app -
+The Shipping Logic app must meet the following requirements:
+Support the ocean transport and inland transport workflows by using a Logic App.
+Support industry-standard protocol X12 message format for various messages including vessel content details and arrival notices.
+Secure resources to the corporate VNet and use dedicated storage resources with a fixed costing model.
+Maintain on-premises connectivity to support legacy applications and final BizTalk migrations.
+
+Shipping Function app -
+Implement secure function endpoints by using app-level security and include Azure Active Directory (Azure AD).
+
+REST APIs -
+The REST API's that support the solution must meet the following requirements:
+Secure resources to the corporate VNet.
+Allow deployment to a testing location within Azure while not incurring additional costs.
+Automatically scale to double capacity during peak shipping times while not causing application downtime.
+Minimize costs when selecting an Azure payment model.
+
+Shipping data -
+Data migration from on-premises to Azure must minimize costs and downtime.
+
+Shipping website -
+Use Azure Content Delivery Network (CDN) and ensure maximum performance for dynamic content while minimizing latency and costs.
+
+Issues -
+
+Windows Server 2016 VM -
+The VM shows high network latency, jitter, and high CPU utilization. The VM is critical and has not been backed up in the past. The VM must enable a quick restore from a 7-day snapshot to include in-place restore of disks in case of failure.
+
+Shipping website and REST APIs -
+The following error message displays while you are testing the website:
+Failed to load http://test-shippingapi.wideworldimporters.com/: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://test.wideworldimporters.com/' is therefore not allowed access.
+You need to configure Azure CDN for the Shipping web site.
+Which configuration options should you use?
 ---
+Tier:;Standard *; Premium;
+Profile:;Akamai *; Microsoft;
+Optimization:;General Web Delivery;Large File Download;Dynamic Site Acceleration *;Video-On-Demand Media Streaming;
 ---
+Dynamic site acceleration (DSA) is available for Azure CDN Standard from Akamai, Azure CDN Standard from Verizon, and Azure CDN Premium from Verizon profiles.
+DSA includes various techniques that benefit the latency and performance of dynamic content. Techniques include route and network optimization, TCP optimization, and more.
+You can use this optimization to accelerate a web app that includes numerous responses that aren't cacheable. Examples are search results, checkout transactions, or real-time data. You can continue to use core Azure CDN caching capabilities for static data
 ---
+Optimize Azure CDN for the type of content delivery;https://docs.microsoft.com/en-us/azure/cdn/cdn-optimization-overview
 ###
+Requirements -
+
+ContentAnalysisService -
+The company's data science group built ContentAnalysisService which accepts user generated content as a string and returns a probable value for inappropriate content. Any values over a specific threshold must be reviewed by an employee of Contoso, Ltd.
+You must create an Azure Function named CheckUserContent to perform the content checks.
+
+Costs -
+You must minimize costs for all Azure services.
+
+Manual review -
+To review content, the user must authenticate to the website portion of the ContentAnalysisService using their Azure AD credentials. The website is built using
+React and all pages and API endpoints require authentication. In order to review content a user must be part of a ContentReviewer role. All completed reviews must include the reviewer's email address for auditing purposes.
+
+High availability -
+All services must run in multiple regions. The failure of any service in a region must not impact overall application availability.
+
+Monitoring -
+An alert must be raised if the ContentUploadService uses more than 80 percent of available CPU-cores.
+
+Security -
+You have the following security requirements:
+Any web service accessible over the Internet must be protected from cross site scripting attacks.
+All websites and services must use SSL from a valid root certificate authority.
+Azure Storage access keys must only be stored in memory and must be available only to the service.
+All Internal services must only be accessible from Internal Virtual Networks (VNets)
+All parts of the system must support inbound and outbound traffic restrictions.
+All service calls must be authenticated by using Azure AD.
+
+User agreements -
+When a user submits content, they must agree to a user agreement. The agreement allows employees of Contoso.Ltd to review content, store cookies on user devices and track user's IP addresses.
+Information regarding agreements is used by multiple divisions within Contoso, Ltd.
+User responses must not be lost and must be available to all parties regardless of individual service uptime. The volume of agreements is expected to be in the millions per hour.
+Question
+You need to store the user agreements.
+Where should you store the agreement after it is completed?
 ---
+A. Azure Storage queue
+B. Azure Event Hub *
+C. Azure Service Bus topic
+D. Azure Event Grid topic
 ---
+Azure Event Hub is used for telemetry and distributed data streaming. This service provides a single solution that enables rapid data retrieval for real-time processing as well as repeated replay of stored raw data. It can capture the streaming data into a file for processing and analysis.
+It has the following characteristics: low latency, capable of receiving and processing millions of events per second at least once delivery
 ---
+Choose between Azure messaging services - Event Grid, Event Hubs, and Service Bus;https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
 ###
+You develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.
+You need to ensure that scripts run and resources are available before a swap operation occurs.
+Solution: Enable auto swap for the Testing slot. Deploy the app to the Testing slot.
+Does the solution meet the goal?
 ---
+A. No *
+B. Yes
 ---
+Instead update the web.config file to include the applicationInitialization configuration element. Specify custom initialization actions to run the scripts.
+Note: Some apps might require custom warm-up actions before the swap. The applicationInitialization configuration element in web.config lets you specify custom initialization actions. The swap operation waits for this custom warm-up to finish before swapping with the target slot. Here's a sample web.config fragment.
+<system.webServer>
+<applicationInitialization>
+<add initializationPage="/" hostName="[app hostname]" />
+<add initializationPage="/Home/About" hostName="[app hostname]" />
+</applicationInitialization>
+</system.webServer>
 ---
+Troubleshoot swaps;https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#troubleshoot-swaps
 ###
+You develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.
+You need to ensure that scripts run and resources are available before a swap operation occurs.
+Solution: Disable auto swap. Update the app with a method named statuscheck to run the scripts. Re-enable auto swap and deploy the app to the Production slot.
+Does the solution meet the goal?
 ---
+A. No *
+B. Yes
 ---
+nstead update the web.config file to include the applicationInitialization configuration element. Specify custom initialization actions to run the scripts.
+Note: Some apps might require custom warm-up actions before the swap. The applicationInitialization configuration element in web.config lets you specify custom initialization actions. The swap operation waits for this custom warm-up to finish before swapping with the target slot. Here's a sample web.config fragment.
+<system.webServer>
+<applicationInitialization>
+<add initializationPage="/" hostName="[app hostname]" />
+<add initializationPage="/Home/About" hostName="[app hostname]" />
+</applicationInitialization>
+</system.webServer>
 ---
+Troubleshoot swaps;https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#troubleshoot-swaps
 ###
 ---
 ---

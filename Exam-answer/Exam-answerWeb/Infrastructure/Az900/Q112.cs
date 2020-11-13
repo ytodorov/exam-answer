@@ -85,8 +85,8 @@ namespace Exam_answerWeb.Infrastructure.Questions
             {
                 new ReferenceEntity()
                 {
-                    Text = "Azure enterprise scaffold: Prescriptive subscription governance",
-                    Url = "https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/appendix/azure-scaffold",
+                    Text = "Microsoft Cloud Adoption Framework for Azure",
+                    Url = "https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/",
                 },
             },
         };

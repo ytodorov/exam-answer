@@ -541,7 +541,7 @@ azcopy make;https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-az
 ###
 D
 You have an Azure File sync group that has the endpoints shown in the following table.
-az-104-q30.png
+az-104-q32.png
 Cloud tiering is enabled for Endpoint3.
 You add a file named File1 to Endpoint1 and a file named File2 to Endpoint2.
 On which endpoints will File1 and File2 be available within 24 hours of adding the files? 
