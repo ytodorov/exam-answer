@@ -41,12 +41,12 @@ namespace Exam_answerWeb.Infrastructure.Questions
                 new AnswerEntity()
                 {
                     Text = "A private cloud.",
-                    IsCorrect = true
+                    IsCorrect = false
                 },
                 new AnswerEntity()
                 {
                     Text = "A hybrid cloud.",
-                    IsCorrect = false
+                    IsCorrect = true
                 },
             },
 

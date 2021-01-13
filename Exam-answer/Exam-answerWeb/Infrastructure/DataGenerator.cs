@@ -181,162 +181,21 @@ namespace Exam_answerWeb.Infrastructure
 
             List<ExamEntity> result = new List<ExamEntity>();
 
-            ExamEntity adm201 = new ExamEntity()
-            {
-                Provider = "Salesforce",
-                ExamProviderUrl = "https://www.exam-answer.com/salesforce",
-                ExamUrl = "https://www.exam-answer.com/salesforce/adm-201",
-                Code = "ADM-201",
-                Name = "Administration Essentials for New Admins",
-                PageTitle = "Exam ADM-201: Administration Essentials for New Admins",
-                PageDescription = "Prepare for Exam ADM-201: Administration Essentials for New Admins. Free demo questions with answers and explanations.",
-                Questions = GetQuestions("Exams\\adm-201.txt"),
-                Order = 3,
-            };
-
-            context?.Exams?.Add(adm201);
-            result.Add(adm201);
-
-            //ExamEntity scfslc = new ExamEntity()
+            //ExamEntity adm201 = new ExamEntity()
             //{
             //    Provider = "Salesforce",
             //    ExamProviderUrl = "https://www.exam-answer.com/salesforce",
-            //    ExamUrl = "https://www.exam-answer.com/salesforce/salesforce-certified-field-service-lightning-consultant",
-            //    Code = "Salesforce-Certified-Field-Service-Lightning-Consultant",
-            //    Name = "Salesforce Certified Field Service Lightning Consultant",
-            //    PageTitle = "Salesforce Certified Field Service Lightning Consultant",
-            //    PageDescription = "Prepare for Salesforce Certified Field Service Lightning Consultant. Free demo questions with answers and explanations.",
-            //    Questions = qeList,
-            //    Order = 2,
+            //    ExamUrl = "https://www.exam-answer.com/salesforce/adm-201",
+            //    Code = "ADM-201",
+            //    Name = "Administration Essentials for New Admins",
+            //    PageTitle = "Exam ADM-201: Administration Essentials for New Admins",
+            //    PageDescription = "Prepare for Exam ADM-201: Administration Essentials for New Admins. Free demo questions with answers and explanations.",
+            //    Questions = GetQuestions("Exams\\adm-201.txt"),
+            //    Order = 3,
             //};
 
-            //context?.Exams?.Add(scfslc);
-            //result.Add(scfslc);
-
-            //ExamEntity crt251 = new ExamEntity()
-            //{
-            //    Provider = "Salesforce",
-            //    Code = "CRT-251",
-            //    ExamProviderUrl = "https://www.exam-answer.com/salesforce",
-            //    ExamUrl = "https://www.exam-answer.com/salesforce/crt-251",
-            //    Name = "Sales Cloud Consultant",
-            //    PageTitle = "Exam CRT-251: Sales Cloud Consultant",
-            //    PageDescription = "Prepare for Exam CRT-251: Sales Cloud Consultant. Free demo questions with answers and explanations.",
-            //    Questions = new List<QuestionEntity>(),
-            //    Order = 1,
-            //};
-
-            //crt251.Questions.Add(Q1.Instance);
-            //crt251.Questions.Add(Q2.Instance);
-            //crt251.Questions.Add(Q3.Instance);
-            //crt251.Questions.Add(Q4.Instance);
-            //crt251.Questions.Add(Q5.Instance);
-            //crt251.Questions.Add(Q6.Instance);
-            //crt251.Questions.Add(Q7.Instance);
-            //crt251.Questions.Add(Q8.Instance);
-            //crt251.Questions.Add(Q9.Instance);
-            //crt251.Questions.Add(Q10.Instance);
-            //crt251.Questions.Add(Q11.Instance);
-            //crt251.Questions.Add(Q12.Instance);
-            //crt251.Questions.Add(Q13.Instance);
-            //crt251.Questions.Add(Q14.Instance);
-            //crt251.Questions.Add(Q15.Instance);
-            //crt251.Questions.Add(Q16.Instance);
-            //crt251.Questions.Add(Q17.Instance);
-            //crt251.Questions.Add(Q18.Instance);
-            //crt251.Questions.Add(Q19.Instance);
-            //crt251.Questions.Add(Q20.Instance);
-            //crt251.Questions.Add(Q21.Instance);
-            //crt251.Questions.Add(Q22.Instance);
-            //crt251.Questions.Add(Q23.Instance);
-            //crt251.Questions.Add(Q24.Instance);
-            //crt251.Questions.Add(Q25.Instance);
-            //crt251.Questions.Add(Q26.Instance);
-            //crt251.Questions.Add(Q27.Instance);
-            //crt251.Questions.Add(Q28.Instance);
-            //crt251.Questions.Add(Q29.Instance);
-            //crt251.Questions.Add(Q30.Instance);
-            //crt251.Questions.Add(Q31.Instance);
-            //crt251.Questions.Add(Q32.Instance);
-            //crt251.Questions.Add(Q33.Instance);
-            //crt251.Questions.Add(Q34.Instance);
-            //crt251.Questions.Add(Q35.Instance);
-            //crt251.Questions.Add(Q36.Instance);
-            //crt251.Questions.Add(Q37.Instance);
-            //crt251.Questions.Add(Q38.Instance);
-            //crt251.Questions.Add(Q39.Instance);
-            //crt251.Questions.Add(Q40.Instance);
-            //crt251.Questions.Add(Q41.Instance);
-            //crt251.Questions.Add(Q42.Instance);
-            //crt251.Questions.Add(Q43.Instance);
-            //crt251.Questions.Add(Q44.Instance);
-            //crt251.Questions.Add(Q45.Instance);
-            //crt251.Questions.Add(Q46.Instance);
-            //crt251.Questions.Add(Q47.Instance);
-            //crt251.Questions.Add(Q48.Instance);
-            //crt251.Questions.Add(Q49.Instance);
-            //crt251.Questions.Add(Q50.Instance);
-            //crt251.Questions.Add(Q51.Instance);
-            //crt251.Questions.Add(Q52.Instance);
-            //crt251.Questions.Add(Q53.Instance);
-            //crt251.Questions.Add(Q54.Instance);
-            //crt251.Questions.Add(Q55.Instance);
-            //crt251.Questions.Add(Q56.Instance);
-            //crt251.Questions.Add(Q57.Instance);
-            //crt251.Questions.Add(Q58.Instance);
-            //crt251.Questions.Add(Q59.Instance);
-            //crt251.Questions.Add(Q60.Instance);
-            //crt251.Questions.Add(Q61.Instance);
-            //crt251.Questions.Add(Q62.Instance);
-            //crt251.Questions.Add(Q63.Instance);
-            //crt251.Questions.Add(Q64.Instance);
-            //crt251.Questions.Add(Q65.Instance);
-            //crt251.Questions.Add(Q66.Instance);
-            //crt251.Questions.Add(Q67.Instance);
-            //crt251.Questions.Add(Q68.Instance);
-            //crt251.Questions.Add(Q69.Instance);
-            //crt251.Questions.Add(Q70.Instance);
-            //crt251.Questions.Add(Q71.Instance);
-            //crt251.Questions.Add(Q72.Instance);
-            //crt251.Questions.Add(Q73.Instance);
-            //crt251.Questions.Add(Q74.Instance);
-            //crt251.Questions.Add(Q75.Instance);
-            //crt251.Questions.Add(Q76.Instance);
-            //crt251.Questions.Add(Q77.Instance);
-            //crt251.Questions.Add(Q78.Instance);
-            //crt251.Questions.Add(Q79.Instance);
-            //crt251.Questions.Add(Q80.Instance);
-            //crt251.Questions.Add(Q81.Instance);
-            //crt251.Questions.Add(Q82.Instance);
-            //crt251.Questions.Add(Q83.Instance);
-            //crt251.Questions.Add(Q84.Instance);
-            //crt251.Questions.Add(Q85.Instance);
-            //crt251.Questions.Add(Q86.Instance);
-            //crt251.Questions.Add(Q87.Instance);
-            //crt251.Questions.Add(Q88.Instance);
-            //crt251.Questions.Add(Q89.Instance);
-            //crt251.Questions.Add(Q90.Instance);
-            //crt251.Questions.Add(Q91.Instance);
-            //crt251.Questions.Add(Q92.Instance);
-            //crt251.Questions.Add(Q93.Instance);
-            //crt251.Questions.Add(Q94.Instance);
-            //crt251.Questions.Add(Q95.Instance);
-            //crt251.Questions.Add(Q96.Instance);
-            //crt251.Questions.Add(Q97.Instance);
-            //crt251.Questions.Add(Q98.Instance);
-            //crt251.Questions.Add(Q99.Instance);
-            //crt251.Questions.Add(Q100.Instance);
-
-            //crt251.ShowUdemy = false;
-            //crt251.UdemyLinkUrl = "https://www.udemy.com/salesforce-crt-251-sales-cloud-consultant-exam-questions/?couponCode=50_OFF";
-            //crt251.UdemyLinkMessage = "Salesforce CRT-251: Sales Cloud Consultant - 50% OFF";
-            //crt251.UdemyMessage =
-            //    "If you like what you see, please support the future development of our web site by buying this practice test at Udemy." +
-            //    " Click this link for a 50% discount. The price is ONLY 9.99!";
-
-            //context?.Exams?.Add(crt251);
-
-            //result.Add(crt251);
+            //context?.Exams?.Add(adm201);
+            //result.Add(adm201);
 
             ExamEntity saa_c01 = new ExamEntity()
             {
@@ -402,7 +261,7 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(az104);
             result.Add(az104);
 
-
+        
             ExamEntity az300 = new ExamEntity()
             {
                 Provider = "Microsoft",
@@ -419,6 +278,25 @@ namespace Exam_answerWeb.Infrastructure
             context?.Exams?.Add(az300);
             result.Add(az300);
 
+
+            // 303
+
+            ExamEntity az303 = new ExamEntity()
+            {
+                Provider = "Microsoft",
+                Code = "AZ-303",
+                Name = "Microsoft Azure Architect Technologies",
+                ExamProviderUrl = "https://www.exam-answer.com/microsoft",
+                ExamUrl = "https://www.exam-answer.com/microsoft/az-303",
+                PageTitle = "Exam AZ-303: Microsoft Azure Architect Technologies",
+                PageDescription = "Prepare for Exam AZ-303: Microsoft Azure Architect Technologies. Free demo questions with answers and explanations.",
+                Questions = GetQuestions("Exams\\az-303.txt"),
+                Order = 4,
+            };
+
+            context?.Exams?.Add(az303);
+            result.Add(az303);
+
             ExamEntity az400 = new ExamEntity()
             {
                 Provider = "Microsoft",
@@ -429,8 +307,11 @@ namespace Exam_answerWeb.Infrastructure
                 PageTitle = "Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions",
                 PageDescription = "Prepare for Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions. Free demo questions with answers and explanations.",
                 Questions = GetQuestions("Exams\\az-400.txt"),
-                Order = 4,
+                Order = 5,
             };
+
+
+            //
 
             context?.Exams?.Add(az400);
             result.Add(az400);

@@ -1419,6 +1419,7 @@
     <Folder Include="wwwroot\duplicates\" />
     <Folder Include="wwwroot\images\cisco\ICND1\" />
     <Folder Include="wwwroot\images\microsoft\az-104\" />
+    <Folder Include="wwwroot\images\microsoft\az-303\" />
   </ItemGroup>
 
 
@@ -1435,6 +1436,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\az-104.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Exams\az-303.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Exams\CRT251.txt">
