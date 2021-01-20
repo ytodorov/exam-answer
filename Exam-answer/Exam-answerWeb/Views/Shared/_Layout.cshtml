@@ -14,8 +14,8 @@
     <meta property="og:description" content="@(Model?.PageDescription)" />
     @if (ViewData["imageUrl"] != null)
     {
-        <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
-        <meta property="og:image:alt" content="@(Model?.PageTitle)" />
+    <meta property="og:image" content="https://www.exam-answer.com/@(ViewData["imageUrl"])" />
+    <meta property="og:image:alt" content="@(Model?.PageTitle)" />
     }
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preconnect dns-prefetch" href="https://secure.trust-provider.com" crossorigin>
@@ -32,7 +32,7 @@
     <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
-        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     }
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -42,7 +42,7 @@
     @*<amp-auto-ads type="adsense" data-ad-client="ca-pub-2519209558650417"></amp-auto-ads>*@
     @if (this?.Context?.Request?.Host.ToString()?.Contains("localhost", StringComparison.InvariantCultureIgnoreCase) == false)
     {
-        <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MFQNVWQ&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
     }
 
     <header class="a-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
@@ -117,40 +117,50 @@
     </div>
     @RenderBody()
     @*<div class="center m2">
-            <div class="center inline">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
-            </div>
-            <div class="center inline">
-                @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
-            </div>
-        </div>*@
+    <div class="center inline">
+    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+    </div>
+    <div class="center inline">
+    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
+    </div>
+    </div>*@
     @*<div class="center">
-            @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
-        </div>*@
+    @Html.Raw(Html.GetAddsenseAdd(AdsenseType.ResponsiveAdHorizontal))
+    </div>*@
     @*<amp-ad width="100vw" height="320"
-                type="adsense"
-                data-ad-client="ca-pub-2519209558650417"
-                data-ad-slot="6927557857"
-                data-auto-format="mcrspv"
-                data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>
-        <br />*@
+    type="adsense"
+    data-ad-client="ca-pub-2519209558650417"
+    data-ad-slot="6927557857"
+    data-auto-format="mcrspv"
+    data-full-width="">
+    <div overflow=""></div>
+    </amp-ad>
+    <br />*@
 
     @*<amp-iframe width=600 height=140
-                layout="responsive"
-                sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
-                resizable
-                src="https://ytodorov.azurewebsites.net/disqus?canonicalUrl=@Model?.PageCanonicalUrl">
-        <div overflow
-             tabindex=0
-             role=button
-             aria-label="Load more"
-             style="display:block;font-size:12px;font-weight:500;font-family:Helvetica Neue, arial, sans-serif;text-align:center;line-height:1.1;padding:12px 16px;border-radius:4px;background:rgba(29,47,58,0.6);color:rgb(255,255,255)">
-            Load more
-        </div>
+    layout="responsive"
+    sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+    resizable
+    src="https://ytodorov.azurewebsites.net/disqus?canonicalUrl=@Model?.PageCanonicalUrl">
+    <div overflow
+    tabindex=0
+    role=button
+    aria-label="Load more"
+    style="display:block;font-size:12px;font-weight:500;font-family:Helvetica Neue, arial, sans-serif;text-align:center;line-height:1.1;padding:12px 16px;border-radius:4px;background:rgba(29,47,58,0.6);color:rgb(255,255,255)">
+    Load more
+    </div>
     </amp-iframe>*@
     <br>
+    <div class="center m2">
+        <a target="_blank" href="https://jooble.org">
+            <amp-img src="https://jooble.org/css/images/logos/jooble_135x110.png"
+            alt="Jobs in USA"
+            width="135"
+            height="100"
+            layout="intrinsic"
+            title="Find your dream job"></amp-img>
+        </a>
+    </div>
     <div class="center m2">
         <div class="center inline">
             @Html.Raw(Html.GetAddsenseAdd(AdsenseType.Fixed_336_280))
@@ -194,14 +204,14 @@
         </div>
     </footer>
     @*<div class="center">
-            <amp-iframe width="auto"
-                        height="300"
-                        sandbox="allow-scripts"
-                        layout="fixed-height"
-                        src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
-                <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
-            </amp-iframe>
-        </div>*@
+    <amp-iframe width="auto"
+    height="300"
+    sandbox="allow-scripts"
+    layout="fixed-height"
+    src="@(Model?.PageBaseCanonicalUrl)/trustlogo">
+    <amp-img layout="fill" src="@(Model?.PageBaseCanonicalUrl)/whiteimage.png" placeholder></amp-img>
+    </amp-iframe>
+    </div>*@
 
     @Html.Raw(Model?.PageMicrodata)
 </body>
