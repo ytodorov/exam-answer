@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DAL.Entities;
 using Exam_answerWeb.Controllers;
+using Exam_answerWeb.Infrastructure;
 using Exam_answerWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,24 +27,7 @@ namespace Exam_AnswerWeb.Controllers
 
         public IActionResult Index()
         {
-            var exams = examAnswerContext.Exams
-               .Where(e => e.Provider.Equals("Microsoft", StringComparison.InvariantCultureIgnoreCase))
-
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.Contents)
-
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.Answers)
-
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.Explanations)
-
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.References)
-
-               .AsNoTracking()
-               .OrderBy(s => s.Order)
-               .ToList();
+            var exams = DataGenerator.AllExams;
 
             List<ExamViewModel> examViewModels = new List<ExamViewModel>();
             foreach (var exam in exams)

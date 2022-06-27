@@ -51,24 +51,24 @@ namespace Exam_answerWeb.Controllers
             var parts = HttpContext.Request.Path.ToString().Split('/', StringSplitOptions.RemoveEmptyEntries);
             var provider = parts[0];
             var code = parts[1];
-
-            ExamEntity examEntity = examAnswerContext.Exams
+            var exams = DataGenerator.AllExams;
+            ExamEntity examEntity = exams
                .Where(e => e.Provider.Equals(provider, StringComparison.InvariantCultureIgnoreCase) &&
                    e.Code.Equals(code, StringComparison.InvariantCultureIgnoreCase))
 
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.Contents)
+               //.Include(e => e.Questions)
+               //.ThenInclude(q => q.Contents)
 
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.Answers)
+               //.Include(e => e.Questions)
+               //.ThenInclude(q => q.Answers)
 
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.Explanations)
+               //.Include(e => e.Questions)
+               //.ThenInclude(q => q.Explanations)
 
-               .Include(e => e.Questions)
-               .ThenInclude(q => q.References)
+               //.Include(e => e.Questions)
+               //.ThenInclude(q => q.References)
 
-               .AsNoTracking()
+               //.AsNoTracking()
 
                .FirstOrDefault();
 
