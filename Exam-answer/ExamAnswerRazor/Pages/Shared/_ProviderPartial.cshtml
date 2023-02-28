@@ -1,0 +1,5 @@
+﻿@model ProviderPartialViewModel
+
+@await Html.PartialAsync("_FirstHalfPartial")
+        provider @Model.ProviderName
+@await Html.PartialAsync("_SecondHalfPartial")
