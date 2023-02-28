@@ -8,13 +8,29 @@
 
 <div class="container text-center">
     <div class="row">
-        @for (int i = 0; i < 12; i++)
-        {
-            <div class="col-sm-4 col-md-3 col-lg-2">
-                @await Html.PartialAsync("_ProviderCardPartial", new ProviderCardPartialViewModel() { ProviderName = i.ToString() } )
-            </div>
-        }
+        <div class="card-group">
+            @for (int i = 0; i < Constants.ProvidersAndExams.Providers.Count; i++)
+            {
+                var provider = Constants.ProvidersAndExams.Providers[i];
+                <div class="col-md-4 p-4">
+                    <div class="card">
+
+                        <img src="/images/logos/@(provider.Name.ToLower()).svg" class="card-img-top" height="300" width="300" />
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                @provider.Name
+                            </h3><p class="card-text">
+                                Numbers of exams: @provider.ExamsCount
+                            </p><p class="card-text">
+                                Numbers of questions: @provider.QuestionsCount
+                            </p>
+                            <a href="/@provider.Name" class="btn btn-primary">Go to @provider.Name exams</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </div>
-root page
+
 @await Html.PartialAsync("_SecondHalfPartial")

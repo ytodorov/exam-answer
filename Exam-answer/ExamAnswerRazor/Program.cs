@@ -1,4 +1,10 @@
+using ExamAnswerRazor.Classes;
+using Newtonsoft.Json;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var json = File.ReadAllText(Path.Combine("Jsons", "providers_end_exams.json"));
+Constants.ProvidersAndExams = JsonConvert.DeserializeObject<GeneratedClasses>(json);
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorPagesOptions(options =>

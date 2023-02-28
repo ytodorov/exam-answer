@@ -26,4 +26,32 @@
     <Content Remove="Pages\Privacy.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\alison.webp" />
+    <None Include="wwwroot\images\logos\amazon.svg" />
+    <None Include="wwwroot\images\logos\axelos.svg" />
+    <None Include="wwwroot\images\logos\cisco.svg" />
+    <None Include="wwwroot\images\logos\comptia.svg" />
+    <None Include="wwwroot\images\logos\google.svg" />
+    <None Include="wwwroot\images\logos\isaca.svg" />
+    <None Include="wwwroot\images\logos\isc.svg" />
+    <None Include="wwwroot\images\logos\juniper.svg" />
+    <None Include="wwwroot\images\logos\linux.svg" />
+    <None Include="wwwroot\images\logos\microsoft.svg" />
+    <None Include="wwwroot\images\logos\oracle.svg" />
+    <None Include="wwwroot\images\logos\prince2.svg" />
+    <None Include="wwwroot\images\logos\salesforce.svg" />
+    <None Include="wwwroot\images\logos\vmware.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Jsons\providers_end_exams.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

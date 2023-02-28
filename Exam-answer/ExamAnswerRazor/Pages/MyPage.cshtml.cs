@@ -1,4 +1,4 @@
-using ExamAnswerRazor.Models;
+using ExamAnswerRazor.Classes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -14,7 +14,12 @@ namespace ExamAnswerRazor.Pages
 
             if (length == 1)
             {
-                return Partial("_ProviderPartial", new ProviderPartialViewModel() { ProviderName = segments[0] });
+                var providerSegment = segments[0];
+                var provider = Constants.ProvidersAndExams.Providers.FirstOrDefault(f => f.Name?.Equals(providerSegment, StringComparison.InvariantCultureIgnoreCase) == true);
+                if (provider != null)
+                {
+                    return Partial("_ProviderPartial", provider);
+                }
             }
 
             return null;

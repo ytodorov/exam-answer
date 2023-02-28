@@ -1,5 +1,38 @@
-﻿@model ProviderPartialViewModel
+﻿@model ExamAnswerRazor.Classes.Provider;
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment WebHostEnvironment
 
 @await Html.PartialAsync("_FirstHalfPartial")
-        provider @Model.ProviderName
+<div class="container text-center">
+    <div class="row">
+        <div class="card-group">
+            @foreach (var exam in Model.Exams)
+            {
+                <div class="col-md-4 p-4">
+                    <div class="card">
+                        @{
+                            var imagePath = $"images\\logos\\exams\\{exam.Provider.ToLowerInvariant()}\\{exam.Code.ToLowerInvariant()}.png";
+                            var fullPath = System.IO.Path.Combine(WebHostEnvironment.WebRootPath, imagePath);
+                        }
+                        @if (System.IO.File.Exists(fullPath))
+                        {
+                            <img src="/images/logos/exams/@(exam.Provider.ToLowerInvariant())/@(exam.Code.ToLowerInvariant()).png" alt="@exam.Name" class="card-img-top" height="300" width="300" />
+                        }
+                        else
+                        {
+                            <img src="/images/logos/@(exam.Provider.ToLowerInvariant()).svg" alt="@exam.Name" class="card-img-top img-thumbnail" height="300" width="300" />
+                        }
+                        <div class="card-body">
+                            <h3 class="card-title">@exam.Name</h3>
+                            <p class="card-text">Numbers of questions: @exam.QuestionsCount</p>
+                            <a href="/@exam.Provider/@exam.Code" class="btn btn-primary">Go to exam</a>
+                            <a href="/@exam.Provider/@exam.Code/question1" class="btn btn-primary">Go to first question</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
 @await Html.PartialAsync("_SecondHalfPartial")
