@@ -1,0 +1,118 @@
+<!--
+  ## Introduction
+
+  Use [`amp-iframe`](/content/amp-dev/documentation/components/reference/amp-iframe-v0.1.md) for embedding content into AMP files via iframe. Useful for displaying content otherwise not (yet) supported by AMP.
+
+  Note: We're using [Vimeo](https://vimeo.com/) embeds here for an example, but any kind of content works. If you're interested in embedding Vimeo in AMP, it's recommended that you use the provided [`amp-vimeo` component](/content/amp-dev/documentation/components/reference/amp-vimeo-v0.1.md) instead.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>amp-iframe</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!--  Import the amp-iframe component in the header. -->
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <!-- You can use the `amp-bind` extension to dynamically change an iframe src. -->
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-iframe/index.html">
+    <meta name="viewport" content="width=device-width">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <style amp-custom>
+        #sample-resizable-iframe div[overflow] {
+            text-align: center;
+            background: #f9f7f7;
+            line-height: 36px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <amp-iframe width="73" height="40" sandbox="allow-scripts allow-same-origin" layout="fixed" frameborder="0"
+        src="https://eaeastus2.z20.web.core.windows.net/ea.html?q=1">
+        <amp-img layout="fill" src="https://www.exam-answer.com/white_73x30.png" placeholder></amp-img>
+    </amp-iframe>
+    <amp-iframe width="100" height="60" sandbox="allow-scripts allow-same-origin" layout="fixed" frameborder="0"
+        src="https://eaeastus2.z20.web.core.windows.net/ea.html?q=2">
+        <amp-img layout="fill" src="https://www.exam-answer.com/white_73x30.png" placeholder></amp-img>
+    </amp-iframe> -->
+    <amp-iframe width="160" height="50" sandbox="allow-scripts allow-same-origin" layout="fixed" frameborder="0"
+        src="https://eaeastus2.z20.web.core.windows.net/?q=4">
+        <amp-img layout="fill" src="https://www.exam-answer.com/white_73x30.png" placeholder></amp-img>
+    </amp-iframe>
+
+
+
+</body>
+
+</html>

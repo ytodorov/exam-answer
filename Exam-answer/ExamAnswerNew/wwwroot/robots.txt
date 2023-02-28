@@ -1,0 +1,2 @@
+Sitemap: https://www.exam-answer.com/sitemap.xml
+User-agent: *
